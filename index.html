@@ -1759,14 +1759,6 @@
         let userProgress = {};
         let savedSessions = {};
 
-        // Initialize app
-        document.addEventListener('DOMContentLoaded', function() {
-            loadUserData();
-            loadStudyData();
-            setupKeyboardShortcuts();
-            initializeAccessibility();
-        });
-
         // Accessibility initialization
         function initializeAccessibility() {
             // Add skip to main content link
@@ -1960,10 +1952,46 @@
         // Load study data from API
         async function loadStudyData() {
             try {
-                const response = await fetch('/api/study-materials');
-                studyData = await response.json();
+                // For now, load default study structure until GraphQL integration is complete
+                studyData = {
+                    "design-analysis-algorithms": {
+                        "title": "Design & Analysis of Algorithms",
+                        "description": "Advanced algorithmic techniques and complexity analysis",
+                        "topics": {
+                            "big-o-notation": {
+                                "title": "Big O Notation",
+                                "description": "Understanding time and space complexity",
+                                "flashcards": [
+                                    {
+                                        "question": "What is Big O notation?",
+                                        "answer": "Big O notation describes the upper bound of the time complexity of an algorithm"
+                                    }
+                                ],
+                                "quiz": [
+                                    {
+                                        "question": "What is the time complexity of binary search?",
+                                        "options": ["O(n)", "O(log n)", "O(n²)", "O(1)"],
+                                        "correct": 1
+                                    }
+                                ]
+                            },
+                            "adt": {
+                                "title": "Abstract Data Types",
+                                "description": "Fundamental data structures and their operations",
+                                "flashcards": [
+                                    {
+                                        "question": "What is an Abstract Data Type?",
+                                        "answer": "An ADT is a mathematical model for data types where behavior is defined by operations"
+                                    }
+                                ],
+                                "quiz": []
+                            }
+                        }
+                    }
+                };
                 renderSidebar();
                 renderHomepage();
+                console.log('Default study data loaded');
             } catch (error) {
                 console.error('Failed to load study data:', error);
                 showToast('Failed to load study materials', 'error');
@@ -2145,9 +2173,15 @@
             container.innerHTML = '<div class="loading">Loading PDFs...</div>';
 
             try {
-                const response = await fetch('/api/study-materials/files');
-                const filesData = await response.json();
-                const pdfs = filesData[classKey] || [];
+                // For now, show sample PDFs until S3 integration is complete
+                const pdfs = [];
+                if (classKey === 'design-analysis-algorithms') {
+                    pdfs.push(
+                        'Week 1 - Introduction to DAA.pdf',
+                        'Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf',
+                        'Week 3 - Brute Force and Exhaustive Search.pdf'
+                    );
+                }
 
                 container.innerHTML = '';
 
@@ -4533,11 +4567,17 @@
         
         // Initialize authentication on page load
         document.addEventListener('DOMContentLoaded', async () => {
+            // Initialize essential functions
+            setupKeyboardShortcuts();
+            initializeAccessibility();
+            
             // Check if user is already authenticated
             const user = await checkAuthStatus();
             if (user) {
+                loadUserData();
                 showUserMenu(user);
                 await loadUserStudyData();
+                await loadStudyData(); // Load the study materials after authentication
             } else {
                 showAuthModal();
             }
