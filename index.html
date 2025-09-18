@@ -1,0 +1,4284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Hub</title>
+    <style>
+        /* CSS Variables for theming and motion */
+        :root {
+            --bg: #0f172a;
+            --panel: #1e293b;
+            --text: #e5e7eb;
+            --muted: #94a3b8;
+            --accent: #22d3ee;
+            --accent2: #a78bfa;
+            --good: #22c55e;
+            --bad: #ef4444;
+            --warn: #f59e0b;
+            --border: #334155;
+            
+            /* Motion tokens */
+            --fast: 150ms;
+            --norm: 250ms;
+            --slow: 400ms;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        /* Respect prefers-reduced-motion */
+        @media (prefers-reduced-motion: reduce) {
+            :root {
+                --fast: 0ms;
+                --norm: 0ms;
+                --slow: 0ms;
+            }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Global Header */
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 2rem;
+            background: var(--panel);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+            transition: color var(--fast) var(--ease);
+        }
+
+        .logo:hover {
+            color: var(--accent2);
+        }
+
+        .home-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all var(--fast) var(--ease);
+            font-size: 0.875rem;
+        }
+
+        .home-btn:hover {
+            background: var(--accent);
+            color: var(--bg);
+            border-color: var(--accent);
+        }
+
+        .header-center {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .mode-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all var(--fast) var(--ease);
+            font-size: 0.875rem;
+        }
+
+        .mode-btn:hover, .mode-btn.active {
+            background: var(--accent);
+            color: var(--bg);
+            border-color: var(--accent);
+        }
+
+        .header-right {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .session-btn {
+            background: var(--accent2);
+            border: none;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all var(--fast) var(--ease);
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .session-btn:hover {
+            background: var(--accent);
+            transform: translateY(-1px);
+        }
+
+        /* Main Layout */
+        .app-container {
+            display: flex;
+            min-height: calc(100vh - 73px); /* Subtract header height */
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 280px;
+            background: var(--panel);
+            border-right: 1px solid var(--border);
+            padding: 1.5rem;
+            overflow-y: auto;
+            position: sticky;
+            top: 73px;
+            height: calc(100vh - 73px);
+        }
+
+        .sidebar h3 {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .class-item {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .class-name {
+            display: block;
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            transition: all var(--fast) var(--ease);
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .class-name:hover {
+            background: rgba(34, 211, 238, 0.1);
+            color: var(--accent);
+        }
+
+        .topics-dropdown {
+            display: none;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            padding: 0.5rem;
+            margin-top: 0.25rem;
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .class-item:hover .topics-dropdown,
+        .topics-dropdown:hover {
+            display: block;
+        }
+
+        /* Extend hover area to bridge the gap */
+        .class-item::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            height: 0.25rem;
+            z-index: 49;
+        }
+
+        .class-item:hover::after {
+            background: transparent;
+        }
+
+        .topic-chip {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            margin: 0.25rem;
+            cursor: pointer;
+            transition: all var(--fast) var(--ease);
+        }
+
+        .topic-chip:hover {
+            background: var(--accent2);
+            transform: translateY(-1px);
+        }
+
+        /* Main Content Area */
+        .main-content {
+            flex: 1;
+            padding: 2rem;
+            overflow-y: auto;
+        }
+
+        /* Class Grid (Homepage) */
+        .class-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .class-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all var(--norm) var(--ease);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .class-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent);
+        }
+
+        .class-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--accent), var(--accent2));
+        }
+
+        .class-card h2 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .class-stats {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            font-size: 0.875rem;
+            color: var(--muted);
+        }
+
+        .stat {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* Class Homepage */
+        .class-homepage {
+            display: none;
+        }
+
+        .class-header {
+            margin-bottom: 2rem;
+        }
+
+        .class-title {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            color: var(--accent);
+        }
+
+        .back-link {
+            color: var(--muted);
+            text-decoration: none;
+            font-size: 0.875rem;
+            transition: color var(--fast) var(--ease);
+        }
+
+        .back-link:hover {
+            color: var(--accent);
+        }
+
+        .study-materials-section {
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.5rem;
+        }
+
+        .pdf-list {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .pdf-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            transition: all var(--fast) var(--ease);
+            margin-bottom: 1rem;
+        }
+
+        .pdf-card:hover {
+            border-color: var(--accent);
+        }
+
+        .pdf-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all var(--fast);
+        }
+
+        .pdf-header:hover {
+            background: var(--border);
+        }
+
+        .collapsible-header {
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+
+        .pdf-name {
+            font-weight: 500;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .pdf-toggle-icon {
+            font-size: 0.8rem;
+            transition: transform var(--fast);
+            color: var(--accent);
+        }
+
+        .pdf-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .pdf-content {
+            transition: all var(--norm);
+            overflow: hidden;
+        }
+
+        .pdf-content.collapsed {
+            max-height: 0;
+            padding: 0 1rem;
+            opacity: 0;
+        }
+
+        .pdf-content.expanded {
+            max-height: 600px;
+            padding: 0 1rem 1rem 1rem;
+            opacity: 1;
+        }
+
+        .pdf-embed {
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+        }
+
+        /* Source links styling */
+        .source-link {
+            color: var(--accent);
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: all var(--fast);
+        }
+
+        .source-link:hover {
+            border-bottom-color: var(--accent);
+            text-decoration: none;
+        }
+
+        .source-link:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+            border-radius: 2px;
+        }
+
+        /* Settings tab styling */
+        .settings-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .settings-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 2rem;
+            min-height: 600px;
+        }
+
+        .settings-sidebar {
+            background: var(--panel);
+            border-radius: 12px;
+            padding: 1rem;
+            height: fit-content;
+            border: 1px solid var(--border);
+        }
+
+        .settings-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .settings-nav-btn {
+            background: transparent;
+            border: none;
+            padding: 0.75rem 1rem;
+            border-radius: 8px;
+            color: var(--muted);
+            cursor: pointer;
+            transition: all var(--fast);
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .settings-nav-btn:hover {
+            background: var(--border);
+            color: var(--text);
+        }
+
+        .settings-nav-btn.active {
+            background: var(--accent);
+            color: white;
+        }
+
+        .settings-content {
+            background: var(--panel);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid var(--border);
+        }
+
+        .settings-section {
+            display: none;
+        }
+
+        .settings-section.active {
+            display: block;
+        }
+
+        .settings-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .settings-list {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .settings-item {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: all var(--fast);
+        }
+
+        .settings-item:hover {
+            border-color: var(--accent);
+        }
+
+        .settings-item-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 0.5rem;
+        }
+
+        .settings-item-content {
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .settings-item-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .settings-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.8rem;
+            transition: all var(--fast);
+        }
+
+        .settings-btn:hover {
+            background: var(--accent-hover);
+        }
+
+        .settings-btn.danger {
+            background: var(--bad);
+        }
+
+        .settings-btn.secondary {
+            background: var(--muted);
+        }
+
+        .add-item-form {
+            background: var(--bg);
+            border: 2px dashed var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .add-item-form.expanded {
+            border-style: solid;
+            border-color: var(--accent);
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            background: var(--panel);
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+        }
+
+        @media (max-width: 768px) {
+            .settings-layout {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .settings-sidebar {
+                order: 2;
+            }
+            
+            .settings-nav {
+                flex-direction: row;
+                overflow-x: auto;
+            }
+            
+            .settings-nav-btn {
+                white-space: nowrap;
+            }
+        }
+
+        .pdf-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: all var(--fast) var(--ease);
+        }
+
+        .pdf-btn:hover {
+            background: var(--accent2);
+        }
+
+        .pdf-embed {
+            width: 100%;
+            height: 480px;
+            border: 1px solid var(--border);
+            border-radius: 0.25rem;
+        }
+
+        .study-topics-section {
+            margin-bottom: 3rem;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+
+        .topic-card {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all var(--fast) var(--ease);
+        }
+
+        .topic-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .topic-title {
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .topic-stats {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        /* Topic View */
+        .topic-view {
+            display: none;
+        }
+
+        .topic-header {
+            margin-bottom: 2rem;
+        }
+
+        .topic-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .tab-btn {
+            background: transparent;
+            border: none;
+            color: var(--muted);
+            padding: 1rem;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            transition: all var(--fast) var(--ease);
+            font-size: 1rem;
+        }
+
+        .tab-btn:hover, .tab-btn.active {
+            color: var(--accent);
+            border-bottom-color: var(--accent);
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Flashcard Styles */
+        .flashcard-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .flashcard {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem;
+            cursor: pointer;
+            transition: all var(--norm) var(--ease);
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .flashcard:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .flashcard-content {
+            font-size: 1.125rem;
+            line-height: 1.6;
+        }
+
+        .flashcard-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .control-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--border);
+            background: var(--panel);
+            color: var(--text);
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all var(--fast) var(--ease);
+        }
+
+        .control-btn:hover {
+            background: var(--accent);
+            color: var(--bg);
+            border-color: var(--accent);
+        }
+
+        /* Quiz Styles */
+        .quiz-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .quiz-question {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .question-text {
+            font-size: 1.125rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .quiz-options {
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        .quiz-option {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all var(--fast) var(--ease);
+            text-align: left;
+        }
+
+        .quiz-option:hover {
+            border-color: var(--accent);
+            background: rgba(34, 211, 238, 0.1);
+        }
+
+        .quiz-option.selected {
+            border-color: var(--accent);
+            background: rgba(34, 211, 238, 0.2);
+        }
+
+        .quiz-option.correct {
+            border-color: var(--good);
+            background: rgba(34, 197, 94, 0.2);
+        }
+
+        .quiz-option.incorrect {
+            border-color: var(--bad);
+            background: rgba(239, 68, 68, 0.2);
+        }
+
+        .option-number {
+            display: inline-block;
+            width: 1.5rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .difficulty-badge {
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+        }
+
+        .difficulty-badge.easy {
+            background: rgba(34, 197, 94, 0.2);
+            color: var(--good);
+        }
+
+        .difficulty-badge.medium {
+            background: rgba(245, 158, 11, 0.2);
+            color: var(--warn);
+        }
+
+        .difficulty-badge.hard {
+            background: rgba(239, 68, 68, 0.2);
+            color: var(--bad);
+        }
+
+        /* Games Styles */
+        .game-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .game-area {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            min-height: 400px;
+        }
+
+        .game-item {
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 0.5rem;
+            cursor: move;
+            transition: all var(--fast) var(--ease);
+            user-select: none;
+        }
+
+        .game-item:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .game-item.dragging {
+            opacity: 0.5;
+            transform: rotate(5deg);
+        }
+
+        .game-item.selected {
+            border-color: var(--accent);
+            background: rgba(34, 211, 238, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .game-item.matched {
+            border-color: var(--good);
+            background: rgba(34, 197, 94, 0.2);
+            cursor: default;
+        }
+
+        .drop-zone {
+            min-height: 3rem;
+            border: 2px dashed var(--border);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: 0.5rem;
+            transition: all var(--fast) var(--ease);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--muted);
+        }
+
+        .drop-zone.drag-over {
+            border-color: var(--accent);
+            background: rgba(34, 211, 238, 0.1);
+        }
+
+        .matching-pairs {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .pairs-column {
+            background: var(--bg);
+            border-radius: 0.5rem;
+            padding: 1rem;
+        }
+
+        .pairs-column h4 {
+            text-align: center;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .sorting-area {
+            background: var(--bg);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        .game-score {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: var(--bg);
+            border-radius: 0.5rem;
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .memory-card {
+            aspect-ratio: 1;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all var(--fast) var(--ease);
+            font-size: 1.125rem;
+            font-weight: 500;
+        }
+
+        .memory-card:hover {
+            border-color: var(--accent);
+        }
+
+        .memory-card.flipped {
+            background: var(--accent);
+            color: white;
+        }
+
+        .memory-card.matched {
+            background: var(--good);
+            color: white;
+            cursor: default;
+        }
+
+        .lightning-question {
+            text-align: center;
+            font-size: 1.5rem;
+            margin: 2rem 0;
+            padding: 2rem;
+            background: var(--bg);
+            border-radius: 0.5rem;
+        }
+
+        .lightning-timer {
+            font-size: 2rem;
+            color: var(--warn);
+            font-weight: bold;
+        }
+
+        .lightning-input {
+            width: 100%;
+            padding: 1rem;
+            font-size: 1.125rem;
+            background: var(--panel);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        /* Session Builder Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: none;
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 600px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            color: var(--text);
+        }
+
+        .close-btn {
+            background: transparent;
+            border: none;
+            color: var(--muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: color var(--fast) var(--ease);
+        }
+
+        .close-btn:hover {
+            color: var(--text);
+        }
+
+        /* Session Builder Styles */
+        .session-builder {
+            max-width: 800px;
+            width: 95%;
+        }
+
+        .session-filters {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .filter-group {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .filter-group h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filter-option input[type="checkbox"] {
+            margin: 0;
+        }
+
+        .filter-option label {
+            font-size: 0.85rem;
+            color: var(--muted);
+            cursor: pointer;
+        }
+
+        .session-content {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 2rem;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .session-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            margin: 0.25rem 0;
+            background: var(--panel);
+            border-radius: 6px;
+            border: 1px solid var(--border);
+        }
+
+        .session-item-info {
+            flex: 1;
+        }
+
+        .session-item-title {
+            font-weight: 500;
+            color: var(--text);
+            margin-bottom: 0.25rem;
+        }
+
+        .session-item-meta {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .session-item-remove {
+            background: var(--bad);
+            color: white;
+            border: none;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        .session-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: flex-end;
+            margin-top: 1rem;
+        }
+
+        .session-input {
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--bg);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text);
+            margin-bottom: 1rem;
+        }
+
+        .session-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px var(--accent-bg);
+        }
+
+        .saved-sessions {
+            background: var(--bg);
+            border-radius: 8px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .saved-session {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem;
+            margin: 0.5rem 0;
+            background: var(--panel);
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            cursor: pointer;
+            transition: all var(--fast);
+        }
+
+        .saved-session:hover {
+            border-color: var(--accent);
+            background: var(--accent-bg);
+        }
+
+        .saved-session-info h4 {
+            margin: 0 0 0.25rem 0;
+            color: var(--text);
+        }
+
+        .saved-session-meta {
+            font-size: 0.8rem;
+            color: var(--muted);
+        }
+
+        .saved-session-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .saved-session-actions button {
+            padding: 0.25rem 0.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.8rem;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .app-container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: static;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+
+            .header {
+                padding: 1rem;
+            }
+
+            .header-center {
+                display: none;
+            }
+
+            .main-content {
+                padding: 1rem;
+            }
+
+            .class-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Focus styles for accessibility */
+        *:focus {
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Loading and error states */
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: var(--muted);
+        }
+
+        .error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--bad);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            color: var(--bad);
+            margin: 1rem 0;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            padding: 1rem;
+            z-index: 1001;
+            transform: translateX(100%);
+            transition: transform var(--norm) var(--ease);
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast.success {
+            border-color: var(--good);
+            color: var(--good);
+        }
+
+        .toast.error {
+            border-color: var(--bad);
+            color: var(--bad);
+        }
+
+        .toast.warning {
+            border-color: var(--warn);
+            color: var(--warn);
+        }
+    </style>
+</head>
+<body>
+    <!-- Global Header -->
+    <header class="header" role="banner">
+        <div class="header-left">
+            <a href="#" class="logo" onclick="showHomepage()" tabindex="0" role="button" aria-label="Return to Study Hub homepage">Study Hub</a>
+            <button class="home-btn" onclick="showHomepage()" title="Go to homepage (H)" aria-label="Go to homepage" accesskey="h">Home</button>
+        </div>
+        <div class="header-center">
+            <button class="mode-btn" onclick="openSessionBuilder('flashcards')" aria-label="Start flashcard study session">Flashcards</button>
+            <button class="mode-btn" onclick="openSessionBuilder('quiz')" aria-label="Start quiz session">Quizzes</button>
+            <button class="mode-btn" onclick="openSessionBuilder('games')" aria-label="Start games session">Games</button>
+        </div>
+        <div class="header-right">
+            <button class="session-btn" onclick="openSessionBuilder()" aria-label="Build custom study session">Build Session</button>
+        </div>
+    </header>
+
+    <!-- Main App Container -->
+    <div class="app-container">
+        <!-- Sidebar -->
+        <nav class="sidebar" role="navigation" aria-label="Classes navigation">
+            <h3 id="classes-heading">Classes</h3>
+            <div id="sidebar-classes" role="list" aria-labelledby="classes-heading">
+                <!-- Classes will be populated here -->
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content" role="main" aria-label="Main content area">
+            <!-- Homepage: Class Grid -->
+            <div id="homepage" class="homepage">
+                <h1>Study Hub</h1>
+                <p class="subtitle">Your local-first study companion</p>
+                <div id="class-grid" class="class-grid" role="grid" aria-label="Available classes">
+                    <!-- Class cards will be populated here -->
+                </div>
+            </div>
+
+            <!-- Class Homepage -->
+            <div id="class-homepage" class="class-homepage">
+                <div class="class-header">
+                    <a href="#" class="back-link" onclick="showHomepage()" tabindex="0" aria-label="Return to homepage">← Back to Home</a>
+                    <h1 class="class-title" id="class-title">Class Name</h1>
+                </div>
+
+                <section class="study-materials-section" aria-labelledby="study-materials-heading">
+                    <h2 class="section-title" id="study-materials-heading">Study Materials</h2>
+                    <div id="pdf-list" class="pdf-list">
+                        <!-- PDFs will be populated here -->
+                    </div>
+                </section>
+
+                <section class="study-topics-section">
+                    <h2 class="section-title">Study Topics</h2>
+                    <div id="topics-grid" class="topics-grid">
+                        <!-- Topics will be populated here -->
+                    </div>
+                </section>
+            </div>
+
+            <!-- Topic View -->
+            <div id="topic-view" class="topic-view">
+                <div class="topic-header">
+                    <a href="#" class="back-link" id="topic-back-link">← Back to Class</a>
+                    <h1 class="topic-title" id="topic-title">Topic Name</h1>
+                </div>
+
+                <nav class="topic-nav">
+                    <button class="tab-btn active" onclick="showTab('notes')">Notes</button>
+                    <button class="tab-btn" onclick="showTab('flashcards')">Flashcards</button>
+                    <button class="tab-btn" onclick="showTab('quiz')">Quiz</button>
+                    <button class="tab-btn" onclick="showTab('games')">Games</button>
+                    <button class="tab-btn" onclick="showTab('settings')">⚙️ Settings</button>
+                </nav>
+
+                <div id="notes-tab" class="tab-content active">
+                    <div id="notes-content"></div>
+                    <div id="sources-content"></div>
+                </div>
+
+                <div id="flashcards-tab" class="tab-content">
+                    <div class="flashcard-container">
+                        <div id="flashcard" class="flashcard">
+                            <div class="flashcard-content" id="flashcard-content">
+                                Click to start flashcards
+                            </div>
+                        </div>
+                        <div class="flashcard-controls">
+                            <button class="control-btn" onclick="previousCard()">← Previous</button>
+                            <button class="control-btn" onclick="flipCard()">Flip (Space)</button>
+                            <button class="control-btn" onclick="nextCard()">Next →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="quiz-tab" class="tab-content">
+                    <div class="quiz-container" id="quiz-container">
+                        <!-- Quiz content will be populated here -->
+                    </div>
+                </div>
+
+                <div id="games-tab" class="tab-content">
+                    <div class="game-container" id="game-container">
+                        <!-- Game content will be populated here -->
+                    </div>
+                </div>
+
+                <div id="settings-tab" class="tab-content">
+                    <div class="settings-container">
+                        <div class="settings-layout">
+                            <div class="settings-sidebar">
+                                <div class="settings-nav">
+                                    <button class="settings-nav-btn active" onclick="showSettingsSection('flashcards')">
+                                        📚 Flashcards
+                                    </button>
+                                    <button class="settings-nav-btn" onclick="showSettingsSection('quiz')">
+                                        📝 Quiz Questions
+                                    </button>
+                                    <button class="settings-nav-btn" onclick="showSettingsSection('games')">
+                                        🎮 Games
+                                    </button>
+                                    <button class="settings-nav-btn" onclick="showSettingsSection('notes')">
+                                        📄 Notes & Sources
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="settings-content" id="settings-content">
+                                <!-- Settings content will be populated here -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Session Builder Modal -->
+    <div id="session-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2 class="modal-title">Build Study Session</h2>
+                <button class="close-btn" onclick="closeSessionBuilder()">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div id="session-builder-content">
+                    <!-- Session builder content will be populated here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast notifications -->
+    <div id="toast" class="toast"></div>
+
+    <script>
+        // Global state
+        let studyData = {};
+        let currentClass = null;
+        let currentTopic = null;
+        let currentTab = 'notes';
+        let currentFlashcard = 0;
+        let flashcardFlipped = false;
+        let currentQuiz = [];
+        let currentQuizIndex = 0;
+        let quizAnswers = [];
+        let sessionSelection = {};
+        let spacedRepetitionData = {};
+        let userProgress = {};
+        let savedSessions = {};
+
+        // Initialize app
+        document.addEventListener('DOMContentLoaded', function() {
+            loadUserData();
+            loadStudyData();
+            setupKeyboardShortcuts();
+            initializeAccessibility();
+        });
+
+        // Accessibility initialization
+        function initializeAccessibility() {
+            // Add skip to main content link
+            addSkipToMain();
+            
+            // Set up focus management
+            setupFocusManagement();
+            
+            // Add live regions for dynamic content
+            addLiveRegions();
+            
+            // Initialize ARIA attributes
+            setupAriaAttributes();
+        }
+
+        function addSkipToMain() {
+            const skipLink = document.createElement('a');
+            skipLink.href = '#main-content';
+            skipLink.textContent = 'Skip to main content';
+            skipLink.className = 'skip-link';
+            skipLink.style.cssText = `
+                position: absolute;
+                top: -40px;
+                left: 6px;
+                background: var(--accent);
+                color: white;
+                padding: 8px;
+                text-decoration: none;
+                border-radius: 4px;
+                z-index: 1001;
+                transition: top 0.3s;
+            `;
+            
+            skipLink.addEventListener('focus', function() {
+                this.style.top = '6px';
+            });
+            
+            skipLink.addEventListener('blur', function() {
+                this.style.top = '-40px';
+            });
+            
+            document.body.insertBefore(skipLink, document.body.firstChild);
+        }
+
+        function setupFocusManagement() {
+            // Update main content to have proper ID
+            const mainContent = document.querySelector('.main-content');
+            if (mainContent) {
+                mainContent.id = 'main-content';
+                mainContent.setAttribute('tabindex', '-1');
+            }
+        }
+
+        function addLiveRegions() {
+            // Add aria-live region for announcements
+            const liveRegion = document.createElement('div');
+            liveRegion.id = 'live-announcements';
+            liveRegion.setAttribute('aria-live', 'polite');
+            liveRegion.setAttribute('aria-atomic', 'true');
+            liveRegion.style.cssText = `
+                position: absolute;
+                left: -10000px;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+            `;
+            document.body.appendChild(liveRegion);
+        }
+
+        function setupAriaAttributes() {
+            // Add role and aria attributes to existing elements
+            setTimeout(() => {
+                const classGrid = document.getElementById('class-grid');
+                if (classGrid) {
+                    classGrid.setAttribute('role', 'grid');
+                    classGrid.setAttribute('aria-label', 'Available study classes');
+                }
+                
+                const sidebar = document.querySelector('.sidebar');
+                if (sidebar) {
+                    sidebar.setAttribute('aria-label', 'Study classes navigation');
+                }
+            }, 100);
+        }
+
+        function announceToScreenReader(message) {
+            const liveRegion = document.getElementById('live-announcements');
+            if (liveRegion) {
+                liveRegion.textContent = message;
+                setTimeout(() => {
+                    liveRegion.textContent = '';
+                }, 1000);
+            }
+        }
+
+        function focusElement(element) {
+            if (element && typeof element.focus === 'function') {
+                element.focus();
+                // Scroll into view if needed
+                element.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            }
+        }
+
+        // Data persistence functions
+        function loadUserData() {
+            try {
+                spacedRepetitionData = JSON.parse(localStorage.getItem('studyhub-spaced-repetition') || '{}');
+                userProgress = JSON.parse(localStorage.getItem('studyhub-progress') || '{}');
+                savedSessions = JSON.parse(localStorage.getItem('studyhub-saved-sessions') || '{}');
+            } catch (error) {
+                console.warn('Failed to load user data:', error);
+                spacedRepetitionData = {};
+                userProgress = {};
+                savedSessions = {};
+            }
+        }
+
+        function saveUserData() {
+            try {
+                localStorage.setItem('studyhub-spaced-repetition', JSON.stringify(spacedRepetitionData));
+                localStorage.setItem('studyhub-progress', JSON.stringify(userProgress));
+                localStorage.setItem('studyhub-saved-sessions', JSON.stringify(savedSessions));
+            } catch (error) {
+                console.warn('Failed to save user data:', error);
+                showToast('Failed to save progress', 'error');
+            }
+        }
+
+        // Spaced repetition algorithm (SM-2)
+        function getCardKey(classKey, topicKey, cardIndex) {
+            return `${classKey}__${topicKey}__${cardIndex}`;
+        }
+
+        function initializeCard(cardKey) {
+            if (!spacedRepetitionData[cardKey]) {
+                spacedRepetitionData[cardKey] = {
+                    ease: 2.5,
+                    interval: 1,
+                    repetitions: 0,
+                    due: new Date().getTime(),
+                    lastReviewed: null
+                };
+            }
+            return spacedRepetitionData[cardKey];
+        }
+
+        function updateSpacedRepetition(cardKey, quality) {
+            const card = initializeCard(cardKey);
+            const now = new Date().getTime();
+            
+            card.lastReviewed = now;
+            card.repetitions++;
+
+            if (quality >= 3) {
+                if (card.repetitions === 1) {
+                    card.interval = 1;
+                } else if (card.repetitions === 2) {
+                    card.interval = 6;
+                } else {
+                    card.interval = Math.round(card.interval * card.ease);
+                }
+                card.due = now + (card.interval * 24 * 60 * 60 * 1000);
+            } else {
+                card.repetitions = 0;
+                card.interval = 1;
+                card.due = now;
+            }
+
+            card.ease = Math.max(1.3, card.ease + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02)));
+            
+            saveUserData();
+            return card;
+        }
+
+        function getDueCards(classKey, topicKey, flashcards) {
+            const now = new Date().getTime();
+            const dueCards = [];
+            
+            flashcards.forEach((card, index) => {
+                const cardKey = getCardKey(classKey, topicKey, index);
+                const srData = spacedRepetitionData[cardKey];
+                
+                if (!srData || srData.due <= now) {
+                    dueCards.push(index);
+                }
+            });
+            
+            return dueCards;
+        }
+
+        // Load study data from API
+        async function loadStudyData() {
+            try {
+                const response = await fetch('/api/study-materials');
+                studyData = await response.json();
+                renderSidebar();
+                renderHomepage();
+            } catch (error) {
+                console.error('Failed to load study data:', error);
+                showToast('Failed to load study materials', 'error');
+            }
+        }
+
+        // Render sidebar with classes
+        function renderSidebar() {
+            const container = document.getElementById('sidebar-classes');
+            container.innerHTML = '';
+
+            Object.keys(studyData).forEach(classKey => {
+                const classData = studyData[classKey];
+                const classItem = document.createElement('div');
+                classItem.className = 'class-item';
+
+                const className = document.createElement('a');
+                className.className = 'class-name';
+                className.href = '#';
+                className.textContent = classData.title;
+                className.onclick = (e) => {
+                    e.preventDefault();
+                    showClassHomepage(classKey);
+                };
+
+                const topicsDropdown = document.createElement('div');
+                topicsDropdown.className = 'topics-dropdown';
+
+                Object.keys(classData.topics).forEach(topicKey => {
+                    const topic = classData.topics[topicKey];
+                    const topicChip = document.createElement('span');
+                    topicChip.className = 'topic-chip';
+                    topicChip.textContent = topic.title;
+                    topicChip.onclick = () => showTopicView(classKey, topicKey);
+                    topicsDropdown.appendChild(topicChip);
+                });
+
+                classItem.appendChild(className);
+                classItem.appendChild(topicsDropdown);
+                container.appendChild(classItem);
+            });
+        }
+
+        // Render homepage with class grid
+        function renderHomepage() {
+            const container = document.getElementById('class-grid');
+            container.innerHTML = '';
+
+            Object.keys(studyData).forEach(classKey => {
+                const classData = studyData[classKey];
+                const classCard = document.createElement('div');
+                classCard.className = 'class-card';
+                classCard.onclick = () => showClassHomepage(classKey);
+
+                const title = document.createElement('h2');
+                title.textContent = classData.title;
+
+                const stats = document.createElement('div');
+                stats.className = 'class-stats';
+
+                const topicCount = Object.keys(classData.topics).length;
+                const flashcardCount = Object.values(classData.topics)
+                    .reduce((sum, topic) => sum + (topic.flashcards?.length || 0), 0);
+                const quizCount = Object.values(classData.topics)
+                    .reduce((sum, topic) => sum + (topic.quiz?.length || 0), 0);
+
+                stats.innerHTML = `
+                    <div class="stat">📚 ${topicCount} topics</div>
+                    <div class="stat">🗂️ ${flashcardCount} cards</div>
+                    <div class="stat">❓ ${quizCount} questions</div>
+                `;
+
+                classCard.appendChild(title);
+                classCard.appendChild(stats);
+                container.appendChild(classCard);
+            });
+        }
+
+        // Show homepage
+        function showHomepage() {
+            hideAllViews();
+            document.getElementById('homepage').style.display = 'block';
+            currentClass = null;
+            currentTopic = null;
+            
+            // Accessibility enhancements
+            document.title = 'Study Hub - Homepage';
+            const mainContent = document.getElementById('main-content');
+            if (mainContent) {
+                mainContent.focus();
+            }
+            announceToScreenReader('Viewing Study Hub homepage');
+        }
+
+        // Show class homepage
+        function showClassHomepage(classKey) {
+            hideAllViews();
+            currentClass = classKey;
+            currentTopic = null;
+
+            const classData = studyData[classKey];
+            const className = classData.title;
+            document.getElementById('class-title').textContent = className;
+            document.getElementById('class-homepage').style.display = 'block';
+
+            // Accessibility enhancements
+            document.title = `Study Hub - ${className}`;
+            const classTitle = document.getElementById('class-title');
+            if (classTitle) {
+                classTitle.focus();
+            }
+            announceToScreenReader(`Viewing ${className} class`);
+
+            renderPDFList(classKey);
+            renderTopicsGrid(classKey);
+        }
+
+        // Show topic view
+        function showTopicView(classKey, topicKey) {
+            hideAllViews();
+            currentClass = classKey;
+            currentTopic = topicKey;
+
+            const classData = studyData[classKey];
+            const topicData = classData.topics[topicKey];
+
+            document.getElementById('topic-title').textContent = topicData.title;
+            document.getElementById('topic-back-link').onclick = () => showClassHomepage(classKey);
+            document.getElementById('topic-view').style.display = 'block';
+
+            showTab('notes');
+        }
+
+        // Hide all main views
+        function hideAllViews() {
+            document.getElementById('homepage').style.display = 'none';
+            document.getElementById('class-homepage').style.display = 'none';
+            document.getElementById('topic-view').style.display = 'none';
+        }
+
+        // Show tab in topic view
+        function showTab(tabName) {
+            // Update tab buttons
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[onclick="showTab('${tabName}')"]`).classList.add('active');
+
+            // Update tab content
+            document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+            document.getElementById(`${tabName}-tab`).classList.add('active');
+
+            currentTab = tabName;
+
+            // Load content based on tab
+            if (currentTopic) {
+                const topicData = studyData[currentClass].topics[currentTopic];
+                switch (tabName) {
+                    case 'notes':
+                        renderNotes(topicData);
+                        break;
+                    case 'flashcards':
+                        renderFlashcards(topicData);
+                        break;
+                    case 'quiz':
+                        renderQuiz(topicData);
+                        break;
+                    case 'games':
+                        renderGames(topicData);
+                        break;
+                    case 'settings':
+                        renderSettings(topicData);
+                        break;
+                }
+            }
+        }
+
+        // Render PDF list for class homepage
+        async function renderPDFList(classKey) {
+            const container = document.getElementById('pdf-list');
+            container.innerHTML = '<div class="loading">Loading PDFs...</div>';
+
+            try {
+                const response = await fetch('/api/study-materials/files');
+                const filesData = await response.json();
+                const pdfs = filesData[classKey] || [];
+
+                container.innerHTML = '';
+
+                if (pdfs.length === 0) {
+                    container.innerHTML = '<p class="muted">No PDFs found in Study Materials folder.</p>';
+                    return;
+                }
+
+                pdfs.forEach((filename, index) => {
+                    const pdfCard = document.createElement('div');
+                    pdfCard.className = 'pdf-card';
+                    const pdfId = `pdf-${classKey}-${index}`;
+
+                    const pdfUrl = `/classes/${encodeURIComponent(classKey)}/Study Materials/${encodeURIComponent(filename)}`;
+
+                    pdfCard.innerHTML = `
+                        <div class="pdf-header collapsible-header" onclick="togglePDF('${pdfId}')" role="button" tabindex="0" aria-expanded="false" aria-controls="${pdfId}-content">
+                            <div class="pdf-name">
+                                <span class="pdf-toggle-icon">▶</span>
+                                ${filename}
+                            </div>
+                            <div class="pdf-actions" onclick="event.stopPropagation()">
+                                <button class="pdf-btn" onclick="window.open('${pdfUrl}', '_blank')" aria-label="Open ${filename} in new tab">
+                                    📖 Open PDF
+                                </button>
+                            </div>
+                        </div>
+                        <div id="${pdfId}-content" class="pdf-content collapsed">
+                            <object 
+                                class="pdf-embed" 
+                                data="${pdfUrl}" 
+                                type="application/pdf"
+                                width="100%" 
+                                height="480"
+                                aria-label="PDF viewer for ${filename}">
+                                <p>PDF cannot be displayed. <a href="${pdfUrl}" target="_blank">Open in new tab</a></p>
+                            </object>
+                        </div>
+                    `;
+
+                    container.appendChild(pdfCard);
+                });
+            } catch (error) {
+                console.error('Failed to load PDFs:', error);
+                container.innerHTML = '<div class="error">Failed to load PDFs</div>';
+            }
+        }
+
+        function togglePDF(pdfId) {
+            const content = document.getElementById(`${pdfId}-content`);
+            const header = content.previousElementSibling;
+            const icon = header.querySelector('.pdf-toggle-icon');
+            
+            if (content.classList.contains('collapsed')) {
+                content.classList.remove('collapsed');
+                content.classList.add('expanded');
+                icon.textContent = '▼';
+                header.setAttribute('aria-expanded', 'true');
+                announceToScreenReader('PDF expanded');
+            } else {
+                content.classList.remove('expanded');
+                content.classList.add('collapsed');
+                icon.textContent = '▶';
+                header.setAttribute('aria-expanded', 'false');
+                announceToScreenReader('PDF collapsed');
+            }
+        }
+
+        function expandSpecificPDF(classKey, filename) {
+            // Function to expand a specific PDF - used by source links
+            showClassHomepage(classKey);
+            
+            setTimeout(() => {
+                const pdfHeaders = document.querySelectorAll('.pdf-header');
+                pdfHeaders.forEach(header => {
+                    const pdfName = header.querySelector('.pdf-name').textContent.trim();
+                    if (pdfName.includes(filename)) {
+                        const pdfId = header.getAttribute('aria-controls').replace('-content', '');
+                        togglePDF(pdfId);
+                        header.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                });
+            }, 300);
+        }
+
+        // Render topics grid for class homepage
+        function renderTopicsGrid(classKey) {
+            const container = document.getElementById('topics-grid');
+            container.innerHTML = '';
+
+            const classData = studyData[classKey];
+            Object.keys(classData.topics).forEach(topicKey => {
+                const topicData = classData.topics[topicKey];
+                const topicCard = document.createElement('div');
+                topicCard.className = 'topic-card';
+                topicCard.onclick = () => showTopicView(classKey, topicKey);
+
+                const title = document.createElement('div');
+                title.className = 'topic-title';
+                title.textContent = topicData.title;
+
+                const stats = document.createElement('div');
+                stats.className = 'topic-stats';
+                stats.innerHTML = `
+                    <span>📝 ${topicData.notes?.length || 0}</span>
+                    <span>🗂️ ${topicData.flashcards?.length || 0}</span>
+                    <span>❓ ${topicData.quiz?.length || 0}</span>
+                    <span>🎮 ${topicData.games?.length || 0}</span>
+                `;
+
+                topicCard.appendChild(title);
+                topicCard.appendChild(stats);
+                container.appendChild(topicCard);
+            });
+        }
+
+        // Render notes tab
+        function renderNotes(topicData) {
+            const notesContainer = document.getElementById('notes-content');
+            const sourcesContainer = document.getElementById('sources-content');
+
+            // Render notes
+            if (topicData.notes && topicData.notes.length > 0) {
+                notesContainer.innerHTML = topicData.notes
+                    .map(note => `<p style="margin-bottom: 1rem; line-height: 1.6;">${note}</p>`)
+                    .join('');
+            } else {
+                notesContainer.innerHTML = '<p class="muted">No notes available for this topic.</p>';
+            }
+
+            // Render sources
+            if (topicData.sources && topicData.sources.length > 0) {
+                sourcesContainer.innerHTML = `
+                    <h3 style="margin: 2rem 0 1rem; color: var(--muted); font-size: 1rem;">Sources</h3>
+                    <ul style="color: var(--muted); font-size: 0.875rem;">
+                        ${topicData.sources.map(source => {
+                            // Check if source is a PDF filename that exists in the class
+                            const pdfMatch = source.match(/(.+\.pdf)/i);
+                            if (pdfMatch) {
+                                const filename = pdfMatch[1];
+                                return `<li><a href="#" class="source-link" onclick="expandSpecificPDF('${currentClass}', '${filename}')" title="Click to view ${filename}">${source}</a></li>`;
+                            } else {
+                                return `<li>${source}</li>`;
+                            }
+                        }).join('')}
+                    </ul>
+                `;
+            } else {
+                sourcesContainer.innerHTML = '';
+            }
+        }
+
+        // Render flashcards tab
+        function renderFlashcards(topicData) {
+            if (!topicData.flashcards || topicData.flashcards.length === 0) {
+                document.getElementById('flashcard-content').textContent = 'No flashcards available for this topic.';
+                return;
+            }
+
+            const dueCards = getDueCards(currentClass, currentTopic, topicData.flashcards);
+            const reviewCards = dueCards.length > 0 ? dueCards : Array.from({length: topicData.flashcards.length}, (_, i) => i);
+            
+            currentFlashcard = 0;
+            flashcardFlipped = false;
+            
+            // Update flashcard controls to show review info
+            const controlsContainer = document.querySelector('.flashcard-controls').parentElement;
+            const reviewInfo = document.createElement('div');
+            reviewInfo.style.cssText = 'text-align: center; margin-bottom: 1rem; color: var(--muted); font-size: 0.875rem;';
+            reviewInfo.innerHTML = dueCards.length > 0 
+                ? `<span style="color: var(--warn);">📅 ${dueCards.length} cards due for review</span>`
+                : `<span style="color: var(--good);">✅ All cards reviewed! Showing all cards.</span>`;
+            
+            const existingInfo = controlsContainer.querySelector('.review-info');
+            if (existingInfo) existingInfo.remove();
+            reviewInfo.className = 'review-info';
+            controlsContainer.insertBefore(reviewInfo, controlsContainer.firstChild);
+            
+            topicData.reviewCards = reviewCards;
+            showCurrentFlashcard(topicData);
+        }
+
+        function showCurrentFlashcard(topicData) {
+            const flashcards = topicData.flashcards;
+            const reviewCards = topicData.reviewCards || Array.from({length: flashcards.length}, (_, i) => i);
+            
+            if (!flashcards || flashcards.length === 0) return;
+
+            const actualIndex = reviewCards[currentFlashcard];
+            const card = flashcards[actualIndex];
+            const content = document.getElementById('flashcard-content');
+            
+            if (flashcardFlipped) {
+                content.textContent = card.back;
+            } else {
+                content.textContent = card.front;
+            }
+
+            // Update progress indicator with spaced repetition info
+            const cardKey = getCardKey(currentClass, currentTopic, actualIndex);
+            const srData = spacedRepetitionData[cardKey];
+            const progress = document.createElement('div');
+            progress.style.cssText = 'position: absolute; top: 1rem; right: 1rem; font-size: 0.875rem; color: var(--muted); text-align: right;';
+            
+            let statusText = `${currentFlashcard + 1} / ${reviewCards.length}`;
+            if (srData) {
+                const dueDate = new Date(srData.due);
+                const isOverdue = srData.due <= new Date().getTime();
+                statusText += `<br><span style="color: ${isOverdue ? 'var(--warn)' : 'var(--good)'};">
+                    ${isOverdue ? '⏰ Due' : '📅 Due ' + dueDate.toLocaleDateString()}
+                </span>`;
+                statusText += `<br><span style="color: var(--muted);">Ease: ${srData.ease.toFixed(1)}</span>`;
+            }
+            
+            progress.innerHTML = statusText;
+            
+            const flashcardEl = document.getElementById('flashcard');
+            const existingProgress = flashcardEl.querySelector('.progress');
+            if (existingProgress) existingProgress.remove();
+            progress.className = 'progress';
+            flashcardEl.appendChild(progress);
+        }
+
+        function flipCard() {
+            flashcardFlipped = !flashcardFlipped;
+            const topicData = studyData[currentClass].topics[currentTopic];
+            showCurrentFlashcard(topicData);
+        }
+
+        function nextCard() {
+            const topicData = studyData[currentClass].topics[currentTopic];
+            if (!topicData.flashcards) return;
+            
+            const reviewCards = topicData.reviewCards || Array.from({length: topicData.flashcards.length}, (_, i) => i);
+            currentFlashcard = (currentFlashcard + 1) % reviewCards.length;
+            flashcardFlipped = false;
+            showCurrentFlashcard(topicData);
+        }
+
+        function previousCard() {
+            const topicData = studyData[currentClass].topics[currentTopic];
+            if (!topicData.flashcards) return;
+            
+            const reviewCards = topicData.reviewCards || Array.from({length: topicData.flashcards.length}, (_, i) => i);
+            currentFlashcard = currentFlashcard === 0 ? reviewCards.length - 1 : currentFlashcard - 1;
+            flashcardFlipped = false;
+            showCurrentFlashcard(topicData);
+        }
+
+        function rateCard(quality) {
+            const topicData = studyData[currentClass].topics[currentTopic];
+            const reviewCards = topicData.reviewCards || Array.from({length: topicData.flashcards.length}, (_, i) => i);
+            const actualIndex = reviewCards[currentFlashcard];
+            const cardKey = getCardKey(currentClass, currentTopic, actualIndex);
+            
+            const card = updateSpacedRepetition(cardKey, quality);
+            
+            const qualityText = quality === 1 ? 'Again' : quality === 3 ? 'Hard' : 'Good';
+            const nextDue = new Date(card.due).toLocaleDateString();
+            showToast(`${qualityText} - Next review: ${nextDue}`, 'success');
+            
+            // Update progress tracking
+            const progressKey = `${currentClass}__${currentTopic}`;
+            if (!userProgress[progressKey]) {
+                userProgress[progressKey] = { cardsReviewed: 0, lastReview: null };
+            }
+            userProgress[progressKey].cardsReviewed++;
+            userProgress[progressKey].lastReview = new Date().getTime();
+            
+            saveUserData();
+            nextCard();
+        }
+
+        // Render quiz tab
+        function renderQuiz(topicData) {
+            const container = document.getElementById('quiz-container');
+            
+            if (!topicData.quiz || topicData.quiz.length === 0) {
+                container.innerHTML = '<p class="muted">No quiz questions available for this topic.</p>';
+                return;
+            }
+
+            currentQuiz = [...topicData.quiz]; // Create a copy for shuffling if needed
+            currentQuizIndex = 0;
+            quizAnswers = [];
+            
+            // Add quiz controls
+            container.innerHTML = `
+                <div class="quiz-controls" style="margin-bottom: 2rem; display: flex; gap: 1rem; justify-content: center;">
+                    <button class="control-btn" onclick="shuffleQuiz()">🔀 Shuffle</button>
+                    <button class="control-btn" onclick="resetQuiz()">🔄 Reset</button>
+                </div>
+                <div id="quiz-content"></div>
+            `;
+            
+            showCurrentQuestion();
+        }
+
+        function shuffleQuiz() {
+            for (let i = currentQuiz.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [currentQuiz[i], currentQuiz[j]] = [currentQuiz[j], currentQuiz[i]];
+            }
+            currentQuizIndex = 0;
+            quizAnswers = [];
+            showCurrentQuestion();
+            showToast('Quiz shuffled!', 'success');
+        }
+
+        function resetQuiz() {
+            const topicData = studyData[currentClass].topics[currentTopic];
+            renderQuiz(topicData);
+            showToast('Quiz reset!', 'success');
+        }
+
+        function showCurrentQuestion() {
+            const container = document.getElementById('quiz-content');
+            const question = currentQuiz[currentQuizIndex];
+
+            // Enhanced answer checking - support multiple formats
+            const correctAnswer = getCorrectAnswer(question);
+            
+            container.innerHTML = `
+                <div class="quiz-question">
+                    <div class="question-text">${question.question}</div>
+                    <div class="quiz-options">
+                        ${question.options.map((option, index) => `
+                            <div class="quiz-option" onclick="selectAnswer(${index})" data-index="${index}">
+                                <span class="option-number">${index + 1}.</span> ${option}
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <span style="color: var(--muted); font-size: 0.875rem;">
+                                Question ${currentQuizIndex + 1} of ${currentQuiz.length}
+                            </span>
+                            ${question.difficulty ? `<span class="difficulty-badge ${question.difficulty}">${question.difficulty}</span>` : ''}
+                            ${question.tags ? `<span style="color: var(--muted); font-size: 0.75rem;">${question.tags.join(', ')}</span>` : ''}
+                        </div>
+                        <button class="control-btn" onclick="submitAnswer()" id="submit-btn" disabled>
+                            Submit Answer (Enter)
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function getCorrectAnswer(question) {
+            // Support multiple answer formats as per spec
+            if (question.answer !== undefined) return question.answer;
+            if (question.answerIndex !== undefined) return question.answerIndex;
+            if (question.correct !== undefined) return question.correct;
+            
+            // Support string matching
+            if (question.correctText || question.correctOption) {
+                const target = question.correctText || question.correctOption;
+                const index = question.options.findIndex(opt => 
+                    opt.toLowerCase().trim() === target.toLowerCase().trim()
+                );
+                return index !== -1 ? index : 0; // Fallback to 0 if not found
+            }
+            
+            console.warn('Question has invalid answer format:', question);
+            showToast('Question corrupted: using option 1 as default', 'warning');
+            return 0; // Fallback as per spec
+        }
+
+        function selectAnswer(index) {
+            // Remove previous selection
+            document.querySelectorAll('.quiz-option').forEach(opt => opt.classList.remove('selected'));
+            
+            // Mark new selection
+            document.querySelectorAll('.quiz-option')[index].classList.add('selected');
+            
+            // Enable submit button
+            document.getElementById('submit-btn').disabled = false;
+            
+            // Store answer
+            quizAnswers[currentQuizIndex] = index;
+        }
+
+        function submitAnswer() {
+            const question = currentQuiz[currentQuizIndex];
+            const userAnswer = quizAnswers[currentQuizIndex];
+            const correctAnswer = getCorrectAnswer(question);
+
+            // Show correct/incorrect
+            document.querySelectorAll('.quiz-option').forEach((opt, index) => {
+                if (index === correctAnswer) {
+                    opt.classList.add('correct');
+                } else if (index === userAnswer && index !== correctAnswer) {
+                    opt.classList.add('incorrect');
+                }
+            });
+
+            // Show explanation if available
+            if (question.explanation) {
+                const explanation = document.createElement('div');
+                explanation.style.cssText = 'margin-top: 1rem; padding: 1rem; background: rgba(34, 211, 238, 0.1); border-radius: 0.5rem; color: var(--text); border-left: 3px solid var(--accent);';
+                explanation.innerHTML = `<strong>💡 Explanation:</strong> ${question.explanation}`;
+                document.querySelector('.quiz-question').appendChild(explanation);
+            }
+
+            // Show source references if available
+            if (question.sourceRefs && question.sourceRefs.length > 0) {
+                const sources = document.createElement('div');
+                sources.style.cssText = 'margin-top: 0.5rem; padding: 0.5rem; background: rgba(148, 163, 184, 0.1); border-radius: 0.25rem; font-size: 0.75rem; color: var(--muted);';
+                sources.innerHTML = `<strong>📚 Sources:</strong> ${question.sourceRefs.join(', ')}`;
+                document.querySelector('.quiz-question').appendChild(sources);
+            }
+
+            // Track progress
+            const progressKey = `${currentClass}__${currentTopic}`;
+            if (!userProgress[progressKey]) {
+                userProgress[progressKey] = { questionsAnswered: 0, correctAnswers: 0, lastQuiz: null };
+            }
+            userProgress[progressKey].questionsAnswered++;
+            if (userAnswer === correctAnswer) {
+                userProgress[progressKey].correctAnswers++;
+            }
+            userProgress[progressKey].lastQuiz = new Date().getTime();
+            saveUserData();
+
+            // Update submit button to next
+            const submitBtn = document.getElementById('submit-btn');
+            if (currentQuizIndex < currentQuiz.length - 1) {
+                submitBtn.textContent = 'Next Question (N)';
+                submitBtn.onclick = nextQuestion;
+                submitBtn.disabled = false;
+            } else {
+                submitBtn.textContent = 'Show Results';
+                submitBtn.onclick = showQuizResults;
+                submitBtn.disabled = false;
+            }
+        }
+
+        function nextQuestion() {
+            currentQuizIndex++;
+            showCurrentQuestion();
+        }
+
+        function showQuizResults() {
+            const container = document.getElementById('quiz-container');
+            const score = quizAnswers.reduce((correct, userAnswer, index) => {
+                const question = currentQuiz[index];
+                const correctAnswer = getCorrectAnswer(question);
+                return correct + (userAnswer === correctAnswer ? 1 : 0);
+            }, 0);
+
+            const percentage = Math.round((score / currentQuiz.length) * 100);
+            const grade = percentage >= 90 ? 'A' : percentage >= 80 ? 'B' : percentage >= 70 ? 'C' : percentage >= 60 ? 'D' : 'F';
+            const gradeColor = percentage >= 70 ? 'var(--good)' : percentage >= 60 ? 'var(--warn)' : 'var(--bad)';
+
+            // Detailed breakdown
+            const breakdown = currentQuiz.map((question, index) => {
+                const userAnswer = quizAnswers[index];
+                const correctAnswer = getCorrectAnswer(question);
+                const isCorrect = userAnswer === correctAnswer;
+                
+                return {
+                    question: question.question,
+                    userAnswer: question.options[userAnswer],
+                    correctAnswer: question.options[correctAnswer],
+                    isCorrect,
+                    difficulty: question.difficulty || 'medium',
+                    tags: question.tags || []
+                };
+            });
+
+            const difficultyStats = breakdown.reduce((stats, item) => {
+                const diff = item.difficulty;
+                if (!stats[diff]) stats[diff] = { correct: 0, total: 0 };
+                stats[diff].total++;
+                if (item.isCorrect) stats[diff].correct++;
+                return stats;
+            }, {});
+
+            container.innerHTML = `
+                <div class="quiz-question">
+                    <h3 style="text-align: center; margin-bottom: 1rem; color: ${gradeColor};">Quiz Complete!</h3>
+                    
+                    <div style="text-align: center; margin: 2rem 0;">
+                        <div style="font-size: 3rem; color: ${gradeColor}; font-weight: bold;">${grade}</div>
+                        <div style="font-size: 2rem; margin: 1rem 0;">${score} / ${currentQuiz.length}</div>
+                        <div style="font-size: 1.5rem; color: ${gradeColor};">${percentage}%</div>
+                    </div>
+
+                    ${Object.keys(difficultyStats).length > 1 ? `
+                        <div style="margin: 2rem 0; padding: 1rem; background: var(--panel); border-radius: 0.5rem;">
+                            <h4 style="margin-bottom: 1rem; color: var(--text);">Performance by Difficulty</h4>
+                            ${Object.entries(difficultyStats).map(([diff, stats]) => `
+                                <div style="display: flex; justify-content: space-between; margin: 0.5rem 0;">
+                                    <span style="text-transform: capitalize;">${diff}:</span>
+                                    <span style="color: ${stats.correct === stats.total ? 'var(--good)' : 'var(--warn)'};">
+                                        ${stats.correct}/${stats.total} (${Math.round(stats.correct/stats.total*100)}%)
+                                    </span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    ` : ''}
+
+                    <details style="margin: 2rem 0;">
+                        <summary style="cursor: pointer; padding: 1rem; background: var(--panel); border-radius: 0.5rem; margin-bottom: 1rem;">
+                            📊 Detailed Review
+                        </summary>
+                        ${breakdown.map((item, index) => `
+                            <div style="margin: 1rem 0; padding: 1rem; background: ${item.isCorrect ? 'rgba(34, 197, 94, 0.1)' : 'rgba(239, 68, 68, 0.1)'}; border-radius: 0.5rem; border-left: 3px solid ${item.isCorrect ? 'var(--good)' : 'var(--bad)'};">
+                                <div style="font-weight: 500; margin-bottom: 0.5rem;">
+                                    ${index + 1}. ${item.question}
+                                </div>
+                                <div style="margin: 0.5rem 0; font-size: 0.875rem;">
+                                    <div style="color: ${item.isCorrect ? 'var(--good)' : 'var(--bad)'};">
+                                        Your answer: ${item.userAnswer} ${item.isCorrect ? '✓' : '✗'}
+                                    </div>
+                                    ${!item.isCorrect ? `<div style="color: var(--good);">Correct answer: ${item.correctAnswer}</div>` : ''}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </details>
+                    
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <button class="control-btn" onclick="renderQuiz(studyData[currentClass].topics[currentTopic])">
+                            🔄 Retake Quiz
+                        </button>
+                        <button class="control-btn" onclick="exportQuizResults()">
+                            📊 Export Results
+                        </button>
+                        <button class="control-btn" onclick="studyIncorrectAnswers()">
+                            📚 Study Incorrect
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function exportQuizResults() {
+            const results = {
+                class: currentClass,
+                topic: currentTopic,
+                timestamp: new Date().toISOString(),
+                score: quizAnswers.reduce((correct, userAnswer, index) => {
+                    const question = currentQuiz[index];
+                    const correctAnswer = getCorrectAnswer(question);
+                    return correct + (userAnswer === correctAnswer ? 1 : 0);
+                }, 0),
+                total: currentQuiz.length,
+                answers: quizAnswers
+            };
+            
+            const blob = new Blob([JSON.stringify(results, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `quiz-results-${currentClass}-${currentTopic}-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            showToast('Quiz results exported!', 'success');
+        }
+
+        function studyIncorrectAnswers() {
+            const incorrect = [];
+            quizAnswers.forEach((userAnswer, index) => {
+                const question = currentQuiz[index];
+                const correctAnswer = getCorrectAnswer(question);
+                if (userAnswer !== correctAnswer) {
+                    incorrect.push(question);
+                }
+            });
+            
+            if (incorrect.length === 0) {
+                showToast('Perfect score! No incorrect answers to study.', 'success');
+                return;
+            }
+            
+            currentQuiz = incorrect;
+            currentQuizIndex = 0;
+            quizAnswers = [];
+            showCurrentQuestion();
+            showToast(`Studying ${incorrect.length} incorrect questions`, 'info');
+        }
+
+        // Render games tab
+        function renderGames(topicData) {
+            const container = document.getElementById('game-container');
+            
+            if (!topicData.games || topicData.games.length === 0) {
+                container.innerHTML = '<p class="muted">No games available for this topic.</p>';
+                return;
+            }
+
+            // Show list of available games
+            container.innerHTML = `
+                <h3 style="margin-bottom: 1rem;">Available Games</h3>
+                <div style="display: grid; gap: 1rem;">
+                    ${topicData.games.map((game, index) => `
+                        <div class="topic-card" onclick="playGame(${index})">
+                            <div class="topic-title">
+                                ${getGameIcon(game.type)} ${game.title || toTitleCase(game.type)}
+                            </div>
+                            <div class="topic-stats">${game.description || getGameDescription(game.type)}</div>
+                        </div>
+                    `).join('')}
+                    
+                    <div class="topic-card" onclick="playLightningGame()">
+                        <div class="topic-title">⚡ Lightning Round</div>
+                        <div class="topic-stats">Quick-fire Q&A from flashcards</div>
+                    </div>
+                    
+                    <div class="topic-card" onclick="playMemoryGame()">
+                        <div class="topic-title">🧠 Memory Match</div>
+                        <div class="topic-stats">Match flashcard pairs</div>
+                    </div>
+                </div>
+            `;
+        }
+
+        function getGameIcon(type) {
+            const icons = {
+                'matching': '🔗',
+                'sorting': '📊',
+                'ordering': '🔢',
+                'memory': '🧠',
+                'lightning': '⚡'
+            };
+            return icons[type] || '🎮';
+        }
+
+        function getGameDescription(type) {
+            const descriptions = {
+                'matching': 'Connect related terms and definitions',
+                'sorting': 'Arrange items in the correct order',
+                'ordering': 'Put items in logical sequence',
+                'memory': 'Match pairs from memory',
+                'lightning': 'Quick-fire questions against the clock'
+            };
+            return descriptions[type] || 'Interactive learning game';
+        }
+
+        function toTitleCase(str) {
+            return str.replace(/\w\S*/g, (txt) => 
+                txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase()
+            );
+        }
+
+        function playGame(gameIndex) {
+            const topicData = studyData[currentClass].topics[currentTopic];
+            const game = topicData.games[gameIndex];
+
+            switch (game.type) {
+                case 'matching':
+                    renderMatchingGame(game);
+                    break;
+                case 'sorting':
+                case 'ordering':
+                    renderSortingGame(game);
+                    break;
+                default:
+                    showToast('Game type not implemented yet', 'warning');
+            }
+        }
+
+        function renderMatchingGame(game) {
+            const container = document.getElementById('game-container');
+            const shuffledPairs = [...game.pairs].sort(() => Math.random() - 0.5);
+            const leftItems = shuffledPairs.map(pair => pair[0]).sort(() => Math.random() - 0.5);
+            const rightItems = shuffledPairs.map(pair => pair[1]).sort(() => Math.random() - 0.5);
+            
+            let matches = [];
+            let score = 0;
+            let startTime = Date.now();
+
+            container.innerHTML = `
+                <div class="game-area">
+                    <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 2rem;">
+                        <h3>${game.title || 'Matching Game'}</h3>
+                        <div class="game-score">
+                            <span>Score: <span id="match-score">0</span>/${shuffledPairs.length}</span>
+                            <span style="margin-left: 1rem;">Time: <span id="match-timer">0:00</span></span>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: 1rem; color: var(--muted);">${game.description || 'Click on matching pairs to connect them'}</p>
+                    
+                    <div class="matching-pairs">
+                        <div class="pairs-column">
+                            <h4>Terms</h4>
+                            ${leftItems.map((item, index) => `
+                                <div class="game-item" data-value="${item}" onclick="selectMatchItem(this)">
+                                    ${item}
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="pairs-column">
+                            <h4>Definitions</h4>
+                            ${rightItems.map((item, index) => `
+                                <div class="game-item" data-value="${item}" onclick="selectMatchItem(this)">
+                                    ${item}
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+                    
+                    <button class="control-btn" onclick="renderGames(studyData[currentClass].topics[currentTopic])" style="margin-top: 2rem;">
+                        🔙 Back to Games
+                    </button>
+                </div>
+            `;
+
+            // Store game data for matching logic
+            container.dataset.gameData = JSON.stringify({ pairs: shuffledPairs, matches, score, startTime });
+            
+            // Start timer
+            const timer = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - startTime) / 1000);
+                const minutes = Math.floor(elapsed / 60);
+                const seconds = elapsed % 60;
+                document.getElementById('match-timer').textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+            }, 1000);
+            
+            container.dataset.timer = timer;
+        }
+
+        let selectedMatchItem = null;
+
+        function selectMatchItem(element) {
+            if (element.classList.contains('matched')) return;
+            
+            if (selectedMatchItem) {
+                if (selectedMatchItem === element) {
+                    // Deselect
+                    selectedMatchItem.classList.remove('selected');
+                    selectedMatchItem = null;
+                    return;
+                }
+                
+                // Check for match
+                const container = document.getElementById('game-container');
+                const gameData = JSON.parse(container.dataset.gameData);
+                const value1 = selectedMatchItem.dataset.value;
+                const value2 = element.dataset.value;
+                
+                const isMatch = gameData.pairs.some(pair => 
+                    (pair[0] === value1 && pair[1] === value2) || 
+                    (pair[0] === value2 && pair[1] === value1)
+                );
+                
+                if (isMatch) {
+                    // Correct match
+                    selectedMatchItem.classList.add('matched');
+                    element.classList.add('matched');
+                    selectedMatchItem.classList.remove('selected');
+                    
+                    gameData.score++;
+                    document.getElementById('match-score').textContent = gameData.score;
+                    
+                    showToast('✅ Correct match!', 'success');
+                    
+                    if (gameData.score === gameData.pairs.length) {
+                        // Game complete
+                        clearInterval(container.dataset.timer);
+                        const elapsed = Math.floor((Date.now() - gameData.startTime) / 1000);
+                        setTimeout(() => {
+                            showToast(`🎉 Game complete in ${elapsed} seconds!`, 'success');
+                        }, 500);
+                    }
+                } else {
+                    // Incorrect match
+                    selectedMatchItem.classList.remove('selected');
+                    showToast('❌ Not a match, try again', 'error');
+                }
+                
+                container.dataset.gameData = JSON.stringify(gameData);
+                selectedMatchItem = null;
+            } else {
+                // Select first item
+                document.querySelectorAll('.game-item.selected').forEach(item => 
+                    item.classList.remove('selected')
+                );
+                element.classList.add('selected');
+                selectedMatchItem = element;
+            }
+        }
+
+        function renderSortingGame(game) {
+            const container = document.getElementById('game-container');
+            const items = [...game.items].sort(() => Math.random() - 0.5); // Shuffle items
+            const correctOrder = game.correct_order || game.items;
+            let currentOrder = [...items];
+            let startTime = Date.now();
+
+            container.innerHTML = `
+                <div class="game-area">
+                    <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 2rem;">
+                        <h3>${game.title || 'Sorting Game'}</h3>
+                        <div class="game-score">
+                            Time: <span id="sort-timer">0:00</span>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: 1rem; color: var(--muted);">${game.description || 'Drag items to arrange them in the correct order'}</p>
+                    
+                    <div class="sorting-area" id="sortable-container">
+                        ${items.map((item, index) => `
+                            <div class="game-item" draggable="true" data-value="${item}" data-index="${index}">
+                                <span style="color: var(--muted); margin-right: 0.5rem;">≡</span>
+                                ${item}
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <div style="display: flex; gap: 1rem; margin-top: 2rem; justify-content: center;">
+                        <button class="control-btn" onclick="checkSortingOrder()">
+                            ✅ Check Order
+                        </button>
+                        <button class="control-btn" onclick="shuffleSortingItems()">
+                            🔀 Shuffle
+                        </button>
+                        <button class="control-btn" onclick="showSortingHint()">
+                            💡 Hint
+                        </button>
+                        <button class="control-btn" onclick="renderGames(studyData[currentClass].topics[currentTopic])">
+                            🔙 Back to Games
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            // Store game data
+            container.dataset.gameData = JSON.stringify({ correctOrder, currentOrder, startTime });
+            
+            // Start timer
+            const timer = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - startTime) / 1000);
+                const minutes = Math.floor(elapsed / 60);
+                const seconds = elapsed % 60;
+                const timerEl = document.getElementById('sort-timer');
+                if (timerEl) {
+                    timerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                }
+            }, 1000);
+            
+            container.dataset.timer = timer;
+            
+            // Add drag and drop functionality
+            setupSortingDragAndDrop();
+        }
+
+        function setupSortingDragAndDrop() {
+            const container = document.getElementById('sortable-container');
+            let draggedElement = null;
+
+            container.addEventListener('dragstart', (e) => {
+                if (e.target.classList.contains('game-item')) {
+                    draggedElement = e.target;
+                    e.target.classList.add('dragging');
+                }
+            });
+
+            container.addEventListener('dragend', (e) => {
+                if (e.target.classList.contains('game-item')) {
+                    e.target.classList.remove('dragging');
+                    draggedElement = null;
+                }
+            });
+
+            container.addEventListener('dragover', (e) => {
+                e.preventDefault();
+            });
+
+            container.addEventListener('drop', (e) => {
+                e.preventDefault();
+                
+                if (draggedElement && e.target.classList.contains('game-item') && e.target !== draggedElement) {
+                    const rect = e.target.getBoundingClientRect();
+                    const midpoint = rect.top + rect.height / 2;
+                    
+                    if (e.clientY < midpoint) {
+                        container.insertBefore(draggedElement, e.target);
+                    } else {
+                        container.insertBefore(draggedElement, e.target.nextSibling);
+                    }
+                    
+                    updateSortingOrder();
+                }
+            });
+        }
+
+        function updateSortingOrder() {
+            const container = document.getElementById('sortable-container');
+            const gameContainer = document.getElementById('game-container');
+            const gameData = JSON.parse(gameContainer.dataset.gameData);
+            
+            const items = Array.from(container.querySelectorAll('.game-item'));
+            gameData.currentOrder = items.map(item => item.dataset.value);
+            
+            gameContainer.dataset.gameData = JSON.stringify(gameData);
+        }
+
+        function checkSortingOrder() {
+            const container = document.getElementById('game-container');
+            const gameData = JSON.parse(container.dataset.gameData);
+            
+            const isCorrect = JSON.stringify(gameData.currentOrder) === JSON.stringify(gameData.correctOrder);
+            
+            if (isCorrect) {
+                clearInterval(container.dataset.timer);
+                const elapsed = Math.floor((Date.now() - gameData.startTime) / 1000);
+                showToast(`🎉 Perfect! Completed in ${elapsed} seconds`, 'success');
+                
+                // Highlight all items as correct
+                document.querySelectorAll('#sortable-container .game-item').forEach(item => {
+                    item.style.borderColor = 'var(--good)';
+                    item.style.background = 'rgba(34, 197, 94, 0.2)';
+                });
+            } else {
+                showToast('❌ Not quite right, keep trying!', 'error');
+                
+                // Show which items are in correct positions
+                const items = document.querySelectorAll('#sortable-container .game-item');
+                items.forEach((item, index) => {
+                    if (gameData.currentOrder[index] === gameData.correctOrder[index]) {
+                        item.style.borderColor = 'var(--good)';
+                        item.style.background = 'rgba(34, 197, 94, 0.1)';
+                    } else {
+                        item.style.borderColor = 'var(--warn)';
+                        item.style.background = 'rgba(245, 158, 11, 0.1)';
+                    }
+                });
+            }
+        }
+
+        function shuffleSortingItems() {
+            const container = document.getElementById('sortable-container');
+            const items = Array.from(container.querySelectorAll('.game-item'));
+            
+            // Shuffle array
+            for (let i = items.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [items[i], items[j]] = [items[j], items[i]];
+            }
+            
+            // Reorder in DOM
+            items.forEach(item => container.appendChild(item));
+            updateSortingOrder();
+            
+            // Reset styling
+            items.forEach(item => {
+                item.style.borderColor = '';
+                item.style.background = '';
+            });
+            
+            showToast('Items shuffled!', 'info');
+        }
+
+        function showSortingHint() {
+            const container = document.getElementById('game-container');
+            const gameData = JSON.parse(container.dataset.gameData);
+            
+            // Find first incorrectly placed item
+            let hintIndex = -1;
+            for (let i = 0; i < gameData.currentOrder.length; i++) {
+                if (gameData.currentOrder[i] !== gameData.correctOrder[i]) {
+                    hintIndex = i;
+                    break;
+                }
+            }
+            
+            if (hintIndex !== -1) {
+                const incorrectItem = gameData.currentOrder[hintIndex];
+                const correctItem = gameData.correctOrder[hintIndex];
+                showToast(`💡 Hint: "${incorrectItem}" should be "${correctItem}"`, 'info');
+            } else {
+                showToast('✅ Everything looks correct!', 'success');
+            }
+        }
+
+        function playMemoryGame() {
+            const topicData = studyData[currentClass].topics[currentTopic];
+            if (!topicData.flashcards || topicData.flashcards.length < 2) {
+                showToast('Need at least 2 flashcards for memory game', 'warning');
+                return;
+            }
+
+            const container = document.getElementById('game-container');
+            const cards = topicData.flashcards.slice(0, 8); // Limit to 8 pairs max
+            const gameCards = [];
+            
+            // Create pairs (front and back of each flashcard)
+            cards.forEach((card, index) => {
+                gameCards.push({ id: `${index}-front`, content: card.front, pair: `${index}-back` });
+                gameCards.push({ id: `${index}-back`, content: card.back, pair: `${index}-front` });
+            });
+            
+            // Shuffle cards
+            gameCards.sort(() => Math.random() - 0.5);
+            
+            let flippedCards = [];
+            let matchedPairs = 0;
+            let moves = 0;
+            let startTime = Date.now();
+
+            container.innerHTML = `
+                <div class="game-area">
+                    <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 2rem;">
+                        <h3>🧠 Memory Match</h3>
+                        <div class="game-score">
+                            <span>Moves: <span id="memory-moves">0</span></span>
+                            <span style="margin-left: 1rem;">Time: <span id="memory-timer">0:00</span></span>
+                        </div>
+                    </div>
+                    <p style="margin-bottom: 1rem; color: var(--muted);">Match flashcard fronts with their backs</p>
+                    
+                    <div class="memory-grid" style="grid-template-columns: repeat(${Math.min(4, Math.ceil(Math.sqrt(gameCards.length)))}, 1fr);">
+                        ${gameCards.map((card, index) => `
+                            <div class="memory-card" data-id="${card.id}" data-pair="${card.pair}" onclick="flipMemoryCard(this)">
+                                ?
+                            </div>
+                        `).join('')}
+                    </div>
+                    
+                    <button class="control-btn" onclick="renderGames(studyData[currentClass].topics[currentTopic])" style="margin-top: 2rem;">
+                        🔙 Back to Games
+                    </button>
+                </div>
+            `;
+
+            // Store game data
+            container.dataset.gameData = JSON.stringify({ 
+                gameCards, flippedCards, matchedPairs, moves, startTime,
+                totalPairs: cards.length 
+            });
+            
+            // Start timer
+            const timer = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - startTime) / 1000);
+                const minutes = Math.floor(elapsed / 60);
+                const seconds = elapsed % 60;
+                const timerEl = document.getElementById('memory-timer');
+                if (timerEl) {
+                    timerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                }
+            }, 1000);
+            
+            container.dataset.timer = timer;
+        }
+
+        function flipMemoryCard(cardElement) {
+            if (cardElement.classList.contains('flipped') || cardElement.classList.contains('matched')) {
+                return;
+            }
+
+            const container = document.getElementById('game-container');
+            const gameData = JSON.parse(container.dataset.gameData);
+            const cardId = cardElement.dataset.id;
+            const cardData = gameData.gameCards.find(c => c.id === cardId);
+
+            // Flip card
+            cardElement.classList.add('flipped');
+            cardElement.textContent = cardData.content;
+            gameData.flippedCards.push(cardElement);
+
+            if (gameData.flippedCards.length === 2) {
+                gameData.moves++;
+                document.getElementById('memory-moves').textContent = gameData.moves;
+
+                const card1 = gameData.flippedCards[0];
+                const card2 = gameData.flippedCards[1];
+
+                if (card1.dataset.pair === card2.dataset.id) {
+                    // Match found
+                    setTimeout(() => {
+                        card1.classList.add('matched');
+                        card2.classList.add('matched');
+                        card1.classList.remove('flipped');
+                        card2.classList.remove('flipped');
+                        
+                        gameData.matchedPairs++;
+                        
+                        if (gameData.matchedPairs === gameData.totalPairs) {
+                            // Game complete
+                            clearInterval(container.dataset.timer);
+                            const elapsed = Math.floor((Date.now() - gameData.startTime) / 1000);
+                            setTimeout(() => {
+                                showToast(`🎉 Memory game complete! ${gameData.moves} moves in ${elapsed} seconds`, 'success');
+                            }, 500);
+                        }
+                        
+                        gameData.flippedCards = [];
+                        container.dataset.gameData = JSON.stringify(gameData);
+                    }, 1000);
+                } else {
+                    // No match
+                    setTimeout(() => {
+                        card1.classList.remove('flipped');
+                        card2.classList.remove('flipped');
+                        card1.textContent = '?';
+                        card2.textContent = '?';
+                        
+                        gameData.flippedCards = [];
+                        container.dataset.gameData = JSON.stringify(gameData);
+                    }, 1000);
+                }
+            }
+
+            container.dataset.gameData = JSON.stringify(gameData);
+        }
+
+        function playLightningGame() {
+            const topicData = studyData[currentClass].topics[currentTopic];
+            if (!topicData.flashcards || topicData.flashcards.length === 0) {
+                showToast('No flashcards available for lightning round', 'warning');
+                return;
+            }
+
+            const container = document.getElementById('game-container');
+            const cards = [...topicData.flashcards].sort(() => Math.random() - 0.5);
+            let currentCard = 0;
+            let score = 0;
+            let timeLeft = 60; // 60 seconds
+            let gameActive = true;
+
+            container.innerHTML = `
+                <div class="game-area">
+                    <div style="display: flex; justify-content: between; align-items: center; margin-bottom: 2rem;">
+                        <h3>⚡ Lightning Round</h3>
+                        <div class="game-score">
+                            <span>Score: <span id="lightning-score">0</span>/${cards.length}</span>
+                            <span style="margin-left: 1rem;" class="lightning-timer" id="lightning-timer">1:00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="lightning-question" id="lightning-question">
+                        ${cards[0].front}
+                    </div>
+                    
+                    <input type="text" class="lightning-input" id="lightning-input" 
+                           placeholder="Type your answer and press Enter..." 
+                           onkeypress="checkLightningAnswer(event)">
+                    
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button class="control-btn" onclick="skipLightningCard()">
+                            ⏭️ Skip
+                        </button>
+                        <button class="control-btn" onclick="renderGames(studyData[currentClass].topics[currentTopic])">
+                            🔙 Back to Games
+                        </button>
+                    </div>
+                </div>
+            `;
+
+            // Store game data
+            container.dataset.gameData = JSON.stringify({ 
+                cards, currentCard, score, timeLeft, gameActive 
+            });
+            
+            // Focus input
+            document.getElementById('lightning-input').focus();
+            
+            // Start countdown timer
+            const timer = setInterval(() => {
+                const gameData = JSON.parse(container.dataset.gameData);
+                gameData.timeLeft--;
+                
+                const minutes = Math.floor(gameData.timeLeft / 60);
+                const seconds = gameData.timeLeft % 60;
+                const timerEl = document.getElementById('lightning-timer');
+                
+                if (timerEl) {
+                    timerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                    
+                    if (gameData.timeLeft <= 10) {
+                        timerEl.style.color = 'var(--bad)';
+                    } else if (gameData.timeLeft <= 30) {
+                        timerEl.style.color = 'var(--warn)';
+                    }
+                }
+                
+                if (gameData.timeLeft <= 0) {
+                    clearInterval(timer);
+                    endLightningGame();
+                    return;
+                }
+                
+                container.dataset.gameData = JSON.stringify(gameData);
+            }, 1000);
+            
+            container.dataset.timer = timer;
+        }
+
+        function checkLightningAnswer(event) {
+            if (event.key !== 'Enter') return;
+            
+            const container = document.getElementById('game-container');
+            const gameData = JSON.parse(container.dataset.gameData);
+            
+            if (!gameData.gameActive) return;
+            
+            const input = document.getElementById('lightning-input');
+            const userAnswer = input.value.trim().toLowerCase();
+            const correctAnswer = gameData.cards[gameData.currentCard].back.toLowerCase();
+            
+            // Simple fuzzy matching - check if answer contains key words
+            const isCorrect = correctAnswer.includes(userAnswer) || userAnswer.includes(correctAnswer) || 
+                             userAnswer === correctAnswer;
+            
+            if (isCorrect) {
+                gameData.score++;
+                showToast('✅ Correct!', 'success');
+            } else {
+                showToast(`❌ Correct answer: ${gameData.cards[gameData.currentCard].back}`, 'error');
+            }
+            
+            gameData.currentCard++;
+            
+            if (gameData.currentCard >= gameData.cards.length) {
+                clearInterval(container.dataset.timer);
+                endLightningGame();
+                return;
+            }
+            
+            // Show next question
+            document.getElementById('lightning-question').textContent = gameData.cards[gameData.currentCard].front;
+            document.getElementById('lightning-score').textContent = gameData.score;
+            input.value = '';
+            input.focus();
+            
+            container.dataset.gameData = JSON.stringify(gameData);
+        }
+
+        function skipLightningCard() {
+            const container = document.getElementById('game-container');
+            const gameData = JSON.parse(container.dataset.gameData);
+            
+            if (!gameData.gameActive) return;
+            
+            showToast(`⏭️ Skipped. Answer was: ${gameData.cards[gameData.currentCard].back}`, 'info');
+            
+            gameData.currentCard++;
+            
+            if (gameData.currentCard >= gameData.cards.length) {
+                clearInterval(container.dataset.timer);
+                endLightningGame();
+                return;
+            }
+            
+            document.getElementById('lightning-question').textContent = gameData.cards[gameData.currentCard].front;
+            document.getElementById('lightning-input').focus();
+            
+            container.dataset.gameData = JSON.stringify(gameData);
+        }
+
+        function endLightningGame() {
+            const container = document.getElementById('game-container');
+            const gameData = JSON.parse(container.dataset.gameData);
+            
+            gameData.gameActive = false;
+            container.dataset.gameData = JSON.stringify(gameData);
+            
+            const percentage = Math.round((gameData.score / gameData.cards.length) * 100);
+            const timeUsed = 60 - gameData.timeLeft;
+            
+            setTimeout(() => {
+                container.innerHTML = `
+                    <div class="game-area">
+                        <h3 style="text-align: center; margin-bottom: 2rem;">⚡ Lightning Round Complete!</h3>
+                        
+                        <div style="text-align: center; margin: 2rem 0;">
+                            <div style="font-size: 3rem; margin-bottom: 1rem;">
+                                ${percentage >= 80 ? '🏆' : percentage >= 60 ? '🥈' : '🥉'}
+                            </div>
+                            <div style="font-size: 2rem; margin: 1rem 0;">
+                                ${gameData.score} / ${gameData.cards.length}
+                            </div>
+                            <div style="font-size: 1.5rem; color: var(--accent);">
+                                ${percentage}% in ${timeUsed} seconds
+                            </div>
+                        </div>
+                        
+                        <div style="display: flex; gap: 1rem; justify-content: center;">
+                            <button class="control-btn" onclick="playLightningGame()">
+                                🔄 Play Again
+                            </button>
+                            <button class="control-btn" onclick="renderGames(studyData[currentClass].topics[currentTopic])">
+                                🔙 Back to Games
+                            </button>
+                        </div>
+                    </div>
+                `;
+            }, 1000);
+        }
+
+        // Session builder
+        function openSessionBuilder(preselectedMode = '') {
+            populateSessionFilters();
+            populateSavedSessions();
+            document.getElementById('session-builder-modal').classList.add('show');
+            refreshSessionContent();
+        }
+
+        function closeSessionBuilder() {
+            document.getElementById('session-builder-modal').classList.remove('show');
+        }
+
+        // Session Builder Data Management
+        let sessionBuilderData = {
+            availableContent: [],
+            sessionContent: [],
+            savedSessions: JSON.parse(localStorage.getItem('studyHubSavedSessions') || '[]')
+        };
+
+        function populateSessionFilters() {
+            const classFilters = document.getElementById('class-filters');
+            const topicFilters = document.getElementById('topic-filters');
+            
+            // Clear existing filters
+            classFilters.innerHTML = '';
+            topicFilters.innerHTML = '';
+            
+            // Populate class filters
+            Object.keys(studyData).forEach(className => {
+                const filterOption = document.createElement('div');
+                filterOption.className = 'filter-option';
+                filterOption.innerHTML = `
+                    <input type="checkbox" id="class-${className}" checked onchange="refreshSessionContent()">
+                    <label for="class-${className}">${className.replace('-', ' ').toUpperCase()}</label>
+                `;
+                classFilters.appendChild(filterOption);
+            });
+            
+            // Populate topic filters
+            const addedTopics = new Set();
+            Object.values(studyData).forEach(classData => {
+                Object.keys(classData.topics).forEach(topicName => {
+                    if (!addedTopics.has(topicName)) {
+                        addedTopics.add(topicName);
+                        const filterOption = document.createElement('div');
+                        filterOption.className = 'filter-option';
+                        filterOption.innerHTML = `
+                            <input type="checkbox" id="topic-${topicName}" checked onchange="refreshSessionContent()">
+                            <label for="topic-${topicName}">${topicName.replace('-', ' ').toUpperCase()}</label>
+                        `;
+                        topicFilters.appendChild(filterOption);
+                    }
+                });
+            });
+        }
+
+        function populateSavedSessions() {
+            const savedSessionsList = document.getElementById('saved-sessions-list');
+            savedSessionsList.innerHTML = '';
+            
+            if (sessionBuilderData.savedSessions.length === 0) {
+                savedSessionsList.innerHTML = '<p style="color: var(--muted); text-align: center; margin: 1rem 0;">No saved sessions</p>';
+                return;
+            }
+            
+            sessionBuilderData.savedSessions.forEach((session, index) => {
+                const sessionElement = document.createElement('div');
+                sessionElement.className = 'saved-session';
+                sessionElement.innerHTML = `
+                    <div class="saved-session-info">
+                        <h4>${session.name || `Session ${index + 1}`}</h4>
+                        <div class="saved-session-meta">
+                            ${session.content.length} items • Created ${new Date(session.created).toLocaleDateString()}
+                        </div>
+                    </div>
+                    <div class="saved-session-actions">
+                        <button onclick="loadSession(${index})" style="background: var(--accent); color: white;">Load</button>
+                        <button onclick="deleteSession(${index})" style="background: var(--bad); color: white;">Delete</button>
+                    </div>
+                `;
+                savedSessionsList.appendChild(sessionElement);
+            });
+        }
+
+        function refreshSessionContent() {
+            const content = [];
+            
+            // Get selected filters
+            const selectedClasses = Array.from(document.querySelectorAll('#class-filters input:checked'))
+                .map(input => input.id.replace('class-', ''));
+            const selectedTopics = Array.from(document.querySelectorAll('#topic-filters input:checked'))
+                .map(input => input.id.replace('topic-', ''));
+            
+            const includeFlashcards = document.getElementById('flashcards-filter').checked;
+            const includeQuiz = document.getElementById('quiz-filter').checked;
+            
+            // Collect content based on filters
+            selectedClasses.forEach(className => {
+                if (!studyData[className]) return;
+                
+                Object.keys(studyData[className].topics).forEach(topicName => {
+                    if (!selectedTopics.includes(topicName)) return;
+                    
+                    const topicData = studyData[className].topics[topicName];
+                    
+                    // Add flashcards
+                    if (includeFlashcards && topicData.flashcards) {
+                        topicData.flashcards.forEach((card, index) => {
+                            content.push({
+                                type: 'flashcard',
+                                class: className,
+                                topic: topicName,
+                                content: card,
+                                id: `${className}-${topicName}-flashcard-${index}`,
+                                title: card.front
+                            });
+                        });
+                    }
+                    
+                    // Add quiz questions
+                    if (includeQuiz && topicData.quiz) {
+                        topicData.quiz.forEach((question, index) => {
+                            content.push({
+                                type: 'quiz',
+                                class: className,
+                                topic: topicName,
+                                content: question,
+                                id: `${className}-${topicName}-quiz-${index}`,
+                                title: question.question
+                            });
+                        });
+                    }
+                });
+            });
+            
+            sessionBuilderData.sessionContent = content;
+            displaySessionContent();
+        }
+
+        function getDifficultyLevel(reviewCount) {
+            if (reviewCount < 3) return 'easy';
+            if (reviewCount <= 6) return 'medium';
+            return 'hard';
+        }
+
+        function displaySessionContent() {
+            const container = document.getElementById('session-content');
+            
+            if (sessionBuilderData.sessionContent.length === 0) {
+                container.innerHTML = '<p style="text-align: center; color: var(--muted); margin: 2rem 0;">No content matches your filters</p>';
+                return;
+            }
+            
+            container.innerHTML = sessionBuilderData.sessionContent.map((item, index) => `
+                <div class="session-item">
+                    <div class="session-item-info">
+                        <div class="session-item-title">${item.title}</div>
+                        <div class="session-item-meta">
+                            ${item.type.toUpperCase()} • ${item.class} > ${item.topic} • ${item.difficulty}
+                        </div>
+                    </div>
+                    <button class="session-item-remove" onclick="removeSessionItem(${index})">Remove</button>
+                </div>
+            `).join('');
+        }
+
+        function removeSessionItem(index) {
+            sessionBuilderData.sessionContent.splice(index, 1);
+            displaySessionContent();
+        }
+
+        function saveSession() {
+            if (sessionBuilderData.sessionContent.length === 0) {
+                showToast('No content to save', 'warning');
+                return;
+            }
+            
+            const sessionName = document.getElementById('session-name').value.trim();
+            const session = {
+                name: sessionName || `Session ${sessionBuilderData.savedSessions.length + 1}`,
+                content: [...sessionBuilderData.sessionContent],
+                created: new Date().toISOString()
+            };
+            
+            sessionBuilderData.savedSessions.push(session);
+            localStorage.setItem('studyHubSavedSessions', JSON.stringify(sessionBuilderData.savedSessions));
+            
+            populateSavedSessions();
+            document.getElementById('session-name').value = '';
+            showToast(`Session "${session.name}" saved successfully!`, 'success');
+        }
+
+        function loadSession(index) {
+            const session = sessionBuilderData.savedSessions[index];
+            sessionBuilderData.sessionContent = [...session.content];
+            displaySessionContent();
+            document.getElementById('session-name').value = session.name;
+            showToast(`Session "${session.name}" loaded`, 'success');
+        }
+
+        function deleteSession(index) {
+            const session = sessionBuilderData.savedSessions[index];
+            if (confirm(`Delete session "${session.name}"?`)) {
+                sessionBuilderData.savedSessions.splice(index, 1);
+                localStorage.setItem('studyHubSavedSessions', JSON.stringify(sessionBuilderData.savedSessions));
+                populateSavedSessions();
+                showToast(`Session "${session.name}" deleted`, 'info');
+            }
+        }
+
+        function startCustomSession() {
+            if (sessionBuilderData.sessionContent.length === 0) {
+                showToast('No content to start session with', 'warning');
+                return;
+            }
+            
+            // Create a mixed session
+            const mixedContent = {
+                flashcards: sessionBuilderData.sessionContent.filter(item => item.type === 'flashcard').map(item => item.content),
+                quiz: sessionBuilderData.sessionContent.filter(item => item.type === 'quiz').map(item => item.content)
+            };
+            
+            closeSessionBuilder();
+            
+            // Start with flashcards if available, otherwise quiz
+            if (mixedContent.flashcards.length > 0) {
+                startCustomFlashcardSession(mixedContent);
+            } else if (mixedContent.quiz.length > 0) {
+                startCustomQuizSession(mixedContent);
+            }
+            
+            showToast(`Custom session started with ${sessionBuilderData.sessionContent.length} items!`, 'success');
+        }
+
+        function startCustomFlashcardSession(mixedContent) {
+            // Store the mixed content temporarily
+            window.customSessionData = mixedContent;
+            
+            // Switch to a session view
+            renderSessionView();
+        }
+
+        function startCustomQuizSession(mixedContent) {
+            // Store the mixed content temporarily
+            window.customSessionData = mixedContent;
+            
+            // Switch to a session view
+            renderSessionView();
+        }
+
+        function renderSessionView() {
+            const content = document.getElementById('content');
+            const sessionData = window.customSessionData;
+            
+            content.innerHTML = `
+                <div class="content-header">
+                    <h1>🎯 Custom Study Session</h1>
+                    <p>Mixed content from multiple topics</p>
+                </div>
+                
+                <div class="topic-tabs">
+                    ${sessionData.flashcards.length > 0 ? '<button class="tab-btn active" onclick="showCustomFlashcards()">📚 Flashcards</button>' : ''}
+                    ${sessionData.quiz.length > 0 ? '<button class="tab-btn" onclick="showCustomQuiz()">📝 Quiz</button>' : ''}
+                    <button class="tab-btn" onclick="showSessionStats()">📊 Session Stats</button>
+                </div>
+                
+                <div class="topic-content" id="session-topic-content">
+                    <!-- Content will be loaded here -->
+                </div>
+            `;
+            
+            // Show flashcards by default if available
+            if (sessionData.flashcards.length > 0) {
+                showCustomFlashcards();
+            } else if (sessionData.quiz.length > 0) {
+                showCustomQuiz();
+            }
+        }
+
+        function showCustomFlashcards() {
+            const sessionData = window.customSessionData;
+            activateTab(0);
+            
+            const topicContent = document.getElementById('session-topic-content');
+            topicContent.innerHTML = `
+                <div class="flashcard-container">
+                    <div class="flashcard-header">
+                        <h3>Custom Flashcard Session</h3>
+                        <div class="flashcard-stats">
+                            <span id="card-progress">1 / ${sessionData.flashcards.length}</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flashcard" id="custom-flashcard" onclick="flipCustomCard()">
+                        <div class="flashcard-content">
+                            <div class="flashcard-side front active" id="custom-card-front">
+                                ${sessionData.flashcards[0].front}
+                            </div>
+                            <div class="flashcard-side back" id="custom-card-back">
+                                ${sessionData.flashcards[0].back}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flashcard-controls">
+                        <button class="control-btn" onclick="previousCustomCard()">← Previous</button>
+                        <button class="control-btn" onclick="flipCustomCard()">Flip Card</button>
+                        <button class="control-btn" onclick="nextCustomCard()">Next →</button>
+                    </div>
+                    
+                    <button class="control-btn" onclick="endCustomSession()" style="margin-top: 2rem;">
+                        🏁 End Session
+                    </button>
+                </div>
+            `;
+            
+            window.customFlashcardIndex = 0;
+            window.customCardFlipped = false;
+        }
+
+        function flipCustomCard() {
+            const front = document.getElementById('custom-card-front');
+            const back = document.getElementById('custom-card-back');
+            
+            if (window.customCardFlipped) {
+                front.classList.add('active');
+                back.classList.remove('active');
+            } else {
+                front.classList.remove('active');
+                back.classList.add('active');
+            }
+            
+            window.customCardFlipped = !window.customCardFlipped;
+        }
+
+        function answerCustomCard(difficulty) {
+            const sessionData = window.customSessionData;
+            
+            // Move to next card
+            window.customFlashcardIndex++;
+            
+            if (window.customFlashcardIndex >= sessionData.flashcards.length) {
+                showToast('Custom flashcard session complete!', 'success');
+                endCustomSession();
+                return;
+            }
+            
+            // Show next card
+            const card = sessionData.flashcards[window.customFlashcardIndex];
+            document.getElementById('custom-card-front').textContent = card.front;
+            document.getElementById('custom-card-back').textContent = card.back;
+            document.getElementById('card-progress').textContent = `${window.customFlashcardIndex + 1} / ${sessionData.flashcards.length}`;
+            
+            // Reset to front
+            if (window.customCardFlipped) {
+                flipCustomCard();
+            }
+        }
+
+        function nextCustomCard() {
+            const sessionData = window.customSessionData;
+            
+            // Move to next card
+            window.customFlashcardIndex++;
+            
+            if (window.customFlashcardIndex >= sessionData.flashcards.length) {
+                showToast('Custom flashcard session complete!', 'success');
+                endCustomSession();
+                return;
+            }
+            
+            // Show next card
+            const card = sessionData.flashcards[window.customFlashcardIndex];
+            document.getElementById('custom-card-front').textContent = card.front;
+            document.getElementById('custom-card-back').textContent = card.back;
+            document.getElementById('card-progress').textContent = `${window.customFlashcardIndex + 1} / ${sessionData.flashcards.length}`;
+            
+            // Reset to front
+            if (window.customCardFlipped) {
+                flipCustomCard();
+            }
+        }
+
+        function previousCustomCard() {
+            if (window.customFlashcardIndex <= 0) {
+                showToast('Already at first card', 'info');
+                return;
+            }
+            
+            const sessionData = window.customSessionData;
+            
+            // Move to previous card
+            window.customFlashcardIndex--;
+            
+            // Show previous card
+            const card = sessionData.flashcards[window.customFlashcardIndex];
+            document.getElementById('custom-card-front').textContent = card.front;
+            document.getElementById('custom-card-back').textContent = card.back;
+            document.getElementById('card-progress').textContent = `${window.customFlashcardIndex + 1} / ${sessionData.flashcards.length}`;
+            
+            // Reset to front
+            if (window.customCardFlipped) {
+                flipCustomCard();
+            }
+        }
+
+        function showCustomQuiz() {
+            const sessionData = window.customSessionData;
+            activateTab(sessionData.flashcards.length > 0 ? 1 : 0);
+            
+            window.customQuizIndex = 0;
+            window.customQuizScore = 0;
+            showCustomQuizQuestion();
+        }
+
+        function showCustomQuizQuestion() {
+            const sessionData = window.customSessionData;
+            const question = sessionData.quiz[window.customQuizIndex];
+            
+            const topicContent = document.getElementById('session-topic-content');
+            topicContent.innerHTML = `
+                <div class="quiz-container">
+                    <div class="quiz-header">
+                        <h3>Custom Quiz Session</h3>
+                        <div class="quiz-progress">
+                            Question ${window.customQuizIndex + 1} of ${sessionData.quiz.length} | Score: ${window.customQuizScore}
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-question">
+                        <h4>${question.question}</h4>
+                        <div class="quiz-options">
+                            ${question.options.map((option, index) => 
+                                `<button class="quiz-option" onclick="answerCustomQuiz(${index})">${option}</button>`
+                            ).join('')}
+                        </div>
+                    </div>
+                    
+                    <button class="control-btn" onclick="endCustomSession()" style="margin-top: 2rem;">
+                        🏁 End Session
+                    </button>
+                </div>
+            `;
+        }
+
+        function answerCustomQuiz(selectedIndex) {
+            const sessionData = window.customSessionData;
+            const question = sessionData.quiz[window.customQuizIndex];
+            const isCorrect = selectedIndex === question.correct;
+            
+            if (isCorrect) {
+                window.customQuizScore++;
+                showToast('✅ Correct!', 'success');
+            } else {
+                showToast(`❌ Incorrect. Answer: ${question.options[question.correct]}`, 'error');
+            }
+            
+            window.customQuizIndex++;
+            
+            if (window.customQuizIndex >= sessionData.quiz.length) {
+                setTimeout(() => {
+                    showToast(`Quiz complete! Score: ${window.customQuizScore}/${sessionData.quiz.length}`, 'success');
+                    endCustomSession();
+                }, 1500);
+                return;
+            }
+            
+            setTimeout(() => {
+                showCustomQuizQuestion();
+            }, 1500);
+        }
+
+        function showSessionStats() {
+            const sessionData = window.customSessionData;
+            const tabIndex = (sessionData.flashcards.length > 0 ? 1 : 0) + (sessionData.quiz.length > 0 ? 1 : 0);
+            activateTab(tabIndex);
+            
+            const topicContent = document.getElementById('session-topic-content');
+            topicContent.innerHTML = `
+                <div class="stats-container">
+                    <h3>📊 Session Statistics</h3>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-value">${sessionData.flashcards.length}</div>
+                            <div class="stat-label">Flashcards</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-value">${sessionData.quiz.length}</div>
+                            <div class="stat-label">Quiz Questions</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-value">${sessionData.flashcards.length + sessionData.quiz.length}</div>
+                            <div class="stat-label">Total Items</div>
+                        </div>
+                        
+                        <div class="stat-card">
+                            <div class="stat-value">${Math.round((sessionData.flashcards.length + sessionData.quiz.length) * 1.5)}</div>
+                            <div class="stat-label">Est. Minutes</div>
+                        </div>
+                    </div>
+                    
+                    <button class="control-btn" onclick="endCustomSession()" style="margin-top: 2rem;">
+                        🏁 End Session
+                    </button>
+                </div>
+            `;
+        }
+
+        function endCustomSession() {
+            // Clear custom session data
+            delete window.customSessionData;
+            delete window.customFlashcardIndex;
+            delete window.customQuizIndex;
+            delete window.customQuizScore;
+            delete window.customCardFlipped;
+            
+            // Return to homepage
+            renderHomepage();
+            showToast('Session ended', 'info');
+        }
+
+        // Settings functionality
+        let currentSettingsSection = 'flashcards';
+
+        function renderSettings(topicData) {
+            currentSettingsSection = 'flashcards';
+            showSettingsSection('flashcards');
+        }
+
+        function showSettingsSection(section) {
+            // Update navigation
+            document.querySelectorAll('.settings-nav-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelector(`[onclick="showSettingsSection('${section}')"]`).classList.add('active');
+            
+            currentSettingsSection = section;
+            
+            const topicData = studyData[currentClass].topics[currentTopic];
+            const container = document.getElementById('settings-content');
+            
+            switch (section) {
+                case 'flashcards':
+                    renderFlashcardSettings(container, topicData);
+                    break;
+                case 'quiz':
+                    renderQuizSettings(container, topicData);
+                    break;
+                case 'games':
+                    renderGameSettings(container, topicData);
+                    break;
+                case 'notes':
+                    renderNotesSettings(container, topicData);
+                    break;
+            }
+        }
+
+        function renderFlashcardSettings(container, topicData) {
+            const flashcards = topicData.flashcards || [];
+            
+            container.innerHTML = `
+                <div class="settings-header">
+                    <h2>📚 Flashcard Settings</h2>
+                    <span>${flashcards.length} flashcard(s)</span>
+                </div>
+                
+                <div class="add-item-form" id="add-flashcard-form">
+                    <p>➕ Add New Flashcard</p>
+                    <button class="settings-btn" onclick="toggleAddFlashcardForm()">Add Flashcard</button>
+                </div>
+                
+                <div class="settings-list">
+                    ${flashcards.map((card, index) => `
+                        <div class="settings-item">
+                            <div class="settings-item-header">
+                                <strong>Card ${index + 1}</strong>
+                                <div class="settings-item-actions">
+                                    <button class="settings-btn secondary" onclick="editFlashcard(${index})">Edit</button>
+                                    <button class="settings-btn danger" onclick="deleteFlashcard(${index})">Delete</button>
+                                </div>
+                            </div>
+                            <div class="settings-item-content">
+                                <div><strong>Front:</strong> ${card.front}</div>
+                                <div><strong>Back:</strong> ${card.back}</div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function renderQuizSettings(container, topicData) {
+            const quiz = topicData.quiz || [];
+            
+            container.innerHTML = `
+                <div class="settings-header">
+                    <h2>📝 Quiz Settings</h2>
+                    <span>${quiz.length} question(s)</span>
+                </div>
+                
+                <div class="add-item-form" id="add-quiz-form">
+                    <p>➕ Add New Question</p>
+                    <button class="settings-btn" onclick="toggleAddQuizForm()">Add Question</button>
+                </div>
+                
+                <div class="settings-list">
+                    ${quiz.map((question, index) => `
+                        <div class="settings-item">
+                            <div class="settings-item-header">
+                                <strong>Question ${index + 1}</strong>
+                                <div class="settings-item-actions">
+                                    <button class="settings-btn secondary" onclick="editQuestion(${index})">Edit</button>
+                                    <button class="settings-btn danger" onclick="deleteQuestion(${index})">Delete</button>
+                                </div>
+                            </div>
+                            <div class="settings-item-content">
+                                <div><strong>Question:</strong> ${question.question}</div>
+                                <div><strong>Correct Answer:</strong> ${question.options[question.correct]}</div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function renderGameSettings(container, topicData) {
+            const games = topicData.games || [];
+            
+            container.innerHTML = `
+                <div class="settings-header">
+                    <h2>🎮 Game Settings</h2>
+                    <span>${games.length} game(s)</span>
+                </div>
+                
+                <div class="add-item-form" id="add-game-form">
+                    <p>➕ Add New Game</p>
+                    <button class="settings-btn" onclick="toggleAddGameForm()">Add Game</button>
+                </div>
+                
+                <div class="settings-list">
+                    ${games.map((game, index) => `
+                        <div class="settings-item">
+                            <div class="settings-item-header">
+                                <strong>${game.title || `Game ${index + 1}`}</strong>
+                                <div class="settings-item-actions">
+                                    <button class="settings-btn secondary" onclick="editGame(${index})">Edit</button>
+                                    <button class="settings-btn danger" onclick="deleteGame(${index})">Delete</button>
+                                </div>
+                            </div>
+                            <div class="settings-item-content">
+                                <div><strong>Type:</strong> ${game.type}</div>
+                                <div><strong>Description:</strong> ${game.description || 'No description'}</div>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function renderNotesSettings(container, topicData) {
+            const notes = topicData.notes || [];
+            const sources = topicData.sources || [];
+            
+            container.innerHTML = `
+                <div class="settings-header">
+                    <h2>📄 Notes & Sources Settings</h2>
+                    <span>${notes.length} note(s), ${sources.length} source(s)</span>
+                </div>
+                
+                <div class="add-item-form" id="add-note-form">
+                    <p>➕ Add New Note</p>
+                    <button class="settings-btn" onclick="toggleAddNoteForm()">Add Note</button>
+                </div>
+                
+                <div class="settings-list">
+                    <h3 style="margin: 2rem 0 1rem 0;">Notes</h3>
+                    ${notes.map((note, index) => `
+                        <div class="settings-item">
+                            <div class="settings-item-header">
+                                <strong>Note ${index + 1}</strong>
+                                <div class="settings-item-actions">
+                                    <button class="settings-btn secondary" onclick="editNote(${index})">Edit</button>
+                                    <button class="settings-btn danger" onclick="deleteNote(${index})">Delete</button>
+                                </div>
+                            </div>
+                            <div class="settings-item-content">
+                                ${note}
+                            </div>
+                        </div>
+                    `).join('')}
+                    
+                    <h3 style="margin: 2rem 0 1rem 0;">Sources</h3>
+                    ${sources.map((source, index) => `
+                        <div class="settings-item">
+                            <div class="settings-item-header">
+                                <strong>Source ${index + 1}</strong>
+                                <div class="settings-item-actions">
+                                    <button class="settings-btn secondary" onclick="editSource(${index})">Edit</button>
+                                    <button class="settings-btn danger" onclick="deleteSource(${index})">Delete</button>
+                                </div>
+                            </div>
+                            <div class="settings-item-content">
+                                ${source}
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        // Add form toggle functions
+        function toggleAddFlashcardForm() {
+            const form = document.getElementById('add-flashcard-form');
+            if (form.classList.contains('expanded')) {
+                form.innerHTML = `
+                    <p>➕ Add New Flashcard</p>
+                    <button class="settings-btn" onclick="toggleAddFlashcardForm()">Add Flashcard</button>
+                `;
+                form.classList.remove('expanded');
+            } else {
+                form.innerHTML = `
+                    <h3>Add New Flashcard</h3>
+                    <div class="form-group">
+                        <label>Front (Question)</label>
+                        <textarea id="flashcard-front" placeholder="Enter the question or prompt..."></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label>Back (Answer)</label>
+                        <textarea id="flashcard-back" placeholder="Enter the answer or explanation..."></textarea>
+                    </div>
+                    <div class="form-actions">
+                        <button class="settings-btn secondary" onclick="toggleAddFlashcardForm()">Cancel</button>
+                        <button class="settings-btn" onclick="saveNewFlashcard()">Save Flashcard</button>
+                    </div>
+                `;
+                form.classList.add('expanded');
+            }
+        }
+
+        function saveNewFlashcard() {
+            const front = document.getElementById('flashcard-front').value.trim();
+            const back = document.getElementById('flashcard-back').value.trim();
+            
+            if (!front || !back) {
+                showToast('Please fill in both front and back', 'warning');
+                return;
+            }
+            
+            // Add to topic data (note: this is temporary - in a real app you'd save to server)
+            const topicData = studyData[currentClass].topics[currentTopic];
+            if (!topicData.flashcards) topicData.flashcards = [];
+            topicData.flashcards.push({ front, back });
+            
+            showToast('Flashcard added successfully!', 'success');
+            showSettingsSection('flashcards'); // Refresh the view
+        }
+
+        // Placeholder functions for other actions
+        function editFlashcard(index) {
+            showToast('Edit functionality would be implemented here', 'info');
+        }
+
+        function deleteFlashcard(index) {
+            if (confirm('Delete this flashcard?')) {
+                const topicData = studyData[currentClass].topics[currentTopic];
+                topicData.flashcards.splice(index, 1);
+                showToast('Flashcard deleted', 'success');
+                showSettingsSection('flashcards');
+            }
+        }
+
+        function toggleAddQuizForm() {
+            showToast('Quiz form would be implemented here', 'info');
+        }
+
+        function editQuestion(index) {
+            showToast('Edit question functionality would be implemented here', 'info');
+        }
+
+        function deleteQuestion(index) {
+            if (confirm('Delete this question?')) {
+                const topicData = studyData[currentClass].topics[currentTopic];
+                if (topicData.quiz) {
+                    topicData.quiz.splice(index, 1);
+                    showToast('Question deleted', 'success');
+                    showSettingsSection('quiz');
+                }
+            }
+        }
+
+        function renderSessionBuilder(preselectedMode = '') {
+            const container = document.getElementById('session-builder-content');
+            
+            container.innerHTML = `
+                <div style="margin-bottom: 2rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--text);">Session Mode:</label>
+                    <select id="session-mode" style="width: 100%; padding: 0.5rem; background: var(--bg); color: var(--text); border: 1px solid var(--border); border-radius: 0.375rem;">
+                        <option value="flashcards" ${preselectedMode === 'flashcards' ? 'selected' : ''}>Flashcards</option>
+                        <option value="quiz" ${preselectedMode === 'quiz' ? 'selected' : ''}>Quiz</option>
+                        <option value="games" ${preselectedMode === 'games' ? 'selected' : ''}>Games</option>
+                    </select>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <h3 style="margin-bottom: 1rem; color: var(--text);">Select Topics</h3>
+                    <div id="topic-selection">
+                        <!-- Topic selection will be rendered here -->
+                    </div>
+                </div>
+
+                <div id="session-counts" style="margin-bottom: 2rem; padding: 1rem; background: var(--bg); border-radius: 0.5rem; color: var(--muted); font-size: 0.875rem;">
+                    Select topics to see content counts
+                </div>
+
+                <div style="display: flex; gap: 1rem; justify-content: end;">
+                    <button class="control-btn" onclick="closeSessionBuilder()">Cancel</button>
+                    <button class="session-btn" onclick="launchSession()">Start Session</button>
+                </div>
+            `;
+
+            renderTopicSelection();
+        }
+
+        function renderTopicSelection() {
+            const container = document.getElementById('topic-selection');
+            container.innerHTML = '';
+
+            Object.keys(studyData).forEach(classKey => {
+                const classData = studyData[classKey];
+                const classDiv = document.createElement('div');
+                classDiv.style.marginBottom = '1rem';
+
+                const classTitle = document.createElement('h4');
+                classTitle.style.cssText = 'margin-bottom: 0.5rem; color: var(--accent);';
+                classTitle.textContent = classData.title;
+
+                const topicsDiv = document.createElement('div');
+                topicsDiv.style.cssText = 'display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; margin-left: 1rem;';
+
+                Object.keys(classData.topics).forEach(topicKey => {
+                    const topic = classData.topics[topicKey];
+                    const topicLabel = document.createElement('label');
+                    topicLabel.style.cssText = 'display: flex; align-items: center; gap: 0.5rem; cursor: pointer;';
+
+                    const checkbox = document.createElement('input');
+                    checkbox.type = 'checkbox';
+                    checkbox.id = `${classKey}__${topicKey}`;
+                    checkbox.onchange = updateSessionCounts;
+
+                    const labelText = document.createElement('span');
+                    labelText.textContent = topic.title;
+
+                    topicLabel.appendChild(checkbox);
+                    topicLabel.appendChild(labelText);
+                    topicsDiv.appendChild(topicLabel);
+                });
+
+                classDiv.appendChild(classTitle);
+                classDiv.appendChild(topicsDiv);
+                container.appendChild(classDiv);
+            });
+        }
+
+        function updateSessionCounts() {
+            let cards = 0, quiz = 0, games = 0, notes = 0;
+
+            document.querySelectorAll('#topic-selection input[type="checkbox"]:checked').forEach(checkbox => {
+                const [classKey, topicKey] = checkbox.id.split('__');
+                const topic = studyData[classKey].topics[topicKey];
+                
+                cards += topic.flashcards?.length || 0;
+                quiz += topic.quiz?.length || 0;
+                games += topic.games?.length || 0;
+                notes += topic.notes?.length || 0;
+            });
+
+            document.getElementById('session-counts').textContent = 
+                `Selected: ${cards} cards, ${quiz} quiz questions, ${games} games, ${notes} notes`;
+        }
+
+        function launchSession() {
+            const selectedTopics = [];
+            document.querySelectorAll('#topic-selection input[type="checkbox"]:checked').forEach(checkbox => {
+                const [classKey, topicKey] = checkbox.id.split('__');
+                selectedTopics.push({ classKey, topicKey });
+            });
+
+            if (selectedTopics.length === 0) {
+                showToast('Please select at least one topic', 'warning');
+                return;
+            }
+
+            const mode = document.getElementById('session-mode').value;
+            showToast(`Session with ${selectedTopics.length} topics would start in ${mode} mode`, 'success');
+            closeSessionBuilder();
+            
+            // TODO: Implement actual session launching
+        }
+
+        // Keyboard shortcuts with accessibility enhancements
+        function setupKeyboardShortcuts() {
+            document.addEventListener('keydown', function(e) {
+                // Skip if user is typing in an input field
+                if (e.target.matches('input, textarea, select') && !e.altKey && !e.ctrlKey) {
+                    return;
+                }
+
+                // Global shortcuts
+                if (e.key === 'h' || e.key === 'H') {
+                    if (!e.target.matches('input, textarea, select')) {
+                        e.preventDefault();
+                        showHomepage();
+                        announceToScreenReader('Navigated to homepage');
+                    }
+                }
+
+                if (e.key === 'Escape') {
+                    e.preventDefault();
+                    closeAllModals();
+                    announceToScreenReader('Closed dialog or modal');
+                }
+
+                // Tab navigation enhancement
+                if (e.key === 'Tab') {
+                    enhanceTabNavigation(e);
+                }
+
+                // Flashcard shortcuts
+                if (currentTab === 'flashcards' && currentTopic) {
+                    if (e.key === ' ') {
+                        e.preventDefault();
+                        flipCard();
+                        announceToScreenReader(isCardFlipped ? 'Showing answer' : 'Showing question');
+                    }
+                    if (e.key === 'ArrowLeft') {
+                        e.preventDefault();
+                        previousCard();
+                        announceToScreenReader('Previous flashcard');
+                    }
+                    if (e.key === 'ArrowRight') {
+                        e.preventDefault();
+                        nextCard();
+                        announceToScreenReader('Next flashcard');
+                    }
+                    if (e.key === '1') {
+                        e.preventDefault();
+                        rateCard(1);
+                        announceToScreenReader('Rated as hard');
+                    }
+                    if (e.key === '2') {
+                        e.preventDefault();
+                        rateCard(3);
+                        announceToScreenReader('Rated as good');
+                    }
+                    if (e.key === '3') {
+                        e.preventDefault();
+                        rateCard(5);
+                        announceToScreenReader('Rated as easy');
+                    }
+                }
+
+                // Quiz shortcuts
+                if (currentTab === 'quiz' && currentTopic) {
+                    if (e.key >= '1' && e.key <= '4') {
+                        e.preventDefault();
+                        const optionIndex = parseInt(e.key) - 1;
+                        const options = document.querySelectorAll('.quiz-option');
+                        if (options[optionIndex]) {
+                            options[optionIndex].click();
+                            announceToScreenReader(`Selected option ${e.key}`);
+                        }
+                    }
+                }
+
+                // Session builder shortcuts
+                if (e.ctrlKey && e.key === 's') {
+                    e.preventDefault();
+                    if (document.getElementById('session-builder-modal').classList.contains('show')) {
+                        saveSession();
+                    }
+                }
+            });
+        }
+
+        function enhanceTabNavigation(e) {
+            // Custom tab handling for complex components
+            const activeElement = document.activeElement;
+            
+            // Handle flashcard navigation
+            if (activeElement && activeElement.closest('.flashcard')) {
+                const controls = activeElement.closest('.flashcard-container').querySelectorAll('.difficulty-btn');
+                if (controls.length > 0 && !e.shiftKey) {
+                    e.preventDefault();
+                    controls[0].focus();
+                }
+            }
+        }
+
+        function closeAllModals() {
+            document.querySelectorAll('.modal-overlay').forEach(modal => {
+                modal.classList.remove('show');
+            });
+            closeSessionBuilder();
+        }
+
+        // Toast notifications
+        function showToast(message, type = 'info') {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
+            toast.className = `toast show ${type}`;
+
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    </script>
+
+    <!-- Session Builder Modal -->
+    <div class="modal-overlay" id="session-builder-modal">
+        <div class="modal session-builder">
+            <div class="modal-header">
+                <h2 class="modal-title">📚 Session Builder</h2>
+                <button class="close-btn" onclick="closeSessionBuilder()" aria-label="Close session builder">&times;</button>
+            </div>
+            
+            <div class="saved-sessions">
+                <h4>Saved Sessions</h4>
+                <div id="saved-sessions-list">
+                    <!-- Saved sessions will be populated here -->
+                </div>
+            </div>
+
+            <div class="session-filters">
+                <div class="filter-group">
+                    <h4>Classes</h4>
+                    <div class="filter-options" id="class-filters">
+                        <!-- Class filters will be populated here -->
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <h4>Topics</h4>
+                    <div class="filter-options" id="topic-filters">
+                        <!-- Topic filters will be populated here -->
+                    </div>
+                </div>
+                
+                <div class="filter-group">
+                    <h4>Content Types</h4>
+                    <div class="filter-options">
+                        <div class="filter-option">
+                            <input type="checkbox" id="flashcards-filter" checked>
+                            <label for="flashcards-filter">Flashcards</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="quiz-filter" checked>
+                            <label for="quiz-filter">Quiz Questions</label>
+                        </div>
+                        <div class="filter-option">
+                            <input type="checkbox" id="games-filter">
+                            <label for="games-filter">Game Content</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="session-content" id="session-content">
+                <p style="text-align: center; color: var(--muted); margin: 2rem 0;">
+                    Select filters above to populate your session
+                </p>
+            </div>
+
+            <input type="text" class="session-input" id="session-name" placeholder="Session name (optional)">
+
+            <div class="session-actions">
+                <button class="control-btn" onclick="refreshSessionContent()">
+                    🔄 Refresh Content
+                </button>
+                <button class="control-btn" onclick="saveSession()">
+                    💾 Save Session
+                </button>
+                <button class="control-btn" onclick="startCustomSession()" style="background: var(--good);">
+                    🚀 Start Session
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

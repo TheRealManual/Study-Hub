@@ -1,0 +1,226 @@
+{
+  "title": "Quiz 2 Review",
+  "notes": [
+    "Week 2 frames efficiency in steps rather than seconds; count primitive operations as a function of n.",
+    "Summations and loop analysis yield closed-form step counts that inform asymptotic bounds.",
+    "Week 2 slides show O, \u03a9, \u0398 for bounding growth; ignore constants/lower terms for asymptotics.",
+    "Use step counts to derive asymptotic classes for algorithms."
+  ],
+  "flashcards": [
+    {
+      "front": "What is step-counting?",
+      "back": "Counting primitive operations of an algorithm as a function of input size."
+    },
+    {
+      "front": "Why step-count instead of time?",
+      "back": "Hardware varies; operation count reflects algorithmic effort (Week 2)."
+    },
+    {
+      "front": "Primitive operation examples",
+      "back": "Assignment, comparison, arithmetic, array access, return."
+    },
+    {
+      "front": "Best/average/worst-case in step counts",
+      "back": "Minimum/expected/maximum operations over inputs of size n."
+    },
+    {
+      "front": "Sequential search worst-case steps",
+      "back": "About n comparisons when item is absent."
+    },
+    {
+      "front": "Nested loops rule of thumb",
+      "back": "Multiply iteration counts; sum across sequential blocks."
+    },
+    {
+      "front": "Constant factors",
+      "back": "Ignored in Big-O but present in raw step counts."
+    },
+    {
+      "front": "Dominant term",
+      "back": "Highest-order term dominates growth for large n."
+    },
+    {
+      "front": "Summation identity example",
+      "back": "\u2211_{i=1..n} i = n(n+1)/2 used to count nested loop steps."
+    },
+    {
+      "front": "When step-count \u2248 runtime?",
+      "back": "When operations have similar cost and memory effects are minor."
+    },
+    {
+      "front": "What is Big-O?",
+      "back": "Asymptotic upper bound on growth of a function, up to constant factors."
+    },
+    {
+      "front": "Big-\u03a9?",
+      "back": "Asymptotic lower bound."
+    },
+    {
+      "front": "Big-\u0398?",
+      "back": "Tight bound when both O and \u03a9 with same form hold."
+    },
+    {
+      "front": "Drop constants and lower-order terms?",
+      "back": "Yes; Big-O ignores multiplicative constants and lower-order terms."
+    },
+    {
+      "front": "Common classes",
+      "back": "O(1), O(log n), O(n), O(n log n), O(n^2), O(2^n), O(n!)."
+    },
+    {
+      "front": "Comparing growth rates",
+      "back": "log n < n < n log n < n^2 < 2^n < n!"
+    },
+    {
+      "front": "Transitivity of O",
+      "back": "If f in O(g) and g in O(h), then f in O(h)."
+    },
+    {
+      "front": "n^2 + 3n + 7 in Big-O?",
+      "back": "O(n^2)."
+    },
+    {
+      "front": "3^n vs 2^n",
+      "back": "3^n grows faster; both exponential."
+    },
+    {
+      "front": "Purpose of asymptotics",
+      "back": "Compare algorithms independent of machine details."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Step-counting measures:",
+      "options": [
+        "Wall-clock time",
+        "Number of primitive operations",
+        "Memory bandwidth"
+      ],
+      "answer": 1,
+      "explanation": "Week 2 emphasizes operation counts."
+    },
+    {
+      "question": "In a loop for i=1..n, the count grows:",
+      "options": [
+        "Constant",
+        "Linearly with n",
+        "Quadratically with n"
+      ],
+      "answer": 1,
+      "explanation": "A single loop contributes ~n operations."
+    },
+    {
+      "question": "Two nested loops both 1..n typically give:",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)"
+      ],
+      "answer": 2,
+      "explanation": "n*n iterations; quadratic step count."
+    },
+    {
+      "question": "When combining consecutive code blocks, counts:",
+      "options": [
+        "Multiply",
+        "Add",
+        "Divide"
+      ],
+      "answer": 1,
+      "explanation": "Sequential parts add; nested parts multiply iteration counts."
+    },
+    {
+      "question": "Sequential search worst case comparisons:",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)"
+      ],
+      "answer": 2,
+      "explanation": "You may scan all n elements."
+    },
+    {
+      "question": "Big-O gives:",
+      "options": [
+        "Exact running time",
+        "Asymptotic upper bound",
+        "Hardware-specific timing"
+      ],
+      "answer": 1,
+      "explanation": "Definition of O(f(n))."
+    },
+    {
+      "question": "If T(n)=5n+20, T(n) is:",
+      "options": [
+        "O(1)",
+        "O(n)",
+        "O(n^2)"
+      ],
+      "answer": 1,
+      "explanation": "Linear dominates."
+    },
+    {
+      "question": "If f(n)=n log n and g(n)=n^2, which grows faster?",
+      "options": [
+        "f",
+        "g",
+        "They\u2019re equal"
+      ],
+      "answer": 1,
+      "explanation": "n log n grows slower; g grows faster."
+    },
+    {
+      "question": "Dropping lower-order terms means:",
+      "options": [
+        "n^2 + n \u2208 O(n)",
+        "n^2 + n \u2208 O(n^2)",
+        "n^2 + n \u2208 O(n^3)"
+      ],
+      "answer": 1,
+      "explanation": "Bound by the highest-order term."
+    },
+    {
+      "question": "If f \u2208 \u0398(g), then:",
+      "options": [
+        "f \u2208 O(g) and f \u2208 \u03a9(g)",
+        "Only f \u2208 O(g)",
+        "Only f \u2208 \u03a9(g)"
+      ],
+      "answer": 0,
+      "explanation": "\u0398 implies both upper and lower bounds of the same order."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "prompt": "Order by step growth (fastest\u2192slowest)",
+      "items": [
+        "n",
+        "n log n",
+        "n^2",
+        "n^3"
+      ]
+    },
+    {
+      "type": "matching",
+      "prompt": "Match function to class",
+      "pairs": [
+        [
+          "n^2 + 3n",
+          "O(n^2)"
+        ],
+        [
+          "n log n",
+          "O(n log n)"
+        ],
+        [
+          "7",
+          "O(1)"
+        ]
+      ]
+    }
+  ],
+  "sources": [
+    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+  ]
+}

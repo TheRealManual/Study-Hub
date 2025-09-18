@@ -1,0 +1,235 @@
+{
+  "title": "Quiz 1 Review",
+  "notes": [
+    "An algorithm is a finite, rigorous sequence of steps to solve a class of problems (Week 1).",
+    "Computability considers what problems can be solved at all; decidability focuses on yes/no problems.",
+    "The Halting Problem shows fundamental limits: some problems have no algorithmic solution.",
+    "An ADT defines behavior and operations (Week 1 mentions ADT alongside data structures).",
+    "Data structures implement ADTs with concrete representations (array, linked list, etc.)."
+  ],
+  "flashcards": [
+    {
+      "front": "What is an algorithm?",
+      "back": "A finite sequence of rigorous steps to solve a class of problems or perform a computation."
+    },
+    {
+      "front": "Key properties of a good algorithm?",
+      "back": "Correctness, efficiency (time/space), definiteness, finiteness, input/output."
+    },
+    {
+      "front": "What does 'problem type' refer to?",
+      "back": "A family of related problem instances described by input format and desired output."
+    },
+    {
+      "front": "What is decidability?",
+      "back": "Whether a problem has an algorithm that always halts with a correct yes/no answer."
+    },
+    {
+      "front": "What is computability in CS?",
+      "back": "The study of what can or cannot be solved by algorithms under resource constraints."
+    },
+    {
+      "front": "Difference between algorithm and program?",
+      "back": "Algorithm is the idea (logical steps); program is a concrete implementation in a language."
+    },
+    {
+      "front": "What is a decision problem?",
+      "back": "A yes/no problem like 'Does x have property P?' often used for complexity classes."
+    },
+    {
+      "front": "What is a reduction?",
+      "back": "Transforming one problem to another to transfer solvability or hardness results."
+    },
+    {
+      "front": "Halting problem significance?",
+      "back": "Classic undecidable problem proving limits of computation."
+    },
+    {
+      "front": "Church\u2013Turing thesis (informal)?",
+      "back": "Any effectively computable function can be computed by a Turing machine."
+    },
+    {
+      "front": "What is an Abstract Data Type (ADT)?",
+      "back": "A mathematical model that defines data and operations independently of implementation."
+    },
+    {
+      "front": "Example ADTs",
+      "back": "Stack, Queue, List, Set, Map, Graph, Tree."
+    },
+    {
+      "front": "ADT vs Data Structure",
+      "back": "ADT specifies *what* operations; data structure specifies *how* to implement them."
+    },
+    {
+      "front": "Why ADTs?",
+      "back": "Encapsulation, modularity, substitutability of implementations."
+    },
+    {
+      "front": "Stack operations",
+      "back": "push, pop, top/peek, isEmpty"
+    },
+    {
+      "front": "Queue operations",
+      "back": "enqueue, dequeue, front, isEmpty"
+    },
+    {
+      "front": "List operations",
+      "back": "insert, delete, search, access by index"
+    },
+    {
+      "front": "Set operations",
+      "back": "insert, delete, contains, union, intersection"
+    },
+    {
+      "front": "Map operations",
+      "back": "put, get, remove, containsKey"
+    },
+    {
+      "front": "Graph basic ops",
+      "back": "addVertex, addEdge, neighbors, degree"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which best defines an algorithm?",
+      "options": [
+        "A program you can run",
+        "A finite sequence of well-defined steps",
+        "Any heuristic method"
+      ],
+      "answer": 1,
+      "explanation": "Week 1 defines an algorithm as a finite sequence of rigorous instructions."
+    },
+    {
+      "question": "A problem is decidable if:",
+      "options": [
+        "We can usually solve it fast",
+        "There exists an algorithm that halts with a correct answer for all inputs",
+        "It is in NP"
+      ],
+      "answer": 1,
+      "explanation": "Decidability is about existence of a halting algorithm, not speed."
+    },
+    {
+      "question": "Which statement about the Halting Problem is true?",
+      "options": [
+        "It is decidable",
+        "It is undecidable",
+        "It is solvable with Big-O(n log n) time"
+      ],
+      "answer": 1,
+      "explanation": "The Halting Problem is undecidable."
+    },
+    {
+      "question": "Reductions are used to:",
+      "options": [
+        "Optimize code",
+        "Transfer (un)solvability or hardness between problems",
+        "Measure memory usage"
+      ],
+      "answer": 1,
+      "explanation": "Reducing A to B shows A is no harder than B in some sense."
+    },
+    {
+      "question": "An algorithm differs from a program because:",
+      "options": [
+        "It is less precise",
+        "It is a language-neutral logical procedure",
+        "It always runs faster"
+      ],
+      "answer": 1,
+      "explanation": "Algorithm is the abstract procedure; program is a concrete implementation."
+    },
+    {
+      "question": "An ADT primarily specifies:",
+      "options": [
+        "Storage layout",
+        "Allowed operations and behavior",
+        "Algorithmic complexity only"
+      ],
+      "answer": 1,
+      "explanation": "ADTs describe behavior; data structures supply the implementation."
+    },
+    {
+      "question": "Which is an ADT?",
+      "options": [
+        "Binary heap array",
+        "Priority Queue",
+        "Hash table with chaining"
+      ],
+      "answer": 1,
+      "explanation": "Priority Queue is an ADT; binary heap/hash table are implementations."
+    },
+    {
+      "question": "Key benefit of ADTs is:",
+      "options": [
+        "Memory leaks",
+        "Implementation independence",
+        "Slower code"
+      ],
+      "answer": 1,
+      "explanation": "You can swap data structures without changing clients."
+    },
+    {
+      "question": "Which operation is NOT typical for a stack ADT?",
+      "options": [
+        "push",
+        "dequeue",
+        "pop"
+      ],
+      "answer": 1,
+      "explanation": "dequeue belongs to a queue ADT."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "prompt": "Order from general to specific",
+      "items": [
+        "Computability",
+        "Decidability",
+        "Specific decision problem"
+      ]
+    },
+    {
+      "type": "matching",
+      "prompt": "Match term to description",
+      "pairs": [
+        [
+          "Algorithm",
+          "Finite sequence of steps"
+        ],
+        [
+          "Decidable",
+          "Solvable by halting algorithm"
+        ],
+        [
+          "Reduction",
+          "Transform one problem to another"
+        ]
+      ]
+    },
+    {
+      "type": "matching",
+      "prompt": "Match ADT to operation set",
+      "pairs": [
+        [
+          "Stack",
+          "push/pop/peek"
+        ],
+        [
+          "Queue",
+          "enqueue/dequeue"
+        ],
+        [
+          "Set",
+          "insert/contains"
+        ]
+      ]
+    }
+  ],
+  "sources": [
+    "Week 1 - Introduction to DAA.pdf",
+    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+  ]
+}

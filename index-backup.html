@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg: #0f172a;
+            --panel: #111827;
+            --text: #e5e7eb;
+            --muted: #94a3b8;
+            --accent: #22d3ee;
+            --accent2: #a78bfa;
+            --good: #22c55e;
+            --bad: #ef4444;
+            --warn: #f59e0b;
+            --ease: cubic-bezier(0.22, 1, 0.36, 1);
+            --fast: 150ms;
+            --norm: 250ms;
+            --slow: 400ms;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .subtitle {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .sidebar {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 20px;
+            height: fit-content;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-area {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            min-height: 600px;
+        }
+
+        .class-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 4px solid #667eea;
+        }
+
+        .class-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .class-item.active {
+            background: #667eea;
+            color: white;
+            border-left-color: #764ba2;
+        }
+
+        .class-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .topic-count {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .topics-list {
+            margin-top: 10px;
+            padding-left: 15px;
+            display: none;
+        }
+
+        .topics-list.show {
+            display: block;
+        }
+
+        .topic-item {
+            background: rgba(255, 255, 255, 0.3);
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .topic-item:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+        .study-modes {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .mode-card {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .mode-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .mode-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .flashcard {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin: 10px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .flashcard:hover {
+            transform: scale(1.02);
+        }
+
+        .flashcard.flipped {
+            background: #f8f9fa;
+        }
+
+        .quiz-question {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .quiz-options {
+            list-style: none;
+            margin: 15px 0;
+        }
+
+        .quiz-option {
+            background: #f8f9fa;
+            padding: 12px 15px;
+            margin: 8px 0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .quiz-option:hover {
+            background: #e9ecef;
+        }
+
+        .quiz-option.correct {
+            background: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+
+        .quiz-option.incorrect {
+            background: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+
+        .game-area {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 15px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .sortable-item {
+            background: #667eea;
+            color: white;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: move;
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .sortable-item:hover {
+            transform: scale(1.05);
+        }
+
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .btn {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background: #764ba2;
+        }
+
+        .btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .notes-content p {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f8f9fa;
+            border-radius: 5px;
+            border-left: 4px solid #667eea;
+        }
+
+        .quiz-results {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .study-modes {
+                grid-template-columns: 1fr;
+            }
+        }
+    
+        .dashboard {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .dash-btn {
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: transform var(--fast) var(--ease), background var(--fast) var(--ease);
+        }
+        .dash-btn:hover {
+            background: var(--accent2);
+            transform: scale(1.05);
+        }
+        #sessionModal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right:0; bottom:0;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        #sessionModal .modal-content {
+            background: var(--panel);
+            color: var(--text);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 600px;
+            max-height: 80vh;
+            overflow: auto;
+        }
+
+    
+        .class-grid{ display:grid; grid-template-columns: repeat(auto-fill,minmax(200px,1fr)); gap:16px; }
+        .class-card{ background: var(--panel); color: var(--text); padding:18px; border-radius:14px; border:1px solid var(--border,#233047); cursor:pointer; transition: transform var(--fast) var(--ease); }
+        .class-card:hover{ transform: translateY(-2px); }
+        .class-home-header{ display:flex; align-items:center; gap:12px; }
+        .back-btn{ background: transparent; border:1px solid var(--border,#233047); color: var(--text); padding:6px 10px; border-radius:10px; cursor:pointer;}
+        .pdf-card{ background: var(--panel); border:1px solid var(--border,#233047); border-radius:14px; margin:16px 0; padding:10px;}
+        .pdf-title{ margin:6px 0 10px; color: var(--muted); font-size: 0.95rem;}
+        .quiz-group{ margin: 12px 0 18px; }
+        .topic-chip-row{ display:flex; flex-wrap:wrap; gap:10px; }
+        .topic-chip{ background: var(--accent); color:white; border:none; border-radius:999px; padding:8px 14px; cursor:pointer; }
+        .muted{ color: var(--muted); }
+
+    
+        /* Sidebar: open class topics on hover, click goes to class homepage */
+        .class-item { position: relative; }
+        .class-item > .topics-dropdown { display: none; position: relative; }
+        .class-item:hover > .topics-dropdown { display: block; }
+        .class-name-btn { background: transparent; border: none; color: var(--text); cursor: pointer; text-align: left; width: 100%; padding: 8px 10px; }
+
+    
+        .home-btn{
+            margin-left: 12px;
+            padding: 8px 12px;
+            border: 1px solid var(--border,#233047);
+            background: transparent;
+            color: var(--text);
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .class-item { position: relative; }
+        .class-item > .topics-list { display: none; position: relative; margin-top: 8px; }
+        .class-item:hover > .topics-list { display: block; }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📚 Study Hub</h1><button id="homeBtn" class="home-btn" onclick="renderClassGrid()">Home</button>
+            <p class="subtitle">Your personalized learning companion</p>
+        </header>
+        <div class="dashboard">
+            <button class="dash-btn" onclick="startMode('flashcards')">Flashcards</button>
+            <button class="dash-btn" onclick="startMode('quiz')">Quizzes</button>
+            <button class="dash-btn" onclick="startMode('games')">Games</button>
+            <button class="dash-btn" onclick="openSessionBuilder()">Build Session</button>
+        </div>
+
+        <div class="main-content">
+            <div class="sidebar">
+                <h3>Classes</h3>
+                <div id="classes-list"></div>
+            </div>
+
+            <div class="content-area">
+                <div id="welcome-screen">
+                    <h2>Welcome to Your Study Hub!</h2>
+                    <p>Select a class from the sidebar to start studying. Your study materials will be loaded dynamically from your class folders.</p>
+                    <div id="connection-status" style="margin: 20px 0; padding: 10px; border-radius: 5px; text-align: center;"></div>
+                    
+                    <div class="study-modes">
+                        <div class="mode-card">
+                            <div class="mode-icon">📝</div>
+                            <h4>Notes Review</h4>
+                            <p>Review organized notes and key concepts</p>
+                        </div>
+                        <div class="mode-card">
+                            <div class="mode-icon">🃏</div>
+                            <h4>Flashcards</h4>
+                            <p>Interactive flashcards for memorization</p>
+                        </div>
+                        <div class="mode-card">
+                            <div class="mode-icon">📋</div>
+                            <h4>Quizzes</h4>
+                            <p>Test your knowledge with quizzes</p>
+                        </div>
+                        <div class="mode-card">
+                            <div class="mode-icon">🎮</div>
+                            <h4>Study Games</h4>
+                            <p>Learn through interactive games</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="study-content" class="hidden">
+                    <div id="topic-header"></div>
+                    <div id="study-mode-selector">
+                        <button class="btn" onclick="showMode('notes')">📝 Notes</button>
+                        <button class="btn" onclick="showMode('flashcards')">🃏 Flashcards</button>
+                        <button class="btn" onclick="showMode('quiz')">📋 Quiz</button>
+                        <button class="btn" onclick="showMode('games')">🎮 Games</button>
+                    </div>
+                    <div id="content-display"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let studyData = {};
+        let currentTopic = null;
+        let currentMode = 'notes';
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            loadStudyMaterials();
+        });
+
+        // Load study materials from the classes directory
+        async function loadStudyMaterials() {
+            const statusDiv = document.getElementById('connection-status');
+            
+            try {
+                // Try to load from server API first
+                const response = await fetch('/api/study-materials');
+                if (response.ok) {
+                    studyData = await response.json();
+                    const classCount = Object.keys(studyData).length;
+                    const topicCount = Object.values(studyData).reduce((sum, cls) => sum + Object.keys(cls.topics).length, 0);
+                    statusDiv.innerHTML = `<span style="color: #28a745;">✅ Connected to server - Loaded ${classCount} classes with ${topicCount} topics</span>`;
+                    statusDiv.style.background = '#d4edda';
+                } else {
+                    // Fallback to demo data if server is not running
+                    console.warn('Server not running, using demo data');
+                    studyData = await loadDemoData(); await loadFilesOnce(); renderClassGrid();
+                    statusDiv.innerHTML = `<span style="color: #856404;">⚠️ Server not running - Using demo data</span>`;
+                    statusDiv.style.background = '#fff3cd';
+                }
+                renderClassesList();
+            } catch (error) {
+                console.warn('Could not connect to server, using demo data:', error.message);
+                // Fallback to demo data
+                studyData = await loadDemoData(); await loadFilesOnce(); renderClassGrid();
+                statusDiv.innerHTML = `<span style="color: #856404;">⚠️ No server connection - Using demo data. Start server with 'node server.js'</span>`;
+                statusDiv.style.background = '#fff3cd';
+                renderClassesList();
+            }
+        }
+
+        // Demo data for when server is not running
+        async function loadDemoData() {
+            return {
+                "design-analysis-algorithms": {
+                    title: "Design and Analysis of Algorithms",
+                    topics: {
+                        "big-o-notation": {
+                            title: "Big O Notation",
+                            class: "Design and Analysis of Algorithms",
+                            type: "concept",
+                            description: "Understanding algorithmic complexity and Big O notation",
+                            notes: [
+                                "Big O notation describes the upper bound of time complexity",
+                                "Common complexities: O(1), O(log n), O(n), O(n log n), O(n²), O(2^n)",
+                                "Focus on the dominant term and ignore constants",
+                                "Used to compare algorithm efficiency as input size grows"
+                            ],
+                            flashcards: [
+                                {
+                                    front: "What does O(1) represent?",
+                                    back: "Constant time complexity - execution time doesn't change with input size"
+                                },
+                                {
+                                    front: "What is the Big O notation for linear search?",
+                                    back: "O(n) - worst case requires checking every element"
+                                },
+                                {
+                                    front: "Which is more efficient: O(log n) or O(n)?",
+                                    back: "O(log n) is more efficient - logarithmic growth is slower than linear"
+                                },
+                                {
+                                    front: "What does O(n²) typically represent?",
+                                    back: "Quadratic time complexity, often seen in nested loops"
+                                }
+                            ],
+                            quiz: [
+                                {
+                                    question: "What is the time complexity of binary search?",
+                                    options: ["O(1)", "O(log n)", "O(n)", "O(n²)"],
+                                    correct: 1,
+                                    explanation: "Binary search divides the search space in half each time, resulting in O(log n) complexity"
+                                },
+                                {
+                                    question: "Which complexity grows the fastest?",
+                                    options: ["O(n)", "O(log n)", "O(n²)", "O(2^n)"],
+                                    correct: 3,
+                                    explanation: "Exponential time O(2^n) grows much faster than polynomial or logarithmic complexities"
+                                }
+                            ],
+                            games: [
+                                {
+                                    type: "sorting",
+                                    title: "Complexity Ranking",
+                                    description: "Arrange these complexities from most to least efficient",
+                                    items: ["O(2^n)", "O(1)", "O(n²)", "O(log n)", "O(n)"],
+                                    correct_order: ["O(1)", "O(log n)", "O(n)", "O(n²)", "O(2^n)"]
+                                }
+                            ]
+                        },
+                        "quiz-1": {
+                            title: "Quiz 1 Preparation",
+                            class: "Design and Analysis of Algorithms",
+                            type: "exam-prep",
+                            description: "Preparation materials for the first quiz covering basic algorithm concepts",
+                            notes: [
+                                "Quiz covers: algorithm definition, pseudocode, basic complexity analysis",
+                                "Focus on understanding rather than memorizing",
+                                "Practice writing simple algorithms in pseudocode",
+                                "Be able to identify best, average, and worst-case scenarios"
+                            ],
+                            flashcards: [
+                                {
+                                    front: "What is an algorithm?",
+                                    back: "A step-by-step procedure for solving a problem or completing a task"
+                                },
+                                {
+                                    front: "What are the three cases to consider in algorithm analysis?",
+                                    back: "Best case, average case, and worst case"
+                                },
+                                {
+                                    front: "What is pseudocode?",
+                                    back: "A high-level description of an algorithm using natural language and programming constructs"
+                                }
+                            ],
+                            quiz: [
+                                {
+                                    question: "Which case analysis is most commonly used for algorithm comparison?",
+                                    options: ["Best case", "Average case", "Worst case", "All equally"],
+                                    correct: 2,
+                                    explanation: "Worst case analysis ensures the algorithm will never perform worse than the stated bound"
+                                }
+                            ],
+                            games: [
+                                {
+                                    type: "matching",
+                                    title: "Algorithm Terms",
+                                    description: "Match algorithm terms with their definitions",
+                                    pairs: [
+                                        ["Algorithm", "Step-by-step problem-solving procedure"],
+                                        ["Pseudocode", "High-level algorithm description"],
+                                        ["Complexity", "Measure of algorithm efficiency"]
+                                    ]
+                                }
+                            ]
+                        }
+                    }
+                }
+            };
+        }
+
+        function renderClassesList() {
+            const classList = document.getElementById('classes-list');
+            classList.innerHTML = '';
+
+            Object.keys(studyData).forEach(classKey => {
+                const classData = studyData[classKey];
+                const classItem = document.createElement('div');
+                classItem.className = 'class-item';
+                classItem.innerHTML = `
+                    <div class="class-title">${classData.title}</div>
+                    <div class="topic-count">${Object.keys(classData.topics).length} topics</div>
+                    <div class="topics-list" id="topics-${classKey}">
+                        ${Object.keys(classData.topics).filter(k=>isQuizTopic(k)).map(topicKey => `<div class=\"topic-item\" onclick=\"loadTopic('${classKey}', '${topicKey}')\">${classData.topics[topicKey].title}</div>`).join('')}
+                    </div>
+                `;
+
+                classItem.onclick = (e) => {
+                    e.stopPropagation();
+                    openClassHome(classKey);
+                };
+
+                classList.appendChild(classItem);
+            });
+        }
+
+        function toggleClass(){ /* disabled: hover shows dropdown */ }
+
+        function renderFlashcards() {
+            if (!currentTopic.flashcards || currentTopic.flashcards.length === 0) {
+                document.getElementById('content-display').innerHTML = '<p>No flashcards available for this topic.</p>';
+                return;
+            }
+
+            let currentCard = 0;
+            let isFlipped = false;
+
+            function showCard() {
+                const card = currentTopic.flashcards[currentCard];
+                const contentDisplay = document.getElementById('content-display');
+                
+                contentDisplay.innerHTML = `
+                    <h3>🃏 Flashcards (${currentCard + 1}/${currentTopic.flashcards.length})</h3>
+                    <div class="flashcard ${isFlipped ? 'flipped' : ''}" onclick="flipCard()">
+                        <div>${isFlipped ? card.back : card.front}</div>
+                    </div>
+                    <div class="controls">
+                        <button class="btn" onclick="prevCard()" ${currentCard === 0 ? 'disabled' : ''}>Previous</button>
+                        <button class="btn" onclick="flipCard()">${isFlipped ? 'Show Question' : 'Show Answer'}</button>
+                        <button class="btn" onclick="nextCard()" ${currentCard === currentTopic.flashcards.length - 1 ? 'disabled' : ''}>Next</button>
+                    </div>
+                `;
+            }
+
+            window.flipCard = () => {
+                isFlipped = !isFlipped;
+                showCard();
+            };
+
+            window.nextCard = () => {
+                if (currentCard < currentTopic.flashcards.length - 1) {
+                    currentCard++;
+                    isFlipped = false;
+                    showCard();
+                }
+            };
+
+            window.prevCard = () => {
+                if (currentCard > 0) {
+                    currentCard--;
+                    isFlipped = false;
+                    showCard();
+                }
+            };
+
+            showCard();
+        }
+
+        function renderQuiz() {
+            if (!currentTopic.quiz || currentTopic.quiz.length === 0) {
+                document.getElementById('content-display').innerHTML = '<p>No quiz available for this topic.</p>';
+                return;
+            }
+
+            let currentQuestion = 0;
+            let score = 0;
+            let answered = false;
+
+            function showQuestion() {
+                const question = currentTopic.quiz[currentQuestion];
+                const contentDisplay = document.getElementById('content-display');
+                
+                contentDisplay.innerHTML = `
+                    <h3>📋 Quiz (${currentQuestion + 1}/${currentTopic.quiz.length})</h3>
+                    <div class="quiz-question">
+                        <h4>${question.question}</h4>
+                        <ul class="quiz-options">
+                            ${question.options.map((option, index) => 
+                                `<li class="quiz-option" onclick="selectAnswer(${index})">${option}</li>`
+                            ).join('')}
+                        </ul>
+                        <div id="explanation" class="hidden"></div>
+                    </div>
+                    <div class="controls">
+                        <button class="btn" onclick="nextQuestion()" ${!answered ? 'disabled' : ''}>
+                            ${currentQuestion === currentTopic.quiz.length - 1 ? 'Finish Quiz' : 'Next Question'}
+                        </button>
+                    </div>
+                    <div>Score: ${score}/${currentQuestion + (answered ? 1 : 0)}</div>
+                `;
+            }
+
+            window.selectAnswer = (selectedIndex) => {
+                if (answered) return;
+                
+                const question = currentTopic.quiz[currentQuestion];
+                const options = document.querySelectorAll('.quiz-option');
+                
+                options.forEach((option, index) => {
+                    if (index === question.correct) {
+                        option.classList.add('correct');
+                    } else if (index === selectedIndex) {
+                        option.classList.add('incorrect');
+                    }
+                });
+
+                if (selectedIndex === question.correct) {
+                    score++;
+                }
+
+                document.getElementById('explanation').innerHTML = `<p><strong>Explanation:</strong> ${question.explanation}</p>`;
+                document.getElementById('explanation').classList.remove('hidden');
+                
+                answered = true;
+                document.querySelector('.controls button').disabled = false;
+            };
+
+            window.nextQuestion = () => {
+                if (currentQuestion < currentTopic.quiz.length - 1) {
+                    currentQuestion++;
+                    answered = false;
+                    showQuestion();
+                } else {
+                    document.getElementById('content-display').innerHTML = `
+                        <h3>📋 Quiz Complete!</h3>
+                        <div class="quiz-results">
+                            <h2>Final Score: ${score}/${currentTopic.quiz.length}</h2>
+                            <p>Percentage: ${Math.round((score / currentTopic.quiz.length) * 100)}%</p>
+                            <button class="btn" onclick="renderQuiz()">Retake Quiz</button>
+                        </div>
+                        <div class="notes-sources">
+                          <h4>Sources</h4>
+                          ${ (currentTopic && Array.isArray(currentTopic.sources) && currentTopic.sources.length
+                               ? currentTopic.sources
+                               : (studyFiles[currentClassKey()]||[]) ).map(f=>`<div>📄 ${f}</div>`).join('')}
+                        </div>
+
+                    `;
+                }
+            };
+
+            showQuestion();
+        }
+
+        function renderGames() {
+            if (!currentTopic.games || currentTopic.games.length === 0) {
+                document.getElementById('content-display').innerHTML = '<p>No games available for this topic.</p>';
+                return;
+            }
+
+            const game = currentTopic.games[0];
+            
+            if (game.type === 'sorting') {
+                renderSortingGame(game);
+            } else if (game.type === 'matching') {
+                renderMatchingGame(game);
+            }
+        }
+
+        function renderSortingGame(game) {
+            let items = [...game.items];
+            let attempts = 0;
+
+            function shuffle(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            }
+
+            shuffle(items);
+
+            function renderGame() {
+                document.getElementById('content-display').innerHTML = `
+                    <h3>🎮 ${game.title}</h3>
+                    <p>${game.description}</p>
+                    <div class="game-area">
+                        <div id="sortable-items">
+                            ${items.map((item, index) => 
+                                `<span class="sortable-item" draggable="true" data-index="${index}" onclick="selectItem(${index})">${item}</span>`
+                            ).join('')}
+                        </div>
+                        <div class="controls">
+                            <button class="btn" onclick="checkOrder()">Check Answer</button>
+                            <button class="btn" onclick="resetGame()">Reset</button>
+                        </div>
+                        <div>Attempts: ${attempts}</div>
+                        <div id="game-result"></div>
+                    </div>
+                `;
+            }
+
+            let selectedIndex = null;
+
+            window.selectItem = (index) => {
+                if (selectedIndex === null) {
+                    selectedIndex = index;
+                    document.querySelector(`[data-index="${index}"]`).style.background = '#764ba2';
+                } else if (selectedIndex === index) {
+                    selectedIndex = null;
+                    document.querySelector(`[data-index="${index}"]`).style.background = '#667eea';
+                } else {
+                    [items[selectedIndex], items[index]] = [items[index], items[selectedIndex]];
+                    selectedIndex = null;
+                    renderGame();
+                }
+            };
+
+            window.checkOrder = () => {
+                attempts++;
+                const isCorrect = JSON.stringify(items) === JSON.stringify(game.correct_order);
+                const resultDiv = document.getElementById('game-result');
+                
+                if (isCorrect) {
+                    resultDiv.innerHTML = `<p style="color: green; font-weight: bold;">🎉 Correct! Well done!</p>`;
+                } else {
+                    resultDiv.innerHTML = `<p style="color: red;">❌ Try again! Hint: ${game.correct_order[0]} should be first.</p>`;
+                }
+                
+                renderGame();
+            };
+
+            window.resetGame = () => {
+                items = [...game.items];
+                shuffle(items);
+                attempts = 0;
+                selectedIndex = null;
+                renderGame();
+            };
+
+            renderGame();
+        }
+
+        function renderMatchingGame(game) {
+            let shuffledPairs = [...game.pairs];
+            let matches = [];
+            let attempts = 0;
+
+            function shuffle(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+            }
+
+            let leftItems = shuffledPairs.map(pair => pair[0]);
+            let rightItems = shuffledPairs.map(pair => pair[1]);
+            shuffle(rightItems);
+
+            function renderGame() {
+                document.getElementById('content-display').innerHTML = `
+                    <h3>🎮 ${game.title}</h3>
+                    <p>${game.description}</p>
+                    <div class="game-area">
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                            <div>
+                                ${leftItems.map((item, index) => 
+                                    `<div class="sortable-item" onclick="selectLeft(${index})" data-left="${index}">${item}</div>`
+                                ).join('')}
+                            </div>
+                            <div>
+                                ${rightItems.map((item, index) => 
+                                    `<div class="sortable-item" onclick="selectRight(${index})" data-right="${index}">${item}</div>`
+                                ).join('')}
+                            </div>
+                        </div>
+                        <div class="controls">
+                            <button class="btn" onclick="resetMatching()">Reset</button>
+                        </div>
+                        <div>Matches: ${matches.length}/${game.pairs.length}</div>
+                        <div id="game-result"></div>
+                    </div>
+                `;
+            }
+
+            let selectedLeft = null;
+            let selectedRight = null;
+
+            window.selectLeft = (index) => {
+                document.querySelectorAll('[data-left]').forEach(el => el.style.background = '#667eea');
+                selectedLeft = index;
+                document.querySelector(`[data-left="${index}"]`).style.background = '#764ba2';
+                checkMatch();
+            };
+
+            window.selectRight = (index) => {
+                document.querySelectorAll('[data-right]').forEach(el => el.style.background = '#667eea');
+                selectedRight = index;
+                document.querySelector(`[data-right="${index}"]`).style.background = '#764ba2';
+                checkMatch();
+            };
+
+            function checkMatch() {
+                if (selectedLeft !== null && selectedRight !== null) {
+                    const leftItem = leftItems[selectedLeft];
+                    const rightItem = rightItems[selectedRight];
+                    
+                    const isMatch = game.pairs.some(pair => 
+                        (pair[0] === leftItem && pair[1] === rightItem) ||
+                        (pair[1] === leftItem && pair[0] === rightItem)
+                    );
+
+                    if (isMatch) {
+                        matches.push([leftItem, rightItem]);
+                        document.querySelector(`[data-left="${selectedLeft}"]`).style.background = '#28a745';
+                        document.querySelector(`[data-right="${selectedRight}"]`).style.background = '#28a745';
+                        
+                        if (matches.length === game.pairs.length) {
+                            document.getElementById('game-result').innerHTML = 
+                                `<p style="color: green; font-weight: bold;">🎉 All matches complete!</p>`;
+                        }
+                    } else {
+                        setTimeout(() => {
+                            document.querySelector(`[data-left="${selectedLeft}"]`).style.background = '#667eea';
+                            document.querySelector(`[data-right="${selectedRight}"]`).style.background = '#667eea';
+                        }, 1000);
+                    }
+
+                    selectedLeft = null;
+                    selectedRight = null;
+                    attempts++;
+                    renderGame();
+                }
+            }
+
+            window.resetMatching = () => {
+                matches = [];
+                attempts = 0;
+                selectedLeft = null;
+                selectedRight = null;
+                rightItems = shuffledPairs.map(pair => pair[1]);
+                shuffle(rightItems);
+                renderGame();
+            };
+
+            renderGame();
+        }
+    
+        let studyFiles = {};
+        let classHomeKey = null;
+
+        async function loadFilesOnce(){
+            try{
+                const resp = await fetch('/api/study-materials/files');
+                if(resp.ok){ studyFiles = await resp.json(); }
+            }catch(e){ studyFiles = {}; }
+        }
+
+        
+        function currentClassKey(){
+            if(classHomeKey) return classHomeKey;
+            // infer from currentTopic by scanning studyData
+            for(const ck in studyData){
+                const topics = studyData[ck].topics;
+                for(const tk in topics){
+                    if(topics[tk] === currentTopic) return ck;
+                }
+            }
+            return Object.keys(studyData)[0] || null;
+        }
+
+        function renderClassGrid(){
+            classHomeKey = null;
+            const app = document.getElementById('content-display');
+            const keys = Object.keys(studyData);
+            let html = `<h2>Classes</h2><div class="class-grid">`;
+            for(const k of keys){
+                const title = studyData[k].title || k;
+                html += `<button class="class-card" onclick=\"openClassHome('${k}')\">${title}</button>`;
+            }
+            html += `</div>`;
+            app.innerHTML = html;
+        }
+
+        function openClassHome(classKey){
+            classHomeKey = classKey;
+            renderClassHome(classKey);
+        }
+
+        function isQuizTopic(topicKey){
+            const t = topicKey.toLowerCase();
+            // Only keep quiz-1, quiz-2, computability, adt, big-o-notation, step-counting
+            return ['quiz-1','quiz-2','computability','adt','big-o-notation','step-counting'].includes(t);
+        }
+
+        function renderPDFList(classKey){
+            const files = studyFiles[classKey] || [];
+            if(!files.length) return `<p class="muted">No PDFs found in Study Materials.</p>`;
+            // Show embedded viewers for each PDF
+            const base = `/classes/${classKey}/Study Materials/`;
+            return files.map(f => `
+                <div class="pdf-card">
+                  <div class="pdf-title">📄 ${f}</div>
+                  <object data="${encodeURI(base + f)}" type="application/pdf" width="100%" height="480">
+                    <p><a href="${encodeURI(base + f)}" target="_blank" rel="noopener">Open ${f}</a></p>
+                  </object>
+                </div>
+            `).join('');
+        }
+
+        function renderClassHome(classKey){
+            const classData = studyData[classKey];
+            const content = document.getElementById('content-display');
+            const topics = Object.keys(classData.topics).filter(isQuizTopic);
+
+            // Group topics under Quiz 1 / Quiz 2
+            const group = {
+                'Quiz 1': topics.filter(t => ['computability','adt','quiz-1'].includes(t.toLowerCase())),
+                'Quiz 2': topics.filter(t => ['big-o-notation','step-counting','quiz-2'].includes(t.toLowerCase()))
+            };
+
+            const pdfSection = renderPDFList(classKey);
+
+            let topicsHTML = '';
+            for(const label of ['Quiz 1','Quiz 2']){
+                const list = group[label];
+                if(!list.length) continue;
+                topicsHTML += `<div class="quiz-group"><h4>${label}</h4><div class="topic-chip-row">` +
+                    list.map(tk => `<button class="topic-chip" onclick="loadTopic('${classKey}','${tk}')">${classData.topics[tk].title || tk}</button>`).join('') +
+                    `</div></div>`;
+            }
+
+            content.innerHTML = `
+                <div class="class-home">
+                  <div class="class-home-header">
+                    <button class="back-btn" onclick="renderClassGrid()">← Back</button>
+                    <h2>${classData.title}</h2>
+                  </div>
+                  <section class="materials-sec">
+                    <h3>Study Materials (PDFs)</h3>
+                    ${pdfSection}
+                  </section>
+                  <section class="topics-sec">
+                    <h3>Study Topics</h3>
+                    ${topicsHTML || '<p class="muted">No quiz topics found.</p>'}
+                  </section>
+                </div>
+            `;
+        }
+
+    
+      let inSession = false;
+      let sessionTopic = null;
+
+      function collectSelectedTopics(){
+        const collected = { notes:[], flashcards:[], quiz:[], games:[] };
+        for(const id in sessionSelection){
+          if(sessionSelection[id]){
+            const [cls,topic]=id.split('__');
+            const t=studyData[cls]?.topics?.[topic];
+            if(!t) continue;
+            if(Array.isArray(t.notes)) collected.notes.push(...t.notes);
+            if(Array.isArray(t.flashcards)) collected.flashcards.push(...t.flashcards);
+            if(Array.isArray(t.quiz)) collected.quiz.push(...t.quiz);
+            if(Array.isArray(t.games)) collected.games.push(...t.games);
+          }
+        }
+        return collected;
+      }
+
+      function launchSession(){
+        const pool = collectSelectedTopics();
+        const mode = document.getElementById('sessionModeSel').value || 'flashcards';
+        // Create a synthetic topic so existing renderers work unchanged
+        sessionTopic = {
+          title: 'Study Session',
+          notes: pool.notes,
+          flashcards: pool.flashcards,
+          quiz: pool.quiz,
+          games: pool.games
+        };
+        inSession = true;
+        currentTopic = sessionTopic;
+        closeSessionBuilder();
+        showMode(mode);
+      }
+
+      // Add a Home button to header if missing
+      (function ensureHomeButton(){
+        const header = document.querySelector('header');
+        if(header && !document.getElementById('homeBtn')){
+          const btn = document.createElement('button');
+          btn.id = 'homeBtn';
+          btn.textContent = 'Home';
+          btn.style.marginLeft = '12px';
+          btn.onclick = () => { inSession=false; sessionTopic=null; renderClassGrid(); };
+          header.appendChild(btn);
+        }
+      })();
+
+    
+      function normalizeCorrect(q){
+        // Prefer numeric index 'answer' or 'answerIndex'
+        if (typeof q.answer === 'number') return q.answer;
+        if (typeof q.answerIndex === 'number') return q.answerIndex;
+        // If 'correct' is number
+        if (typeof q.correct === 'number') return q.correct;
+        // If any of these are text of the correct option
+        const opts = q.options || [];
+        const correctText = q.correctOption || q.correctText || q.correct;
+        if (typeof correctText === 'string'){
+          const idx = opts.findIndex(o => (''+o).trim().toLowerCase() === correctText.trim().toLowerCase());
+          if (idx >= 0) return idx;
+        }
+        // Fallback: 0
+        return 0;
+      }
+
+    </script>
+
+    <div id="sessionModal">
+      <div class="modal-content">
+        <h2>Build Study Session</h2>
+        <div id="sessionTopics"></div>
+        <p id="sessionCounts"></p><label for="sessionModeSel">Mode:</label> <select id="sessionModeSel"><option value="flashcards">Flashcards</option><option value="quiz">Quizzes</option><option value="games">Games</option></select>
+        <button onclick="launchSession()">Start Session</button>
+        <button onclick="closeSessionBuilder()">Cancel</button>
+      </div>
+    </div>
+    <script>
+      let sessionSelection = {};
+      function openSessionBuilder(){
+        document.getElementById('sessionModal').style.display='flex';
+        buildSessionTopics();
+      }
+      function closeSessionBuilder(){
+        document.getElementById('sessionModal').style.display='none';
+      }
+      function buildSessionTopics(){
+        const container=document.getElementById('sessionTopics');
+        container.innerHTML='';
+        for(const className in studyData){
+          const div=document.createElement('div');
+          div.innerHTML='<h3>'+studyData[className].title+'</h3>';
+          for(const topic in studyData[className].topics){
+            const id=className+'__'+topic;
+            const cb=document.createElement('input');
+            cb.type='checkbox'; cb.id=id;
+            cb.onchange=e=>{sessionSelection[id]=cb.checked;updateSessionCounts();};
+            const lbl=document.createElement('label');
+            lbl.htmlFor=id; lbl.innerText=topic;
+            div.appendChild(cb);div.appendChild(lbl);div.appendChild(document.createElement('br'));
+          }
+          container.appendChild(div);
+        }
+      }
+      function updateSessionCounts(){
+        let cards=0, quiz=0, games=0, notes=0;
+        for(const id in sessionSelection){
+          if(sessionSelection[id]){
+            const [cls,topic]=id.split('__');
+            const t=studyData[cls].topics[topic];
+            if(t.flashcards) cards+=t.flashcards.length;
+            if(t.quiz) quiz+=t.quiz.length;
+            if(t.games) games+=t.games.length;
+            if(t.notes) notes+=t.notes.length;
+          }
+        }
+        document.getElementById('sessionCounts').innerText=`Selected: ${cards} cards, ${quiz} quiz Qs, ${games} games, ${notes} notes.`;
+      }
+      function launchSession(){
+        alert('Session launch not fully implemented, but would merge selected topics!');
+        closeSessionBuilder();
+      }
+      
+      function startMode(mode){
+        if (typeof currentTopic === 'object' && currentTopic) { showMode(mode); return; }
+        openSessionBuilder();
+        const sel = document.getElementById('sessionModeSel'); if (sel) sel.value = mode;
+    }
+// Otherwise, open Session Builder with mode preselected
+        openSessionBuilder();
+        const sel = document.getElementById('sessionModeSel');
+        if (sel) sel.value = mode;
+      }
+</script>
+
+</body>
+</html>

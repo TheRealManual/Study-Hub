@@ -1,0 +1,60 @@
+{
+  "title": "Your Topic Title Here",
+  "class": "Your Class Name Here",
+  "type": "concept",
+  "description": "A brief description of what this topic covers",
+  "notes": [
+    "First key point or concept",
+    "Second important detail", 
+    "Third crucial piece of information",
+    "Add more notes as needed"
+  ],
+  "flashcards": [
+    {
+      "front": "What is...? or Define...",
+      "back": "The answer or definition goes here"
+    },
+    {
+      "front": "Another question about the topic",
+      "back": "The corresponding answer"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Your quiz question here?",
+      "options": [
+        "Option A - maybe correct",
+        "Option B - the right answer", 
+        "Option C - a distractor",
+        "Option D - another distractor"
+      ],
+      "correct": 1,
+      "explanation": "Explain why option B is correct and perhaps why others are wrong"
+    }
+  ],
+  "games": [
+    {
+      "type": "sorting",
+      "title": "Sorting Game Title",
+      "description": "Instructions for the player (e.g., 'Arrange from smallest to largest')",
+      "items": ["Item to sort", "Another item", "Third item", "Fourth item"],
+      "correct_order": ["First in order", "Second in order", "Third in order", "Fourth in order"]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Game Title", 
+      "description": "Instructions (e.g., 'Match terms with their definitions')",
+      "pairs": [
+        ["Term 1", "Definition 1"],
+        ["Term 2", "Definition 2"],
+        ["Term 3", "Definition 3"]
+      ]
+    }
+  ],
+  "resources": [
+    "Textbook Chapter X, pages Y-Z",
+    "Lecture slides from [date]",
+    "Online resource: [URL or description]",
+    "Additional reading material"
+  ]
+}

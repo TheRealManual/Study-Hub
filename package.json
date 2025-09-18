@@ -1,0 +1,17 @@
+{
+  "name": "study-hub",
+  "version": "1.0.0",
+  "description": "A dynamic study site that organizes materials from JSON files",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "keywords": ["study", "education", "flashcards", "quiz", "learning"],
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}

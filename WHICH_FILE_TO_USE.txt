@@ -1,0 +1,19 @@
+🎯 SIMPLIFIED STUDY HUB LAUNCHER
+
+📁 You now have a cleaner setup with fewer confusing files!
+
+🚀 START STUDY HUB.bat ⭐ 
+   ↳ THIS IS THE MAIN ONE - Double-click this to study!
+   ↳ Starts your study site and opens browser automatically
+
+🔧 Other files (you probably won't need these):
+   ↳ START_STUDY_HUB.bat - Alternative with logs (for troubleshooting)
+   ↳ STOP_SERVER.bat - Emergency stop button (if server gets stuck)
+
+🎯 FOR DAILY USE: 
+Just double-click "START STUDY HUB.bat" and you're done!
+
+💡 WHY MULTIPLE FILES?
+I got excited and created backup options, but honestly you only need the main one 99% of the time. The others are just there "just in case" something goes wrong.
+
+Sorry for the confusion! Just use the main "START STUDY HUB.bat" file! 😊
