@@ -5291,13 +5291,22 @@
         let currentClassId = null;
 
         function openClassManagement() {
+            console.log('openClassManagement called');
             document.getElementById('class-management-modal').style.display = 'flex';
             loadUserClasses();
         }
 
+        // Make functions globally accessible
+        window.openClassManagement = openClassManagement;
+
+        // Test function to verify script loading
+        console.log('Class management functions loaded');
+
         function closeClassManagement() {
             document.getElementById('class-management-modal').style.display = 'none';
         }
+
+        window.closeClassManagement = closeClassManagement;
 
         function showClassTab(tabName) {
             // Hide all tab contents
@@ -5606,6 +5615,22 @@
 
             showToast(`${template.name} downloaded successfully!`, 'success');
         }
+
+        // Make all class management functions globally accessible
+        window.showClassTab = showClassTab;
+        window.loadUserClasses = loadUserClasses;
+        window.renderUserClasses = renderUserClasses;
+        window.createClass = createClass;
+        window.resetCreateForm = resetCreateForm;
+        window.openTopicManagement = openTopicManagement;
+        window.closeTopicManagement = closeTopicManagement;
+        window.showTopicTab = showTopicTab;
+        window.loadClassTopics = loadClassTopics;
+        window.renderClassTopics = renderClassTopics;
+        window.createTopic = createTopic;
+        window.resetTopicForm = resetTopicForm;
+        window.downloadTemplate = downloadTemplate;
+        window.handleBulkUpload = handleBulkUpload;
 
         // Event Listeners
         document.addEventListener('DOMContentLoaded', function() {
