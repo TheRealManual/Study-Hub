@@ -1792,6 +1792,7 @@
         <div class="header-right">
             <button class="session-btn" onclick="testClassManagement()" aria-label="Test class management">Test</button>
             <button class="session-btn" onclick="openClassManagement()" aria-label="Manage classes and topics">Manage Classes</button>
+            <button class="session-btn" onclick="simpleTest()" aria-label="Test functions">Test Functions</button>
             <button class="session-btn" onclick="openSessionBuilder()" aria-label="Build custom study session">Build Session</button>
         </div>
     </header>
@@ -2092,6 +2093,7 @@
     <div id="toast" class="toast"></div>
 
     <script>
+        try {
         // AWS Amplify Configuration
         const awsExports = {
             "aws_project_region": "us-east-1",
@@ -2132,11 +2134,17 @@
         // Debug: Test function availability
         console.log('Script loading...');
         
+        // Immediate function test
+        window.simpleTest = function() {
+            alert('Function test successful!');
+        };
+        
         function debugFunctions() {
             console.log('Functions check:');
             console.log('openClassManagement:', typeof window.openClassManagement);
             console.log('testClassManagement:', typeof window.testClassManagement);
             console.log('createClass:', typeof window.createClass);
+            console.log('simpleTest:', typeof window.simpleTest);
             console.log('Amplify:', typeof window.Amplify);
         }
         
@@ -5730,6 +5738,11 @@
 
             // TODO: Implement ZIP file processing
             showToast('Bulk upload processing... (Feature coming soon!)', 'info');
+        }
+
+        } catch (error) {
+            console.error('Script execution error:', error);
+            alert('Script error: ' + error.message);
         }
 
     </script>
