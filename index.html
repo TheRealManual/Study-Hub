@@ -1790,6 +1790,7 @@
             <button class="mode-btn" onclick="openSessionBuilder('games')" aria-label="Start games session">Games</button>
         </div>
         <div class="header-right">
+            <button class="session-btn" onclick="testClassManagement()" aria-label="Test class management">Test</button>
             <button class="session-btn" onclick="openClassManagement()" aria-label="Manage classes and topics">Manage Classes</button>
             <button class="session-btn" onclick="openSessionBuilder()" aria-label="Build custom study session">Build Session</button>
         </div>
@@ -5290,10 +5291,77 @@
         // Class Management Functions
         let currentClassId = null;
 
+        // Test if this code block loads
+        console.log('Class management code block reached');
+        
+        // Add a simple test function first
+        function testClassManagement() {
+            console.log('Test function works');
+            alert('Class management is working!');
+        }
+        window.testClassManagement = testClassManagement;
+
         function openClassManagement() {
             console.log('openClassManagement called');
             document.getElementById('class-management-modal').style.display = 'flex';
+            
+            // Set up event listeners when modal opens
+            setupClassManagementListeners();
+            
             loadUserClasses();
+        }
+
+        function setupClassManagementListeners() {
+            // Only set up if not already set up
+            const createForm = document.getElementById('create-class-form');
+            const topicForm = document.getElementById('create-topic-form');
+            
+            if (createForm && !createForm.dataset.listenerAdded) {
+                createForm.addEventListener('submit', createClass);
+                createForm.dataset.listenerAdded = 'true';
+            }
+            
+            if (topicForm && !topicForm.dataset.listenerAdded) {
+                topicForm.addEventListener('submit', createTopic);
+                topicForm.dataset.listenerAdded = 'true';
+            }
+            
+            // File upload handling
+            const uploadArea = document.getElementById('upload-area');
+            const fileInput = document.getElementById('bulk-upload');
+            
+            if (uploadArea && !uploadArea.dataset.listenerAdded) {
+                uploadArea.addEventListener('click', () => fileInput.click());
+                
+                uploadArea.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                    uploadArea.classList.add('dragover');
+                });
+                
+                uploadArea.addEventListener('dragleave', () => {
+                    uploadArea.classList.remove('dragover');
+                });
+                
+                uploadArea.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    uploadArea.classList.remove('dragover');
+                    const files = e.dataTransfer.files;
+                    if (files.length > 0) {
+                        handleBulkUpload(files[0]);
+                    }
+                });
+                
+                uploadArea.dataset.listenerAdded = 'true';
+            }
+            
+            if (fileInput && !fileInput.dataset.listenerAdded) {
+                fileInput.addEventListener('change', (e) => {
+                    if (e.target.files.length > 0) {
+                        handleBulkUpload(e.target.files[0]);
+                    }
+                });
+                fileInput.dataset.listenerAdded = 'true';
+            }
         }
 
         // Make functions globally accessible
@@ -5631,45 +5699,6 @@
         window.resetTopicForm = resetTopicForm;
         window.downloadTemplate = downloadTemplate;
         window.handleBulkUpload = handleBulkUpload;
-
-        // Event Listeners
-        document.addEventListener('DOMContentLoaded', function() {
-            // Class creation form
-            document.getElementById('create-class-form').addEventListener('submit', createClass);
-            
-            // Topic creation form
-            document.getElementById('create-topic-form').addEventListener('submit', createTopic);
-            
-            // File upload handling
-            const uploadArea = document.getElementById('upload-area');
-            const fileInput = document.getElementById('bulk-upload');
-            
-            uploadArea.addEventListener('click', () => fileInput.click());
-            
-            uploadArea.addEventListener('dragover', (e) => {
-                e.preventDefault();
-                uploadArea.classList.add('dragover');
-            });
-            
-            uploadArea.addEventListener('dragleave', () => {
-                uploadArea.classList.remove('dragover');
-            });
-            
-            uploadArea.addEventListener('drop', (e) => {
-                e.preventDefault();
-                uploadArea.classList.remove('dragover');
-                const files = e.dataTransfer.files;
-                if (files.length > 0) {
-                    handleBulkUpload(files[0]);
-                }
-            });
-            
-            fileInput.addEventListener('change', (e) => {
-                if (e.target.files.length > 0) {
-                    handleBulkUpload(e.target.files[0]);
-                }
-            });
-        });
 
         function handleBulkUpload(file) {
             if (!file.name.endsWith('.zip')) {
