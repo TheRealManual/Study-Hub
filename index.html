@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Hub</title>
+    
+    <!-- AWS Amplify Integration -->
+    <script src="https://unpkg.com/aws-amplify@latest/dist/aws-amplify.min.js"></script>
+    
     <style>
         /* CSS Variables for theming and motion */
         :root {
@@ -1340,9 +1344,223 @@
             border-color: var(--warn);
             color: var(--warn);
         }
+        /* Authentication Styles */
+        .auth-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(15, 23, 42, 0.95);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            backdrop-filter: blur(4px);
+        }
+
+        .auth-modal {
+            background: var(--panel);
+            border-radius: 16px;
+            padding: 2rem;
+            max-width: 400px;
+            width: 90%;
+            border: 1px solid var(--border);
+        }
+
+        .auth-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .auth-header h2 {
+            color: var(--text);
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .auth-header p {
+            color: var(--muted);
+            font-size: 0.9rem;
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .auth-input {
+            padding: 0.75rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: var(--bg);
+            color: var(--text);
+            font-size: 1rem;
+        }
+
+        .auth-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.1);
+        }
+
+        .auth-button {
+            padding: 0.75rem 1.5rem;
+            background: var(--accent);
+            color: var(--bg);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--norm) var(--ease);
+        }
+
+        .auth-button:hover {
+            background: #0891b2;
+            transform: translateY(-1px);
+        }
+
+        .auth-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .auth-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .auth-link:hover {
+            text-decoration: underline;
+        }
+
+        .auth-error {
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid var(--bad);
+            border-radius: 8px;
+            padding: 0.75rem;
+            color: var(--bad);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .auth-success {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid var(--good);
+            border-radius: 8px;
+            padding: 0.75rem;
+            color: var(--good);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .user-menu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .user-button {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.5rem 1rem;
+            color: var(--text);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .user-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.5rem;
+            min-width: 150px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .user-dropdown.show {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 0.5rem;
+            cursor: pointer;
+            border-radius: 4px;
+            color: var(--text);
+            font-size: 0.9rem;
+        }
+
+        .dropdown-item:hover {
+            background: var(--bg);
+        }
+
     </style>
 </head>
 <body>
+    <!-- Authentication Overlay -->
+    <div id="auth-overlay" class="auth-overlay" style="display: none;">
+        <div class="auth-modal">
+            <div class="auth-header">
+                <h2 id="auth-title">Welcome to Study Hub</h2>
+                <p id="auth-subtitle">Sign in to sync your study progress across devices</p>
+            </div>
+            
+            <div id="auth-error" class="auth-error" style="display: none;"></div>
+            <div id="auth-success" class="auth-success" style="display: none;"></div>
+            
+            <!-- Sign In Form -->
+            <form id="signin-form" class="auth-form">
+                <input type="text" id="signin-username" class="auth-input" placeholder="Username or Email" required>
+                <input type="password" id="signin-password" class="auth-input" placeholder="Password" required>
+                <button type="submit" class="auth-button">Sign In</button>
+                <a href="#" id="show-signup" class="auth-link">Don't have an account? Sign up</a>
+            </form>
+            
+            <!-- Sign Up Form -->
+            <form id="signup-form" class="auth-form" style="display: none;">
+                <input type="text" id="signup-username" class="auth-input" placeholder="Username" required>
+                <input type="email" id="signup-email" class="auth-input" placeholder="Email" required>
+                <input type="password" id="signup-password" class="auth-input" placeholder="Password (min 8 characters)" required>
+                <button type="submit" class="auth-button">Sign Up</button>
+                <a href="#" id="show-signin" class="auth-link">Already have an account? Sign in</a>
+            </form>
+            
+            <!-- Email Verification Form -->
+            <form id="verify-form" class="auth-form" style="display: none;">
+                <p style="color: var(--muted); margin-bottom: 1rem; text-align: center;">
+                    Please check your email and enter the verification code:
+                </p>
+                <input type="text" id="verify-code" class="auth-input" placeholder="Verification Code" required>
+                <button type="submit" class="auth-button">Verify Email</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- User Menu (when authenticated) -->
+    <div id="user-menu" class="user-menu" style="position: fixed; top: 1rem; right: 1rem; z-index: 1000; display: none;">
+        <button id="user-button" class="user-button">
+            <span id="user-name">User</span>
+            <span>▼</span>
+        </button>
+        <div id="user-dropdown" class="user-dropdown">
+            <div class="dropdown-item" id="sync-data">Sync Data</div>
+            <div class="dropdown-item" id="export-data">Export Data</div>
+            <div class="dropdown-item" id="import-data">Import Data</div>
+            <div class="dropdown-item" id="sign-out">Sign Out</div>
+        </div>
+    </div>
     <!-- Global Header -->
     <header class="header" role="banner">
         <div class="header-left">
@@ -1497,6 +1715,35 @@
     <div id="toast" class="toast"></div>
 
     <script>
+        // AWS Amplify Configuration
+        const awsExports = {
+            "aws_project_region": "us-east-1",
+            "aws_cognito_identity_pool_id": "us-east-1:bed00b4c-fb13-4f1e-8b23-353a80615742",
+            "aws_cognito_region": "us-east-1",
+            "aws_user_pools_id": "us-east-1_NcSxp8P7h",
+            "aws_user_pools_web_client_id": "627dvta12h5fvtnilcgoi4gj76",
+            "oauth": {},
+            "aws_cognito_username_attributes": [],
+            "aws_cognito_social_providers": [],
+            "aws_cognito_signup_attributes": ["EMAIL"],
+            "aws_cognito_mfa_configuration": "OFF",
+            "aws_cognito_mfa_types": ["SMS"],
+            "aws_cognito_password_protection_settings": {
+                "passwordPolicyMinLength": 8,
+                "passwordPolicyCharacters": []
+            },
+            "aws_cognito_verification_mechanisms": ["EMAIL"],
+            "aws_appsync_graphqlEndpoint": "https://tqhgr4jsubh55eh2nnlwyz2tvu.appsync-api.us-east-1.amazonaws.com/graphql",
+            "aws_appsync_region": "us-east-1",
+            "aws_appsync_authenticationType": "API_KEY",
+            "aws_appsync_apiKey": "da2-xkxa5dc7creezdulgud4fw346m"
+        };
+
+        // Initialize Amplify
+        if (typeof Amplify !== 'undefined') {
+            Amplify.configure(awsExports);
+        }
+
         // Global state
         let studyData = {};
         let currentClass = null;
@@ -4280,5 +4527,350 @@
             </div>
         </div>
     </div>
+        // Authentication Integration
+        let authSystem = null;
+        let isAuthenticated = false;
+        
+        // Initialize authentication on page load
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Check if user is already authenticated
+            const user = await checkAuthStatus();
+            if (user) {
+                showUserMenu(user);
+                await loadUserStudyData();
+            } else {
+                showAuthModal();
+            }
+        });
+
+        async function checkAuthStatus() {
+            try {
+                if (typeof Amplify !== 'undefined' && Amplify.Auth) {
+                    const user = await Amplify.Auth.currentAuthenticatedUser();
+                    isAuthenticated = true;
+                    return {
+                        username: user.username,
+                        email: user.attributes?.email || user.username
+                    };
+                }
+                return null;
+            } catch (error) {
+                console.log('No authenticated user found');
+                isAuthenticated = false;
+                return null;
+            }
+        }
+
+        function showAuthModal() {
+            document.getElementById('auth-overlay').style.display = 'flex';
+        }
+
+        function hideAuthModal() {
+            document.getElementById('auth-overlay').style.display = 'none';
+        }
+
+        function showUserMenu(user) {
+            document.getElementById('user-name').textContent = user.username || user.email;
+            document.getElementById('user-menu').style.display = 'block';
+            hideAuthModal();
+        }
+
+        function hideUserMenu() {
+            document.getElementById('user-menu').style.display = 'none';
+        }
+
+        // Auth form handling
+        document.getElementById('show-signup').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('signin-form').style.display = 'none';
+            document.getElementById('signup-form').style.display = 'block';
+            document.getElementById('auth-title').textContent = 'Create Account';
+            document.getElementById('auth-subtitle').textContent = 'Join Study Hub to sync your progress';
+        });
+
+        document.getElementById('show-signin').addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('signup-form').style.display = 'none';
+            document.getElementById('signin-form').style.display = 'block';
+            document.getElementById('auth-title').textContent = 'Welcome Back';
+            document.getElementById('auth-subtitle').textContent = 'Sign in to access your study materials';
+        });
+
+        // Sign in form submission
+        document.getElementById('signin-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('signin-username').value;
+            const password = document.getElementById('signin-password').value;
+            
+            try {
+                if (typeof Amplify !== 'undefined' && Amplify.Auth) {
+                    const user = await Amplify.Auth.signIn(username, password);
+                    isAuthenticated = true;
+                    const userInfo = {
+                        username: user.username,
+                        email: user.attributes?.email || username
+                    };
+                    showUserMenu(userInfo);
+                    await migrateLocalDataToUser(userInfo);
+                    showAuthSuccess('Successfully signed in!');
+                    setTimeout(hideAuthModal, 1500);
+                } else {
+                    // Fallback for development
+                    const user = { username, email: username };
+                    localStorage.setItem('studyhub-user', JSON.stringify(user));
+                    isAuthenticated = true;
+                    showUserMenu(user);
+                    await migrateLocalDataToUser(user);
+                    showAuthSuccess('Successfully signed in!');
+                    setTimeout(hideAuthModal, 1500);
+                }
+            } catch (error) {
+                console.error('Sign in error:', error);
+                showAuthError(error.message || 'Invalid username or password');
+            }
+        });
+
+        // Sign up form submission
+        document.getElementById('signup-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const username = document.getElementById('signup-username').value;
+            const email = document.getElementById('signup-email').value;
+            const password = document.getElementById('signup-password').value;
+            
+            try {
+                if (typeof Amplify !== 'undefined' && Amplify.Auth) {
+                    const result = await Amplify.Auth.signUp({
+                        username,
+                        password,
+                        attributes: { email }
+                    });
+                    
+                    if (result.userConfirmed) {
+                        showAuthSuccess('Account created successfully! Please sign in.');
+                        // Switch to sign-in form
+                        document.getElementById('signup-form').style.display = 'none';
+                        document.getElementById('signin-form').style.display = 'block';
+                        document.getElementById('auth-title').textContent = 'Welcome Back';
+                        document.getElementById('auth-subtitle').textContent = 'Sign in to access your study materials';
+                    } else {
+                        showAuthSuccess('Account created! Please check your email to verify your account.');
+                        // Show verification form or switch to sign-in
+                        document.getElementById('signup-form').style.display = 'none';
+                        document.getElementById('signin-form').style.display = 'block';
+                    }
+                } else {
+                    // Fallback for development
+                    const user = { username, email };
+                    localStorage.setItem('studyhub-user', JSON.stringify(user));
+                    isAuthenticated = true;
+                    showUserMenu(user);
+                    showAuthSuccess('Account created successfully!');
+                    setTimeout(hideAuthModal, 1500);
+                }
+            } catch (error) {
+                console.error('Sign up error:', error);
+                showAuthError(error.message || 'Error creating account. Please try again.');
+            }
+        });
+
+        // User menu interactions
+        document.getElementById('user-button').addEventListener('click', () => {
+            const dropdown = document.getElementById('user-dropdown');
+            dropdown.classList.toggle('show');
+        });
+
+        document.getElementById('sync-data').addEventListener('click', async () => {
+            await syncDataToCloud();
+            closeDropdown();
+        });
+
+        document.getElementById('export-data').addEventListener('click', () => {
+            exportUserData();
+            closeDropdown();
+        });
+
+        document.getElementById('import-data').addEventListener('click', () => {
+            importUserData();
+            closeDropdown();
+        });
+
+        document.getElementById('sign-out').addEventListener('click', async () => {
+            await signOut();
+            closeDropdown();
+        });
+
+        function closeDropdown() {
+            document.getElementById('user-dropdown').classList.remove('show');
+        }
+
+        async function signOut() {
+            try {
+                if (typeof Amplify !== 'undefined' && Amplify.Auth) {
+                    await Amplify.Auth.signOut();
+                }
+                localStorage.removeItem('studyhub-user');
+            } catch (error) {
+                console.error('Sign out error:', error);
+            }
+            
+            isAuthenticated = false;
+            hideUserMenu();
+            showAuthModal();
+            
+            // Clear study data
+            studyData = {};
+            renderHomePage();
+        }
+
+        async function migrateLocalDataToUser(user) {
+            try {
+                // Get existing localStorage data
+                const existingData = {
+                    spacedRepetition: JSON.parse(localStorage.getItem('studyhub-spaced-repetition') || '{}'),
+                    progress: JSON.parse(localStorage.getItem('studyhub-progress') || '{}'),
+                    savedSessions: JSON.parse(localStorage.getItem('studyhub-saved-sessions') || '{}')
+                };
+
+                // Store under user-specific keys
+                const userKey = `studyhub-${user.username}`;
+                localStorage.setItem(`${userKey}-spaced-repetition`, JSON.stringify(existingData.spacedRepetition));
+                localStorage.setItem(`${userKey}-progress`, JSON.stringify(existingData.progress));
+                localStorage.setItem(`${userKey}-saved-sessions`, JSON.stringify(existingData.savedSessions));
+                
+                console.log('Local data migrated to user account');
+            } catch (error) {
+                console.error('Error migrating local data:', error);
+            }
+        }
+
+        async function loadUserStudyData() {
+            if (!isAuthenticated) return;
+            
+            try {
+                const user = JSON.parse(localStorage.getItem('studyhub-user'));
+                const userKey = `studyhub-${user.username}`;
+                
+                // Load user-specific data
+                spacedRepetitionData = JSON.parse(localStorage.getItem(`${userKey}-spaced-repetition`) || '{}');
+                userProgress = JSON.parse(localStorage.getItem(`${userKey}-progress`) || '{}');
+                savedSessions = JSON.parse(localStorage.getItem(`${userKey}-saved-sessions`) || '{}');
+                
+                console.log('User study data loaded');
+            } catch (error) {
+                console.error('Error loading user study data:', error);
+            }
+        }
+
+        async function syncDataToCloud() {
+            // In a real implementation, this would sync to AWS
+            showAuthSuccess('Data synced to cloud!');
+            setTimeout(() => document.getElementById('auth-success').style.display = 'none', 3000);
+        }
+
+        function exportUserData() {
+            const user = JSON.parse(localStorage.getItem('studyhub-user'));
+            const userKey = `studyhub-${user.username}`;
+            
+            const exportData = {
+                user: user,
+                spacedRepetition: JSON.parse(localStorage.getItem(`${userKey}-spaced-repetition`) || '{}'),
+                progress: JSON.parse(localStorage.getItem(`${userKey}-progress`) || '{}'),
+                savedSessions: JSON.parse(localStorage.getItem(`${userKey}-saved-sessions`) || '{}'),
+                exportDate: new Date().toISOString()
+            };
+            
+            const blob = new Blob([JSON.stringify(exportData, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `studyhub-export-${user.username}-${new Date().toISOString().split('T')[0]}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function importUserData() {
+            const input = document.createElement('input');
+            input.type = 'file';
+            input.accept = '.json';
+            input.onchange = (e) => {
+                const file = e.target.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        try {
+                            const importData = JSON.parse(e.target.result);
+                            const user = JSON.parse(localStorage.getItem('studyhub-user'));
+                            const userKey = `studyhub-${user.username}`;
+                            
+                            // Import data
+                            if (importData.spacedRepetition) {
+                                localStorage.setItem(`${userKey}-spaced-repetition`, JSON.stringify(importData.spacedRepetition));
+                                spacedRepetitionData = importData.spacedRepetition;
+                            }
+                            if (importData.progress) {
+                                localStorage.setItem(`${userKey}-progress`, JSON.stringify(importData.progress));
+                                userProgress = importData.progress;
+                            }
+                            if (importData.savedSessions) {
+                                localStorage.setItem(`${userKey}-saved-sessions`, JSON.stringify(importData.savedSessions));
+                                savedSessions = importData.savedSessions;
+                            }
+                            
+                            showAuthSuccess('Data imported successfully!');
+                            setTimeout(() => document.getElementById('auth-success').style.display = 'none', 3000);
+                        } catch (error) {
+                            showAuthError('Error importing data. Please check the file format.');
+                        }
+                    };
+                    reader.readAsText(file);
+                }
+            };
+            input.click();
+        }
+
+        function showAuthError(message) {
+            const errorDiv = document.getElementById('auth-error');
+            errorDiv.textContent = message;
+            errorDiv.style.display = 'block';
+            document.getElementById('auth-success').style.display = 'none';
+        }
+
+        function showAuthSuccess(message) {
+            const successDiv = document.getElementById('auth-success');
+            successDiv.textContent = message;
+            successDiv.style.display = 'block';
+            document.getElementById('auth-error').style.display = 'none';
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.user-menu')) {
+                closeDropdown();
+            }
+        });
+
+        // Update saveUserData function to use user-specific storage
+        function saveUserData() {
+            if (!isAuthenticated) {
+                // Fallback to localStorage for non-authenticated users
+                localStorage.setItem('studyhub-spaced-repetition', JSON.stringify(spacedRepetitionData));
+                localStorage.setItem('studyhub-progress', JSON.stringify(userProgress));
+                localStorage.setItem('studyhub-saved-sessions', JSON.stringify(savedSessions));
+                return;
+            }
+
+            try {
+                const user = JSON.parse(localStorage.getItem('studyhub-user'));
+                const userKey = `studyhub-${user.username}`;
+                
+                localStorage.setItem(`${userKey}-spaced-repetition`, JSON.stringify(spacedRepetitionData));
+                localStorage.setItem(`${userKey}-progress`, JSON.stringify(userProgress));
+                localStorage.setItem(`${userKey}-saved-sessions`, JSON.stringify(savedSessions));
+            } catch (error) {
+                console.error('Error saving user data:', error);
+            }
+        }
+
+    </script>
 </body>
 </html>

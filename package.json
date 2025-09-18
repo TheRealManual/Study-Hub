@@ -17,6 +17,11 @@
   },
   "dependencies": {
     "express": "^4.18.0",
-    "cors": "^2.8.5"
+    "cors": "^2.8.5",
+    "aws-amplify": "^6.0.0",
+    "@aws-amplify/ui-components": "^4.0.0"
+  },
+  "devDependencies": {
+    "@aws-amplify/cli": "^12.0.0"
   }
 }

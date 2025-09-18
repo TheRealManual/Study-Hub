@@ -1,0 +1,44 @@
+{
+  "UserPoolName": "StudyHubUserPool",
+  "UserPoolDomain": "studyhub-auth",
+  "UsernameAttributes": ["email"],
+  "AutoVerifiedAttributes": ["email"],
+  "MfaConfiguration": "OFF",
+  "MfaTypes": ["SMS Text Message"],
+  "PasswordPolicy": {
+    "MinimumLength": 8,
+    "RequireUppercase": false,
+    "RequireLowercase": false,
+    "RequireNumbers": false,
+    "RequireSymbols": false
+  },
+  "Aliases": [],
+  "UsernameConfiguration": {},
+  "VerificationMessage": {
+    "EmailMessage": "Your verification code is {####}",
+    "EmailSubject": "Study Hub - Email Verification",
+    "SmsMessage": "Your verification code is {####}"
+  },
+  "DefaultPasswordPolicy": false,
+  "CustomMessage": "Verification",
+  "SmsVerificationMessage": "Your verification code is {####}",
+  "EmailVerificationMessage": "Your verification code is {####}",
+  "EmailVerificationSubject": "Study Hub - Email Verification",
+  "SigninMethod": "username",
+  "ReadAttributes": ["email", "name"],
+  "WriteAttributes": ["email", "name"],
+  "AuthRoleArn": {
+    "Fn::GetAtt": [
+      "AuthRole",
+      "Arn"
+    ]
+  },
+  "UnauthRoleArn": {
+    "Fn::GetAtt": [
+      "UnauthRole", 
+      "Arn"
+    ]
+  },
+  "UseDefault": "manual",
+  "ManualConfiguration": false
+}

@@ -1,0 +1,115 @@
+type UserProfile @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  username: String!
+  email: String!
+  classes: [UserClass] @hasMany(indexName: "byUser", fields: ["id"])
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserClass @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  userID: ID! @index(name: "byUser")
+  className: String!
+  title: String!
+  topics: [UserTopic] @hasMany(indexName: "byClass", fields: ["id"])
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserTopic @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  classID: ID! @index(name: "byClass")
+  topicName: String!
+  title: String!
+  flashcards: [UserFlashcard] @hasMany(indexName: "byTopic", fields: ["id"])
+  quizQuestions: [UserQuizQuestion] @hasMany(indexName: "byTopic", fields: ["id"])
+  games: [UserGame] @hasMany(indexName: "byTopic", fields: ["id"])
+  notes: [UserNote] @hasMany(indexName: "byTopic", fields: ["id"])
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserFlashcard @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  topicID: ID! @index(name: "byTopic")
+  front: String!
+  back: String!
+  reviewCount: Int
+  lastReviewed: AWSDateTime
+  nextReview: AWSDateTime
+  easeFactor: Float
+  interval: Int
+  source: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserQuizQuestion @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  topicID: ID! @index(name: "byTopic")
+  question: String!
+  options: [String!]!
+  correctAnswer: Int!
+  explanation: String
+  reviewCount: Int
+  lastAnswered: AWSDateTime
+  correctAnswers: Int
+  totalAttempts: Int
+  difficulty: String
+  source: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserGame @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  topicID: ID! @index(name: "byTopic")
+  type: String!
+  title: String!
+  description: String
+  content: AWSJSON!
+  highScore: Int
+  timesPlayed: Int
+  lastPlayed: AWSDateTime
+  source: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserNote @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  topicID: ID! @index(name: "byTopic")
+  title: String!
+  content: String!
+  tags: [String]
+  source: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserProgress @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  userID: ID!
+  topicID: ID!
+  flashcardStats: AWSJSON
+  quizStats: AWSJSON
+  gameStats: AWSJSON
+  overallProgress: Float
+  lastActivity: AWSDateTime
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type SavedSession @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  userID: ID!
+  name: String!
+  description: String
+  content: AWSJSON!
+  totalItems: Int
+  completedItems: Int
+  lastAccessed: AWSDateTime
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
