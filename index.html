@@ -2150,9 +2150,173 @@
         
         // Run debug check
         setTimeout(debugFunctions, 1000);
-        
-        // Global state
+
+        // Initialize global state first
         let studyData = {};
+
+        function loadData() {
+            try {
+                const saved = localStorage.getItem('studyHubData');
+                if (saved) {
+                    studyData = JSON.parse(saved);
+                }
+            } catch (error) {
+                console.error('Error loading data:', error);
+                studyData = {};
+            }
+        }
+
+        function saveData() {
+            try {
+                localStorage.setItem('studyHubData', JSON.stringify(studyData));
+            } catch (error) {
+                console.error('Error saving data:', error);
+            }
+        }
+
+        // Load existing data
+        loadData();
+
+        // Complete function definitions moved here to ensure they're always available
+        function testClassManagement() {
+            console.log('Test function works');
+            alert('Class management is working!');
+        }
+        window.testClassManagement = testClassManagement;
+
+        function openClassManagement() {
+            console.log('openClassManagement called');
+            const modal = document.getElementById('class-management-modal');
+            if (modal) {
+                modal.style.display = 'flex';
+                setupClassManagementListeners();
+                loadUserClasses();
+            } else {
+                alert('Class management modal not found');
+            }
+        }
+        window.openClassManagement = openClassManagement;
+
+        function setupClassManagementListeners() {
+            const createForm = document.getElementById('create-class-form');
+            const topicForm = document.getElementById('create-topic-form');
+
+            if (createForm && !createForm.dataset.listenerAdded) {
+                createForm.addEventListener('submit', createClass);
+                createForm.dataset.listenerAdded = 'true';
+            }
+
+            if (topicForm && !topicForm.dataset.listenerAdded) {
+                topicForm.addEventListener('submit', createTopic);
+                topicForm.dataset.listenerAdded = 'true';
+            }
+        }
+        window.setupClassManagementListeners = setupClassManagementListeners;
+
+        function createClass(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const className = formData.get('class-name');
+            const classDescription = formData.get('class-description');
+
+            if (!className) {
+                alert('Please enter a class name');
+                return;
+            }
+
+            if (!studyData[className]) {
+                studyData[className] = {
+                    name: className,
+                    description: classDescription || '',
+                    topics: {},
+                    created: new Date().toISOString()
+                };
+
+                saveData();
+                loadUserClasses();
+                event.target.reset();
+                alert('Class created successfully!');
+            } else {
+                alert('Class already exists!');
+            }
+        }
+        window.createClass = createClass;
+
+        function createTopic(event) {
+            event.preventDefault();
+            const formData = new FormData(event.target);
+            const topicName = formData.get('topic-name');
+            const topicDescription = formData.get('topic-description');
+            const selectedClass = formData.get('topic-class');
+
+            if (!topicName || !selectedClass) {
+                alert('Please enter topic name and select a class');
+                return;
+            }
+
+            if (!studyData[selectedClass].topics[topicName]) {
+                studyData[selectedClass].topics[topicName] = {
+                    name: topicName,
+                    description: topicDescription || '',
+                    notes: '',
+                    flashcards: [],
+                    quiz: [],
+                    created: new Date().toISOString()
+                };
+
+                saveData();
+                event.target.reset();
+                alert('Topic created successfully!');
+            } else {
+                alert('Topic already exists in this class!');
+            }
+        }
+        window.createTopic = createTopic;
+
+        function loadUserClasses() {
+            const classList = document.getElementById('user-classes-list');
+            const topicClassSelect = document.getElementById('topic-class-select');
+
+            if (classList) {
+                classList.innerHTML = '';
+                Object.keys(studyData).forEach(className => {
+                    const classDiv = document.createElement('div');
+                    classDiv.className = 'class-item';
+                    classDiv.innerHTML = `
+                        <h4>${className}</h4>
+                        <p>${studyData[className].description || 'No description'}</p>
+                        <button type="button" onclick="deleteClass('${className}')">Delete</button>
+                    `;
+                    classList.appendChild(classDiv);
+                });
+            }
+
+            if (topicClassSelect) {
+                topicClassSelect.innerHTML = '<option value="">Select a class...</option>';
+                Object.keys(studyData).forEach(className => {
+                    const option = document.createElement('option');
+                    option.value = className;
+                    option.textContent = className;
+                    topicClassSelect.appendChild(option);
+                });
+            }
+        }
+        window.loadUserClasses = loadUserClasses;
+
+        function deleteClass(className) {
+            if (confirm(`Are you sure you want to delete the class "${className}"?`)) {
+                delete studyData[className];
+                saveData();
+                loadUserClasses();
+            }
+        }
+        window.deleteClass = deleteClass;
+
+        // Functions already defined above - just expose to window
+        window.saveData = saveData;
+        window.loadData = loadData;
+
+        // Global state variables (studyData already declared above)
         let currentClass = null;
         let currentTopic = null;
         let currentTab = 'notes';
