@@ -1,0 +1,153 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+type UserProfile @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  username: String!
+  email: String!
+  classes: [UserClass] @hasMany(indexName: "byUser", fields: ["id"])
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserClass @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  userID: ID! @index(name: "byUser")
+  className: String!
+  title: String!
+  description: String
+  topics: [UserTopic] @hasMany(indexName: "byClass", fields: ["id"])
+  files: [UserFile] @hasMany(indexName: "byClass", fields: ["id"])
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserTopic @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  classID: ID! @index(name: "byClass")
+  topicName: String!
+  title: String!
+  description: String
+  type: String # quiz-1, quiz-2, general, etc.
+  flashcards: [UserFlashcard] @hasMany(indexName: "byTopic", fields: ["id"])
+  quizQuestions: [UserQuizQuestion] @hasMany(indexName: "byTopic", fields: ["id"])
+  games: [UserGame] @hasMany(indexName: "byTopic", fields: ["id"])
+  notes: [UserNote] @hasMany(indexName: "byTopic", fields: ["id"])
+  files: [UserFile] @hasMany(indexName: "byTopic", fields: ["id"])
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserFlashcard @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  topicID: ID! @index(name: "byTopic")
+  front: String!
+  back: String!
+  reviewCount: Int
+  lastReviewed: AWSDateTime
+  nextReview: AWSDateTime
+  easeFactor: Float
+  interval: Int
+  source: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserQuizQuestion @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  topicID: ID! @index(name: "byTopic")
+  question: String!
+  options: [String!]!
+  correctAnswer: Int!
+  explanation: String
+  reviewCount: Int
+  lastAnswered: AWSDateTime
+  correctAnswers: Int
+  totalAttempts: Int
+  difficulty: String
+  source: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserGame @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  topicID: ID! @index(name: "byTopic")
+  type: String!
+  title: String!
+  description: String
+  content: AWSJSON!
+  highScore: Int
+  timesPlayed: Int
+  lastPlayed: AWSDateTime
+  source: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserNote @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  topicID: ID! @index(name: "byTopic")
+  title: String!
+  content: String!
+  tags: [String]
+  source: String
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserProgress @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  userID: ID!
+  topicID: ID!
+  flashcardStats: AWSJSON
+  quizStats: AWSJSON
+  gameStats: AWSJSON
+  overallProgress: Float
+  lastActivity: AWSDateTime
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type SavedSession @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  userID: ID!
+  name: String!
+  description: String
+  content: AWSJSON!
+  totalItems: Int
+  completedItems: Int
+  lastAccessed: AWSDateTime
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UserFile @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  userID: ID!
+  classID: ID @index(name: "byClass")
+  topicID: ID @index(name: "byTopic")
+  fileName: String!
+  originalName: String!
+  fileType: String!
+  fileSize: Int!
+  s3Key: String!
+  url: String
+  description: String
+  isPublic: Boolean
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}
+
+type UploadTemplate @model @auth(rules: [{allow: owner}]) {
+  id: ID!
+  userID: ID!
+  name: String!
+  description: String!
+  templateType: String! # class, topic, bulk
+  structure: AWSJSON!
+  downloadCount: Int
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+}

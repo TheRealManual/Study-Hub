@@ -4,7 +4,7 @@ import { schema } from './schema';
 
 
 
-const { UserProfile, UserClass, UserTopic, UserFlashcard, UserQuizQuestion, UserGame, UserNote, UserProgress, SavedSession } = initSchema(schema);
+const { UserProfile, UserClass, UserTopic, UserFlashcard, UserQuizQuestion, UserGame, UserNote, UserProgress, SavedSession, UserFile, UploadTemplate } = initSchema(schema);
 
 export {
   UserProfile,
@@ -15,5 +15,7 @@ export {
   UserGame,
   UserNote,
   UserProgress,
-  SavedSession
+  SavedSession,
+  UserFile,
+  UploadTemplate
 };

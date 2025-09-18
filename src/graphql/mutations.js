@@ -83,7 +83,13 @@ export const createUserClass = /* GraphQL */ `
       userID
       className
       title
+      description
       topics {
+        nextToken
+        startedAt
+        __typename
+      }
+      files {
         nextToken
         startedAt
         __typename
@@ -108,7 +114,13 @@ export const updateUserClass = /* GraphQL */ `
       userID
       className
       title
+      description
       topics {
+        nextToken
+        startedAt
+        __typename
+      }
+      files {
         nextToken
         startedAt
         __typename
@@ -133,7 +145,13 @@ export const deleteUserClass = /* GraphQL */ `
       userID
       className
       title
+      description
       topics {
+        nextToken
+        startedAt
+        __typename
+      }
+      files {
         nextToken
         startedAt
         __typename
@@ -158,6 +176,8 @@ export const createUserTopic = /* GraphQL */ `
       classID
       topicName
       title
+      description
+      type
       flashcards {
         nextToken
         startedAt
@@ -174,6 +194,11 @@ export const createUserTopic = /* GraphQL */ `
         __typename
       }
       notes {
+        nextToken
+        startedAt
+        __typename
+      }
+      files {
         nextToken
         startedAt
         __typename
@@ -198,6 +223,8 @@ export const updateUserTopic = /* GraphQL */ `
       classID
       topicName
       title
+      description
+      type
       flashcards {
         nextToken
         startedAt
@@ -214,6 +241,11 @@ export const updateUserTopic = /* GraphQL */ `
         __typename
       }
       notes {
+        nextToken
+        startedAt
+        __typename
+      }
+      files {
         nextToken
         startedAt
         __typename
@@ -238,6 +270,8 @@ export const deleteUserTopic = /* GraphQL */ `
       classID
       topicName
       title
+      description
+      type
       flashcards {
         nextToken
         startedAt
@@ -254,6 +288,11 @@ export const deleteUserTopic = /* GraphQL */ `
         __typename
       }
       notes {
+        nextToken
+        startedAt
+        __typename
+      }
+      files {
         nextToken
         startedAt
         __typename
@@ -708,6 +747,159 @@ export const deleteSavedSession = /* GraphQL */ `
       totalItems
       completedItems
       lastAccessed
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createUserFile = /* GraphQL */ `
+  mutation CreateUserFile(
+    $input: CreateUserFileInput!
+    $condition: ModelUserFileConditionInput
+  ) {
+    createUserFile(input: $input, condition: $condition) {
+      id
+      userID
+      classID
+      topicID
+      fileName
+      originalName
+      fileType
+      fileSize
+      s3Key
+      url
+      description
+      isPublic
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateUserFile = /* GraphQL */ `
+  mutation UpdateUserFile(
+    $input: UpdateUserFileInput!
+    $condition: ModelUserFileConditionInput
+  ) {
+    updateUserFile(input: $input, condition: $condition) {
+      id
+      userID
+      classID
+      topicID
+      fileName
+      originalName
+      fileType
+      fileSize
+      s3Key
+      url
+      description
+      isPublic
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteUserFile = /* GraphQL */ `
+  mutation DeleteUserFile(
+    $input: DeleteUserFileInput!
+    $condition: ModelUserFileConditionInput
+  ) {
+    deleteUserFile(input: $input, condition: $condition) {
+      id
+      userID
+      classID
+      topicID
+      fileName
+      originalName
+      fileType
+      fileSize
+      s3Key
+      url
+      description
+      isPublic
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const createUploadTemplate = /* GraphQL */ `
+  mutation CreateUploadTemplate(
+    $input: CreateUploadTemplateInput!
+    $condition: ModelUploadTemplateConditionInput
+  ) {
+    createUploadTemplate(input: $input, condition: $condition) {
+      id
+      userID
+      name
+      description
+      templateType
+      structure
+      downloadCount
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const updateUploadTemplate = /* GraphQL */ `
+  mutation UpdateUploadTemplate(
+    $input: UpdateUploadTemplateInput!
+    $condition: ModelUploadTemplateConditionInput
+  ) {
+    updateUploadTemplate(input: $input, condition: $condition) {
+      id
+      userID
+      name
+      description
+      templateType
+      structure
+      downloadCount
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const deleteUploadTemplate = /* GraphQL */ `
+  mutation DeleteUploadTemplate(
+    $input: DeleteUploadTemplateInput!
+    $condition: ModelUploadTemplateConditionInput
+  ) {
+    deleteUploadTemplate(input: $input, condition: $condition) {
+      id
+      userID
+      name
+      description
+      templateType
+      structure
+      downloadCount
       createdAt
       updatedAt
       _version

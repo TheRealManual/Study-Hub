@@ -1,0 +1,54 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-studyhub-dev-9277a-authRole",
+      "UnauthRoleArn": "arn:aws:iam::283429976363:role/amplify-studyhub-dev-9277a-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::283429976363:role/amplify-studyhub-dev-9277a-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-studyhub-dev-9277a-deployment",
+      "UnauthRoleName": "amplify-studyhub-dev-9277a-unauthRole",
+      "StackName": "amplify-studyhub-dev-9277a",
+      "StackId": "arn:aws:cloudformation:us-east-1:283429976363:stack/amplify-studyhub-dev-9277a/528ce480-945d-11f0-9965-1283be5daa05",
+      "AmplifyAppId": "d1s39i0bevm8ui"
+    },
+    "categories": {
+      "function": {
+        "StudyHubAuthDefineAuthChallenge": {
+          "deploymentBucketName": "amplify-studyhub-dev-9277a-deployment",
+          "s3Key": "amplify-builds/StudyHubAuthDefineAuthChallenge-4476397273324b6d776a-build.zip"
+        },
+        "StudyHubAuthCreateAuthChallenge": {
+          "deploymentBucketName": "amplify-studyhub-dev-9277a-deployment",
+          "s3Key": "amplify-builds/StudyHubAuthCreateAuthChallenge-5a55776d397238717a50-build.zip"
+        },
+        "StudyHubAuthVerifyAuthChallengeResponse": {
+          "RECAPTCHASECRET": "6LfdSM0rAAAAAGVU4583GQrhnAr3_nv4jkRHjUYA",
+          "deploymentBucketName": "amplify-studyhub-dev-9277a-deployment",
+          "s3Key": "amplify-builds/StudyHubAuthVerifyAuthChallengeResponse-57776d42457843692b34-build.zip"
+        },
+        "StudyHubAuthCustomMessage": {
+          "REDIRECTURL": "www.collegestudyhub.com",
+          "EMAILSUBJECT": "College Study Hub Verification",
+          "EMAILMESSAGE": "Welcome to College Study Hub! Continue for account verification!",
+          "deploymentBucketName": "amplify-studyhub-dev-9277a-deployment",
+          "s3Key": "amplify-builds/StudyHubAuthCustomMessage-6f72367a49552f656b6a-build.zip"
+        }
+      },
+      "auth": {
+        "CollegeStudyHub": {}
+      },
+      "api": {
+        "studyhub": {}
+      },
+      "storage": {
+        "collegestudyhubstorage": {}
+      },
+      "hosting": {
+        "amplifyhosting": {
+          "appId": "d1s39i0bevm8ui",
+          "type": "cicd"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "providers": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-studyhub-dev-9277a-authRole",
+      "UnauthRoleArn": "arn:aws:iam::283429976363:role/amplify-studyhub-dev-9277a-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::283429976363:role/amplify-studyhub-dev-9277a-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-studyhub-dev-9277a-deployment",
+      "UnauthRoleName": "amplify-studyhub-dev-9277a-unauthRole",
+      "StackName": "amplify-studyhub-dev-9277a",
+      "StackId": "arn:aws:cloudformation:us-east-1:283429976363:stack/amplify-studyhub-dev-9277a/528ce480-945d-11f0-9965-1283be5daa05",
+      "AmplifyAppId": "d1s39i0bevm8ui"
+    }
+  },
+  "function": {
+    "StudyHubAuthDefineAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2025-09-18T07:26:29.850Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2025-09-18T07:26:29.893Z",
+      "distZipFilename": "StudyHubAuthDefineAuthChallenge-4476397273324b6d776a-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-studyhub-dev-9277a-deployment",
+        "s3Key": "amplify-builds/StudyHubAuthDefineAuthChallenge-4476397273324b6d776a-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-studyhub-dev-9277a-deployment/amplify-cfn-templates/function/StudyHubAuthDefineAuthChallenge-cloudformation-template.json",
+        "logicalId": "functionStudyHubAuthDefineAuthChallenge"
+      },
+      "lastPushTimeStamp": "2025-09-18T08:02:06.485Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::283429976363:role/StudyHubAuthDefineAuthChallenge-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:283429976363:function:StudyHubAuthDefineAuthChallenge-dev",
+        "Name": "StudyHubAuthDefineAuthChallenge-dev",
+        "LambdaExecutionRole": "StudyHubAuthDefineAuthChallenge-dev"
+      },
+      "lastPushDirHash": "ZD/gGpxodjr17MW8hKUhoqKhb74="
+    },
+    "StudyHubAuthCreateAuthChallenge": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2025-09-18T07:26:30.460Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2025-09-18T07:26:30.486Z",
+      "distZipFilename": "StudyHubAuthCreateAuthChallenge-5a55776d397238717a50-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-studyhub-dev-9277a-deployment",
+        "s3Key": "amplify-builds/StudyHubAuthCreateAuthChallenge-5a55776d397238717a50-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-studyhub-dev-9277a-deployment/amplify-cfn-templates/function/StudyHubAuthCreateAuthChallenge-cloudformation-template.json",
+        "logicalId": "functionStudyHubAuthCreateAuthChallenge"
+      },
+      "lastPushTimeStamp": "2025-09-18T08:02:06.496Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::283429976363:role/StudyHubAuthCreateAuthChallenge-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:283429976363:function:StudyHubAuthCreateAuthChallenge-dev",
+        "Name": "StudyHubAuthCreateAuthChallenge-dev",
+        "LambdaExecutionRole": "StudyHubAuthCreateAuthChallenge-dev"
+      },
+      "lastPushDirHash": "WLZNuWmUPfYJuC2iwPKrZStU94U="
+    },
+    "StudyHubAuthVerifyAuthChallengeResponse": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2025-09-18T07:26:31.662Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2025-09-18T07:26:34.868Z",
+      "distZipFilename": "StudyHubAuthVerifyAuthChallengeResponse-57776d42457843692b34-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-studyhub-dev-9277a-deployment",
+        "s3Key": "amplify-builds/StudyHubAuthVerifyAuthChallengeResponse-57776d42457843692b34-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-studyhub-dev-9277a-deployment/amplify-cfn-templates/function/StudyHubAuthVerifyAuthChallengeResponse-cloudformation-template.json",
+        "logicalId": "functionStudyHubAuthVerifyAuthChallengeResponse"
+      },
+      "lastPushTimeStamp": "2025-09-18T08:02:06.514Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::283429976363:role/StudyHubAuthVerifyAuthChallengeResponse-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:283429976363:function:StudyHubAuthVerifyAuthChallengeResponse-dev",
+        "Name": "StudyHubAuthVerifyAuthChallengeResponse-dev",
+        "LambdaExecutionRole": "StudyHubAuthVerifyAuthChallengeResponse-dev"
+      },
+      "lastPushDirHash": "b4aFN/+mi2OcUBiC+iUNogQgb0Y="
+    },
+    "StudyHubAuthCustomMessage": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "lastBuildTimeStamp": "2025-09-18T07:26:35.775Z",
+      "lastBuildType": "PROD",
+      "lastPackageTimeStamp": "2025-09-18T07:26:35.799Z",
+      "distZipFilename": "StudyHubAuthCustomMessage-6f72367a49552f656b6a-build.zip",
+      "s3Bucket": {
+        "deploymentBucketName": "amplify-studyhub-dev-9277a-deployment",
+        "s3Key": "amplify-builds/StudyHubAuthCustomMessage-6f72367a49552f656b6a-build.zip"
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-studyhub-dev-9277a-deployment/amplify-cfn-templates/function/StudyHubAuthCustomMessage-cloudformation-template.json",
+        "logicalId": "functionStudyHubAuthCustomMessage"
+      },
+      "lastPushTimeStamp": "2025-09-18T08:02:06.523Z",
+      "output": {
+        "LambdaExecutionRoleArn": "arn:aws:iam::283429976363:role/StudyHubAuthCustomMessage-dev",
+        "Region": "us-east-1",
+        "Arn": "arn:aws:lambda:us-east-1:283429976363:function:StudyHubAuthCustomMessage-dev",
+        "Name": "StudyHubAuthCustomMessage-dev",
+        "LambdaExecutionRole": "StudyHubAuthCustomMessage-dev"
+      },
+      "lastPushDirHash": "goIdirzAv4ws8AaChENAcE7+pD8="
+    }
+  },
+  "auth": {
+    "CollegeStudyHub": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false,
+      "frontendAuthConfig": {
+        "socialProviders": [],
+        "usernameAttributes": [],
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyMinLength": 8,
+          "passwordPolicyCharacters": []
+        },
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-studyhub-dev-9277a-deployment/amplify-cfn-templates/auth/CollegeStudyHub-cloudformation-template.json",
+        "logicalId": "authCollegeStudyHub"
+      },
+      "lastPushTimeStamp": "2025-09-18T08:02:06.549Z",
+      "output": {
+        "UserPoolId": "us-east-1_NcSxp8P7h",
+        "AppClientIDWeb": "627dvta12h5fvtnilcgoi4gj76",
+        "AppClientID": "j199rpen14n0ofgdsekqq7trv",
+        "IdentityPoolId": "us-east-1:bed00b4c-fb13-4f1e-8b23-353a80615742",
+        "UserPoolArn": "arn:aws:cognito-idp:us-east-1:283429976363:userpool/us-east-1_NcSxp8P7h",
+        "IdentityPoolName": "CollegeStudyHub_identitypool_37f80c8f__dev",
+        "UserPoolName": "CollegeStudyHubUserPool"
+      },
+      "lastPushDirHash": "sOJiSqy5rVsLF5fVzjwxY8uzsTI="
+    }
+  },
+  "api": {
+    "studyhub": {
+      "service": "AppSync",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "auth",
+          "resourceName": "CollegeStudyHub",
+          "attributes": [
+            "UserPoolId"
+          ]
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "defaultAuthentication": {
+            "authenticationType": "API_KEY",
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 7
+            }
+          },
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authCollegeStudyHub"
+              }
+            }
+          ]
+        },
+        "GraphQLAPIIdOutput": "yskm6lbmgjcahoezlua65x7nqm",
+        "GraphQLAPIEndpointOutput": "https://tqhgr4jsubh55eh2nnlwyz2tvu.appsync-api.us-east-1.amazonaws.com/graphql",
+        "GraphQLAPIKeyOutput": "da2-xkxa5dc7creezdulgud4fw346m"
+      },
+      "lastPushTimeStamp": "2025-09-18T08:02:06.566Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-studyhub-dev-9277a-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+        "logicalId": "apistudyhub"
+      },
+      "lastPushDirHash": "POQ6rGxY5Yfcw/fj94LLRE0vqUQ="
+    }
+  },
+  "storage": {
+    "collegestudyhubstorage": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "lastPushTimeStamp": "2025-09-18T08:02:06.581Z",
+      "providerMetadata": {
+        "s3TemplateURL": "https://s3.amazonaws.com/amplify-studyhub-dev-9277a-deployment/amplify-cfn-templates/storage/cloudformation-template.json",
+        "logicalId": "storagecollegestudyhubstorage"
+      },
+      "output": {
+        "BucketName": "collegestudyhubstorage9277a-dev",
+        "Region": "us-east-1"
+      },
+      "lastPushDirHash": "4KWUM5nqDNJHqT98++ic93G1ymQ="
+    }
+  },
+  "hosting": {
+    "amplifyhosting": {
+      "service": "amplifyhosting",
+      "type": "cicd",
+      "lastPushTimeStamp": "2025-09-18T07:43:25.711Z"
+    }
+  }
+}

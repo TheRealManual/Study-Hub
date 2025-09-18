@@ -85,7 +85,13 @@ export const getUserClass = /* GraphQL */ `
       userID
       className
       title
+      description
       topics {
+        nextToken
+        startedAt
+        __typename
+      }
+      files {
         nextToken
         startedAt
         __typename
@@ -112,6 +118,7 @@ export const listUserClasses = /* GraphQL */ `
         userID
         className
         title
+        description
         createdAt
         updatedAt
         _version
@@ -144,6 +151,7 @@ export const syncUserClasses = /* GraphQL */ `
         userID
         className
         title
+        description
         createdAt
         updatedAt
         _version
@@ -178,6 +186,7 @@ export const userClassesByUserID = /* GraphQL */ `
         userID
         className
         title
+        description
         createdAt
         updatedAt
         _version
@@ -199,6 +208,8 @@ export const getUserTopic = /* GraphQL */ `
       classID
       topicName
       title
+      description
+      type
       flashcards {
         nextToken
         startedAt
@@ -215,6 +226,11 @@ export const getUserTopic = /* GraphQL */ `
         __typename
       }
       notes {
+        nextToken
+        startedAt
+        __typename
+      }
+      files {
         nextToken
         startedAt
         __typename
@@ -241,6 +257,8 @@ export const listUserTopics = /* GraphQL */ `
         classID
         topicName
         title
+        description
+        type
         createdAt
         updatedAt
         _version
@@ -273,6 +291,8 @@ export const syncUserTopics = /* GraphQL */ `
         classID
         topicName
         title
+        description
+        type
         createdAt
         updatedAt
         _version
@@ -307,6 +327,8 @@ export const userTopicsByClassID = /* GraphQL */ `
         classID
         topicName
         title
+        description
+        type
         createdAt
         updatedAt
         _version
@@ -1009,6 +1031,273 @@ export const syncSavedSessions = /* GraphQL */ `
         totalItems
         completedItems
         lastAccessed
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const getUserFile = /* GraphQL */ `
+  query GetUserFile($id: ID!) {
+    getUserFile(id: $id) {
+      id
+      userID
+      classID
+      topicID
+      fileName
+      originalName
+      fileType
+      fileSize
+      s3Key
+      url
+      description
+      isPublic
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const listUserFiles = /* GraphQL */ `
+  query ListUserFiles(
+    $filter: ModelUserFileFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUserFiles(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        userID
+        classID
+        topicID
+        fileName
+        originalName
+        fileType
+        fileSize
+        s3Key
+        url
+        description
+        isPublic
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const syncUserFiles = /* GraphQL */ `
+  query SyncUserFiles(
+    $filter: ModelUserFileFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncUserFiles(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        userID
+        classID
+        topicID
+        fileName
+        originalName
+        fileType
+        fileSize
+        s3Key
+        url
+        description
+        isPublic
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const userFilesByClassID = /* GraphQL */ `
+  query UserFilesByClassID(
+    $classID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelUserFileFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    userFilesByClassID(
+      classID: $classID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        userID
+        classID
+        topicID
+        fileName
+        originalName
+        fileType
+        fileSize
+        s3Key
+        url
+        description
+        isPublic
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const userFilesByTopicID = /* GraphQL */ `
+  query UserFilesByTopicID(
+    $topicID: ID!
+    $sortDirection: ModelSortDirection
+    $filter: ModelUserFileFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    userFilesByTopicID(
+      topicID: $topicID
+      sortDirection: $sortDirection
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        userID
+        classID
+        topicID
+        fileName
+        originalName
+        fileType
+        fileSize
+        s3Key
+        url
+        description
+        isPublic
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const getUploadTemplate = /* GraphQL */ `
+  query GetUploadTemplate($id: ID!) {
+    getUploadTemplate(id: $id) {
+      id
+      userID
+      name
+      description
+      templateType
+      structure
+      downloadCount
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const listUploadTemplates = /* GraphQL */ `
+  query ListUploadTemplates(
+    $filter: ModelUploadTemplateFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listUploadTemplates(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        userID
+        name
+        description
+        templateType
+        structure
+        downloadCount
+        createdAt
+        updatedAt
+        _version
+        _deleted
+        _lastChangedAt
+        owner
+        __typename
+      }
+      nextToken
+      startedAt
+      __typename
+    }
+  }
+`;
+export const syncUploadTemplates = /* GraphQL */ `
+  query SyncUploadTemplates(
+    $filter: ModelUploadTemplateFilterInput
+    $limit: Int
+    $nextToken: String
+    $lastSync: AWSTimestamp
+  ) {
+    syncUploadTemplates(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+      lastSync: $lastSync
+    ) {
+      items {
+        id
+        userID
+        name
+        description
+        templateType
+        structure
+        downloadCount
         createdAt
         updatedAt
         _version

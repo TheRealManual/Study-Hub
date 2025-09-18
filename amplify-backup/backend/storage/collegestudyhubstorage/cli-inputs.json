@@ -1,0 +1,14 @@
+{
+  "resourceName": "collegestudyhubstorage",
+  "policyUUID": "8cab386d",
+  "bucketName": "collegestudyhubstorage",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

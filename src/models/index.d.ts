@@ -44,7 +44,9 @@ type EagerUserClass = {
   readonly userID: string;
   readonly className: string;
   readonly title: string;
+  readonly description?: string | null;
   readonly topics?: (UserTopic | null)[] | null;
+  readonly files?: (UserFile | null)[] | null;
   readonly createdAt: string;
   readonly updatedAt: string;
 }
@@ -57,7 +59,9 @@ type LazyUserClass = {
   readonly userID: string;
   readonly className: string;
   readonly title: string;
+  readonly description?: string | null;
   readonly topics: AsyncCollection<UserTopic>;
+  readonly files: AsyncCollection<UserFile>;
   readonly createdAt: string;
   readonly updatedAt: string;
 }
@@ -76,10 +80,13 @@ type EagerUserTopic = {
   readonly classID: string;
   readonly topicName: string;
   readonly title: string;
+  readonly description?: string | null;
+  readonly type?: string | null;
   readonly flashcards?: (UserFlashcard | null)[] | null;
   readonly quizQuestions?: (UserQuizQuestion | null)[] | null;
   readonly games?: (UserGame | null)[] | null;
   readonly notes?: (UserNote | null)[] | null;
+  readonly files?: (UserFile | null)[] | null;
   readonly createdAt: string;
   readonly updatedAt: string;
 }
@@ -92,10 +99,13 @@ type LazyUserTopic = {
   readonly classID: string;
   readonly topicName: string;
   readonly title: string;
+  readonly description?: string | null;
+  readonly type?: string | null;
   readonly flashcards: AsyncCollection<UserFlashcard>;
   readonly quizQuestions: AsyncCollection<UserQuizQuestion>;
   readonly games: AsyncCollection<UserGame>;
   readonly notes: AsyncCollection<UserNote>;
+  readonly files: AsyncCollection<UserFile>;
   readonly createdAt: string;
   readonly updatedAt: string;
 }
@@ -344,4 +354,86 @@ export declare type SavedSession = LazyLoading extends LazyLoadingDisabled ? Eag
 
 export declare const SavedSession: (new (init: ModelInit<SavedSession>) => SavedSession) & {
   copyOf(source: SavedSession, mutator: (draft: MutableModel<SavedSession>) => MutableModel<SavedSession> | void): SavedSession;
+}
+
+type EagerUserFile = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<UserFile, 'id'>;
+  };
+  readonly id: string;
+  readonly userID: string;
+  readonly classID?: string | null;
+  readonly topicID?: string | null;
+  readonly fileName: string;
+  readonly originalName: string;
+  readonly fileType: string;
+  readonly fileSize: number;
+  readonly s3Key: string;
+  readonly url?: string | null;
+  readonly description?: string | null;
+  readonly isPublic?: boolean | null;
+  readonly createdAt: string;
+  readonly updatedAt: string;
+}
+
+type LazyUserFile = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<UserFile, 'id'>;
+  };
+  readonly id: string;
+  readonly userID: string;
+  readonly classID?: string | null;
+  readonly topicID?: string | null;
+  readonly fileName: string;
+  readonly originalName: string;
+  readonly fileType: string;
+  readonly fileSize: number;
+  readonly s3Key: string;
+  readonly url?: string | null;
+  readonly description?: string | null;
+  readonly isPublic?: boolean | null;
+  readonly createdAt: string;
+  readonly updatedAt: string;
+}
+
+export declare type UserFile = LazyLoading extends LazyLoadingDisabled ? EagerUserFile : LazyUserFile
+
+export declare const UserFile: (new (init: ModelInit<UserFile>) => UserFile) & {
+  copyOf(source: UserFile, mutator: (draft: MutableModel<UserFile>) => MutableModel<UserFile> | void): UserFile;
+}
+
+type EagerUploadTemplate = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<UploadTemplate, 'id'>;
+  };
+  readonly id: string;
+  readonly userID: string;
+  readonly name: string;
+  readonly description: string;
+  readonly templateType: string;
+  readonly structure: string;
+  readonly downloadCount?: number | null;
+  readonly createdAt: string;
+  readonly updatedAt: string;
+}
+
+type LazyUploadTemplate = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<UploadTemplate, 'id'>;
+  };
+  readonly id: string;
+  readonly userID: string;
+  readonly name: string;
+  readonly description: string;
+  readonly templateType: string;
+  readonly structure: string;
+  readonly downloadCount?: number | null;
+  readonly createdAt: string;
+  readonly updatedAt: string;
+}
+
+export declare type UploadTemplate = LazyLoading extends LazyLoadingDisabled ? EagerUploadTemplate : LazyUploadTemplate
+
+export declare const UploadTemplate: (new (init: ModelInit<UploadTemplate>) => UploadTemplate) & {
+  copyOf(source: UploadTemplate, mutator: (draft: MutableModel<UploadTemplate>) => MutableModel<UploadTemplate> | void): UploadTemplate;
 }

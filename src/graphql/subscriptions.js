@@ -83,7 +83,13 @@ export const onCreateUserClass = /* GraphQL */ `
       userID
       className
       title
+      description
       topics {
+        nextToken
+        startedAt
+        __typename
+      }
+      files {
         nextToken
         startedAt
         __typename
@@ -108,7 +114,13 @@ export const onUpdateUserClass = /* GraphQL */ `
       userID
       className
       title
+      description
       topics {
+        nextToken
+        startedAt
+        __typename
+      }
+      files {
         nextToken
         startedAt
         __typename
@@ -133,7 +145,13 @@ export const onDeleteUserClass = /* GraphQL */ `
       userID
       className
       title
+      description
       topics {
+        nextToken
+        startedAt
+        __typename
+      }
+      files {
         nextToken
         startedAt
         __typename
@@ -158,6 +176,8 @@ export const onCreateUserTopic = /* GraphQL */ `
       classID
       topicName
       title
+      description
+      type
       flashcards {
         nextToken
         startedAt
@@ -174,6 +194,11 @@ export const onCreateUserTopic = /* GraphQL */ `
         __typename
       }
       notes {
+        nextToken
+        startedAt
+        __typename
+      }
+      files {
         nextToken
         startedAt
         __typename
@@ -198,6 +223,8 @@ export const onUpdateUserTopic = /* GraphQL */ `
       classID
       topicName
       title
+      description
+      type
       flashcards {
         nextToken
         startedAt
@@ -214,6 +241,11 @@ export const onUpdateUserTopic = /* GraphQL */ `
         __typename
       }
       notes {
+        nextToken
+        startedAt
+        __typename
+      }
+      files {
         nextToken
         startedAt
         __typename
@@ -238,6 +270,8 @@ export const onDeleteUserTopic = /* GraphQL */ `
       classID
       topicName
       title
+      description
+      type
       flashcards {
         nextToken
         startedAt
@@ -254,6 +288,11 @@ export const onDeleteUserTopic = /* GraphQL */ `
         __typename
       }
       notes {
+        nextToken
+        startedAt
+        __typename
+      }
+      files {
         nextToken
         startedAt
         __typename
@@ -708,6 +747,159 @@ export const onDeleteSavedSession = /* GraphQL */ `
       totalItems
       completedItems
       lastAccessed
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onCreateUserFile = /* GraphQL */ `
+  subscription OnCreateUserFile(
+    $filter: ModelSubscriptionUserFileFilterInput
+    $owner: String
+  ) {
+    onCreateUserFile(filter: $filter, owner: $owner) {
+      id
+      userID
+      classID
+      topicID
+      fileName
+      originalName
+      fileType
+      fileSize
+      s3Key
+      url
+      description
+      isPublic
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onUpdateUserFile = /* GraphQL */ `
+  subscription OnUpdateUserFile(
+    $filter: ModelSubscriptionUserFileFilterInput
+    $owner: String
+  ) {
+    onUpdateUserFile(filter: $filter, owner: $owner) {
+      id
+      userID
+      classID
+      topicID
+      fileName
+      originalName
+      fileType
+      fileSize
+      s3Key
+      url
+      description
+      isPublic
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onDeleteUserFile = /* GraphQL */ `
+  subscription OnDeleteUserFile(
+    $filter: ModelSubscriptionUserFileFilterInput
+    $owner: String
+  ) {
+    onDeleteUserFile(filter: $filter, owner: $owner) {
+      id
+      userID
+      classID
+      topicID
+      fileName
+      originalName
+      fileType
+      fileSize
+      s3Key
+      url
+      description
+      isPublic
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onCreateUploadTemplate = /* GraphQL */ `
+  subscription OnCreateUploadTemplate(
+    $filter: ModelSubscriptionUploadTemplateFilterInput
+    $owner: String
+  ) {
+    onCreateUploadTemplate(filter: $filter, owner: $owner) {
+      id
+      userID
+      name
+      description
+      templateType
+      structure
+      downloadCount
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onUpdateUploadTemplate = /* GraphQL */ `
+  subscription OnUpdateUploadTemplate(
+    $filter: ModelSubscriptionUploadTemplateFilterInput
+    $owner: String
+  ) {
+    onUpdateUploadTemplate(filter: $filter, owner: $owner) {
+      id
+      userID
+      name
+      description
+      templateType
+      structure
+      downloadCount
+      createdAt
+      updatedAt
+      _version
+      _deleted
+      _lastChangedAt
+      owner
+      __typename
+    }
+  }
+`;
+export const onDeleteUploadTemplate = /* GraphQL */ `
+  subscription OnDeleteUploadTemplate(
+    $filter: ModelSubscriptionUploadTemplateFilterInput
+    $owner: String
+  ) {
+    onDeleteUploadTemplate(filter: $filter, owner: $owner) {
+      id
+      userID
+      name
+      description
+      templateType
+      structure
+      downloadCount
       createdAt
       updatedAt
       _version
