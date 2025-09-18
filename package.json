@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
+    "build": "echo 'No build process needed for static site'",
     "dev": "node server.js",
     "test": "echo \"No tests yet\" && exit 0"
   },
@@ -13,5 +14,9 @@
   "license": "MIT",
   "engines": {
     "node": ">=14.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.0",
+    "cors": "^2.8.5"
   }
 }

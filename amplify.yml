@@ -1,0 +1,27 @@
+version: 1
+frontend:
+  phases:
+    preBuild:
+      commands:
+        - echo "Installing dependencies..."
+        - npm install
+    build:
+      commands:
+        - echo "Static site - no build needed"
+  artifacts:
+    baseDirectory: .
+    files:
+      - index.html
+      - server.js
+      - create-topic.js
+      - study-material-generator.js
+      - template-study-material.json
+      - package.json
+      - README.md
+      - classes/**/*
+    excludeFiles:
+      - node_modules/**/*
+      - .git/**/*
+  cache:
+    paths:
+      - node_modules/**/*
