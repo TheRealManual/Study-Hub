@@ -6,7 +6,7 @@
     <title>Study Hub</title>
     
     <!-- AWS Amplify Integration -->
-    <script src="https://unpkg.com/aws-amplify@latest/dist/aws-amplify.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aws-amplify@5/dist/aws-amplify.min.js"></script>
     
     <style>
         /* CSS Variables for theming and motion */
@@ -2117,10 +2117,32 @@
         };
 
         // Initialize Amplify
-        if (typeof Amplify !== 'undefined') {
+        if (typeof window.awsAmplify !== 'undefined') {
+            const { Amplify, API, Auth } = window.awsAmplify;
+            Amplify.configure(awsExports);
+            
+            // Make modules globally available
+            window.Amplify = Amplify;
+            window.API = API;
+            window.Auth = Auth;
+        } else if (typeof Amplify !== 'undefined') {
             Amplify.configure(awsExports);
         }
 
+        // Debug: Test function availability
+        console.log('Script loading...');
+        
+        function debugFunctions() {
+            console.log('Functions check:');
+            console.log('openClassManagement:', typeof window.openClassManagement);
+            console.log('testClassManagement:', typeof window.testClassManagement);
+            console.log('createClass:', typeof window.createClass);
+            console.log('Amplify:', typeof window.Amplify);
+        }
+        
+        // Run debug check
+        setTimeout(debugFunctions, 1000);
+        
         // Global state
         let studyData = {};
         let currentClass = null;
