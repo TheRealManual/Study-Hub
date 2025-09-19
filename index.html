@@ -6,7 +6,7 @@
     <title>Study Hub</title>
     
     <!-- AWS Amplify Integration -->
-    <script src="https://cdn.jsdelivr.net/npm/aws-amplify@5/dist/aws-amplify.min.js"></script>
+    <script src="https://unpkg.com/aws-amplify@4.3.46/dist/aws-amplify.min.js"></script>
     
     <style>
         /* CSS Variables for theming and motion */
@@ -5903,6 +5903,7 @@
             // TODO: Implement ZIP file processing
             showToast('Bulk upload processing... (Feature coming soon!)', 'info');
         }
+
         } catch (error) {
             console.error('Script execution error:', error);
             alert('Script error: ' + error.message);
