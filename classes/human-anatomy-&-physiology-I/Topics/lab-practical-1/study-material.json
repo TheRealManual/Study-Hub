@@ -1,0 +1,144 @@
+{
+  "title": "Lab Practical 1 – Foundations & Integument",
+  "notes": [
+    [
+      "Identify anatomical position, body regions, directional terms, and planes on models.",
+      1
+    ],
+    [
+      "Locate major body cavities and associated serous membranes (pleura, pericardium, peritoneum).",
+      1
+    ],
+    [
+      "Distinguish epithelial tissues by layers and cell shape (simple vs stratified; squamous, cuboidal, columnar).",
+      66
+    ],
+    [
+      "Identify connective tissue types by matrix and fibers (areolar, adipose, dense regular/irregular, hyaline cartilage).",
+      66
+    ],
+    [
+      "Recognize muscle tissues (skeletal striations, cardiac intercalated discs, smooth spindle cells).",
+      66
+    ],
+    [
+      "Recognize nervous tissue (neurons vs neuroglia; cell body, axon, dendrites).",
+      66
+    ],
+    [
+      "Integument: identify layers (epidermis strata), hair follicle, sebaceous and sweat glands.",
+      67
+    ],
+    [
+      "Use skeleton list to locate key bones and markings (e.g., femur head/neck, humerus greater tubercle, skull sutures).",
+      67
+    ],
+    [
+      "Practice labeling abdominopelvic regions and quadrants for organ location questions.",
+      65
+    ],
+    [
+      "Memorize ABCDE criteria for melanoma for applied questions.",
+      67
+    ],
+    [
+      "Be ready to identify tissue slides at low/high magnification by hallmark features.",
+      66
+    ],
+    [
+      "Know serous membrane names per cavity and organ (visceral vs parietal).",
+      65
+    ],
+    [
+      "Differentiate thick vs thin skin histologically (presence of stratum lucidum).",
+      63
+    ],
+    [
+      "Understand bone tissue histology (osteons vs trabeculae) for ID items.",
+      64
+    ],
+    [
+      "Directional terms applied to limbs (proximal/distal) vs trunk (superior/inferior).",
+      65
+    ],
+    [
+      "Common traps: confusing simple cuboidal with stratified cuboidal (rare); check nuclei layers.",
+      66
+    ],
+    [
+      "Identify dermal papillae (fingerprints) and associated receptors.",
+      63
+    ],
+    [
+      "Skeleton landmarks from the provided list are high-yield—drill articulations and foramina.",
+      67
+    ],
+    [
+      "Use weekly objectives as a checklist for lab preps.",
+      65
+    ],
+    [
+      "Expect practical stations with images/models; time management matters—scan hallmarks first.",
+      66
+    ]
+  ],
+  "quiz": {
+    "questions": [
+      {
+        "question": "Which feature identifies cardiac muscle on a slide?",
+        "options": [
+          "Peripheral nuclei",
+          "Intercalated discs",
+          "No striations",
+          "Spindle-shaped fibers"
+        ],
+        "answer": 1,
+        "explanation": "Cardiac muscle is striated with intercalated discs."
+      },
+      {
+        "question": "The visceral pleura lines the:",
+        "options": [
+          "Thoracic wall",
+          "Heart surface",
+          "Lung surface",
+          "Abdominal wall"
+        ],
+        "answer": 2,
+        "explanation": "Visceral pleura covers lungs."
+      },
+      {
+        "question": "Simple squamous epithelium is best for:",
+        "options": [
+          "Protection",
+          "Absorption",
+          "Diffusion/filtration",
+          "Stretch"
+        ],
+        "answer": 2,
+        "explanation": "Thin, flat cells permit rapid diffusion."
+      },
+      {
+        "question": "Thick skin contains which extra layer?",
+        "options": [
+          "Basale",
+          "Spinosum",
+          "Granulosum",
+          "Lucidum"
+        ],
+        "answer": 3,
+        "explanation": "Stratum lucidum is present in thick skin."
+      },
+      {
+        "question": "In compact bone, the central (Haversian) canal contains:",
+        "options": [
+          "Adipocytes",
+          "Capillaries and nerves",
+          "Osteoid only",
+          "Chondrocytes"
+        ],
+        "answer": 1,
+        "explanation": "Nerves and blood vessels run centrally."
+      }
+    ]
+  }
+}

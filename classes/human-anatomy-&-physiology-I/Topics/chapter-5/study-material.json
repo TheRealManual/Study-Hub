@@ -1,0 +1,211 @@
+{
+  "title": "Chapter 5 – The Integumentary System",
+  "notes": [
+    [
+      "Skin has two layers: epidermis (keratinized stratified squamous) and dermis; hypodermis (subcutaneous) is deep but not skin.",
+      4
+    ],
+    [
+      "Epidermal cell types: keratinocytes, melanocytes, Langerhans (immune), Merkel (tactile).",
+      8
+    ],
+    [
+      "Thin vs thick skin: thick has stratum lucidum and thicker stratum corneum; no hair.",
+      12
+    ],
+    [
+      "Epidermal layers (deep→superficial): basale, spinosum, granulosum, lucidum*, corneum.",
+      14
+    ],
+    [
+      "Dermis layers: papillary (areolar, capillaries, Meissner corpuscles); reticular (dense irregular, Pacinian).",
+      18
+    ],
+    [
+      "Skin color: melanin (eumelanin/pheomelanin), hemoglobin, carotene.",
+      22
+    ],
+    [
+      "Hair anatomy: shaft, root, follicle; growth cycles (anagen, catagen, telogen).",
+      28
+    ],
+    [
+      "Glands: sebaceous (oil), eccrine sweat (thermoregulation), apocrine (axillary/pubic), ceruminous (earwax).",
+      34
+    ],
+    [
+      "Nails: keratinized plates; protective and functional roles.",
+      38
+    ],
+    [
+      "Functions: protection, thermoregulation, sensation, excretion/absorption, vitamin D synthesis.",
+      42
+    ],
+    [
+      "Wound healing: epidermal vs deep (inflammation→migratory→proliferative→maturation).",
+      48
+    ],
+    [
+      "Development: epidermis (ectoderm), dermis (mesoderm); appendages are epidermal derivatives.",
+      52
+    ],
+    [
+      "Aging: reduced sweat/sebum, thinner skin, decreased melanocytes, loss of subcutaneous fat.",
+      56
+    ],
+    [
+      "Skin cancer types: basal cell, squamous cell, malignant melanoma.",
+      60
+    ],
+    [
+      "ABCDE of melanoma: Asymmetry, Border, Color, Diameter>6mm, Evolving.",
+      62
+    ],
+    [
+      "Burns: degrees by depth; risks include fluid loss and infection.",
+      66
+    ],
+    [
+      "Hypodermis anchors skin and stores triglycerides; highly vascular.",
+      20
+    ],
+    [
+      "Papillary ridges contribute to fingerprints; improved grip.",
+      19
+    ],
+    [
+      "Sebum lubricates skin/hair and reduces water loss.",
+      35
+    ],
+    [
+      "Eccrine sweat is watery and aids heat loss by evaporation.",
+      36
+    ],
+    [
+      "Apocrine sweat contains proteins/lipids; bacterial action causes odor.",
+      37
+    ],
+    [
+      "Vitamin D synthesis requires UV exposure; supports Ca2+ absorption.",
+      44
+    ],
+    [
+      "Deep wound healing includes scar formation (fibrosis).",
+      50
+    ]
+  ],
+  "quiz": {
+    "questions": [
+      {
+        "question": "Which epidermal layer is present only in thick skin?",
+        "options": [
+          "Basale",
+          "Spinosum",
+          "Granulosum",
+          "Lucidum"
+        ],
+        "answer": 3,
+        "explanation": "Stratum lucidum appears in thick skin."
+      },
+      {
+        "question": "Eccrine sweat glands function mainly in:",
+        "options": [
+          "Oil secretion",
+          "Thermoregulation",
+          "Earwax production",
+          "Odor production"
+        ],
+        "answer": 1,
+        "explanation": "They cool the body via evaporation."
+      },
+      {
+        "question": "Melanin is produced by:",
+        "options": [
+          "Keratinocytes",
+          "Melanocytes",
+          "Langerhans cells",
+          "Merkel cells"
+        ],
+        "answer": 1,
+        "explanation": "Melanocytes in stratum basale."
+      },
+      {
+        "question": "The dermis is primarily:",
+        "options": [
+          "Dense irregular CT",
+          "Keratinized epithelium",
+          "Adipose tissue",
+          "Areolar only"
+        ],
+        "answer": 0,
+        "explanation": "Reticular dermis is dense irregular CT."
+      },
+      {
+        "question": "Which is NOT a function of skin?",
+        "options": [
+          "Sensation",
+          "Excretion",
+          "Vitamin D synthesis",
+          "Erythropoietin production"
+        ],
+        "answer": 3,
+        "explanation": "EPO is from kidneys."
+      },
+      {
+        "question": "A third-degree burn involves:",
+        "options": [
+          "Epidermis only",
+          "Epidermis and part of dermis",
+          "Full thickness of skin",
+          "Only hypodermis"
+        ],
+        "answer": 2,
+        "explanation": "Full-thickness burn."
+      },
+      {
+        "question": "Sebaceous glands secrete:",
+        "options": [
+          "Sweat",
+          "Sebum",
+          "Cerumen",
+          "Milk"
+        ],
+        "answer": 1,
+        "explanation": "Sebum = oil."
+      },
+      {
+        "question": "ABCDE ‘D’ refers to:",
+        "options": [
+          "Depth",
+          "Diameter",
+          "Density",
+          "Dermis"
+        ],
+        "answer": 1,
+        "explanation": "Diameter > 6 mm warning sign."
+      },
+      {
+        "question": "Hair grows from:",
+        "options": [
+          "Nail matrix",
+          "Hair matrix in bulb",
+          "Dermal papilla only",
+          "Epidermal ridge"
+        ],
+        "answer": 1,
+        "explanation": "Matrix cells divide to elongate hair."
+      },
+      {
+        "question": "Papillary dermis contains:",
+        "options": [
+          "Pacinian corpuscles",
+          "Meissner corpuscles",
+          "Sebaceous glands",
+          "Hair bulbs"
+        ],
+        "answer": 1,
+        "explanation": "Meissner detect light touch in papillary layer."
+      }
+    ]
+  }
+}

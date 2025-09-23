@@ -1,0 +1,239 @@
+{
+  "title": "Chapter 3 – The Cellular Level of Organization",
+  "notes": [
+    [
+      "Plasma membrane: fluid mosaic of phospholipids, proteins, cholesterol.",
+      6
+    ],
+    [
+      "Integral (transmembrane) vs peripheral proteins with diverse functions.",
+      10
+    ],
+    [
+      "Membrane fluidity increases with unsaturated fatty acids; cholesterol modulates fluidity.",
+      12
+    ],
+    [
+      "Selective permeability: small nonpolar molecules diffuse; others need transporters.",
+      16
+    ],
+    [
+      "Gradients across membrane: chemical + electrical = electrochemical gradient.",
+      18
+    ],
+    [
+      "Passive transport: simple diffusion, facilitated diffusion (channels/carriers), osmosis.",
+      22
+    ],
+    [
+      "Channel-mediated diffusion is ion-specific; gates control opening.",
+      26
+    ],
+    [
+      "Osmosis: water moves down water potential via aquaporins and bilayer.",
+      28
+    ],
+    [
+      "Tonicity: isotonic (no net change), hypotonic (cell swells), hypertonic (cell shrinks).",
+      30
+    ],
+    [
+      "Active transport: primary (ATP-driven pumps) and secondary (coupled gradients).",
+      34
+    ],
+    [
+      "Vesicular transport: endocytosis (receptor-mediated, phagocytosis, pinocytosis), exocytosis, transcytosis.",
+      38
+    ],
+    [
+      "Cytoskeleton: microfilaments, intermediate filaments, microtubules—structure and transport.",
+      46
+    ],
+    [
+      "Organelles: ER (rough/smooth), Golgi, lysosomes, peroxisomes, proteasomes, mitochondria.",
+      52
+    ],
+    [
+      "Mitochondria: ATP production; own DNA; maternal inheritance.",
+      60
+    ],
+    [
+      "Nucleus houses DNA; nucleolus makes rRNA; chromatin organizes genes.",
+      66
+    ],
+    [
+      "Gene expression: transcription (nucleus) → translation (ribosomes).",
+      72
+    ],
+    [
+      "mRNA codons, tRNA anticodons; ribosomal sites A, P, E.",
+      76
+    ],
+    [
+      "DNA replication precedes cell division; semiconservative mechanism.",
+      82
+    ],
+    [
+      "Cell cycle: interphase (G1, S, G2), mitosis (PMAT), cytokinesis.",
+      88
+    ],
+    [
+      "Mitosis outcome: two identical diploid cells; meiosis produces haploid gametes.",
+      94
+    ],
+    [
+      "Apoptosis is programmed cell death; contrasts with necrosis.",
+      100
+    ],
+    [
+      "Cholesterol stabilizes membranes and reduces permeability.",
+      14
+    ],
+    [
+      "Carrier-mediated diffusion shows saturation kinetics and specificity.",
+      24
+    ],
+    [
+      "Primary active transport example: Na+/K+ ATPase.",
+      35
+    ],
+    [
+      "Receptor-mediated endocytosis uses clathrin-coated pits.",
+      39
+    ],
+    [
+      "Lysosomes digest worn organelles (autophagy) and can trigger autolysis.",
+      58
+    ],
+    [
+      "Alternative splicing yields multiple proteins from one gene.",
+      74
+    ],
+    [
+      "Checkpoints regulate the cell cycle; failures can lead to cancer.",
+      90
+    ],
+    [
+      "Meiosis I separates homologs; Meiosis II separates sister chromatids.",
+      96
+    ],
+    [
+      "Proteasomes degrade ubiquitin-tagged proteins.",
+      56
+    ]
+  ],
+  "quiz": {
+    "questions": [
+      {
+        "question": "Which is NOT a component of the cytoskeleton?",
+        "options": [
+          "Microfilaments",
+          "Microtubules",
+          "Intermediate filaments",
+          "Myofibrils"
+        ],
+        "answer": 3,
+        "explanation": "Myofibrils are muscle structures, not cytoskeleton."
+      },
+      {
+        "question": "A cell in a hypertonic solution will:",
+        "options": [
+          "Swell",
+          "Burst",
+          "Shrink",
+          "Stay the same"
+        ],
+        "answer": 2,
+        "explanation": "Water exits the cell; it crenates."
+      },
+      {
+        "question": "Which transport requires ATP directly?",
+        "options": [
+          "Simple diffusion",
+          "Primary active transport",
+          "Osmosis",
+          "Facilitated diffusion"
+        ],
+        "answer": 1,
+        "explanation": "Primary pumps (e.g., Na+/K+ ATPase) hydrolyze ATP."
+      },
+      {
+        "question": "Receptor‑mediated endocytosis involves:",
+        "options": [
+          "Caveolae only",
+          "Clathrin-coated pits",
+          "Pinocytosis only",
+          "Phagocytosis of bacteria"
+        ],
+        "answer": 1,
+        "explanation": "Clathrin-coated pits internalize ligands."
+      },
+      {
+        "question": "During which phase do sister chromatids separate?",
+        "options": [
+          "Prophase",
+          "Metaphase",
+          "Anaphase",
+          "Telophase"
+        ],
+        "answer": 2,
+        "explanation": "Anaphase pulls chromatids apart."
+      },
+      {
+        "question": "Transcription occurs in the:",
+        "options": [
+          "Cytosol",
+          "Nucleus",
+          "Mitochondria",
+          "Ribosome"
+        ],
+        "answer": 1,
+        "explanation": "DNA template is in the nucleus."
+      },
+      {
+        "question": "Which organelle modifies and packages proteins?",
+        "options": [
+          "Golgi apparatus",
+          "Smooth ER",
+          "Lysosome",
+          "Peroxisome"
+        ],
+        "answer": 0,
+        "explanation": "Golgi sorts/ships proteins."
+      },
+      {
+        "question": "Aquaporins facilitate:",
+        "options": [
+          "Ion transport",
+          "Water movement",
+          "ATP synthesis",
+          "Protein export"
+        ],
+        "answer": 1,
+        "explanation": "Aquaporins are water channels."
+      },
+      {
+        "question": "Which increases membrane fluidity at low temp?",
+        "options": [
+          "Saturated fatty acids",
+          "Cholesterol (moderate)",
+          "More protein",
+          "Cell wall"
+        ],
+        "answer": 1,
+        "explanation": "Cholesterol prevents tight packing."
+      },
+      {
+        "question": "Proteasomes primarily:",
+        "options": [
+          "Hydrolyze lipids",
+          "Degrade ubiquitinated proteins",
+          "Replicate DNA",
+          "Synthesize ATP"
+        ],
+        "answer": 1,
+        "explanation": "They cut proteins into peptides."
+      }
+    ]
+  }
+}

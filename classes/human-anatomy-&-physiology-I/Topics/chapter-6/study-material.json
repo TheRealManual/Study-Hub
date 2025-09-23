@@ -1,0 +1,211 @@
+{
+  "title": "Chapter 6 – The Skeletal System: Bone Tissue",
+  "notes": [
+    [
+      "Skeletal system functions: support, protection, movement, mineral homeostasis, blood cell production, triglyceride storage.",
+      4
+    ],
+    [
+      "Long bone anatomy: diaphysis, epiphyses, metaphyses, articular cartilage, periosteum, medullary cavity, endosteum.",
+      8
+    ],
+    [
+      "Bone ECM: ~15% water, 30% collagen, 55% mineral salts (hydroxyapatite).",
+      14
+    ],
+    [
+      "Cells: osteoprogenitors → osteoblasts (build) → osteocytes (maintain); osteoclasts resorb.",
+      18
+    ],
+    [
+      "Compact bone: osteons; Spongy bone: trabeculae with red marrow.",
+      22
+    ],
+    [
+      "Blood/nerve supply through nutrient foramina, periosteal vessels, metaphyseal/epiphyseal vessels.",
+      28
+    ],
+    [
+      "Ossification: intramembranous (flat bones) vs endochondral (most bones).",
+      34
+    ],
+    [
+      "Longitudinal growth at epiphyseal plates; appositional growth thickens bones.",
+      40
+    ],
+    [
+      "Bone remodeling couples osteoclast resorption with osteoblast deposition.",
+      46
+    ],
+    [
+      "Hormones: GH/IGFs, thyroid hormones, sex hormones; vitamins A/C/D/K/B12; minerals Ca2+, P, Mg, etc.",
+      52
+    ],
+    [
+      "Fracture repair: reactive (hematoma), reparative (fibrocartilaginous then bony callus), remodeling.",
+      60
+    ],
+    [
+      "Calcium homeostasis: PTH ↑ blood Ca2+; calcitriol ↑ intestinal absorption; calcitonin (thyroid) can ↓ blood Ca2+.",
+      66
+    ],
+    [
+      "Exercise increases bone density via mechanical stress; disuse leads to loss.",
+      72
+    ],
+    [
+      "Aging shifts toward resorption; osteoporosis risk increases (esp. post‑menopausal).",
+      78
+    ],
+    [
+      "Compact bone resists bending; spongy bone reduces weight and supports marrow.",
+      24
+    ],
+    [
+      "Endochondral ossification replaces cartilage template; primary/secondary ossification centers.",
+      36
+    ],
+    [
+      "Periosteum contains osteogenic cells; essential for growth and repair.",
+      9
+    ],
+    [
+      "Hydroxyapatite crystals provide hardness; collagen provides tensile strength.",
+      15
+    ],
+    [
+      "Epiphyseal plate zones: resting, proliferating, hypertrophic, calcified cartilage.",
+      41
+    ],
+    [
+      "High PTH elevates osteoclast activity; negative feedback controls blood Ca2+.",
+      67
+    ],
+    [
+      "Open vs closed fractures, stress fractures; proper alignment essential for healing.",
+      62
+    ],
+    [
+      "Vitamin D deficiency: rickets (children) / osteomalacia (adults).",
+      84
+    ],
+    [
+      "Wolff’s law: bone adapts to loads placed upon it.",
+      73
+    ]
+  ],
+  "quiz": {
+    "questions": [
+      {
+        "question": "Which bone cell resorbs bone?",
+        "options": [
+          "Osteoblast",
+          "Osteocyte",
+          "Osteoclast",
+          "Osteoprogenitor"
+        ],
+        "answer": 2,
+        "explanation": "Osteoclasts break down bone matrix."
+      },
+      {
+        "question": "Primary mineral of bone matrix is:",
+        "options": [
+          "Calcium carbonate",
+          "Hydroxyapatite",
+          "Sodium chloride",
+          "Potassium phosphate"
+        ],
+        "answer": 1,
+        "explanation": "Hydroxyapatite crystals harden bone."
+      },
+      {
+        "question": "Which ossification forms most long bones?",
+        "options": [
+          "Endochondral",
+          "Intramembranous",
+          "Interstitial",
+          "Appositional"
+        ],
+        "answer": 0,
+        "explanation": "Long bones are cartilage‑template derived."
+      },
+      {
+        "question": "PTH increases blood calcium by:",
+        "options": [
+          "Stimulating osteoblasts",
+          "Inhibiting osteoclasts",
+          "Increasing bone resorption",
+          "Increasing urinary Ca2+ loss"
+        ],
+        "answer": 2,
+        "explanation": "PTH promotes osteoclast activity and calcitriol."
+      },
+      {
+        "question": "The diaphysis is the:",
+        "options": [
+          "Bone end",
+          "Shaft",
+          "Growth plate",
+          "Inner lining"
+        ],
+        "answer": 1,
+        "explanation": "Diaphysis = shaft of a long bone."
+      },
+      {
+        "question": "Which is found in compact bone?",
+        "options": [
+          "Trabeculae",
+          "Osteons",
+          "Canaliculi only",
+          "Red marrow only"
+        ],
+        "answer": 1,
+        "explanation": "Osteons are cylindrical units in compact bone."
+      },
+      {
+        "question": "Zone where chondrocytes divide rapidly:",
+        "options": [
+          "Resting",
+          "Proliferating",
+          "Hypertrophic",
+          "Calcified"
+        ],
+        "answer": 1,
+        "explanation": "Proliferation lengthens bone."
+      },
+      {
+        "question": "Calcitonin tends to:",
+        "options": [
+          "Raise blood Ca2+",
+          "Lower blood Ca2+",
+          "No effect",
+          "Raise PTH"
+        ],
+        "answer": 1,
+        "explanation": "Calcitonin counters high Ca2+ (physiologic effect modest in adults)."
+      },
+      {
+        "question": "Mechanical loading generally leads to:",
+        "options": [
+          "Bone loss",
+          "No change",
+          "Bone gain",
+          "Cartilage formation only"
+        ],
+        "answer": 2,
+        "explanation": "Stress stimulates osteoblasts; ↑ density."
+      },
+      {
+        "question": "Appositional growth:",
+        "options": [
+          "Lengthens bone",
+          "Increases bone thickness",
+          "Replaces cartilage with bone at epiphysis",
+          "Occurs only in embryos"
+        ],
+        "answer": 1,
+        "explanation": "Circumferential growth at periosteum."
+      }
+    ]
+  }
+}

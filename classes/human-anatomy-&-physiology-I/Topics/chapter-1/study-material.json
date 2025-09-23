@@ -1,0 +1,235 @@
+{
+  "title": "Chapter 1 – Introduction to the Human Body",
+  "notes": [
+    [
+      "Anatomy studies structure; Physiology studies function.",
+      5
+    ],
+    [
+      "Levels of organization: chemical → cellular → tissue → organ → system → organism.",
+      9
+    ],
+    [
+      "Eleven systems: integumentary, skeletal, muscular, nervous, endocrine, cardiovascular, lymphatic/immune, respiratory, digestive, urinary, reproductive.",
+      12
+    ],
+    [
+      "Basic life processes include metabolism, responsiveness, movement, growth, differentiation, reproduction.",
+      16
+    ],
+    [
+      "Homeostasis: dynamic balance of internal conditions maintained by neural and endocrine regulation.",
+      18
+    ],
+    [
+      "Negative feedback reduces a deviation (e.g., body temperature regulation).",
+      22
+    ],
+    [
+      "Positive feedback amplifies a deviation (e.g., oxytocin in labor).",
+      24
+    ],
+    [
+      "Anatomical position: standing, facing forward, arms at sides, palms forward, feet flat.",
+      30
+    ],
+    [
+      "Directional terms: superior/inferior; anterior/posterior; medial/lateral; proximal/distal; superficial/deep.",
+      34
+    ],
+    [
+      "Planes: sagittal (midsagittal/parasagittal), frontal (coronal), transverse (horizontal), oblique.",
+      38
+    ],
+    [
+      "Dorsal body cavity: cranial + vertebral canal.",
+      42
+    ],
+    [
+      "Ventral body cavity: thoracic (pleural, pericardial, mediastinum) + abdominopelvic.",
+      45
+    ],
+    [
+      "Serous membranes: parietal vs visceral layers; pericardium, pleura, peritoneum reduce friction.",
+      50
+    ],
+    [
+      "Abdominopelvic regions (9) and quadrants (4) standardize location descriptions.",
+      55
+    ],
+    [
+      "Aging reduces homeostatic efficiency; increases disease susceptibility.",
+      60
+    ],
+    [
+      "Medical imaging overview: X‑ray, CT, MRI, PET, ultrasound—different strengths and use cases.",
+      66
+    ],
+    [
+      "Extracellular fluid (ECF) surrounds cells and its composition is tightly regulated.",
+      20
+    ],
+    [
+      "Feedback loop components: receptor, control center, effector.",
+      21
+    ],
+    [
+      "Prone vs supine positions reference body orientation when reclining.",
+      32
+    ],
+    [
+      "In quadrupeds, 'ventral' corresponds to inferior; in humans, anterior.",
+      36
+    ],
+    [
+      "Membranes in thoracic cavity: pleura (lungs) and pericardium (heart).",
+      49
+    ],
+    [
+      "Retroperitoneal organs lie posterior to peritoneum (e.g., kidneys).",
+      53
+    ],
+    [
+      "Homeostatic imbalance can lead to disorder/disease or death if severe.",
+      19
+    ],
+    [
+      "Regional names (e.g., cephalic, brachial, femoral) provide precise references.",
+      33
+    ],
+    [
+      "Thoracic cavity separated from abdominopelvic by diaphragm.",
+      44
+    ],
+    [
+      "Mediastinum contains heart, trachea, esophagus, major vessels (pericardial cavity within).",
+      46
+    ],
+    [
+      "Serous fluid lubricates organ movement within cavities.",
+      51
+    ],
+    [
+      "Medical imaging: CT = cross‑sectional X‑ray; MRI = magnetic fields; PET = metabolic activity.",
+      67
+    ],
+    [
+      "Aging impact example: decreased skin elasticity; slower tissue repair.",
+      61
+    ]
+  ],
+  "quiz": {
+    "questions": [
+      {
+        "question": "Which statement best defines physiology?",
+        "options": [
+          "Study of body structure",
+          "Study of body function",
+          "Study of disease",
+          "Study of medical imaging"
+        ],
+        "answer": 1,
+        "explanation": "Physiology focuses on how body parts work."
+      },
+      {
+        "question": "Which list correctly orders levels of organization from simple to complex?",
+        "options": [
+          "Cell→Chemical→Tissue→Organ→System→Organism",
+          "Chemical→Cell→Tissue→Organ→System→Organism",
+          "Chemical→Tissue→Cell→Organ→System→Organism",
+          "Atom→Organ→Cell→System→Tissue→Organism"
+        ],
+        "answer": 1,
+        "explanation": "Standard progression is chemical to organism."
+      },
+      {
+        "question": "A thermostat maintaining room temperature is analogous to which feedback type?",
+        "options": [
+          "Positive",
+          "Negative",
+          "Neutral",
+          "Feedforward"
+        ],
+        "answer": 1,
+        "explanation": "Thermostats counteract deviations (negative feedback)."
+      },
+      {
+        "question": "In anatomical position, the palms face:",
+        "options": [
+          "Posterior",
+          "Medial",
+          "Forward",
+          "Up"
+        ],
+        "answer": 2,
+        "explanation": "Palms face anterior (forward)."
+      },
+      {
+        "question": "The plane dividing the body into superior and inferior portions is:",
+        "options": [
+          "Frontal",
+          "Transverse",
+          "Sagittal",
+          "Oblique"
+        ],
+        "answer": 1,
+        "explanation": "Transverse (horizontal) separates top/bottom."
+      },
+      {
+        "question": "The pleura is a serous membrane associated with the:",
+        "options": [
+          "Heart",
+          "Lungs",
+          "Liver",
+          "Brain"
+        ],
+        "answer": 1,
+        "explanation": "Pleura surrounds the lungs."
+      },
+      {
+        "question": "Which cavity houses the brain?",
+        "options": [
+          "Vertebral",
+          "Cranial",
+          "Thoracic",
+          "Abdominal"
+        ],
+        "answer": 1,
+        "explanation": "Cranial cavity encloses the brain."
+      },
+      {
+        "question": "Which term means farther from the midline?",
+        "options": [
+          "Medial",
+          "Lateral",
+          "Proximal",
+          "Superior"
+        ],
+        "answer": 1,
+        "explanation": "Lateral = away from midline."
+      },
+      {
+        "question": "Which is NOT typically part of a feedback loop?",
+        "options": [
+          "Receptor",
+          "Effector",
+          "Integrator (control center)",
+          "Transducer protein"
+        ],
+        "answer": 3,
+        "explanation": "Receptor, control center, effector are the core components."
+      },
+      {
+        "question": "A cut that separates anterior and posterior portions is:",
+        "options": [
+          "Frontal",
+          "Transverse",
+          "Midsagittal",
+          "Parasagittal"
+        ],
+        "answer": 0,
+        "explanation": "Frontal (coronal) divides front/back."
+      }
+    ]
+  }
+}
