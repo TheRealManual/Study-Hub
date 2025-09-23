@@ -1,10 +1,38 @@
 {
   "title": "Quiz 2 Review",
   "notes": [
-    "Week 2 frames efficiency in steps rather than seconds; count primitive operations as a function of n.",
-    "Summations and loop analysis yield closed-form step counts that inform asymptotic bounds.",
-    "Week 2 slides show O, \u03a9, \u0398 for bounding growth; ignore constants/lower terms for asymptotics.",
-    "Use step counts to derive asymptotic classes for algorithms."
+    [
+      "Week 2 frames efficiency in steps rather than seconds; count primitive operations as a function of n.",
+      3
+    ],
+    [
+      "Summations and loop analysis yield closed-form step counts that inform asymptotic bounds.",
+      8
+    ],
+    [
+      "Week 2 slides show O, Ω, Θ for bounding growth; ignore constants/lower terms for asymptotics.",
+      12
+    ],
+    [
+      "Use step counts to derive asymptotic classes for algorithms.",
+      15
+    ],
+    [
+      "Sequential search analysis shows worst-case O(n) comparisons when element is not found.",
+      6
+    ],
+    [
+      "Nested loops multiply iteration counts; sequential blocks add their step counts together.",
+      9
+    ],
+    [
+      "Big-O provides asymptotic upper bound, ignoring constant factors and lower-order terms.",
+      13
+    ],
+    [
+      "Common growth classes: O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ) < O(n!).",
+      16
+    ]
   ],
   "flashcards": [
     {
