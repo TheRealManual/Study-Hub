@@ -1710,17 +1710,80 @@
             return dueCards;
         }
 
-        // Load study data from API
+        // Dynamically discover and load study data from directory structure
         async function loadStudyData() {
             try {
-                const response = await fetch('/api/study-materials');
-                studyData = await response.json();
+                studyData = {};
+                
+                // Known class directories (you can add more here, or we could make this even more dynamic)
+                const potentialClasses = [
+                    'design-&-analysis-of-algorithms',
+                    'computer-networks',
+                    'database-systems', 
+                    'software-engineering',
+                    'machine-learning',
+                    'algorithms',
+                    'data-structures',
+                    'operating-systems',
+                    'computer-graphics',
+                    'artificial-intelligence'
+                ];
+                
+                // Discover which classes actually exist by trying to fetch their directories
+                for (const classKey of potentialClasses) {
+                    const classData = await discoverClassData(classKey);
+                    if (classData && Object.keys(classData.topics).length > 0) {
+                        studyData[classKey] = classData;
+                    }
+                }
+                
                 renderSidebar();
                 renderHomepage();
             } catch (error) {
                 console.error('Failed to load study data:', error);
                 showToast('Failed to load study materials', 'error');
             }
+        }
+
+        // Discover data for a specific class by scanning for topic directories
+        async function discoverClassData(classKey) {
+            const classData = {
+                title: classKey.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+                topics: {}
+            };
+            
+            // Common topic naming patterns to try
+            const topicPatterns = [
+                'quiz-1', 'quiz-2', 'quiz-3', 'quiz-4', 'quiz-5',
+                'exam-1', 'exam-2', 'final-exam', 'midterm',
+                'week-1', 'week-2', 'week-3', 'week-4', 'week-5', 'week-6', 'week-7', 'week-8',
+                'chapter-1', 'chapter-2', 'chapter-3', 'chapter-4', 'chapter-5',
+                'unit-1', 'unit-2', 'unit-3', 'unit-4', 'unit-5',
+                'assignment-1', 'assignment-2', 'assignment-3',
+                'lab-1', 'lab-2', 'lab-3', 'lab-4', 'lab-5',
+                'project-1', 'project-2', 'homework-1', 'homework-2'
+            ];
+            
+            // Try to find topics for this class
+            for (const topicKey of topicPatterns) {
+                try {
+                    const topicUrl = `./classes/${classKey}/Topics/${topicKey}/study-material.json`;
+                    const topicResponse = await fetch(topicUrl);
+                    
+                    if (topicResponse.ok) {
+                        const topicData = await topicResponse.json();
+                        classData.topics[topicKey] = {
+                            title: topicKey.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+                            ...topicData
+                        };
+                        console.log(`✅ Found topic: ${classKey}/${topicKey}`);
+                    }
+                } catch (error) {
+                    // Silently continue - this is expected for non-existent topics
+                }
+            }
+            
+            return classData;
         }
 
         // Render sidebar with classes
@@ -1892,29 +1955,62 @@
             }
         }
 
-        // Render PDF list for class homepage
+        // Render PDF list for class homepage - dynamically discover PDFs
         async function renderPDFList(classKey) {
             const container = document.getElementById('pdf-list');
-            container.innerHTML = '<div class="loading">Loading PDFs...</div>';
+            container.innerHTML = '<div class="loading">Discovering PDFs...</div>';
 
             try {
-                const response = await fetch('/api/study-materials/files');
-                const filesData = await response.json();
-                const pdfs = filesData[classKey] || [];
+                // Common PDF naming patterns to try
+                const pdfPatterns = [
+                    'Week 1 - Introduction to DAA.pdf',
+                    'Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf',
+                    'Week 3 - Brute Force and Exhaustive Search.pdf',
+                    'Week 4 - Divide and Conquer.pdf',
+                    'Week 5 - Decrease and Conquer.pdf',
+                    'Week 6 - Transform and Conquer.pdf',
+                    'Week 7 - Dynamic Programming.pdf',
+                    'Week 8 - Greedy Algorithms.pdf',
+                    'Week 9 - Graph Algorithms.pdf',
+                    'Week 10 - String Algorithms.pdf',
+                    'Lecture 1.pdf', 'Lecture 2.pdf', 'Lecture 3.pdf', 'Lecture 4.pdf', 'Lecture 5.pdf',
+                    'Chapter 1.pdf', 'Chapter 2.pdf', 'Chapter 3.pdf', 'Chapter 4.pdf', 'Chapter 5.pdf',
+                    'Notes 1.pdf', 'Notes 2.pdf', 'Notes 3.pdf', 'Notes 4.pdf', 'Notes 5.pdf',
+                    'Assignment 1.pdf', 'Assignment 2.pdf', 'Assignment 3.pdf',
+                    'Quiz 1.pdf', 'Quiz 2.pdf', 'Quiz 3.pdf', 'Quiz 4.pdf',
+                    'Exam 1.pdf', 'Exam 2.pdf', 'Final Exam.pdf', 'Midterm.pdf'
+                ];
+                
+                const foundPDFs = [];
+                
+                // Try to find PDFs by attempting to fetch them
+                for (const filename of pdfPatterns) {
+                    try {
+                        const pdfUrl = `./classes/${encodeURIComponent(classKey)}/Study Materials/${encodeURIComponent(filename)}`;
+                        const response = await fetch(pdfUrl, { method: 'HEAD' }); // Just check if it exists
+                        
+                        if (response.ok) {
+                            foundPDFs.push(filename);
+                            console.log(`✅ Found PDF: ${classKey}/${filename}`);
+                        }
+                    } catch (error) {
+                        // Silently continue - this is expected for non-existent PDFs
+                    }
+                }
 
                 container.innerHTML = '';
 
-                if (pdfs.length === 0) {
+                if (foundPDFs.length === 0) {
                     container.innerHTML = '<p class="muted">No PDFs found in Study Materials folder.</p>';
                     return;
                 }
 
-                pdfs.forEach((filename, index) => {
+                foundPDFs.forEach((filename, index) => {
                     const pdfCard = document.createElement('div');
                     pdfCard.className = 'pdf-card';
                     const pdfId = `pdf-${classKey}-${index}`;
 
-                    const pdfUrl = `/classes/${encodeURIComponent(classKey)}/Study Materials/${encodeURIComponent(filename)}`;
+                    const pdfUrl = `./classes/${encodeURIComponent(classKey)}/Study Materials/${encodeURIComponent(filename)}`;
 
                     pdfCard.innerHTML = `
                         <div class="pdf-header collapsible-header" onclick="togglePDF('${pdfId}')" role="button" tabindex="0" aria-expanded="false" aria-controls="${pdfId}-content">

@@ -1,53 +1,88 @@
-# 📚 Study Hub - OneDrive Desktop Edition
+# 📚 Study Hub - Pure Frontend Edition
 
-Welcome to your **Study Hub** on your OneDrive Desktop! 🎉
+Welcome to your **Study Hub** - a completely static, dynamic study platform! 🎉
 
 ## 🚀 Quick Start
-**Just double-click `QUICK_START.bat` to start!**
+**Just open `index.html` in your browser or deploy to any static hosting!**
 
-## 📍 Your Location
+## 📍 Pure Frontend - No Backend Required!
 ```
-📍 C:\Users\thelo.NICKS_MAIN_PC\OneDrive\Desktop\Study-Hub\
+✅ Static HTML/CSS/JavaScript only
+✅ Dynamic content discovery  
+✅ Deploy anywhere (AWS Amplify, GitHub Pages, Netlify)
+✅ No server, no dependencies, no setup
 ```
 
 ## 🎯 Main Files
-- **`QUICK_START.bat`** ⭐ - One-click start (silent, opens browser)
-- **`START_STUDY_HUB.bat`** - Full version with logs
-- **`STOP_SERVER.bat`** - Stop the server
-- **`create-topic.js`** - Add new study topics
+- **`index.html`** ⭐ - Your complete study application
 - **`classes/`** - **Put your study materials here!**
+- **`amplify.yml`** - Ready for AWS Amplify deployment
 
-## 📚 Adding Study Content
+## 📚 Adding Study Content - Super Dynamic!
 
-### Method 1: Interactive Tool
-```bash
-# Open command prompt in this folder
-node create-topic.js
-# Follow the prompts!
+### Just Drop and Go! 
+1. Create class folder in `classes/` (e.g., `classes/machine-learning/`)
+2. Create Topics folder: `classes/machine-learning/Topics/`
+3. Create topic folder: `classes/machine-learning/Topics/quiz-1/`
+4. Add `study-material.json` file with your content
+5. **That's it!** The app will automatically discover it!
+
+### Example Structure
+```
+classes/
+  your-class-name/
+    Topics/
+      quiz-1/
+        study-material.json
+      exam-prep/
+        study-material.json
+    Study Materials/
+      Lecture1.pdf
+      Week1.pdf
 ```
 
-### Method 2: Manual Creation
-1. Create class folder in `classes/` (e.g., `classes/math-101/`)
-2. Create topic folder (e.g., `classes/math-101/derivatives/`)
-3. Add `study-material.json` file using the template
+### Auto-Discovery Patterns
+The app automatically looks for these topic names:
+- `quiz-1`, `quiz-2`, `quiz-3`...
+- `exam-1`, `midterm`, `final-exam`
+- `week-1`, `week-2`...
+- `chapter-1`, `chapter-2`...
+- `unit-1`, `assignment-1`, `lab-1`...
+
+And these PDF names:
+- `Week 1 - Introduction.pdf`
+- `Lecture 1.pdf`, `Chapter 1.pdf`
+- `Notes 1.pdf`, `Assignment 1.pdf`...
 
 ## 🎮 Features
 - **📝 Notes**: Organized study points
 - **🃏 Flashcards**: Interactive flip cards  
 - **📋 Quizzes**: Multiple choice with explanations
 - **🎮 Games**: Sorting and matching activities
+- **� PDFs**: Integrated PDF viewer
 
-## 🔧 File Structure
+## 🚀 Deployment Ready
+- **AWS Amplify**: Just connect your repo
+- **GitHub Pages**: Enable in repo settings
+- **Netlify**: Drag and drop deployment
+- **Vercel**: One-click deployment
+
+## � File Structure
 ```
 Study-Hub/
-├── 🚀 QUICK_START.bat          ← Double-click this!
-├── 📊 START_STUDY_HUB.bat      ← Alternative launcher
-├── 🛑 STOP_SERVER.bat          ← Stop server
-├── 🌐 index.html               ← Your study website
-├── ⚙️ server.js                ← Local server
-├── ➕ create-topic.js           ← Add topics tool
-├── 📋 template-study-material.json ← Content template
+├── 🌐 index.html               ← Your complete study app
+├── ⚙️ amplify.yml              ← AWS Amplify config
 └── 📁 classes/                 ← YOUR CONTENT HERE
+    └── design-&-analysis-of-algorithms/
+        ├── Topics/
+        │   ├── quiz-1/
+        │   │   └── study-material.json
+        │   └── quiz-2/
+        │       └── study-material.json
+        └── Study Materials/
+            ├── Week 1 - Introduction to DAA.pdf
+            └── Week 2 - Analysis Efficiency.pdf
+```
     └── design-analysis-algorithms/
         ├── big-o-notation/
         └── quiz-1/

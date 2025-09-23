@@ -3,25 +3,24 @@ frontend:
   phases:
     preBuild:
       commands:
-        - echo "Installing dependencies..."
-        - npm install
+        - echo "No dependencies needed for static site"
     build:
       commands:
-        - echo "Static site - no build needed"
+        - echo "Pure frontend static site - no build process needed"
+        - echo "Dynamic discovery handles all class and topic detection"
   artifacts:
     baseDirectory: .
     files:
       - index.html
+      - classes/**/*
+    excludeFiles:
+      - node_modules/**/*
+      - .git/**/*
       - server.js
       - create-topic.js
       - study-material-generator.js
       - template-study-material.json
       - package.json
-      - README.md
-      - classes/**/*
-    excludeFiles:
-      - node_modules/**/*
-      - .git/**/*
-  cache:
-    paths:
-      - node_modules/**/*
+      - "*.bat"
+      - "*.txt"
+      - build-study-index.js
