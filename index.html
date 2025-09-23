@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Hub</title>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Study Hub - Dynamic v2.0</title>
     <style>
         /* CSS Variables for theming and motion */
         :root {
@@ -1979,32 +1982,24 @@
             return dueCards;
         }
 
-        // Dynamically discover and load study data from directory structure
+        // Dynamically load study data from generated manifest
         async function loadStudyData() {
             try {
                 studyData = {};
                 
-                // Known class directories (you can add more here, or we could make this even more dynamic)
-                const potentialClasses = [
-                    'design-&-analysis-of-algorithms',
-                    'computer-networks',
-                    'database-systems', 
-                    'software-engineering',
-                    'machine-learning',
-                    'algorithms',
-                    'data-structures',
-                    'operating-systems',
-                    'computer-graphics',
-                    'artificial-intelligence'
-                ];
+                console.log('📁 Loading study data from manifest...');
                 
-                // Discover which classes actually exist by trying to fetch their directories
-                for (const classKey of potentialClasses) {
-                    const classData = await discoverClassData(classKey);
-                    if (classData && Object.keys(classData.topics).length > 0) {
-                        studyData[classKey] = classData;
-                    }
+                // Load the dynamically generated manifest with cache busting
+                const manifestResponse = await fetch('./manifest.json?v=' + Date.now());
+                if (!manifestResponse.ok) {
+                    throw new Error(`Failed to load manifest: ${manifestResponse.status}`);
                 }
+                
+                const manifest = await manifestResponse.json();
+                console.log('📊 Manifest loaded:', manifest);
+                
+                // Use the manifest data directly
+                studyData = manifest.classes;
                 
                 console.log('📊 Loaded study data:', Object.keys(studyData).length, 'classes');
                 
@@ -2013,63 +2008,35 @@
                 
                 // Show message if no data was found
                 if (Object.keys(studyData).length === 0) {
-                    showToast('No study materials found. Make sure your files are in the correct folders.', 'info');
+                    showToast('No study materials found. Run the build script to generate manifest.', 'info');
                 }
             } catch (error) {
                 console.error('Failed to load study data:', error);
-                showToast('Failed to load study materials', 'error');
+                showToast('Failed to load study materials. Make sure manifest.json exists.', 'error');
                 
-                // Still render the UI even if data loading fails
-                renderSidebar();
-                renderHomepage();
-            }
-        }
-
-        // Discover data for a specific class by scanning for topic directories
-        async function discoverClassData(classKey) {
-            const classData = {
-                title: classKey.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
-                topics: {}
-            };
-            
-            // Common topic naming patterns to try
-            const topicPatterns = [
-                'quiz-1', 'quiz-2', 'quiz-3', 'quiz-4', 'quiz-5',
-                'exam-1', 'exam-2', 'final-exam', 'midterm',
-                'week-1', 'week-2', 'week-3', 'week-4', 'week-5', 'week-6', 'week-7', 'week-8',
-                'chapter-1', 'chapter-2', 'chapter-3', 'chapter-4', 'chapter-5',
-                'unit-1', 'unit-2', 'unit-3', 'unit-4', 'unit-5',
-                'assignment-1', 'assignment-2', 'assignment-3',
-                'lab-1', 'lab-2', 'lab-3', 'lab-4', 'lab-5',
-                'project-1', 'project-2', 'homework-1', 'homework-2'
-            ];
-            
-            // Try to find topics for this class
-            for (const topicKey of topicPatterns) {
-                try {
-                    const topicUrl = `./classes/${classKey}/Topics/${topicKey}/study-material.json`;
-                    const topicResponse = await fetch(topicUrl);
-                    
-                    if (topicResponse.ok) {
-                        const contentType = topicResponse.headers.get('content-type');
-                        if (contentType && contentType.includes('application/json')) {
-                            const topicData = await topicResponse.json();
-                            classData.topics[topicKey] = {
-                                title: topicKey.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
-                                ...topicData
-                            };
-                            console.log(`✅ Found topic: ${classKey}/${topicKey}`);
-                        } else {
-                            console.warn(`⚠️ Invalid content type for ${topicUrl}, expected JSON but got ${contentType}`);
-                        }
-                    }
-                } catch (error) {
-                    // Silently continue - this is expected for non-existent topics
-                    console.debug(`No topic data found for ${classKey}/${topicKey}`);
+                // Show instructions for generating manifest
+                const container = document.getElementById('main-content');
+                if (container) {
+                    container.innerHTML = `
+                        <div style="text-align: center; padding: 2rem; max-width: 600px; margin: 0 auto;">
+                            <h2>📁 Study Materials Not Found</h2>
+                            <p>The study materials manifest needs to be generated.</p>
+                            <div style="background: var(--panel); padding: 1rem; border-radius: 8px; margin: 1rem 0;">
+                                <h3>🛠️ To fix this:</h3>
+                                <ol style="text-align: left;">
+                                    <li><strong>Run the launcher:</strong> Double-click <code>launch-study-hub.bat</code></li>
+                                    <li><strong>Or run manually:</strong> <code>node build-manifest.js</code></li>
+                                    <li><strong>Or use npm:</strong> <code>npm run build</code></li>
+                                </ol>
+                            </div>
+                            <p style="color: var(--muted);">The manifest will automatically discover all classes and study materials.</p>
+                        </div>
+                    `;
                 }
+                
+                // Still render the basic UI
+                renderSidebar();
             }
-            
-            return classData;
         }
 
         // Render sidebar with classes
@@ -2368,96 +2335,94 @@
             }
         }
 
-        // Render PDF list for class homepage - dynamically discover PDFs
+        // Render study materials list from manifest data
         async function renderPDFList(classKey) {
             const container = document.getElementById('pdf-list');
-            container.innerHTML = '<div class="loading">Discovering PDFs...</div>';
+            container.innerHTML = '<div class="loading">Loading study materials...</div>';
 
             try {
-                // Common PDF naming patterns to try
-                const pdfPatterns = [
-                    'Week 1 - Introduction to DAA.pdf',
-                    'Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf',
-                    'Week 3 - Brute Force and Exhaustive Search.pdf',
-                    'Week 4 - Divide and Conquer.pdf',
-                    'Week 5 - Decrease and Conquer.pdf',
-                    'Week 6 - Transform and Conquer.pdf',
-                    'Week 7 - Dynamic Programming.pdf',
-                    'Week 8 - Greedy Algorithms.pdf',
-                    'Week 9 - Graph Algorithms.pdf',
-                    'Week 10 - String Algorithms.pdf',
-                    'Lecture 1.pdf', 'Lecture 2.pdf', 'Lecture 3.pdf', 'Lecture 4.pdf', 'Lecture 5.pdf',
-                    'Chapter 1.pdf', 'Chapter 2.pdf', 'Chapter 3.pdf', 'Chapter 4.pdf', 'Chapter 5.pdf',
-                    'Notes 1.pdf', 'Notes 2.pdf', 'Notes 3.pdf', 'Notes 4.pdf', 'Notes 5.pdf',
-                    'Assignment 1.pdf', 'Assignment 2.pdf', 'Assignment 3.pdf',
-                    'Quiz 1.pdf', 'Quiz 2.pdf', 'Quiz 3.pdf', 'Quiz 4.pdf',
-                    'Exam 1.pdf', 'Exam 2.pdf', 'Final Exam.pdf', 'Midterm.pdf'
-                ];
-                
-                const foundPDFs = [];
-                
-                // Try to find PDFs by attempting to fetch them
-                for (const filename of pdfPatterns) {
-                    try {
-                        const pdfUrl = `./classes/${encodeURIComponent(classKey)}/Study Materials/${encodeURIComponent(filename)}`;
-                        const response = await fetch(pdfUrl, { method: 'HEAD' }); // Just check if it exists
-                        
-                        if (response.ok) {
-                            foundPDFs.push(filename);
-                            console.log(`✅ Found PDF: ${classKey}/${filename}`);
-                        }
-                    } catch (error) {
-                        // Silently continue - this is expected for non-existent PDFs
-                    }
-                }
-
-                container.innerHTML = '';
-
-                if (foundPDFs.length === 0) {
-                    container.innerHTML = '<p class="muted">No PDFs found in Study Materials folder.</p>';
+                const classData = studyData[classKey];
+                if (!classData || !classData.studyMaterials) {
+                    container.innerHTML = '<p class="muted">No study materials found for this class.</p>';
                     return;
                 }
 
-                foundPDFs.forEach((filename, index) => {
-                    const pdfCard = document.createElement('div');
-                    pdfCard.className = 'pdf-card';
-                    const pdfId = `pdf-${classKey}-${index}`;
+                const materials = classData.studyMaterials;
+                container.innerHTML = '';
 
-                    const pdfUrl = `./classes/${encodeURIComponent(classKey)}/Study Materials/${encodeURIComponent(filename)}`;
+                if (materials.length === 0) {
+                    container.innerHTML = '<p class="muted">No study materials found in Study Materials folder.</p>';
+                    return;
+                }
 
-                    pdfCard.innerHTML = `
-                        <div class="pdf-header collapsible-header" onclick="togglePDF('${pdfId}')" role="button" tabindex="0" aria-expanded="false" aria-controls="${pdfId}-content">
-                            <div class="pdf-name">
-                                <span class="pdf-toggle-icon">▶</span>
-                                ${filename}
-                            </div>
-                            <div class="pdf-actions" onclick="event.stopPropagation()">
-                                <button class="pdf-btn" onclick="window.open('${pdfUrl}', '_blank')" aria-label="Open ${filename} in new tab">
-                                    📖 Open PDF
-                                </button>
-                            </div>
-                        </div>
-                        <div id="${pdfId}-content" class="pdf-content collapsed">
+                materials.forEach((material, index) => {
+                    const fileCard = document.createElement('div');
+                    fileCard.className = 'pdf-card';
+                    const fileId = `file-${classKey}-${index}`;
+                    const fileUrl = `./classes/${encodeURIComponent(classKey)}/Study Materials/${encodeURIComponent(material.filename)}`;
+                    
+                    let embedContent = '';
+                    
+                    if (material.type === 'pdf') {
+                        embedContent = `
                             <object 
                                 class="pdf-embed" 
-                                data="${pdfUrl}" 
+                                data="${fileUrl}" 
                                 type="application/pdf"
                                 width="100%" 
                                 height="480"
-                                aria-label="PDF viewer for ${filename}">
-                                <p>PDF cannot be displayed. <a href="${pdfUrl}" target="_blank">Open in new tab</a></p>
+                                aria-label="PDF viewer for ${material.filename}">
+                                <p>PDF cannot be displayed. <a href="${fileUrl}" target="_blank">Open in new tab</a></p>
                             </object>
+                        `;
+                    } else {
+                        const actionText = material.type === 'powerpoint' ? 'Download PowerPoint' :
+                                         material.type === 'word' ? 'Download Word Document' :
+                                         material.type === 'excel' ? 'Download Excel File' :
+                                         material.type === 'image' ? 'View Image' :
+                                         material.type === 'video' ? 'Play Video' :
+                                         material.type === 'audio' ? 'Play Audio' :
+                                         'Download File';
+                        
+                        embedContent = `
+                            <div class="file-preview">
+                                <p>${material.icon} ${actionText.split(' ')[1]} files cannot be previewed directly in the browser.</p>
+                                <p><a href="${fileUrl}" target="_blank" class="pdf-btn" download>${actionText}</a></p>
+                                <small style="color: var(--muted);">
+                                    Size: ${(material.size / 1024).toFixed(1)} KB | 
+                                    Modified: ${new Date(material.modified).toLocaleDateString()}
+                                </small>
+                            </div>
+                        `;
+                    }
+
+                    fileCard.innerHTML = `
+                        <div class="pdf-header collapsible-header" onclick="togglePDF('${fileId}')" role="button" tabindex="0" aria-expanded="false" aria-controls="${fileId}-content">
+                            <div class="pdf-name">
+                                <span class="pdf-toggle-icon">▶</span>
+                                ${material.icon} ${material.filename}
+                            </div>
+                            <div class="pdf-actions" onclick="event.stopPropagation()">
+                                <button class="pdf-btn" onclick="window.open('${fileUrl}', '_blank')" aria-label="Open ${material.filename} in new tab">
+                                    ${material.icon} Open
+                                </button>
+                            </div>
+                        </div>
+                        <div id="${fileId}-content" class="pdf-content collapsed">
+                            ${embedContent}
                         </div>
                     `;
 
-                    container.appendChild(pdfCard);
+                    container.appendChild(fileCard);
                 });
+
             } catch (error) {
-                console.error('Failed to load PDFs:', error);
-                container.innerHTML = '<div class="error">Failed to load PDFs</div>';
+                console.error('Failed to load study materials:', error);
+                container.innerHTML = '<p class="muted">Failed to load study materials.</p>';
             }
         }
 
+        // Toggle PDF/file content visibility
         function togglePDF(pdfId) {
             const content = document.getElementById(`${pdfId}-content`);
             const header = content.previousElementSibling;

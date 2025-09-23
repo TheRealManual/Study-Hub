@@ -3,21 +3,24 @@ frontend:
   phases:
     preBuild:
       commands:
-        - echo "No dependencies needed for static site"
+        - echo "📁 Generating study materials manifest..."
+        - node build-manifest.js
     build:
       commands:
-        - echo "Pure frontend static site - no build process needed"
-        - echo "Dynamic discovery handles all class and topic detection"
+        - echo "✅ Study Hub build completed with dynamic manifest"
   artifacts:
     baseDirectory: .
     files:
       - index.html
+      - manifest.json
       - classes/**/*
+      - launch-study-hub.bat
+      - build-manifest.js
+      - dev-server.js
+      - package.json
     excludeFiles:
       - node_modules/**/*
       - .git/**/*
-      - server.js
-      - create-topic.js
       - study-material-generator.js
       - template-study-material.json
       - package.json

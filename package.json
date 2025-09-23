@@ -1,0 +1,19 @@
+{
+  "name": "study-hub",
+  "version": "1.0.0",
+  "description": "Dynamic Study Hub with automatic content discovery",
+  "main": "index.html",
+  "scripts": {
+    "build": "node build-manifest.js",
+    "dev": "node dev-server.js",
+    "start": "node dev-server.js",
+    "serve": "node dev-server.js",
+    "cleanup": "node cleanup-orphaned.js"
+  },
+  "keywords": ["study", "education", "static-site"],
+  "author": "TheRealManual",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}

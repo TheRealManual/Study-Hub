@@ -2,198 +2,278 @@
   "title": "Exam 1 – Comprehensive Review (Ch.1–5)",
   "notes": [
     [
-      "Homeostasis: negative vs positive feedback, components of control systems.",
+      "Homeostasis: negative vs positive feedback; control system components.",
       59
     ],
     [
-      "Anatomical planes, directional terms, body cavities, and serous membranes.",
+      "Directional terms, planes, cavities, serous membranes.",
       59
     ],
     [
-      "Atomic structure, bonding types (ionic, covalent, hydrogen), and water properties.",
+      "Atomic structure, bonding, water properties.",
       60
     ],
     [
-      "pH scale, buffers (bicarbonate), acids/bases/salts, and macromolecules overview.",
+      "pH, buffers, acids/bases/salts, macromolecules overview.",
       60
     ],
     [
-      "Membrane structure and transport (simple/facilitated diffusion, osmosis, active transport).",
+      "Membrane structure and transport; tonicity and vesicular transport.",
       61
     ],
     [
-      "Tonicity impacts on cells; vesicular transport types.",
+      "Organelle functions; DNA→RNA→protein; cell cycle.",
       61
     ],
     [
-      "Organelle functions (ER, Golgi, lysosomes, peroxisomes, mitochondria, nucleus).",
-      61
-    ],
-    [
-      "DNA→RNA→protein; mitosis stages and cell cycle control.",
-      61
-    ],
-    [
-      "Tissues: epithelial classifications and specializations; cell junctions.",
+      "Tissues overview; connective tissue matrix/fibers.",
       62
     ],
     [
-      "Connective tissue matrix/fibers; cartilage vs bone vs blood basics.",
+      "Muscle types; nervous tissue basics.",
       62
     ],
     [
-      "Muscle types (skeletal/cardiac/smooth) and nervous tissue basics.",
-      62
-    ],
-    [
-      "Integument: epidermal layers, dermal layers, skin appendages, pigmentation.",
+      "Integument layers/appendages/pigmentation.",
       63
     ],
     [
-      "Skin functions, wound healing, skin cancer ABCDE, and burns.",
+      "Skin functions; wound healing; cancers; burns.",
       63
-    ],
-    [
-      "Integrative: structure-function relationships across levels of organization.",
-      59
-    ],
-    [
-      "Common confusions: epithelial vs connective features; diffusion vs osmosis.",
-      60
-    ],
-    [
-      "Application: predict outcomes of homeostatic disruptions (e.g., thermoregulation failure).",
-      59
-    ],
-    [
-      "Clinical correlate: dehydration effects on blood osmolarity and tonicity.",
-      61
-    ],
-    [
-      "Histology ID anchors: hallmark patterns for speed during exams.",
-      62
-    ],
-    [
-      "Thermoregulation mechanisms via skin and vasculature.",
-      63
-    ],
-    [
-      "Review week-by-week objectives as a final checklist.",
-      65
     ]
   ],
-  "quiz": {
-    "questions": [
-      {
-        "question": "Which best differentiates negative from positive feedback?",
-        "options": [
-          "Negative opposes change; positive amplifies it",
-          "Negative is slower",
-          "Positive never occurs in healthy physiology",
-          "Positive lowers set point"
-        ],
-        "answer": 0,
-        "explanation": "Negative restores set point; positive drives processes to completion."
-      },
-      {
-        "question": "A solution with pH 8 compared to pH 6 has:",
-        "options": [
-          "100× more H+",
-          "10× more H+",
-          "10× less H+",
-          "100× less H+"
-        ],
-        "answer": 3,
-        "explanation": "Two pH units → 10×10 = 100× less H+."
-      },
-      {
-        "question": "Which bond underlies water’s cohesion?",
-        "options": [
-          "Ionic",
-          "Hydrogen",
-          "Nonpolar covalent",
-          "Polar covalent"
-        ],
-        "answer": 1,
-        "explanation": "Hydrogen bonds between water molecules."
-      },
-      {
-        "question": "Osmosis is:",
-        "options": [
-          "Solute diffusion across membrane",
-          "Water movement down its concentration gradient across a membrane",
-          "Active transport of ions",
-          "Endocytosis of water"
-        ],
-        "answer": 1,
-        "explanation": "Water moves toward higher solute concentration."
-      },
-      {
-        "question": "Which tissue has the greatest regenerative capacity?",
-        "options": [
-          "Skeletal muscle",
-          "Nervous tissue",
-          "Epithelial tissue",
-          "Cartilage"
-        ],
-        "answer": 2,
-        "explanation": "Epithelia regenerate rapidly."
-      },
-      {
-        "question": "Which epidermal cell detects light touch?",
-        "options": [
-          "Keratinocyte",
-          "Langerhans cell",
-          "Melanocyte",
-          "Merkel cell"
-        ],
-        "answer": 3,
-        "explanation": "Merkel (tactile epithelial) cells."
-      },
-      {
-        "question": "Which membrane lines the abdominopelvic cavity walls?",
-        "options": [
-          "Visceral pleura",
-          "Parietal peritoneum",
-          "Visceral pericardium",
-          "Cutaneous"
-        ],
-        "answer": 1,
-        "explanation": "Parietal peritoneum lines the cavity wall."
-      },
-      {
-        "question": "Formation of peptide bonds is:",
-        "options": [
-          "Hydrolysis",
-          "Dehydration synthesis",
-          "Oxidation",
-          "Reduction"
-        ],
-        "answer": 1,
-        "explanation": "Water removed to join amino acids."
-      },
-      {
-        "question": "Which transport is saturated at high substrate concentrations?",
-        "options": [
-          "Simple diffusion",
-          "Facilitated diffusion (carrier-mediated)",
-          "Osmosis",
-          "Bulk flow"
-        ],
-        "answer": 1,
-        "explanation": "Carrier-mediated processes have Vmax."
-      },
-      {
-        "question": "Third-degree burns risk is highest for:",
-        "options": [
-          "Fluid loss and infection",
-          "UV exposure",
-          "Autoimmunity",
-          "Hypocalcemia only"
-        ],
-        "answer": 0,
-        "explanation": "Barrier loss → dehydration/infection."
-      }
-    ]
-  }
+  "flashcards": [
+    {
+      "front": "Define negative feedback.",
+      "back": "A mechanism that counters deviations to restore set point."
+    },
+    {
+      "front": "Plane dividing superior/inferior?",
+      "back": "Transverse (horizontal)."
+    },
+    {
+      "front": "What does pH measure?",
+      "back": "Hydrogen ion concentration; pH = −log[H+]."
+    },
+    {
+      "front": "Primary mitochondrial function?",
+      "back": "ATP production via oxidative phosphorylation."
+    },
+    {
+      "front": "Osmosis?",
+      "back": "Water movement toward higher solute concentration across a membrane."
+    },
+    {
+      "front": "Stages of mitosis?",
+      "back": "Prophase, metaphase, anaphase, telophase (then cytokinesis)."
+    },
+    {
+      "front": "Dermal layers?",
+      "back": "Papillary (areolar; Meissner) and reticular (dense irregular; Pacinian)."
+    },
+    {
+      "front": "ABCDE mnemonic purpose?",
+      "back": "Screen for melanoma risk signs."
+    },
+    {
+      "front": "Buffer role?",
+      "back": "Resist pH change by binding or releasing H+."
+    },
+    {
+      "front": "Macromolecule‑digesting organelle?",
+      "back": "Lysosome."
+    },
+    {
+      "front": "Define tonicity.",
+      "back": "Relative solute concentration affecting water movement."
+    },
+    {
+      "front": "Unit of compact bone?",
+      "back": "Osteon."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Example of negative feedback:",
+      "options": [
+        "Labor contractions",
+        "Blood clotting",
+        "Thermoregulation"
+      ],
+      "answer": 2,
+      "explanation": "Opposes deviations in body temperature."
+    },
+    {
+      "question": "pH 8 vs pH 6 has:",
+      "options": [
+        "100× more H+",
+        "100× less H+",
+        "10× more H+"
+      ],
+      "answer": 1,
+      "explanation": "Two pH units → 100× less H+."
+    },
+    {
+      "question": "Bond underlying water cohesion:",
+      "options": [
+        "Ionic",
+        "Hydrogen",
+        "Nonpolar covalent"
+      ],
+      "answer": 1,
+      "explanation": "Hydrogen bonds."
+    },
+    {
+      "question": "Best definition of osmosis:",
+      "options": [
+        "Solute diffusion",
+        "Water movement toward higher solute",
+        "Active transport"
+      ],
+      "answer": 1,
+      "explanation": "Water follows solute."
+    },
+    {
+      "question": "Which tissue regenerates best?",
+      "options": [
+        "Cartilage",
+        "Epithelia",
+        "Skeletal muscle"
+      ],
+      "answer": 1,
+      "explanation": "High turnover in epithelia."
+    },
+    {
+      "question": "Light‑touch receptor:",
+      "options": [
+        "Pacinian corpuscle",
+        "Meissner corpuscle",
+        "Merkel disk"
+      ],
+      "answer": 1,
+      "explanation": "Meissner corpuscles."
+    },
+    {
+      "question": "Peptide bond formation is:",
+      "options": [
+        "Hydrolysis",
+        "Dehydration synthesis",
+        "Redox"
+      ],
+      "answer": 1,
+      "explanation": "Water removed to join monomers."
+    },
+    {
+      "question": "Transport that saturates:",
+      "options": [
+        "Simple diffusion",
+        "Carrier‑mediated diffusion",
+        "Bulk flow"
+      ],
+      "answer": 1,
+      "explanation": "Finite carriers (Vmax)."
+    },
+    {
+      "question": "Major risk of third‑degree burns:",
+      "options": [
+        "Fluid loss & infection",
+        "Vitamin deficiency",
+        "Cold injury"
+      ],
+      "answer": 0,
+      "explanation": "Barrier loss."
+    },
+    {
+      "question": "Osteons occur in:",
+      "options": [
+        "Spongy bone",
+        "Compact bone",
+        "Cartilage"
+      ],
+      "answer": 1,
+      "explanation": "Compact bone."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "Ordering: Mitosis & Homeostasis",
+      "questions": [
+        {
+          "prompt": "Put mitotic stages in order",
+          "items": [
+            "Prophase",
+            "Metaphase",
+            "Anaphase",
+            "Telophase",
+            "Cytokinesis"
+          ]
+        },
+        {
+          "prompt": "Homeostasis flow",
+          "items": [
+            "Stimulus",
+            "Receptor",
+            "Control center",
+            "Effector",
+            "Response"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching: Organelles & Skin",
+      "questions": [
+        {
+          "prompt": "Match organelle",
+          "pairs": [
+            [
+              "Mitochondria",
+              "ATP production"
+            ],
+            [
+              "Lysosome",
+              "Digestion"
+            ],
+            [
+              "Golgi",
+              "Sorting/packaging"
+            ],
+            [
+              "Peroxisome",
+              "Oxidation reactions"
+            ]
+          ]
+        },
+        {
+          "prompt": "Match skin layer",
+          "pairs": [
+            [
+              "Stratum basale",
+              "Mitosis"
+            ],
+            [
+              "Stratum corneum",
+              "Keratinized cells"
+            ],
+            [
+              "Papillary dermis",
+              "Meissner corpuscles"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "BIOL10210 - Weeks 1 and 2 Overview - V3.0 - OL15.docx",
+    "BIOL10210 - Weeks 3 and 4 Overview - V3.0 - OL15.docx",
+    "BIOL10210 - Weeks 5 and 6 Overview - V3.0 - OL15.docx",
+    "BIOL10210 - Lecture 1 -  Chapter 1.pptx",
+    "BIOL10210 - Lecture 2 -  Chapter 2.pptx",
+    "BIOL10210 - Lecture 3 -  Chapter 3.pptx",
+    "BIOL10210 - Lecture 4 -  Chapter 4.pptx",
+    "BIOL10210 - Lecture 5 -  Chapter 5.pptx"
+  ]
 }

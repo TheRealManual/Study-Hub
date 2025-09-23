@@ -2,7 +2,7 @@
   "title": "Chapter 4 – The Tissue Level of Organization",
   "notes": [
     [
-      "Tissue: group of similar cells with common origin/function.",
+      "Tissue: group of similar cells with common origin and function.",
       3
     ],
     [
@@ -14,7 +14,7 @@
       10
     ],
     [
-      "Epithelia: polarity (apical/basal), avascular, high regeneration, basement membrane.",
+      "Epithelia: polarity, avascularity, high regeneration, basement membrane.",
       16
     ],
     [
@@ -22,15 +22,11 @@
       22
     ],
     [
-      "Glands: endocrine (ductless) vs exocrine (ducts); unicellular (goblet) vs multicellular.",
+      "Glands: endocrine (ductless) vs exocrine (ducts); unicellular vs multicellular.",
       30
     ],
     [
-      "Connective tissue: cells + extracellular matrix (fibers + ground substance); highly vascular (except cartilage, tendons).",
-      38
-    ],
-    [
-      "CT fibers: collagen (strength), elastic (stretch), reticular (support).",
+      "Connective tissue matrix = fibers (collagen, elastic, reticular) + ground substance.",
       42
     ],
     [
@@ -38,182 +34,262 @@
       46
     ],
     [
-      "Cartilage types: hyaline, fibrocartilage, elastic; avascular, slow repair.",
+      "Cartilage: hyaline, fibrocartilage, elastic—avascular, slow repair.",
       52
     ],
     [
-      "Bone tissue: compact vs spongy; osteons vs trabeculae.",
+      "Bone: compact (osteons) vs spongy (trabeculae).",
       60
     ],
     [
-      "Blood is a fluid connective tissue (plasma + formed elements).",
+      "Blood is a fluid connective tissue: plasma + formed elements.",
       66
     ],
     [
-      "Membranes: mucous, serous, cutaneous; synovial (connective-only).",
+      "Membranes: mucous, serous, cutaneous; synovial (connective only).",
       70
     ],
     [
-      "Muscle tissue: skeletal (voluntary, striated), cardiac (involuntary, intercalated discs), smooth (involuntary).",
+      "Muscle: skeletal (voluntary), cardiac (involuntary, intercalated discs), smooth (involuntary).",
       76
     ],
     [
-      "Nervous tissue: neurons (excitable) + neuroglia (support).",
+      "Nervous tissue: neurons (excitable) and neuroglia (support).",
       82
     ],
     [
-      "Excitable cells generate action potentials via voltage-gated channels.",
+      "Excitable cells generate action potentials via voltage‑gated channels.",
       86
     ],
     [
-      "Tissue repair varies: epithelial regenerates well; muscle/nerve limited; fibrosis forms scar.",
+      "Tissue repair: epithelial regenerates well; fibrosis forms scar tissue.",
       90
     ],
     [
-      "Aging: decreased repair capacity, ECM changes, elasticity loss.",
+      "Aging: decreased repair, ECM changes, elasticity loss.",
       94
-    ],
-    [
-      "Gap junctions allow ion/small molecule passage for cell communication.",
-      12
-    ],
-    [
-      "Basement membrane: basal lamina + reticular lamina; anchors epithelium.",
-      18
-    ],
-    [
-      "Endocrine secretions enter interstitial fluid → blood; exocrine to ducts.",
-      32
-    ],
-    [
-      "Osteoblasts build bone; osteoclasts resorb bone.",
-      62
-    ],
-    [
-      "Cutaneous membrane = skin (epidermis + dermis).",
-      72
-    ],
-    [
-      "Intercalated discs: desmosomes + gap junctions for synchronized heart contraction.",
-      78
-    ],
-    [
-      "Neuroglia types (e.g., astrocytes, oligodendrocytes) support neurons.",
-      84
     ]
   ],
-  "quiz": {
-    "questions": [
-      {
-        "question": "Which junction prevents leakage between epithelial cells?",
-        "options": [
-          "Desmosome",
-          "Gap junction",
-          "Tight junction",
-          "Hemidesmosome"
-        ],
-        "answer": 2,
-        "explanation": "Tight junctions seal adjacent cells."
-      },
-      {
-        "question": "Which is NOT connective tissue?",
-        "options": [
-          "Bone",
-          "Blood",
-          "Cartilage",
-          "Epidermis"
-        ],
-        "answer": 3,
-        "explanation": "Epidermis is epithelial tissue."
-      },
-      {
-        "question": "Stratified squamous epithelium primarily provides:",
-        "options": [
-          "Absorption",
-          "Filtration",
-          "Protection",
-          "Secretion"
-        ],
-        "answer": 2,
-        "explanation": "Many layers protect against abrasion."
-      },
-      {
-        "question": "Intercalated discs are unique to:",
-        "options": [
-          "Smooth muscle",
-          "Skeletal muscle",
-          "Cardiac muscle",
-          "Dense CT"
-        ],
-        "answer": 2,
-        "explanation": "Cardiac muscle has intercalated discs."
-      },
-      {
-        "question": "Which fiber provides tensile strength?",
-        "options": [
-          "Collagen",
-          "Elastic",
-          "Reticular",
-          "Actin"
-        ],
-        "answer": 0,
-        "explanation": "Collagen resists stretching."
-      },
-      {
-        "question": "Exocrine glands secrete into:",
-        "options": [
-          "Blood",
-          "Ducts",
-          "Synapse",
-          "Interstitium only"
-        ],
-        "answer": 1,
-        "explanation": "Exocrine product exits via ducts."
-      },
-      {
-        "question": "Gap junctions allow:",
-        "options": [
-          "Strong adhesion",
-          "Prevent leakage",
-          "Electrical coupling",
-          "Anchoring to basal lamina"
-        ],
-        "answer": 2,
-        "explanation": "They permit ion flow between cells."
-      },
-      {
-        "question": "Which membrane lines body cavities open to exterior?",
-        "options": [
-          "Serous",
-          "Mucous",
-          "Cutaneous",
-          "Synovial"
-        ],
-        "answer": 1,
-        "explanation": "Mucous membranes line respiratory, GI, etc."
-      },
-      {
-        "question": "The ECM of connective tissue includes:",
-        "options": [
-          "Keratin only",
-          "Fibers and ground substance",
-          "Actin and myosin",
-          "Chitin"
-        ],
-        "answer": 1,
-        "explanation": "ECM = fibers + ground substance."
-      },
-      {
-        "question": "Which tissue type is excitable?",
-        "options": [
-          "Epithelial",
-          "Connective",
-          "Muscle and nervous",
-          "Adipose"
-        ],
-        "answer": 2,
-        "explanation": "Both muscle and neurons generate impulses."
-      }
-    ]
-  }
+  "flashcards": [
+    {
+      "front": "Four basic tissue types?",
+      "back": "Epithelial, connective, muscle, nervous."
+    },
+    {
+      "front": "Key epithelial features?",
+      "back": "Polarity, avascular, high regeneration, basement membrane."
+    },
+    {
+      "front": "Three CT fiber types?",
+      "back": "Collagen, elastic, reticular."
+    },
+    {
+      "front": "Why is cartilage slow to repair?",
+      "back": "It is avascular."
+    },
+    {
+      "front": "Body membranes?",
+      "back": "Mucous, serous, cutaneous, synovial."
+    },
+    {
+      "front": "Unique to cardiac muscle?",
+      "back": "Intercalated discs."
+    },
+    {
+      "front": "Neuroglia?",
+      "back": "Support cells of nervous tissue."
+    },
+    {
+      "front": "Fibrosis?",
+      "back": "Scar tissue replacing normal tissue."
+    },
+    {
+      "front": "What anchors epithelium?",
+      "back": "Basement membrane (basal + reticular lamina)."
+    },
+    {
+      "front": "Gap junction role?",
+      "back": "Electrical/metabolic coupling between cells."
+    },
+    {
+      "front": "Dense regular CT example?",
+      "back": "Tendons/ligaments."
+    },
+    {
+      "front": "Loose CT example?",
+      "back": "Areolar, adipose, reticular."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Junction preventing paracellular leakage:",
+      "options": [
+        "Gap junction",
+        "Tight junction",
+        "Desmosome"
+      ],
+      "answer": 1,
+      "explanation": "Tight junctions seal cells."
+    },
+    {
+      "question": "NOT connective tissue:",
+      "options": [
+        "Bone",
+        "Blood",
+        "Epidermis"
+      ],
+      "answer": 2,
+      "explanation": "Epidermis is epithelial."
+    },
+    {
+      "question": "Stratified squamous epithelium function:",
+      "options": [
+        "Absorption",
+        "Protection",
+        "Secretion"
+      ],
+      "answer": 1,
+      "explanation": "Protects against abrasion."
+    },
+    {
+      "question": "Intercalated discs are in:",
+      "options": [
+        "Skeletal",
+        "Smooth",
+        "Cardiac"
+      ],
+      "answer": 2,
+      "explanation": "Cardiac muscle."
+    },
+    {
+      "question": "Fiber for tensile strength:",
+      "options": [
+        "Elastic",
+        "Reticular",
+        "Collagen"
+      ],
+      "answer": 2,
+      "explanation": "Collagen resists stretch."
+    },
+    {
+      "question": "Exocrine glands secrete into:",
+      "options": [
+        "Blood",
+        "Ducts",
+        "Interstitium"
+      ],
+      "answer": 1,
+      "explanation": "Via ducts."
+    },
+    {
+      "question": "Nervous tissue includes:",
+      "options": [
+        "Neurons & neuroglia",
+        "Chondrocytes",
+        "Adipocytes"
+      ],
+      "answer": 0,
+      "explanation": "Neurons + support cells."
+    },
+    {
+      "question": "Serous membranes line:",
+      "options": [
+        "Open cavities",
+        "Closed ventral cavities",
+        "Skin surface"
+      ],
+      "answer": 1,
+      "explanation": "Serosae line sealed cavities."
+    },
+    {
+      "question": "Compact bone structural unit:",
+      "options": [
+        "Sarcomere",
+        "Osteon",
+        "Neuron"
+      ],
+      "answer": 1,
+      "explanation": "Osteon."
+    },
+    {
+      "question": "Synovial membranes are:",
+      "options": [
+        "Epithelial",
+        "Connective",
+        "Muscle"
+      ],
+      "answer": 1,
+      "explanation": "CT membranes."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "Ordering: Tissue Repair",
+      "questions": [
+        {
+          "prompt": "Place wound‑healing phases",
+          "items": [
+            "Inflammation",
+            "Migratory",
+            "Proliferative",
+            "Maturation"
+          ]
+        },
+        {
+          "prompt": "Epithelial layering types",
+          "items": [
+            "Simple",
+            "Pseudostratified",
+            "Stratified"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching: Tissue Types",
+      "questions": [
+        {
+          "prompt": "Match tissue to hallmark",
+          "pairs": [
+            [
+              "Skeletal muscle",
+              "Striations; voluntary"
+            ],
+            [
+              "Smooth muscle",
+              "Spindle cells; no striations"
+            ],
+            [
+              "Cardiac muscle",
+              "Intercalated discs"
+            ]
+          ]
+        },
+        {
+          "prompt": "Match membrane",
+          "pairs": [
+            [
+              "Mucous",
+              "Lines cavities open to exterior"
+            ],
+            [
+              "Serous",
+              "Lines sealed cavities"
+            ],
+            [
+              "Cutaneous",
+              "Skin"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "BIOL10210 - Lecture 4 -  Chapter 4.pptx",
+    "BIOL10210 - Weeks 3 and 4 Overview - V3.0 - OL15.docx",
+    "Chapter 4 Study notes.docx"
+  ]
 }

@@ -2,63 +2,63 @@
   "title": "Chapter 3 – The Cellular Level of Organization",
   "notes": [
     [
-      "Plasma membrane: fluid mosaic of phospholipids, proteins, cholesterol.",
+      "Plasma membrane: fluid mosaic of phospholipids, cholesterol, and proteins.",
       6
     ],
     [
-      "Integral (transmembrane) vs peripheral proteins with diverse functions.",
+      "Integral vs peripheral proteins serve transport, receptors, enzymes, adhesion.",
       10
     ],
     [
-      "Membrane fluidity increases with unsaturated fatty acids; cholesterol modulates fluidity.",
-      12
+      "Cholesterol modulates membrane fluidity and permeability.",
+      14
     ],
     [
       "Selective permeability: small nonpolar molecules diffuse; others need transporters.",
       16
     ],
     [
-      "Gradients across membrane: chemical + electrical = electrochemical gradient.",
+      "Electrochemical gradient combines chemical and electrical gradients.",
       18
     ],
     [
-      "Passive transport: simple diffusion, facilitated diffusion (channels/carriers), osmosis.",
+      "Passive transport: simple diffusion, facilitated diffusion, osmosis.",
       22
     ],
     [
-      "Channel-mediated diffusion is ion-specific; gates control opening.",
-      26
-    ],
-    [
-      "Osmosis: water moves down water potential via aquaporins and bilayer.",
+      "Osmosis: water moves via aquaporins or bilayer toward higher solute concentration.",
       28
     ],
     [
-      "Tonicity: isotonic (no net change), hypotonic (cell swells), hypertonic (cell shrinks).",
+      "Tonicity: isotonic, hypotonic, hypertonic effects on cells.",
       30
     ],
     [
-      "Active transport: primary (ATP-driven pumps) and secondary (coupled gradients).",
+      "Primary active transport uses ATP directly (Na+/K+ ATPase).",
+      35
+    ],
+    [
+      "Secondary active transport couples movement to ion gradients.",
       34
     ],
     [
-      "Vesicular transport: endocytosis (receptor-mediated, phagocytosis, pinocytosis), exocytosis, transcytosis.",
+      "Vesicular transport: endocytosis, exocytosis, transcytosis.",
       38
     ],
     [
-      "Cytoskeleton: microfilaments, intermediate filaments, microtubules—structure and transport.",
+      "Cytoskeleton: microfilaments, intermediate filaments, microtubules.",
       46
     ],
     [
-      "Organelles: ER (rough/smooth), Golgi, lysosomes, peroxisomes, proteasomes, mitochondria.",
+      "Organelles: ER, Golgi, lysosomes, peroxisomes, proteasomes, mitochondria.",
       52
     ],
     [
-      "Mitochondria: ATP production; own DNA; maternal inheritance.",
+      "Mitochondria generate ATP; have their own DNA.",
       60
     ],
     [
-      "Nucleus houses DNA; nucleolus makes rRNA; chromatin organizes genes.",
+      "Nucleus houses DNA; nucleolus synthesizes rRNA.",
       66
     ],
     [
@@ -66,174 +66,253 @@
       72
     ],
     [
-      "mRNA codons, tRNA anticodons; ribosomal sites A, P, E.",
+      "mRNA codons, tRNA anticodons; A/P/E ribosomal sites.",
       76
     ],
     [
-      "DNA replication precedes cell division; semiconservative mechanism.",
+      "DNA replication is semiconservative; S phase precedes mitosis.",
       82
     ],
     [
-      "Cell cycle: interphase (G1, S, G2), mitosis (PMAT), cytokinesis.",
+      "Cell cycle: G1, S, G2, M (PMAT) + cytokinesis.",
       88
     ],
     [
-      "Mitosis outcome: two identical diploid cells; meiosis produces haploid gametes.",
+      "Mitosis yields two diploid cells; meiosis yields haploid gametes.",
       94
     ],
     [
-      "Apoptosis is programmed cell death; contrasts with necrosis.",
+      "Apoptosis vs necrosis.",
       100
-    ],
-    [
-      "Cholesterol stabilizes membranes and reduces permeability.",
-      14
-    ],
-    [
-      "Carrier-mediated diffusion shows saturation kinetics and specificity.",
-      24
-    ],
-    [
-      "Primary active transport example: Na+/K+ ATPase.",
-      35
-    ],
-    [
-      "Receptor-mediated endocytosis uses clathrin-coated pits.",
-      39
-    ],
-    [
-      "Lysosomes digest worn organelles (autophagy) and can trigger autolysis.",
-      58
-    ],
-    [
-      "Alternative splicing yields multiple proteins from one gene.",
-      74
-    ],
-    [
-      "Checkpoints regulate the cell cycle; failures can lead to cancer.",
-      90
-    ],
-    [
-      "Meiosis I separates homologs; Meiosis II separates sister chromatids.",
-      96
-    ],
-    [
-      "Proteasomes degrade ubiquitin-tagged proteins.",
-      56
     ]
   ],
-  "quiz": {
-    "questions": [
-      {
-        "question": "Which is NOT a component of the cytoskeleton?",
-        "options": [
-          "Microfilaments",
-          "Microtubules",
-          "Intermediate filaments",
-          "Myofibrils"
-        ],
-        "answer": 3,
-        "explanation": "Myofibrils are muscle structures, not cytoskeleton."
-      },
-      {
-        "question": "A cell in a hypertonic solution will:",
-        "options": [
-          "Swell",
-          "Burst",
-          "Shrink",
-          "Stay the same"
-        ],
-        "answer": 2,
-        "explanation": "Water exits the cell; it crenates."
-      },
-      {
-        "question": "Which transport requires ATP directly?",
-        "options": [
-          "Simple diffusion",
-          "Primary active transport",
-          "Osmosis",
-          "Facilitated diffusion"
-        ],
-        "answer": 1,
-        "explanation": "Primary pumps (e.g., Na+/K+ ATPase) hydrolyze ATP."
-      },
-      {
-        "question": "Receptor‑mediated endocytosis involves:",
-        "options": [
-          "Caveolae only",
-          "Clathrin-coated pits",
-          "Pinocytosis only",
-          "Phagocytosis of bacteria"
-        ],
-        "answer": 1,
-        "explanation": "Clathrin-coated pits internalize ligands."
-      },
-      {
-        "question": "During which phase do sister chromatids separate?",
-        "options": [
-          "Prophase",
-          "Metaphase",
-          "Anaphase",
-          "Telophase"
-        ],
-        "answer": 2,
-        "explanation": "Anaphase pulls chromatids apart."
-      },
-      {
-        "question": "Transcription occurs in the:",
-        "options": [
-          "Cytosol",
-          "Nucleus",
-          "Mitochondria",
-          "Ribosome"
-        ],
-        "answer": 1,
-        "explanation": "DNA template is in the nucleus."
-      },
-      {
-        "question": "Which organelle modifies and packages proteins?",
-        "options": [
-          "Golgi apparatus",
-          "Smooth ER",
-          "Lysosome",
-          "Peroxisome"
-        ],
-        "answer": 0,
-        "explanation": "Golgi sorts/ships proteins."
-      },
-      {
-        "question": "Aquaporins facilitate:",
-        "options": [
-          "Ion transport",
-          "Water movement",
-          "ATP synthesis",
-          "Protein export"
-        ],
-        "answer": 1,
-        "explanation": "Aquaporins are water channels."
-      },
-      {
-        "question": "Which increases membrane fluidity at low temp?",
-        "options": [
-          "Saturated fatty acids",
-          "Cholesterol (moderate)",
-          "More protein",
-          "Cell wall"
-        ],
-        "answer": 1,
-        "explanation": "Cholesterol prevents tight packing."
-      },
-      {
-        "question": "Proteasomes primarily:",
-        "options": [
-          "Hydrolyze lipids",
-          "Degrade ubiquitinated proteins",
-          "Replicate DNA",
-          "Synthesize ATP"
-        ],
-        "answer": 1,
-        "explanation": "They cut proteins into peptides."
-      }
-    ]
-  }
+  "flashcards": [
+    {
+      "front": "Selective permeability?",
+      "back": "Membrane allows some substances to cross more easily than others."
+    },
+    {
+      "front": "Define osmosis.",
+      "back": "Diffusion of water across a semipermeable membrane toward higher solute."
+    },
+    {
+      "front": "Primary vs secondary active transport?",
+      "back": "Direct ATP use vs use of stored ion gradient energy."
+    },
+    {
+      "front": "Cholesterol’s role?",
+      "back": "Stabilizes membrane fluidity and lowers permeability."
+    },
+    {
+      "front": "Lysosome function?",
+      "back": "Digest macromolecules and worn‑out organelles."
+    },
+    {
+      "front": "Golgi apparatus role?",
+      "back": "Modify, sort, and package proteins/lipids."
+    },
+    {
+      "front": "Transcription vs translation location?",
+      "back": "Nucleus vs ribosomes."
+    },
+    {
+      "front": "What forms the mitotic spindle?",
+      "back": "Microtubules."
+    },
+    {
+      "front": "Semiconservative replication means?",
+      "back": "Each daughter DNA has one original and one new strand."
+    },
+    {
+      "front": "Apoptosis?",
+      "back": "Programmed cell death."
+    },
+    {
+      "front": "Receptor‑mediated endocytosis uses?",
+      "back": "Clathrin‑coated pits."
+    },
+    {
+      "front": "Why do carriers saturate?",
+      "back": "Finite number limits maximal rate (Vmax)."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Cell in hypertonic solution will:",
+      "options": [
+        "Swell",
+        "Shrink",
+        "No change"
+      ],
+      "answer": 1,
+      "explanation": "Water exits; crenation."
+    },
+    {
+      "question": "Transport that uses ATP directly:",
+      "options": [
+        "Simple diffusion",
+        "Primary active transport",
+        "Facilitated diffusion"
+      ],
+      "answer": 1,
+      "explanation": "Primary pumps hydrolyze ATP."
+    },
+    {
+      "question": "Receptor‑mediated endocytosis involves:",
+      "options": [
+        "Caveolae only",
+        "Clathrin‑coated pits",
+        "Pinocytosis only"
+      ],
+      "answer": 1,
+      "explanation": "Clathrin lattices internalize ligands."
+    },
+    {
+      "question": "Organelle that packages proteins:",
+      "options": [
+        "Golgi apparatus",
+        "Peroxisome",
+        "Lysosome"
+      ],
+      "answer": 0,
+      "explanation": "Golgi sorts/ships."
+    },
+    {
+      "question": "Sister chromatids separate in:",
+      "options": [
+        "Metaphase",
+        "Anaphase",
+        "Prophase"
+      ],
+      "answer": 1,
+      "explanation": "Anaphase."
+    },
+    {
+      "question": "Aquaporins facilitate:",
+      "options": [
+        "Ions",
+        "Water",
+        "Glucose"
+      ],
+      "answer": 1,
+      "explanation": "Water channels."
+    },
+    {
+      "question": "Proteasomes:",
+      "options": [
+        "Synthesize ATP",
+        "Degrade ubiquitinated proteins",
+        "Replicate DNA"
+      ],
+      "answer": 1,
+      "explanation": "Protein degradation."
+    },
+    {
+      "question": "In cold, membrane fluidity ↑ with:",
+      "options": [
+        "Saturated fats",
+        "Cholesterol (moderate)",
+        "Less protein"
+      ],
+      "answer": 1,
+      "explanation": "Prevents tight packing."
+    },
+    {
+      "question": "Transcription location:",
+      "options": [
+        "Cytosol",
+        "Nucleus",
+        "Mitochondria"
+      ],
+      "answer": 1,
+      "explanation": "DNA in nucleus."
+    },
+    {
+      "question": "Hollow cytoskeletal element:",
+      "options": [
+        "Microtubule",
+        "Microfilament",
+        "Intermediate filament"
+      ],
+      "answer": 0,
+      "explanation": "Microtubules are hollow."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "Ordering: Cell Cycle",
+      "questions": [
+        {
+          "prompt": "Put phases in order",
+          "items": [
+            "G1",
+            "S",
+            "G2",
+            "Mitosis (PMAT)",
+            "Cytokinesis"
+          ]
+        },
+        {
+          "prompt": "Protein trafficking route",
+          "items": [
+            "Rough ER",
+            "Transport vesicle",
+            "Golgi cisternae",
+            "Secretory vesicle",
+            "Plasma membrane"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching: Transport & Organelles",
+      "questions": [
+        {
+          "prompt": "Match transport type",
+          "pairs": [
+            [
+              "Simple diffusion",
+              "No proteins; down gradient"
+            ],
+            [
+              "Facilitated diffusion",
+              "Carrier/channel mediated"
+            ],
+            [
+              "Primary active",
+              "ATP-driven"
+            ],
+            [
+              "Secondary active",
+              "Uses ion gradient"
+            ]
+          ]
+        },
+        {
+          "prompt": "Match organelle",
+          "pairs": [
+            [
+              "Mitochondrion",
+              "ATP production"
+            ],
+            [
+              "Lysosome",
+              "Digestion"
+            ],
+            [
+              "Golgi",
+              "Sorting/packaging"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "BIOL10210 - Lecture 3 -  Chapter 3.pptx",
+    "BIOL10210 - Weeks 3 and 4 Overview - V3.0 - OL15.docx",
+    "Chapter 3 Study Notes.docx"
+  ]
 }

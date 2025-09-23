@@ -2,39 +2,39 @@
   "title": "Chapter 5 – The Integumentary System",
   "notes": [
     [
-      "Skin has two layers: epidermis (keratinized stratified squamous) and dermis; hypodermis (subcutaneous) is deep but not skin.",
+      "Skin layers: epidermis (keratinized stratified squamous) and dermis; hypodermis is subcutaneous.",
       4
     ],
     [
-      "Epidermal cell types: keratinocytes, melanocytes, Langerhans (immune), Merkel (tactile).",
+      "Epidermal cells: keratinocytes, melanocytes, Langerhans, Merkel cells.",
       8
     ],
     [
-      "Thin vs thick skin: thick has stratum lucidum and thicker stratum corneum; no hair.",
+      "Thin vs thick skin: lucidum present in thick skin; thicker corneum; no hair.",
       12
     ],
     [
-      "Epidermal layers (deep→superficial): basale, spinosum, granulosum, lucidum*, corneum.",
+      "Epidermal strata (deep→superficial): basale, spinosum, granulosum, lucidum*, corneum.",
       14
     ],
     [
-      "Dermis layers: papillary (areolar, capillaries, Meissner corpuscles); reticular (dense irregular, Pacinian).",
+      "Dermis layers: papillary (areolar, Meissner) vs reticular (dense irregular, Pacinian).",
       18
     ],
     [
-      "Skin color: melanin (eumelanin/pheomelanin), hemoglobin, carotene.",
+      "Skin color: melanin, hemoglobin, carotene.",
       22
     ],
     [
-      "Hair anatomy: shaft, root, follicle; growth cycles (anagen, catagen, telogen).",
+      "Hair anatomy and growth cycle: anagen, catagen, telogen.",
       28
     ],
     [
-      "Glands: sebaceous (oil), eccrine sweat (thermoregulation), apocrine (axillary/pubic), ceruminous (earwax).",
+      "Glands: sebaceous, eccrine, apocrine, ceruminous.",
       34
     ],
     [
-      "Nails: keratinized plates; protective and functional roles.",
+      "Nails: hard keratin plates with protective roles.",
       38
     ],
     [
@@ -46,166 +46,264 @@
       48
     ],
     [
-      "Development: epidermis (ectoderm), dermis (mesoderm); appendages are epidermal derivatives.",
+      "Development: epidermis from ectoderm; dermis from mesoderm.",
       52
     ],
     [
-      "Aging: reduced sweat/sebum, thinner skin, decreased melanocytes, loss of subcutaneous fat.",
+      "Aging: thinner skin, reduced glands, decreased melanocytes.",
       56
     ],
     [
-      "Skin cancer types: basal cell, squamous cell, malignant melanoma.",
+      "Skin cancers; ABCDE rule for melanoma.",
       60
     ],
     [
-      "ABCDE of melanoma: Asymmetry, Border, Color, Diameter>6mm, Evolving.",
-      62
-    ],
-    [
-      "Burns: degrees by depth; risks include fluid loss and infection.",
+      "Burns: classified by depth; risks include fluid loss & infection.",
       66
     ],
     [
-      "Hypodermis anchors skin and stores triglycerides; highly vascular.",
+      "Hypodermis: anchors skin and stores triglycerides.",
       20
-    ],
-    [
-      "Papillary ridges contribute to fingerprints; improved grip.",
-      19
     ],
     [
       "Sebum lubricates skin/hair and reduces water loss.",
       35
     ],
     [
-      "Eccrine sweat is watery and aids heat loss by evaporation.",
+      "Eccrine vs apocrine secretions.",
       36
     ],
     [
-      "Apocrine sweat contains proteins/lipids; bacterial action causes odor.",
-      37
-    ],
-    [
-      "Vitamin D synthesis requires UV exposure; supports Ca2+ absorption.",
+      "Vitamin D synthesis requires UV; supports Ca2+ absorption.",
       44
     ],
     [
-      "Deep wound healing includes scar formation (fibrosis).",
-      50
+      "Dermal papillae form fingerprints; increase grip.",
+      19
     ]
   ],
-  "quiz": {
-    "questions": [
-      {
-        "question": "Which epidermal layer is present only in thick skin?",
-        "options": [
-          "Basale",
-          "Spinosum",
-          "Granulosum",
-          "Lucidum"
-        ],
-        "answer": 3,
-        "explanation": "Stratum lucidum appears in thick skin."
-      },
-      {
-        "question": "Eccrine sweat glands function mainly in:",
-        "options": [
-          "Oil secretion",
-          "Thermoregulation",
-          "Earwax production",
-          "Odor production"
-        ],
-        "answer": 1,
-        "explanation": "They cool the body via evaporation."
-      },
-      {
-        "question": "Melanin is produced by:",
-        "options": [
-          "Keratinocytes",
-          "Melanocytes",
-          "Langerhans cells",
-          "Merkel cells"
-        ],
-        "answer": 1,
-        "explanation": "Melanocytes in stratum basale."
-      },
-      {
-        "question": "The dermis is primarily:",
-        "options": [
-          "Dense irregular CT",
-          "Keratinized epithelium",
-          "Adipose tissue",
-          "Areolar only"
-        ],
-        "answer": 0,
-        "explanation": "Reticular dermis is dense irregular CT."
-      },
-      {
-        "question": "Which is NOT a function of skin?",
-        "options": [
-          "Sensation",
-          "Excretion",
-          "Vitamin D synthesis",
-          "Erythropoietin production"
-        ],
-        "answer": 3,
-        "explanation": "EPO is from kidneys."
-      },
-      {
-        "question": "A third-degree burn involves:",
-        "options": [
-          "Epidermis only",
-          "Epidermis and part of dermis",
-          "Full thickness of skin",
-          "Only hypodermis"
-        ],
-        "answer": 2,
-        "explanation": "Full-thickness burn."
-      },
-      {
-        "question": "Sebaceous glands secrete:",
-        "options": [
-          "Sweat",
-          "Sebum",
-          "Cerumen",
-          "Milk"
-        ],
-        "answer": 1,
-        "explanation": "Sebum = oil."
-      },
-      {
-        "question": "ABCDE ‘D’ refers to:",
-        "options": [
-          "Depth",
-          "Diameter",
-          "Density",
-          "Dermis"
-        ],
-        "answer": 1,
-        "explanation": "Diameter > 6 mm warning sign."
-      },
-      {
-        "question": "Hair grows from:",
-        "options": [
-          "Nail matrix",
-          "Hair matrix in bulb",
-          "Dermal papilla only",
-          "Epidermal ridge"
-        ],
-        "answer": 1,
-        "explanation": "Matrix cells divide to elongate hair."
-      },
-      {
-        "question": "Papillary dermis contains:",
-        "options": [
-          "Pacinian corpuscles",
-          "Meissner corpuscles",
-          "Sebaceous glands",
-          "Hair bulbs"
-        ],
-        "answer": 1,
-        "explanation": "Meissner detect light touch in papillary layer."
-      }
-    ]
-  }
+  "flashcards": [
+    {
+      "front": "Epidermal layer only in thick skin?",
+      "back": "Stratum lucidum."
+    },
+    {
+      "front": "Main function of eccrine glands?",
+      "back": "Thermoregulation via evaporation."
+    },
+    {
+      "front": "Pigment-producing cells?",
+      "back": "Melanocytes (stratum basale)."
+    },
+    {
+      "front": "Papillary vs reticular dermis?",
+      "back": "Papillary: areolar, Meissner; Reticular: dense irregular, Pacinian."
+    },
+    {
+      "front": "ABCDE 'D' stands for?",
+      "back": "Diameter > 6 mm."
+    },
+    {
+      "front": "Third‑degree burn involves?",
+      "back": "Full thickness of skin."
+    },
+    {
+      "front": "Apocrine vs eccrine?",
+      "back": "Apocrine is protein/lipid‑rich (odor); eccrine is watery."
+    },
+    {
+      "front": "Skin’s role in vitamin D?",
+      "back": "Synthesizes precursor aiding Ca2+ absorption."
+    },
+    {
+      "front": "Core skin color determinants?",
+      "back": "Melanin, hemoglobin, carotene."
+    },
+    {
+      "front": "List epidermal strata.",
+      "back": "Basale, Spinosum, Granulosum, Lucidum*, Corneum."
+    },
+    {
+      "front": "Function of sebaceous glands?",
+      "back": "Secrete sebum for lubrication."
+    },
+    {
+      "front": "Deep wound healing phases?",
+      "back": "Inflammation → migratory → proliferative → maturation."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Layer only in thick skin:",
+      "options": [
+        "Basale",
+        "Granulosum",
+        "Lucidum"
+      ],
+      "answer": 2,
+      "explanation": "Stratum lucidum."
+    },
+    {
+      "question": "Eccrine glands primarily:",
+      "options": [
+        "Secrete oil",
+        "Cool body",
+        "Produce earwax"
+      ],
+      "answer": 1,
+      "explanation": "Thermoregulation."
+    },
+    {
+      "question": "Melanocytes located in:",
+      "options": [
+        "Stratum basale",
+        "Stratum corneum",
+        "Dermis"
+      ],
+      "answer": 0,
+      "explanation": "Basale."
+    },
+    {
+      "question": "Dermis is primarily:",
+      "options": [
+        "Dense irregular CT",
+        "Keratinized epithelium",
+        "Adipose"
+      ],
+      "answer": 0,
+      "explanation": "Dense irregular CT."
+    },
+    {
+      "question": "Not a skin function:",
+      "options": [
+        "Sensation",
+        "Excretion",
+        "EPO production"
+      ],
+      "answer": 2,
+      "explanation": "EPO is renal."
+    },
+    {
+      "question": "Third‑degree burn involves:",
+      "options": [
+        "Epidermis only",
+        "Epidermis + part dermis",
+        "Full thickness"
+      ],
+      "answer": 2,
+      "explanation": "Full thickness."
+    },
+    {
+      "question": "Sebum function:",
+      "options": [
+        "Thermoregulate",
+        "Lubricate",
+        "Produce pigment"
+      ],
+      "answer": 1,
+      "explanation": "Lubrication."
+    },
+    {
+      "question": "ABCDE 'E' means:",
+      "options": [
+        "Elevation",
+        "Evolving",
+        "Erythema"
+      ],
+      "answer": 1,
+      "explanation": "Change over time."
+    },
+    {
+      "question": "Hair grows from:",
+      "options": [
+        "Hair matrix in bulb",
+        "Dermal papilla only",
+        "Nail matrix"
+      ],
+      "answer": 0,
+      "explanation": "Matrix cells divide."
+    },
+    {
+      "question": "Light‑touch receptor in papillary dermis:",
+      "options": [
+        "Pacinian",
+        "Meissner",
+        "Merkel"
+      ],
+      "answer": 1,
+      "explanation": "Meissner corpuscles."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "Ordering: Wound Healing",
+      "questions": [
+        {
+          "prompt": "Place stages",
+          "items": [
+            "Inflammation",
+            "Migratory",
+            "Proliferative",
+            "Maturation"
+          ]
+        },
+        {
+          "prompt": "Epidermal layers (deep→superficial)",
+          "items": [
+            "Basale",
+            "Spinosum",
+            "Granulosum",
+            "Lucidum*",
+            "Corneum"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching: Skin Structures",
+      "questions": [
+        {
+          "prompt": "Match structure to function",
+          "pairs": [
+            [
+              "Sebaceous gland",
+              "Secretes sebum"
+            ],
+            [
+              "Eccrine gland",
+              "Thermoregulation"
+            ],
+            [
+              "Melanocyte",
+              "Pigment production"
+            ]
+          ]
+        },
+        {
+          "prompt": "Match receptor",
+          "pairs": [
+            [
+              "Meissner",
+              "Light touch"
+            ],
+            [
+              "Pacinian",
+              "Vibration/pressure"
+            ],
+            [
+              "Merkel",
+              "Fine touch"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "BIOL10210 - Lecture 5 -  Chapter 5.pptx",
+    "BIOL10210 - Weeks 5 and 6 Overview - V3.0 - OL15.docx",
+    "Things to Know For Practical 1.docx"
+  ]
 }

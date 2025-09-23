@@ -99,6 +99,10 @@ Desktop.ini
 # Log files
 *.log
 
+# Generated files (temporary runtime files)
+manifest.json
+.dev-server.pid
+
 # Editor backup files
 *~
 *.swp

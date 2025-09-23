@@ -14,23 +14,27 @@
       12
     ],
     [
-      "Basic life processes include metabolism, responsiveness, movement, growth, differentiation, reproduction.",
+      "Life processes: metabolism, responsiveness, movement, growth, differentiation, reproduction.",
       16
     ],
     [
-      "Homeostasis: dynamic balance of internal conditions maintained by neural and endocrine regulation.",
+      "Homeostasis is dynamic balance maintained by nervous and endocrine control.",
       18
     ],
     [
-      "Negative feedback reduces a deviation (e.g., body temperature regulation).",
+      "Negative feedback reduces deviations from a set point (e.g., thermoregulation).",
       22
     ],
     [
-      "Positive feedback amplifies a deviation (e.g., oxytocin in labor).",
+      "Positive feedback amplifies a change (e.g., oxytocin during labor).",
       24
     ],
     [
-      "Anatomical position: standing, facing forward, arms at sides, palms forward, feet flat.",
+      "Components of a feedback loop: receptor, control center, effector.",
+      21
+    ],
+    [
+      "Anatomical position: standing upright, face forward, arms at sides, palms forward, feet flat.",
       30
     ],
     [
@@ -38,198 +42,299 @@
       34
     ],
     [
-      "Planes: sagittal (midsagittal/parasagittal), frontal (coronal), transverse (horizontal), oblique.",
+      "Body planes: sagittal (mid/para), frontal (coronal), transverse (horizontal), oblique.",
       38
     ],
     [
-      "Dorsal body cavity: cranial + vertebral canal.",
+      "Dorsal cavity: cranial + vertebral canal; Ventral cavity: thoracic + abdominopelvic.",
       42
     ],
     [
-      "Ventral body cavity: thoracic (pleural, pericardial, mediastinum) + abdominopelvic.",
+      "Thoracic cavity: pleural, pericardial, mediastinum.",
       45
     ],
     [
-      "Serous membranes: parietal vs visceral layers; pericardium, pleura, peritoneum reduce friction.",
+      "Serous membranes: parietal vs visceral layers; pleura, pericardium, peritoneum.",
       50
     ],
     [
-      "Abdominopelvic regions (9) and quadrants (4) standardize location descriptions.",
+      "Abdominopelvic regions (9) and quadrants (4) standardize localization.",
       55
     ],
     [
-      "Aging reduces homeostatic efficiency; increases disease susceptibility.",
-      60
-    ],
-    [
-      "Medical imaging overview: X‑ray, CT, MRI, PET, ultrasound—different strengths and use cases.",
-      66
-    ],
-    [
-      "Extracellular fluid (ECF) surrounds cells and its composition is tightly regulated.",
-      20
-    ],
-    [
-      "Feedback loop components: receptor, control center, effector.",
-      21
-    ],
-    [
-      "Prone vs supine positions reference body orientation when reclining.",
-      32
-    ],
-    [
-      "In quadrupeds, 'ventral' corresponds to inferior; in humans, anterior.",
-      36
-    ],
-    [
-      "Membranes in thoracic cavity: pleura (lungs) and pericardium (heart).",
-      49
-    ],
-    [
-      "Retroperitoneal organs lie posterior to peritoneum (e.g., kidneys).",
-      53
-    ],
-    [
-      "Homeostatic imbalance can lead to disorder/disease or death if severe.",
-      19
-    ],
-    [
-      "Regional names (e.g., cephalic, brachial, femoral) provide precise references.",
-      33
-    ],
-    [
-      "Thoracic cavity separated from abdominopelvic by diaphragm.",
+      "Diaphragm separates thoracic and abdominopelvic cavities.",
       44
     ],
     [
-      "Mediastinum contains heart, trachea, esophagus, major vessels (pericardial cavity within).",
-      46
+      "Retroperitoneal organs lie posterior to the peritoneum (e.g., kidneys).",
+      53
     ],
     [
-      "Serous fluid lubricates organ movement within cavities.",
+      "Serous fluid reduces friction between moving organs.",
       51
     ],
     [
-      "Medical imaging: CT = cross‑sectional X‑ray; MRI = magnetic fields; PET = metabolic activity.",
+      "Imaging: X‑ray, CT, MRI, PET, ultrasound—distinct advantages and limitations.",
+      66
+    ],
+    [
+      "Aging reduces homeostatic efficiency and repair capacity.",
+      60
+    ],
+    [
+      "Extracellular fluid (ECF) surrounds cells and must be tightly regulated.",
+      20
+    ],
+    [
+      "Regional names (cephalic, brachial, femoral, etc.) enable precise references.",
+      33
+    ],
+    [
+      "Mediastinum contains heart, trachea, esophagus, major vessels; pericardial cavity within.",
+      46
+    ],
+    [
+      "Clinical: failure of homeostasis leads to disorder, disease, or death.",
+      19
+    ],
+    [
+      "Prone vs supine describe body position when reclining.",
+      32
+    ],
+    [
+      "CT provides cross‑sectional X‑ray; MRI uses magnetic fields; PET maps metabolic activity.",
       67
     ],
     [
-      "Aging impact example: decreased skin elasticity; slower tissue repair.",
-      61
+      "Surface anatomy references landmarks for clinical procedures.",
+      35
+    ],
+    [
+      "Terminology consistency is critical for communication in healthcare.",
+      31
     ]
   ],
-  "quiz": {
-    "questions": [
-      {
-        "question": "Which statement best defines physiology?",
-        "options": [
-          "Study of body structure",
-          "Study of body function",
-          "Study of disease",
-          "Study of medical imaging"
-        ],
-        "answer": 1,
-        "explanation": "Physiology focuses on how body parts work."
-      },
-      {
-        "question": "Which list correctly orders levels of organization from simple to complex?",
-        "options": [
-          "Cell→Chemical→Tissue→Organ→System→Organism",
-          "Chemical→Cell→Tissue→Organ→System→Organism",
-          "Chemical→Tissue→Cell→Organ→System→Organism",
-          "Atom→Organ→Cell→System→Tissue→Organism"
-        ],
-        "answer": 1,
-        "explanation": "Standard progression is chemical to organism."
-      },
-      {
-        "question": "A thermostat maintaining room temperature is analogous to which feedback type?",
-        "options": [
-          "Positive",
-          "Negative",
-          "Neutral",
-          "Feedforward"
-        ],
-        "answer": 1,
-        "explanation": "Thermostats counteract deviations (negative feedback)."
-      },
-      {
-        "question": "In anatomical position, the palms face:",
-        "options": [
-          "Posterior",
-          "Medial",
-          "Forward",
-          "Up"
-        ],
-        "answer": 2,
-        "explanation": "Palms face anterior (forward)."
-      },
-      {
-        "question": "The plane dividing the body into superior and inferior portions is:",
-        "options": [
-          "Frontal",
-          "Transverse",
-          "Sagittal",
-          "Oblique"
-        ],
-        "answer": 1,
-        "explanation": "Transverse (horizontal) separates top/bottom."
-      },
-      {
-        "question": "The pleura is a serous membrane associated with the:",
-        "options": [
-          "Heart",
-          "Lungs",
-          "Liver",
-          "Brain"
-        ],
-        "answer": 1,
-        "explanation": "Pleura surrounds the lungs."
-      },
-      {
-        "question": "Which cavity houses the brain?",
-        "options": [
-          "Vertebral",
-          "Cranial",
-          "Thoracic",
-          "Abdominal"
-        ],
-        "answer": 1,
-        "explanation": "Cranial cavity encloses the brain."
-      },
-      {
-        "question": "Which term means farther from the midline?",
-        "options": [
-          "Medial",
-          "Lateral",
-          "Proximal",
-          "Superior"
-        ],
-        "answer": 1,
-        "explanation": "Lateral = away from midline."
-      },
-      {
-        "question": "Which is NOT typically part of a feedback loop?",
-        "options": [
-          "Receptor",
-          "Effector",
-          "Integrator (control center)",
-          "Transducer protein"
-        ],
-        "answer": 3,
-        "explanation": "Receptor, control center, effector are the core components."
-      },
-      {
-        "question": "A cut that separates anterior and posterior portions is:",
-        "options": [
-          "Frontal",
-          "Transverse",
-          "Midsagittal",
-          "Parasagittal"
-        ],
-        "answer": 0,
-        "explanation": "Frontal (coronal) divides front/back."
-      }
-    ]
-  }
+  "flashcards": [
+    {
+      "front": "What does physiology study?",
+      "back": "The functions of body parts and how they work."
+    },
+    {
+      "front": "List the six basic life processes.",
+      "back": "Metabolism, responsiveness, movement, growth, differentiation, reproduction."
+    },
+    {
+      "front": "Define homeostasis.",
+      "back": "Maintenance of a stable internal environment via regulatory mechanisms."
+    },
+    {
+      "front": "Negative vs positive feedback?",
+      "back": "Negative opposes change; positive amplifies change to drive a process to completion."
+    },
+    {
+      "front": "Anatomical position?",
+      "back": "Standing, facing forward, arms at sides, palms forward, feet flat."
+    },
+    {
+      "front": "Name the ventral cavity subdivisions.",
+      "back": "Thoracic and abdominopelvic cavities."
+    },
+    {
+      "front": "Define serous membrane.",
+      "back": "Double-layered membrane that secretes lubricating fluid around organs."
+    },
+    {
+      "front": "List body planes.",
+      "back": "Sagittal, frontal (coronal), transverse (horizontal), oblique."
+    },
+    {
+      "front": "What separates thoracic from abdominopelvic cavity?",
+      "back": "The diaphragm."
+    },
+    {
+      "front": "Examples of retroperitoneal organs?",
+      "back": "Kidneys, adrenal glands, pancreas (most), parts of aorta/IVC, duodenum (parts)."
+    },
+    {
+      "front": "Imaging modality for soft tissue detail?",
+      "back": "MRI."
+    },
+    {
+      "front": "What is the mediastinum?",
+      "back": "Space between lungs containing heart, trachea, esophagus, great vessels."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Physiology primarily concerns:",
+      "options": [
+        "Body structure",
+        "Body function",
+        "Medical imaging"
+      ],
+      "answer": 1,
+      "explanation": "Physiology studies function."
+    },
+    {
+      "question": "Simple→complex organizational sequence:",
+      "options": [
+        "Cell→Chemical→Tissue→Organ→System→Organism",
+        "Chemical→Cell→Tissue→Organ→System→Organism",
+        "Chemical→Tissue→Cell→Organ→System→Organism"
+      ],
+      "answer": 1,
+      "explanation": "Chemical to organism is standard."
+    },
+    {
+      "question": "A thermostat exemplifies:",
+      "options": [
+        "Positive feedback",
+        "Negative feedback",
+        "Feedforward only"
+      ],
+      "answer": 1,
+      "explanation": "It counteracts deviations."
+    },
+    {
+      "question": "Palms in anatomical position face:",
+      "options": [
+        "Posterior",
+        "Medial",
+        "Forward"
+      ],
+      "answer": 2,
+      "explanation": "Palms face anterior."
+    },
+    {
+      "question": "Plane dividing superior/inferior:",
+      "options": [
+        "Frontal",
+        "Sagittal",
+        "Transverse"
+      ],
+      "answer": 2,
+      "explanation": "Transverse (horizontal)."
+    },
+    {
+      "question": "Pleura is the serous membrane of the:",
+      "options": [
+        "Heart",
+        "Lungs",
+        "Liver"
+      ],
+      "answer": 1,
+      "explanation": "Pleura surrounds lungs."
+    },
+    {
+      "question": "Brain is housed in the:",
+      "options": [
+        "Vertebral canal",
+        "Cranial cavity",
+        "Thoracic cavity"
+      ],
+      "answer": 1,
+      "explanation": "Cranial cavity encloses brain."
+    },
+    {
+      "question": "Away from midline:",
+      "options": [
+        "Medial",
+        "Lateral",
+        "Proximal"
+      ],
+      "answer": 1,
+      "explanation": "Lateral = away from midline."
+    },
+    {
+      "question": "Function of serous fluid:",
+      "options": [
+        "Transport O2",
+        "Reduce friction",
+        "Digest lipids"
+      ],
+      "answer": 1,
+      "explanation": "Lubricates organs."
+    },
+    {
+      "question": "Imaging for metabolic activity:",
+      "options": [
+        "X‑ray",
+        "MRI",
+        "PET"
+      ],
+      "answer": 2,
+      "explanation": "PET maps metabolism."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "Ordering: Levels of Organization",
+      "questions": [
+        {
+          "prompt": "Order from simplest to most complex",
+          "items": [
+            "Chemical",
+            "Cell",
+            "Tissue",
+            "Organ",
+            "System",
+            "Organism"
+          ]
+        },
+        {
+          "prompt": "Place cavities from superficial to deep (head/neck)",
+          "items": [
+            "Cranial cavity",
+            "Vertebral canal"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching: Planes & Membranes",
+      "questions": [
+        {
+          "prompt": "Match plane to description",
+          "pairs": [
+            [
+              "Frontal",
+              "Anterior/posterior"
+            ],
+            [
+              "Sagittal",
+              "Left/right"
+            ],
+            [
+              "Transverse",
+              "Superior/inferior"
+            ]
+          ]
+        },
+        {
+          "prompt": "Match membrane to organ",
+          "pairs": [
+            [
+              "Pleura",
+              "Lungs"
+            ],
+            [
+              "Pericardium",
+              "Heart"
+            ],
+            [
+              "Peritoneum",
+              "Abdominopelvic organs"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "BIOL10210 - Lecture 1 -  Chapter 1.pptx",
+    "BIOL10210 - Weeks 1 and 2 Overview - V3.0 - OL15.docx",
+    "Chapter 1 Study Notes.docx"
+  ]
 }

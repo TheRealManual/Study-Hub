@@ -2,7 +2,7 @@
   "title": "Chapter 6 – The Skeletal System: Bone Tissue",
   "notes": [
     [
-      "Skeletal system functions: support, protection, movement, mineral homeostasis, blood cell production, triglyceride storage.",
+      "Skeletal functions: support, protection, movement, mineral homeostasis, hematopoiesis, triglyceride storage.",
       4
     ],
     [
@@ -10,79 +10,67 @@
       8
     ],
     [
-      "Bone ECM: ~15% water, 30% collagen, 55% mineral salts (hydroxyapatite).",
+      "Bone matrix: ~15% water, 30% collagen, 55% mineral salts (hydroxyapatite).",
       14
     ],
     [
-      "Cells: osteoprogenitors → osteoblasts (build) → osteocytes (maintain); osteoclasts resorb.",
+      "Bone cells: osteoprogenitor → osteoblast → osteocyte; osteoclast resorbs.",
       18
     ],
     [
-      "Compact bone: osteons; Spongy bone: trabeculae with red marrow.",
+      "Compact bone: osteons; spongy bone: trabeculae + marrow spaces.",
       22
     ],
     [
-      "Blood/nerve supply through nutrient foramina, periosteal vessels, metaphyseal/epiphyseal vessels.",
+      "Vascular supply: nutrient artery, periosteal, metaphyseal/epiphyseal vessels.",
       28
     ],
     [
-      "Ossification: intramembranous (flat bones) vs endochondral (most bones).",
+      "Ossification: intramembranous vs endochondral.",
       34
     ],
     [
-      "Longitudinal growth at epiphyseal plates; appositional growth thickens bones.",
+      "Growth: epiphyseal plate (length) and appositional (thickness).",
       40
     ],
     [
-      "Bone remodeling couples osteoclast resorption with osteoblast deposition.",
+      "Remodeling couples resorption and deposition.",
       46
     ],
     [
-      "Hormones: GH/IGFs, thyroid hormones, sex hormones; vitamins A/C/D/K/B12; minerals Ca2+, P, Mg, etc.",
+      "Regulation: hormones (GH/IGF, thyroid, sex), vitamins (A,C,D,K,B12), minerals (Ca, P, Mg).",
       52
     ],
     [
-      "Fracture repair: reactive (hematoma), reparative (fibrocartilaginous then bony callus), remodeling.",
+      "Fracture healing: hematoma → fibrocartilaginous callus → bony callus → remodeling.",
       60
     ],
     [
-      "Calcium homeostasis: PTH ↑ blood Ca2+; calcitriol ↑ intestinal absorption; calcitonin (thyroid) can ↓ blood Ca2+.",
+      "Calcium control: PTH ↑ Ca2+; calcitonin ↓; calcitriol ↑ intestinal absorption.",
       66
     ],
     [
-      "Exercise increases bone density via mechanical stress; disuse leads to loss.",
+      "Mechanical loading increases density (Wolff’s law).",
       72
     ],
     [
-      "Aging shifts toward resorption; osteoporosis risk increases (esp. post‑menopausal).",
+      "Aging biases toward resorption → osteoporosis risk.",
       78
     ],
     [
-      "Compact bone resists bending; spongy bone reduces weight and supports marrow.",
-      24
-    ],
-    [
-      "Endochondral ossification replaces cartilage template; primary/secondary ossification centers.",
-      36
-    ],
-    [
-      "Periosteum contains osteogenic cells; essential for growth and repair.",
-      9
-    ],
-    [
-      "Hydroxyapatite crystals provide hardness; collagen provides tensile strength.",
-      15
-    ],
-    [
-      "Epiphyseal plate zones: resting, proliferating, hypertrophic, calcified cartilage.",
+      "Epiphyseal plate zones: resting, proliferating, hypertrophic, calcified.",
       41
     ],
     [
-      "High PTH elevates osteoclast activity; negative feedback controls blood Ca2+.",
-      67
+      "Hydroxyapatite gives hardness; collagen gives tensile strength.",
+      15
     ],
     [
-      "Open vs closed fractures, stress fractures; proper alignment essential for healing.",
+      "Endochondral ossification uses cartilage templates with primary/secondary centers.",
+      36
+    ],
+    [
+      "Alignment critical in fracture repair; prevents malunion.",
       62
     ],
     [
@@ -90,122 +78,232 @@
       84
     ],
     [
-      "Wolff’s law: bone adapts to loads placed upon it.",
+      "Weight‑bearing exercise is protective for bone mass.",
       73
     ]
   ],
-  "quiz": {
-    "questions": [
-      {
-        "question": "Which bone cell resorbs bone?",
-        "options": [
-          "Osteoblast",
-          "Osteocyte",
-          "Osteoclast",
-          "Osteoprogenitor"
-        ],
-        "answer": 2,
-        "explanation": "Osteoclasts break down bone matrix."
-      },
-      {
-        "question": "Primary mineral of bone matrix is:",
-        "options": [
-          "Calcium carbonate",
-          "Hydroxyapatite",
-          "Sodium chloride",
-          "Potassium phosphate"
-        ],
-        "answer": 1,
-        "explanation": "Hydroxyapatite crystals harden bone."
-      },
-      {
-        "question": "Which ossification forms most long bones?",
-        "options": [
-          "Endochondral",
-          "Intramembranous",
-          "Interstitial",
-          "Appositional"
-        ],
-        "answer": 0,
-        "explanation": "Long bones are cartilage‑template derived."
-      },
-      {
-        "question": "PTH increases blood calcium by:",
-        "options": [
-          "Stimulating osteoblasts",
-          "Inhibiting osteoclasts",
-          "Increasing bone resorption",
-          "Increasing urinary Ca2+ loss"
-        ],
-        "answer": 2,
-        "explanation": "PTH promotes osteoclast activity and calcitriol."
-      },
-      {
-        "question": "The diaphysis is the:",
-        "options": [
-          "Bone end",
-          "Shaft",
-          "Growth plate",
-          "Inner lining"
-        ],
-        "answer": 1,
-        "explanation": "Diaphysis = shaft of a long bone."
-      },
-      {
-        "question": "Which is found in compact bone?",
-        "options": [
-          "Trabeculae",
-          "Osteons",
-          "Canaliculi only",
-          "Red marrow only"
-        ],
-        "answer": 1,
-        "explanation": "Osteons are cylindrical units in compact bone."
-      },
-      {
-        "question": "Zone where chondrocytes divide rapidly:",
-        "options": [
-          "Resting",
-          "Proliferating",
-          "Hypertrophic",
-          "Calcified"
-        ],
-        "answer": 1,
-        "explanation": "Proliferation lengthens bone."
-      },
-      {
-        "question": "Calcitonin tends to:",
-        "options": [
-          "Raise blood Ca2+",
-          "Lower blood Ca2+",
-          "No effect",
-          "Raise PTH"
-        ],
-        "answer": 1,
-        "explanation": "Calcitonin counters high Ca2+ (physiologic effect modest in adults)."
-      },
-      {
-        "question": "Mechanical loading generally leads to:",
-        "options": [
-          "Bone loss",
-          "No change",
-          "Bone gain",
-          "Cartilage formation only"
-        ],
-        "answer": 2,
-        "explanation": "Stress stimulates osteoblasts; ↑ density."
-      },
-      {
-        "question": "Appositional growth:",
-        "options": [
-          "Lengthens bone",
-          "Increases bone thickness",
-          "Replaces cartilage with bone at epiphysis",
-          "Occurs only in embryos"
-        ],
-        "answer": 1,
-        "explanation": "Circumferential growth at periosteum."
-      }
-    ]
-  }
+  "flashcards": [
+    {
+      "front": "Primary bone mineral?",
+      "back": "Hydroxyapatite."
+    },
+    {
+      "front": "Bone‑resorbing cells?",
+      "back": "Osteoclasts."
+    },
+    {
+      "front": "Compact vs spongy hallmark?",
+      "back": "Osteons vs trabeculae."
+    },
+    {
+      "front": "Site of longitudinal growth?",
+      "back": "Epiphyseal plate."
+    },
+    {
+      "front": "Appositional growth?",
+      "back": "Increase in thickness via periosteum."
+    },
+    {
+      "front": "Hormone raising blood Ca2+?",
+      "back": "Parathyroid hormone (PTH)."
+    },
+    {
+      "front": "Fracture repair sequence?",
+      "back": "Hematoma → fibrocartilaginous callus → bony callus → remodeling."
+    },
+    {
+      "front": "Effect of exercise on bone?",
+      "back": "Increases density (Wolff’s law)."
+    },
+    {
+      "front": "Deficiency causing osteomalacia?",
+      "back": "Vitamin D deficiency."
+    },
+    {
+      "front": "Osteoblast vs osteocyte?",
+      "back": "Osteoblast builds; osteocyte maintains."
+    },
+    {
+      "front": "Zone with enlarging chondrocytes?",
+      "back": "Hypertrophic zone."
+    },
+    {
+      "front": "Calcitriol’s effect?",
+      "back": "Increases intestinal Ca2+ absorption."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Cell that resorbs bone:",
+      "options": [
+        "Osteoblast",
+        "Osteocyte",
+        "Osteoclast"
+      ],
+      "answer": 2,
+      "explanation": "Osteoclasts break down matrix."
+    },
+    {
+      "question": "Most long bones form by:",
+      "options": [
+        "Intramembranous",
+        "Endochondral",
+        "Appositional"
+      ],
+      "answer": 1,
+      "explanation": "Endochondral ossification."
+    },
+    {
+      "question": "Provides bone hardness:",
+      "options": [
+        "Collagen",
+        "Hydroxyapatite",
+        "Elastin"
+      ],
+      "answer": 1,
+      "explanation": "Mineral salts harden bone."
+    },
+    {
+      "question": "Hormone increasing blood Ca2+:",
+      "options": [
+        "Calcitonin",
+        "PTH",
+        "Insulin"
+      ],
+      "answer": 1,
+      "explanation": "PTH promotes resorption."
+    },
+    {
+      "question": "Appositional growth leads to:",
+      "options": [
+        "Lengthening",
+        "Thickening",
+        "No change"
+      ],
+      "answer": 1,
+      "explanation": "Thickness increases."
+    },
+    {
+      "question": "Trabeculae are found in:",
+      "options": [
+        "Compact bone",
+        "Spongy bone",
+        "Articular cartilage"
+      ],
+      "answer": 1,
+      "explanation": "Spongy bone."
+    },
+    {
+      "question": "First stage of fracture repair:",
+      "options": [
+        "Bony callus",
+        "Hematoma",
+        "Remodeling"
+      ],
+      "answer": 1,
+      "explanation": "Hematoma forms first."
+    },
+    {
+      "question": "Calcitriol primarily:",
+      "options": [
+        "Decreases Ca2+ absorption",
+        "Increases Ca2+ absorption",
+        "Inhibits osteoblasts"
+      ],
+      "answer": 1,
+      "explanation": "Enhances intestinal uptake."
+    },
+    {
+      "question": "Wolff’s law states:",
+      "options": [
+        "Bone adapts to stress",
+        "Bone mass is fixed",
+        "Exercise decreases density"
+      ],
+      "answer": 0,
+      "explanation": "Loading strengthens bone."
+    },
+    {
+      "question": "Zone with rapid chondrocyte division:",
+      "options": [
+        "Resting",
+        "Proliferating",
+        "Calcified"
+      ],
+      "answer": 1,
+      "explanation": "Proliferating zone."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "Ordering: Fracture Repair",
+      "questions": [
+        {
+          "prompt": "Place stages",
+          "items": [
+            "Hematoma",
+            "Fibrocartilaginous callus",
+            "Bony callus",
+            "Remodeling"
+          ]
+        },
+        {
+          "prompt": "Endochondral sequence",
+          "items": [
+            "Cartilage model",
+            "Primary ossification",
+            "Medullary cavity",
+            "Secondary centers",
+            "Epiphyseal plate"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching: Cells & Hormones",
+      "questions": [
+        {
+          "prompt": "Match cell",
+          "pairs": [
+            [
+              "Osteoblast",
+              "Builds bone"
+            ],
+            [
+              "Osteoclast",
+              "Resorbs bone"
+            ],
+            [
+              "Osteocyte",
+              "Maintains matrix"
+            ]
+          ]
+        },
+        {
+          "prompt": "Match hormone",
+          "pairs": [
+            [
+              "PTH",
+              "↑ blood Ca2+"
+            ],
+            [
+              "Calcitonin",
+              "↓ osteoclasts"
+            ],
+            [
+              "Calcitriol",
+              "↑ intestinal Ca2+ absorption"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "BIOL10210 - Lecture 6 -  Chapter 6.pptx",
+    "BIOL10210 - Weeks 5 and 6 Overview - V3.0 - OL15.docx",
+    "Things to Know For Practical 2.docx"
+  ]
 }

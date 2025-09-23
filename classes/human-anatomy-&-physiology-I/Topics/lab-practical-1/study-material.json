@@ -10,11 +10,11 @@
       1
     ],
     [
-      "Distinguish epithelial tissues by layers and cell shape (simple vs stratified; squamous, cuboidal, columnar).",
+      "Differentiate epithelial tissues by layers and cell shape.",
       66
     ],
     [
-      "Identify connective tissue types by matrix and fibers (areolar, adipose, dense regular/irregular, hyaline cartilage).",
+      "Identify connective tissues by matrix and fibers (areolar, adipose, dense regular/irregular, hyaline).",
       66
     ],
     [
@@ -22,123 +22,255 @@
       66
     ],
     [
-      "Recognize nervous tissue (neurons vs neuroglia; cell body, axon, dendrites).",
+      "Recognize nervous tissue (neurons vs neuroglia).",
       66
     ],
     [
-      "Integument: identify layers (epidermis strata), hair follicle, sebaceous and sweat glands.",
+      "Integument structures: epidermal strata, hair follicle, sebaceous and sweat glands.",
       67
     ],
     [
-      "Use skeleton list to locate key bones and markings (e.g., femur head/neck, humerus greater tubercle, skull sutures).",
+      "Use skeleton list to drill bones and landmarks (foramina, tubercles, sutures).",
       67
     ],
     [
-      "Practice labeling abdominopelvic regions and quadrants for organ location questions.",
+      "Practice abdominopelvic regions/quadrants and organ mapping.",
       65
     ],
     [
-      "Memorize ABCDE criteria for melanoma for applied questions.",
-      67
-    ],
-    [
-      "Be ready to identify tissue slides at low/high magnification by hallmark features.",
-      66
-    ],
-    [
-      "Know serous membrane names per cavity and organ (visceral vs parietal).",
-      65
-    ],
-    [
-      "Differentiate thick vs thin skin histologically (presence of stratum lucidum).",
+      "Distinguish thick vs thin skin (presence of stratum lucidum).",
       63
     ],
     [
-      "Understand bone tissue histology (osteons vs trabeculae) for ID items.",
+      "Bone histology: osteons vs trabeculae.",
       64
     ],
     [
-      "Directional terms applied to limbs (proximal/distal) vs trunk (superior/inferior).",
+      "Apply directional terms correctly for limbs vs trunk.",
       65
-    ],
-    [
-      "Common traps: confusing simple cuboidal with stratified cuboidal (rare); check nuclei layers.",
-      66
-    ],
-    [
-      "Identify dermal papillae (fingerprints) and associated receptors.",
-      63
-    ],
-    [
-      "Skeleton landmarks from the provided list are high-yield—drill articulations and foramina.",
-      67
-    ],
-    [
-      "Use weekly objectives as a checklist for lab preps.",
-      65
-    ],
-    [
-      "Expect practical stations with images/models; time management matters—scan hallmarks first.",
-      66
     ]
   ],
-  "quiz": {
-    "questions": [
-      {
-        "question": "Which feature identifies cardiac muscle on a slide?",
-        "options": [
-          "Peripheral nuclei",
-          "Intercalated discs",
-          "No striations",
-          "Spindle-shaped fibers"
-        ],
-        "answer": 1,
-        "explanation": "Cardiac muscle is striated with intercalated discs."
-      },
-      {
-        "question": "The visceral pleura lines the:",
-        "options": [
-          "Thoracic wall",
-          "Heart surface",
-          "Lung surface",
-          "Abdominal wall"
-        ],
-        "answer": 2,
-        "explanation": "Visceral pleura covers lungs."
-      },
-      {
-        "question": "Simple squamous epithelium is best for:",
-        "options": [
-          "Protection",
-          "Absorption",
-          "Diffusion/filtration",
-          "Stretch"
-        ],
-        "answer": 2,
-        "explanation": "Thin, flat cells permit rapid diffusion."
-      },
-      {
-        "question": "Thick skin contains which extra layer?",
-        "options": [
-          "Basale",
-          "Spinosum",
-          "Granulosum",
-          "Lucidum"
-        ],
-        "answer": 3,
-        "explanation": "Stratum lucidum is present in thick skin."
-      },
-      {
-        "question": "In compact bone, the central (Haversian) canal contains:",
-        "options": [
-          "Adipocytes",
-          "Capillaries and nerves",
-          "Osteoid only",
-          "Chondrocytes"
-        ],
-        "answer": 1,
-        "explanation": "Nerves and blood vessels run centrally."
-      }
-    ]
-  }
+  "flashcards": [
+    {
+      "front": "Hallmark of cardiac muscle?",
+      "back": "Intercalated discs and striations."
+    },
+    {
+      "front": "Visceral vs parietal pleura?",
+      "back": "Visceral covers lung; parietal lines thoracic wall."
+    },
+    {
+      "front": "Simple squamous epithelium hallmark?",
+      "back": "Single layer of flat cells for diffusion."
+    },
+    {
+      "front": "Thick vs thin skin?",
+      "back": "Thick has stratum lucidum; thin does not."
+    },
+    {
+      "front": "Compact vs spongy bone?",
+      "back": "Osteons vs trabeculae."
+    },
+    {
+      "front": "Meissner vs Pacinian?",
+      "back": "Meissner = light touch; Pacinian = vibration/pressure."
+    },
+    {
+      "front": "Directional terms for limbs?",
+      "back": "Proximal vs distal."
+    },
+    {
+      "front": "One common ID pitfall?",
+      "back": "Confusing simple with stratified cuboidal (rare)."
+    },
+    {
+      "front": "Skeleton list focus?",
+      "back": "Bone names and surface markings."
+    },
+    {
+      "front": "Gland that secretes sebum?",
+      "back": "Sebaceous gland."
+    },
+    {
+      "front": "Fingerprint structures?",
+      "back": "Dermal papillae."
+    },
+    {
+      "front": "Support cells of nervous tissue?",
+      "back": "Neuroglia."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Feature identifying cardiac muscle:",
+      "options": [
+        "Peripheral nuclei",
+        "Intercalated discs",
+        "No striations"
+      ],
+      "answer": 1,
+      "explanation": "Cardiac muscle has intercalated discs."
+    },
+    {
+      "question": "Visceral pleura lines the:",
+      "options": [
+        "Thoracic wall",
+        "Lung surface",
+        "Heart surface"
+      ],
+      "answer": 1,
+      "explanation": "Visceral covers lungs."
+    },
+    {
+      "question": "Simple squamous epithelium suited for:",
+      "options": [
+        "Protection",
+        "Diffusion/filtration",
+        "Stretch"
+      ],
+      "answer": 1,
+      "explanation": "Thin cells for diffusion."
+    },
+    {
+      "question": "Extra layer of thick skin:",
+      "options": [
+        "Basale",
+        "Granulosum",
+        "Lucidum"
+      ],
+      "answer": 2,
+      "explanation": "Stratum lucidum."
+    },
+    {
+      "question": "Central (Haversian) canal contains:",
+      "options": [
+        "Chondrocytes",
+        "Capillaries and nerves",
+        "Adipocytes"
+      ],
+      "answer": 1,
+      "explanation": "Vessels and nerves."
+    },
+    {
+      "question": "Gap junctions allow:",
+      "options": [
+        "Strong adhesion",
+        "Electrical coupling",
+        "Anchoring to basal lamina"
+      ],
+      "answer": 1,
+      "explanation": "Ion passage between cells."
+    },
+    {
+      "question": "Eccrine glands primarily:",
+      "options": [
+        "Lubricate hair",
+        "Thermoregulate",
+        "Produce earwax"
+      ],
+      "answer": 1,
+      "explanation": "Cooling via evaporation."
+    },
+    {
+      "question": "Dermal papillae help:",
+      "options": [
+        "Bone growth",
+        "Grip; fingerprints",
+        "Blood filtration"
+      ],
+      "answer": 1,
+      "explanation": "Increase friction."
+    },
+    {
+      "question": "More vascular tissue:",
+      "options": [
+        "Cartilage",
+        "Compact bone",
+        "Spongy bone"
+      ],
+      "answer": 2,
+      "explanation": "Spongy bone has marrow."
+    },
+    {
+      "question": "Toward the midline:",
+      "options": [
+        "Lateral",
+        "Medial",
+        "Distal"
+      ],
+      "answer": 1,
+      "explanation": "Medial."
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "title": "Matching: Tissue Hallmarks",
+      "questions": [
+        {
+          "prompt": "Match tissue",
+          "pairs": [
+            [
+              "Skeletal muscle",
+              "Striations; voluntary"
+            ],
+            [
+              "Cardiac muscle",
+              "Intercalated discs"
+            ],
+            [
+              "Smooth muscle",
+              "No striations; spindle cells"
+            ]
+          ]
+        },
+        {
+          "prompt": "Match skin structure",
+          "pairs": [
+            [
+              "Meissner corpuscle",
+              "Light touch"
+            ],
+            [
+              "Pacinian corpuscle",
+              "Vibration/pressure"
+            ],
+            [
+              "Sebaceous gland",
+              "Secretes sebum"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering: Regions & Repair",
+      "questions": [
+        {
+          "prompt": "Order planes",
+          "items": [
+            "Sagittal",
+            "Frontal (coronal)",
+            "Transverse"
+          ]
+        },
+        {
+          "prompt": "Order bone repair phases",
+          "items": [
+            "Hematoma",
+            "Fibrocartilaginous callus",
+            "Bony callus",
+            "Remodeling"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Things to Know For Practical 1.docx",
+    "skeleton list.docx",
+    "BIOL10210 - Lecture 5 -  Chapter 5.pptx",
+    "BIOL10210 - Lecture 6 -  Chapter 6.pptx"
+  ]
 }
