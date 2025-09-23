@@ -2453,8 +2453,34 @@
                     const pdfName = header.querySelector('.pdf-name').textContent.trim();
                     if (pdfName.includes(filename)) {
                         const pdfId = header.getAttribute('aria-controls').replace('-content', '');
-                        togglePDF(pdfId);
-                        header.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        const content = document.getElementById(`${pdfId}-content`);
+                        
+                        // Calculate header position BEFORE expanding, then expand and scroll
+                        console.log('Target PDF:', filename);
+                        console.log('Found header:', header);
+                        console.log('Header text:', header.querySelector('.pdf-name').textContent.trim());
+                        
+                        const rect = header.getBoundingClientRect();
+                        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                        const headerPosition = rect.top + scrollTop;
+                        
+                        console.log('Header rect:', rect);
+                        console.log('Current scroll:', scrollTop);
+                        console.log('Calculated header position:', headerPosition);
+                        
+                        // Expand the PDF if not already expanded
+                        if (!content.classList.contains('expanded')) {
+                            togglePDF(pdfId);
+                        }
+                        
+                        // Wait for expansion animation, then scroll to the pre-calculated header position
+                        setTimeout(() => {
+                            console.log('Scrolling to:', headerPosition - 80);
+                            window.scrollTo({
+                                top: headerPosition - 80, // 80px from top to keep header well visible
+                                behavior: 'smooth'
+                            });
+                        }, 300); // Match the CSS transition time
                     }
                 });
             }, 300);
@@ -2498,36 +2524,39 @@
 
             // Render notes (supports both string format and [text, page] array format)
             if (topicData.notes && topicData.notes.length > 0) {
-                // Extract PDF filename from sources for the link text
-                let pdfName = '';
-                if (topicData.sources && topicData.sources.length > 0) {
-                    const firstSource = topicData.sources[0];
-                    const pdfMatch = firstSource.match(/(.+\.pdf)/i);
-                    if (pdfMatch) {
-                        pdfName = pdfMatch[1];
-                    }
-                }
-                
                 notesContainer.innerHTML = topicData.notes
                     .map((note, index) => {
-                        let noteText, pageNumber;
+                        let noteText, pageNumber, notePdfName;
                         
-                        // Check if note is in new [text, page] format or old string format
+                        // Check note format: [text, page, pdfName] or [text, page] or string
                         if (Array.isArray(note)) {
-                            [noteText, pageNumber] = note;
+                            if (note.length >= 3) {
+                                [noteText, pageNumber, notePdfName] = note;
+                            } else if (note.length === 2) {
+                                [noteText, pageNumber] = note;
+                                // Use first source as fallback if no PDF specified
+                                if (topicData.sources && topicData.sources.length > 0) {
+                                    const firstSource = topicData.sources[0];
+                                    const pdfMatch = firstSource.match(/(.+\.pdf)/i);
+                                    if (pdfMatch) {
+                                        notePdfName = pdfMatch[1];
+                                    }
+                                }
+                            }
                         } else {
                             noteText = note;
                             pageNumber = null;
+                            notePdfName = null;
                         }
                         
                         // Create the link text with page number and PDF name
                         let linkText = '📖 Go To Details';
-                        if (pageNumber && pdfName) {
-                            linkText = `📖 (Page ${pageNumber}) ${pdfName}`;
+                        if (pageNumber && notePdfName) {
+                            linkText = `📖 (Page ${pageNumber}) ${notePdfName}`;
                         } else if (pageNumber) {
                             linkText = `📖 Go To Details (Page ${pageNumber})`;
-                        } else if (pdfName) {
-                            linkText = `📖 Go To Details - ${pdfName}`;
+                        } else if (notePdfName) {
+                            linkText = `📖 Go To Details - ${notePdfName}`;
                         }
                         
                         return `
@@ -5624,52 +5653,82 @@
             console.log(`🔍 goToNoteDetails called: ${classKey}, ${topicKey}, note ${noteIndex}`);
             
             const topicData = studyData[classKey].topics[topicKey];
+            const note = topicData.notes[noteIndex];
             
-            if (topicData.sources && topicData.sources.length > 0) {
-                // Get the first PDF source
-                const firstSource = topicData.sources[0];
-                const pdfMatch = firstSource.match(/(.+\.pdf)/i);
-                
-                if (pdfMatch) {
-                    const filename = pdfMatch[1];
-                    
-                    // Get the page number from the note data
-                    let targetPage = 1;
-                    const note = topicData.notes[noteIndex];
-                    
-                    if (Array.isArray(note)) {
-                        // New format: [text, page]
-                        targetPage = note[1] || 1;
-                    } else {
-                        // Old format: just text, use estimation
-                        if (filename.includes('Week 1') || filename.includes('Introduction')) {
+            let targetPdf = null;
+            let targetPage = 1;
+            
+            // Parse note format: [text, page, pdfName] or [text, page] or string
+            if (Array.isArray(note)) {
+                if (note.length >= 3) {
+                    // New format: [text, page, pdfName]
+                    targetPage = note[1] || 1;
+                    targetPdf = note[2];
+                } else if (note.length === 2) {
+                    // Old format: [text, page] - use first source
+                    targetPage = note[1] || 1;
+                    if (topicData.sources && topicData.sources.length > 0) {
+                        const firstSource = topicData.sources[0];
+                        const pdfMatch = firstSource.match(/(.+\.pdf)/i);
+                        if (pdfMatch) {
+                            targetPdf = pdfMatch[1];
+                        }
+                    }
+                }
+            } else {
+                // String format: use estimation
+                if (topicData.sources && topicData.sources.length > 0) {
+                    const firstSource = topicData.sources[0];
+                    const pdfMatch = firstSource.match(/(.+\.pdf)/i);
+                    if (pdfMatch) {
+                        targetPdf = pdfMatch[1];
+                        if (targetPdf.includes('Week 1') || targetPdf.includes('Introduction')) {
                             targetPage = Math.max(1, noteIndex + 1);
-                        } else if (filename.includes('Week 2') || filename.includes('Fundamentals')) {
+                        } else if (targetPdf.includes('Week 2') || targetPdf.includes('Fundamentals')) {
                             targetPage = Math.max(3, noteIndex + 3);
                         } else {
                             targetPage = Math.max(1, noteIndex + 1);
                         }
                     }
-                    
-                    // Navigate to class page first
-                    showClassHomepage(classKey);
-                    
-                    // Wait for page to load, then handle PDF opening
-                    setTimeout(() => {
-                        const pdfHeaders = document.querySelectorAll('.pdf-header');
-                        pdfHeaders.forEach(header => {
-                            const pdfName = header.querySelector('.pdf-name').textContent.trim();
-                            if (pdfName.includes(filename)) {
-                                const pdfId = header.getAttribute('aria-controls').replace('-content', '');
-                                const content = document.getElementById(`${pdfId}-content`);
-                                const pdfEmbed = content.querySelector('.pdf-embed');
-                                
-                                if (pdfEmbed) {
+                }
+            }
+            
+            if (!targetPdf) {
+                console.warn('No PDF found for note details');
+                return;
+            }
+            
+            // Navigate to class page first
+            showClassHomepage(classKey);
+            
+            // Wait for page to load, then handle PDF opening
+            setTimeout(() => {
+                const pdfHeaders = document.querySelectorAll('.pdf-header');
+                pdfHeaders.forEach(header => {
+                    const pdfName = header.querySelector('.pdf-name').textContent.trim();
+                    if (pdfName.includes(targetPdf)) {
+                        const pdfId = header.getAttribute('aria-controls').replace('-content', '');
+                        const content = document.getElementById(`${pdfId}-content`);
+                        const pdfEmbed = content.querySelector('.pdf-embed');
+                        
+                        if (pdfEmbed) {
+                                    // Calculate header position BEFORE expanding
+                                    const rect = header.getBoundingClientRect();
+                                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                                    const headerPosition = rect.top + scrollTop;
+                                    
                                     // Always expand the PDF in the embedded viewer first
                                     if (!content.classList.contains('expanded')) {
                                         togglePDF(pdfId);
                                     }
-                                    header.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                                    
+                                    // Wait for expansion animation, then scroll to the pre-calculated header position
+                                    setTimeout(() => {
+                                        window.scrollTo({
+                                            top: headerPosition - 80, // 80px from top to keep header well visible
+                                            behavior: 'smooth'
+                                        });
+                                    }, 300); // Match the CSS transition time
                                     
                                     // Try to navigate to the specific page in the embedded viewer
                                     if (Array.isArray(topicData.notes[noteIndex]) && topicData.notes[noteIndex][1]) {
@@ -5688,36 +5747,28 @@
                                                 newEmbed.setAttribute('type', 'application/pdf');
                                                 newEmbed.setAttribute('width', '100%');
                                                 newEmbed.setAttribute('height', '480');
-                                                newEmbed.setAttribute('aria-label', `PDF viewer for ${filename}`);
+                                                newEmbed.setAttribute('aria-label', `PDF viewer for ${targetPdf}`);
                                                 newEmbed.innerHTML = `<p>PDF cannot be displayed. <a href="${newData}" target="_blank">Open in new tab</a></p>`;
                                                 
                                                 // Replace the old embed with the new one
                                                 pdfEmbed.parentNode.replaceChild(newEmbed, pdfEmbed);
                                                 
                                                 console.log(`📖 Navigating to page ${targetPage} in embedded viewer`);
-                                                showToast(`Opening ${filename} to page ${targetPage} in embedded viewer`, 'info');
+                                                showToast(`Opening ${targetPdf} to page ${targetPage} in embedded viewer`, 'info');
                                             } catch (error) {
                                                 console.log('Page navigation failed, PDF displayed normally:', error);
-                                                showToast(`Opened ${filename} (page navigation may not be supported)`, 'info');
+                                                showToast(`Opened ${targetPdf} (page navigation may not be supported)`, 'info');
                                             }
                                         }, 1000);
                                     } else {
-                                        showToast(`Opened ${filename} in embedded viewer`, 'info');
+                                        showToast(`Opened ${targetPdf} in embedded viewer`, 'info');
                                     }
                                     
-                                    console.log(`📖 Opening ${filename} to page ${targetPage}`);
+                                    console.log(`📖 Opening ${targetPdf} to page ${targetPage}`);
                                 }
                             }
                         });
                     }, 300);
-                    
-                    showToast(`Opening ${filename} to page ${targetPage}`, 'info');
-                } else {
-                    showToast('No PDF sources available for this topic', 'warning');
-                }
-            } else {
-                showToast('No PDF sources available for this topic', 'warning');
-            }
         }
     </script>
 
