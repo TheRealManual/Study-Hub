@@ -598,8 +598,8 @@
             border-radius: 1rem;
             min-height: 300px;
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
+            justify-content: space-between;
             text-align: center;
             padding: 2rem;
             cursor: pointer;
@@ -619,8 +619,114 @@
             transition: all var(--fast) var(--ease);
         }
 
+        .flashcard-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--text);
+        }
+
         .flashcard-content:hover {
             opacity: 0.8;
+        }
+
+        /* Study Rating Buttons */
+        .study-rating-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: auto;
+            padding-top: 1rem;
+        }
+
+        .study-btn {
+            padding: 0.75rem 2rem;
+            border: 2px solid transparent;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            min-width: 120px;
+        }
+
+        .study-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        .study-btn.study-again {
+            background: #ef4444;
+            color: white;
+        }
+
+        .study-btn.study-again:hover {
+            background: #dc2626;
+        }
+
+        .study-btn.study-again.selected {
+            background: #dc2626;
+            border-color: #ffffff;
+            box-shadow: 0 0 20px rgba(239, 68, 68, 0.6);
+            transform: scale(1.05);
+        }
+
+        .study-btn.studied {
+            background: #22c55e;
+            color: white;
+        }
+
+        .study-btn.studied:hover {
+            background: #16a34a;
+        }
+
+        .study-btn.studied.selected {
+            background: #16a34a;
+            border-color: #ffffff;
+            box-shadow: 0 0 20px rgba(34, 197, 94, 0.6);
+            transform: scale(1.05);
+        }
+
+        /* Session Complete Overlay */
+        .session-complete-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .session-complete-modal {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .session-complete-modal h2 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+        }
+
+        .session-complete-stats {
+            margin-bottom: 2rem;
+        }
+
+        .session-complete-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
         }
 
         .flashcard-controls {
@@ -2587,6 +2693,7 @@
                 this.studyAgainCards = new Set(); // Cards marked as "Study Again"
                 this.isSessionComplete = false; // Track if session is complete
                 this.studyAgainMode = false; // Track if we're in study again mode
+                this.currentRating = null; // Track current card rating selection
                 
                 // These will be created by the render method
                 this.contentElement = null;
@@ -2608,14 +2715,14 @@
                                     <div class="flashcard-content" id="${this.systemId}-content">
                                         Click to start flashcards
                                     </div>
-                                    <div id="${this.systemId}-study-buttons" class="study-rating-buttons" style="display: none; margin-top: 1rem; text-align: center;">
-                                        <button class="study-btn study-again" onclick="window['${this.systemId}Instance'].rateCard('again')" style="background: #ef4444; color: white; margin-right: 1rem; padding: 0.5rem 1rem; border: none; border-radius: 0.375rem; cursor: pointer;">Study Again</button>
-                                        <button class="study-btn studied" onclick="window['${this.systemId}Instance'].rateCard('studied')" style="background: #22c55e; color: white; padding: 0.5rem 1rem; border: none; border-radius: 0.375rem; cursor: pointer;">Studied</button>
+                                    <div id="${this.systemId}-study-buttons" class="study-rating-buttons" style="display: none;" onclick="event.stopPropagation();">
+                                        <button class="study-btn study-again" onclick="event.stopPropagation(); window['${this.systemId}Instance'].selectRating('again')" data-rating="again">Study Again</button>
+                                        <button class="study-btn studied" onclick="event.stopPropagation(); window['${this.systemId}Instance'].selectRating('studied')" data-rating="studied">Studied</button>
                                     </div>
                                 </div>
                                 <div class="flashcard-controls">
                                     <button class="control-btn" onclick="window['${this.systemId}Instance'].flip()">Flip (Space)</button>
-                                    <button class="control-btn" onclick="window['${this.systemId}Instance'].next()">Next →</button>
+                                    <button id="${this.systemId}-next-btn" class="control-btn" onclick="window['${this.systemId}Instance'].next()" disabled style="opacity: 0.5; cursor: not-allowed;">Next →</button>
                                 </div>
                                 <div class="flashcard-controls" style="margin-top: 1rem; display: flex; gap: 1rem; justify-content: center;">
                                     <button class="control-btn" onclick="window['${this.systemId}Instance'].shuffle(); showToast('Cards shuffled!', 'success')">🔀 Shuffle</button>
@@ -2676,13 +2783,31 @@
                                     <!-- Study again cards list will be populated here -->
                                 </div>
                             </div>
-                            
-                            <div id="${this.systemId}-session-complete" style="display: none; margin-top: 1.5rem; text-align: center;">
-                                <button class="control-btn" onclick="window['${this.systemId}Instance'].restartSession()" style="margin-right: 0.5rem; margin-bottom: 0.5rem;">🔄 Restart</button>
-                                <button id="${this.systemId}-study-missed-btn" class="control-btn" onclick="window['${this.systemId}Instance'].studyMissedCards()" style="margin-bottom: 0.5rem;">📖 Study Missed Cards</button>
-                            </div>
                         </div>
                         ` : ''}
+                    </div>
+                    
+                    <!-- Session Complete Overlay -->
+                    <div id="${this.systemId}-session-complete-overlay" class="session-complete-overlay" style="display: none;">
+                        <div class="session-complete-modal">
+                            <h2>🎉 Session Complete!</h2>
+                            <div class="session-complete-stats">
+                                <div class="stats-container">
+                                    <div class="stat-item">
+                                        <span class="stat-label">Cards Studied:</span>
+                                        <span class="stat-value" id="${this.systemId}-final-studied-count">0</span>
+                                    </div>
+                                    <div class="stat-item">
+                                        <span class="stat-label">Study Again:</span>
+                                        <span class="stat-value" id="${this.systemId}-final-study-again-count">0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="session-complete-actions">
+                                <button class="control-btn" onclick="window['${this.systemId}Instance'].restartSession()" style="padding: 0.75rem 1.5rem;">🔄 Restart</button>
+                                <button id="${this.systemId}-study-missed-btn" class="control-btn" onclick="window['${this.systemId}Instance'].studyMissedCards()" style="padding: 0.75rem 1.5rem;">📖 Study Missed Cards</button>
+                            </div>
+                        </div>
                     </div>
                 `;
                 
@@ -2853,7 +2978,10 @@
                     // Show study rating buttons when card is flipped (showing answer)
                     const studyButtons = document.getElementById(`${this.systemId}-study-buttons`);
                     if (studyButtons) {
-                        studyButtons.style.display = 'block';
+                        studyButtons.style.display = 'flex';
+                        
+                        // Restore button selection if there's a current rating
+                        this.restoreButtonSelection();
                     }
                 } else {
                     this.contentElement.textContent = card.front;
@@ -2862,6 +2990,9 @@
                     if (studyButtons) {
                         studyButtons.style.display = 'none';
                     }
+                    
+                    // Only reset button states when moving to a new card, not when flipping back to question
+                    // The current rating should persist for the same card
                 }
 
                 this.updateProgress(actualIndex);
@@ -2947,6 +3078,13 @@
                 this.studyAgainCards.clear();
                 this.isSessionComplete = false;
                 this.studyAgainMode = false;
+                this.currentRating = null;
+                
+                // Hide overlay if visible
+                const overlay = document.getElementById(`${this.systemId}-session-complete-overlay`);
+                if (overlay) {
+                    overlay.style.display = 'none';
+                }
                 
                 this.showCurrentCard();
                 this.updateStudyStats();
@@ -3002,6 +3140,22 @@
             updateStudyStats() {
                 if (!this.showStats) return;
                 
+                // Calculate counts including current temporary selection
+                let studiedCount = this.studiedCards.size;
+                let studyAgainCount = this.studyAgainCards.size;
+                
+                // If there's a current rating but it hasn't been committed yet, include it in the display
+                if (this.currentRating && this.currentIndex < this.flashcards.length) {
+                    const currentCardIndex = this.reviewCards[this.currentIndex];
+                    if (!this.studiedCards.has(currentCardIndex) && !this.studyAgainCards.has(currentCardIndex)) {
+                        if (this.currentRating === 'studied') {
+                            studiedCount++;
+                        } else if (this.currentRating === 'again') {
+                            studyAgainCount++;
+                        }
+                    }
+                }
+                
                 // Update study stats display
                 const studiedCountEl = document.getElementById(`${this.systemId}-studied-count`);
                 const studyAgainCountEl = document.getElementById(`${this.systemId}-study-again-count`);
@@ -3009,23 +3163,35 @@
                 const studyAgainList = document.getElementById(`${this.systemId}-study-again-list`);
                 
                 if (studiedCountEl) {
-                    studiedCountEl.textContent = this.studiedCards.size;
+                    studiedCountEl.textContent = studiedCount;
                 }
                 
                 if (studyAgainCountEl) {
-                    studyAgainCountEl.textContent = this.studyAgainCards.size;
+                    studyAgainCountEl.textContent = studyAgainCount;
                 }
                 
                 // Show study again section if there are cards to study again
-                if (studyAgainSection && this.studyAgainCards.size > 0) {
+                if (studyAgainSection && studyAgainCount > 0) {
                     studyAgainSection.style.display = 'block';
                     
                     if (studyAgainList) {
                         let listHTML = '';
+                        
+                        // Add committed study again cards
                         this.studyAgainCards.forEach(cardIndex => {
                             const card = this.flashcards[cardIndex];
                             listHTML += `<div style="padding: 0.5rem; margin-bottom: 0.5rem; background: rgba(239, 68, 68, 0.1); border-left: 3px solid #ef4444; border-radius: 0.25rem; font-size: 0.8rem;">${card.front}</div>`;
                         });
+                        
+                        // Add current temporary selection if it's "again"
+                        if (this.currentRating === 'again' && this.currentIndex < this.flashcards.length) {
+                            const currentCardIndex = this.reviewCards[this.currentIndex];
+                            if (!this.studyAgainCards.has(currentCardIndex)) {
+                                const currentCard = this.flashcards[currentCardIndex];
+                                listHTML += `<div style="padding: 0.5rem; margin-bottom: 0.5rem; background: rgba(239, 68, 68, 0.2); border-left: 3px solid #ef4444; border-radius: 0.25rem; font-size: 0.8rem; opacity: 0.8;">${currentCard.front} <span style="font-style: italic; color: #666;">(pending)</span></div>`;
+                            }
+                        }
+                        
                         studyAgainList.innerHTML = listHTML;
                     }
                 } else if (studyAgainSection) {
@@ -3047,6 +3213,104 @@
                 }
             }
 
+            selectRating(rating) {
+                this.currentRating = rating;
+                
+                // Update button visual states
+                const studyButtons = document.querySelectorAll(`#${this.systemId}-study-buttons .study-btn`);
+                studyButtons.forEach(btn => {
+                    btn.classList.remove('selected');
+                    if (btn.dataset.rating === rating) {
+                        btn.classList.add('selected');
+                    }
+                });
+                
+                // Enable the next button
+                const nextBtn = document.getElementById(`${this.systemId}-next-btn`);
+                if (nextBtn) {
+                    nextBtn.disabled = false;
+                    nextBtn.style.opacity = '1';
+                    nextBtn.style.cursor = 'pointer';
+                }
+                
+                // Update stats temporarily to show current selection
+                this.updateStudyStats();
+                
+                // Provide feedback but don't auto-advance
+                if (rating === 'studied') {
+                    showToast('Card marked as studied! ✅', 'success');
+                } else if (rating === 'again') {
+                    showToast('Card marked for review again 📖', 'info');
+                }
+            }
+
+            resetButtonStates() {
+                // Reset current rating
+                this.currentRating = null;
+                
+                // Remove selected class from all study buttons
+                const studyButtons = document.querySelectorAll(`#${this.systemId}-study-buttons .study-btn`);
+                studyButtons.forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+                
+                // Disable next button
+                const nextBtn = document.getElementById(`${this.systemId}-next-btn`);
+                if (nextBtn) {
+                    nextBtn.disabled = true;
+                    nextBtn.style.opacity = '0.5';
+                    nextBtn.style.cursor = 'not-allowed';
+                }
+            }
+
+            restoreButtonSelection() {
+                if (!this.currentRating) return;
+                
+                // Restore the visual selection state
+                const studyButtons = document.querySelectorAll(`#${this.systemId}-study-buttons .study-btn`);
+                studyButtons.forEach(btn => {
+                    btn.classList.remove('selected');
+                    if (btn.dataset.rating === this.currentRating) {
+                        btn.classList.add('selected');
+                    }
+                });
+                
+                // Enable the next button since a rating is selected
+                const nextBtn = document.getElementById(`${this.systemId}-next-btn`);
+                if (nextBtn) {
+                    nextBtn.disabled = false;
+                    nextBtn.style.opacity = '1';
+                    nextBtn.style.cursor = 'pointer';
+                }
+            }
+
+            showSessionCompleteOverlay() {
+                // Update final stats in overlay
+                const finalStudiedEl = document.getElementById(`${this.systemId}-final-studied-count`);
+                const finalStudyAgainEl = document.getElementById(`${this.systemId}-final-study-again-count`);
+                const studyMissedBtn = document.getElementById(`${this.systemId}-study-missed-btn`);
+                
+                if (finalStudiedEl) {
+                    finalStudiedEl.textContent = this.studiedCards.size;
+                }
+                if (finalStudyAgainEl) {
+                    finalStudyAgainEl.textContent = this.studyAgainCards.size;
+                }
+                
+                // Show/hide study missed button based on whether there are cards to study again
+                if (studyMissedBtn) {
+                    studyMissedBtn.style.display = this.studyAgainCards.size > 0 ? 'inline-block' : 'none';
+                }
+                
+                // Show the overlay
+                const overlay = document.getElementById(`${this.systemId}-session-complete-overlay`);
+                if (overlay) {
+                    overlay.style.display = 'flex';
+                }
+                
+                showToast('🎉 Session Complete!', 'success');
+            }
+
             rateCard(rating) {
                 const actualIndex = this.reviewCards[this.currentIndex];
                 
@@ -3057,40 +3321,52 @@
                 // Add to appropriate set
                 if (rating === 'studied') {
                     this.studiedCards.add(actualIndex);
-                    showToast('Card marked as studied! ✅', 'success');
                 } else if (rating === 'again') {
                     this.studyAgainCards.add(actualIndex);
-                    showToast('Card marked for review again 📖', 'info');
                 }
                 
                 this.updateStudyStats();
-                
-                // Auto advance to next card
-                setTimeout(() => {
-                    this.next();
-                }, 500);
             }
 
             next() {
+                // Only proceed if a rating was selected when card is flipped
+                if (this.isFlipped && !this.currentRating) {
+                    showToast('Please rate this card before proceeding!', 'error');
+                    return;
+                }
+                
+                // Apply the rating if one was selected
+                if (this.currentRating) {
+                    this.rateCard(this.currentRating);
+                }
+                
                 // Check if we're at the end of cards
                 if (this.currentIndex >= this.reviewCards.length - 1) {
                     this.isSessionComplete = true;
-                    this.updateStudyStats();
-                    showToast('🎉 Session Complete! Choose your next action.', 'success');
+                    this.showSessionCompleteOverlay();
                     return;
                 }
                 
                 this.currentIndex = (this.currentIndex + 1) % this.reviewCards.length;
                 this.isFlipped = false;
+                this.currentRating = null; // Reset rating for next card
                 this.showCurrentCard();
+                this.resetButtonStates(); // Reset button states for the new card
             }
 
             restartSession() {
+                // Hide the overlay
+                const overlay = document.getElementById(`${this.systemId}-session-complete-overlay`);
+                if (overlay) {
+                    overlay.style.display = 'none';
+                }
+                
                 // Reset all tracking
                 this.studiedCards.clear();
                 this.studyAgainCards.clear();
                 this.isSessionComplete = false;
                 this.studyAgainMode = false;
+                this.currentRating = null;
                 
                 // Shuffle and restart
                 this.shuffle();
@@ -3109,12 +3385,21 @@
                     return;
                 }
                 
+                // Hide the overlay
+                const overlay = document.getElementById(`${this.systemId}-session-complete-overlay`);
+                if (overlay) {
+                    overlay.style.display = 'none';
+                }
+                
                 // Create new review deck with only study again cards
                 this.reviewCards = Array.from(this.studyAgainCards);
                 
                 // Reset tracking for new session
                 this.studiedCards.clear();
                 this.studyAgainCards.clear();
+                this.isSessionComplete = false;
+                this.studyAgainMode = true;
+                this.currentRating = null;
                 this.isSessionComplete = false;
                 this.studyAgainMode = true;
                 
