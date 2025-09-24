@@ -1,0 +1,1160 @@
+{
+  "title": "Chapter 3 Terminology – Job Costing",
+  "notes": [
+    [
+      "AC241 — Uses of Accounting Information II",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Chapter 3 — Job Costing",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "and document everything received (instead of simply checking — off items/quantities that appear on a form",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Job costing",
+      "back": "Accumulates costs by individual jobs; heterogeneous products"
+    },
+    {
+      "front": "Process costing",
+      "back": "Accumulates costs by process/department; homogeneous products"
+    },
+    {
+      "front": "Manufacturing overhead (MOH)",
+      "back": "Indirect manufacturing costs (IM, IL, other)"
+    },
+    {
+      "front": "Predetermined MOH rate",
+      "back": "Estimated MOH / Estimated allocation base"
+    },
+    {
+      "front": "Allocation base",
+      "back": "Direct labor hours/cost, machine hours, etc."
+    },
+    {
+      "front": "Job cost record",
+      "back": "Tracks DM, DL, applied MOH for each job"
+    },
+    {
+      "front": "Materials requisition",
+      "back": "Form to request DM from storeroom to production"
+    },
+    {
+      "front": "Labor time record",
+      "back": "Tracks DL hours by job"
+    },
+    {
+      "front": "Over/underapplied MOH",
+      "back": "Difference between applied MOH and actual MOH"
+    },
+    {
+      "front": "Cost of goods manufactured (COGM)",
+      "back": "Costs of goods completed and transferred to FG"
+    },
+    {
+      "front": "Best definition of 'Job costing'?",
+      "back": "Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products."
+    },
+    {
+      "front": "Best definition of 'Process costing'?",
+      "back": "Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products."
+    },
+    {
+      "front": "Best definition of 'Manufacturing overhead (MOH)'?",
+      "back": "Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other)."
+    },
+    {
+      "front": "Best definition of 'Predetermined MOH rate'?",
+      "back": "Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base."
+    },
+    {
+      "front": "Best definition of 'Allocation base'?",
+      "back": "Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc.."
+    },
+    {
+      "front": "Best definition of 'Job cost record'?",
+      "back": "Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job."
+    },
+    {
+      "front": "Best definition of 'Materials requisition'?",
+      "back": "Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production."
+    },
+    {
+      "front": "Best definition of 'Labor time record'?",
+      "back": "Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job."
+    },
+    {
+      "front": "Best definition of 'Over/underapplied MOH'?",
+      "back": "Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH."
+    },
+    {
+      "front": "Best definition of 'Cost of goods manufactured (COGM)'?",
+      "back": "Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG."
+    },
+    {
+      "front": "Order cost types by variability with volume (high→none)",
+      "back": "Variable cost → Mixed cost → Fixed cost"
+    },
+    {
+      "front": "ABC workflow",
+      "back": "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+    },
+    {
+      "front": "AC241",
+      "back": "Uses of Accounting Information II"
+    },
+    {
+      "front": "Chapter 3",
+      "back": "Job Costing"
+    },
+    {
+      "front": "and document everything received (instead of simply checking",
+      "back": "off items/quantities that appear on a form"
+    },
+    {
+      "front": "Which best matches: Job costing",
+      "back": "Correct: Accumulates costs by individual jobs; heterogeneous products — Correct match for “Job costing” is: Accumulates costs by individual jobs; heterogeneous products."
+    },
+    {
+      "front": "Which best matches: Process costing",
+      "back": "Correct: Accumulates costs by process/department; homogeneous products — Correct match for “Process costing” is: Accumulates costs by process/department; homogeneous products."
+    },
+    {
+      "front": "Which best matches: Manufacturing overhead (MOH)",
+      "back": "Correct: Indirect manufacturing costs (IM, IL, other) — Correct match for “Manufacturing overhead (MOH)” is: Indirect manufacturing costs (IM, IL, other)."
+    },
+    {
+      "front": "Which best matches: Predetermined MOH rate",
+      "back": "Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined MOH rate” is: Estimated MOH / Estimated allocation base."
+    },
+    {
+      "front": "Which best matches: Allocation base",
+      "back": "Correct: Direct labor hours/cost, machine hours, etc. — Correct match for “Allocation base” is: Direct labor hours/cost, machine hours, etc.."
+    },
+    {
+      "front": "Which best matches: Job cost record",
+      "back": "Correct: Tracks DM, DL, applied MOH for each job — Correct match for “Job cost record” is: Tracks DM, DL, applied MOH for each job."
+    },
+    {
+      "front": "Which best matches: Materials requisition",
+      "back": "Correct: Form to request DM from storeroom to production — Correct match for “Materials requisition” is: Form to request DM from storeroom to production."
+    },
+    {
+      "front": "Which best matches: Labor time record",
+      "back": "Correct: Tracks DL hours by job — Correct match for “Labor time record” is: Tracks DL hours by job."
+    },
+    {
+      "front": "Which best matches: Over/underapplied MOH",
+      "back": "Correct: Difference between applied MOH and actual MOH — Correct match for “Over/underapplied MOH” is: Difference between applied MOH and actual MOH."
+    },
+    {
+      "front": "Which best matches: Cost of goods manufactured (COGM)",
+      "back": "Correct: Costs of goods completed and transferred to FG — Correct match for “Cost of goods manufactured (COGM)” is: Costs of goods completed and transferred to FG."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Job costing'?",
+      "back": "Correct: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products. — Correct match for “Best definition of 'Job costing'?” is: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Process costing'?",
+      "back": "Correct: Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products. — Correct match for “Best definition of 'Process costing'?” is: Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Manufacturing overhead (MOH)'?",
+      "back": "Correct: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other). — Correct match for “Best definition of 'Manufacturing overhead (MOH)'?” is: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other).."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Predetermined MOH rate'?",
+      "back": "Correct: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base. — Correct match for “Best definition of 'Predetermined MOH rate'?” is: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Allocation base'?",
+      "back": "Correct: Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc.. — Correct match for “Best definition of 'Allocation base'?” is: Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc..."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Job cost record'?",
+      "back": "Correct: Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job. — Correct match for “Best definition of 'Job cost record'?” is: Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Materials requisition'?",
+      "back": "Correct: Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production. — Correct match for “Best definition of 'Materials requisition'?” is: Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Labor time record'?",
+      "back": "Correct: Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job. — Correct match for “Best definition of 'Labor time record'?” is: Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Over/underapplied MOH'?",
+      "back": "Correct: Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH. — Correct match for “Best definition of 'Over/underapplied MOH'?” is: Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Cost of goods manufactured (COGM)'?",
+      "back": "Correct: Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG. — Correct match for “Best definition of 'Cost of goods manufactured (COGM)'?” is: Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG.."
+    },
+    {
+      "front": "Which best matches: Order cost types by variability with volume (high→none)",
+      "back": "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost."
+    },
+    {
+      "front": "Which best matches: ABC workflow",
+      "back": "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+    },
+    {
+      "front": "Put the sequence in order – derived from: Manufacturing overhead (MOH)",
+      "back": "Indirect manufacturing costs (IM → IL → other)"
+    },
+    {
+      "front": "Put the sequence in order – derived from: Allocation base",
+      "back": "Direct labor hours/cost → machine hours → etc."
+    },
+    {
+      "front": "Put the sequence in order – derived from: Job cost record",
+      "back": "Tracks DM → DL → applied MOH for each job"
+    },
+    {
+      "front": "Put the sequence in order – derived from: Best definition of 'Manufacturing overhead (MOH)'?",
+      "back": "Correct: Indirect manufacturing costs (IM → IL → other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM → IL → other)."
+    },
+    {
+      "front": "Put the sequence in order – derived from: Best definition of 'Allocation base'?",
+      "back": "Correct: Direct labor hours/cost → machine hours → etc. — 'Allocation base': Direct labor hours/cost → machine hours → etc.."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which best matches: Job costing",
+      "options": [
+        "Correct: Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products. — Correct match for “Best definition of 'Process costing'?” is: Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products..",
+        "Correct: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base. — Correct match for “Best definition of 'Predetermined MOH rate'?” is: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base..",
+        "Accumulates costs by individual jobs; heterogeneous products",
+        "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Accumulates costs by individual jobs; heterogeneous products"
+    },
+    {
+      "question": "Which best matches: Process costing",
+      "options": [
+        "Tracks DL hours by job",
+        "Correct: Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc.. — Correct match for “Best definition of 'Allocation base'?” is: Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc...",
+        "Accumulates costs by process/department; homogeneous products",
+        "Correct: Direct labor hours/cost → machine hours → etc. — 'Allocation base': Direct labor hours/cost → machine hours → etc.."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Accumulates costs by process/department; homogeneous products"
+    },
+    {
+      "question": "Which best matches: Manufacturing overhead (MOH)",
+      "options": [
+        "Correct: Difference between applied MOH and actual MOH — Correct match for “Over/underapplied MOH” is: Difference between applied MOH and actual MOH.",
+        "Indirect manufacturing costs (IM, IL, other)",
+        "Correct: Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job. — Correct match for “Best definition of 'Labor time record'?” is: Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job..",
+        "Uses of Accounting Information II"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Indirect manufacturing costs (IM, IL, other)"
+    },
+    {
+      "question": "Which best matches: Predetermined MOH rate",
+      "options": [
+        "Accumulates costs by individual jobs; heterogeneous products",
+        "Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH.",
+        "Indirect manufacturing costs (IM, IL, other)",
+        "Estimated MOH / Estimated allocation base"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Estimated MOH / Estimated allocation base"
+    },
+    {
+      "question": "Which best matches: Allocation base",
+      "options": [
+        "Correct: Indirect manufacturing costs (IM, IL, other) — Correct match for “Manufacturing overhead (MOH)” is: Indirect manufacturing costs (IM, IL, other).",
+        "Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined MOH rate” is: Estimated MOH / Estimated allocation base.",
+        "Direct labor hours/cost, machine hours, etc.",
+        "Costs of goods completed and transferred to FG"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Direct labor hours/cost, machine hours, etc."
+    },
+    {
+      "question": "Which best matches: Job cost record",
+      "options": [
+        "Tracks DM, DL, applied MOH for each job",
+        "off items/quantities that appear on a form",
+        "Correct: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base. — Correct match for “Best definition of 'Predetermined MOH rate'?” is: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base..",
+        "Correct: Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job. — Correct match for “Best definition of 'Job cost record'?” is: Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job.."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Tracks DM, DL, applied MOH for each job"
+    },
+    {
+      "question": "Which best matches: Materials requisition",
+      "options": [
+        "Correct: Accumulates costs by individual jobs; heterogeneous products — Correct match for “Job costing” is: Accumulates costs by individual jobs; heterogeneous products.",
+        "Form to request DM from storeroom to production",
+        "Direct labor hours/cost, machine hours, etc.",
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Form to request DM from storeroom to production"
+    },
+    {
+      "question": "Which best matches: Labor time record",
+      "options": [
+        "Correct: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other). — Correct match for “Best definition of 'Manufacturing overhead (MOH)'?” is: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other)..",
+        "Estimated MOH / Estimated allocation base",
+        "Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH.",
+        "Tracks DL hours by job"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Tracks DL hours by job"
+    },
+    {
+      "question": "Which best matches: Over/underapplied MOH",
+      "options": [
+        "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost.",
+        "Accumulates costs by individual jobs; heterogeneous products",
+        "Indirect manufacturing costs (IM, IL, other)",
+        "Difference between applied MOH and actual MOH"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Difference between applied MOH and actual MOH"
+    },
+    {
+      "question": "Which best matches: Cost of goods manufactured (COGM)",
+      "options": [
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products.",
+        "Correct: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other). — Correct match for “Best definition of 'Manufacturing overhead (MOH)'?” is: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other)..",
+        "Costs of goods completed and transferred to FG",
+        "Indirect manufacturing costs (IM → IL → other)"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Costs of goods completed and transferred to FG"
+    },
+    {
+      "question": "Which best matches: Best definition of 'Job costing'?",
+      "options": [
+        "Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products.",
+        "Correct: Direct labor hours/cost, machine hours, etc. — Correct match for “Allocation base” is: Direct labor hours/cost, machine hours, etc..",
+        "Correct: Indirect manufacturing costs (IM → IL → other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM → IL → other).",
+        "Tracks DM, DL, applied MOH for each job"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Process costing'?",
+      "options": [
+        "Job Costing",
+        "Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products.",
+        "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost.",
+        "Tracks DM, DL, applied MOH for each job"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Manufacturing overhead (MOH)'?",
+      "options": [
+        "Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other).",
+        "Correct: Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products. — Correct match for “Best definition of 'Process costing'?” is: Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products..",
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products.",
+        "Correct: Tracks DL hours by job — Correct match for “Labor time record” is: Tracks DL hours by job."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other)."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Predetermined MOH rate'?",
+      "options": [
+        "Correct: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base. — Correct match for “Best definition of 'Predetermined MOH rate'?” is: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base..",
+        "off items/quantities that appear on a form",
+        "Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base.",
+        "Correct: Direct labor hours/cost, machine hours, etc. — Correct match for “Allocation base” is: Direct labor hours/cost, machine hours, etc.."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Allocation base'?",
+      "options": [
+        "Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc..",
+        "Tracks DM → DL → applied MOH for each job",
+        "Correct: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products. — Correct match for “Best definition of 'Job costing'?” is: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products..",
+        "Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc.."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Job cost record'?",
+      "options": [
+        "Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production.",
+        "Estimated MOH / Estimated allocation base",
+        "Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products.",
+        "Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Materials requisition'?",
+      "options": [
+        "Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc..",
+        "Correct: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other). — Correct match for “Best definition of 'Manufacturing overhead (MOH)'?” is: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other)..",
+        "Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production.",
+        "Correct: Costs of goods completed and transferred to FG — Correct match for “Cost of goods manufactured (COGM)” is: Costs of goods completed and transferred to FG."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Labor time record'?",
+      "options": [
+        "Correct: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products. — Correct match for “Best definition of 'Job costing'?” is: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products..",
+        "Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job.",
+        "Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined MOH rate” is: Estimated MOH / Estimated allocation base.",
+        "Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Over/underapplied MOH'?",
+      "options": [
+        "Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH.",
+        "Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG.",
+        "Correct: Form to request DM from storeroom to production — Correct match for “Materials requisition” is: Form to request DM from storeroom to production.",
+        "Uses of Accounting Information II"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Cost of goods manufactured (COGM)'?",
+      "options": [
+        "Correct: Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH. — Correct match for “Best definition of 'Over/underapplied MOH'?” is: Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH..",
+        "Variable cost → Mixed cost → Fixed cost",
+        "Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG.",
+        "Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG."
+    },
+    {
+      "question": "Which best matches: Order cost types by variability with volume (high→none)",
+      "options": [
+        "Correct: Tracks DL hours by job — Correct match for “Labor time record” is: Tracks DL hours by job.",
+        "Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc..",
+        "Variable cost → Mixed cost → Fixed cost",
+        "Uses of Accounting Information II"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Variable cost → Mixed cost → Fixed cost"
+    },
+    {
+      "question": "Which best matches: ABC workflow",
+      "options": [
+        "Correct: Difference between applied MOH and actual MOH — Correct match for “Over/underapplied MOH” is: Difference between applied MOH and actual MOH.",
+        "Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH.",
+        "Correct: Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG. — Correct match for “Best definition of 'Cost of goods manufactured (COGM)'?” is: Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG..",
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+    },
+    {
+      "question": "Which best matches: AC241",
+      "options": [
+        "Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production.",
+        "Uses of Accounting Information II",
+        "Correct: Tracks DL hours by job — Correct match for “Labor time record” is: Tracks DL hours by job.",
+        "Correct: Costs of goods completed and transferred to FG — Correct match for “Cost of goods manufactured (COGM)” is: Costs of goods completed and transferred to FG."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Uses of Accounting Information II"
+    },
+    {
+      "question": "Which best matches: Chapter 3",
+      "options": [
+        "Indirect manufacturing costs (IM → IL → other)",
+        "Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH.",
+        "Job Costing",
+        "Uses of Accounting Information II"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Job Costing"
+    },
+    {
+      "question": "Which best matches: and document everything received (instead of simply checking",
+      "options": [
+        "Correct: Direct labor hours/cost → machine hours → etc. — 'Allocation base': Direct labor hours/cost → machine hours → etc..",
+        "Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products.",
+        "Accumulates costs by process/department; homogeneous products",
+        "off items/quantities that appear on a form"
+      ],
+      "answer": 3,
+      "explanation": "Correct: off items/quantities that appear on a form"
+    },
+    {
+      "question": "Which best matches: Which best matches: Job costing",
+      "options": [
+        "Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base.",
+        "Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products.",
+        "Correct: Accumulates costs by individual jobs; heterogeneous products — Correct match for “Job costing” is: Accumulates costs by individual jobs; heterogeneous products.",
+        "Correct: Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job. — Correct match for “Best definition of 'Labor time record'?” is: Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job.."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Accumulates costs by individual jobs; heterogeneous products — Correct match for “Job costing” is: Accumulates costs by individual jobs; heterogeneous products."
+    },
+    {
+      "question": "Which best matches: Which best matches: Process costing",
+      "options": [
+        "Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH.",
+        "Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined MOH rate” is: Estimated MOH / Estimated allocation base.",
+        "Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG.",
+        "Correct: Accumulates costs by process/department; homogeneous products — Correct match for “Process costing” is: Accumulates costs by process/department; homogeneous products."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Accumulates costs by process/department; homogeneous products — Correct match for “Process costing” is: Accumulates costs by process/department; homogeneous products."
+    },
+    {
+      "question": "Which best matches: Which best matches: Manufacturing overhead (MOH)",
+      "options": [
+        "Correct: Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job. — Correct match for “Best definition of 'Job cost record'?” is: Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job..",
+        "Correct: Indirect manufacturing costs (IM, IL, other) — Correct match for “Manufacturing overhead (MOH)” is: Indirect manufacturing costs (IM, IL, other).",
+        "Accumulates costs by process/department; homogeneous products",
+        "Correct: Accumulates costs by process/department; homogeneous products — Correct match for “Process costing” is: Accumulates costs by process/department; homogeneous products."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Indirect manufacturing costs (IM, IL, other) — Correct match for “Manufacturing overhead (MOH)” is: Indirect manufacturing costs (IM, IL, other)."
+    },
+    {
+      "question": "Which best matches: Which best matches: Predetermined MOH rate",
+      "options": [
+        "Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG.",
+        "Direct labor hours/cost, machine hours, etc.",
+        "Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined MOH rate” is: Estimated MOH / Estimated allocation base.",
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined MOH rate” is: Estimated MOH / Estimated allocation base."
+    },
+    {
+      "question": "Which best matches: Which best matches: Allocation base",
+      "options": [
+        "Correct: Direct labor hours/cost → machine hours → etc. — 'Allocation base': Direct labor hours/cost → machine hours → etc..",
+        "Correct: Direct labor hours/cost, machine hours, etc. — Correct match for “Allocation base” is: Direct labor hours/cost, machine hours, etc..",
+        "Correct: Indirect manufacturing costs (IM → IL → other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM → IL → other).",
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Direct labor hours/cost, machine hours, etc. — Correct match for “Allocation base” is: Direct labor hours/cost, machine hours, etc.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Job cost record",
+      "options": [
+        "Correct: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products. — Correct match for “Best definition of 'Job costing'?” is: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products..",
+        "Correct: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other). — Correct match for “Best definition of 'Manufacturing overhead (MOH)'?” is: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other)..",
+        "Correct: Tracks DM, DL, applied MOH for each job — Correct match for “Job cost record” is: Tracks DM, DL, applied MOH for each job.",
+        "Direct labor hours/cost → machine hours → etc."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Tracks DM, DL, applied MOH for each job — Correct match for “Job cost record” is: Tracks DM, DL, applied MOH for each job."
+    },
+    {
+      "question": "Which best matches: Which best matches: Materials requisition",
+      "options": [
+        "Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG.",
+        "Correct: Indirect manufacturing costs (IM, IL, other) — Correct match for “Manufacturing overhead (MOH)” is: Indirect manufacturing costs (IM, IL, other).",
+        "Correct: Form to request DM from storeroom to production — Correct match for “Materials requisition” is: Form to request DM from storeroom to production.",
+        "Variable cost → Mixed cost → Fixed cost"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Form to request DM from storeroom to production — Correct match for “Materials requisition” is: Form to request DM from storeroom to production."
+    },
+    {
+      "question": "Which best matches: Which best matches: Labor time record",
+      "options": [
+        "Uses of Accounting Information II",
+        "Correct: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products. — Correct match for “Best definition of 'Job costing'?” is: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products..",
+        "Correct: Tracks DL hours by job — Correct match for “Labor time record” is: Tracks DL hours by job.",
+        "Correct: Direct labor hours/cost → machine hours → etc. — 'Allocation base': Direct labor hours/cost → machine hours → etc.."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Tracks DL hours by job — Correct match for “Labor time record” is: Tracks DL hours by job."
+    },
+    {
+      "question": "Which best matches: Which best matches: Over/underapplied MOH",
+      "options": [
+        "Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products.",
+        "Correct: Difference between applied MOH and actual MOH — Correct match for “Over/underapplied MOH” is: Difference between applied MOH and actual MOH.",
+        "Correct: Tracks DL hours by job — Correct match for “Labor time record” is: Tracks DL hours by job.",
+        "Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Difference between applied MOH and actual MOH — Correct match for “Over/underapplied MOH” is: Difference between applied MOH and actual MOH."
+    },
+    {
+      "question": "Which best matches: Which best matches: Cost of goods manufactured (COGM)",
+      "options": [
+        "Tracks DL hours by job",
+        "Correct: Costs of goods completed and transferred to FG — Correct match for “Cost of goods manufactured (COGM)” is: Costs of goods completed and transferred to FG.",
+        "Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production.",
+        "Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined MOH rate” is: Estimated MOH / Estimated allocation base."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Costs of goods completed and transferred to FG — Correct match for “Cost of goods manufactured (COGM)” is: Costs of goods completed and transferred to FG."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Job costing'?",
+      "options": [
+        "Direct labor hours/cost, machine hours, etc.",
+        "Correct: Direct labor hours/cost, machine hours, etc. — Correct match for “Allocation base” is: Direct labor hours/cost, machine hours, etc..",
+        "Correct: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products. — Correct match for “Best definition of 'Job costing'?” is: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products..",
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products. — Correct match for “Best definition of 'Job costing'?” is: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Process costing'?",
+      "options": [
+        "Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base.",
+        "Correct: Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products. — Correct match for “Best definition of 'Process costing'?” is: Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products..",
+        "Correct: Costs of goods completed and transferred to FG — Correct match for “Cost of goods manufactured (COGM)” is: Costs of goods completed and transferred to FG.",
+        "Correct: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base. — Correct match for “Best definition of 'Predetermined MOH rate'?” is: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base.."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products. — Correct match for “Best definition of 'Process costing'?” is: Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Manufacturing overhead (MOH)'?",
+      "options": [
+        "Direct labor hours/cost → machine hours → etc.",
+        "Correct: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other). — Correct match for “Best definition of 'Manufacturing overhead (MOH)'?” is: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other)..",
+        "Costs of goods completed and transferred to FG",
+        "Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other). — Correct match for “Best definition of 'Manufacturing overhead (MOH)'?” is: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other).."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Predetermined MOH rate'?",
+      "options": [
+        "Correct: Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc.. — Correct match for “Best definition of 'Allocation base'?” is: Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc...",
+        "Correct: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base. — Correct match for “Best definition of 'Predetermined MOH rate'?” is: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base..",
+        "Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG.",
+        "Accumulates costs by process/department; homogeneous products"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base. — Correct match for “Best definition of 'Predetermined MOH rate'?” is: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Allocation base'?",
+      "options": [
+        "Correct: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products. — Correct match for “Best definition of 'Job costing'?” is: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products..",
+        "Correct: Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc.. — Correct match for “Best definition of 'Allocation base'?” is: Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc...",
+        "Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other).",
+        "Correct: Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production. — Correct match for “Best definition of 'Materials requisition'?” is: Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production.."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc.. — Correct match for “Best definition of 'Allocation base'?” is: Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc..."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Job cost record'?",
+      "options": [
+        "Tracks DM → DL → applied MOH for each job",
+        "Correct: Tracks DL hours by job — Correct match for “Labor time record” is: Tracks DL hours by job.",
+        "Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base.",
+        "Correct: Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job. — Correct match for “Best definition of 'Job cost record'?” is: Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job.."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job. — Correct match for “Best definition of 'Job cost record'?” is: Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Materials requisition'?",
+      "options": [
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products",
+        "Form to request DM from storeroom to production",
+        "Estimated MOH / Estimated allocation base",
+        "Correct: Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production. — Correct match for “Best definition of 'Materials requisition'?” is: Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production.."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production. — Correct match for “Best definition of 'Materials requisition'?” is: Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Labor time record'?",
+      "options": [
+        "Variable cost → Mixed cost → Fixed cost",
+        "Indirect manufacturing costs (IM, IL, other)",
+        "Correct: Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job. — Correct match for “Best definition of 'Labor time record'?” is: Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job..",
+        "Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc.."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job. — Correct match for “Best definition of 'Labor time record'?” is: Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Over/underapplied MOH'?",
+      "options": [
+        "Correct: Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH. — Correct match for “Best definition of 'Over/underapplied MOH'?” is: Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH..",
+        "Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined MOH rate” is: Estimated MOH / Estimated allocation base.",
+        "Correct: Tracks DL hours by job — Correct match for “Labor time record” is: Tracks DL hours by job.",
+        "Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH. — Correct match for “Best definition of 'Over/underapplied MOH'?” is: Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Cost of goods manufactured (COGM)'?",
+      "options": [
+        "Correct: Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG. — Correct match for “Best definition of 'Cost of goods manufactured (COGM)'?” is: Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG..",
+        "Tracks DM, DL, applied MOH for each job",
+        "Indirect manufacturing costs (IM, IL, other)",
+        "Tracks DL hours by job"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG. — Correct match for “Best definition of 'Cost of goods manufactured (COGM)'?” is: Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Order cost types by variability with volume (high→none)",
+      "options": [
+        "Correct: Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production. — Correct match for “Best definition of 'Materials requisition'?” is: Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production..",
+        "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost.",
+        "Correct: Indirect manufacturing costs (IM, IL, other) — Correct match for “Manufacturing overhead (MOH)” is: Indirect manufacturing costs (IM, IL, other).",
+        "Difference between applied MOH and actual MOH"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost."
+    },
+    {
+      "question": "Which best matches: Which best matches: ABC workflow",
+      "options": [
+        "Accumulates costs by process/department; homogeneous products",
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products.",
+        "Correct: Indirect manufacturing costs (IM → IL → other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM → IL → other).",
+        "Correct: Form to request DM from storeroom to production — Correct match for “Materials requisition” is: Form to request DM from storeroom to production."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Manufacturing overhead (MOH)",
+      "options": [
+        "Indirect manufacturing costs (IM → IL → other)",
+        "Correct: Accumulates costs by process/department; homogeneous products — Correct match for “Process costing” is: Accumulates costs by process/department; homogeneous products.",
+        "Correct: Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job. — Correct match for “Best definition of 'Job cost record'?” is: Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job..",
+        "Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined MOH rate” is: Estimated MOH / Estimated allocation base."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Indirect manufacturing costs (IM → IL → other)"
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Allocation base",
+      "options": [
+        "Correct: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other). — Correct match for “Best definition of 'Manufacturing overhead (MOH)'?” is: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other)..",
+        "Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc..",
+        "Direct labor hours/cost → machine hours → etc.",
+        "Correct: Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH. — Correct match for “Best definition of 'Over/underapplied MOH'?” is: Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH.."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Direct labor hours/cost → machine hours → etc."
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Job cost record",
+      "options": [
+        "Correct: Costs of goods completed and transferred to FG — Correct match for “Cost of goods manufactured (COGM)” is: Costs of goods completed and transferred to FG.",
+        "Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base.",
+        "Tracks DM → DL → applied MOH for each job",
+        "Form to request DM from storeroom to production"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Tracks DM → DL → applied MOH for each job"
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Best definition of 'Manufacturing overhead (MOH)'?",
+      "options": [
+        "Uses of Accounting Information II",
+        "Correct: Indirect manufacturing costs (IM → IL → other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM → IL → other).",
+        "Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production.",
+        "Correct: Tracks DM, DL, applied MOH for each job — Correct match for “Job cost record” is: Tracks DM, DL, applied MOH for each job."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Indirect manufacturing costs (IM → IL → other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM → IL → other)."
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Best definition of 'Allocation base'?",
+      "options": [
+        "Correct: Accumulates costs by process/department; homogeneous products — Correct match for “Process costing” is: Accumulates costs by process/department; homogeneous products.",
+        "Correct: Indirect manufacturing costs (IM, IL, other) — Correct match for “Manufacturing overhead (MOH)” is: Indirect manufacturing costs (IM, IL, other).",
+        "Correct: Direct labor hours/cost → machine hours → etc. — 'Allocation base': Direct labor hours/cost → machine hours → etc..",
+        "Accumulates costs by individual jobs; heterogeneous products"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Direct labor hours/cost → machine hours → etc. — 'Allocation base': Direct labor hours/cost → machine hours → etc.."
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "title": "Matching Set 1",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Job costing",
+              "Accumulates costs by individual jobs; heterogeneous products"
+            ],
+            [
+              "Process costing",
+              "Accumulates costs by process/department; homogeneous products"
+            ],
+            [
+              "Manufacturing overhead (MOH)",
+              "Indirect manufacturing costs (IM, IL, other)"
+            ],
+            [
+              "Predetermined MOH rate",
+              "Estimated MOH / Estimated allocation base"
+            ],
+            [
+              "Allocation base",
+              "Direct labor hours/cost, machine hours, etc."
+            ],
+            [
+              "Job cost record",
+              "Tracks DM, DL, applied MOH for each job"
+            ],
+            [
+              "Materials requisition",
+              "Form to request DM from storeroom to production"
+            ],
+            [
+              "Labor time record",
+              "Tracks DL hours by job"
+            ],
+            [
+              "Over/underapplied MOH",
+              "Difference between applied MOH and actual MOH"
+            ],
+            [
+              "Cost of goods manufactured (COGM)",
+              "Costs of goods completed and transferred to FG"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 2",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Best definition of 'Job costing'?",
+              "Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products."
+            ],
+            [
+              "Best definition of 'Process costing'?",
+              "Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products."
+            ],
+            [
+              "Best definition of 'Manufacturing overhead (MOH)'?",
+              "Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other)."
+            ],
+            [
+              "Best definition of 'Predetermined MOH rate'?",
+              "Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base."
+            ],
+            [
+              "Best definition of 'Allocation base'?",
+              "Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc.."
+            ],
+            [
+              "Best definition of 'Job cost record'?",
+              "Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job."
+            ],
+            [
+              "Best definition of 'Materials requisition'?",
+              "Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production."
+            ],
+            [
+              "Best definition of 'Labor time record'?",
+              "Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job."
+            ],
+            [
+              "Best definition of 'Over/underapplied MOH'?",
+              "Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH."
+            ],
+            [
+              "Best definition of 'Cost of goods manufactured (COGM)'?",
+              "Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 3",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Order cost types by variability with volume (high→none)",
+              "Variable cost → Mixed cost → Fixed cost"
+            ],
+            [
+              "ABC workflow",
+              "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+            ],
+            [
+              "AC241",
+              "Uses of Accounting Information II"
+            ],
+            [
+              "Chapter 3",
+              "Job Costing"
+            ],
+            [
+              "and document everything received (instead of simply checking",
+              "off items/quantities that appear on a form"
+            ],
+            [
+              "Which best matches: Job costing",
+              "Correct: Accumulates costs by individual jobs; heterogeneous products — Correct match for “Job costing” is: Accumulates costs by individual jobs; heterogeneous products."
+            ],
+            [
+              "Which best matches: Process costing",
+              "Correct: Accumulates costs by process/department; homogeneous products — Correct match for “Process costing” is: Accumulates costs by process/department; homogeneous products."
+            ],
+            [
+              "Which best matches: Manufacturing overhead (MOH)",
+              "Correct: Indirect manufacturing costs (IM, IL, other) — Correct match for “Manufacturing overhead (MOH)” is: Indirect manufacturing costs (IM, IL, other)."
+            ],
+            [
+              "Which best matches: Predetermined MOH rate",
+              "Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined MOH rate” is: Estimated MOH / Estimated allocation base."
+            ],
+            [
+              "Which best matches: Allocation base",
+              "Correct: Direct labor hours/cost, machine hours, etc. — Correct match for “Allocation base” is: Direct labor hours/cost, machine hours, etc.."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 4",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Which best matches: Job cost record",
+              "Correct: Tracks DM, DL, applied MOH for each job — Correct match for “Job cost record” is: Tracks DM, DL, applied MOH for each job."
+            ],
+            [
+              "Which best matches: Materials requisition",
+              "Correct: Form to request DM from storeroom to production — Correct match for “Materials requisition” is: Form to request DM from storeroom to production."
+            ],
+            [
+              "Which best matches: Labor time record",
+              "Correct: Tracks DL hours by job — Correct match for “Labor time record” is: Tracks DL hours by job."
+            ],
+            [
+              "Which best matches: Over/underapplied MOH",
+              "Correct: Difference between applied MOH and actual MOH — Correct match for “Over/underapplied MOH” is: Difference between applied MOH and actual MOH."
+            ],
+            [
+              "Which best matches: Cost of goods manufactured (COGM)",
+              "Correct: Costs of goods completed and transferred to FG — Correct match for “Cost of goods manufactured (COGM)” is: Costs of goods completed and transferred to FG."
+            ],
+            [
+              "Which best matches: Best definition of 'Job costing'?",
+              "Correct: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products. — Correct match for “Best definition of 'Job costing'?” is: Correct: Accumulates costs by individual jobs; heterogeneous products — 'Job costing': Accumulates costs by individual jobs; heterogeneous products.."
+            ],
+            [
+              "Which best matches: Best definition of 'Process costing'?",
+              "Correct: Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products. — Correct match for “Best definition of 'Process costing'?” is: Correct: Accumulates costs by process/department; homogeneous products — 'Process costing': Accumulates costs by process/department; homogeneous products.."
+            ],
+            [
+              "Which best matches: Best definition of 'Manufacturing overhead (MOH)'?",
+              "Correct: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other). — Correct match for “Best definition of 'Manufacturing overhead (MOH)'?” is: Correct: Indirect manufacturing costs (IM, IL, other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM, IL, other).."
+            ],
+            [
+              "Which best matches: Best definition of 'Predetermined MOH rate'?",
+              "Correct: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base. — Correct match for “Best definition of 'Predetermined MOH rate'?” is: Correct: Estimated MOH / Estimated allocation base — 'Predetermined MOH rate': Estimated MOH / Estimated allocation base.."
+            ],
+            [
+              "Which best matches: Best definition of 'Allocation base'?",
+              "Correct: Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc.. — Correct match for “Best definition of 'Allocation base'?” is: Correct: Direct labor hours/cost, machine hours, etc. — 'Allocation base': Direct labor hours/cost, machine hours, etc..."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 5",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Which best matches: Best definition of 'Job cost record'?",
+              "Correct: Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job. — Correct match for “Best definition of 'Job cost record'?” is: Correct: Tracks DM, DL, applied MOH for each job — 'Job cost record': Tracks DM, DL, applied MOH for each job.."
+            ],
+            [
+              "Which best matches: Best definition of 'Materials requisition'?",
+              "Correct: Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production. — Correct match for “Best definition of 'Materials requisition'?” is: Correct: Form to request DM from storeroom to production — 'Materials requisition': Form to request DM from storeroom to production.."
+            ],
+            [
+              "Which best matches: Best definition of 'Labor time record'?",
+              "Correct: Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job. — Correct match for “Best definition of 'Labor time record'?” is: Correct: Tracks DL hours by job — 'Labor time record': Tracks DL hours by job.."
+            ],
+            [
+              "Which best matches: Best definition of 'Over/underapplied MOH'?",
+              "Correct: Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH. — Correct match for “Best definition of 'Over/underapplied MOH'?” is: Correct: Difference between applied MOH and actual MOH — 'Over/underapplied MOH': Difference between applied MOH and actual MOH.."
+            ],
+            [
+              "Which best matches: Best definition of 'Cost of goods manufactured (COGM)'?",
+              "Correct: Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG. — Correct match for “Best definition of 'Cost of goods manufactured (COGM)'?” is: Correct: Costs of goods completed and transferred to FG — 'Cost of goods manufactured (COGM)': Costs of goods completed and transferred to FG.."
+            ],
+            [
+              "Which best matches: Order cost types by variability with volume (high→none)",
+              "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost."
+            ],
+            [
+              "Which best matches: ABC workflow",
+              "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+            ],
+            [
+              "Put the sequence in order – derived from: Manufacturing overhead (MOH)",
+              "Indirect manufacturing costs (IM → IL → other)"
+            ],
+            [
+              "Put the sequence in order – derived from: Allocation base",
+              "Direct labor hours/cost → machine hours → etc."
+            ],
+            [
+              "Put the sequence in order – derived from: Job cost record",
+              "Tracks DM → DL → applied MOH for each job"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 6",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Put the sequence in order – derived from: Best definition of 'Manufacturing overhead (MOH)'?",
+              "Correct: Indirect manufacturing costs (IM → IL → other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM → IL → other)."
+            ],
+            [
+              "Put the sequence in order – derived from: Best definition of 'Allocation base'?",
+              "Correct: Direct labor hours/cost → machine hours → etc. — 'Allocation base': Direct labor hours/cost → machine hours → etc.."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 1",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Manufacturing overhead (MOH)",
+          "items": [
+            "Indirect manufacturing costs (IM",
+            "IL",
+            "other)"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 2",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Allocation base",
+          "items": [
+            "Direct labor hours/cost",
+            "machine hours",
+            "etc."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 3",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Job cost record",
+          "items": [
+            "Tracks DM",
+            "DL",
+            "applied MOH for each job"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 4",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Best definition of 'Manufacturing overhead (MOH)'?",
+          "items": [
+            "Correct: Indirect manufacturing costs (IM",
+            "IL",
+            "other) — 'Manufacturing overhead (MOH)': Indirect manufacturing costs (IM",
+            "IL",
+            "other)."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 5",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Best definition of 'Allocation base'?",
+          "items": [
+            "Correct: Direct labor hours/cost",
+            "machine hours",
+            "etc. — 'Allocation base': Direct labor hours/cost",
+            "machine hours",
+            "etc.."
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Chapter 3 Part I - Cost Accumulation and Measurement.pdf",
+    "Chapter 3 Part II- Cost Allocation.pdf",
+    "Ch. 3 Job Costing Activities #1 - #3 - SV - Tagged.pdf",
+    "Ch. 3 Job Costing Activities #4 - #6 - SV - Tagged.pdf"
+  ]
+}

@@ -1,0 +1,1069 @@
+{
+  "title": "Chapter 4 – Activity-Based Costing, Lean & COQ",
+  "notes": [
+    [
+      "Limitations of single/departmental OH rates when products consume activities differently",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "ABC steps: identify activities, cost pools, choose cost drivers, compute activity rates, assign costs",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)",
+      3,
+      "Chapter 4 ABC all activities - Tagged.pdf"
+    ],
+    [
+      "Using ABM for process improvement and decision making",
+      18,
+      "Chapter 4 Part 2.pdf"
+    ],
+    [
+      "Costs of quality framework: prevention, appraisal, internal and external failure—examples and trade‑offs",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Lean operations principles: eliminate waste, JIT, pull systems, continuous improvement",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Activity cost pool",
+      "back": "Grouping of costs by activity with a common driver"
+    },
+    {
+      "front": "Cost driver",
+      "back": "A factor causing the cost of an activity"
+    },
+    {
+      "front": "Four COQ categories",
+      "back": "Prevention, appraisal, internal failure, external failure"
+    },
+    {
+      "front": "ABM purpose",
+      "back": "Use ABC numbers to improve processes and decisions"
+    },
+    {
+      "front": "Lean hallmark",
+      "back": "Eliminate waste; deliver value with minimal resources"
+    },
+    {
+      "front": "Driver levels",
+      "back": "Unit, batch, product, facility"
+    },
+    {
+      "front": "Limitations of single/departmental OH rates when products consume activities differently",
+      "back": "Limitations of single/departmental OH rates when products consume activities differently"
+    },
+    {
+      "front": "ABC steps",
+      "back": "identify activities, cost pools, choose cost drivers, compute activity rates, assign costs"
+    },
+    {
+      "front": "Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)",
+      "back": "Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)"
+    },
+    {
+      "front": "Using ABM for process improvement and decision making",
+      "back": "Using ABM for process improvement and decision making"
+    },
+    {
+      "front": "Costs of quality framework",
+      "back": "prevention, appraisal, internal and external failure—examples and trade‑offs"
+    },
+    {
+      "front": "Lean operations principles",
+      "back": "eliminate waste, JIT, pull systems, continuous improvement"
+    },
+    {
+      "front": "ABC is most beneficial when products:",
+      "back": "Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC."
+    },
+    {
+      "front": "Which is a prevention cost?",
+      "back": "Correct: Employee training — Training prevents defects."
+    },
+    {
+      "front": "Departmental rate limits arise when:",
+      "back": "Correct: Products consume activities differently — Mismatch causes distortion."
+    },
+    {
+      "front": "Lean systems primarily seek to:",
+      "back": "Correct: Eliminate waste — Waste reduction is core."
+    },
+    {
+      "front": "Sequence ABC steps",
+      "back": "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+    },
+    {
+      "front": "Supplier certification",
+      "back": "Prevention"
+    },
+    {
+      "front": "Inspection",
+      "back": "Appraisal"
+    },
+    {
+      "front": "Scrap/rework",
+      "back": "Internal failure"
+    },
+    {
+      "front": "Warranty claims",
+      "back": "External failure"
+    },
+    {
+      "front": "Which best matches: Activity cost pool",
+      "back": "Correct: Grouping of costs by activity with a common driver — Correct match for “Activity cost pool” is: Grouping of costs by activity with a common driver."
+    },
+    {
+      "front": "Which best matches: Cost driver",
+      "back": "Correct: A factor causing the cost of an activity — Correct match for “Cost driver” is: A factor causing the cost of an activity."
+    },
+    {
+      "front": "Which best matches: Four COQ categories",
+      "back": "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Four COQ categories” is: Prevention, appraisal, internal failure, external failure."
+    },
+    {
+      "front": "Which best matches: ABM purpose",
+      "back": "Correct: Use ABC numbers to improve processes and decisions — Correct match for “ABM purpose” is: Use ABC numbers to improve processes and decisions."
+    },
+    {
+      "front": "Which best matches: Lean hallmark",
+      "back": "Correct: Eliminate waste; deliver value with minimal resources — Correct match for “Lean hallmark” is: Eliminate waste; deliver value with minimal resources."
+    },
+    {
+      "front": "Which best matches: Driver levels",
+      "back": "Correct: Unit, batch, product, facility — Correct match for “Driver levels” is: Unit, batch, product, facility."
+    },
+    {
+      "front": "Which best matches: Limitations of single/departmental OH rates when products consume activities differently",
+      "back": "Correct: Limitations of single/departmental OH rates when products consume activities differently — Correct match for “Limitations of single/departmental OH rates when products consume activities differently” is: Limitations of single/departmental OH rates when products consume activities differently."
+    },
+    {
+      "front": "Which best matches: ABC steps",
+      "back": "Correct: identify activities, cost pools, choose cost drivers, compute activity rates, assign costs — Correct match for “ABC steps” is: identify activities, cost pools, choose cost drivers, compute activity rates, assign costs."
+    },
+    {
+      "front": "Which best matches: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)",
+      "back": "Correct: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level) — Correct match for “Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)” is: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)."
+    },
+    {
+      "front": "Which best matches: Using ABM for process improvement and decision making",
+      "back": "Correct: Using ABM for process improvement and decision making — Correct match for “Using ABM for process improvement and decision making” is: Using ABM for process improvement and decision making."
+    },
+    {
+      "front": "Which best matches: Costs of quality framework",
+      "back": "Correct: prevention, appraisal, internal and external failure—examples and trade‑offs — Correct match for “Costs of quality framework” is: prevention, appraisal, internal and external failure—examples and trade‑offs."
+    },
+    {
+      "front": "Which best matches: Lean operations principles",
+      "back": "Correct: eliminate waste, JIT, pull systems, continuous improvement — Correct match for “Lean operations principles” is: eliminate waste, JIT, pull systems, continuous improvement."
+    },
+    {
+      "front": "Which best matches: ABC is most beneficial when products:",
+      "back": "Correct: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC. — Correct match for “ABC is most beneficial when products:” is: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC.."
+    },
+    {
+      "front": "Which best matches: Which is a prevention cost?",
+      "back": "Correct: Correct: Employee training — Training prevents defects. — Correct match for “Which is a prevention cost?” is: Correct: Employee training — Training prevents defects.."
+    },
+    {
+      "front": "Which best matches: Departmental rate limits arise when:",
+      "back": "Correct: Correct: Products consume activities differently — Mismatch causes distortion. — Correct match for “Departmental rate limits arise when:” is: Correct: Products consume activities differently — Mismatch causes distortion.."
+    },
+    {
+      "front": "Which best matches: Lean systems primarily seek to:",
+      "back": "Correct: Correct: Eliminate waste — Waste reduction is core. — Correct match for “Lean systems primarily seek to:” is: Correct: Eliminate waste — Waste reduction is core.."
+    },
+    {
+      "front": "Which best matches: Sequence ABC steps",
+      "back": "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “Sequence ABC steps” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+    },
+    {
+      "front": "Which best matches: Supplier certification",
+      "back": "Correct: Prevention — Correct match for “Supplier certification” is: Prevention."
+    },
+    {
+      "front": "Which best matches: Inspection",
+      "back": "Correct: Appraisal — Correct match for “Inspection” is: Appraisal."
+    },
+    {
+      "front": "Which best matches: Scrap/rework",
+      "back": "Correct: Internal failure — Correct match for “Scrap/rework” is: Internal failure."
+    },
+    {
+      "front": "Which best matches: Warranty claims",
+      "back": "Correct: External failure — Correct match for “Warranty claims” is: External failure."
+    },
+    {
+      "front": "Put the sequence in order – derived from: Four COQ categories",
+      "back": "Prevention → appraisal → internal failure → external failure"
+    },
+    {
+      "front": "Put the sequence in order – derived from: Driver levels",
+      "back": "Unit → batch → product → facility"
+    },
+    {
+      "front": "Put the sequence in order – derived from: ABC steps",
+      "back": "identify activities → cost pools → choose cost drivers → compute activity rates → assign costs"
+    },
+    {
+      "front": "Put the sequence in order – derived from: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)",
+      "back": "Selecting cost drivers (unit‑ → batch‑ → product‑ → facility‑level)"
+    },
+    {
+      "front": "Put the sequence in order – derived from: Costs of quality framework",
+      "back": "prevention → appraisal → internal and external failure—examples and trade‑offs"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which best matches: Activity cost pool",
+      "options": [
+        "Grouping of costs by activity with a common driver",
+        "Correct: External failure — Correct match for “Warranty claims” is: External failure.",
+        "Correct: Correct: Employee training — Training prevents defects. — Correct match for “Which is a prevention cost?” is: Correct: Employee training — Training prevents defects..",
+        "Correct: Internal failure — Correct match for “Scrap/rework” is: Internal failure."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Grouping of costs by activity with a common driver"
+    },
+    {
+      "question": "Which best matches: Cost driver",
+      "options": [
+        "identify activities, cost pools, choose cost drivers, compute activity rates, assign costs",
+        "Correct: Correct: Eliminate waste — Waste reduction is core. — Correct match for “Lean systems primarily seek to:” is: Correct: Eliminate waste — Waste reduction is core..",
+        "A factor causing the cost of an activity",
+        "Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC."
+      ],
+      "answer": 2,
+      "explanation": "Correct: A factor causing the cost of an activity"
+    },
+    {
+      "question": "Which best matches: Four COQ categories",
+      "options": [
+        "Prevention, appraisal, internal failure, external failure",
+        "Correct: Prevention — Correct match for “Supplier certification” is: Prevention.",
+        "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Four COQ categories” is: Prevention, appraisal, internal failure, external failure.",
+        "A factor causing the cost of an activity"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Prevention, appraisal, internal failure, external failure"
+    },
+    {
+      "question": "Which best matches: ABM purpose",
+      "options": [
+        "Correct: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level) — Correct match for “Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)” is: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level).",
+        "Use ABC numbers to improve processes and decisions",
+        "Correct: Limitations of single/departmental OH rates when products consume activities differently — Correct match for “Limitations of single/departmental OH rates when products consume activities differently” is: Limitations of single/departmental OH rates when products consume activities differently.",
+        "Internal failure"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Use ABC numbers to improve processes and decisions"
+    },
+    {
+      "question": "Which best matches: Lean hallmark",
+      "options": [
+        "Unit → batch → product → facility",
+        "Eliminate waste; deliver value with minimal resources",
+        "Correct: Eliminate waste; deliver value with minimal resources — Correct match for “Lean hallmark” is: Eliminate waste; deliver value with minimal resources.",
+        "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Four COQ categories” is: Prevention, appraisal, internal failure, external failure."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Eliminate waste; deliver value with minimal resources"
+    },
+    {
+      "question": "Which best matches: Driver levels",
+      "options": [
+        "eliminate waste, JIT, pull systems, continuous improvement",
+        "Correct: Correct: Employee training — Training prevents defects. — Correct match for “Which is a prevention cost?” is: Correct: Employee training — Training prevents defects..",
+        "Unit, batch, product, facility",
+        "Correct: External failure — Correct match for “Warranty claims” is: External failure."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Unit, batch, product, facility"
+    },
+    {
+      "question": "Which best matches: Limitations of single/departmental OH rates when products consume activities differently",
+      "options": [
+        "Prevention, appraisal, internal failure, external failure",
+        "Limitations of single/departmental OH rates when products consume activities differently",
+        "eliminate waste, JIT, pull systems, continuous improvement",
+        "Correct: Using ABM for process improvement and decision making — Correct match for “Using ABM for process improvement and decision making” is: Using ABM for process improvement and decision making."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Limitations of single/departmental OH rates when products consume activities differently"
+    },
+    {
+      "question": "Which best matches: ABC steps",
+      "options": [
+        "Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)",
+        "External failure",
+        "identify activities, cost pools, choose cost drivers, compute activity rates, assign costs",
+        "Correct: Products consume activities differently — Mismatch causes distortion."
+      ],
+      "answer": 2,
+      "explanation": "Correct: identify activities, cost pools, choose cost drivers, compute activity rates, assign costs"
+    },
+    {
+      "question": "Which best matches: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)",
+      "options": [
+        "Unit, batch, product, facility",
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products",
+        "Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)",
+        "Correct: Limitations of single/departmental OH rates when products consume activities differently — Correct match for “Limitations of single/departmental OH rates when products consume activities differently” is: Limitations of single/departmental OH rates when products consume activities differently."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)"
+    },
+    {
+      "question": "Which best matches: Using ABM for process improvement and decision making",
+      "options": [
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products",
+        "Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC.",
+        "Correct: Limitations of single/departmental OH rates when products consume activities differently — Correct match for “Limitations of single/departmental OH rates when products consume activities differently” is: Limitations of single/departmental OH rates when products consume activities differently.",
+        "Using ABM for process improvement and decision making"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Using ABM for process improvement and decision making"
+    },
+    {
+      "question": "Which best matches: Costs of quality framework",
+      "options": [
+        "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Four COQ categories” is: Prevention, appraisal, internal failure, external failure.",
+        "Using ABM for process improvement and decision making",
+        "Prevention, appraisal, internal failure, external failure",
+        "prevention, appraisal, internal and external failure—examples and trade‑offs"
+      ],
+      "answer": 3,
+      "explanation": "Correct: prevention, appraisal, internal and external failure—examples and trade‑offs"
+    },
+    {
+      "question": "Which best matches: Lean operations principles",
+      "options": [
+        "Correct: Employee training — Training prevents defects.",
+        "Correct: Internal failure — Correct match for “Scrap/rework” is: Internal failure.",
+        "eliminate waste, JIT, pull systems, continuous improvement",
+        "Correct: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level) — Correct match for “Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)” is: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)."
+      ],
+      "answer": 2,
+      "explanation": "Correct: eliminate waste, JIT, pull systems, continuous improvement"
+    },
+    {
+      "question": "Which best matches: ABC is most beneficial when products:",
+      "options": [
+        "Correct: External failure — Correct match for “Warranty claims” is: External failure.",
+        "Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC.",
+        "identify activities, cost pools, choose cost drivers, compute activity rates, assign costs",
+        "Correct: Grouping of costs by activity with a common driver — Correct match for “Activity cost pool” is: Grouping of costs by activity with a common driver."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC."
+    },
+    {
+      "question": "Which best matches: Which is a prevention cost?",
+      "options": [
+        "Correct: Internal failure — Correct match for “Scrap/rework” is: Internal failure.",
+        "Appraisal",
+        "Correct: Correct: Products consume activities differently — Mismatch causes distortion. — Correct match for “Departmental rate limits arise when:” is: Correct: Products consume activities differently — Mismatch causes distortion..",
+        "Correct: Employee training — Training prevents defects."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Employee training — Training prevents defects."
+    },
+    {
+      "question": "Which best matches: Departmental rate limits arise when:",
+      "options": [
+        "Correct: Products consume activities differently — Mismatch causes distortion.",
+        "Correct: Prevention — Correct match for “Supplier certification” is: Prevention.",
+        "eliminate waste, JIT, pull systems, continuous improvement",
+        "Unit, batch, product, facility"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Products consume activities differently — Mismatch causes distortion."
+    },
+    {
+      "question": "Which best matches: Lean systems primarily seek to:",
+      "options": [
+        "Correct: External failure — Correct match for “Warranty claims” is: External failure.",
+        "Correct: Use ABC numbers to improve processes and decisions — Correct match for “ABM purpose” is: Use ABC numbers to improve processes and decisions.",
+        "Appraisal",
+        "Correct: Eliminate waste — Waste reduction is core."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Eliminate waste — Waste reduction is core."
+    },
+    {
+      "question": "Which best matches: Sequence ABC steps",
+      "options": [
+        "Appraisal",
+        "Correct: Unit, batch, product, facility — Correct match for “Driver levels” is: Unit, batch, product, facility.",
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products",
+        "eliminate waste, JIT, pull systems, continuous improvement"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+    },
+    {
+      "question": "Which best matches: Supplier certification",
+      "options": [
+        "Prevention, appraisal, internal failure, external failure",
+        "Correct: Eliminate waste; deliver value with minimal resources — Correct match for “Lean hallmark” is: Eliminate waste; deliver value with minimal resources.",
+        "Prevention",
+        "Correct: External failure — Correct match for “Warranty claims” is: External failure."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Prevention"
+    },
+    {
+      "question": "Which best matches: Inspection",
+      "options": [
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “Sequence ABC steps” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products.",
+        "Appraisal",
+        "Correct: Eliminate waste — Waste reduction is core.",
+        "Correct: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC. — Correct match for “ABC is most beneficial when products:” is: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC.."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Appraisal"
+    },
+    {
+      "question": "Which best matches: Scrap/rework",
+      "options": [
+        "Correct: Grouping of costs by activity with a common driver — Correct match for “Activity cost pool” is: Grouping of costs by activity with a common driver.",
+        "Correct: Unit, batch, product, facility — Correct match for “Driver levels” is: Unit, batch, product, facility.",
+        "Grouping of costs by activity with a common driver",
+        "Internal failure"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Internal failure"
+    },
+    {
+      "question": "Which best matches: Warranty claims",
+      "options": [
+        "Correct: Correct: Products consume activities differently — Mismatch causes distortion. — Correct match for “Departmental rate limits arise when:” is: Correct: Products consume activities differently — Mismatch causes distortion..",
+        "prevention → appraisal → internal and external failure—examples and trade‑offs",
+        "Unit, batch, product, facility",
+        "External failure"
+      ],
+      "answer": 3,
+      "explanation": "Correct: External failure"
+    },
+    {
+      "question": "Which best matches: Which best matches: Activity cost pool",
+      "options": [
+        "Correct: eliminate waste, JIT, pull systems, continuous improvement — Correct match for “Lean operations principles” is: eliminate waste, JIT, pull systems, continuous improvement.",
+        "Correct: Grouping of costs by activity with a common driver — Correct match for “Activity cost pool” is: Grouping of costs by activity with a common driver.",
+        "Correct: Using ABM for process improvement and decision making — Correct match for “Using ABM for process improvement and decision making” is: Using ABM for process improvement and decision making.",
+        "Unit, batch, product, facility"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Grouping of costs by activity with a common driver — Correct match for “Activity cost pool” is: Grouping of costs by activity with a common driver."
+    },
+    {
+      "question": "Which best matches: Which best matches: Cost driver",
+      "options": [
+        "Correct: Eliminate waste; deliver value with minimal resources — Correct match for “Lean hallmark” is: Eliminate waste; deliver value with minimal resources.",
+        "Correct: A factor causing the cost of an activity — Correct match for “Cost driver” is: A factor causing the cost of an activity.",
+        "Appraisal",
+        "A factor causing the cost of an activity"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: A factor causing the cost of an activity — Correct match for “Cost driver” is: A factor causing the cost of an activity."
+    },
+    {
+      "question": "Which best matches: Which best matches: Four COQ categories",
+      "options": [
+        "Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC.",
+        "Correct: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC. — Correct match for “ABC is most beneficial when products:” is: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC..",
+        "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Four COQ categories” is: Prevention, appraisal, internal failure, external failure.",
+        "Using ABM for process improvement and decision making"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Four COQ categories” is: Prevention, appraisal, internal failure, external failure."
+    },
+    {
+      "question": "Which best matches: Which best matches: ABM purpose",
+      "options": [
+        "Correct: Use ABC numbers to improve processes and decisions — Correct match for “ABM purpose” is: Use ABC numbers to improve processes and decisions.",
+        "Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)",
+        "Correct: eliminate waste, JIT, pull systems, continuous improvement — Correct match for “Lean operations principles” is: eliminate waste, JIT, pull systems, continuous improvement.",
+        "Correct: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC. — Correct match for “ABC is most beneficial when products:” is: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC.."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Use ABC numbers to improve processes and decisions — Correct match for “ABM purpose” is: Use ABC numbers to improve processes and decisions."
+    },
+    {
+      "question": "Which best matches: Which best matches: Lean hallmark",
+      "options": [
+        "Correct: Unit, batch, product, facility — Correct match for “Driver levels” is: Unit, batch, product, facility.",
+        "Correct: Eliminate waste; deliver value with minimal resources — Correct match for “Lean hallmark” is: Eliminate waste; deliver value with minimal resources.",
+        "identify activities, cost pools, choose cost drivers, compute activity rates, assign costs",
+        "Correct: eliminate waste, JIT, pull systems, continuous improvement — Correct match for “Lean operations principles” is: eliminate waste, JIT, pull systems, continuous improvement."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Eliminate waste; deliver value with minimal resources — Correct match for “Lean hallmark” is: Eliminate waste; deliver value with minimal resources."
+    },
+    {
+      "question": "Which best matches: Which best matches: Driver levels",
+      "options": [
+        "Correct: Unit, batch, product, facility — Correct match for “Driver levels” is: Unit, batch, product, facility.",
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “Sequence ABC steps” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products.",
+        "identify activities, cost pools, choose cost drivers, compute activity rates, assign costs",
+        "Correct: Grouping of costs by activity with a common driver — Correct match for “Activity cost pool” is: Grouping of costs by activity with a common driver."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Unit, batch, product, facility — Correct match for “Driver levels” is: Unit, batch, product, facility."
+    },
+    {
+      "question": "Which best matches: Which best matches: Limitations of single/departmental OH rates when products consume activities differently",
+      "options": [
+        "Correct: Limitations of single/departmental OH rates when products consume activities differently — Correct match for “Limitations of single/departmental OH rates when products consume activities differently” is: Limitations of single/departmental OH rates when products consume activities differently.",
+        "Correct: Grouping of costs by activity with a common driver — Correct match for “Activity cost pool” is: Grouping of costs by activity with a common driver.",
+        "prevention, appraisal, internal and external failure—examples and trade‑offs",
+        "Correct: External failure — Correct match for “Warranty claims” is: External failure."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Limitations of single/departmental OH rates when products consume activities differently — Correct match for “Limitations of single/departmental OH rates when products consume activities differently” is: Limitations of single/departmental OH rates when products consume activities differently."
+    },
+    {
+      "question": "Which best matches: Which best matches: ABC steps",
+      "options": [
+        "Correct: Employee training — Training prevents defects.",
+        "Correct: Correct: Employee training — Training prevents defects. — Correct match for “Which is a prevention cost?” is: Correct: Employee training — Training prevents defects..",
+        "Correct: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level) — Correct match for “Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)” is: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level).",
+        "Correct: identify activities, cost pools, choose cost drivers, compute activity rates, assign costs — Correct match for “ABC steps” is: identify activities, cost pools, choose cost drivers, compute activity rates, assign costs."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: identify activities, cost pools, choose cost drivers, compute activity rates, assign costs — Correct match for “ABC steps” is: identify activities, cost pools, choose cost drivers, compute activity rates, assign costs."
+    },
+    {
+      "question": "Which best matches: Which best matches: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)",
+      "options": [
+        "Using ABM for process improvement and decision making",
+        "Correct: Internal failure — Correct match for “Scrap/rework” is: Internal failure.",
+        "Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC.",
+        "Correct: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level) — Correct match for “Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)” is: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level) — Correct match for “Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)” is: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)."
+    },
+    {
+      "question": "Which best matches: Which best matches: Using ABM for process improvement and decision making",
+      "options": [
+        "Correct: Correct: Employee training — Training prevents defects. — Correct match for “Which is a prevention cost?” is: Correct: Employee training — Training prevents defects..",
+        "identify activities → cost pools → choose cost drivers → compute activity rates → assign costs",
+        "Correct: Using ABM for process improvement and decision making — Correct match for “Using ABM for process improvement and decision making” is: Using ABM for process improvement and decision making.",
+        "Prevention"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Using ABM for process improvement and decision making — Correct match for “Using ABM for process improvement and decision making” is: Using ABM for process improvement and decision making."
+    },
+    {
+      "question": "Which best matches: Which best matches: Costs of quality framework",
+      "options": [
+        "Correct: prevention, appraisal, internal and external failure—examples and trade‑offs — Correct match for “Costs of quality framework” is: prevention, appraisal, internal and external failure—examples and trade‑offs.",
+        "Correct: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC. — Correct match for “ABC is most beneficial when products:” is: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC..",
+        "prevention, appraisal, internal and external failure—examples and trade‑offs",
+        "Use ABC numbers to improve processes and decisions"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: prevention, appraisal, internal and external failure—examples and trade‑offs — Correct match for “Costs of quality framework” is: prevention, appraisal, internal and external failure—examples and trade‑offs."
+    },
+    {
+      "question": "Which best matches: Which best matches: Lean operations principles",
+      "options": [
+        "A factor causing the cost of an activity",
+        "Internal failure",
+        "eliminate waste, JIT, pull systems, continuous improvement",
+        "Correct: eliminate waste, JIT, pull systems, continuous improvement — Correct match for “Lean operations principles” is: eliminate waste, JIT, pull systems, continuous improvement."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: eliminate waste, JIT, pull systems, continuous improvement — Correct match for “Lean operations principles” is: eliminate waste, JIT, pull systems, continuous improvement."
+    },
+    {
+      "question": "Which best matches: Which best matches: ABC is most beneficial when products:",
+      "options": [
+        "Correct: Appraisal — Correct match for “Inspection” is: Appraisal.",
+        "Correct: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC. — Correct match for “ABC is most beneficial when products:” is: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC..",
+        "Correct: Unit, batch, product, facility — Correct match for “Driver levels” is: Unit, batch, product, facility.",
+        "Correct: Correct: Eliminate waste — Waste reduction is core. — Correct match for “Lean systems primarily seek to:” is: Correct: Eliminate waste — Waste reduction is core.."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC. — Correct match for “ABC is most beneficial when products:” is: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Which is a prevention cost?",
+      "options": [
+        "Correct: Eliminate waste — Waste reduction is core.",
+        "Correct: Correct: Employee training — Training prevents defects. — Correct match for “Which is a prevention cost?” is: Correct: Employee training — Training prevents defects..",
+        "prevention → appraisal → internal and external failure—examples and trade‑offs",
+        "identify activities → cost pools → choose cost drivers → compute activity rates → assign costs"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Correct: Employee training — Training prevents defects. — Correct match for “Which is a prevention cost?” is: Correct: Employee training — Training prevents defects.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Departmental rate limits arise when:",
+      "options": [
+        "Correct: Correct: Products consume activities differently — Mismatch causes distortion. — Correct match for “Departmental rate limits arise when:” is: Correct: Products consume activities differently — Mismatch causes distortion..",
+        "Correct: eliminate waste, JIT, pull systems, continuous improvement — Correct match for “Lean operations principles” is: eliminate waste, JIT, pull systems, continuous improvement.",
+        "identify activities, cost pools, choose cost drivers, compute activity rates, assign costs",
+        "Correct: Correct: Eliminate waste — Waste reduction is core. — Correct match for “Lean systems primarily seek to:” is: Correct: Eliminate waste — Waste reduction is core.."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Correct: Products consume activities differently — Mismatch causes distortion. — Correct match for “Departmental rate limits arise when:” is: Correct: Products consume activities differently — Mismatch causes distortion.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Lean systems primarily seek to:",
+      "options": [
+        "identify activities → cost pools → choose cost drivers → compute activity rates → assign costs",
+        "Correct: Correct: Eliminate waste — Waste reduction is core. — Correct match for “Lean systems primarily seek to:” is: Correct: Eliminate waste — Waste reduction is core..",
+        "Correct: Using ABM for process improvement and decision making — Correct match for “Using ABM for process improvement and decision making” is: Using ABM for process improvement and decision making.",
+        "External failure"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Correct: Eliminate waste — Waste reduction is core. — Correct match for “Lean systems primarily seek to:” is: Correct: Eliminate waste — Waste reduction is core.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Sequence ABC steps",
+      "options": [
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “Sequence ABC steps” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products.",
+        "Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC.",
+        "Correct: Using ABM for process improvement and decision making — Correct match for “Using ABM for process improvement and decision making” is: Using ABM for process improvement and decision making.",
+        "Internal failure"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “Sequence ABC steps” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+    },
+    {
+      "question": "Which best matches: Which best matches: Supplier certification",
+      "options": [
+        "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Four COQ categories” is: Prevention, appraisal, internal failure, external failure.",
+        "Correct: Prevention — Correct match for “Supplier certification” is: Prevention.",
+        "Eliminate waste; deliver value with minimal resources",
+        "Correct: Correct: Eliminate waste — Waste reduction is core. — Correct match for “Lean systems primarily seek to:” is: Correct: Eliminate waste — Waste reduction is core.."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Prevention — Correct match for “Supplier certification” is: Prevention."
+    },
+    {
+      "question": "Which best matches: Which best matches: Inspection",
+      "options": [
+        "Correct: Appraisal — Correct match for “Inspection” is: Appraisal.",
+        "Correct: External failure — Correct match for “Warranty claims” is: External failure.",
+        "Appraisal",
+        "Prevention"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Appraisal — Correct match for “Inspection” is: Appraisal."
+    },
+    {
+      "question": "Which best matches: Which best matches: Scrap/rework",
+      "options": [
+        "Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC.",
+        "Correct: Correct: Eliminate waste — Waste reduction is core. — Correct match for “Lean systems primarily seek to:” is: Correct: Eliminate waste — Waste reduction is core..",
+        "identify activities, cost pools, choose cost drivers, compute activity rates, assign costs",
+        "Correct: Internal failure — Correct match for “Scrap/rework” is: Internal failure."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Internal failure — Correct match for “Scrap/rework” is: Internal failure."
+    },
+    {
+      "question": "Which best matches: Which best matches: Warranty claims",
+      "options": [
+        "Correct: Use ABC numbers to improve processes and decisions — Correct match for “ABM purpose” is: Use ABC numbers to improve processes and decisions.",
+        "Unit → batch → product → facility",
+        "Correct: External failure — Correct match for “Warranty claims” is: External failure.",
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: External failure — Correct match for “Warranty claims” is: External failure."
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Four COQ categories",
+      "options": [
+        "Correct: Appraisal — Correct match for “Inspection” is: Appraisal.",
+        "Correct: Unit, batch, product, facility — Correct match for “Driver levels” is: Unit, batch, product, facility.",
+        "Prevention → appraisal → internal failure → external failure",
+        "Correct: Use ABC numbers to improve processes and decisions — Correct match for “ABM purpose” is: Use ABC numbers to improve processes and decisions."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Prevention → appraisal → internal failure → external failure"
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Driver levels",
+      "options": [
+        "Correct: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC. — Correct match for “ABC is most beneficial when products:” is: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC..",
+        "Unit → batch → product → facility",
+        "Correct: Eliminate waste — Waste reduction is core.",
+        "Unit, batch, product, facility"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Unit → batch → product → facility"
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: ABC steps",
+      "options": [
+        "Grouping of costs by activity with a common driver",
+        "identify activities → cost pools → choose cost drivers → compute activity rates → assign costs",
+        "Correct: Appraisal — Correct match for “Inspection” is: Appraisal.",
+        "Correct: Prevention — Correct match for “Supplier certification” is: Prevention."
+      ],
+      "answer": 1,
+      "explanation": "Correct: identify activities → cost pools → choose cost drivers → compute activity rates → assign costs"
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)",
+      "options": [
+        "Selecting cost drivers (unit‑ → batch‑ → product‑ → facility‑level)",
+        "Correct: Eliminate waste; deliver value with minimal resources — Correct match for “Lean hallmark” is: Eliminate waste; deliver value with minimal resources.",
+        "Correct: identify activities, cost pools, choose cost drivers, compute activity rates, assign costs — Correct match for “ABC steps” is: identify activities, cost pools, choose cost drivers, compute activity rates, assign costs.",
+        "External failure"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Selecting cost drivers (unit‑ → batch‑ → product‑ → facility‑level)"
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Costs of quality framework",
+      "options": [
+        "Correct: eliminate waste, JIT, pull systems, continuous improvement — Correct match for “Lean operations principles” is: eliminate waste, JIT, pull systems, continuous improvement.",
+        "Limitations of single/departmental OH rates when products consume activities differently",
+        "prevention → appraisal → internal and external failure—examples and trade‑offs",
+        "Unit → batch → product → facility"
+      ],
+      "answer": 2,
+      "explanation": "Correct: prevention → appraisal → internal and external failure—examples and trade‑offs"
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "title": "Matching Set 1",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Activity cost pool",
+              "Grouping of costs by activity with a common driver"
+            ],
+            [
+              "Cost driver",
+              "A factor causing the cost of an activity"
+            ],
+            [
+              "Four COQ categories",
+              "Prevention, appraisal, internal failure, external failure"
+            ],
+            [
+              "ABM purpose",
+              "Use ABC numbers to improve processes and decisions"
+            ],
+            [
+              "Lean hallmark",
+              "Eliminate waste; deliver value with minimal resources"
+            ],
+            [
+              "Driver levels",
+              "Unit, batch, product, facility"
+            ],
+            [
+              "Limitations of single/departmental OH rates when products consume activities differently",
+              "Limitations of single/departmental OH rates when products consume activities differently"
+            ],
+            [
+              "ABC steps",
+              "identify activities, cost pools, choose cost drivers, compute activity rates, assign costs"
+            ],
+            [
+              "Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)",
+              "Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)"
+            ],
+            [
+              "Using ABM for process improvement and decision making",
+              "Using ABM for process improvement and decision making"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 2",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Costs of quality framework",
+              "prevention, appraisal, internal and external failure—examples and trade‑offs"
+            ],
+            [
+              "Lean operations principles",
+              "eliminate waste, JIT, pull systems, continuous improvement"
+            ],
+            [
+              "ABC is most beneficial when products:",
+              "Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC."
+            ],
+            [
+              "Which is a prevention cost?",
+              "Correct: Employee training — Training prevents defects."
+            ],
+            [
+              "Departmental rate limits arise when:",
+              "Correct: Products consume activities differently — Mismatch causes distortion."
+            ],
+            [
+              "Lean systems primarily seek to:",
+              "Correct: Eliminate waste — Waste reduction is core."
+            ],
+            [
+              "Sequence ABC steps",
+              "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+            ],
+            [
+              "Supplier certification",
+              "Prevention"
+            ],
+            [
+              "Inspection",
+              "Appraisal"
+            ],
+            [
+              "Scrap/rework",
+              "Internal failure"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 3",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Warranty claims",
+              "External failure"
+            ],
+            [
+              "Which best matches: Activity cost pool",
+              "Correct: Grouping of costs by activity with a common driver — Correct match for “Activity cost pool” is: Grouping of costs by activity with a common driver."
+            ],
+            [
+              "Which best matches: Cost driver",
+              "Correct: A factor causing the cost of an activity — Correct match for “Cost driver” is: A factor causing the cost of an activity."
+            ],
+            [
+              "Which best matches: Four COQ categories",
+              "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Four COQ categories” is: Prevention, appraisal, internal failure, external failure."
+            ],
+            [
+              "Which best matches: ABM purpose",
+              "Correct: Use ABC numbers to improve processes and decisions — Correct match for “ABM purpose” is: Use ABC numbers to improve processes and decisions."
+            ],
+            [
+              "Which best matches: Lean hallmark",
+              "Correct: Eliminate waste; deliver value with minimal resources — Correct match for “Lean hallmark” is: Eliminate waste; deliver value with minimal resources."
+            ],
+            [
+              "Which best matches: Driver levels",
+              "Correct: Unit, batch, product, facility — Correct match for “Driver levels” is: Unit, batch, product, facility."
+            ],
+            [
+              "Which best matches: Limitations of single/departmental OH rates when products consume activities differently",
+              "Correct: Limitations of single/departmental OH rates when products consume activities differently — Correct match for “Limitations of single/departmental OH rates when products consume activities differently” is: Limitations of single/departmental OH rates when products consume activities differently."
+            ],
+            [
+              "Which best matches: ABC steps",
+              "Correct: identify activities, cost pools, choose cost drivers, compute activity rates, assign costs — Correct match for “ABC steps” is: identify activities, cost pools, choose cost drivers, compute activity rates, assign costs."
+            ],
+            [
+              "Which best matches: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)",
+              "Correct: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level) — Correct match for “Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)” is: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 4",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Which best matches: Using ABM for process improvement and decision making",
+              "Correct: Using ABM for process improvement and decision making — Correct match for “Using ABM for process improvement and decision making” is: Using ABM for process improvement and decision making."
+            ],
+            [
+              "Which best matches: Costs of quality framework",
+              "Correct: prevention, appraisal, internal and external failure—examples and trade‑offs — Correct match for “Costs of quality framework” is: prevention, appraisal, internal and external failure—examples and trade‑offs."
+            ],
+            [
+              "Which best matches: Lean operations principles",
+              "Correct: eliminate waste, JIT, pull systems, continuous improvement — Correct match for “Lean operations principles” is: eliminate waste, JIT, pull systems, continuous improvement."
+            ],
+            [
+              "Which best matches: ABC is most beneficial when products:",
+              "Correct: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC. — Correct match for “ABC is most beneficial when products:” is: Correct: Differ in complexity/volume — Heterogeneous resource use benefits from ABC.."
+            ],
+            [
+              "Which best matches: Which is a prevention cost?",
+              "Correct: Correct: Employee training — Training prevents defects. — Correct match for “Which is a prevention cost?” is: Correct: Employee training — Training prevents defects.."
+            ],
+            [
+              "Which best matches: Departmental rate limits arise when:",
+              "Correct: Correct: Products consume activities differently — Mismatch causes distortion. — Correct match for “Departmental rate limits arise when:” is: Correct: Products consume activities differently — Mismatch causes distortion.."
+            ],
+            [
+              "Which best matches: Lean systems primarily seek to:",
+              "Correct: Correct: Eliminate waste — Waste reduction is core. — Correct match for “Lean systems primarily seek to:” is: Correct: Eliminate waste — Waste reduction is core.."
+            ],
+            [
+              "Which best matches: Sequence ABC steps",
+              "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “Sequence ABC steps” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+            ],
+            [
+              "Which best matches: Supplier certification",
+              "Correct: Prevention — Correct match for “Supplier certification” is: Prevention."
+            ],
+            [
+              "Which best matches: Inspection",
+              "Correct: Appraisal — Correct match for “Inspection” is: Appraisal."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 5",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Which best matches: Scrap/rework",
+              "Correct: Internal failure — Correct match for “Scrap/rework” is: Internal failure."
+            ],
+            [
+              "Which best matches: Warranty claims",
+              "Correct: External failure — Correct match for “Warranty claims” is: External failure."
+            ],
+            [
+              "Put the sequence in order – derived from: Four COQ categories",
+              "Prevention → appraisal → internal failure → external failure"
+            ],
+            [
+              "Put the sequence in order – derived from: Driver levels",
+              "Unit → batch → product → facility"
+            ],
+            [
+              "Put the sequence in order – derived from: ABC steps",
+              "identify activities → cost pools → choose cost drivers → compute activity rates → assign costs"
+            ],
+            [
+              "Put the sequence in order – derived from: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)",
+              "Selecting cost drivers (unit‑ → batch‑ → product‑ → facility‑level)"
+            ],
+            [
+              "Put the sequence in order – derived from: Costs of quality framework",
+              "prevention → appraisal → internal and external failure—examples and trade‑offs"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 1",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Four COQ categories",
+          "items": [
+            "Prevention",
+            "appraisal",
+            "internal failure",
+            "external failure"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 2",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Driver levels",
+          "items": [
+            "Unit",
+            "batch",
+            "product",
+            "facility"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 3",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: ABC steps",
+          "items": [
+            "identify activities",
+            "cost pools",
+            "choose cost drivers",
+            "compute activity rates",
+            "assign costs"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 4",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Selecting cost drivers (unit‑, batch‑, product‑, facility‑level)",
+          "items": [
+            "Selecting cost drivers (unit‑",
+            "batch‑",
+            "product‑",
+            "facility‑level)"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 5",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Costs of quality framework",
+          "items": [
+            "prevention",
+            "appraisal",
+            "internal and external failure—examples and trade‑offs"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Chapter 4 Part 1.pdf",
+    "Chapter 4 Part 2.pdf",
+    "Chapter 4 ABC all activities - Tagged.pdf"
+  ]
+}

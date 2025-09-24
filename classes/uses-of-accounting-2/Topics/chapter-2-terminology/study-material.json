@@ -1,0 +1,1369 @@
+{
+  "title": "Chapter 2 Terminology – Building Blocks",
+  "notes": [
+    [
+      "AC241 — Uses of Accounting Information II",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Chapter 2 — Building Blocks of Managerial Accounting",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "the decision — making process.",
+      2,
+      "Chapter 2 Key Terms.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Value chain",
+      "back": "Research & development, design, production/purchases, marketing, distribution, customer service"
+    },
+    {
+      "front": "Service company",
+      "back": "Sells intangible services; no inventory"
+    },
+    {
+      "front": "Merchandising company",
+      "back": "Resells finished products; one inventory account (Merchandise Inventory)"
+    },
+    {
+      "front": "Manufacturing company",
+      "back": "Converts raw materials to finished goods; inventories: RM, WIP, FG"
+    },
+    {
+      "front": "Direct cost",
+      "back": "Can be traced to a cost object in a cost-effective way"
+    },
+    {
+      "front": "Indirect cost",
+      "back": "Cannot be traced to a cost object cost-effectively; allocated"
+    },
+    {
+      "front": "Product (inventoriable) cost",
+      "back": "Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold"
+    },
+    {
+      "front": "Period cost",
+      "back": "Nonmanufacturing costs expensed in the period (e.g., SG&A)"
+    },
+    {
+      "front": "Relevant cost",
+      "back": "Differs between alternatives and occurs in the future"
+    },
+    {
+      "front": "Irrelevant cost",
+      "back": "Does not differ between alternatives or is sunk"
+    },
+    {
+      "front": "Fixed cost",
+      "back": "Total constant; per‑unit varies inversely with volume"
+    },
+    {
+      "front": "Variable cost",
+      "back": "Total varies with volume; per‑unit constant"
+    },
+    {
+      "front": "Mixed cost",
+      "back": "Has both fixed and variable components"
+    },
+    {
+      "front": "Prime cost",
+      "back": "Direct materials + direct labor"
+    },
+    {
+      "front": "Conversion cost",
+      "back": "Direct labor + manufacturing overhead"
+    },
+    {
+      "front": "Best definition of 'Value chain'?",
+      "back": "Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service."
+    },
+    {
+      "front": "Best definition of 'Service company'?",
+      "back": "Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory."
+    },
+    {
+      "front": "Best definition of 'Merchandising company'?",
+      "back": "Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory)."
+    },
+    {
+      "front": "Best definition of 'Manufacturing company'?",
+      "back": "Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG."
+    },
+    {
+      "front": "Best definition of 'Direct cost'?",
+      "back": "Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way."
+    },
+    {
+      "front": "Best definition of 'Indirect cost'?",
+      "back": "Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated."
+    },
+    {
+      "front": "Best definition of 'Product (inventoriable) cost'?",
+      "back": "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold."
+    },
+    {
+      "front": "Best definition of 'Period cost'?",
+      "back": "Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A)."
+    },
+    {
+      "front": "Best definition of 'Relevant cost'?",
+      "back": "Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future."
+    },
+    {
+      "front": "Best definition of 'Irrelevant cost'?",
+      "back": "Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk."
+    },
+    {
+      "front": "Order cost types by variability with volume (high→none)",
+      "back": "Variable cost → Mixed cost → Fixed cost"
+    },
+    {
+      "front": "ABC workflow",
+      "back": "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+    },
+    {
+      "front": "AC241",
+      "back": "Uses of Accounting Information II"
+    },
+    {
+      "front": "Chapter 2",
+      "back": "Building Blocks of Managerial Accounting"
+    },
+    {
+      "front": "the decision",
+      "back": "making process."
+    },
+    {
+      "front": "Which best matches: Value chain",
+      "back": "Correct: Research & development, design, production/purchases, marketing, distribution, customer service — Correct match for “Value chain” is: Research & development, design, production/purchases, marketing, distribution, customer service."
+    },
+    {
+      "front": "Which best matches: Service company",
+      "back": "Correct: Sells intangible services; no inventory — Correct match for “Service company” is: Sells intangible services; no inventory."
+    },
+    {
+      "front": "Which best matches: Merchandising company",
+      "back": "Correct: Resells finished products; one inventory account (Merchandise Inventory) — Correct match for “Merchandising company” is: Resells finished products; one inventory account (Merchandise Inventory)."
+    },
+    {
+      "front": "Which best matches: Manufacturing company",
+      "back": "Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — Correct match for “Manufacturing company” is: Converts raw materials to finished goods; inventories: RM, WIP, FG."
+    },
+    {
+      "front": "Which best matches: Direct cost",
+      "back": "Correct: Can be traced to a cost object in a cost-effective way — Correct match for “Direct cost” is: Can be traced to a cost object in a cost-effective way."
+    },
+    {
+      "front": "Which best matches: Indirect cost",
+      "back": "Correct: Cannot be traced to a cost object cost-effectively; allocated — Correct match for “Indirect cost” is: Cannot be traced to a cost object cost-effectively; allocated."
+    },
+    {
+      "front": "Which best matches: Product (inventoriable) cost",
+      "back": "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — Correct match for “Product (inventoriable) cost” is: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold."
+    },
+    {
+      "front": "Which best matches: Period cost",
+      "back": "Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — Correct match for “Period cost” is: Nonmanufacturing costs expensed in the period (e.g., SG&A)."
+    },
+    {
+      "front": "Which best matches: Relevant cost",
+      "back": "Correct: Differs between alternatives and occurs in the future — Correct match for “Relevant cost” is: Differs between alternatives and occurs in the future."
+    },
+    {
+      "front": "Which best matches: Irrelevant cost",
+      "back": "Correct: Does not differ between alternatives or is sunk — Correct match for “Irrelevant cost” is: Does not differ between alternatives or is sunk."
+    },
+    {
+      "front": "Which best matches: Fixed cost",
+      "back": "Correct: Total constant; per‑unit varies inversely with volume — Correct match for “Fixed cost” is: Total constant; per‑unit varies inversely with volume."
+    },
+    {
+      "front": "Which best matches: Variable cost",
+      "back": "Correct: Total varies with volume; per‑unit constant — Correct match for “Variable cost” is: Total varies with volume; per‑unit constant."
+    },
+    {
+      "front": "Which best matches: Mixed cost",
+      "back": "Correct: Has both fixed and variable components — Correct match for “Mixed cost” is: Has both fixed and variable components."
+    },
+    {
+      "front": "Which best matches: Prime cost",
+      "back": "Correct: Direct materials + direct labor — Correct match for “Prime cost” is: Direct materials + direct labor."
+    },
+    {
+      "front": "Which best matches: Conversion cost",
+      "back": "Correct: Direct labor + manufacturing overhead — Correct match for “Conversion cost” is: Direct labor + manufacturing overhead."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Value chain'?",
+      "back": "Correct: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service. — Correct match for “Best definition of 'Value chain'?” is: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Service company'?",
+      "back": "Correct: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory. — Correct match for “Best definition of 'Service company'?” is: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Merchandising company'?",
+      "back": "Correct: Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory). — Correct match for “Best definition of 'Merchandising company'?” is: Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory).."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Manufacturing company'?",
+      "back": "Correct: Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG. — Correct match for “Best definition of 'Manufacturing company'?” is: Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Direct cost'?",
+      "back": "Correct: Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way. — Correct match for “Best definition of 'Direct cost'?” is: Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Indirect cost'?",
+      "back": "Correct: Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated. — Correct match for “Best definition of 'Indirect cost'?” is: Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Product (inventoriable) cost'?",
+      "back": "Correct: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold. — Correct match for “Best definition of 'Product (inventoriable) cost'?” is: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Period cost'?",
+      "back": "Correct: Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A). — Correct match for “Best definition of 'Period cost'?” is: Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A).."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Relevant cost'?",
+      "back": "Correct: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future. — Correct match for “Best definition of 'Relevant cost'?” is: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Irrelevant cost'?",
+      "back": "Correct: Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk. — Correct match for “Best definition of 'Irrelevant cost'?” is: Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk.."
+    },
+    {
+      "front": "Which best matches: Order cost types by variability with volume (high→none)",
+      "back": "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost."
+    },
+    {
+      "front": "Which best matches: ABC workflow",
+      "back": "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+    },
+    {
+      "front": "Put the sequence in order – derived from: Value chain",
+      "back": "Research & development → design → production/purchases → marketing → distribution → customer service"
+    },
+    {
+      "front": "Put the sequence in order – derived from: Manufacturing company",
+      "back": "Converts raw materials to finished goods; inventories: RM → WIP → FG"
+    },
+    {
+      "front": "Put the sequence in order – derived from: Product (inventoriable) cost",
+      "back": "Manufacturing costs (DM → DL → MOH) capitalized as inventory until sold"
+    },
+    {
+      "front": "Put the sequence in order – derived from: Best definition of 'Value chain'?",
+      "back": "Correct: Research & development → design → production/purchases → marketing → distribution → customer service — 'Value chain': Research & development → design → production/purchases → marketing → distribution → customer service."
+    },
+    {
+      "front": "Put the sequence in order – derived from: Best definition of 'Manufacturing company'?",
+      "back": "Correct: Converts raw materials to finished goods; inventories: RM → WIP → FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM → WIP → FG."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which best matches: Value chain",
+      "options": [
+        "Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A).",
+        "Research & development, design, production/purchases, marketing, distribution, customer service",
+        "Correct: Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG. — Correct match for “Best definition of 'Manufacturing company'?” is: Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG..",
+        "Correct: Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A). — Correct match for “Best definition of 'Period cost'?” is: Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A).."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Research & development, design, production/purchases, marketing, distribution, customer service"
+    },
+    {
+      "question": "Which best matches: Service company",
+      "options": [
+        "Correct: Research & development → design → production/purchases → marketing → distribution → customer service — 'Value chain': Research & development → design → production/purchases → marketing → distribution → customer service.",
+        "Correct: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future. — Correct match for “Best definition of 'Relevant cost'?” is: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future..",
+        "Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory).",
+        "Sells intangible services; no inventory"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Sells intangible services; no inventory"
+    },
+    {
+      "question": "Which best matches: Merchandising company",
+      "options": [
+        "Correct: Research & development → design → production/purchases → marketing → distribution → customer service — 'Value chain': Research & development → design → production/purchases → marketing → distribution → customer service.",
+        "Correct: Differs between alternatives and occurs in the future — Correct match for “Relevant cost” is: Differs between alternatives and occurs in the future.",
+        "Direct materials + direct labor",
+        "Resells finished products; one inventory account (Merchandise Inventory)"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Resells finished products; one inventory account (Merchandise Inventory)"
+    },
+    {
+      "question": "Which best matches: Manufacturing company",
+      "options": [
+        "Manufacturing costs (DM → DL → MOH) capitalized as inventory until sold",
+        "Differs between alternatives and occurs in the future",
+        "Converts raw materials to finished goods; inventories: RM, WIP, FG",
+        "Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG"
+    },
+    {
+      "question": "Which best matches: Direct cost",
+      "options": [
+        "Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service.",
+        "Can be traced to a cost object in a cost-effective way",
+        "Correct: Direct labor + manufacturing overhead — Correct match for “Conversion cost” is: Direct labor + manufacturing overhead.",
+        "Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Can be traced to a cost object in a cost-effective way"
+    },
+    {
+      "question": "Which best matches: Indirect cost",
+      "options": [
+        "Correct: Research & development → design → production/purchases → marketing → distribution → customer service — 'Value chain': Research & development → design → production/purchases → marketing → distribution → customer service.",
+        "Cannot be traced to a cost object cost-effectively; allocated",
+        "Correct: Resells finished products; one inventory account (Merchandise Inventory) — Correct match for “Merchandising company” is: Resells finished products; one inventory account (Merchandise Inventory).",
+        "Correct: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory. — Correct match for “Best definition of 'Service company'?” is: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory.."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Cannot be traced to a cost object cost-effectively; allocated"
+    },
+    {
+      "question": "Which best matches: Product (inventoriable) cost",
+      "options": [
+        "Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG.",
+        "Correct: Does not differ between alternatives or is sunk — Correct match for “Irrelevant cost” is: Does not differ between alternatives or is sunk.",
+        "Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold",
+        "Correct: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service. — Correct match for “Best definition of 'Value chain'?” is: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service.."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold"
+    },
+    {
+      "question": "Which best matches: Period cost",
+      "options": [
+        "Correct: Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory). — Correct match for “Best definition of 'Merchandising company'?” is: Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory)..",
+        "Correct: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory. — Correct match for “Best definition of 'Service company'?” is: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory..",
+        "Nonmanufacturing costs expensed in the period (e.g., SG&A)",
+        "Correct: Direct materials + direct labor — Correct match for “Prime cost” is: Direct materials + direct labor."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A)"
+    },
+    {
+      "question": "Which best matches: Relevant cost",
+      "options": [
+        "Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG.",
+        "Correct: Sells intangible services; no inventory — Correct match for “Service company” is: Sells intangible services; no inventory.",
+        "Differs between alternatives and occurs in the future",
+        "Building Blocks of Managerial Accounting"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Differs between alternatives and occurs in the future"
+    },
+    {
+      "question": "Which best matches: Irrelevant cost",
+      "options": [
+        "Does not differ between alternatives or is sunk",
+        "Can be traced to a cost object in a cost-effective way",
+        "Resells finished products; one inventory account (Merchandise Inventory)",
+        "Research & development → design → production/purchases → marketing → distribution → customer service"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Does not differ between alternatives or is sunk"
+    },
+    {
+      "question": "Which best matches: Fixed cost",
+      "options": [
+        "Cannot be traced to a cost object cost-effectively; allocated",
+        "Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — Correct match for “Manufacturing company” is: Converts raw materials to finished goods; inventories: RM, WIP, FG.",
+        "Total constant; per‑unit varies inversely with volume",
+        "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — Correct match for “Product (inventoriable) cost” is: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Total constant; per‑unit varies inversely with volume"
+    },
+    {
+      "question": "Which best matches: Variable cost",
+      "options": [
+        "Total constant; per‑unit varies inversely with volume",
+        "Correct: Direct materials + direct labor — Correct match for “Prime cost” is: Direct materials + direct labor.",
+        "Total varies with volume; per‑unit constant",
+        "Building Blocks of Managerial Accounting"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Total varies with volume; per‑unit constant"
+    },
+    {
+      "question": "Which best matches: Mixed cost",
+      "options": [
+        "Has both fixed and variable components",
+        "Cannot be traced to a cost object cost-effectively; allocated",
+        "Manufacturing costs (DM → DL → MOH) capitalized as inventory until sold",
+        "Correct: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory. — Correct match for “Best definition of 'Service company'?” is: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory.."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Has both fixed and variable components"
+    },
+    {
+      "question": "Which best matches: Prime cost",
+      "options": [
+        "Correct: Can be traced to a cost object in a cost-effective way — Correct match for “Direct cost” is: Can be traced to a cost object in a cost-effective way.",
+        "Direct materials + direct labor",
+        "Correct: Does not differ between alternatives or is sunk — Correct match for “Irrelevant cost” is: Does not differ between alternatives or is sunk.",
+        "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Direct materials + direct labor"
+    },
+    {
+      "question": "Which best matches: Conversion cost",
+      "options": [
+        "Research & development → design → production/purchases → marketing → distribution → customer service",
+        "Has both fixed and variable components",
+        "Direct labor + manufacturing overhead",
+        "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Direct labor + manufacturing overhead"
+    },
+    {
+      "question": "Which best matches: Best definition of 'Value chain'?",
+      "options": [
+        "Converts raw materials to finished goods; inventories: RM, WIP, FG",
+        "Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service.",
+        "Direct materials + direct labor",
+        "Correct: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory. — Correct match for “Best definition of 'Service company'?” is: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory.."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Service company'?",
+      "options": [
+        "Correct: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future. — Correct match for “Best definition of 'Relevant cost'?” is: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future..",
+        "Correct: Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated. — Correct match for “Best definition of 'Indirect cost'?” is: Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated..",
+        "Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory.",
+        "Correct: Sells intangible services; no inventory — Correct match for “Service company” is: Sells intangible services; no inventory."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Merchandising company'?",
+      "options": [
+        "Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory).",
+        "Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold",
+        "Correct: Sells intangible services; no inventory — Correct match for “Service company” is: Sells intangible services; no inventory.",
+        "Correct: Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated. — Correct match for “Best definition of 'Indirect cost'?” is: Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated.."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory)."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Manufacturing company'?",
+      "options": [
+        "Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG.",
+        "Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A).",
+        "Converts raw materials to finished goods; inventories: RM, WIP, FG",
+        "Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Direct cost'?",
+      "options": [
+        "Total varies with volume; per‑unit constant",
+        "Total constant; per‑unit varies inversely with volume",
+        "Correct: Research & development, design, production/purchases, marketing, distribution, customer service — Correct match for “Value chain” is: Research & development, design, production/purchases, marketing, distribution, customer service.",
+        "Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Indirect cost'?",
+      "options": [
+        "Correct: Does not differ between alternatives or is sunk — Correct match for “Irrelevant cost” is: Does not differ between alternatives or is sunk.",
+        "Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated.",
+        "Research & development → design → production/purchases → marketing → distribution → customer service",
+        "Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — Correct match for “Period cost” is: Nonmanufacturing costs expensed in the period (e.g., SG&A)."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Product (inventoriable) cost'?",
+      "options": [
+        "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — Correct match for “Product (inventoriable) cost” is: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold.",
+        "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold.",
+        "Does not differ between alternatives or is sunk",
+        "Direct materials + direct labor"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Period cost'?",
+      "options": [
+        "Correct: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold. — Correct match for “Best definition of 'Product (inventoriable) cost'?” is: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold..",
+        "Correct: Research & development, design, production/purchases, marketing, distribution, customer service — Correct match for “Value chain” is: Research & development, design, production/purchases, marketing, distribution, customer service.",
+        "Converts raw materials to finished goods; inventories: RM, WIP, FG",
+        "Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A)."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A)."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Relevant cost'?",
+      "options": [
+        "Correct: Direct materials + direct labor — Correct match for “Prime cost” is: Direct materials + direct labor.",
+        "Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future.",
+        "Resells finished products; one inventory account (Merchandise Inventory)",
+        "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — Correct match for “Product (inventoriable) cost” is: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Irrelevant cost'?",
+      "options": [
+        "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold.",
+        "Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk.",
+        "Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory.",
+        "Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk."
+    },
+    {
+      "question": "Which best matches: Order cost types by variability with volume (high→none)",
+      "options": [
+        "Has both fixed and variable components",
+        "Correct: Direct labor + manufacturing overhead — Correct match for “Conversion cost” is: Direct labor + manufacturing overhead.",
+        "Variable cost → Mixed cost → Fixed cost",
+        "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Variable cost → Mixed cost → Fixed cost"
+    },
+    {
+      "question": "Which best matches: ABC workflow",
+      "options": [
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products",
+        "Correct: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold. — Correct match for “Best definition of 'Product (inventoriable) cost'?” is: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold..",
+        "Correct: Sells intangible services; no inventory — Correct match for “Service company” is: Sells intangible services; no inventory.",
+        "Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — Correct match for “Period cost” is: Nonmanufacturing costs expensed in the period (e.g., SG&A)."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+    },
+    {
+      "question": "Which best matches: AC241",
+      "options": [
+        "Building Blocks of Managerial Accounting",
+        "Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A).",
+        "Does not differ between alternatives or is sunk",
+        "Uses of Accounting Information II"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Uses of Accounting Information II"
+    },
+    {
+      "question": "Which best matches: Chapter 2",
+      "options": [
+        "Building Blocks of Managerial Accounting",
+        "Correct: Has both fixed and variable components — Correct match for “Mixed cost” is: Has both fixed and variable components.",
+        "Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory).",
+        "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Building Blocks of Managerial Accounting"
+    },
+    {
+      "question": "Which best matches: the decision",
+      "options": [
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products.",
+        "making process.",
+        "Research & development, design, production/purchases, marketing, distribution, customer service",
+        "Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way."
+      ],
+      "answer": 1,
+      "explanation": "Correct: making process."
+    },
+    {
+      "question": "Which best matches: Which best matches: Value chain",
+      "options": [
+        "Correct: Research & development, design, production/purchases, marketing, distribution, customer service — Correct match for “Value chain” is: Research & development, design, production/purchases, marketing, distribution, customer service.",
+        "Research & development → design → production/purchases → marketing → distribution → customer service",
+        "Correct: Differs between alternatives and occurs in the future — Correct match for “Relevant cost” is: Differs between alternatives and occurs in the future.",
+        "Correct: Cannot be traced to a cost object cost-effectively; allocated — Correct match for “Indirect cost” is: Cannot be traced to a cost object cost-effectively; allocated."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — Correct match for “Value chain” is: Research & development, design, production/purchases, marketing, distribution, customer service."
+    },
+    {
+      "question": "Which best matches: Which best matches: Service company",
+      "options": [
+        "Converts raw materials to finished goods; inventories: RM, WIP, FG",
+        "Variable cost → Mixed cost → Fixed cost",
+        "Correct: Sells intangible services; no inventory — Correct match for “Service company” is: Sells intangible services; no inventory.",
+        "Correct: Cannot be traced to a cost object cost-effectively; allocated — Correct match for “Indirect cost” is: Cannot be traced to a cost object cost-effectively; allocated."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Sells intangible services; no inventory — Correct match for “Service company” is: Sells intangible services; no inventory."
+    },
+    {
+      "question": "Which best matches: Which best matches: Merchandising company",
+      "options": [
+        "Correct: Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory). — Correct match for “Best definition of 'Merchandising company'?” is: Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory)..",
+        "Correct: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold. — Correct match for “Best definition of 'Product (inventoriable) cost'?” is: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold..",
+        "Nonmanufacturing costs expensed in the period (e.g., SG&A)",
+        "Correct: Resells finished products; one inventory account (Merchandise Inventory) — Correct match for “Merchandising company” is: Resells finished products; one inventory account (Merchandise Inventory)."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Resells finished products; one inventory account (Merchandise Inventory) — Correct match for “Merchandising company” is: Resells finished products; one inventory account (Merchandise Inventory)."
+    },
+    {
+      "question": "Which best matches: Which best matches: Manufacturing company",
+      "options": [
+        "Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — Correct match for “Manufacturing company” is: Converts raw materials to finished goods; inventories: RM, WIP, FG.",
+        "Nonmanufacturing costs expensed in the period (e.g., SG&A)",
+        "Correct: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future. — Correct match for “Best definition of 'Relevant cost'?” is: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future..",
+        "Correct: Direct labor + manufacturing overhead — Correct match for “Conversion cost” is: Direct labor + manufacturing overhead."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — Correct match for “Manufacturing company” is: Converts raw materials to finished goods; inventories: RM, WIP, FG."
+    },
+    {
+      "question": "Which best matches: Which best matches: Direct cost",
+      "options": [
+        "Resells finished products; one inventory account (Merchandise Inventory)",
+        "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — Correct match for “Product (inventoriable) cost” is: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold.",
+        "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold.",
+        "Correct: Can be traced to a cost object in a cost-effective way — Correct match for “Direct cost” is: Can be traced to a cost object in a cost-effective way."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Can be traced to a cost object in a cost-effective way — Correct match for “Direct cost” is: Can be traced to a cost object in a cost-effective way."
+    },
+    {
+      "question": "Which best matches: Which best matches: Indirect cost",
+      "options": [
+        "Correct: Differs between alternatives and occurs in the future — Correct match for “Relevant cost” is: Differs between alternatives and occurs in the future.",
+        "Correct: Converts raw materials to finished goods; inventories: RM → WIP → FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM → WIP → FG.",
+        "Resells finished products; one inventory account (Merchandise Inventory)",
+        "Correct: Cannot be traced to a cost object cost-effectively; allocated — Correct match for “Indirect cost” is: Cannot be traced to a cost object cost-effectively; allocated."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Cannot be traced to a cost object cost-effectively; allocated — Correct match for “Indirect cost” is: Cannot be traced to a cost object cost-effectively; allocated."
+    },
+    {
+      "question": "Which best matches: Which best matches: Product (inventoriable) cost",
+      "options": [
+        "Correct: Has both fixed and variable components — Correct match for “Mixed cost” is: Has both fixed and variable components.",
+        "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — Correct match for “Product (inventoriable) cost” is: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold.",
+        "Can be traced to a cost object in a cost-effective way",
+        "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — Correct match for “Product (inventoriable) cost” is: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold."
+    },
+    {
+      "question": "Which best matches: Which best matches: Period cost",
+      "options": [
+        "Correct: Direct materials + direct labor — Correct match for “Prime cost” is: Direct materials + direct labor.",
+        "Differs between alternatives and occurs in the future",
+        "Correct: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold. — Correct match for “Best definition of 'Product (inventoriable) cost'?” is: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold..",
+        "Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — Correct match for “Period cost” is: Nonmanufacturing costs expensed in the period (e.g., SG&A)."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — Correct match for “Period cost” is: Nonmanufacturing costs expensed in the period (e.g., SG&A)."
+    },
+    {
+      "question": "Which best matches: Which best matches: Relevant cost",
+      "options": [
+        "Has both fixed and variable components",
+        "Building Blocks of Managerial Accounting",
+        "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost.",
+        "Correct: Differs between alternatives and occurs in the future — Correct match for “Relevant cost” is: Differs between alternatives and occurs in the future."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Differs between alternatives and occurs in the future — Correct match for “Relevant cost” is: Differs between alternatives and occurs in the future."
+    },
+    {
+      "question": "Which best matches: Which best matches: Irrelevant cost",
+      "options": [
+        "Correct: Does not differ between alternatives or is sunk — Correct match for “Irrelevant cost” is: Does not differ between alternatives or is sunk.",
+        "Correct: Research & development → design → production/purchases → marketing → distribution → customer service — 'Value chain': Research & development → design → production/purchases → marketing → distribution → customer service.",
+        "Correct: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service. — Correct match for “Best definition of 'Value chain'?” is: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service..",
+        "Correct: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory. — Correct match for “Best definition of 'Service company'?” is: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory.."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Does not differ between alternatives or is sunk — Correct match for “Irrelevant cost” is: Does not differ between alternatives or is sunk."
+    },
+    {
+      "question": "Which best matches: Which best matches: Fixed cost",
+      "options": [
+        "Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — Correct match for “Period cost” is: Nonmanufacturing costs expensed in the period (e.g., SG&A).",
+        "Correct: Total constant; per‑unit varies inversely with volume — Correct match for “Fixed cost” is: Total constant; per‑unit varies inversely with volume.",
+        "Manufacturing costs (DM → DL → MOH) capitalized as inventory until sold",
+        "Sells intangible services; no inventory"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Total constant; per‑unit varies inversely with volume — Correct match for “Fixed cost” is: Total constant; per‑unit varies inversely with volume."
+    },
+    {
+      "question": "Which best matches: Which best matches: Variable cost",
+      "options": [
+        "Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way.",
+        "Nonmanufacturing costs expensed in the period (e.g., SG&A)",
+        "Correct: Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated. — Correct match for “Best definition of 'Indirect cost'?” is: Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated..",
+        "Correct: Total varies with volume; per‑unit constant — Correct match for “Variable cost” is: Total varies with volume; per‑unit constant."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Total varies with volume; per‑unit constant — Correct match for “Variable cost” is: Total varies with volume; per‑unit constant."
+    },
+    {
+      "question": "Which best matches: Which best matches: Mixed cost",
+      "options": [
+        "Correct: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory. — Correct match for “Best definition of 'Service company'?” is: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory..",
+        "Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service.",
+        "Correct: Has both fixed and variable components — Correct match for “Mixed cost” is: Has both fixed and variable components.",
+        "Differs between alternatives and occurs in the future"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Has both fixed and variable components — Correct match for “Mixed cost” is: Has both fixed and variable components."
+    },
+    {
+      "question": "Which best matches: Which best matches: Prime cost",
+      "options": [
+        "Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way.",
+        "making process.",
+        "Correct: Direct materials + direct labor — Correct match for “Prime cost” is: Direct materials + direct labor.",
+        "Correct: Resells finished products; one inventory account (Merchandise Inventory) — Correct match for “Merchandising company” is: Resells finished products; one inventory account (Merchandise Inventory)."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Direct materials + direct labor — Correct match for “Prime cost” is: Direct materials + direct labor."
+    },
+    {
+      "question": "Which best matches: Which best matches: Conversion cost",
+      "options": [
+        "Correct: Direct labor + manufacturing overhead — Correct match for “Conversion cost” is: Direct labor + manufacturing overhead.",
+        "Correct: Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG. — Correct match for “Best definition of 'Manufacturing company'?” is: Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG..",
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products.",
+        "Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Direct labor + manufacturing overhead — Correct match for “Conversion cost” is: Direct labor + manufacturing overhead."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Value chain'?",
+      "options": [
+        "Differs between alternatives and occurs in the future",
+        "Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory.",
+        "Correct: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service. — Correct match for “Best definition of 'Value chain'?” is: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service..",
+        "Correct: Research & development → design → production/purchases → marketing → distribution → customer service — 'Value chain': Research & development → design → production/purchases → marketing → distribution → customer service."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service. — Correct match for “Best definition of 'Value chain'?” is: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Service company'?",
+      "options": [
+        "Correct: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory. — Correct match for “Best definition of 'Service company'?” is: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory..",
+        "Nonmanufacturing costs expensed in the period (e.g., SG&A)",
+        "Sells intangible services; no inventory",
+        "Correct: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold. — Correct match for “Best definition of 'Product (inventoriable) cost'?” is: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold.."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory. — Correct match for “Best definition of 'Service company'?” is: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Merchandising company'?",
+      "options": [
+        "Variable cost → Mixed cost → Fixed cost",
+        "Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service.",
+        "Manufacturing costs (DM → DL → MOH) capitalized as inventory until sold",
+        "Correct: Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory). — Correct match for “Best definition of 'Merchandising company'?” is: Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory).."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory). — Correct match for “Best definition of 'Merchandising company'?” is: Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory).."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Manufacturing company'?",
+      "options": [
+        "Correct: Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory). — Correct match for “Best definition of 'Merchandising company'?” is: Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory)..",
+        "Correct: Direct materials + direct labor — Correct match for “Prime cost” is: Direct materials + direct labor.",
+        "Correct: Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG. — Correct match for “Best definition of 'Manufacturing company'?” is: Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG..",
+        "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG. — Correct match for “Best definition of 'Manufacturing company'?” is: Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Direct cost'?",
+      "options": [
+        "Correct: Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way. — Correct match for “Best definition of 'Direct cost'?” is: Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way..",
+        "Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory.",
+        "Correct: Cannot be traced to a cost object cost-effectively; allocated — Correct match for “Indirect cost” is: Cannot be traced to a cost object cost-effectively; allocated.",
+        "Converts raw materials to finished goods; inventories: RM, WIP, FG"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way. — Correct match for “Best definition of 'Direct cost'?” is: Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Indirect cost'?",
+      "options": [
+        "Resells finished products; one inventory account (Merchandise Inventory)",
+        "Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — Correct match for “Manufacturing company” is: Converts raw materials to finished goods; inventories: RM, WIP, FG.",
+        "Correct: Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated. — Correct match for “Best definition of 'Indirect cost'?” is: Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated..",
+        "Research & development, design, production/purchases, marketing, distribution, customer service"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated. — Correct match for “Best definition of 'Indirect cost'?” is: Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Product (inventoriable) cost'?",
+      "options": [
+        "Does not differ between alternatives or is sunk",
+        "Can be traced to a cost object in a cost-effective way",
+        "Correct: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold. — Correct match for “Best definition of 'Product (inventoriable) cost'?” is: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold..",
+        "Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A)."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold. — Correct match for “Best definition of 'Product (inventoriable) cost'?” is: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Period cost'?",
+      "options": [
+        "Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated.",
+        "Correct: Cannot be traced to a cost object cost-effectively; allocated — Correct match for “Indirect cost” is: Cannot be traced to a cost object cost-effectively; allocated.",
+        "Correct: Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A). — Correct match for “Best definition of 'Period cost'?” is: Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A)..",
+        "Correct: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service. — Correct match for “Best definition of 'Value chain'?” is: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service.."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A). — Correct match for “Best definition of 'Period cost'?” is: Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A).."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Relevant cost'?",
+      "options": [
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products",
+        "Correct: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future. — Correct match for “Best definition of 'Relevant cost'?” is: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future..",
+        "Correct: Can be traced to a cost object in a cost-effective way — Correct match for “Direct cost” is: Can be traced to a cost object in a cost-effective way.",
+        "Direct materials + direct labor"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future. — Correct match for “Best definition of 'Relevant cost'?” is: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Irrelevant cost'?",
+      "options": [
+        "Correct: Can be traced to a cost object in a cost-effective way — Correct match for “Direct cost” is: Can be traced to a cost object in a cost-effective way.",
+        "Building Blocks of Managerial Accounting",
+        "Correct: Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk. — Correct match for “Best definition of 'Irrelevant cost'?” is: Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk..",
+        "Correct: Direct labor + manufacturing overhead — Correct match for “Conversion cost” is: Direct labor + manufacturing overhead."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk. — Correct match for “Best definition of 'Irrelevant cost'?” is: Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Order cost types by variability with volume (high→none)",
+      "options": [
+        "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost.",
+        "Correct: Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk. — Correct match for “Best definition of 'Irrelevant cost'?” is: Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk..",
+        "Sells intangible services; no inventory",
+        "Correct: Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way. — Correct match for “Best definition of 'Direct cost'?” is: Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way.."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost."
+    },
+    {
+      "question": "Which best matches: Which best matches: ABC workflow",
+      "options": [
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products.",
+        "Correct: Does not differ between alternatives or is sunk — Correct match for “Irrelevant cost” is: Does not differ between alternatives or is sunk.",
+        "Manufacturing costs (DM → DL → MOH) capitalized as inventory until sold",
+        "Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Value chain",
+      "options": [
+        "Research & development → design → production/purchases → marketing → distribution → customer service",
+        "Sells intangible services; no inventory",
+        "Correct: Direct labor + manufacturing overhead — Correct match for “Conversion cost” is: Direct labor + manufacturing overhead.",
+        "Correct: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future. — Correct match for “Best definition of 'Relevant cost'?” is: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future.."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Research & development → design → production/purchases → marketing → distribution → customer service"
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Manufacturing company",
+      "options": [
+        "Correct: Total varies with volume; per‑unit constant — Correct match for “Variable cost” is: Total varies with volume; per‑unit constant.",
+        "Converts raw materials to finished goods; inventories: RM → WIP → FG",
+        "Correct: Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk. — Correct match for “Best definition of 'Irrelevant cost'?” is: Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk..",
+        "Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Converts raw materials to finished goods; inventories: RM → WIP → FG"
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Product (inventoriable) cost",
+      "options": [
+        "Manufacturing costs (DM → DL → MOH) capitalized as inventory until sold",
+        "Correct: Research & development → design → production/purchases → marketing → distribution → customer service — 'Value chain': Research & development → design → production/purchases → marketing → distribution → customer service.",
+        "Can be traced to a cost object in a cost-effective way",
+        "Research & development, design, production/purchases, marketing, distribution, customer service"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Manufacturing costs (DM → DL → MOH) capitalized as inventory until sold"
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Best definition of 'Value chain'?",
+      "options": [
+        "Total constant; per‑unit varies inversely with volume",
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products",
+        "Correct: Research & development → design → production/purchases → marketing → distribution → customer service — 'Value chain': Research & development → design → production/purchases → marketing → distribution → customer service.",
+        "Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Research & development → design → production/purchases → marketing → distribution → customer service — 'Value chain': Research & development → design → production/purchases → marketing → distribution → customer service."
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Best definition of 'Manufacturing company'?",
+      "options": [
+        "Can be traced to a cost object in a cost-effective way",
+        "Correct: Converts raw materials to finished goods; inventories: RM → WIP → FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM → WIP → FG.",
+        "Does not differ between alternatives or is sunk",
+        "Correct: Total varies with volume; per‑unit constant — Correct match for “Variable cost” is: Total varies with volume; per‑unit constant."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Converts raw materials to finished goods; inventories: RM → WIP → FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM → WIP → FG."
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "title": "Matching Set 1",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Value chain",
+              "Research & development, design, production/purchases, marketing, distribution, customer service"
+            ],
+            [
+              "Service company",
+              "Sells intangible services; no inventory"
+            ],
+            [
+              "Merchandising company",
+              "Resells finished products; one inventory account (Merchandise Inventory)"
+            ],
+            [
+              "Manufacturing company",
+              "Converts raw materials to finished goods; inventories: RM, WIP, FG"
+            ],
+            [
+              "Direct cost",
+              "Can be traced to a cost object in a cost-effective way"
+            ],
+            [
+              "Indirect cost",
+              "Cannot be traced to a cost object cost-effectively; allocated"
+            ],
+            [
+              "Product (inventoriable) cost",
+              "Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold"
+            ],
+            [
+              "Period cost",
+              "Nonmanufacturing costs expensed in the period (e.g., SG&A)"
+            ],
+            [
+              "Relevant cost",
+              "Differs between alternatives and occurs in the future"
+            ],
+            [
+              "Irrelevant cost",
+              "Does not differ between alternatives or is sunk"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 2",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Fixed cost",
+              "Total constant; per‑unit varies inversely with volume"
+            ],
+            [
+              "Variable cost",
+              "Total varies with volume; per‑unit constant"
+            ],
+            [
+              "Mixed cost",
+              "Has both fixed and variable components"
+            ],
+            [
+              "Prime cost",
+              "Direct materials + direct labor"
+            ],
+            [
+              "Conversion cost",
+              "Direct labor + manufacturing overhead"
+            ],
+            [
+              "Best definition of 'Value chain'?",
+              "Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service."
+            ],
+            [
+              "Best definition of 'Service company'?",
+              "Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory."
+            ],
+            [
+              "Best definition of 'Merchandising company'?",
+              "Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory)."
+            ],
+            [
+              "Best definition of 'Manufacturing company'?",
+              "Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG."
+            ],
+            [
+              "Best definition of 'Direct cost'?",
+              "Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 3",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Best definition of 'Indirect cost'?",
+              "Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated."
+            ],
+            [
+              "Best definition of 'Product (inventoriable) cost'?",
+              "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold."
+            ],
+            [
+              "Best definition of 'Period cost'?",
+              "Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A)."
+            ],
+            [
+              "Best definition of 'Relevant cost'?",
+              "Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future."
+            ],
+            [
+              "Best definition of 'Irrelevant cost'?",
+              "Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk."
+            ],
+            [
+              "Order cost types by variability with volume (high→none)",
+              "Variable cost → Mixed cost → Fixed cost"
+            ],
+            [
+              "ABC workflow",
+              "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+            ],
+            [
+              "AC241",
+              "Uses of Accounting Information II"
+            ],
+            [
+              "Chapter 2",
+              "Building Blocks of Managerial Accounting"
+            ],
+            [
+              "the decision",
+              "making process."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 4",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Which best matches: Value chain",
+              "Correct: Research & development, design, production/purchases, marketing, distribution, customer service — Correct match for “Value chain” is: Research & development, design, production/purchases, marketing, distribution, customer service."
+            ],
+            [
+              "Which best matches: Service company",
+              "Correct: Sells intangible services; no inventory — Correct match for “Service company” is: Sells intangible services; no inventory."
+            ],
+            [
+              "Which best matches: Merchandising company",
+              "Correct: Resells finished products; one inventory account (Merchandise Inventory) — Correct match for “Merchandising company” is: Resells finished products; one inventory account (Merchandise Inventory)."
+            ],
+            [
+              "Which best matches: Manufacturing company",
+              "Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — Correct match for “Manufacturing company” is: Converts raw materials to finished goods; inventories: RM, WIP, FG."
+            ],
+            [
+              "Which best matches: Direct cost",
+              "Correct: Can be traced to a cost object in a cost-effective way — Correct match for “Direct cost” is: Can be traced to a cost object in a cost-effective way."
+            ],
+            [
+              "Which best matches: Indirect cost",
+              "Correct: Cannot be traced to a cost object cost-effectively; allocated — Correct match for “Indirect cost” is: Cannot be traced to a cost object cost-effectively; allocated."
+            ],
+            [
+              "Which best matches: Product (inventoriable) cost",
+              "Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — Correct match for “Product (inventoriable) cost” is: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold."
+            ],
+            [
+              "Which best matches: Period cost",
+              "Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — Correct match for “Period cost” is: Nonmanufacturing costs expensed in the period (e.g., SG&A)."
+            ],
+            [
+              "Which best matches: Relevant cost",
+              "Correct: Differs between alternatives and occurs in the future — Correct match for “Relevant cost” is: Differs between alternatives and occurs in the future."
+            ],
+            [
+              "Which best matches: Irrelevant cost",
+              "Correct: Does not differ between alternatives or is sunk — Correct match for “Irrelevant cost” is: Does not differ between alternatives or is sunk."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 5",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Which best matches: Fixed cost",
+              "Correct: Total constant; per‑unit varies inversely with volume — Correct match for “Fixed cost” is: Total constant; per‑unit varies inversely with volume."
+            ],
+            [
+              "Which best matches: Variable cost",
+              "Correct: Total varies with volume; per‑unit constant — Correct match for “Variable cost” is: Total varies with volume; per‑unit constant."
+            ],
+            [
+              "Which best matches: Mixed cost",
+              "Correct: Has both fixed and variable components — Correct match for “Mixed cost” is: Has both fixed and variable components."
+            ],
+            [
+              "Which best matches: Prime cost",
+              "Correct: Direct materials + direct labor — Correct match for “Prime cost” is: Direct materials + direct labor."
+            ],
+            [
+              "Which best matches: Conversion cost",
+              "Correct: Direct labor + manufacturing overhead — Correct match for “Conversion cost” is: Direct labor + manufacturing overhead."
+            ],
+            [
+              "Which best matches: Best definition of 'Value chain'?",
+              "Correct: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service. — Correct match for “Best definition of 'Value chain'?” is: Correct: Research & development, design, production/purchases, marketing, distribution, customer service — 'Value chain': Research & development, design, production/purchases, marketing, distribution, customer service.."
+            ],
+            [
+              "Which best matches: Best definition of 'Service company'?",
+              "Correct: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory. — Correct match for “Best definition of 'Service company'?” is: Correct: Sells intangible services; no inventory — 'Service company': Sells intangible services; no inventory.."
+            ],
+            [
+              "Which best matches: Best definition of 'Merchandising company'?",
+              "Correct: Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory). — Correct match for “Best definition of 'Merchandising company'?” is: Correct: Resells finished products; one inventory account (Merchandise Inventory) — 'Merchandising company': Resells finished products; one inventory account (Merchandise Inventory).."
+            ],
+            [
+              "Which best matches: Best definition of 'Manufacturing company'?",
+              "Correct: Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG. — Correct match for “Best definition of 'Manufacturing company'?” is: Correct: Converts raw materials to finished goods; inventories: RM, WIP, FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM, WIP, FG.."
+            ],
+            [
+              "Which best matches: Best definition of 'Direct cost'?",
+              "Correct: Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way. — Correct match for “Best definition of 'Direct cost'?” is: Correct: Can be traced to a cost object in a cost-effective way — 'Direct cost': Can be traced to a cost object in a cost-effective way.."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 6",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Which best matches: Best definition of 'Indirect cost'?",
+              "Correct: Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated. — Correct match for “Best definition of 'Indirect cost'?” is: Correct: Cannot be traced to a cost object cost-effectively; allocated — 'Indirect cost': Cannot be traced to a cost object cost-effectively; allocated.."
+            ],
+            [
+              "Which best matches: Best definition of 'Product (inventoriable) cost'?",
+              "Correct: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold. — Correct match for “Best definition of 'Product (inventoriable) cost'?” is: Correct: Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold — 'Product (inventoriable) cost': Manufacturing costs (DM, DL, MOH) capitalized as inventory until sold.."
+            ],
+            [
+              "Which best matches: Best definition of 'Period cost'?",
+              "Correct: Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A). — Correct match for “Best definition of 'Period cost'?” is: Correct: Nonmanufacturing costs expensed in the period (e.g., SG&A) — 'Period cost': Nonmanufacturing costs expensed in the period (e.g., SG&A).."
+            ],
+            [
+              "Which best matches: Best definition of 'Relevant cost'?",
+              "Correct: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future. — Correct match for “Best definition of 'Relevant cost'?” is: Correct: Differs between alternatives and occurs in the future — 'Relevant cost': Differs between alternatives and occurs in the future.."
+            ],
+            [
+              "Which best matches: Best definition of 'Irrelevant cost'?",
+              "Correct: Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk. — Correct match for “Best definition of 'Irrelevant cost'?” is: Correct: Does not differ between alternatives or is sunk — 'Irrelevant cost': Does not differ between alternatives or is sunk.."
+            ],
+            [
+              "Which best matches: Order cost types by variability with volume (high→none)",
+              "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost."
+            ],
+            [
+              "Which best matches: ABC workflow",
+              "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+            ],
+            [
+              "Put the sequence in order – derived from: Value chain",
+              "Research & development → design → production/purchases → marketing → distribution → customer service"
+            ],
+            [
+              "Put the sequence in order – derived from: Manufacturing company",
+              "Converts raw materials to finished goods; inventories: RM → WIP → FG"
+            ],
+            [
+              "Put the sequence in order – derived from: Product (inventoriable) cost",
+              "Manufacturing costs (DM → DL → MOH) capitalized as inventory until sold"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 7",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Put the sequence in order – derived from: Best definition of 'Value chain'?",
+              "Correct: Research & development → design → production/purchases → marketing → distribution → customer service — 'Value chain': Research & development → design → production/purchases → marketing → distribution → customer service."
+            ],
+            [
+              "Put the sequence in order – derived from: Best definition of 'Manufacturing company'?",
+              "Correct: Converts raw materials to finished goods; inventories: RM → WIP → FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM → WIP → FG."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 1",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Value chain",
+          "items": [
+            "Research & development",
+            "design",
+            "production/purchases",
+            "marketing",
+            "distribution",
+            "customer service"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 2",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Manufacturing company",
+          "items": [
+            "Converts raw materials to finished goods; inventories: RM",
+            "WIP",
+            "FG"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 3",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Product (inventoriable) cost",
+          "items": [
+            "Manufacturing costs (DM",
+            "DL",
+            "MOH) capitalized as inventory until sold"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 4",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Best definition of 'Value chain'?",
+          "items": [
+            "Correct: Research & development",
+            "design",
+            "production/purchases",
+            "marketing",
+            "distribution",
+            "customer service — 'Value chain': Research & development",
+            "design",
+            "production/purchases",
+            "marketing",
+            "distribution",
+            "customer service."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 5",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Best definition of 'Manufacturing company'?",
+          "items": [
+            "Correct: Converts raw materials to finished goods; inventories: RM",
+            "WIP",
+            "FG — 'Manufacturing company': Converts raw materials to finished goods; inventories: RM",
+            "WIP",
+            "FG."
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Chapter 2 Part 1 - Tagged.pdf",
+    "Chapter 2 Part 2 - Tagged.pdf",
+    "Chapter 2 Activities Revised Fall 2023- SV - Tagged.pdf"
+  ]
+}

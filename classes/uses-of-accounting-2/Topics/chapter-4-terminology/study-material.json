@@ -1,0 +1,1004 @@
+{
+  "title": "Chapter 4 Terminology – ABC & Quality",
+  "notes": [
+    [
+      "AC241 — Uses of Accounting Information II",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Chapter 4 — Activity -Based Costing, Lean Production, and the Costs of Quality",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "and uses multiple cost dri vers (non — volume as well as volume based cost drivers) to assign overhead costs",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Value — Added Activities”.",
+      2,
+      "Chapter 4 Key Terms.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Departmental OH rate",
+      "back": "Separate MOH rates by department"
+    },
+    {
+      "front": "Activity-based costing (ABC)",
+      "back": "Allocates OH using activity cost pools and cost drivers"
+    },
+    {
+      "front": "Cost driver",
+      "back": "Factor that causes cost in an activity"
+    },
+    {
+      "front": "Activity cost pool",
+      "back": "Grouping of individual activities with the same driver"
+    },
+    {
+      "front": "Activity-based management (ABM)",
+      "back": "Using ABC info for decisions/process improvement"
+    },
+    {
+      "front": "Costs of quality (COQ)",
+      "back": "Prevention, appraisal, internal failure, external failure"
+    },
+    {
+      "front": "Lean operations",
+      "back": "Eliminate waste; JIT; continuous improvement"
+    },
+    {
+      "front": "Value-added vs non-value-added",
+      "back": "Activities that increase customer value vs not"
+    },
+    {
+      "front": "Best definition of 'Departmental OH rate'?",
+      "back": "Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department."
+    },
+    {
+      "front": "Best definition of 'Activity-based costing (ABC)'?",
+      "back": "Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers."
+    },
+    {
+      "front": "Best definition of 'Cost driver'?",
+      "back": "Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity."
+    },
+    {
+      "front": "Best definition of 'Activity cost pool'?",
+      "back": "Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver."
+    },
+    {
+      "front": "Best definition of 'Activity-based management (ABM)'?",
+      "back": "Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement."
+    },
+    {
+      "front": "Best definition of 'Costs of quality (COQ)'?",
+      "back": "Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure."
+    },
+    {
+      "front": "Best definition of 'Lean operations'?",
+      "back": "Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement."
+    },
+    {
+      "front": "Best definition of 'Value-added vs non-value-added'?",
+      "back": "Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not."
+    },
+    {
+      "front": "Order cost types by variability with volume (high→none)",
+      "back": "Variable cost → Mixed cost → Fixed cost"
+    },
+    {
+      "front": "ABC workflow",
+      "back": "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+    },
+    {
+      "front": "AC241",
+      "back": "Uses of Accounting Information II"
+    },
+    {
+      "front": "Chapter 4",
+      "back": "Activity -Based Costing, Lean Production, and the Costs of Quality"
+    },
+    {
+      "front": "and uses multiple cost dri vers (non",
+      "back": "volume as well as volume based cost drivers) to assign overhead costs"
+    },
+    {
+      "front": "Value",
+      "back": "Added Activities”."
+    },
+    {
+      "front": "Which best matches: Departmental OH rate",
+      "back": "Correct: Separate MOH rates by department — Correct match for “Departmental OH rate” is: Separate MOH rates by department."
+    },
+    {
+      "front": "Which best matches: Activity-based costing (ABC)",
+      "back": "Correct: Allocates OH using activity cost pools and cost drivers — Correct match for “Activity-based costing (ABC)” is: Allocates OH using activity cost pools and cost drivers."
+    },
+    {
+      "front": "Which best matches: Cost driver",
+      "back": "Correct: Factor that causes cost in an activity — Correct match for “Cost driver” is: Factor that causes cost in an activity."
+    },
+    {
+      "front": "Which best matches: Activity cost pool",
+      "back": "Correct: Grouping of individual activities with the same driver — Correct match for “Activity cost pool” is: Grouping of individual activities with the same driver."
+    },
+    {
+      "front": "Which best matches: Activity-based management (ABM)",
+      "back": "Correct: Using ABC info for decisions/process improvement — Correct match for “Activity-based management (ABM)” is: Using ABC info for decisions/process improvement."
+    },
+    {
+      "front": "Which best matches: Costs of quality (COQ)",
+      "back": "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Costs of quality (COQ)” is: Prevention, appraisal, internal failure, external failure."
+    },
+    {
+      "front": "Which best matches: Lean operations",
+      "back": "Correct: Eliminate waste; JIT; continuous improvement — Correct match for “Lean operations” is: Eliminate waste; JIT; continuous improvement."
+    },
+    {
+      "front": "Which best matches: Value-added vs non-value-added",
+      "back": "Correct: Activities that increase customer value vs not — Correct match for “Value-added vs non-value-added” is: Activities that increase customer value vs not."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Departmental OH rate'?",
+      "back": "Correct: Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department. — Correct match for “Best definition of 'Departmental OH rate'?” is: Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Activity-based costing (ABC)'?",
+      "back": "Correct: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers. — Correct match for “Best definition of 'Activity-based costing (ABC)'?” is: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Cost driver'?",
+      "back": "Correct: Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity. — Correct match for “Best definition of 'Cost driver'?” is: Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Activity cost pool'?",
+      "back": "Correct: Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver. — Correct match for “Best definition of 'Activity cost pool'?” is: Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Activity-based management (ABM)'?",
+      "back": "Correct: Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement. — Correct match for “Best definition of 'Activity-based management (ABM)'?” is: Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Costs of quality (COQ)'?",
+      "back": "Correct: Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure. — Correct match for “Best definition of 'Costs of quality (COQ)'?” is: Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Lean operations'?",
+      "back": "Correct: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement. — Correct match for “Best definition of 'Lean operations'?” is: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement.."
+    },
+    {
+      "front": "Which best matches: Best definition of 'Value-added vs non-value-added'?",
+      "back": "Correct: Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not. — Correct match for “Best definition of 'Value-added vs non-value-added'?” is: Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not.."
+    },
+    {
+      "front": "Which best matches: Order cost types by variability with volume (high→none)",
+      "back": "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost."
+    },
+    {
+      "front": "Which best matches: ABC workflow",
+      "back": "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+    },
+    {
+      "front": "Put the sequence in order – derived from: Costs of quality (COQ)",
+      "back": "Prevention → appraisal → internal failure → external failure"
+    },
+    {
+      "front": "Put the sequence in order – derived from: Best definition of 'Costs of quality (COQ)'?",
+      "back": "Correct: Prevention → appraisal → internal failure → external failure — 'Costs of quality (COQ)': Prevention → appraisal → internal failure → external failure."
+    },
+    {
+      "front": "Put the sequence in order – derived from: Order cost types by variability with volume (high→none)",
+      "back": "Variable cost → Mixed cost → Fixed cost"
+    },
+    {
+      "front": "Put the sequence in order – derived from: ABC workflow",
+      "back": "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which best matches: Departmental OH rate",
+      "options": [
+        "Correct: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers. — Correct match for “Best definition of 'Activity-based costing (ABC)'?” is: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers..",
+        "Correct: Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not. — Correct match for “Best definition of 'Value-added vs non-value-added'?” is: Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not..",
+        "Separate MOH rates by department",
+        "Correct: Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department. — Correct match for “Best definition of 'Departmental OH rate'?” is: Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department.."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Separate MOH rates by department"
+    },
+    {
+      "question": "Which best matches: Activity-based costing (ABC)",
+      "options": [
+        "Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers.",
+        "Variable cost → Mixed cost → Fixed cost",
+        "Correct: Using ABC info for decisions/process improvement — Correct match for “Activity-based management (ABM)” is: Using ABC info for decisions/process improvement.",
+        "Allocates OH using activity cost pools and cost drivers"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Allocates OH using activity cost pools and cost drivers"
+    },
+    {
+      "question": "Which best matches: Cost driver",
+      "options": [
+        "Factor that causes cost in an activity",
+        "Uses of Accounting Information II",
+        "Correct: Grouping of individual activities with the same driver — Correct match for “Activity cost pool” is: Grouping of individual activities with the same driver.",
+        "Correct: Using ABC info for decisions/process improvement — Correct match for “Activity-based management (ABM)” is: Using ABC info for decisions/process improvement."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Factor that causes cost in an activity"
+    },
+    {
+      "question": "Which best matches: Activity cost pool",
+      "options": [
+        "Correct: Activities that increase customer value vs not — Correct match for “Value-added vs non-value-added” is: Activities that increase customer value vs not.",
+        "Uses of Accounting Information II",
+        "Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement.",
+        "Grouping of individual activities with the same driver"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Grouping of individual activities with the same driver"
+    },
+    {
+      "question": "Which best matches: Activity-based management (ABM)",
+      "options": [
+        "Correct: Prevention → appraisal → internal failure → external failure — 'Costs of quality (COQ)': Prevention → appraisal → internal failure → external failure.",
+        "Added Activities”.",
+        "Using ABC info for decisions/process improvement",
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Using ABC info for decisions/process improvement"
+    },
+    {
+      "question": "Which best matches: Costs of quality (COQ)",
+      "options": [
+        "Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers.",
+        "Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not.",
+        "Correct: Using ABC info for decisions/process improvement — Correct match for “Activity-based management (ABM)” is: Using ABC info for decisions/process improvement.",
+        "Prevention, appraisal, internal failure, external failure"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Prevention, appraisal, internal failure, external failure"
+    },
+    {
+      "question": "Which best matches: Lean operations",
+      "options": [
+        "Grouping of individual activities with the same driver",
+        "Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement.",
+        "Eliminate waste; JIT; continuous improvement",
+        "Activity -Based Costing, Lean Production, and the Costs of Quality"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Eliminate waste; JIT; continuous improvement"
+    },
+    {
+      "question": "Which best matches: Value-added vs non-value-added",
+      "options": [
+        "Grouping of individual activities with the same driver",
+        "Activities that increase customer value vs not",
+        "Added Activities”.",
+        "Correct: Using ABC info for decisions/process improvement — Correct match for “Activity-based management (ABM)” is: Using ABC info for decisions/process improvement."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Activities that increase customer value vs not"
+    },
+    {
+      "question": "Which best matches: Best definition of 'Departmental OH rate'?",
+      "options": [
+        "Correct: Grouping of individual activities with the same driver — Correct match for “Activity cost pool” is: Grouping of individual activities with the same driver.",
+        "Allocates OH using activity cost pools and cost drivers",
+        "Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department.",
+        "Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Activity-based costing (ABC)'?",
+      "options": [
+        "volume as well as volume based cost drivers) to assign overhead costs",
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products.",
+        "Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers.",
+        "Correct: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers. — Correct match for “Best definition of 'Activity-based costing (ABC)'?” is: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers.."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Cost driver'?",
+      "options": [
+        "Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity.",
+        "Activities that increase customer value vs not",
+        "Correct: Using ABC info for decisions/process improvement — Correct match for “Activity-based management (ABM)” is: Using ABC info for decisions/process improvement.",
+        "Correct: Activities that increase customer value vs not — Correct match for “Value-added vs non-value-added” is: Activities that increase customer value vs not."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Activity cost pool'?",
+      "options": [
+        "Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver.",
+        "Correct: Activities that increase customer value vs not — Correct match for “Value-added vs non-value-added” is: Activities that increase customer value vs not.",
+        "Correct: Factor that causes cost in an activity — Correct match for “Cost driver” is: Factor that causes cost in an activity.",
+        "Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Activity-based management (ABM)'?",
+      "options": [
+        "Correct: Using ABC info for decisions/process improvement — Correct match for “Activity-based management (ABM)” is: Using ABC info for decisions/process improvement.",
+        "Correct: Grouping of individual activities with the same driver — Correct match for “Activity cost pool” is: Grouping of individual activities with the same driver.",
+        "Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement.",
+        "Correct: Eliminate waste; JIT; continuous improvement — Correct match for “Lean operations” is: Eliminate waste; JIT; continuous improvement."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Costs of quality (COQ)'?",
+      "options": [
+        "Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure.",
+        "Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not.",
+        "Added Activities”.",
+        "Correct: Eliminate waste; JIT; continuous improvement — Correct match for “Lean operations” is: Eliminate waste; JIT; continuous improvement."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Lean operations'?",
+      "options": [
+        "Correct: Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity. — Correct match for “Best definition of 'Cost driver'?” is: Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity..",
+        "Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement.",
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products.",
+        "Correct: Separate MOH rates by department — Correct match for “Departmental OH rate” is: Separate MOH rates by department."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement."
+    },
+    {
+      "question": "Which best matches: Best definition of 'Value-added vs non-value-added'?",
+      "options": [
+        "Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not.",
+        "Uses of Accounting Information II",
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products",
+        "Correct: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement. — Correct match for “Best definition of 'Lean operations'?” is: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement.."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not."
+    },
+    {
+      "question": "Which best matches: Order cost types by variability with volume (high→none)",
+      "options": [
+        "Correct: Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity. — Correct match for “Best definition of 'Cost driver'?” is: Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity..",
+        "Correct: Allocates OH using activity cost pools and cost drivers — Correct match for “Activity-based costing (ABC)” is: Allocates OH using activity cost pools and cost drivers.",
+        "Variable cost → Mixed cost → Fixed cost",
+        "Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Variable cost → Mixed cost → Fixed cost"
+    },
+    {
+      "question": "Which best matches: ABC workflow",
+      "options": [
+        "Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement.",
+        "Correct: Using ABC info for decisions/process improvement — Correct match for “Activity-based management (ABM)” is: Using ABC info for decisions/process improvement.",
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products",
+        "Correct: Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver. — Correct match for “Best definition of 'Activity cost pool'?” is: Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver.."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+    },
+    {
+      "question": "Which best matches: AC241",
+      "options": [
+        "Uses of Accounting Information II",
+        "Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers.",
+        "Correct: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement. — Correct match for “Best definition of 'Lean operations'?” is: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement..",
+        "Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Uses of Accounting Information II"
+    },
+    {
+      "question": "Which best matches: Chapter 4",
+      "options": [
+        "Activity -Based Costing, Lean Production, and the Costs of Quality",
+        "Correct: Prevention → appraisal → internal failure → external failure — 'Costs of quality (COQ)': Prevention → appraisal → internal failure → external failure.",
+        "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost.",
+        "Variable cost → Mixed cost → Fixed cost"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Activity -Based Costing, Lean Production, and the Costs of Quality"
+    },
+    {
+      "question": "Which best matches: and uses multiple cost dri vers (non",
+      "options": [
+        "Allocates OH using activity cost pools and cost drivers",
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products",
+        "volume as well as volume based cost drivers) to assign overhead costs",
+        "Correct: Separate MOH rates by department — Correct match for “Departmental OH rate” is: Separate MOH rates by department."
+      ],
+      "answer": 2,
+      "explanation": "Correct: volume as well as volume based cost drivers) to assign overhead costs"
+    },
+    {
+      "question": "Which best matches: Value",
+      "options": [
+        "Correct: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers. — Correct match for “Best definition of 'Activity-based costing (ABC)'?” is: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers..",
+        "Added Activities”.",
+        "Correct: Eliminate waste; JIT; continuous improvement — Correct match for “Lean operations” is: Eliminate waste; JIT; continuous improvement.",
+        "Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Added Activities”."
+    },
+    {
+      "question": "Which best matches: Which best matches: Departmental OH rate",
+      "options": [
+        "Correct: Separate MOH rates by department — Correct match for “Departmental OH rate” is: Separate MOH rates by department.",
+        "Correct: Prevention → appraisal → internal failure → external failure — 'Costs of quality (COQ)': Prevention → appraisal → internal failure → external failure.",
+        "Correct: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement. — Correct match for “Best definition of 'Lean operations'?” is: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement..",
+        "Variable cost → Mixed cost → Fixed cost"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Separate MOH rates by department — Correct match for “Departmental OH rate” is: Separate MOH rates by department."
+    },
+    {
+      "question": "Which best matches: Which best matches: Activity-based costing (ABC)",
+      "options": [
+        "Correct: Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement. — Correct match for “Best definition of 'Activity-based management (ABM)'?” is: Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement..",
+        "Correct: Allocates OH using activity cost pools and cost drivers — Correct match for “Activity-based costing (ABC)” is: Allocates OH using activity cost pools and cost drivers.",
+        "Separate MOH rates by department",
+        "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Costs of quality (COQ)” is: Prevention, appraisal, internal failure, external failure."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Allocates OH using activity cost pools and cost drivers — Correct match for “Activity-based costing (ABC)” is: Allocates OH using activity cost pools and cost drivers."
+    },
+    {
+      "question": "Which best matches: Which best matches: Cost driver",
+      "options": [
+        "Correct: Allocates OH using activity cost pools and cost drivers — Correct match for “Activity-based costing (ABC)” is: Allocates OH using activity cost pools and cost drivers.",
+        "Correct: Factor that causes cost in an activity — Correct match for “Cost driver” is: Factor that causes cost in an activity.",
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products",
+        "Correct: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers. — Correct match for “Best definition of 'Activity-based costing (ABC)'?” is: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers.."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Factor that causes cost in an activity — Correct match for “Cost driver” is: Factor that causes cost in an activity."
+    },
+    {
+      "question": "Which best matches: Which best matches: Activity cost pool",
+      "options": [
+        "volume as well as volume based cost drivers) to assign overhead costs",
+        "Variable cost → Mixed cost → Fixed cost",
+        "Separate MOH rates by department",
+        "Correct: Grouping of individual activities with the same driver — Correct match for “Activity cost pool” is: Grouping of individual activities with the same driver."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Grouping of individual activities with the same driver — Correct match for “Activity cost pool” is: Grouping of individual activities with the same driver."
+    },
+    {
+      "question": "Which best matches: Which best matches: Activity-based management (ABM)",
+      "options": [
+        "Correct: Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department. — Correct match for “Best definition of 'Departmental OH rate'?” is: Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department..",
+        "Correct: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement. — Correct match for “Best definition of 'Lean operations'?” is: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement..",
+        "Correct: Using ABC info for decisions/process improvement — Correct match for “Activity-based management (ABM)” is: Using ABC info for decisions/process improvement.",
+        "Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Using ABC info for decisions/process improvement — Correct match for “Activity-based management (ABM)” is: Using ABC info for decisions/process improvement."
+    },
+    {
+      "question": "Which best matches: Which best matches: Costs of quality (COQ)",
+      "options": [
+        "Correct: Eliminate waste; JIT; continuous improvement — Correct match for “Lean operations” is: Eliminate waste; JIT; continuous improvement.",
+        "Uses of Accounting Information II",
+        "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Costs of quality (COQ)” is: Prevention, appraisal, internal failure, external failure.",
+        "Variable cost → Mixed cost → Fixed cost"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Costs of quality (COQ)” is: Prevention, appraisal, internal failure, external failure."
+    },
+    {
+      "question": "Which best matches: Which best matches: Lean operations",
+      "options": [
+        "Correct: Eliminate waste; JIT; continuous improvement — Correct match for “Lean operations” is: Eliminate waste; JIT; continuous improvement.",
+        "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Costs of quality (COQ)” is: Prevention, appraisal, internal failure, external failure.",
+        "Correct: Using ABC info for decisions/process improvement — Correct match for “Activity-based management (ABM)” is: Using ABC info for decisions/process improvement.",
+        "Correct: Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department. — Correct match for “Best definition of 'Departmental OH rate'?” is: Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department.."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Eliminate waste; JIT; continuous improvement — Correct match for “Lean operations” is: Eliminate waste; JIT; continuous improvement."
+    },
+    {
+      "question": "Which best matches: Which best matches: Value-added vs non-value-added",
+      "options": [
+        "Correct: Activities that increase customer value vs not — Correct match for “Value-added vs non-value-added” is: Activities that increase customer value vs not.",
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products",
+        "Correct: Eliminate waste; JIT; continuous improvement — Correct match for “Lean operations” is: Eliminate waste; JIT; continuous improvement.",
+        "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Costs of quality (COQ)” is: Prevention, appraisal, internal failure, external failure."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Activities that increase customer value vs not — Correct match for “Value-added vs non-value-added” is: Activities that increase customer value vs not."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Departmental OH rate'?",
+      "options": [
+        "Correct: Prevention → appraisal → internal failure → external failure — 'Costs of quality (COQ)': Prevention → appraisal → internal failure → external failure.",
+        "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Costs of quality (COQ)” is: Prevention, appraisal, internal failure, external failure.",
+        "Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity.",
+        "Correct: Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department. — Correct match for “Best definition of 'Departmental OH rate'?” is: Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department.."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department. — Correct match for “Best definition of 'Departmental OH rate'?” is: Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Activity-based costing (ABC)'?",
+      "options": [
+        "Correct: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers. — Correct match for “Best definition of 'Activity-based costing (ABC)'?” is: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers..",
+        "Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure.",
+        "Correct: Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement. — Correct match for “Best definition of 'Activity-based management (ABM)'?” is: Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement..",
+        "Correct: Activities that increase customer value vs not — Correct match for “Value-added vs non-value-added” is: Activities that increase customer value vs not."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers. — Correct match for “Best definition of 'Activity-based costing (ABC)'?” is: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Cost driver'?",
+      "options": [
+        "Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement.",
+        "Correct: Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity. — Correct match for “Best definition of 'Cost driver'?” is: Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity..",
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products",
+        "Prevention → appraisal → internal failure → external failure"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity. — Correct match for “Best definition of 'Cost driver'?” is: Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Activity cost pool'?",
+      "options": [
+        "Correct: Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver. — Correct match for “Best definition of 'Activity cost pool'?” is: Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver..",
+        "Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver.",
+        "Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement.",
+        "Correct: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers. — Correct match for “Best definition of 'Activity-based costing (ABC)'?” is: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers.."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver. — Correct match for “Best definition of 'Activity cost pool'?” is: Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Activity-based management (ABM)'?",
+      "options": [
+        "Correct: Allocates OH using activity cost pools and cost drivers — Correct match for “Activity-based costing (ABC)” is: Allocates OH using activity cost pools and cost drivers.",
+        "Correct: Factor that causes cost in an activity — Correct match for “Cost driver” is: Factor that causes cost in an activity.",
+        "Correct: Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement. — Correct match for “Best definition of 'Activity-based management (ABM)'?” is: Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement..",
+        "Activity -Based Costing, Lean Production, and the Costs of Quality"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement. — Correct match for “Best definition of 'Activity-based management (ABM)'?” is: Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Costs of quality (COQ)'?",
+      "options": [
+        "Correct: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement. — Correct match for “Best definition of 'Lean operations'?” is: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement..",
+        "Allocates OH using activity cost pools and cost drivers",
+        "Correct: Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure. — Correct match for “Best definition of 'Costs of quality (COQ)'?” is: Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure..",
+        "Variable cost → Mixed cost → Fixed cost"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure. — Correct match for “Best definition of 'Costs of quality (COQ)'?” is: Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Lean operations'?",
+      "options": [
+        "Correct: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement. — Correct match for “Best definition of 'Lean operations'?” is: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement..",
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products",
+        "Prevention → appraisal → internal failure → external failure",
+        "Correct: Prevention → appraisal → internal failure → external failure — 'Costs of quality (COQ)': Prevention → appraisal → internal failure → external failure."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement. — Correct match for “Best definition of 'Lean operations'?” is: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Best definition of 'Value-added vs non-value-added'?",
+      "options": [
+        "Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver.",
+        "Correct: Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not. — Correct match for “Best definition of 'Value-added vs non-value-added'?” is: Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not..",
+        "Correct: Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure. — Correct match for “Best definition of 'Costs of quality (COQ)'?” is: Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure..",
+        "Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not. — Correct match for “Best definition of 'Value-added vs non-value-added'?” is: Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Order cost types by variability with volume (high→none)",
+      "options": [
+        "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost.",
+        "Separate MOH rates by department",
+        "Correct: Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver. — Correct match for “Best definition of 'Activity cost pool'?” is: Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver..",
+        "Correct: Factor that causes cost in an activity — Correct match for “Cost driver” is: Factor that causes cost in an activity."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost."
+    },
+    {
+      "question": "Which best matches: Which best matches: ABC workflow",
+      "options": [
+        "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost.",
+        "Correct: Eliminate waste; JIT; continuous improvement — Correct match for “Lean operations” is: Eliminate waste; JIT; continuous improvement.",
+        "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products.",
+        "Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Costs of quality (COQ)",
+      "options": [
+        "Correct: Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity. — Correct match for “Best definition of 'Cost driver'?” is: Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity..",
+        "Correct: Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure. — Correct match for “Best definition of 'Costs of quality (COQ)'?” is: Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure..",
+        "Prevention → appraisal → internal failure → external failure",
+        "Correct: Using ABC info for decisions/process improvement — Correct match for “Activity-based management (ABM)” is: Using ABC info for decisions/process improvement."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Prevention → appraisal → internal failure → external failure"
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Best definition of 'Costs of quality (COQ)'?",
+      "options": [
+        "Correct: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement. — Correct match for “Best definition of 'Lean operations'?” is: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement..",
+        "Correct: Prevention → appraisal → internal failure → external failure — 'Costs of quality (COQ)': Prevention → appraisal → internal failure → external failure.",
+        "Correct: Grouping of individual activities with the same driver — Correct match for “Activity cost pool” is: Grouping of individual activities with the same driver.",
+        "Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Prevention → appraisal → internal failure → external failure — 'Costs of quality (COQ)': Prevention → appraisal → internal failure → external failure."
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Order cost types by variability with volume (high→none)",
+      "options": [
+        "Variable cost → Mixed cost → Fixed cost",
+        "Correct: Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not. — Correct match for “Best definition of 'Value-added vs non-value-added'?” is: Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not..",
+        "Correct: Activities that increase customer value vs not — Correct match for “Value-added vs non-value-added” is: Activities that increase customer value vs not.",
+        "Correct: Allocates OH using activity cost pools and cost drivers — Correct match for “Activity-based costing (ABC)” is: Allocates OH using activity cost pools and cost drivers."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Variable cost → Mixed cost → Fixed cost"
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: ABC workflow",
+      "options": [
+        "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products",
+        "Correct: Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure. — Correct match for “Best definition of 'Costs of quality (COQ)'?” is: Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure..",
+        "Grouping of individual activities with the same driver",
+        "Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "title": "Matching Set 1",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Departmental OH rate",
+              "Separate MOH rates by department"
+            ],
+            [
+              "Activity-based costing (ABC)",
+              "Allocates OH using activity cost pools and cost drivers"
+            ],
+            [
+              "Cost driver",
+              "Factor that causes cost in an activity"
+            ],
+            [
+              "Activity cost pool",
+              "Grouping of individual activities with the same driver"
+            ],
+            [
+              "Activity-based management (ABM)",
+              "Using ABC info for decisions/process improvement"
+            ],
+            [
+              "Costs of quality (COQ)",
+              "Prevention, appraisal, internal failure, external failure"
+            ],
+            [
+              "Lean operations",
+              "Eliminate waste; JIT; continuous improvement"
+            ],
+            [
+              "Value-added vs non-value-added",
+              "Activities that increase customer value vs not"
+            ],
+            [
+              "Best definition of 'Departmental OH rate'?",
+              "Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department."
+            ],
+            [
+              "Best definition of 'Activity-based costing (ABC)'?",
+              "Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 2",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Best definition of 'Cost driver'?",
+              "Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity."
+            ],
+            [
+              "Best definition of 'Activity cost pool'?",
+              "Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver."
+            ],
+            [
+              "Best definition of 'Activity-based management (ABM)'?",
+              "Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement."
+            ],
+            [
+              "Best definition of 'Costs of quality (COQ)'?",
+              "Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure."
+            ],
+            [
+              "Best definition of 'Lean operations'?",
+              "Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement."
+            ],
+            [
+              "Best definition of 'Value-added vs non-value-added'?",
+              "Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not."
+            ],
+            [
+              "Order cost types by variability with volume (high→none)",
+              "Variable cost → Mixed cost → Fixed cost"
+            ],
+            [
+              "ABC workflow",
+              "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+            ],
+            [
+              "AC241",
+              "Uses of Accounting Information II"
+            ],
+            [
+              "Chapter 4",
+              "Activity -Based Costing, Lean Production, and the Costs of Quality"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 3",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "and uses multiple cost dri vers (non",
+              "volume as well as volume based cost drivers) to assign overhead costs"
+            ],
+            [
+              "Value",
+              "Added Activities”."
+            ],
+            [
+              "Which best matches: Departmental OH rate",
+              "Correct: Separate MOH rates by department — Correct match for “Departmental OH rate” is: Separate MOH rates by department."
+            ],
+            [
+              "Which best matches: Activity-based costing (ABC)",
+              "Correct: Allocates OH using activity cost pools and cost drivers — Correct match for “Activity-based costing (ABC)” is: Allocates OH using activity cost pools and cost drivers."
+            ],
+            [
+              "Which best matches: Cost driver",
+              "Correct: Factor that causes cost in an activity — Correct match for “Cost driver” is: Factor that causes cost in an activity."
+            ],
+            [
+              "Which best matches: Activity cost pool",
+              "Correct: Grouping of individual activities with the same driver — Correct match for “Activity cost pool” is: Grouping of individual activities with the same driver."
+            ],
+            [
+              "Which best matches: Activity-based management (ABM)",
+              "Correct: Using ABC info for decisions/process improvement — Correct match for “Activity-based management (ABM)” is: Using ABC info for decisions/process improvement."
+            ],
+            [
+              "Which best matches: Costs of quality (COQ)",
+              "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “Costs of quality (COQ)” is: Prevention, appraisal, internal failure, external failure."
+            ],
+            [
+              "Which best matches: Lean operations",
+              "Correct: Eliminate waste; JIT; continuous improvement — Correct match for “Lean operations” is: Eliminate waste; JIT; continuous improvement."
+            ],
+            [
+              "Which best matches: Value-added vs non-value-added",
+              "Correct: Activities that increase customer value vs not — Correct match for “Value-added vs non-value-added” is: Activities that increase customer value vs not."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 4",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Which best matches: Best definition of 'Departmental OH rate'?",
+              "Correct: Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department. — Correct match for “Best definition of 'Departmental OH rate'?” is: Correct: Separate MOH rates by department — 'Departmental OH rate': Separate MOH rates by department.."
+            ],
+            [
+              "Which best matches: Best definition of 'Activity-based costing (ABC)'?",
+              "Correct: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers. — Correct match for “Best definition of 'Activity-based costing (ABC)'?” is: Correct: Allocates OH using activity cost pools and cost drivers — 'Activity-based costing (ABC)': Allocates OH using activity cost pools and cost drivers.."
+            ],
+            [
+              "Which best matches: Best definition of 'Cost driver'?",
+              "Correct: Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity. — Correct match for “Best definition of 'Cost driver'?” is: Correct: Factor that causes cost in an activity — 'Cost driver': Factor that causes cost in an activity.."
+            ],
+            [
+              "Which best matches: Best definition of 'Activity cost pool'?",
+              "Correct: Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver. — Correct match for “Best definition of 'Activity cost pool'?” is: Correct: Grouping of individual activities with the same driver — 'Activity cost pool': Grouping of individual activities with the same driver.."
+            ],
+            [
+              "Which best matches: Best definition of 'Activity-based management (ABM)'?",
+              "Correct: Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement. — Correct match for “Best definition of 'Activity-based management (ABM)'?” is: Correct: Using ABC info for decisions/process improvement — 'Activity-based management (ABM)': Using ABC info for decisions/process improvement.."
+            ],
+            [
+              "Which best matches: Best definition of 'Costs of quality (COQ)'?",
+              "Correct: Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure. — Correct match for “Best definition of 'Costs of quality (COQ)'?” is: Correct: Prevention, appraisal, internal failure, external failure — 'Costs of quality (COQ)': Prevention, appraisal, internal failure, external failure.."
+            ],
+            [
+              "Which best matches: Best definition of 'Lean operations'?",
+              "Correct: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement. — Correct match for “Best definition of 'Lean operations'?” is: Correct: Eliminate waste; JIT; continuous improvement — 'Lean operations': Eliminate waste; JIT; continuous improvement.."
+            ],
+            [
+              "Which best matches: Best definition of 'Value-added vs non-value-added'?",
+              "Correct: Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not. — Correct match for “Best definition of 'Value-added vs non-value-added'?” is: Correct: Activities that increase customer value vs not — 'Value-added vs non-value-added': Activities that increase customer value vs not.."
+            ],
+            [
+              "Which best matches: Order cost types by variability with volume (high→none)",
+              "Correct: Variable cost → Mixed cost → Fixed cost — Correct match for “Order cost types by variability with volume (high→none)” is: Variable cost → Mixed cost → Fixed cost."
+            ],
+            [
+              "Which best matches: ABC workflow",
+              "Correct: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products — Correct match for “ABC workflow” is: Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 5",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Put the sequence in order – derived from: Costs of quality (COQ)",
+              "Prevention → appraisal → internal failure → external failure"
+            ],
+            [
+              "Put the sequence in order – derived from: Best definition of 'Costs of quality (COQ)'?",
+              "Correct: Prevention → appraisal → internal failure → external failure — 'Costs of quality (COQ)': Prevention → appraisal → internal failure → external failure."
+            ],
+            [
+              "Put the sequence in order – derived from: Order cost types by variability with volume (high→none)",
+              "Variable cost → Mixed cost → Fixed cost"
+            ],
+            [
+              "Put the sequence in order – derived from: ABC workflow",
+              "Identify activities → Form cost pools → Select cost drivers → Compute activity rates → Assign costs to products"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 1",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Costs of quality (COQ)",
+          "items": [
+            "Prevention",
+            "appraisal",
+            "internal failure",
+            "external failure"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 2",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Best definition of 'Costs of quality (COQ)'?",
+          "items": [
+            "Correct: Prevention",
+            "appraisal",
+            "internal failure",
+            "external failure — 'Costs of quality (COQ)': Prevention",
+            "appraisal",
+            "internal failure",
+            "external failure."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 3",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Order cost types by variability with volume (high→none)",
+          "items": [
+            "Variable cost",
+            "Mixed cost",
+            "Fixed cost"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 4",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: ABC workflow",
+          "items": [
+            "Identify activities",
+            "Form cost pools",
+            "Select cost drivers",
+            "Compute activity rates",
+            "Assign costs to products"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 5",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Chapter 4",
+          "items": [
+            "Activity -Based Costing",
+            "Lean Production",
+            "and the Costs of Quality"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Chapter 4 Part 1.pdf",
+    "Chapter 4 Part 2.pdf",
+    "Chapter 4 ABC all activities - Tagged.pdf"
+  ]
+}

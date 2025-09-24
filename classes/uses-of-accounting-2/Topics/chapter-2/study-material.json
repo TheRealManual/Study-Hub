@@ -1,0 +1,1290 @@
+{
+  "title": "Chapter 2 – Building Blocks of Managerial Accounting",
+  "notes": [
+    [
+      "Attributes of service companies: no inventory; income statement lacks COGS and gross profit",
+      3,
+      "Chapter 2 Part 1 - Tagged.pdf"
+    ],
+    [
+      "Merchandisers: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI",
+      3,
+      "Chapter 2 Activities Revised Fall 2023- SV - Tagged.pdf"
+    ],
+    [
+      "Manufacturers: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG",
+      3,
+      "Ch. 3 Job Costing Activities #1 - #3 - SV - Tagged.pdf"
+    ],
+    [
+      "Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service)",
+      3,
+      "Chapter 2 Activities Revised Fall 2023- SV - Tagged.pdf"
+    ],
+    [
+      "Direct vs indirect costs relative to cost object; tracing vs allocating",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Relevant vs irrelevant; sunk and opportunity costs in decision making",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Prime vs conversion costs and their managerial uses",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Financial statement preparation differences across company types (service/merchandising/manufacturing)",
+      1,
+      "Ch. 3 Job Costing Activities #1 - #3 - SV - Tagged.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "COGS for merchandiser formula",
+      "back": "BI + Purchases + Freight‑in − Purchase returns − EI"
+    },
+    {
+      "front": "Inventories for a manufacturer",
+      "back": "Raw materials, Work in process, Finished goods"
+    },
+    {
+      "front": "Inventoriable costs",
+      "back": "DM + DL + MOH"
+    },
+    {
+      "front": "Period costs",
+      "back": "SG&A—expensed in period"
+    },
+    {
+      "front": "Prime vs conversion cost",
+      "back": "Prime=DM+DL; Conversion=DL+MOH"
+    },
+    {
+      "front": "Relevant cost",
+      "back": "Future cost that differs among alternatives"
+    },
+    {
+      "front": "Fixed vs variable per‑unit",
+      "back": "Fixed per‑unit decreases with volume; variable per‑unit constant"
+    },
+    {
+      "front": "Attributes of service companies",
+      "back": "no inventory; income statement lacks COGS and gross profit"
+    },
+    {
+      "front": "Merchandisers",
+      "back": "merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI"
+    },
+    {
+      "front": "Manufacturers",
+      "back": "RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG"
+    },
+    {
+      "front": "Value chain elements and examples for each stage (e.g., R&D, design, production, market...",
+      "back": "Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service)"
+    },
+    {
+      "front": "Direct vs indirect costs relative to cost object; tracing vs allocating",
+      "back": "Direct vs indirect costs relative to cost object; tracing vs allocating"
+    },
+    {
+      "front": "Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials",
+      "back": "Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials"
+    },
+    {
+      "front": "Relevant vs irrelevant; sunk and opportunity costs in decision making",
+      "back": "Relevant vs irrelevant; sunk and opportunity costs in decision making"
+    },
+    {
+      "front": "Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns",
+      "back": "Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns"
+    },
+    {
+      "front": "Prime vs conversion costs and their managerial uses",
+      "back": "Prime vs conversion costs and their managerial uses"
+    },
+    {
+      "front": "Financial statement preparation differences across company types (service/merchandising...",
+      "back": "Financial statement preparation differences across company types (service/merchandising/manufacturing)"
+    },
+    {
+      "front": "Which is a product cost for manufacturers?",
+      "back": "Correct: Factory depreciation — Manufacturing overhead includes factory depreciation."
+    },
+    {
+      "front": "Which company holds three inventory accounts?",
+      "back": "Correct: Manufacturing — Manufacturers: RM, WIP, FG."
+    },
+    {
+      "front": "Prime cost equals:",
+      "back": "Correct: DM + DL — Prime cost is DM + DL."
+    },
+    {
+      "front": "Relevant costs must be:",
+      "back": "Correct: Future and different — They affect the decision by differing among choices."
+    },
+    {
+      "front": "Place production cost flow",
+      "back": "Raw materials → Work in process → Finished goods → Cost of goods sold"
+    },
+    {
+      "front": "Factory janitor wages",
+      "back": "Indirect (MOH)"
+    },
+    {
+      "front": "Steel for cars",
+      "back": "Direct materials"
+    },
+    {
+      "front": "Assembler wages",
+      "back": "Direct labor"
+    },
+    {
+      "front": "Advertising",
+      "back": "Period cost"
+    },
+    {
+      "front": "Which best matches: COGS for merchandiser formula",
+      "back": "Correct: BI + Purchases + Freight‑in − Purchase returns − EI — Correct match for “COGS for merchandiser formula” is: BI + Purchases + Freight‑in − Purchase returns − EI."
+    },
+    {
+      "front": "Which best matches: Inventories for a manufacturer",
+      "back": "Correct: Raw materials, Work in process, Finished goods — Correct match for “Inventories for a manufacturer” is: Raw materials, Work in process, Finished goods."
+    },
+    {
+      "front": "Which best matches: Inventoriable costs",
+      "back": "Correct: DM + DL + MOH — Correct match for “Inventoriable costs” is: DM + DL + MOH."
+    },
+    {
+      "front": "Which best matches: Period costs",
+      "back": "Correct: SG&A—expensed in period — Correct match for “Period costs” is: SG&A—expensed in period."
+    },
+    {
+      "front": "Which best matches: Prime vs conversion cost",
+      "back": "Correct: Prime=DM+DL; Conversion=DL+MOH — Correct match for “Prime vs conversion cost” is: Prime=DM+DL; Conversion=DL+MOH."
+    },
+    {
+      "front": "Which best matches: Relevant cost",
+      "back": "Correct: Future cost that differs among alternatives — Correct match for “Relevant cost” is: Future cost that differs among alternatives."
+    },
+    {
+      "front": "Which best matches: Fixed vs variable per‑unit",
+      "back": "Correct: Fixed per‑unit decreases with volume; variable per‑unit constant — Correct match for “Fixed vs variable per‑unit” is: Fixed per‑unit decreases with volume; variable per‑unit constant."
+    },
+    {
+      "front": "Which best matches: Attributes of service companies",
+      "back": "Correct: no inventory; income statement lacks COGS and gross profit — Correct match for “Attributes of service companies” is: no inventory; income statement lacks COGS and gross profit."
+    },
+    {
+      "front": "Which best matches: Merchandisers",
+      "back": "Correct: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI — Correct match for “Merchandisers” is: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI."
+    },
+    {
+      "front": "Which best matches: Manufacturers",
+      "back": "Correct: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG — Correct match for “Manufacturers” is: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG."
+    },
+    {
+      "front": "Which best matches: Value chain elements and examples for each stage (e.g., R&D, design, production, market...",
+      "back": "Correct: Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service) — Correct match for “Value chain elements and examples for each stage (e.g., R&D, design, production, market...” is: Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service)."
+    },
+    {
+      "front": "Which best matches: Direct vs indirect costs relative to cost object; tracing vs allocating",
+      "back": "Correct: Direct vs indirect costs relative to cost object; tracing vs allocating — Correct match for “Direct vs indirect costs relative to cost object; tracing vs allocating” is: Direct vs indirect costs relative to cost object; tracing vs allocating."
+    },
+    {
+      "front": "Which best matches: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials",
+      "back": "Correct: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials — Correct match for “Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials” is: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials."
+    },
+    {
+      "front": "Which best matches: Relevant vs irrelevant; sunk and opportunity costs in decision making",
+      "back": "Correct: Relevant vs irrelevant; sunk and opportunity costs in decision making — Correct match for “Relevant vs irrelevant; sunk and opportunity costs in decision making” is: Relevant vs irrelevant; sunk and opportunity costs in decision making."
+    },
+    {
+      "front": "Which best matches: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns",
+      "back": "Correct: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns — Correct match for “Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns” is: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns."
+    },
+    {
+      "front": "Which best matches: Prime vs conversion costs and their managerial uses",
+      "back": "Correct: Prime vs conversion costs and their managerial uses — Correct match for “Prime vs conversion costs and their managerial uses” is: Prime vs conversion costs and their managerial uses."
+    },
+    {
+      "front": "Which best matches: Financial statement preparation differences across company types (service/merchandising...",
+      "back": "Correct: Financial statement preparation differences across company types (service/merchandising/manufacturing) — Correct match for “Financial statement preparation differences across company types (service/merchandising...” is: Financial statement preparation differences across company types (service/merchandising/manufacturing)."
+    },
+    {
+      "front": "Which best matches: Which is a product cost for manufacturers?",
+      "back": "Correct: Correct: Factory depreciation — Manufacturing overhead includes factory depreciation. — Correct match for “Which is a product cost for manufacturers?” is: Correct: Factory depreciation — Manufacturing overhead includes factory depreciation.."
+    },
+    {
+      "front": "Which best matches: Which company holds three inventory accounts?",
+      "back": "Correct: Correct: Manufacturing — Manufacturers: RM, WIP, FG. — Correct match for “Which company holds three inventory accounts?” is: Correct: Manufacturing — Manufacturers: RM, WIP, FG.."
+    },
+    {
+      "front": "Which best matches: Prime cost equals:",
+      "back": "Correct: Correct: DM + DL — Prime cost is DM + DL. — Correct match for “Prime cost equals:” is: Correct: DM + DL — Prime cost is DM + DL.."
+    },
+    {
+      "front": "Which best matches: Relevant costs must be:",
+      "back": "Correct: Correct: Future and different — They affect the decision by differing among choices. — Correct match for “Relevant costs must be:” is: Correct: Future and different — They affect the decision by differing among choices.."
+    },
+    {
+      "front": "Which best matches: Place production cost flow",
+      "back": "Correct: Raw materials → Work in process → Finished goods → Cost of goods sold — Correct match for “Place production cost flow” is: Raw materials → Work in process → Finished goods → Cost of goods sold."
+    },
+    {
+      "front": "Which best matches: Factory janitor wages",
+      "back": "Correct: Indirect (MOH) — Correct match for “Factory janitor wages” is: Indirect (MOH)."
+    },
+    {
+      "front": "Which best matches: Steel for cars",
+      "back": "Correct: Direct materials — Correct match for “Steel for cars” is: Direct materials."
+    },
+    {
+      "front": "Which best matches: Assembler wages",
+      "back": "Correct: Direct labor — Correct match for “Assembler wages” is: Direct labor."
+    },
+    {
+      "front": "Which best matches: Advertising",
+      "back": "Correct: Period cost — Correct match for “Advertising” is: Period cost."
+    },
+    {
+      "front": "Put the sequence in order – derived from: Inventories for a manufacturer",
+      "back": "Raw materials → Work in process → Finished goods"
+    },
+    {
+      "front": "Put the sequence in order – derived from: Manufacturers",
+      "back": "RM → WIP → FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG"
+    },
+    {
+      "front": "Put the sequence in order – derived from: Value chain elements and examples for each stage (e.g., R&D, design, production, market...",
+      "back": "Value chain elements and examples for each stage (e.g. → R&D → design → production → marketing → distribution → customer service)"
+    },
+    {
+      "front": "Put the sequence in order – derived from: Which company holds three inventory accounts?",
+      "back": "Correct: Manufacturing — Manufacturers: RM → WIP → FG."
+    },
+    {
+      "front": "Put the sequence in order – derived from: Place production cost flow",
+      "back": "Raw materials → Work in process → Finished goods → Cost of goods sold"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which best matches: COGS for merchandiser formula",
+      "options": [
+        "Correct: Fixed per‑unit decreases with volume; variable per‑unit constant — Correct match for “Fixed vs variable per‑unit” is: Fixed per‑unit decreases with volume; variable per‑unit constant.",
+        "Correct: Correct: Future and different — They affect the decision by differing among choices. — Correct match for “Relevant costs must be:” is: Correct: Future and different — They affect the decision by differing among choices..",
+        "Correct: Future cost that differs among alternatives — Correct match for “Relevant cost” is: Future cost that differs among alternatives.",
+        "BI + Purchases + Freight‑in − Purchase returns − EI"
+      ],
+      "answer": 3,
+      "explanation": "Correct: BI + Purchases + Freight‑in − Purchase returns − EI"
+    },
+    {
+      "question": "Which best matches: Inventories for a manufacturer",
+      "options": [
+        "Raw materials, Work in process, Finished goods",
+        "Raw materials → Work in process → Finished goods → Cost of goods sold",
+        "Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials",
+        "Raw materials → Work in process → Finished goods → Cost of goods sold"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Raw materials, Work in process, Finished goods"
+    },
+    {
+      "question": "Which best matches: Inventoriable costs",
+      "options": [
+        "DM + DL + MOH",
+        "Correct: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG — Correct match for “Manufacturers” is: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG.",
+        "Raw materials, Work in process, Finished goods",
+        "Correct: Correct: Future and different — They affect the decision by differing among choices. — Correct match for “Relevant costs must be:” is: Correct: Future and different — They affect the decision by differing among choices.."
+      ],
+      "answer": 0,
+      "explanation": "Correct: DM + DL + MOH"
+    },
+    {
+      "question": "Which best matches: Period costs",
+      "options": [
+        "Correct: Correct: Future and different — They affect the decision by differing among choices. — Correct match for “Relevant costs must be:” is: Correct: Future and different — They affect the decision by differing among choices..",
+        "SG&A—expensed in period",
+        "Correct: Raw materials, Work in process, Finished goods — Correct match for “Inventories for a manufacturer” is: Raw materials, Work in process, Finished goods.",
+        "Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns"
+      ],
+      "answer": 1,
+      "explanation": "Correct: SG&A—expensed in period"
+    },
+    {
+      "question": "Which best matches: Prime vs conversion cost",
+      "options": [
+        "Correct: Indirect (MOH) — Correct match for “Factory janitor wages” is: Indirect (MOH).",
+        "Prime=DM+DL; Conversion=DL+MOH",
+        "Correct: Fixed per‑unit decreases with volume; variable per‑unit constant — Correct match for “Fixed vs variable per‑unit” is: Fixed per‑unit decreases with volume; variable per‑unit constant.",
+        "Correct: Factory depreciation — Manufacturing overhead includes factory depreciation."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Prime=DM+DL; Conversion=DL+MOH"
+    },
+    {
+      "question": "Which best matches: Relevant cost",
+      "options": [
+        "Correct: Future and different — They affect the decision by differing among choices.",
+        "Direct vs indirect costs relative to cost object; tracing vs allocating",
+        "Correct: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials — Correct match for “Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials” is: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials.",
+        "Future cost that differs among alternatives"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Future cost that differs among alternatives"
+    },
+    {
+      "question": "Which best matches: Fixed vs variable per‑unit",
+      "options": [
+        "RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG",
+        "Fixed per‑unit decreases with volume; variable per‑unit constant",
+        "Correct: Future cost that differs among alternatives — Correct match for “Relevant cost” is: Future cost that differs among alternatives.",
+        "Direct vs indirect costs relative to cost object; tracing vs allocating"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Fixed per‑unit decreases with volume; variable per‑unit constant"
+    },
+    {
+      "question": "Which best matches: Attributes of service companies",
+      "options": [
+        "no inventory; income statement lacks COGS and gross profit",
+        "Correct: Raw materials, Work in process, Finished goods — Correct match for “Inventories for a manufacturer” is: Raw materials, Work in process, Finished goods.",
+        "Fixed per‑unit decreases with volume; variable per‑unit constant",
+        "Correct: Direct labor — Correct match for “Assembler wages” is: Direct labor."
+      ],
+      "answer": 0,
+      "explanation": "Correct: no inventory; income statement lacks COGS and gross profit"
+    },
+    {
+      "question": "Which best matches: Merchandisers",
+      "options": [
+        "Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns",
+        "merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI",
+        "Correct: Correct: Future and different — They affect the decision by differing among choices. — Correct match for “Relevant costs must be:” is: Correct: Future and different — They affect the decision by differing among choices..",
+        "Correct: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials — Correct match for “Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials” is: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials."
+      ],
+      "answer": 1,
+      "explanation": "Correct: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI"
+    },
+    {
+      "question": "Which best matches: Manufacturers",
+      "options": [
+        "Correct: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI — Correct match for “Merchandisers” is: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI.",
+        "Relevant vs irrelevant; sunk and opportunity costs in decision making",
+        "Correct: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG — Correct match for “Manufacturers” is: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG.",
+        "RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG"
+      ],
+      "answer": 3,
+      "explanation": "Correct: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG"
+    },
+    {
+      "question": "Which best matches: Value chain elements and examples for each stage (e.g., R&D, design, production, market...",
+      "options": [
+        "Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service)",
+        "Correct: Correct: Future and different — They affect the decision by differing among choices. — Correct match for “Relevant costs must be:” is: Correct: Future and different — They affect the decision by differing among choices..",
+        "Raw materials, Work in process, Finished goods",
+        "SG&A—expensed in period"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service)"
+    },
+    {
+      "question": "Which best matches: Direct vs indirect costs relative to cost object; tracing vs allocating",
+      "options": [
+        "Financial statement preparation differences across company types (service/merchandising/manufacturing)",
+        "SG&A—expensed in period",
+        "Direct labor",
+        "Direct vs indirect costs relative to cost object; tracing vs allocating"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Direct vs indirect costs relative to cost object; tracing vs allocating"
+    },
+    {
+      "question": "Which best matches: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials",
+      "options": [
+        "Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials",
+        "Value chain elements and examples for each stage (e.g. → R&D → design → production → marketing → distribution → customer service)",
+        "Correct: BI + Purchases + Freight‑in − Purchase returns − EI — Correct match for “COGS for merchandiser formula” is: BI + Purchases + Freight‑in − Purchase returns − EI.",
+        "Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service)"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials"
+    },
+    {
+      "question": "Which best matches: Relevant vs irrelevant; sunk and opportunity costs in decision making",
+      "options": [
+        "Correct: DM + DL + MOH — Correct match for “Inventoriable costs” is: DM + DL + MOH.",
+        "Correct: Direct materials — Correct match for “Steel for cars” is: Direct materials.",
+        "Correct: Financial statement preparation differences across company types (service/merchandising/manufacturing) — Correct match for “Financial statement preparation differences across company types (service/merchandising...” is: Financial statement preparation differences across company types (service/merchandising/manufacturing).",
+        "Relevant vs irrelevant; sunk and opportunity costs in decision making"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Relevant vs irrelevant; sunk and opportunity costs in decision making"
+    },
+    {
+      "question": "Which best matches: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns",
+      "options": [
+        "Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service)",
+        "Financial statement preparation differences across company types (service/merchandising/manufacturing)",
+        "Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns",
+        "Correct: Factory depreciation — Manufacturing overhead includes factory depreciation."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns"
+    },
+    {
+      "question": "Which best matches: Prime vs conversion costs and their managerial uses",
+      "options": [
+        "Prime vs conversion costs and their managerial uses",
+        "SG&A—expensed in period",
+        "Correct: Correct: Manufacturing — Manufacturers: RM, WIP, FG. — Correct match for “Which company holds three inventory accounts?” is: Correct: Manufacturing — Manufacturers: RM, WIP, FG..",
+        "Correct: Prime=DM+DL; Conversion=DL+MOH — Correct match for “Prime vs conversion cost” is: Prime=DM+DL; Conversion=DL+MOH."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Prime vs conversion costs and their managerial uses"
+    },
+    {
+      "question": "Which best matches: Financial statement preparation differences across company types (service/merchandising...",
+      "options": [
+        "Correct: DM + DL — Prime cost is DM + DL.",
+        "Financial statement preparation differences across company types (service/merchandising/manufacturing)",
+        "Correct: Indirect (MOH) — Correct match for “Factory janitor wages” is: Indirect (MOH).",
+        "Correct: no inventory; income statement lacks COGS and gross profit — Correct match for “Attributes of service companies” is: no inventory; income statement lacks COGS and gross profit."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Financial statement preparation differences across company types (service/merchandising/manufacturing)"
+    },
+    {
+      "question": "Which best matches: Which is a product cost for manufacturers?",
+      "options": [
+        "Raw materials → Work in process → Finished goods",
+        "Direct labor",
+        "SG&A—expensed in period",
+        "Correct: Factory depreciation — Manufacturing overhead includes factory depreciation."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Factory depreciation — Manufacturing overhead includes factory depreciation."
+    },
+    {
+      "question": "Which best matches: Which company holds three inventory accounts?",
+      "options": [
+        "Correct: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI — Correct match for “Merchandisers” is: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI.",
+        "Relevant vs irrelevant; sunk and opportunity costs in decision making",
+        "Correct: Manufacturing — Manufacturers: RM, WIP, FG.",
+        "Correct: Raw materials, Work in process, Finished goods — Correct match for “Inventories for a manufacturer” is: Raw materials, Work in process, Finished goods."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Manufacturing — Manufacturers: RM, WIP, FG."
+    },
+    {
+      "question": "Which best matches: Prime cost equals:",
+      "options": [
+        "RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG",
+        "Direct vs indirect costs relative to cost object; tracing vs allocating",
+        "Correct: DM + DL — Prime cost is DM + DL.",
+        "Correct: Prime vs conversion costs and their managerial uses — Correct match for “Prime vs conversion costs and their managerial uses” is: Prime vs conversion costs and their managerial uses."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: DM + DL — Prime cost is DM + DL."
+    },
+    {
+      "question": "Which best matches: Relevant costs must be:",
+      "options": [
+        "Correct: Future and different — They affect the decision by differing among choices.",
+        "Correct: BI + Purchases + Freight‑in − Purchase returns − EI — Correct match for “COGS for merchandiser formula” is: BI + Purchases + Freight‑in − Purchase returns − EI.",
+        "Correct: Raw materials → Work in process → Finished goods → Cost of goods sold — Correct match for “Place production cost flow” is: Raw materials → Work in process → Finished goods → Cost of goods sold.",
+        "Correct: DM + DL + MOH — Correct match for “Inventoriable costs” is: DM + DL + MOH."
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Future and different — They affect the decision by differing among choices."
+    },
+    {
+      "question": "Which best matches: Place production cost flow",
+      "options": [
+        "Raw materials, Work in process, Finished goods",
+        "Raw materials → Work in process → Finished goods → Cost of goods sold",
+        "Correct: DM + DL + MOH — Correct match for “Inventoriable costs” is: DM + DL + MOH.",
+        "Correct: BI + Purchases + Freight‑in − Purchase returns − EI — Correct match for “COGS for merchandiser formula” is: BI + Purchases + Freight‑in − Purchase returns − EI."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Raw materials → Work in process → Finished goods → Cost of goods sold"
+    },
+    {
+      "question": "Which best matches: Factory janitor wages",
+      "options": [
+        "merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI",
+        "Correct: Manufacturing — Manufacturers: RM → WIP → FG.",
+        "RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG",
+        "Indirect (MOH)"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Indirect (MOH)"
+    },
+    {
+      "question": "Which best matches: Steel for cars",
+      "options": [
+        "Correct: Direct vs indirect costs relative to cost object; tracing vs allocating — Correct match for “Direct vs indirect costs relative to cost object; tracing vs allocating” is: Direct vs indirect costs relative to cost object; tracing vs allocating.",
+        "Correct: Fixed per‑unit decreases with volume; variable per‑unit constant — Correct match for “Fixed vs variable per‑unit” is: Fixed per‑unit decreases with volume; variable per‑unit constant.",
+        "Correct: Relevant vs irrelevant; sunk and opportunity costs in decision making — Correct match for “Relevant vs irrelevant; sunk and opportunity costs in decision making” is: Relevant vs irrelevant; sunk and opportunity costs in decision making.",
+        "Direct materials"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Direct materials"
+    },
+    {
+      "question": "Which best matches: Assembler wages",
+      "options": [
+        "Correct: Direct vs indirect costs relative to cost object; tracing vs allocating — Correct match for “Direct vs indirect costs relative to cost object; tracing vs allocating” is: Direct vs indirect costs relative to cost object; tracing vs allocating.",
+        "Direct labor",
+        "Financial statement preparation differences across company types (service/merchandising/manufacturing)",
+        "Correct: Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service) — Correct match for “Value chain elements and examples for each stage (e.g., R&D, design, production, market...” is: Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service)."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Direct labor"
+    },
+    {
+      "question": "Which best matches: Advertising",
+      "options": [
+        "Correct: Raw materials → Work in process → Finished goods → Cost of goods sold — Correct match for “Place production cost flow” is: Raw materials → Work in process → Finished goods → Cost of goods sold.",
+        "Period cost",
+        "Correct: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI — Correct match for “Merchandisers” is: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI.",
+        "Correct: Correct: Future and different — They affect the decision by differing among choices. — Correct match for “Relevant costs must be:” is: Correct: Future and different — They affect the decision by differing among choices.."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Period cost"
+    },
+    {
+      "question": "Which best matches: Which best matches: COGS for merchandiser formula",
+      "options": [
+        "Correct: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns — Correct match for “Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns” is: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns.",
+        "merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI",
+        "Correct: BI + Purchases + Freight‑in − Purchase returns − EI — Correct match for “COGS for merchandiser formula” is: BI + Purchases + Freight‑in − Purchase returns − EI.",
+        "Correct: no inventory; income statement lacks COGS and gross profit — Correct match for “Attributes of service companies” is: no inventory; income statement lacks COGS and gross profit."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: BI + Purchases + Freight‑in − Purchase returns − EI — Correct match for “COGS for merchandiser formula” is: BI + Purchases + Freight‑in − Purchase returns − EI."
+    },
+    {
+      "question": "Which best matches: Which best matches: Inventories for a manufacturer",
+      "options": [
+        "Correct: Raw materials, Work in process, Finished goods — Correct match for “Inventories for a manufacturer” is: Raw materials, Work in process, Finished goods.",
+        "Prime vs conversion costs and their managerial uses",
+        "Correct: Factory depreciation — Manufacturing overhead includes factory depreciation.",
+        "Indirect (MOH)"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Raw materials, Work in process, Finished goods — Correct match for “Inventories for a manufacturer” is: Raw materials, Work in process, Finished goods."
+    },
+    {
+      "question": "Which best matches: Which best matches: Inventoriable costs",
+      "options": [
+        "Value chain elements and examples for each stage (e.g. → R&D → design → production → marketing → distribution → customer service)",
+        "Correct: DM + DL + MOH — Correct match for “Inventoriable costs” is: DM + DL + MOH.",
+        "Financial statement preparation differences across company types (service/merchandising/manufacturing)",
+        "Correct: Direct labor — Correct match for “Assembler wages” is: Direct labor."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: DM + DL + MOH — Correct match for “Inventoriable costs” is: DM + DL + MOH."
+    },
+    {
+      "question": "Which best matches: Which best matches: Period costs",
+      "options": [
+        "Future cost that differs among alternatives",
+        "Correct: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials — Correct match for “Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials” is: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials.",
+        "RM → WIP → FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG",
+        "Correct: SG&A—expensed in period — Correct match for “Period costs” is: SG&A—expensed in period."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: SG&A—expensed in period — Correct match for “Period costs” is: SG&A—expensed in period."
+    },
+    {
+      "question": "Which best matches: Which best matches: Prime vs conversion cost",
+      "options": [
+        "Raw materials → Work in process → Finished goods → Cost of goods sold",
+        "Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns",
+        "Correct: Prime=DM+DL; Conversion=DL+MOH — Correct match for “Prime vs conversion cost” is: Prime=DM+DL; Conversion=DL+MOH.",
+        "Correct: Relevant vs irrelevant; sunk and opportunity costs in decision making — Correct match for “Relevant vs irrelevant; sunk and opportunity costs in decision making” is: Relevant vs irrelevant; sunk and opportunity costs in decision making."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Prime=DM+DL; Conversion=DL+MOH — Correct match for “Prime vs conversion cost” is: Prime=DM+DL; Conversion=DL+MOH."
+    },
+    {
+      "question": "Which best matches: Which best matches: Relevant cost",
+      "options": [
+        "Financial statement preparation differences across company types (service/merchandising/manufacturing)",
+        "Correct: Indirect (MOH) — Correct match for “Factory janitor wages” is: Indirect (MOH).",
+        "Correct: Future cost that differs among alternatives — Correct match for “Relevant cost” is: Future cost that differs among alternatives.",
+        "Correct: Period cost — Correct match for “Advertising” is: Period cost."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Future cost that differs among alternatives — Correct match for “Relevant cost” is: Future cost that differs among alternatives."
+    },
+    {
+      "question": "Which best matches: Which best matches: Fixed vs variable per‑unit",
+      "options": [
+        "Direct vs indirect costs relative to cost object; tracing vs allocating",
+        "Correct: Fixed per‑unit decreases with volume; variable per‑unit constant — Correct match for “Fixed vs variable per‑unit” is: Fixed per‑unit decreases with volume; variable per‑unit constant.",
+        "Prime=DM+DL; Conversion=DL+MOH",
+        "Correct: Direct labor — Correct match for “Assembler wages” is: Direct labor."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Fixed per‑unit decreases with volume; variable per‑unit constant — Correct match for “Fixed vs variable per‑unit” is: Fixed per‑unit decreases with volume; variable per‑unit constant."
+    },
+    {
+      "question": "Which best matches: Which best matches: Attributes of service companies",
+      "options": [
+        "merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI",
+        "Indirect (MOH)",
+        "Correct: no inventory; income statement lacks COGS and gross profit — Correct match for “Attributes of service companies” is: no inventory; income statement lacks COGS and gross profit.",
+        "Correct: Correct: Future and different — They affect the decision by differing among choices. — Correct match for “Relevant costs must be:” is: Correct: Future and different — They affect the decision by differing among choices.."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: no inventory; income statement lacks COGS and gross profit — Correct match for “Attributes of service companies” is: no inventory; income statement lacks COGS and gross profit."
+    },
+    {
+      "question": "Which best matches: Which best matches: Merchandisers",
+      "options": [
+        "SG&A—expensed in period",
+        "Correct: Direct vs indirect costs relative to cost object; tracing vs allocating — Correct match for “Direct vs indirect costs relative to cost object; tracing vs allocating” is: Direct vs indirect costs relative to cost object; tracing vs allocating.",
+        "merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI",
+        "Correct: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI — Correct match for “Merchandisers” is: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI — Correct match for “Merchandisers” is: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI."
+    },
+    {
+      "question": "Which best matches: Which best matches: Manufacturers",
+      "options": [
+        "Raw materials → Work in process → Finished goods",
+        "Correct: Future cost that differs among alternatives — Correct match for “Relevant cost” is: Future cost that differs among alternatives.",
+        "Correct: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG — Correct match for “Manufacturers” is: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG.",
+        "merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG — Correct match for “Manufacturers” is: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG."
+    },
+    {
+      "question": "Which best matches: Which best matches: Value chain elements and examples for each stage (e.g., R&D, design, production, market...",
+      "options": [
+        "Correct: Future and different — They affect the decision by differing among choices.",
+        "Correct: Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service) — Correct match for “Value chain elements and examples for each stage (e.g., R&D, design, production, market...” is: Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service).",
+        "Correct: DM + DL — Prime cost is DM + DL.",
+        "Correct: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials — Correct match for “Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials” is: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service) — Correct match for “Value chain elements and examples for each stage (e.g., R&D, design, production, market...” is: Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service)."
+    },
+    {
+      "question": "Which best matches: Which best matches: Direct vs indirect costs relative to cost object; tracing vs allocating",
+      "options": [
+        "Correct: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials — Correct match for “Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials” is: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials.",
+        "RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG",
+        "Correct: Financial statement preparation differences across company types (service/merchandising/manufacturing) — Correct match for “Financial statement preparation differences across company types (service/merchandising...” is: Financial statement preparation differences across company types (service/merchandising/manufacturing).",
+        "Correct: Direct vs indirect costs relative to cost object; tracing vs allocating — Correct match for “Direct vs indirect costs relative to cost object; tracing vs allocating” is: Direct vs indirect costs relative to cost object; tracing vs allocating."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Direct vs indirect costs relative to cost object; tracing vs allocating — Correct match for “Direct vs indirect costs relative to cost object; tracing vs allocating” is: Direct vs indirect costs relative to cost object; tracing vs allocating."
+    },
+    {
+      "question": "Which best matches: Which best matches: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials",
+      "options": [
+        "Correct: Correct: Manufacturing — Manufacturers: RM, WIP, FG. — Correct match for “Which company holds three inventory accounts?” is: Correct: Manufacturing — Manufacturers: RM, WIP, FG..",
+        "Correct: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG — Correct match for “Manufacturers” is: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG.",
+        "Correct: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials — Correct match for “Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials” is: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials.",
+        "Correct: Correct: Future and different — They affect the decision by differing among choices. — Correct match for “Relevant costs must be:” is: Correct: Future and different — They affect the decision by differing among choices.."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials — Correct match for “Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials” is: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials."
+    },
+    {
+      "question": "Which best matches: Which best matches: Relevant vs irrelevant; sunk and opportunity costs in decision making",
+      "options": [
+        "Correct: Correct: Factory depreciation — Manufacturing overhead includes factory depreciation. — Correct match for “Which is a product cost for manufacturers?” is: Correct: Factory depreciation — Manufacturing overhead includes factory depreciation..",
+        "Correct: Relevant vs irrelevant; sunk and opportunity costs in decision making — Correct match for “Relevant vs irrelevant; sunk and opportunity costs in decision making” is: Relevant vs irrelevant; sunk and opportunity costs in decision making.",
+        "Correct: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns — Correct match for “Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns” is: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns.",
+        "Indirect (MOH)"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Relevant vs irrelevant; sunk and opportunity costs in decision making — Correct match for “Relevant vs irrelevant; sunk and opportunity costs in decision making” is: Relevant vs irrelevant; sunk and opportunity costs in decision making."
+    },
+    {
+      "question": "Which best matches: Which best matches: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns",
+      "options": [
+        "Direct materials",
+        "RM → WIP → FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG",
+        "Relevant vs irrelevant; sunk and opportunity costs in decision making",
+        "Correct: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns — Correct match for “Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns” is: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns — Correct match for “Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns” is: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns."
+    },
+    {
+      "question": "Which best matches: Which best matches: Prime vs conversion costs and their managerial uses",
+      "options": [
+        "Indirect (MOH)",
+        "Correct: Prime vs conversion costs and their managerial uses — Correct match for “Prime vs conversion costs and their managerial uses” is: Prime vs conversion costs and their managerial uses.",
+        "Correct: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI — Correct match for “Merchandisers” is: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI.",
+        "Correct: Direct materials — Correct match for “Steel for cars” is: Direct materials."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Prime vs conversion costs and their managerial uses — Correct match for “Prime vs conversion costs and their managerial uses” is: Prime vs conversion costs and their managerial uses."
+    },
+    {
+      "question": "Which best matches: Which best matches: Financial statement preparation differences across company types (service/merchandising...",
+      "options": [
+        "Correct: Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service) — Correct match for “Value chain elements and examples for each stage (e.g., R&D, design, production, market...” is: Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service).",
+        "Correct: Financial statement preparation differences across company types (service/merchandising/manufacturing) — Correct match for “Financial statement preparation differences across company types (service/merchandising...” is: Financial statement preparation differences across company types (service/merchandising/manufacturing).",
+        "Correct: SG&A—expensed in period — Correct match for “Period costs” is: SG&A—expensed in period.",
+        "Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns"
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Financial statement preparation differences across company types (service/merchandising/manufacturing) — Correct match for “Financial statement preparation differences across company types (service/merchandising...” is: Financial statement preparation differences across company types (service/merchandising/manufacturing)."
+    },
+    {
+      "question": "Which best matches: Which best matches: Which is a product cost for manufacturers?",
+      "options": [
+        "Raw materials, Work in process, Finished goods",
+        "Direct materials",
+        "no inventory; income statement lacks COGS and gross profit",
+        "Correct: Correct: Factory depreciation — Manufacturing overhead includes factory depreciation. — Correct match for “Which is a product cost for manufacturers?” is: Correct: Factory depreciation — Manufacturing overhead includes factory depreciation.."
+      ],
+      "answer": 3,
+      "explanation": "Correct: Correct: Correct: Factory depreciation — Manufacturing overhead includes factory depreciation. — Correct match for “Which is a product cost for manufacturers?” is: Correct: Factory depreciation — Manufacturing overhead includes factory depreciation.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Which company holds three inventory accounts?",
+      "options": [
+        "Correct: Correct: Manufacturing — Manufacturers: RM, WIP, FG. — Correct match for “Which company holds three inventory accounts?” is: Correct: Manufacturing — Manufacturers: RM, WIP, FG..",
+        "Correct: Financial statement preparation differences across company types (service/merchandising/manufacturing) — Correct match for “Financial statement preparation differences across company types (service/merchandising...” is: Financial statement preparation differences across company types (service/merchandising/manufacturing).",
+        "Correct: SG&A—expensed in period — Correct match for “Period costs” is: SG&A—expensed in period.",
+        "SG&A—expensed in period"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Correct: Manufacturing — Manufacturers: RM, WIP, FG. — Correct match for “Which company holds three inventory accounts?” is: Correct: Manufacturing — Manufacturers: RM, WIP, FG.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Prime cost equals:",
+      "options": [
+        "Correct: Prime=DM+DL; Conversion=DL+MOH — Correct match for “Prime vs conversion cost” is: Prime=DM+DL; Conversion=DL+MOH.",
+        "Correct: Correct: DM + DL — Prime cost is DM + DL. — Correct match for “Prime cost equals:” is: Correct: DM + DL — Prime cost is DM + DL..",
+        "Correct: Period cost — Correct match for “Advertising” is: Period cost.",
+        "Correct: Direct materials — Correct match for “Steel for cars” is: Direct materials."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Correct: DM + DL — Prime cost is DM + DL. — Correct match for “Prime cost equals:” is: Correct: DM + DL — Prime cost is DM + DL.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Relevant costs must be:",
+      "options": [
+        "Correct: Factory depreciation — Manufacturing overhead includes factory depreciation.",
+        "Correct: Manufacturing — Manufacturers: RM → WIP → FG.",
+        "Correct: Correct: Future and different — They affect the decision by differing among choices. — Correct match for “Relevant costs must be:” is: Correct: Future and different — They affect the decision by differing among choices..",
+        "Correct: BI + Purchases + Freight‑in − Purchase returns − EI — Correct match for “COGS for merchandiser formula” is: BI + Purchases + Freight‑in − Purchase returns − EI."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Correct: Future and different — They affect the decision by differing among choices. — Correct match for “Relevant costs must be:” is: Correct: Future and different — They affect the decision by differing among choices.."
+    },
+    {
+      "question": "Which best matches: Which best matches: Place production cost flow",
+      "options": [
+        "Correct: Direct materials — Correct match for “Steel for cars” is: Direct materials.",
+        "Correct: Raw materials → Work in process → Finished goods → Cost of goods sold — Correct match for “Place production cost flow” is: Raw materials → Work in process → Finished goods → Cost of goods sold.",
+        "Raw materials → Work in process → Finished goods",
+        "Correct: Correct: Factory depreciation — Manufacturing overhead includes factory depreciation. — Correct match for “Which is a product cost for manufacturers?” is: Correct: Factory depreciation — Manufacturing overhead includes factory depreciation.."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Raw materials → Work in process → Finished goods → Cost of goods sold — Correct match for “Place production cost flow” is: Raw materials → Work in process → Finished goods → Cost of goods sold."
+    },
+    {
+      "question": "Which best matches: Which best matches: Factory janitor wages",
+      "options": [
+        "Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service)",
+        "Correct: Indirect (MOH) — Correct match for “Factory janitor wages” is: Indirect (MOH).",
+        "Correct: Future and different — They affect the decision by differing among choices.",
+        "Correct: Direct vs indirect costs relative to cost object; tracing vs allocating — Correct match for “Direct vs indirect costs relative to cost object; tracing vs allocating” is: Direct vs indirect costs relative to cost object; tracing vs allocating."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Indirect (MOH) — Correct match for “Factory janitor wages” is: Indirect (MOH)."
+    },
+    {
+      "question": "Which best matches: Which best matches: Steel for cars",
+      "options": [
+        "Financial statement preparation differences across company types (service/merchandising/manufacturing)",
+        "Correct: Direct materials — Correct match for “Steel for cars” is: Direct materials.",
+        "Fixed per‑unit decreases with volume; variable per‑unit constant",
+        "Correct: Indirect (MOH) — Correct match for “Factory janitor wages” is: Indirect (MOH)."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Direct materials — Correct match for “Steel for cars” is: Direct materials."
+    },
+    {
+      "question": "Which best matches: Which best matches: Assembler wages",
+      "options": [
+        "Correct: Direct labor — Correct match for “Assembler wages” is: Direct labor.",
+        "Correct: Future cost that differs among alternatives — Correct match for “Relevant cost” is: Future cost that differs among alternatives.",
+        "Value chain elements and examples for each stage (e.g. → R&D → design → production → marketing → distribution → customer service)",
+        "Period cost"
+      ],
+      "answer": 0,
+      "explanation": "Correct: Correct: Direct labor — Correct match for “Assembler wages” is: Direct labor."
+    },
+    {
+      "question": "Which best matches: Which best matches: Advertising",
+      "options": [
+        "Correct: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI — Correct match for “Merchandisers” is: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI.",
+        "Correct: Period cost — Correct match for “Advertising” is: Period cost.",
+        "Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials",
+        "Correct: Prime vs conversion costs and their managerial uses — Correct match for “Prime vs conversion costs and their managerial uses” is: Prime vs conversion costs and their managerial uses."
+      ],
+      "answer": 1,
+      "explanation": "Correct: Correct: Period cost — Correct match for “Advertising” is: Period cost."
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Inventories for a manufacturer",
+      "options": [
+        "Correct: Fixed per‑unit decreases with volume; variable per‑unit constant — Correct match for “Fixed vs variable per‑unit” is: Fixed per‑unit decreases with volume; variable per‑unit constant.",
+        "Correct: Indirect (MOH) — Correct match for “Factory janitor wages” is: Indirect (MOH).",
+        "Raw materials → Work in process → Finished goods",
+        "Correct: BI + Purchases + Freight‑in − Purchase returns − EI — Correct match for “COGS for merchandiser formula” is: BI + Purchases + Freight‑in − Purchase returns − EI."
+      ],
+      "answer": 2,
+      "explanation": "Correct: Raw materials → Work in process → Finished goods"
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Manufacturers",
+      "options": [
+        "Direct materials",
+        "Correct: Correct: Factory depreciation — Manufacturing overhead includes factory depreciation. — Correct match for “Which is a product cost for manufacturers?” is: Correct: Factory depreciation — Manufacturing overhead includes factory depreciation..",
+        "RM → WIP → FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG",
+        "Financial statement preparation differences across company types (service/merchandising/manufacturing)"
+      ],
+      "answer": 2,
+      "explanation": "Correct: RM → WIP → FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG"
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Value chain elements and examples for each stage (e.g., R&D, design, production, market...",
+      "options": [
+        "Period cost",
+        "Correct: Future and different — They affect the decision by differing among choices.",
+        "Correct: Direct labor — Correct match for “Assembler wages” is: Direct labor.",
+        "Value chain elements and examples for each stage (e.g. → R&D → design → production → marketing → distribution → customer service)"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Value chain elements and examples for each stage (e.g. → R&D → design → production → marketing → distribution → customer service)"
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Which company holds three inventory accounts?",
+      "options": [
+        "Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service)",
+        "Value chain elements and examples for each stage (e.g. → R&D → design → production → marketing → distribution → customer service)",
+        "Correct: Manufacturing — Manufacturers: RM → WIP → FG.",
+        "Prime=DM+DL; Conversion=DL+MOH"
+      ],
+      "answer": 2,
+      "explanation": "Correct: Correct: Manufacturing — Manufacturers: RM → WIP → FG."
+    },
+    {
+      "question": "Which best matches: Put the sequence in order – derived from: Place production cost flow",
+      "options": [
+        "merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI",
+        "Correct: Correct: Manufacturing — Manufacturers: RM, WIP, FG. — Correct match for “Which company holds three inventory accounts?” is: Correct: Manufacturing — Manufacturers: RM, WIP, FG..",
+        "Correct: Indirect (MOH) — Correct match for “Factory janitor wages” is: Indirect (MOH).",
+        "Raw materials → Work in process → Finished goods → Cost of goods sold"
+      ],
+      "answer": 3,
+      "explanation": "Correct: Raw materials → Work in process → Finished goods → Cost of goods sold"
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "title": "Matching Set 1",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "COGS for merchandiser formula",
+              "BI + Purchases + Freight‑in − Purchase returns − EI"
+            ],
+            [
+              "Inventories for a manufacturer",
+              "Raw materials, Work in process, Finished goods"
+            ],
+            [
+              "Inventoriable costs",
+              "DM + DL + MOH"
+            ],
+            [
+              "Period costs",
+              "SG&A—expensed in period"
+            ],
+            [
+              "Prime vs conversion cost",
+              "Prime=DM+DL; Conversion=DL+MOH"
+            ],
+            [
+              "Relevant cost",
+              "Future cost that differs among alternatives"
+            ],
+            [
+              "Fixed vs variable per‑unit",
+              "Fixed per‑unit decreases with volume; variable per‑unit constant"
+            ],
+            [
+              "Attributes of service companies",
+              "no inventory; income statement lacks COGS and gross profit"
+            ],
+            [
+              "Merchandisers",
+              "merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI"
+            ],
+            [
+              "Manufacturers",
+              "RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 2",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Value chain elements and examples for each stage (e.g., R&D, design, production, market...",
+              "Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service)"
+            ],
+            [
+              "Direct vs indirect costs relative to cost object; tracing vs allocating",
+              "Direct vs indirect costs relative to cost object; tracing vs allocating"
+            ],
+            [
+              "Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials",
+              "Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials"
+            ],
+            [
+              "Relevant vs irrelevant; sunk and opportunity costs in decision making",
+              "Relevant vs irrelevant; sunk and opportunity costs in decision making"
+            ],
+            [
+              "Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns",
+              "Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns"
+            ],
+            [
+              "Prime vs conversion costs and their managerial uses",
+              "Prime vs conversion costs and their managerial uses"
+            ],
+            [
+              "Financial statement preparation differences across company types (service/merchandising...",
+              "Financial statement preparation differences across company types (service/merchandising/manufacturing)"
+            ],
+            [
+              "Which is a product cost for manufacturers?",
+              "Correct: Factory depreciation — Manufacturing overhead includes factory depreciation."
+            ],
+            [
+              "Which company holds three inventory accounts?",
+              "Correct: Manufacturing — Manufacturers: RM, WIP, FG."
+            ],
+            [
+              "Prime cost equals:",
+              "Correct: DM + DL — Prime cost is DM + DL."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 3",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Relevant costs must be:",
+              "Correct: Future and different — They affect the decision by differing among choices."
+            ],
+            [
+              "Place production cost flow",
+              "Raw materials → Work in process → Finished goods → Cost of goods sold"
+            ],
+            [
+              "Factory janitor wages",
+              "Indirect (MOH)"
+            ],
+            [
+              "Steel for cars",
+              "Direct materials"
+            ],
+            [
+              "Assembler wages",
+              "Direct labor"
+            ],
+            [
+              "Advertising",
+              "Period cost"
+            ],
+            [
+              "Which best matches: COGS for merchandiser formula",
+              "Correct: BI + Purchases + Freight‑in − Purchase returns − EI — Correct match for “COGS for merchandiser formula” is: BI + Purchases + Freight‑in − Purchase returns − EI."
+            ],
+            [
+              "Which best matches: Inventories for a manufacturer",
+              "Correct: Raw materials, Work in process, Finished goods — Correct match for “Inventories for a manufacturer” is: Raw materials, Work in process, Finished goods."
+            ],
+            [
+              "Which best matches: Inventoriable costs",
+              "Correct: DM + DL + MOH — Correct match for “Inventoriable costs” is: DM + DL + MOH."
+            ],
+            [
+              "Which best matches: Period costs",
+              "Correct: SG&A—expensed in period — Correct match for “Period costs” is: SG&A—expensed in period."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 4",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Which best matches: Prime vs conversion cost",
+              "Correct: Prime=DM+DL; Conversion=DL+MOH — Correct match for “Prime vs conversion cost” is: Prime=DM+DL; Conversion=DL+MOH."
+            ],
+            [
+              "Which best matches: Relevant cost",
+              "Correct: Future cost that differs among alternatives — Correct match for “Relevant cost” is: Future cost that differs among alternatives."
+            ],
+            [
+              "Which best matches: Fixed vs variable per‑unit",
+              "Correct: Fixed per‑unit decreases with volume; variable per‑unit constant — Correct match for “Fixed vs variable per‑unit” is: Fixed per‑unit decreases with volume; variable per‑unit constant."
+            ],
+            [
+              "Which best matches: Attributes of service companies",
+              "Correct: no inventory; income statement lacks COGS and gross profit — Correct match for “Attributes of service companies” is: no inventory; income statement lacks COGS and gross profit."
+            ],
+            [
+              "Which best matches: Merchandisers",
+              "Correct: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI — Correct match for “Merchandisers” is: merchandise inventory; COGS = BI + purchases + freight‑in − purchase returns − EI."
+            ],
+            [
+              "Which best matches: Manufacturers",
+              "Correct: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG — Correct match for “Manufacturers” is: RM, WIP, FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG."
+            ],
+            [
+              "Which best matches: Value chain elements and examples for each stage (e.g., R&D, design, production, market...",
+              "Correct: Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service) — Correct match for “Value chain elements and examples for each stage (e.g., R&D, design, production, market...” is: Value chain elements and examples for each stage (e.g., R&D, design, production, marketing, distribution, customer service)."
+            ],
+            [
+              "Which best matches: Direct vs indirect costs relative to cost object; tracing vs allocating",
+              "Correct: Direct vs indirect costs relative to cost object; tracing vs allocating — Correct match for “Direct vs indirect costs relative to cost object; tracing vs allocating” is: Direct vs indirect costs relative to cost object; tracing vs allocating."
+            ],
+            [
+              "Which best matches: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials",
+              "Correct: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials — Correct match for “Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials” is: Product vs period costs; manufacturing vs nonmanufacturing; treatment on financials."
+            ],
+            [
+              "Which best matches: Relevant vs irrelevant; sunk and opportunity costs in decision making",
+              "Correct: Relevant vs irrelevant; sunk and opportunity costs in decision making — Correct match for “Relevant vs irrelevant; sunk and opportunity costs in decision making” is: Relevant vs irrelevant; sunk and opportunity costs in decision making."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 5",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Which best matches: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns",
+              "Correct: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns — Correct match for “Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns” is: Fixed vs variable vs mixed cost behavior; total vs per‑unit patterns."
+            ],
+            [
+              "Which best matches: Prime vs conversion costs and their managerial uses",
+              "Correct: Prime vs conversion costs and their managerial uses — Correct match for “Prime vs conversion costs and their managerial uses” is: Prime vs conversion costs and their managerial uses."
+            ],
+            [
+              "Which best matches: Financial statement preparation differences across company types (service/merchandising...",
+              "Correct: Financial statement preparation differences across company types (service/merchandising/manufacturing) — Correct match for “Financial statement preparation differences across company types (service/merchandising...” is: Financial statement preparation differences across company types (service/merchandising/manufacturing)."
+            ],
+            [
+              "Which best matches: Which is a product cost for manufacturers?",
+              "Correct: Correct: Factory depreciation — Manufacturing overhead includes factory depreciation. — Correct match for “Which is a product cost for manufacturers?” is: Correct: Factory depreciation — Manufacturing overhead includes factory depreciation.."
+            ],
+            [
+              "Which best matches: Which company holds three inventory accounts?",
+              "Correct: Correct: Manufacturing — Manufacturers: RM, WIP, FG. — Correct match for “Which company holds three inventory accounts?” is: Correct: Manufacturing — Manufacturers: RM, WIP, FG.."
+            ],
+            [
+              "Which best matches: Prime cost equals:",
+              "Correct: Correct: DM + DL — Prime cost is DM + DL. — Correct match for “Prime cost equals:” is: Correct: DM + DL — Prime cost is DM + DL.."
+            ],
+            [
+              "Which best matches: Relevant costs must be:",
+              "Correct: Correct: Future and different — They affect the decision by differing among choices. — Correct match for “Relevant costs must be:” is: Correct: Future and different — They affect the decision by differing among choices.."
+            ],
+            [
+              "Which best matches: Place production cost flow",
+              "Correct: Raw materials → Work in process → Finished goods → Cost of goods sold — Correct match for “Place production cost flow” is: Raw materials → Work in process → Finished goods → Cost of goods sold."
+            ],
+            [
+              "Which best matches: Factory janitor wages",
+              "Correct: Indirect (MOH) — Correct match for “Factory janitor wages” is: Indirect (MOH)."
+            ],
+            [
+              "Which best matches: Steel for cars",
+              "Correct: Direct materials — Correct match for “Steel for cars” is: Direct materials."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Set 6",
+      "questions": [
+        {
+          "prompt": "Match each term/concept to its definition/statement.",
+          "pairs": [
+            [
+              "Which best matches: Assembler wages",
+              "Correct: Direct labor — Correct match for “Assembler wages” is: Direct labor."
+            ],
+            [
+              "Which best matches: Advertising",
+              "Correct: Period cost — Correct match for “Advertising” is: Period cost."
+            ],
+            [
+              "Put the sequence in order – derived from: Inventories for a manufacturer",
+              "Raw materials → Work in process → Finished goods"
+            ],
+            [
+              "Put the sequence in order – derived from: Manufacturers",
+              "RM → WIP → FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG"
+            ],
+            [
+              "Put the sequence in order – derived from: Value chain elements and examples for each stage (e.g., R&D, design, production, market...",
+              "Value chain elements and examples for each stage (e.g. → R&D → design → production → marketing → distribution → customer service)"
+            ],
+            [
+              "Put the sequence in order – derived from: Which company holds three inventory accounts?",
+              "Correct: Manufacturing — Manufacturers: RM → WIP → FG."
+            ],
+            [
+              "Put the sequence in order – derived from: Place production cost flow",
+              "Raw materials → Work in process → Finished goods → Cost of goods sold"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 1",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Inventories for a manufacturer",
+          "items": [
+            "Raw materials",
+            "Work in process",
+            "Finished goods"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 2",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Manufacturers",
+          "items": [
+            "RM",
+            "WIP",
+            "FG inventories; COGM bridges production to FG; COGS = BI FG + COGM − EI FG"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 3",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Value chain elements and examples for each stage (e.g., R&D, design, production, market...",
+          "items": [
+            "Value chain elements and examples for each stage (e.g.",
+            "R&D",
+            "design",
+            "production",
+            "marketing",
+            "distribution",
+            "customer service)"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 4",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Which company holds three inventory accounts?",
+          "items": [
+            "Correct: Manufacturing — Manufacturers: RM",
+            "WIP",
+            "FG."
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Ordering Set 5",
+      "questions": [
+        {
+          "prompt": "Put the sequence in order – derived from: Place production cost flow",
+          "items": [
+            "Raw materials",
+            "Work in process",
+            "Finished goods",
+            "Cost of goods sold"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Chapter 2 Part 1 - Tagged.pdf",
+    "Chapter 2 Part 2 - Tagged.pdf",
+    "Chapter 2 Activities Revised Fall 2023- SV - Tagged.pdf"
+  ]
+}
