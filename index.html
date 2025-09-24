@@ -1612,6 +1612,63 @@
             color: var(--accent);
         }
 
+        /* Stats Sidebar Layout */
+        .with-stats-sidebar {
+            display: grid;
+            grid-template-columns: 1fr 280px;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        .stats-sidebar {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            position: sticky;
+            top: 2rem;
+        }
+
+        .stats-header {
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .stats-header h4 {
+            margin: 0;
+            color: var(--text);
+            font-size: 1.1rem;
+        }
+
+        .stats-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .flashcard-stats-sidebar,
+        .quiz-stats-sidebar,
+        .game-stats-sidebar {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+        }
+
+        /* Responsive stats layout */
+        @media (max-width: 768px) {
+            .with-stats-sidebar {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            
+            .stats-sidebar {
+                position: static;
+                order: -1;
+            }
+        }
+
         /* Study Rating Buttons */
         .study-rating-buttons {
             display: flex;
@@ -1835,6 +1892,10 @@
             loadStudyData();
             setupKeyboardShortcuts();
             initializeAccessibility();
+            
+            // Enhanced system configuration - set to true to enable class-based systems with additional features
+            window.useEnhancedQuizSystem = true; // Enable enhanced quiz system with session statistics
+            window.useEnhancedGameSystems = true; // Enable enhanced game systems with callbacks
         });
 
         // Accessibility initialization
@@ -3502,6 +3563,736 @@
             }
         }
 
+        // Universal Quiz System - wraps original renderQuiz functionality
+        class QuizSystem {
+            constructor(config) {
+                this.containerElement = config.containerElement;
+                this.systemId = config.systemId || 'quiz-system';
+                this.questions = config.questions || [];
+                this.autoShuffle = config.autoShuffle || false;
+                this.showStats = config.showStats || false;
+                this.callbacks = config.callbacks || {};
+                
+                // Stats tracking
+                this.sessionStats = {
+                    questionsAnswered: 0,
+                    correctAnswers: 0,
+                    incorrectAnswers: 0,
+                    startTime: Date.now(),
+                    endTime: null
+                };
+            }
+
+            render() {
+                if (!this.questions || this.questions.length === 0) {
+                    this.containerElement.innerHTML = '<p class="muted">No quiz questions available for this topic.</p>';
+                    return;
+                }
+
+                // Set up global quiz variables (same as original renderQuiz)
+                currentQuiz = [...this.questions];
+                currentQuizIndex = 0;
+                quizAnswers = [];
+                
+                // Create layout with or without stats sidebar
+                if (this.showStats) {
+                    this.containerElement.innerHTML = `
+                        <div class="with-stats-sidebar">
+                            <div class="quiz-main-content">
+                                <div id="quiz-content"></div>
+                                <div class="quiz-controls" style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+                                    <button class="control-btn" onclick="resetQuiz()">🔄 Reset</button>
+                                </div>
+                            </div>
+                            <div class="stats-sidebar">
+                                <div class="stats-header">
+                                    <h4>📊 Quiz Statistics</h4>
+                                </div>
+                                <div class="stats-grid">
+                                    <div class="stat-item">
+                                        <div class="stat-label">Questions Answered</div>
+                                        <div class="stat-value" id="${this.systemId}-questions-answered">0</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-label">Correct</div>
+                                        <div class="stat-value" id="${this.systemId}-correct">0</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-label">Incorrect</div>
+                                        <div class="stat-value" id="${this.systemId}-incorrect">0</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-label">Accuracy</div>
+                                        <div class="stat-value" id="${this.systemId}-accuracy">0%</div>
+                                    </div>
+                                    <div class="stat-item">
+                                        <div class="stat-label">Total Questions</div>
+                                        <div class="stat-value" id="${this.systemId}-total">${this.questions.length}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    this.containerElement.innerHTML = `
+                        <div id="quiz-content"></div>
+                        <div class="quiz-controls" style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
+                            <button class="control-btn" onclick="resetQuiz()">🔄 Reset</button>
+                        </div>
+                    `;
+                }
+                
+                // Auto-shuffle on quiz start (same as original)
+                if (this.autoShuffle) {
+                    shuffleQuizArray();
+                }
+                showCurrentQuestion();
+            }
+
+
+
+            updateStats(isCorrect) {
+                this.sessionStats.questionsAnswered++;
+                if (isCorrect) {
+                    this.sessionStats.correctAnswers++;
+                } else {
+                    this.sessionStats.incorrectAnswers++;
+                }
+
+                // Update display
+                const questionsEl = document.getElementById(`${this.systemId}-questions-answered`);
+                const correctEl = document.getElementById(`${this.systemId}-correct`);
+                const incorrectEl = document.getElementById(`${this.systemId}-incorrect`);
+                const accuracyEl = document.getElementById(`${this.systemId}-accuracy`);
+
+                if (questionsEl) questionsEl.textContent = this.sessionStats.questionsAnswered;
+                if (correctEl) correctEl.textContent = this.sessionStats.correctAnswers;
+                if (incorrectEl) incorrectEl.textContent = this.sessionStats.incorrectAnswers;
+                
+                if (accuracyEl) {
+                    const accuracy = this.sessionStats.questionsAnswered > 0 
+                        ? (this.sessionStats.correctAnswers / this.sessionStats.questionsAnswered * 100).toFixed(1)
+                        : 0;
+                    accuracyEl.textContent = `${accuracy}%`;
+                }
+            }
+
+            reset() {
+                this.sessionStats = {
+                    questionsAnswered: 0,
+                    correctAnswers: 0,
+                    incorrectAnswers: 0,
+                    startTime: Date.now(),
+                    endTime: null
+                };
+                this.render();
+                if (this.callbacks.onReset) {
+                    this.callbacks.onReset();
+                }
+            }
+
+            complete() {
+                this.sessionStats.endTime = Date.now();
+                const results = {
+                    score: this.sessionStats.correctAnswers,
+                    total: this.sessionStats.questionsAnswered,
+                    percentage: this.sessionStats.questionsAnswered > 0 
+                        ? (this.sessionStats.correctAnswers / this.sessionStats.questionsAnswered * 100)
+                        : 0,
+                    timeSpent: this.sessionStats.endTime - this.sessionStats.startTime
+                };
+                
+                if (this.callbacks.onComplete) {
+                    this.callbacks.onComplete(results);
+                }
+                return results;
+            }
+        }
+
+        // Universal Ordering Game System - enhanced with multi-question support
+        class OrderingGameSystem {
+            constructor(config) {
+                this.containerElement = config.containerElement;
+                this.systemId = config.systemId || 'ordering-system';
+                this.gameData = config.gameData || {};
+                this.callbacks = config.callbacks || {};
+                
+                // Multi-question support
+                this.questions = this.gameData.questions || [this.gameData];
+                this.currentQuestionIndex = 0;
+                this.gameTitle = this.gameData.title || (this.gameData.type === 'ordering' ? 'Ordering Game' : 'Sorting Game');
+                
+                // Session stats
+                this.sessionStats = {
+                    questionsCompleted: 0,
+                    totalAttempts: 0,
+                    successfulAttempts: 0,
+                    bestTimes: [],
+                    startTime: Date.now()
+                };
+            }
+
+            render() {
+                this.renderCurrentQuestion();
+            }
+
+            updateStatsDisplay() {
+                const completedEl = this.containerElement.querySelector('#stats-completed');
+                const attemptsEl = this.containerElement.querySelector('#stats-attempts');
+                const successRateEl = this.containerElement.querySelector('#stats-success-rate');
+                const bestTimeEl = this.containerElement.querySelector('#stats-best-time');
+                
+                if (completedEl) completedEl.textContent = this.sessionStats.questionsCompleted;
+                if (attemptsEl) attemptsEl.textContent = this.sessionStats.totalAttempts;
+                if (successRateEl) {
+                    const rate = this.sessionStats.totalAttempts > 0 ? 
+                        Math.round((this.sessionStats.successfulAttempts / this.sessionStats.totalAttempts) * 100) : 0;
+                    successRateEl.textContent = `${rate}%`;
+                }
+                if (bestTimeEl) {
+                    bestTimeEl.textContent = this.sessionStats.bestTimes.length > 0 ? 
+                        Math.min(...this.sessionStats.bestTimes) + 's' : '-';
+                }
+            }
+
+            renderCurrentQuestion() {
+                const currentQuestion = this.questions[this.currentQuestionIndex];
+                
+                // Use the original renderSortingGame logic but with navigation
+                const items = [...currentQuestion.items].sort(() => Math.random() - 0.5);
+                const correctOrder = currentQuestion.items;
+                let currentOrder = [...items];
+                let startTime = Date.now();
+
+                this.containerElement.innerHTML = `
+                    <div class="with-stats-sidebar">
+                        <div class="game-main-content">
+                            <div class="game-area">
+                                <div class="game-header">
+                                    <h3>${this.gameTitle}</h3>
+                                    <div class="game-score">
+                                        <span>Question ${this.currentQuestionIndex + 1} of ${this.questions.length}</span>
+                                        <span>Time: <span id="sort-timer">0:00</span></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="game-prompt">
+                                    ${currentQuestion.prompt || 'Arrange the items in the correct order'}
+                                </div>
+                                
+                                <div class="sorting-area" id="sortable-container">
+                                    ${items.map((item, index) => `
+                                        <div class="game-item" draggable="true" data-value="${item}" data-index="${index}">
+                                            <span style="color: var(--muted); margin-right: 0.5rem;">≡</span>
+                                            ${item}
+                                        </div>
+                                    `).join('')}
+                                </div>
+                                
+                                <div class="game-controls">
+                                    <button class="control-btn" onclick="window.currentOrderingSystem.checkOrder()">
+                                        ✅ Check Order
+                                    </button>
+                                    <button class="control-btn" onclick="window.currentOrderingSystem.resetQuestion()">
+                                        🔄 Reset
+                                    </button>
+                                    ${this.currentQuestionIndex < this.questions.length - 1 ? 
+                                        `<button class="control-btn" onclick="window.currentOrderingSystem.nextQuestion()" disabled id="next-question-btn">
+                                            ➡️ Next Question
+                                        </button>` : ''
+                                    }
+                                    <button class="control-btn" onclick="renderGames(studyData[currentClass].topics[currentTopic])">
+                                        🔙 Back to Games
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="stats-sidebar">
+                            <div class="stats-header">
+                                <h4>📊 Game Statistics</h4>
+                            </div>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-label">Questions Completed</div>
+                                    <div class="stat-value" id="${this.systemId}-completed">${this.currentQuestionIndex}</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Total Questions</div>
+                                    <div class="stat-value" id="${this.systemId}-total">${this.questions.length}</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Attempts</div>
+                                    <div class="stat-value" id="${this.systemId}-attempts">0</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Success Rate</div>
+                                    <div class="stat-value" id="${this.systemId}-success">0%</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Best Time</div>
+                                    <div class="stat-value" id="${this.systemId}-best-time">--</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Store game data
+                this.containerElement.dataset.gameData = JSON.stringify({ 
+                    correctOrder, 
+                    currentOrder, 
+                    startTime,
+                    questionIndex: this.currentQuestionIndex
+                });
+
+                // Set up drag and drop (same as original)
+                this.setupDragAndDrop();
+                
+                // Start timer
+                this.startTimer();
+            }
+
+            setupDragAndDrop() {
+                const container = this.containerElement.querySelector('#sortable-container');
+                let draggedElement = null;
+
+                container.addEventListener('dragstart', (e) => {
+                    if (e.target.classList.contains('game-item')) {
+                        draggedElement = e.target;
+                        e.target.classList.add('dragging');
+                    }
+                });
+
+                container.addEventListener('dragend', (e) => {
+                    if (e.target.classList.contains('game-item')) {
+                        e.target.classList.remove('dragging');
+                        draggedElement = null;
+                    }
+                });
+
+                container.addEventListener('dragover', (e) => {
+                    e.preventDefault();
+                });
+
+                container.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    
+                    if (draggedElement && e.target.classList.contains('game-item') && e.target !== draggedElement) {
+                        const rect = e.target.getBoundingClientRect();
+                        const midpoint = rect.top + rect.height / 2;
+                        
+                        if (e.clientY < midpoint) {
+                            container.insertBefore(draggedElement, e.target);
+                        } else {
+                            container.insertBefore(draggedElement, e.target.nextSibling);
+                        }
+                        
+                        this.updateCurrentOrder();
+                    }
+                });
+            }
+
+            updateCurrentOrder() {
+                const items = this.containerElement.querySelectorAll('#sortable-container .game-item');
+                const gameData = JSON.parse(this.containerElement.dataset.gameData);
+                gameData.currentOrder = Array.from(items).map(item => item.dataset.value);
+                this.containerElement.dataset.gameData = JSON.stringify(gameData);
+            }
+
+            checkOrder() {
+                const gameData = JSON.parse(this.containerElement.dataset.gameData);
+                const isCorrect = JSON.stringify(gameData.currentOrder) === JSON.stringify(gameData.correctOrder);
+                
+                // Update session stats
+                this.sessionStats.totalAttempts++;
+                
+                if (isCorrect) {
+                    clearInterval(this.timer);
+                    const elapsed = Math.floor((Date.now() - gameData.startTime) / 1000);
+                    
+                    // Update session stats for success
+                    this.sessionStats.successfulAttempts++;
+                    this.sessionStats.questionsCompleted = Math.max(this.sessionStats.questionsCompleted, this.currentQuestionIndex + 1);
+                    this.sessionStats.bestTimes.push(elapsed);
+                    
+                    showToast(`🎉 Perfect! Completed in ${elapsed} seconds`, 'success');
+                    
+                    // Highlight all items as correct
+                    this.containerElement.querySelectorAll('#sortable-container .game-item').forEach(item => {
+                        item.style.borderColor = 'var(--good)';
+                        item.style.background = 'rgba(34, 197, 94, 0.2)';
+                    });
+                    
+                    // Enable next question button if available
+                    const nextBtn = this.containerElement.querySelector('#next-question-btn');
+                    if (nextBtn) {
+                        nextBtn.disabled = false;
+                        nextBtn.style.background = 'var(--accent)';
+                    }
+                } else {
+                    showToast('❌ Not quite right, keep trying!', 'error');
+                    
+                    // Show which items are in correct positions
+                    const items = this.containerElement.querySelectorAll('#sortable-container .game-item');
+                    items.forEach((item, index) => {
+                        if (gameData.currentOrder[index] === gameData.correctOrder[index]) {
+                            item.style.borderColor = 'var(--good)';
+                            item.style.background = 'rgba(34, 197, 94, 0.1)';
+                        } else {
+                            item.style.borderColor = 'var(--warn)';
+                            item.style.background = 'rgba(245, 158, 11, 0.1)';
+                        }
+                    });
+                }
+                
+                // Update stats display
+                this.updateStatsDisplay();
+            }
+
+            nextQuestion() {
+                if (this.currentQuestionIndex < this.questions.length - 1) {
+                    this.currentQuestionIndex++;
+                    this.renderCurrentQuestion();
+                    showToast(`Question ${this.currentQuestionIndex + 1} of ${this.questions.length}`, 'info');
+                }
+            }
+
+            resetQuestion() {
+                this.renderCurrentQuestion();
+                showToast('Question reset!', 'info');
+            }
+
+            startTimer() {
+                this.timer = setInterval(() => {
+                    const gameData = JSON.parse(this.containerElement.dataset.gameData);
+                    const elapsed = Math.floor((Date.now() - gameData.startTime) / 1000);
+                    const minutes = Math.floor(elapsed / 60);
+                    const seconds = elapsed % 60;
+                    const timerEl = this.containerElement.querySelector('#sort-timer');
+                    if (timerEl) {
+                        timerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                    }
+                }, 1000);
+            }
+        }
+
+        // Universal Memory Match System - wraps original memory game functionality
+        class MemoryMatchSystem {
+            constructor(config) {
+                this.containerElement = config.containerElement;
+                this.systemId = config.systemId || 'memory-system';
+                this.gameData = config.gameData || {};
+                this.callbacks = config.callbacks || {};
+            }
+
+            render() {
+                // Store original container ID
+                const originalId = this.containerElement.id;
+                
+                // Temporarily set the container ID to what the original function expects
+                this.containerElement.id = 'game-container';
+                
+                // Call the original renderMemoryGame function (if it exists)
+                if (typeof renderMemoryGame === 'function') {
+                    renderMemoryGame(this.gameData);
+                } else {
+                    this.containerElement.innerHTML = '<p class="muted">Memory game not yet implemented.</p>';
+                }
+                
+                // Restore original ID
+                this.containerElement.id = originalId;
+            }
+        }
+
+        // Universal Lightning Round System
+        class LightningRoundSystem {
+            constructor(config) {
+                this.containerElement = config.containerElement;
+                this.systemId = config.systemId || 'lightning-system';
+                this.gameData = config.gameData || {};
+                this.callbacks = config.callbacks || {};
+            }
+
+            render() {
+                // Store original container ID
+                const originalId = this.containerElement.id;
+                
+                // Temporarily set the container ID to what the original function expects
+                this.containerElement.id = 'game-container';
+                
+                // Call the original renderLightningGame function (if it exists)
+                if (typeof renderLightningGame === 'function') {
+                    renderLightningGame(this.gameData);
+                } else {
+                    this.containerElement.innerHTML = '<p class="muted">Lightning round not yet implemented.</p>';
+                }
+                
+                // Restore original ID
+                this.containerElement.id = originalId;
+            }
+        }
+
+        // Universal Matching Game System - enhanced with multi-question support
+        class MatchingGameSystem {
+            constructor(config) {
+                this.containerElement = config.containerElement;
+                this.systemId = config.systemId || 'matching-system';
+                this.gameData = config.gameData || {};
+                this.callbacks = config.callbacks || {};
+                
+                // Multi-question support
+                this.questions = this.gameData.questions || [this.gameData];
+                this.currentQuestionIndex = 0;
+                this.gameTitle = this.gameData.title || 'Matching Game';
+                
+                // Session stats tracking
+                this.sessionStats = {
+                    questionsCompleted: 0,
+                    totalAttempts: 0,
+                    successfulAttempts: 0,
+                    bestTimes: [],
+                    startTime: Date.now()
+                };
+            }
+
+            render() {
+                this.renderCurrentQuestion();
+            }
+
+            updateStatsDisplay() {
+                const completedEl = this.containerElement.querySelector('#stats-completed');
+                const attemptsEl = this.containerElement.querySelector('#stats-attempts');
+                const successRateEl = this.containerElement.querySelector('#stats-success-rate');
+                const bestTimeEl = this.containerElement.querySelector('#stats-best-time');
+                
+                if (completedEl) completedEl.textContent = this.sessionStats.questionsCompleted;
+                if (attemptsEl) attemptsEl.textContent = this.sessionStats.totalAttempts;
+                if (successRateEl) {
+                    const rate = this.sessionStats.totalAttempts > 0 ? 
+                        Math.round((this.sessionStats.successfulAttempts / this.sessionStats.totalAttempts) * 100) : 0;
+                    successRateEl.textContent = `${rate}%`;
+                }
+                if (bestTimeEl) {
+                    bestTimeEl.textContent = this.sessionStats.bestTimes.length > 0 ? 
+                        Math.min(...this.sessionStats.bestTimes) + 's' : '-';
+                }
+            }
+
+            renderCurrentQuestion() {
+                const currentQuestion = this.questions[this.currentQuestionIndex];
+                const pairs = currentQuestion.pairs || [];
+                
+                // Shuffle the pairs (same as original logic)
+                const shuffledPairs = [...pairs].sort(() => Math.random() - 0.5);
+                const leftItems = shuffledPairs.map(pair => pair[0]).sort(() => Math.random() - 0.5);
+                const rightItems = shuffledPairs.map(pair => pair[1]).sort(() => Math.random() - 0.5);
+                
+                let matches = [];
+                let score = 0;
+                let startTime = Date.now();
+
+                this.containerElement.innerHTML = `
+                    <div class="with-stats-sidebar">
+                        <div class="main-content">
+                            <div class="game-area">
+                                <div class="game-header">
+                                    <h3>${this.gameTitle}</h3>
+                                    <div class="game-score">
+                                        <span>Question ${this.currentQuestionIndex + 1} of ${this.questions.length}</span>
+                                        <span>Score: <span id="match-score">0</span>/${pairs.length}</span>
+                                        <span>Time: <span id="match-timer">0:00</span></span>
+                                    </div>
+                                </div>
+                                
+                                <div class="game-prompt">
+                                    ${currentQuestion.prompt || 'Match the pairs'}
+                                </div>
+                                
+                                <div class="matching-pairs">
+                                    <div class="pairs-column">
+                                        <h4>Terms</h4>
+                                        ${leftItems.map((item, index) => `
+                                            <div class="game-item" data-value="${item}" onclick="window.currentMatchingSystem.selectMatchItem(this)">
+                                                ${item}
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <div class="pairs-column">
+                                        <h4>Definitions</h4>
+                                        ${rightItems.map((item, index) => `
+                                            <div class="game-item" data-value="${item}" onclick="window.currentMatchingSystem.selectMatchItem(this)">
+                                                ${item}
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                </div>
+                                
+                                <div class="game-controls">
+                                    ${this.currentQuestionIndex < this.questions.length - 1 ? 
+                                        `<button class="control-btn" onclick="window.currentMatchingSystem.nextQuestion()" disabled id="next-question-btn">
+                                            ➡️ Next Question
+                                        </button>` : ''
+                                    }
+                                    <button class="control-btn" onclick="renderGames(studyData[currentClass].topics[currentTopic])">
+                                        🔙 Back to Games
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="stats-sidebar">
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <div class="stat-label">Completed</div>
+                                    <div class="stat-value" id="stats-completed">${this.sessionStats.questionsCompleted}</div>
+                                    <div class="stat-total">of ${this.questions.length}</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Attempts</div>
+                                    <div class="stat-value" id="stats-attempts">${this.sessionStats.totalAttempts}</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Success Rate</div>
+                                    <div class="stat-value" id="stats-success-rate">
+                                        ${this.sessionStats.totalAttempts > 0 ? Math.round((this.sessionStats.successfulAttempts / this.sessionStats.totalAttempts) * 100) : 0}%
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-label">Best Time</div>
+                                    <div class="stat-value" id="stats-best-time">
+                                        ${this.sessionStats.bestTimes.length > 0 ? Math.min(...this.sessionStats.bestTimes) + 's' : '-'}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                // Store game data for matching logic
+                this.containerElement.dataset.gameData = JSON.stringify({ 
+                    pairs: shuffledPairs, 
+                    matches, 
+                    score, 
+                    startTime,
+                    questionIndex: this.currentQuestionIndex
+                });
+                
+                // Start timer
+                this.startTimer();
+            }
+
+            selectMatchItem(element) {
+                const selectedItems = this.containerElement.querySelectorAll('.game-item.selected');
+                
+                if (element.classList.contains('selected')) {
+                    element.classList.remove('selected');
+                    return;
+                }
+                
+                if (selectedItems.length === 2) {
+                    selectedItems.forEach(item => item.classList.remove('selected'));
+                }
+                
+                element.classList.add('selected');
+                
+                if (this.containerElement.querySelectorAll('.game-item.selected').length === 2) {
+                    setTimeout(() => this.checkMatch(), 500);
+                }
+            }
+
+            checkMatch() {
+                const selectedItems = this.containerElement.querySelectorAll('.game-item.selected');
+                if (selectedItems.length !== 2) return;
+                
+                const gameData = JSON.parse(this.containerElement.dataset.gameData);
+                const value1 = selectedItems[0].dataset.value;
+                const value2 = selectedItems[1].dataset.value;
+                
+                // Update session stats
+                this.sessionStats.totalAttempts++;
+                
+                // Check if these form a valid pair
+                const isMatch = gameData.pairs.some(pair => 
+                    (pair[0] === value1 && pair[1] === value2) || 
+                    (pair[0] === value2 && pair[1] === value1)
+                );
+                
+                if (isMatch) {
+                    this.sessionStats.successfulAttempts++;
+                    
+                    selectedItems.forEach(item => {
+                        item.classList.remove('selected');
+                        item.classList.add('matched');
+                        item.style.background = 'rgba(34, 197, 94, 0.2)';
+                        item.style.borderColor = 'var(--good)';
+                        item.onclick = null; // Disable clicking
+                    });
+                    
+                    gameData.matches.push([value1, value2]);
+                    gameData.score++;
+                    
+                    this.containerElement.querySelector('#match-score').textContent = gameData.score;
+                    showToast('✅ Correct match!', 'success');
+                    
+                    // Check if all pairs are matched
+                    if (gameData.score === gameData.pairs.length) {
+                        clearInterval(this.timer);
+                        const elapsed = Math.floor((Date.now() - gameData.startTime) / 1000);
+                        
+                        // Update session stats for completion
+                        this.sessionStats.questionsCompleted = Math.max(this.sessionStats.questionsCompleted, this.currentQuestionIndex + 1);
+                        this.sessionStats.bestTimes.push(elapsed);
+                        
+                        showToast(`🎉 All pairs matched in ${elapsed} seconds!`, 'success');
+                        
+                        // Enable next question button if available
+                        const nextBtn = this.containerElement.querySelector('#next-question-btn');
+                        if (nextBtn) {
+                            nextBtn.disabled = false;
+                            nextBtn.style.background = 'var(--accent)';
+                        }
+                    }
+                } else {
+                    selectedItems.forEach(item => {
+                        item.classList.remove('selected');
+                        item.style.background = 'rgba(239, 68, 68, 0.2)';
+                        item.style.borderColor = 'var(--error)';
+                        setTimeout(() => {
+                            item.style.background = '';
+                            item.style.borderColor = '';
+                        }, 1000);
+                    });
+                    showToast('❌ Not a match, try again!', 'error');
+                }
+                
+                // Update stats display
+                this.updateStatsDisplay();
+                
+                this.containerElement.dataset.gameData = JSON.stringify(gameData);
+            }
+
+            nextQuestion() {
+                if (this.currentQuestionIndex < this.questions.length - 1) {
+                    this.currentQuestionIndex++;
+                    this.renderCurrentQuestion();
+                    showToast(`Question ${this.currentQuestionIndex + 1} of ${this.questions.length}`, 'info');
+                }
+            }
+
+            startTimer() {
+                this.timer = setInterval(() => {
+                    const gameData = JSON.parse(this.containerElement.dataset.gameData);
+                    const elapsed = Math.floor((Date.now() - gameData.startTime) / 1000);
+                    const minutes = Math.floor(elapsed / 60);
+                    const seconds = elapsed % 60;
+                    const timerEl = this.containerElement.querySelector('#match-timer');
+                    if (timerEl) {
+                        timerEl.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+                    }
+                }, 1000);
+            }
+        }
+
         // Render quiz tab
         function renderQuiz(topicData) {
             const container = document.getElementById('quiz-container');
@@ -3511,6 +4302,32 @@
                 return;
             }
 
+            // Check if we should use the new QuizSystem class (only when not already in a class render)
+            if (window.useEnhancedQuizSystem && !window._renderingQuizSystem) {
+                window._renderingQuizSystem = true; // Prevent recursion
+                const quizSystem = new QuizSystem({
+                    containerElement: container,
+                    systemId: 'main-quiz',
+                    questions: topicData.quiz,
+                    autoShuffle: true,
+                    showStats: true,
+                    callbacks: {
+                        onComplete: (results) => {
+                            showToast(`Quiz completed! Score: ${results.score}/${results.total}`, 
+                                results.percentage >= 70 ? 'success' : 'warning');
+                        },
+                        onReset: () => {
+                            showToast('Quiz reset and shuffled!', 'success');
+                        }
+                    }
+                });
+                window.currentQuizSystem = quizSystem;
+                quizSystem.render();
+                window._renderingQuizSystem = false; // Reset flag
+                return;
+            }
+
+            // Original implementation (preserved exactly)
             currentQuiz = [...topicData.quiz]; // Create a copy for shuffling if needed
             currentQuizIndex = 0;
             quizAnswers = [];
@@ -3655,6 +4472,11 @@
             }
             userProgress[progressKey].lastQuiz = new Date().getTime();
             saveUserData();
+
+            // Update enhanced quiz system stats if active
+            if (window.currentQuizSystem && window.currentQuizSystem.updateStats) {
+                window.currentQuizSystem.updateStats(userAnswer === correctAnswer);
+            }
 
             // Update submit button to next
             const submitBtn = document.getElementById('submit-btn');
@@ -3932,14 +4754,39 @@
         function playGame(gameIndex) {
             const topicData = studyData[currentClass].topics[currentTopic];
             const game = topicData.games[gameIndex];
+            const container = document.getElementById('game-container');
 
             switch (game.type) {
                 case 'matching':
-                    renderMatchingGame(game);
+                    // Use new MatchingGameSystem class
+                    const matchingSystem = new MatchingGameSystem({
+                        containerElement: container,
+                        systemId: `matching-${gameIndex}`,
+                        gameData: game,
+                        callbacks: {
+                            onComplete: (results) => {
+                                showToast('🎉 Matching game completed!', 'success');
+                            }
+                        }
+                    });
+                    window.currentMatchingSystem = matchingSystem;
+                    matchingSystem.render();
                     break;
                 case 'sorting':
                 case 'ordering':
-                    renderSortingGame(game);
+                    // Use new OrderingGameSystem class
+                    const orderingSystem = new OrderingGameSystem({
+                        containerElement: container,
+                        systemId: `ordering-${gameIndex}`,
+                        gameData: game,
+                        callbacks: {
+                            onComplete: (results) => {
+                                showToast('🎉 Perfect order achieved!', 'success');
+                            }
+                        }
+                    });
+                    window.currentOrderingSystem = orderingSystem;
+                    orderingSystem.render();
                     break;
                 default:
                     showToast('Game type not implemented yet', 'warning');
