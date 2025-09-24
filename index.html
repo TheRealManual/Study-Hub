@@ -6,7 +6,6 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-    <title>Study Hub - Dynamic v2.0</title>
     <style>
         /* CSS Variables for theming and motion */
         :root {
@@ -40,6 +39,23 @@
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
+        }
+
+        /* Global scrollbar hiding - works across all browsers */
+        * {
+            /* Hide scrollbar for Chrome, Safari and Opera */
+            scrollbar-width: none; /* Firefox */
+            -ms-overflow-style: none; /* IE and Edge */
+        }
+
+        *::-webkit-scrollbar {
+            display: none; /* Chrome, Safari, Opera */
+        }
+
+        /* Ensure scrolling still works */
+        html, body {
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            overflow-y: auto; /* Allow vertical scroll */
         }
 
         * {
@@ -197,22 +213,27 @@
         }
 
         .topics-dropdown {
-            display: none;
             background: var(--bg);
             border: 1px solid var(--border);
             border-radius: 0.5rem;
-            padding: 0.5rem;
+            padding: 0;
             margin-top: 0.25rem;
-            position: absolute;
-            left: 0;
-            right: 0;
+            position: relative;
             z-index: 50;
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            max-height: 0;
+            overflow: hidden;
+            transition: all var(--norm) var(--ease);
+            opacity: 0;
         }
 
         .class-item:hover .topics-dropdown,
         .topics-dropdown:hover {
-            display: block;
+            max-height: 350px; /* Increased from 200px */
+            padding: 0.5rem;
+            opacity: 1;
+            overflow-y: auto; /* Enable vertical scrolling */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
         }
 
         /* Extend hover area to bridge the gap */
@@ -634,6 +655,52 @@
 
         .flashcard-content:hover {
             opacity: 0.8;
+        }
+
+        /* Flashcard Animations */
+        .flashcard.flipping {
+            animation: flipCard 0.4s ease-in-out;
+        }
+
+        .flashcard.next-card {
+            animation: slideInFromRight 0.25s ease-out;
+            z-index: -1; /* Slide behind other elements */
+        }
+
+        .flashcard.reset-card {
+            animation: bounceIn 0.6s ease-out;
+        }
+
+        @keyframes flipCard {
+            0% { transform: rotateY(0deg); }
+            50% { transform: rotateY(90deg) scale(0.8); }
+            100% { transform: rotateY(0deg); }
+        }
+
+        @keyframes slideInFromRight {
+            0% { 
+                transform: translateX(100%) scale(0.9);
+                opacity: 0;
+            }
+            100% { 
+                transform: translateX(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounceIn {
+            0% { 
+                transform: scale(0.3) rotateZ(-10deg);
+                opacity: 0;
+            }
+            50% { 
+                transform: scale(1.1) rotateZ(5deg);
+                opacity: 0.8;
+            }
+            100% { 
+                transform: scale(1) rotateZ(0deg);
+                opacity: 1;
+            }
         }
 
         /* Study Rating Buttons */
@@ -1377,18 +1444,22 @@
         .toast {
             position: fixed;
             bottom: 2rem;
-            right: 2rem;
+            left: 2rem;
             background: var(--panel);
             border: 1px solid var(--border);
             border-radius: 0.5rem;
             padding: 1rem;
             z-index: 1001;
-            transform: translateX(100%);
-            transition: transform var(--norm) var(--ease);
+            transform: translateX(-100vw);
+            opacity: 0;
+            visibility: hidden;
+            transition: transform var(--norm) var(--ease), opacity var(--norm) var(--ease), visibility var(--norm) var(--ease);
         }
 
         .toast.show {
             transform: translateX(0);
+            opacity: 1;
+            visibility: visible;
         }
 
         .toast.success {
@@ -1693,34 +1764,8 @@
                 </div>
 
                 <div id="flashcards-tab" class="tab-content">
-                    <div class="flashcard-container">
-                        <div id="flashcard" class="flashcard">
-                            <div class="flashcard-content" id="flashcard-content">
-                                Click to start flashcards
-                            </div>
-                        </div>
-                        <div class="flashcard-controls">
-                            <button class="control-btn" onclick="previousCard()">← Previous</button>
-                            <button class="control-btn" onclick="flipCard()">Flip (Space)</button>
-                            <button class="control-btn" onclick="nextCard()">Next →</button>
-                        </div>
-                        <div class="flashcard-controls" style="margin-top: 1rem; display: flex; gap: 1rem; justify-content: center;">
-                            <button class="control-btn" onclick="shuffleFlashcards()">🔀 Shuffle</button>
-                            <button class="control-btn" onclick="resetFlashcards()">🔄 Reset</button>
-                        </div>
-                        <div class="flashcard-controls">
-                            <button class="control-btn" onclick="toggleSettingsDropdown('flashcards-settings')" style="width: 100%;">
-                                ⚙️ Settings
-                            </button>
-                        </div>
-                    </div>
-                    <div id="flashcards-settings" class="settings-dropdown collapsed">
-                        <div class="settings-content">
-                            <div class="settings-section-title">All Flashcards</div>
-                            <div id="flashcards-settings-content">
-                                <!-- Flashcards content will be populated here -->
-                            </div>
-                        </div>
+                    <div id="topic-flashcards-container">
+                        <!-- FlashcardSystem will populate this dynamically -->
                     </div>
                 </div>
 
@@ -2239,34 +2284,8 @@
                         </div>
 
                         <div id="flashcards-tab" class="tab-content">
-                            <div class="flashcard-container">
-                                <div id="flashcard" class="flashcard">
-                                    <div class="flashcard-content" id="flashcard-content">
-                                        Click to start flashcards
-                                    </div>
-                                </div>
-                                <div class="flashcard-controls">
-                                    <button class="control-btn" onclick="previousCard()">← Previous</button>
-                                    <button class="control-btn" onclick="flipCard()">Flip (Space)</button>
-                                    <button class="control-btn" onclick="nextCard()">Next →</button>
-                                </div>
-                                <div class="flashcard-controls" style="margin-top: 1rem; display: flex; gap: 1rem; justify-content: center;">
-                                    <button class="control-btn" onclick="shuffleFlashcards()">🔀 Shuffle</button>
-                                    <button class="control-btn" onclick="resetFlashcards()">🔄 Reset</button>
-                                </div>
-                                <div class="flashcard-controls">
-                                    <button class="control-btn" onclick="toggleSettingsDropdown('flashcards-settings')" style="width: 100%;">
-                                        ⚙️ Settings
-                                    </button>
-                                </div>
-                            </div>
-                            <div id="flashcards-settings" class="settings-dropdown collapsed">
-                                <div class="settings-content">
-                                    <div class="settings-section-title">All Flashcards</div>
-                                    <div id="flashcards-settings-content">
-                                        <!-- Flashcards content will be populated here -->
-                                    </div>
-                                </div>
+                            <div id="topic-flashcards-container">
+                                <!-- FlashcardSystem will populate this dynamically -->
                             </div>
                         </div>
 
@@ -2560,8 +2579,8 @@
                         }
                         
                         return `
-                            <div style="margin-bottom: 1.5rem; padding: 1rem; background: rgba(148, 163, 184, 0.05); border-radius: 0.5rem; border-left: 3px solid var(--accent);">
-                                <p style="margin: 0 0 0.5rem 0; line-height: 1.6;">${noteText}</p>
+                            <div style="margin-bottom: 0.75rem; padding: 0.75rem; background: rgba(148, 163, 184, 0.05); border-radius: 0.5rem; border-left: 3px solid var(--accent);">
+                                <p style="margin: 0 0 0.25rem 0; line-height: 1.5;">${noteText}</p>
                                 <a href="#" onclick="goToNoteDetails('${currentClass}', '${currentTopic}', ${index})" style="color: var(--accent); text-decoration: none; font-size: 0.875rem; font-weight: 500;" onmouseover="this.style.textDecoration='underline'" onmouseout="this.style.textDecoration='none'">
                                     ${linkText}
                                 </a>
@@ -2601,28 +2620,16 @@
         // Render flashcards tab
         function renderFlashcards(topicData) {
             if (!topicData.flashcards || topicData.flashcards.length === 0) {
-                document.getElementById('flashcard-content').textContent = 'No flashcards available for this topic.';
+                const flashcardContainer = document.getElementById('topic-flashcards-container');
+                flashcardContainer.innerHTML = '<p>No flashcards available for this topic.</p>';
                 return;
             }
 
             const dueCards = getDueCards(currentClass, currentTopic, topicData.flashcards);
             const reviewCards = dueCards.length > 0 ? dueCards : Array.from({length: topicData.flashcards.length}, (_, i) => i);
             
-            // Update flashcard controls to show review info
-            const controlsContainer = document.querySelector('.flashcard-controls').parentElement;
-            const reviewInfo = document.createElement('div');
-            reviewInfo.style.cssText = 'text-align: center; margin-bottom: 1rem; color: var(--muted); font-size: 0.875rem;';
-            reviewInfo.innerHTML = dueCards.length > 0 
-                ? `<span style="color: var(--warn);">📅 ${dueCards.length} cards due for review</span>`
-                : `<span style="color: var(--good);">✅ All cards reviewed! Showing all cards.</span>`;
-            
-            const existingInfo = controlsContainer.querySelector('.review-info');
-            if (existingInfo) existingInfo.remove();
-            reviewInfo.className = 'review-info';
-            controlsContainer.insertBefore(reviewInfo, controlsContainer.firstChild);
-
             // Initialize the universal flashcard system
-            const flashcardContainer = document.querySelector('#flashcards-tab .flashcard-container');
+            const flashcardContainer = document.getElementById('topic-flashcards-container');
             
             // Clean up any existing system
             if (topicFlashcardSystem && topicFlashcardSystem.destroy) {
@@ -2692,6 +2699,10 @@
                 // These will be created by the render method
                 this.contentElement = null;
                 this.progressElement = null;
+                
+                // Initialize review cards array, but don't shuffle yet (will shuffle after render)
+                this.reviewCards = Array.from({length: this.flashcards.length}, (_, i) => i);
+                this.currentIndex = 0;
             }
 
             render() {
@@ -2709,18 +2720,15 @@
                                     <div class="flashcard-content" id="${this.systemId}-content">
                                         Click to start flashcards
                                     </div>
-                                    <div id="${this.systemId}-study-buttons" class="study-rating-buttons" style="display: none;" onclick="event.stopPropagation();">
+                                    <div id="${this.systemId}-study-buttons" class="study-rating-buttons" style="display: none;">
                                         <button class="study-btn study-again" onclick="event.stopPropagation(); window['${this.systemId}Instance'].selectRating('again')" data-rating="again">Study Again</button>
                                         <button class="study-btn studied" onclick="event.stopPropagation(); window['${this.systemId}Instance'].selectRating('studied')" data-rating="studied">Studied</button>
                                     </div>
                                 </div>
                                 <div class="flashcard-controls">
+                                    <button class="control-btn" onclick="window['${this.systemId}Instance'].reset(); showToast('Cards reset!', 'success')">🔄 Reset</button>
                                     <button class="control-btn" onclick="window['${this.systemId}Instance'].flip()">Flip (Space)</button>
                                     <button id="${this.systemId}-next-btn" class="control-btn" onclick="window['${this.systemId}Instance'].next()" disabled style="opacity: 0.5; cursor: not-allowed;">Next →</button>
-                                </div>
-                                <div class="flashcard-controls" style="margin-top: 1rem; display: flex; gap: 1rem; justify-content: center;">
-                                    <button class="control-btn" onclick="window['${this.systemId}Instance'].shuffle(); showToast('Cards shuffled!', 'success')">🔀 Shuffle</button>
-                                    <button class="control-btn" onclick="window['${this.systemId}Instance'].reset(); showToast('Cards reset!', 'success')">🔄 Reset</button>
                                 </div>
                                 ${this.showControls ? `
                                 <div class="flashcard-controls">
@@ -2809,6 +2817,14 @@
                 this.contentElement = document.getElementById(`${this.systemId}-content`);
                 this.flashcardElement = document.getElementById(`${this.systemId}-flashcard`);
                 
+                // Safety check for critical elements
+                if (!this.contentElement) {
+                    console.error('FlashcardSystem: Failed to find content element for system ID:', this.systemId);
+                }
+                if (!this.flashcardElement) {
+                    console.error('FlashcardSystem: Failed to find flashcard element for system ID:', this.systemId);
+                }
+                
                 // Create and add progress element
                 this.progressElement = document.createElement('div');
                 this.progressElement.className = 'progress';
@@ -2825,6 +2841,9 @@
                 this.setupClickHandling();
                 
                 this.showCurrentCard();
+                
+                // Auto-shuffle cards after DOM elements are created
+                this.shuffle();
             }
 
             setupKeyboardHandling() {
@@ -2857,6 +2876,8 @@
                     // Handle arrow keys for navigation
                     if (e.key === 'ArrowRight') {
                         e.preventDefault();
+                        console.log('Right arrow pressed - isFlipped:', this.isFlipped, 'currentRating:', this.currentRating);
+                        // Call next() which contains all the proper validation logic
                         this.next();
                         return;
                     }
@@ -2961,6 +2982,12 @@
             showCurrentCard() {
                 if (!this.flashcards.length) return;
 
+                // Safety check for contentElement
+                if (!this.contentElement) {
+                    console.error('FlashcardSystem: contentElement not found for system ID:', this.systemId);
+                    return;
+                }
+
                 const actualIndex = this.reviewCards[this.currentIndex];
                 const card = this.flashcards[actualIndex];
                 
@@ -3041,9 +3068,28 @@
 
             flip() {
                 console.log('Flip method called, current state:', this.isFlipped);
-                this.isFlipped = !this.isFlipped;
-                console.log('New flipped state:', this.isFlipped);
-                this.showCurrentCard();
+                
+                // Add flip animation
+                if (this.flashcardElement) {
+                    this.flashcardElement.classList.add('flipping');
+                    
+                    // Change content at midpoint of animation (50% = 200ms for 400ms animation)
+                    setTimeout(() => {
+                        this.isFlipped = !this.isFlipped;
+                        console.log('New flipped state:', this.isFlipped);
+                        this.showCurrentCard();
+                    }, 200); // Midpoint of 400ms animation
+                    
+                    // Remove animation class after animation completes
+                    setTimeout(() => {
+                        this.flashcardElement.classList.remove('flipping');
+                    }, 400); // Match animation duration
+                } else {
+                    // Fallback if no animation element
+                    this.isFlipped = !this.isFlipped;
+                    console.log('New flipped state:', this.isFlipped);
+                    this.showCurrentCard();
+                }
             }
 
             shuffle() {
@@ -3063,7 +3109,15 @@
             }
 
             reset() {
+                // Reset to original order first
                 this.reviewCards = Array.from({length: this.flashcards.length}, (_, i) => i);
+                
+                // Shuffle the cards for a fresh random order
+                for (let i = this.reviewCards.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [this.reviewCards[i], this.reviewCards[j]] = [this.reviewCards[j], this.reviewCards[i]];
+                }
+                
                 this.currentIndex = 0;
                 this.isFlipped = false;
                 
@@ -3080,7 +3134,16 @@
                     overlay.style.display = 'none';
                 }
                 
+                // Add reset animation
+                if (this.flashcardElement) {
+                    this.flashcardElement.classList.add('reset-card');
+                    setTimeout(() => {
+                        this.flashcardElement.classList.remove('reset-card');
+                    }, 600); // Match animation duration
+                }
+                
                 this.showCurrentCard();
+                this.resetButtonStates(); // Reset button states when resetting
                 this.updateStudyStats();
                 
                 // Update settings if they exist
@@ -3323,12 +3386,15 @@
             }
 
             next() {
-                // Only proceed if a rating was selected when card is flipped
-                if (this.isFlipped && !this.currentRating) {
+                console.log('Next method called - isFlipped:', this.isFlipped, 'currentRating:', this.currentRating);
+                // Always require a rating to be selected before proceeding
+                if (!this.currentRating) {
+                    console.log('Validation failed - no rating selected');
                     showToast('Please rate this card before proceeding!', 'error');
                     return;
                 }
                 
+                console.log('Validation passed, proceeding with next card');
                 // Apply the rating if one was selected
                 if (this.currentRating) {
                     this.rateCard(this.currentRating);
@@ -3344,6 +3410,15 @@
                 this.currentIndex = (this.currentIndex + 1) % this.reviewCards.length;
                 this.isFlipped = false;
                 this.currentRating = null; // Reset rating for next card
+                
+                // Add next card animation
+                if (this.flashcardElement) {
+                    this.flashcardElement.classList.add('next-card');
+                    setTimeout(() => {
+                        this.flashcardElement.classList.remove('next-card');
+                    }, 250); // Match animation duration
+                }
+                
                 this.showCurrentCard();
                 this.resetButtonStates(); // Reset button states for the new card
             }
@@ -3440,41 +3515,36 @@
             currentQuizIndex = 0;
             quizAnswers = [];
             
-            // Add quiz controls
+            // Add quiz content and controls (reset button below)
             container.innerHTML = `
-                <div class="quiz-controls" style="margin-bottom: 2rem; display: flex; gap: 1rem; justify-content: center;">
-                    <button class="control-btn" onclick="shuffleQuiz()">🔀 Shuffle</button>
+                <div id="quiz-content"></div>
+                <div class="quiz-controls" style="margin-top: 2rem; display: flex; gap: 1rem; justify-content: center;">
                     <button class="control-btn" onclick="resetQuiz()">🔄 Reset</button>
                 </div>
-                <div id="quiz-content"></div>
             `;
             
+            // Auto-shuffle on quiz start
+            shuffleQuizArray();
             showCurrentQuestion();
         }
 
-        function shuffleQuiz() {
+        // Internal shuffle function (no UI updates)
+        function shuffleQuizArray() {
             for (let i = currentQuiz.length - 1; i > 0; i--) {
                 const j = Math.floor(Math.random() * (i + 1));
                 [currentQuiz[i], currentQuiz[j]] = [currentQuiz[j], currentQuiz[i]];
             }
-            currentQuizIndex = 0;
-            quizAnswers = [];
-            showCurrentQuestion();
-            
-            // Update settings to reflect new order
-            populateSettingsContent('quiz-settings');
-            
-            showToast('Quiz shuffled!', 'success');
         }
 
         function resetQuiz() {
             const topicData = studyData[currentClass].topics[currentTopic];
             renderQuiz(topicData);
             
-            // Update settings to reflect original order
+            // Auto-shuffle on reset - quiz is already shuffled by renderQuiz
+            // Update settings to reflect new shuffled order
             populateSettingsContent('quiz-settings');
             
-            showToast('Quiz reset!', 'success');
+            showToast('Quiz reset and shuffled!', 'success');
         }
 
         function showCurrentQuestion() {

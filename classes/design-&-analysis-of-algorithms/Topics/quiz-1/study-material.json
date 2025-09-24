@@ -1,268 +1,484 @@
 {
-	"title": "Quiz 1 Review",
-	"notes": [
-		[
-			"An algorithm is a finite, rigorous sequence of steps to solve a class of problems (Week 1).",
-			5
-		],
-		[
-			"Computability considers what problems can be solved at all; decidability focuses on yes/no problems.",
-			12
-		],
-		[
-			"The Halting Problem shows fundamental limits: some problems have no algorithmic solution.",
-			15
-		],
-		[
-			"An ADT defines behavior and operations (Week 1 mentions ADT alongside data structures).",
-			8
-		],
-		[
-			"Data structures implement ADTs with concrete representations (array, linked list, etc.).",
-			10
-		]
-	],
-	"flashcards": [
-		{
-			"front": "What is an algorithm?",
-			"back": "A finite sequence of rigorous steps to solve a class of problems or perform a computation."
-		},
-		{
-			"front": "Key properties of a good algorithm?",
-			"back": "Correctness, efficiency (time/space), definiteness, finiteness, input/output."
-		},
-		{
-			"front": "What does 'problem type' refer to?",
-			"back": "A family of related problem instances described by input format and desired output."
-		},
-		{
-			"front": "What is decidability?",
-			"back": "Whether a problem has an algorithm that always halts with a correct yes/no answer."
-		},
-		{
-			"front": "What is computability in CS?",
-			"back": "The study of what can or cannot be solved by algorithms under resource constraints."
-		},
-		{
-			"front": "Difference between algorithm and program?",
-			"back": "Algorithm is the idea (logical steps); program is a concrete implementation in a language."
-		},
-		{
-			"front": "What is a decision problem?",
-			"back": "A yes/no problem like 'Does x have property P?' often used for complexity classes."
-		},
-		{
-			"front": "What is a reduction?",
-			"back": "Transforming one problem to another to transfer solvability or hardness results."
-		},
-		{
-			"front": "Halting problem significance?",
-			"back": "Classic undecidable problem proving limits of computation."
-		},
-		{
-			"front": "Church–Turing thesis (informal)?",
-			"back": "Any effectively computable function can be computed by a Turing machine."
-		},
-		{
-			"front": "What is an Abstract Data Type (ADT)?",
-			"back": "A mathematical model that defines data and operations independently of implementation."
-		},
-		{
-			"front": "Example ADTs",
-			"back": "Stack, Queue, List, Set, Map, Graph, Tree."
-		},
-		{
-			"front": "ADT vs Data Structure",
-			"back": "ADT specifies *what* operations; data structure specifies *how* to implement them."
-		},
-		{
-			"front": "Why ADTs?",
-			"back": "Encapsulation, modularity, substitutability of implementations."
-		},
-		{
-			"front": "Stack operations",
-			"back": "push, pop, top/peek, isEmpty"
-		},
-		{
-			"front": "Queue operations",
-			"back": "enqueue, dequeue, front, isEmpty"
-		},
-		{
-			"front": "List operations",
-			"back": "insert, delete, search, access by index"
-		},
-		{
-			"front": "Set operations",
-			"back": "insert, delete, contains, union, intersection"
-		},
-		{
-			"front": "Map operations",
-			"back": "put, get, remove, containsKey"
-		},
-		{
-			"front": "Graph basic ops",
-			"back": "addVertex, addEdge, neighbors, degree"
-		}
-	],
-	"quiz": [
-		{
-			"question": "Which best defines an algorithm?",
-			"options": [
-				"A program you can run",
-				"A finite sequence of well-defined steps",
-				"Any heuristic method"
-			],
-			"answer": 1,
-			"explanation": "Week 1 defines an algorithm as a finite sequence of rigorous instructions."
-		},
-		{
-			"question": "A problem is decidable if:",
-			"options": [
-				"We can usually solve it fast",
-				"There exists an algorithm that halts with a correct answer for all inputs",
-				"It is in NP"
-			],
-			"answer": 1,
-			"explanation": "Decidability is about existence of a halting algorithm, not speed."
-		},
-		{
-			"question": "Which statement about the Halting Problem is true?",
-			"options": [
-				"It is decidable",
-				"It is undecidable",
-				"It is solvable with Big-O(n log n) time"
-			],
-			"answer": 1,
-			"explanation": "The Halting Problem is undecidable."
-		},
-		{
-			"question": "Reductions are used to:",
-			"options": [
-				"Optimize code",
-				"Transfer (un)solvability or hardness between problems",
-				"Measure memory usage"
-			],
-			"answer": 1,
-			"explanation": "Reducing A to B shows A is no harder than B in some sense."
-		},
-		{
-			"question": "An algorithm differs from a program because:",
-			"options": [
-				"It is less precise",
-				"It is a language-neutral logical procedure",
-				"It always runs faster"
-			],
-			"answer": 1,
-			"explanation": "Algorithm is the abstract procedure; program is a concrete implementation."
-		},
-		{
-			"question": "An ADT primarily specifies:",
-			"options": [
-				"Storage layout",
-				"Allowed operations and behavior",
-				"Algorithmic complexity only"
-			],
-			"answer": 1,
-			"explanation": "ADTs describe behavior; data structures supply the implementation."
-		},
-		{
-			"question": "Which is an ADT?",
-			"options": [
-				"Binary heap array",
-				"Priority Queue",
-				"Hash table with chaining"
-			],
-			"answer": 1,
-			"explanation": "Priority Queue is an ADT; binary heap/hash table are implementations."
-		},
-		{
-			"question": "Key benefit of ADTs is:",
-			"options": [
-				"Memory leaks",
-				"Implementation independence",
-				"Slower code"
-			],
-			"answer": 1,
-			"explanation": "You can swap data structures without changing clients."
-		},
-		{
-			"question": "Which operation is NOT typical for a stack ADT?",
-			"options": [
-				"push",
-				"dequeue",
-				"pop"
-			],
-			"answer": 1,
-			"explanation": "dequeue belongs to a queue ADT."
-		}
-	],
-	"games": [
-		{
-			"type": "ordering",
-			"title": "Ordering Game",
-			"questions": [
-				{
-					"prompt": "Order from general to specific",
-					"items": [
-						"Computability",
-						"Decidability",
-						"Specific decision problem"
-					]
-				},
-				{
-					"prompt": "Order algorithm development phases from start to finish",
-					"items": [
-						"Problem understanding",
-						"Algorithm design",
-						"Implementation",
-						"Testing and verification"
-					]
-				}
-			]
-		},
-		{
-			"type": "matching",
-			"title": "Matching Game", 
-			"questions": [
-				{
-					"prompt": "Match computational concepts to their definitions",
-					"pairs": [
-						[
-							"Algorithm",
-							"Finite sequence of steps"
-						],
-						[
-							"Decidable",
-							"Solvable by halting algorithm"
-						],
-						[
-							"Reduction",
-							"Transform one problem to another"
-						]
-					]
-				},
-				{
-					"prompt": "Match ADTs to their primary operations",
-					"pairs": [
-						[
-							"Stack",
-							"push, pop, top"
-						],
-						[
-							"Queue", 
-							"enqueue, dequeue, front"
-						],
-						[
-							"Set",
-							"insert, delete, contains"
-						]
-					]
-				}
-			]
-		}
-	],
-	"sources": [
-		"Week 1 - Introduction to DAA.pdf",
-		"Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
-	]
+  "title": "Quiz 1 Review",
+  "notes": [
+    [
+      "An algorithm is a finite, rigorous sequence of steps to solve a class of problems (Week 1).",
+      4,
+      "Week 1 - Introduction to DAA.pdf"
+    ],
+    [
+      "Computability considers what problems can be solved at all; decidability focuses on yes/no problems.",
+      4,
+      "Week 1 - Introduction to DAA.pdf"
+    ],
+    [
+      "The Halting Problem shows fundamental limits: some problems have no algorithmic solution.",
+      13,
+      "Week 1 - Introduction to DAA.pdf"
+    ],
+    [
+      "An ADT defines behavior and operations (Week 1 mentions ADT alongside data structures).",
+      17,
+      "Week 1 - Introduction to DAA.pdf"
+    ],
+    [
+      "Data structures implement ADTs with concrete representations (array, linked list, etc.).",
+      10,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+    ],
+    [
+      "Computational models (e.g., RAM model) assign unit cost to basic operations for analysis.",
+      21,
+      "Week 3 - Brute Force and Exhaustive Search.pdf"
+    ],
+    [
+      "Problem types: decision, search, optimization—guide algorithm design and evaluation.",
+      2,
+      "Week 3 - Brute Force and Exhaustive Search.pdf"
+    ],
+    [
+      "Algorithm design paradigms (ADP): brute force, divide and conquer, decrease and conquer, transform and conquer, dynamic programming, greedy, backtracking, branch-and-bound.",
+      14,
+      "Week 1 - Introduction to DAA.pdf"
+    ],
+    [
+      "Reductions formalize converting one problem to another, preserving solvability.",
+      9,
+      "Week 3 - Brute Force and Exhaustive Search.pdf"
+    ],
+    [
+      "Correctness is proved via loop invariants, induction, and exchange arguments (for greedy).",
+      6,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+    ],
+    [
+      "Preconditions and postconditions specify required inputs and guaranteed outputs.",
+      4,
+      "Week 1 - Introduction to DAA.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "What is an algorithm?",
+      "back": "A finite sequence of rigorous steps to solve a class of problems or perform a computation."
+    },
+    {
+      "front": "Key properties of a good algorithm?",
+      "back": "Correctness, efficiency (time/space), definiteness, finiteness, input/output."
+    },
+    {
+      "front": "What does 'problem type' refer to?",
+      "back": "A family of related problem instances described by input format and desired output."
+    },
+    {
+      "front": "What is decidability?",
+      "back": "Whether a problem has an algorithm that always halts with a correct yes/no answer."
+    },
+    {
+      "front": "What is computability in CS?",
+      "back": "The study of what can or cannot be solved by algorithms under resource constraints."
+    },
+    {
+      "front": "Difference between algorithm and program?",
+      "back": "Algorithm is the idea (logical steps); program is a concrete implementation in a language."
+    },
+    {
+      "front": "What is a decision problem?",
+      "back": "A yes/no problem like 'Does x have property P?' often used for complexity classes."
+    },
+    {
+      "front": "What is a reduction?",
+      "back": "Transforming one problem to another to transfer solvability or hardness results."
+    },
+    {
+      "front": "Halting problem significance?",
+      "back": "Classic undecidable problem proving limits of computation."
+    },
+    {
+      "front": "Church–Turing thesis (informal)?",
+      "back": "Any effectively computable function can be computed by a Turing machine."
+    },
+    {
+      "front": "What is an Abstract Data Type (ADT)?",
+      "back": "A mathematical model that defines data and operations independently of implementation."
+    },
+    {
+      "front": "Example ADTs",
+      "back": "Stack, Queue, List, Set, Map, Graph, Tree."
+    },
+    {
+      "front": "ADT vs Data Structure",
+      "back": "ADT specifies *what* operations; data structure specifies *how* to implement them."
+    },
+    {
+      "front": "Why ADTs?",
+      "back": "Encapsulation, modularity, substitutability of implementations."
+    },
+    {
+      "front": "Stack operations",
+      "back": "push, pop, top/peek, isEmpty"
+    },
+    {
+      "front": "Queue operations",
+      "back": "enqueue, dequeue, front, isEmpty"
+    },
+    {
+      "front": "List operations",
+      "back": "insert, delete, search, access by index"
+    },
+    {
+      "front": "Set operations",
+      "back": "insert, delete, contains, union, intersection"
+    },
+    {
+      "front": "Map operations",
+      "back": "put, get, remove, containsKey"
+    },
+    {
+      "front": "Graph basic ops",
+      "back": "addVertex, addEdge, neighbors, degree"
+    },
+    {
+      "front": "RAM model assumption?",
+      "back": "Unit-cost for basic arithmetic and memory operations."
+    },
+    {
+      "front": "Difference between problem and instance?",
+      "back": "Problem = general specification; instance = specific input."
+    },
+    {
+      "front": "Name four algorithm design paradigms.",
+      "back": "Divide & conquer, dynamic programming, greedy, backtracking (others: brute force, transform & conquer, branch-and-bound)."
+    },
+    {
+      "front": "What is a reduction used for?",
+      "back": "To transform one problem into another to compare difficulty or transfer solutions."
+    },
+    {
+      "front": "Loop invariant purpose?",
+      "back": "Aid in proving correctness by showing a property holds before/after each iteration."
+    },
+    {
+      "front": "Backtracking vs branch-and-bound?",
+      "back": "Backtracking prunes infeasible states; branch-and-bound prunes non-promising states by bounds."
+    },
+    {
+      "front": "Optimization vs decision problem?",
+      "back": "Optimization seeks best value; decision asks yes/no (often used for complexity proofs)."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which best defines an algorithm?",
+      "options": [
+        "A program you can run",
+        "A finite sequence of well-defined steps",
+        "Any heuristic method"
+      ],
+      "answer": 1,
+      "explanation": "Week 1 defines an algorithm as a finite sequence of rigorous instructions."
+    },
+    {
+      "question": "A problem is decidable if:",
+      "options": [
+        "We can usually solve it fast",
+        "There exists an algorithm that halts with a correct answer for all inputs",
+        "It is in NP"
+      ],
+      "answer": 1,
+      "explanation": "Decidability is about existence of a halting algorithm, not speed."
+    },
+    {
+      "question": "Which statement about the Halting Problem is true?",
+      "options": [
+        "It is decidable",
+        "It is undecidable",
+        "It is solvable with Big-O(n log n) time"
+      ],
+      "answer": 1,
+      "explanation": "The Halting Problem is undecidable."
+    },
+    {
+      "question": "Reductions are used to:",
+      "options": [
+        "Optimize code",
+        "Transfer (un)solvability or hardness between problems",
+        "Measure memory usage"
+      ],
+      "answer": 1,
+      "explanation": "Reducing A to B shows A is no harder than B in some sense."
+    },
+    {
+      "question": "An algorithm differs from a program because:",
+      "options": [
+        "It is less precise",
+        "It is a language-neutral logical procedure",
+        "It always runs faster"
+      ],
+      "answer": 1,
+      "explanation": "Algorithm is the abstract procedure; program is a concrete implementation."
+    },
+    {
+      "question": "An ADT primarily specifies:",
+      "options": [
+        "Storage layout",
+        "Allowed operations and behavior",
+        "Algorithmic complexity only"
+      ],
+      "answer": 1,
+      "explanation": "ADTs describe behavior; data structures supply the implementation."
+    },
+    {
+      "question": "Which is an ADT?",
+      "options": [
+        "Binary heap array",
+        "Priority Queue",
+        "Hash table with chaining"
+      ],
+      "answer": 1,
+      "explanation": "Priority Queue is an ADT; binary heap/hash table are implementations."
+    },
+    {
+      "question": "Key benefit of ADTs is:",
+      "options": [
+        "Memory leaks",
+        "Implementation independence",
+        "Slower code"
+      ],
+      "answer": 1,
+      "explanation": "You can swap data structures without changing clients."
+    },
+    {
+      "question": "Which operation is NOT typical for a stack ADT?",
+      "options": [
+        "push",
+        "dequeue",
+        "pop"
+      ],
+      "answer": 1,
+      "explanation": "dequeue belongs to a queue ADT."
+    },
+    {
+      "question": "Which is NOT typically an algorithm design paradigm?",
+      "options": [
+        "Greedy",
+        "Dynamic programming",
+        "Heuristic searching as a paradigm",
+        "Divide and conquer"
+      ],
+      "answer": 2,
+      "explanation": "Heuristics are strategies; paradigms include DC, DP, Greedy, etc."
+    },
+    {
+      "question": "A reduction from A to B implies:",
+      "options": [
+        "A is at most as hard as B",
+        "B is at most as hard as A",
+        "A and B are incomparable"
+      ],
+      "answer": 0,
+      "explanation": "If A reduces to B, solving B yields a solution to A."
+    },
+    {
+      "question": "Which proof tool is best for loops?",
+      "options": [
+        "Contradiction",
+        "Induction via loop invariant",
+        "Pigeonhole principle"
+      ],
+      "answer": 1,
+      "explanation": "Loop invariants structure inductive proofs about iterations."
+    },
+    {
+      "question": "Dynamic programming reuses:",
+      "options": [
+        "Random choices",
+        "Solutions to subproblems",
+        "Only divide-by-two splits"
+      ],
+      "answer": 1,
+      "explanation": "DP memoizes overlapping subproblem results."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "Ordering Game",
+      "questions": [
+        {
+          "prompt": "Order from general to specific",
+          "items": [
+            "Computability",
+            "Decidability",
+            "Specific decision problem"
+          ]
+        },
+        {
+          "prompt": "Order algorithm development phases from start to finish",
+          "items": [
+            "Problem understanding",
+            "Algorithm design",
+            "Implementation",
+            "Testing and verification"
+          ]
+        },
+        {
+          "prompt": "Order the typical proof steps using loop invariants",
+          "items": [
+            "Initialize invariant",
+            "Assume holds before iteration",
+            "Prove maintenance",
+            "Prove termination",
+            "Conclude correctness"
+          ]
+        },
+        {
+          "prompt": "Order design progression for divide and conquer",
+          "items": [
+            "Divide",
+            "Conquer (solve subproblems)",
+            "Combine solutions",
+            "Analyze recurrence"
+          ]
+        },
+        {
+          "prompt": "Order the typical proof steps using loop invariants",
+          "items": [
+            "Initialize invariant",
+            "Assume holds before iteration",
+            "Prove maintenance",
+            "Prove termination",
+            "Conclude correctness"
+          ]
+        },
+        {
+          "prompt": "Order common ADP choices from exhaustive to structured",
+          "items": [
+            "Brute force",
+            "Backtracking",
+            "Divide and conquer",
+            "Dynamic programming",
+            "Greedy"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Matching Game",
+      "questions": [
+        {
+          "prompt": "Match computational concepts to their definitions",
+          "pairs": [
+            [
+              "Algorithm",
+              "Finite sequence of steps"
+            ],
+            [
+              "Decidable",
+              "Solvable by halting algorithm"
+            ],
+            [
+              "Reduction",
+              "Transform one problem to another"
+            ]
+          ]
+        },
+        {
+          "prompt": "Match ADTs to their primary operations",
+          "pairs": [
+            [
+              "Stack",
+              "push, pop, top"
+            ],
+            [
+              "Queue",
+              "enqueue, dequeue, front"
+            ],
+            [
+              "Set",
+              "insert, delete, contains"
+            ]
+          ]
+        },
+        {
+          "prompt": "Match paradigm to hallmark",
+          "pairs": [
+            [
+              "Divide and conquer",
+              "Split problem; combine results"
+            ],
+            [
+              "Dynamic programming",
+              "Optimum substructure + overlapping subproblems"
+            ],
+            [
+              "Greedy",
+              "Greedy-choice property + matroid-like structure"
+            ]
+          ]
+        },
+        {
+          "prompt": "Match concept to description",
+          "pairs": [
+            [
+              "Precondition",
+              "Assumptions on input state"
+            ],
+            [
+              "Postcondition",
+              "Guaranteed output/ending state"
+            ],
+            [
+              "Reduction",
+              "Map instances of one problem to another"
+            ]
+          ]
+        },
+        {
+          "prompt": "Match paradigm to hallmark",
+          "pairs": [
+            [
+              "Divide and conquer",
+              "Split problem; combine results"
+            ],
+            [
+              "Dynamic programming",
+              "Overlapping subproblems + optimal substructure"
+            ],
+            [
+              "Greedy",
+              "Greedy-choice property; stays locally optimal"
+            ],
+            [
+              "Backtracking",
+              "Systematic search with pruning"
+            ]
+          ]
+        },
+        {
+          "prompt": "Match term to description",
+          "pairs": [
+            [
+              "Precondition",
+              "Assumptions on input state"
+            ],
+            [
+              "Postcondition",
+              "Guaranteed output state"
+            ],
+            [
+              "Reduction",
+              "Map instances between problems"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Week 1 - Introduction to DAA.pdf",
+    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf",
+    "Week 3 - Brute Force and Exhaustive Search.pdf"
+  ]
 }

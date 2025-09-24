@@ -3,35 +3,93 @@
   "notes": [
     [
       "Week 2 frames efficiency in steps rather than seconds; count primitive operations as a function of n.",
-      3
+      2,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
     ],
     [
       "Summations and loop analysis yield closed-form step counts that inform asymptotic bounds.",
-      8
+      32,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
     ],
     [
       "Week 2 slides show O, Ω, Θ for bounding growth; ignore constants/lower terms for asymptotics.",
-      12
+      26,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
     ],
     [
       "Use step counts to derive asymptotic classes for algorithms.",
-      15
+      2,
+      "Week 1 - Introduction to DAA.pdf"
     ],
     [
       "Sequential search analysis shows worst-case O(n) comparisons when element is not found.",
-      6
+      32,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
     ],
     [
       "Nested loops multiply iteration counts; sequential blocks add their step counts together.",
-      9
+      14,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
     ],
     [
       "Big-O provides asymptotic upper bound, ignoring constant factors and lower-order terms.",
-      13
+      15,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
     ],
     [
       "Common growth classes: O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ) < O(n!).",
-      16
+      17,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+    ],
+    [
+      "Asymptotic notations: O (upper bound), Ω (lower bound), Θ (tight bound).",
+      15,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+    ],
+    [
+      "Little-o and little-omega capture non-tight bounds (strictly smaller/larger).",
+      18,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+    ],
+    [
+      "Formal Big‑O definition: f(n)=O(g(n)) if ∃ c>0, n0 s.t. ∀ n≥n0: f(n) ≤ c·g(n).",
+      1,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+    ],
+    [
+      "Common growth rates: 1 < log n < n < n log n < n^2 < n^3 < 2^n < n!.",
+      17,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+    ],
+    [
+      "Step counting uses a cost model assigning constant costs to basic operations.",
+      33,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+    ],
+    [
+      "Nested loops multiply costs; consecutive loops add costs.",
+      14,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+    ],
+    [
+      "Conditionals contribute the max (worst case) or probability-weighted (average case) of branches.",
+      32,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+    ],
+    [
+      "Master Theorem handles T(n)=aT(n/b)+f(n) for many divide-and-conquer algorithms.",
+      2,
+      "Week 1 - Introduction to DAA.pdf"
+    ],
+    [
+      "Amortized analysis averages costly operations over sequences (e.g., dynamic array resizing).",
+      33,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+    ],
+    [
+      "Best, average, worst-case analyses reveal different perspectives of performance.",
+      32,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
     ]
   ],
   "flashcards": [
@@ -69,10 +127,10 @@
     },
     {
       "front": "Summation identity example",
-      "back": "\u2211_{i=1..n} i = n(n+1)/2 used to count nested loop steps."
+      "back": "∑_{i=1..n} i = n(n+1)/2 used to count nested loop steps."
     },
     {
-      "front": "When step-count \u2248 runtime?",
+      "front": "When step-count ≈ runtime?",
       "back": "When operations have similar cost and memory effects are minor."
     },
     {
@@ -80,12 +138,12 @@
       "back": "Asymptotic upper bound on growth of a function, up to constant factors."
     },
     {
-      "front": "Big-\u03a9?",
+      "front": "Big-Ω?",
       "back": "Asymptotic lower bound."
     },
     {
-      "front": "Big-\u0398?",
-      "back": "Tight bound when both O and \u03a9 with same form hold."
+      "front": "Big-Θ?",
+      "back": "Tight bound when both O and Ω with same form hold."
     },
     {
       "front": "Drop constants and lower-order terms?",
@@ -114,6 +172,34 @@
     {
       "front": "Purpose of asymptotics",
       "back": "Compare algorithms independent of machine details."
+    },
+    {
+      "front": "Give the formal definition of Θ(g(n)).",
+      "back": "There exist positive constants c1,c2,n0 s.t. for all n≥n0: c1·g(n) ≤ f(n) ≤ c2·g(n)."
+    },
+    {
+      "front": "Which grows faster: n log n or n^1.1?",
+      "back": "n^1.1 grows faster asymptotically."
+    },
+    {
+      "front": "What does little-o mean?",
+      "back": "f(n)=o(g(n)) iff lim_{n→∞} f(n)/g(n) = 0."
+    },
+    {
+      "front": "When do you add vs multiply costs in step counting?",
+      "back": "Add for sequential blocks; multiply for nested loops."
+    },
+    {
+      "front": "Master Theorem Case 1 trigger?",
+      "back": "If f(n)=O(n^{log_b a - ε}) for some ε>0."
+    },
+    {
+      "front": "Amortized analysis example?",
+      "back": "Dynamic array append: occasional resize O(n) but average O(1)."
+    },
+    {
+      "front": "Worst vs average case for linear search?",
+      "back": "Worst O(n), average O(n) under uniform random target position."
     }
   ],
   "quiz": [
@@ -192,7 +278,7 @@
       "options": [
         "f",
         "g",
-        "They\u2019re equal"
+        "They’re equal"
       ],
       "answer": 1,
       "explanation": "n log n grows slower; g grows faster."
@@ -200,28 +286,89 @@
     {
       "question": "Dropping lower-order terms means:",
       "options": [
-        "n^2 + n \u2208 O(n)",
-        "n^2 + n \u2208 O(n^2)",
-        "n^2 + n \u2208 O(n^3)"
+        "n^2 + n ∈ O(n)",
+        "n^2 + n ∈ O(n^2)",
+        "n^2 + n ∈ O(n^3)"
       ],
       "answer": 1,
       "explanation": "Bound by the highest-order term."
     },
     {
-      "question": "If f \u2208 \u0398(g), then:",
+      "question": "If f ∈ Θ(g), then:",
       "options": [
-        "f \u2208 O(g) and f \u2208 \u03a9(g)",
-        "Only f \u2208 O(g)",
-        "Only f \u2208 \u03a9(g)"
+        "f ∈ O(g) and f ∈ Ω(g)",
+        "Only f ∈ O(g)",
+        "Only f ∈ Ω(g)"
       ],
       "answer": 0,
-      "explanation": "\u0398 implies both upper and lower bounds of the same order."
+      "explanation": "Θ implies both upper and lower bounds of the same order."
+    },
+    {
+      "question": "If f(n)=3n^2+2n+7, then f(n) is:",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)",
+        "O(n^3)"
+      ],
+      "answer": 2,
+      "explanation": "Highest-degree term dominates: n^2."
+    },
+    {
+      "question": "Choose correct relation: n log n is ___ n^1.1 for large n.",
+      "options": [
+        "o",
+        "ω",
+        "Θ"
+      ],
+      "answer": 0,
+      "explanation": "n log n grows strictly slower than n^1.1."
+    },
+    {
+      "question": "For two nested loops i=1..n, j=1..n, step count is:",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)"
+      ],
+      "answer": 2,
+      "explanation": "n*n iterations."
+    },
+    {
+      "question": "Which is the tightest bound for 5n + 20?",
+      "options": [
+        "O(n^2)",
+        "Θ(n)",
+        "Ω(1)"
+      ],
+      "answer": 1,
+      "explanation": "Linear function has Θ(n)."
+    },
+    {
+      "question": "Master Theorem for T(n)=2T(n/2)+n leads to:",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n^2)"
+      ],
+      "answer": 1,
+      "explanation": "Case 2: n^{log_b a}=n; f(n)=n ⇒ Θ(n log n)."
+    },
+    {
+      "question": "Little-omega means:",
+      "options": [
+        "strictly smaller order",
+        "strictly larger order",
+        "same order"
+      ],
+      "answer": 1,
+      "explanation": "f(n)=ω(g(n)) if f/g → ∞."
     }
   ],
   "games": [
     {
       "type": "ordering",
-      "prompt": "Order by step growth (fastest\u2192slowest)",
+      "prompt": "Order by step growth (fastest→slowest)",
       "items": [
         "n",
         "n log n",
@@ -244,6 +391,78 @@
         [
           "7",
           "O(1)"
+        ]
+      ]
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order by growth (slowest→fastest)",
+      "items": [
+        "1",
+        "log n",
+        "n",
+        "n log n",
+        "n^2",
+        "n^3",
+        "2^n",
+        "n!"
+      ]
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order step counts for these snippets (typical worst-case)",
+      "items": [
+        "Single loop 1..n",
+        "Nested loops 1..n/1..n",
+        "Binary search",
+        "Triple nested loops 1..n^3"
+      ]
+    },
+    {
+      "type": "matching",
+      "prompt": "Match notation to meaning",
+      "pairs": [
+        [
+          "O(g(n))",
+          "Asymptotic upper bound"
+        ],
+        [
+          "Ω(g(n))",
+          "Asymptotic lower bound"
+        ],
+        [
+          "Θ(g(n))",
+          "Asymptotically tight"
+        ],
+        [
+          "o(g(n))",
+          "Strictly smaller order"
+        ],
+        [
+          "ω(g(n))",
+          "Strictly larger order"
+        ]
+      ]
+    },
+    {
+      "type": "matching",
+      "prompt": "Match algorithm to tight complexity (worst-case)",
+      "pairs": [
+        [
+          "Linear search",
+          "Θ(n)"
+        ],
+        [
+          "Merge sort",
+          "Θ(n log n)"
+        ],
+        [
+          "Binary search",
+          "Θ(log n)"
+        ],
+        [
+          "Selection sort",
+          "Θ(n^2)"
         ]
       ]
     }
