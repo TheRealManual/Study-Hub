@@ -1,0 +1,914 @@
+{
+  "title": "Terminology - Chapter 2",
+  "notes": [
+    [
+      "Activity: Work performed within an organization; for example, setting up machines or distributing products.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Allocation: Process of assigning costs to cost objects, such as departments, products, or activities.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Cost: Monetary measure of resources sacrificed to achieve a specific objective.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Cost Object: Anything for which a measurement of costs is desired (product, service, department, etc.).",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Consumer: Person or entity that uses goods and services.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Direct Cost: Cost that can be conveniently and economically traced to a cost object.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Indirect Cost: Cost that cannot be conveniently and economically traced to a cost object.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Fixed Cost: Cost that remains unchanged in total for a given period despite wide changes in the related level of total activity or volume.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Variable Cost: Cost that changes in total in direct proportion to a change in activity or volume.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Mixed Cost: Cost that has both fixed and variable components.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Product Cost: Cost that is assigned to goods that were either purchased or manufactured for resale.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Period Cost: Cost that is expensed in the period in which it is incurred.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Prime Cost: Direct materials plus direct labor.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Conversion Cost: Direct labor plus manufacturing overhead.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Opportunity Cost: Benefit forgone when one alternative is chosen over another.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Sunk Cost: Cost already incurred that cannot be changed by any future decision.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Differential Cost: Difference in cost between two alternatives.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Incremental Cost: Additional cost incurred when one alternative is selected over another.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Relevant Cost: Cost that is pertinent to a decision because it has a bearing on the future and differs among alternatives.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Irrelevant Cost: Cost that is not pertinent to a decision.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Output: Product, service, or result of a process.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Production: Creation of goods and services.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Resource: Input required to produce goods and services.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Unit: Single, identifiable quantity of a product or service.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Total Output: Aggregate amount of goods and services produced.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Average Cost: Total cost divided by the number of units produced.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Marginal Cost: Cost of producing one additional unit of output.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Overhead: All production costs other than direct materials and direct labor.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Traceability: Ability to directly relate a cost to a cost object.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ],
+    [
+      "Utilization: Extent to which a resource is used for its intended purpose.",
+      1,
+      "Chapter 2 Key Terms.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Activity",
+      "back": "Work performed within an organization; for example, setting up machines or distributing products."
+    },
+    {
+      "front": "Allocation",
+      "back": "Process of assigning costs to cost objects, such as departments, products, or activities."
+    },
+    {
+      "front": "Cost",
+      "back": "Monetary measure of resources sacrificed to achieve a specific objective."
+    },
+    {
+      "front": "Cost Object",
+      "back": "Anything for which a measurement of costs is desired (product, service, department, etc.)."
+    },
+    {
+      "front": "Consumer",
+      "back": "Person or entity that uses goods and services."
+    },
+    {
+      "front": "Direct Cost",
+      "back": "Cost that can be conveniently and economically traced to a cost object."
+    },
+    {
+      "front": "Indirect Cost",
+      "back": "Cost that cannot be conveniently and economically traced to a cost object."
+    },
+    {
+      "front": "Fixed Cost",
+      "back": "Cost that remains unchanged in total for a given period despite wide changes in the related level of total activity or volume."
+    },
+    {
+      "front": "Variable Cost",
+      "back": "Cost that changes in total in direct proportion to a change in activity or volume."
+    },
+    {
+      "front": "Mixed Cost",
+      "back": "Cost that has both fixed and variable components."
+    },
+    {
+      "front": "Product Cost",
+      "back": "Cost that is assigned to goods that were either purchased or manufactured for resale."
+    },
+    {
+      "front": "Period Cost",
+      "back": "Cost that is expensed in the period in which it is incurred."
+    },
+    {
+      "front": "Prime Cost",
+      "back": "Direct materials plus direct labor."
+    },
+    {
+      "front": "Conversion Cost",
+      "back": "Direct labor plus manufacturing overhead."
+    },
+    {
+      "front": "Opportunity Cost",
+      "back": "Benefit forgone when one alternative is chosen over another."
+    },
+    {
+      "front": "Sunk Cost",
+      "back": "Cost already incurred that cannot be changed by any future decision."
+    },
+    {
+      "front": "Differential Cost",
+      "back": "Difference in cost between two alternatives."
+    },
+    {
+      "front": "Incremental Cost",
+      "back": "Additional cost incurred when one alternative is selected over another."
+    },
+    {
+      "front": "Relevant Cost",
+      "back": "Cost that is pertinent to a decision because it has a bearing on the future and differs among alternatives."
+    },
+    {
+      "front": "Irrelevant Cost",
+      "back": "Cost that is not pertinent to a decision."
+    },
+    {
+      "front": "Output",
+      "back": "Product, service, or result of a process."
+    },
+    {
+      "front": "Production",
+      "back": "Creation of goods and services."
+    },
+    {
+      "front": "Resource",
+      "back": "Input required to produce goods and services."
+    },
+    {
+      "front": "Unit",
+      "back": "Single, identifiable quantity of a product or service."
+    },
+    {
+      "front": "Total Output",
+      "back": "Aggregate amount of goods and services produced."
+    },
+    {
+      "front": "Average Cost",
+      "back": "Total cost divided by the number of units produced."
+    },
+    {
+      "front": "Marginal Cost",
+      "back": "Cost of producing one additional unit of output."
+    },
+    {
+      "front": "Overhead",
+      "back": "All production costs other than direct materials and direct labor."
+    },
+    {
+      "front": "Traceability",
+      "back": "Ability to directly relate a cost to a cost object."
+    },
+    {
+      "front": "Utilization",
+      "back": "Extent to which a resource is used for its intended purpose."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is the definition of 'Activity'?",
+      "options": [
+        "Work performed within an organization; for example, setting up machines or distributing products.",
+        "Total cost divided by the number of units produced.",
+        "Cost already incurred that cannot be changed by any future decision.",
+        "Aggregate amount of goods and services produced."
+      ],
+      "answer": 0,
+      "explanation": "'Activity' is defined as: Work performed within an organization; for example, setting up machines or distributing products."
+    },
+    {
+      "question": "What is the definition of 'Allocation'?",
+      "options": [
+        "Process of assigning costs to cost objects, such as departments, products, or activities.",
+        "Direct labor plus manufacturing overhead.",
+        "Benefit forgone when one alternative is chosen over another.",
+        "Total cost divided by the number of units produced."
+      ],
+      "answer": 0,
+      "explanation": "'Allocation' is defined as: Process of assigning costs to cost objects, such as departments, products, or activities."
+    },
+    {
+      "question": "What is the definition of 'Cost'?",
+      "options": [
+        "Direct materials plus direct labor.",
+        "Cost of producing one additional unit of output.",
+        "Cost that is assigned to goods that were either purchased or manufactured for resale.",
+        "Monetary measure of resources sacrificed to achieve a specific objective."
+      ],
+      "answer": 3,
+      "explanation": "'Cost' is defined as: Monetary measure of resources sacrificed to achieve a specific objective."
+    },
+    {
+      "question": "What is the definition of 'Cost Object'?",
+      "options": [
+        "Anything for which a measurement of costs is desired (product, service, department, etc.).",
+        "Cost that is expensed in the period in which it is incurred.",
+        "Cost that changes in total in direct proportion to a change in activity or volume.",
+        "Benefit forgone when one alternative is chosen over another."
+      ],
+      "answer": 0,
+      "explanation": "'Cost Object' is defined as: Anything for which a measurement of costs is desired (product, service, department, etc.)."
+    },
+    {
+      "question": "What is the definition of 'Consumer'?",
+      "options": [
+        "Cost that is assigned to goods that were either purchased or manufactured for resale.",
+        "Work performed within an organization; for example, setting up machines or distributing products.",
+        "Cost of producing one additional unit of output.",
+        "Person or entity that uses goods and services."
+      ],
+      "answer": 3,
+      "explanation": "'Consumer' is defined as: Person or entity that uses goods and services."
+    },
+    {
+      "question": "What is the definition of 'Direct Cost'?",
+      "options": [
+        "Anything for which a measurement of costs is desired (product, service, department, etc.).",
+        "Cost of producing one additional unit of output.",
+        "Cost that can be conveniently and economically traced to a cost object.",
+        "Cost that is not pertinent to a decision."
+      ],
+      "answer": 2,
+      "explanation": "'Direct Cost' is defined as: Cost that can be conveniently and economically traced to a cost object."
+    },
+    {
+      "question": "What is the definition of 'Indirect Cost'?",
+      "options": [
+        "Cost that is assigned to goods that were either purchased or manufactured for resale.",
+        "Cost that is expensed in the period in which it is incurred.",
+        "Aggregate amount of goods and services produced.",
+        "Cost that cannot be conveniently and economically traced to a cost object."
+      ],
+      "answer": 3,
+      "explanation": "'Indirect Cost' is defined as: Cost that cannot be conveniently and economically traced to a cost object."
+    },
+    {
+      "question": "What is the definition of 'Fixed Cost'?",
+      "options": [
+        "Person or entity that uses goods and services.",
+        "Cost that remains unchanged in total for a given period despite wide changes in the related level of total activity or volume.",
+        "Aggregate amount of goods and services produced.",
+        "Cost that changes in total in direct proportion to a change in activity or volume."
+      ],
+      "answer": 1,
+      "explanation": "'Fixed Cost' is defined as: Cost that remains unchanged in total for a given period despite wide changes in the related level of total activity or volume."
+    },
+    {
+      "question": "What is the definition of 'Variable Cost'?",
+      "options": [
+        "Input required to produce goods and services.",
+        "Benefit forgone when one alternative is chosen over another.",
+        "Cost that changes in total in direct proportion to a change in activity or volume.",
+        "Direct labor plus manufacturing overhead."
+      ],
+      "answer": 2,
+      "explanation": "'Variable Cost' is defined as: Cost that changes in total in direct proportion to a change in activity or volume."
+    },
+    {
+      "question": "What is the definition of 'Mixed Cost'?",
+      "options": [
+        "Cost already incurred that cannot be changed by any future decision.",
+        "Total cost divided by the number of units produced.",
+        "Input required to produce goods and services.",
+        "Cost that has both fixed and variable components."
+      ],
+      "answer": 3,
+      "explanation": "'Mixed Cost' is defined as: Cost that has both fixed and variable components."
+    },
+    {
+      "question": "What is the definition of 'Product Cost'?",
+      "options": [
+        "Cost that is assigned to goods that were either purchased or manufactured for resale.",
+        "Difference in cost between two alternatives.",
+        "Benefit forgone when one alternative is chosen over another.",
+        "Aggregate amount of goods and services produced."
+      ],
+      "answer": 0,
+      "explanation": "'Product Cost' is defined as: Cost that is assigned to goods that were either purchased or manufactured for resale."
+    },
+    {
+      "question": "What is the definition of 'Period Cost'?",
+      "options": [
+        "Cost that is pertinent to a decision because it has a bearing on the future and differs among alternatives.",
+        "All production costs other than direct materials and direct labor.",
+        "Cost of producing one additional unit of output.",
+        "Cost that is expensed in the period in which it is incurred."
+      ],
+      "answer": 3,
+      "explanation": "'Period Cost' is defined as: Cost that is expensed in the period in which it is incurred."
+    },
+    {
+      "question": "What is the definition of 'Prime Cost'?",
+      "options": [
+        "Ability to directly relate a cost to a cost object.",
+        "Cost already incurred that cannot be changed by any future decision.",
+        "Direct materials plus direct labor.",
+        "Single, identifiable quantity of a product or service."
+      ],
+      "answer": 2,
+      "explanation": "'Prime Cost' is defined as: Direct materials plus direct labor."
+    },
+    {
+      "question": "What is the definition of 'Conversion Cost'?",
+      "options": [
+        "Cost that has both fixed and variable components.",
+        "Ability to directly relate a cost to a cost object.",
+        "Cost that is not pertinent to a decision.",
+        "Direct labor plus manufacturing overhead."
+      ],
+      "answer": 3,
+      "explanation": "'Conversion Cost' is defined as: Direct labor plus manufacturing overhead."
+    },
+    {
+      "question": "What is the definition of 'Opportunity Cost'?",
+      "options": [
+        "Benefit forgone when one alternative is chosen over another.",
+        "Direct labor plus manufacturing overhead.",
+        "Difference in cost between two alternatives.",
+        "Input required to produce goods and services."
+      ],
+      "answer": 0,
+      "explanation": "'Opportunity Cost' is defined as: Benefit forgone when one alternative is chosen over another."
+    },
+    {
+      "question": "What is the definition of 'Sunk Cost'?",
+      "options": [
+        "Anything for which a measurement of costs is desired (product, service, department, etc.).",
+        "Cost that is assigned to goods that were either purchased or manufactured for resale.",
+        "Input required to produce goods and services.",
+        "Cost already incurred that cannot be changed by any future decision."
+      ],
+      "answer": 3,
+      "explanation": "'Sunk Cost' is defined as: Cost already incurred that cannot be changed by any future decision."
+    },
+    {
+      "question": "What is the definition of 'Differential Cost'?",
+      "options": [
+        "Benefit forgone when one alternative is chosen over another.",
+        "Direct labor plus manufacturing overhead.",
+        "Difference in cost between two alternatives.",
+        "Cost that is expensed in the period in which it is incurred."
+      ],
+      "answer": 2,
+      "explanation": "'Differential Cost' is defined as: Difference in cost between two alternatives."
+    },
+    {
+      "question": "What is the definition of 'Incremental Cost'?",
+      "options": [
+        "Cost that has both fixed and variable components.",
+        "Cost that remains unchanged in total for a given period despite wide changes in the related level of total activity or volume.",
+        "Single, identifiable quantity of a product or service.",
+        "Additional cost incurred when one alternative is selected over another."
+      ],
+      "answer": 3,
+      "explanation": "'Incremental Cost' is defined as: Additional cost incurred when one alternative is selected over another."
+    },
+    {
+      "question": "What is the definition of 'Relevant Cost'?",
+      "options": [
+        "All production costs other than direct materials and direct labor.",
+        "Cost that is assigned to goods that were either purchased or manufactured for resale.",
+        "Aggregate amount of goods and services produced.",
+        "Cost that is pertinent to a decision because it has a bearing on the future and differs among alternatives."
+      ],
+      "answer": 3,
+      "explanation": "'Relevant Cost' is defined as: Cost that is pertinent to a decision because it has a bearing on the future and differs among alternatives."
+    },
+    {
+      "question": "What is the definition of 'Irrelevant Cost'?",
+      "options": [
+        "Anything for which a measurement of costs is desired (product, service, department, etc.).",
+        "Cost that is not pertinent to a decision.",
+        "Creation of goods and services.",
+        "Difference in cost between two alternatives."
+      ],
+      "answer": 1,
+      "explanation": "'Irrelevant Cost' is defined as: Cost that is not pertinent to a decision."
+    },
+    {
+      "question": "What is the definition of 'Output'?",
+      "options": [
+        "Creation of goods and services.",
+        "Total cost divided by the number of units produced.",
+        "Cost that is assigned to goods that were either purchased or manufactured for resale.",
+        "Product, service, or result of a process."
+      ],
+      "answer": 3,
+      "explanation": "'Output' is defined as: Product, service, or result of a process."
+    },
+    {
+      "question": "What is the definition of 'Production'?",
+      "options": [
+        "Cost that has both fixed and variable components.",
+        "Cost that remains unchanged in total for a given period despite wide changes in the related level of total activity or volume.",
+        "Creation of goods and services.",
+        "Cost that changes in total in direct proportion to a change in activity or volume."
+      ],
+      "answer": 2,
+      "explanation": "'Production' is defined as: Creation of goods and services."
+    },
+    {
+      "question": "What is the definition of 'Resource'?",
+      "options": [
+        "Cost that cannot be conveniently and economically traced to a cost object.",
+        "Creation of goods and services.",
+        "Input required to produce goods and services.",
+        "Cost that is pertinent to a decision because it has a bearing on the future and differs among alternatives."
+      ],
+      "answer": 2,
+      "explanation": "'Resource' is defined as: Input required to produce goods and services."
+    },
+    {
+      "question": "What is the definition of 'Unit'?",
+      "options": [
+        "Product, service, or result of a process.",
+        "Single, identifiable quantity of a product or service.",
+        "Anything for which a measurement of costs is desired (product, service, department, etc.).",
+        "Direct labor plus manufacturing overhead."
+      ],
+      "answer": 1,
+      "explanation": "'Unit' is defined as: Single, identifiable quantity of a product or service."
+    },
+    {
+      "question": "What is the definition of 'Total Output'?",
+      "options": [
+        "Single, identifiable quantity of a product or service.",
+        "Aggregate amount of goods and services produced.",
+        "Cost that is assigned to goods that were either purchased or manufactured for resale.",
+        "Cost of producing one additional unit of output."
+      ],
+      "answer": 1,
+      "explanation": "'Total Output' is defined as: Aggregate amount of goods and services produced."
+    },
+    {
+      "question": "What is the definition of 'Average Cost'?",
+      "options": [
+        "Cost that is assigned to goods that were either purchased or manufactured for resale.",
+        "Total cost divided by the number of units produced.",
+        "Creation of goods and services.",
+        "Monetary measure of resources sacrificed to achieve a specific objective."
+      ],
+      "answer": 1,
+      "explanation": "'Average Cost' is defined as: Total cost divided by the number of units produced."
+    },
+    {
+      "question": "What is the definition of 'Marginal Cost'?",
+      "options": [
+        "Direct materials plus direct labor.",
+        "Product, service, or result of a process.",
+        "Cost of producing one additional unit of output.",
+        "Ability to directly relate a cost to a cost object."
+      ],
+      "answer": 2,
+      "explanation": "'Marginal Cost' is defined as: Cost of producing one additional unit of output."
+    },
+    {
+      "question": "What is the definition of 'Overhead'?",
+      "options": [
+        "Cost that is not pertinent to a decision.",
+        "All production costs other than direct materials and direct labor.",
+        "Monetary measure of resources sacrificed to achieve a specific objective.",
+        "Cost that has both fixed and variable components."
+      ],
+      "answer": 1,
+      "explanation": "'Overhead' is defined as: All production costs other than direct materials and direct labor."
+    },
+    {
+      "question": "What is the definition of 'Traceability'?",
+      "options": [
+        "Ability to directly relate a cost to a cost object.",
+        "Input required to produce goods and services.",
+        "Cost that is expensed in the period in which it is incurred.",
+        "Monetary measure of resources sacrificed to achieve a specific objective."
+      ],
+      "answer": 0,
+      "explanation": "'Traceability' is defined as: Ability to directly relate a cost to a cost object."
+    },
+    {
+      "question": "What is the definition of 'Utilization'?",
+      "options": [
+        "Anything for which a measurement of costs is desired (product, service, department, etc.).",
+        "Product, service, or result of a process.",
+        "Difference in cost between two alternatives.",
+        "Extent to which a resource is used for its intended purpose."
+      ],
+      "answer": 3,
+      "explanation": "'Utilization' is defined as: Extent to which a resource is used for its intended purpose."
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "title": "Match Terms with Definitions",
+      "questions": [
+        {
+          "prompt": "Match each term to its correct definition",
+          "pairs": [
+            [
+              "Activity",
+              "Work performed within an organization; for example, setting up machines or distributing products."
+            ],
+            [
+              "Allocation",
+              "Process of assigning costs to cost objects, such as departments, products, or activities."
+            ],
+            [
+              "Cost",
+              "Monetary measure of resources sacrificed to achieve a specific objective."
+            ],
+            [
+              "Cost Object",
+              "Anything for which a measurement of costs is desired (product, service, department, etc.)."
+            ],
+            [
+              "Consumer",
+              "Person or entity that uses goods and services."
+            ],
+            [
+              "Direct Cost",
+              "Cost that can be conveniently and economically traced to a cost object."
+            ],
+            [
+              "Indirect Cost",
+              "Cost that cannot be conveniently and economically traced to a cost object."
+            ],
+            [
+              "Fixed Cost",
+              "Cost that remains unchanged in total for a given period despite wide changes in the related level of total activity or volume."
+            ],
+            [
+              "Variable Cost",
+              "Cost that changes in total in direct proportion to a change in activity or volume."
+            ],
+            [
+              "Mixed Cost",
+              "Cost that has both fixed and variable components."
+            ],
+            [
+              "Product Cost",
+              "Cost that is assigned to goods that were either purchased or manufactured for resale."
+            ],
+            [
+              "Period Cost",
+              "Cost that is expensed in the period in which it is incurred."
+            ],
+            [
+              "Prime Cost",
+              "Direct materials plus direct labor."
+            ],
+            [
+              "Conversion Cost",
+              "Direct labor plus manufacturing overhead."
+            ],
+            [
+              "Opportunity Cost",
+              "Benefit forgone when one alternative is chosen over another."
+            ],
+            [
+              "Sunk Cost",
+              "Cost already incurred that cannot be changed by any future decision."
+            ],
+            [
+              "Differential Cost",
+              "Difference in cost between two alternatives."
+            ],
+            [
+              "Incremental Cost",
+              "Additional cost incurred when one alternative is selected over another."
+            ],
+            [
+              "Relevant Cost",
+              "Cost that is pertinent to a decision because it has a bearing on the future and differs among alternatives."
+            ],
+            [
+              "Irrelevant Cost",
+              "Cost that is not pertinent to a decision."
+            ],
+            [
+              "Output",
+              "Product, service, or result of a process."
+            ],
+            [
+              "Production",
+              "Creation of goods and services."
+            ],
+            [
+              "Resource",
+              "Input required to produce goods and services."
+            ],
+            [
+              "Unit",
+              "Single, identifiable quantity of a product or service."
+            ],
+            [
+              "Total Output",
+              "Aggregate amount of goods and services produced."
+            ],
+            [
+              "Average Cost",
+              "Total cost divided by the number of units produced."
+            ],
+            [
+              "Marginal Cost",
+              "Cost of producing one additional unit of output."
+            ],
+            [
+              "Overhead",
+              "All production costs other than direct materials and direct labor."
+            ],
+            [
+              "Traceability",
+              "Ability to directly relate a cost to a cost object."
+            ],
+            [
+              "Utilization",
+              "Extent to which a resource is used for its intended purpose."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Alphabetical Order",
+      "questions": [
+        {
+          "prompt": "Arrange these terms alphabetically",
+          "items": [
+            "Activity",
+            "Allocation",
+            "Average Cost",
+            "Consumer",
+            "Conversion Cost",
+            "Cost",
+            "Cost Object",
+            "Differential Cost",
+            "Direct Cost",
+            "Fixed Cost",
+            "Incremental Cost",
+            "Indirect Cost",
+            "Irrelevant Cost",
+            "Marginal Cost",
+            "Mixed Cost",
+            "Opportunity Cost",
+            "Output",
+            "Overhead",
+            "Period Cost",
+            "Prime Cost",
+            "Product Cost",
+            "Production",
+            "Relevant Cost",
+            "Resource",
+            "Sunk Cost",
+            "Total Output",
+            "Traceability",
+            "Unit",
+            "Utilization",
+            "Variable Cost"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Match Cost-Related Terms",
+      "questions": [
+        {
+          "prompt": "Match cost-related terms to their correct definitions",
+          "pairs": [
+            [
+              "Cost",
+              "Monetary measure of resources sacrificed to achieve a specific objective."
+            ],
+            [
+              "Cost Object",
+              "Anything for which a measurement of costs is desired (product, service, department, etc.)."
+            ],
+            [
+              "Direct Cost",
+              "Cost that can be conveniently and economically traced to a cost object."
+            ],
+            [
+              "Indirect Cost",
+              "Cost that cannot be conveniently and economically traced to a cost object."
+            ],
+            [
+              "Fixed Cost",
+              "Cost that remains unchanged in total for a given period despite wide changes in the related level of total activity or volume."
+            ],
+            [
+              "Variable Cost",
+              "Cost that changes in total in direct proportion to a change in activity or volume."
+            ],
+            [
+              "Mixed Cost",
+              "Cost that has both fixed and variable components."
+            ],
+            [
+              "Product Cost",
+              "Cost that is assigned to goods that were either purchased or manufactured for resale."
+            ],
+            [
+              "Period Cost",
+              "Cost that is expensed in the period in which it is incurred."
+            ],
+            [
+              "Prime Cost",
+              "Direct materials plus direct labor."
+            ],
+            [
+              "Conversion Cost",
+              "Direct labor plus manufacturing overhead."
+            ],
+            [
+              "Opportunity Cost",
+              "Benefit forgone when one alternative is chosen over another."
+            ],
+            [
+              "Sunk Cost",
+              "Cost already incurred that cannot be changed by any future decision."
+            ],
+            [
+              "Differential Cost",
+              "Difference in cost between two alternatives."
+            ],
+            [
+              "Incremental Cost",
+              "Additional cost incurred when one alternative is selected over another."
+            ],
+            [
+              "Relevant Cost",
+              "Cost that is pertinent to a decision because it has a bearing on the future and differs among alternatives."
+            ],
+            [
+              "Irrelevant Cost",
+              "Cost that is not pertinent to a decision."
+            ],
+            [
+              "Average Cost",
+              "Total cost divided by the number of units produced."
+            ],
+            [
+              "Marginal Cost",
+              "Cost of producing one additional unit of output."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Sort by Concept Type",
+      "questions": [
+        {
+          "prompt": "Sort terms by type (Costs first, then Non-cost terms)",
+          "items": [
+            "Average Cost",
+            "Conversion Cost",
+            "Cost",
+            "Cost Object",
+            "Differential Cost",
+            "Direct Cost",
+            "Fixed Cost",
+            "Incremental Cost",
+            "Indirect Cost",
+            "Irrelevant Cost",
+            "Marginal Cost",
+            "Mixed Cost",
+            "Opportunity Cost",
+            "Period Cost",
+            "Prime Cost",
+            "Product Cost",
+            "Relevant Cost",
+            "Sunk Cost",
+            "Variable Cost",
+            "Activity",
+            "Allocation",
+            "Consumer",
+            "Output",
+            "Overhead",
+            "Production",
+            "Resource",
+            "Total Output",
+            "Traceability",
+            "Unit",
+            "Utilization"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Chapter 2 Key Terms.pdf"
+  ]
+}

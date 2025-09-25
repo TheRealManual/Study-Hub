@@ -1,1130 +1,218 @@
 {
-  "title": "Chapter 1 – Introduction to Managerial Accounting",
+  "title": "Chapter 1 \u2013 Introduction to Managerial Accounting (Objectives)",
   "notes": [
     [
-      "Managerial vs Financial accounting: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance",
-      3,
+      "Identify a manager's four primary responsibilities and discuss how managerial accounting aids in their fulfillment",
+      1,
       "Chapter 1 - Tagged.pdf"
     ],
     [
-      "Manager’s responsibilities: planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives)",
-      7,
-      "Chapter 1 - Tagged.pdf"
-    ],
-    [
-      "Ethical standards in managerial accounting: competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice)",
-      2,
-      "Chapter 1 - Tagged.pdf"
-    ],
-    [
-      "Organizational structure: line vs staff positions; CFO/Controller/Treasurer roles",
-      3,
-      "Chapter 1 - Tagged.pdf"
-    ],
-    [
-      "Value chain overview (preview): R&D, design, production/purchases, marketing, distribution, customer service",
-      6,
-      "Chapter 1 - Tagged.pdf"
-    ],
-    [
-      "Corporate governance: internal controls and SOX implications for managerial reporting",
-      2,
-      "Chapter 1 - Tagged.pdf"
-    ],
-    [
-      "Sustainability & triple bottom line: people, planet, profit; sustainability reporting’s managerial implications",
-      2,
-      "Chapter 1 - Tagged.pdf"
-    ],
-    [
-      "Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)",
-      5,
-      "Chapter 1 - Tagged.pdf"
-    ],
-    [
-      "Cost classifications: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview)",
-      5,
-      "Chapter 1 - Tagged.pdf"
-    ],
-    [
-      "Manufacturing inventories: raw materials, work in process, finished goods—balance sheet presentation",
-      8,
+      "Identify the differences between managerial accounting and financial accounting",
+      1,
       "Chapter 1 - Tagged.pdf"
     ]
   ],
   "flashcards": [
     {
-      "front": "Four responsibilities of managers",
-      "back": "Planning, directing, controlling, decision making"
+      "front": "What are the four primary responsibilities of managers?",
+      "back": "Planning, Directing, Controlling, and Decision-making (evaluating alternatives using relevant info)."
     },
     {
-      "front": "Difference in users (financial vs managerial)",
-      "back": "External stakeholders vs internal managers"
+      "front": "How does managerial accounting support Planning?",
+      "back": "Provides forecasts, budgets, and what-if analyses to set goals and select strategies."
     },
     {
-      "front": "IMA ethical principles",
-      "back": "Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility"
+      "front": "How does managerial accounting support Directing?",
+      "back": "Supplies real-time reports and dashboards to coordinate day-to-day operations."
     },
     {
-      "front": "Three types of companies",
-      "back": "Service, merchandising, manufacturing"
+      "front": "How does managerial accounting support Controlling?",
+      "back": "Delivers variance analyses and performance reports to compare actuals vs. budget and take corrective action."
     },
     {
-      "front": "Inventories for manufacturers",
-      "back": "Raw materials, Work in process, Finished goods"
+      "front": "How does managerial accounting support Decision-making?",
+      "back": "Offers relevant, timely, forward-looking information to choose among alternatives."
     },
     {
-      "front": "Purpose of controlling",
-      "back": "Evaluate performance and implement corrective action"
+      "front": "Managerial vs Financial accounting: primary users?",
+      "back": "Managerial: internal managers; Financial: external users (investors, creditors, regulators)."
     },
     {
-      "front": "Managerial vs Financial accounting",
-      "back": "internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance"
+      "front": "Managerial vs Financial accounting: focus and time horizon?",
+      "back": "Managerial: future-oriented, detailed segments; Financial: historical, company-wide aggregates."
     },
     {
-      "front": "Manager’s responsibilities",
-      "back": "planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives)"
+      "front": "Managerial vs Financial accounting: rules and format?",
+      "back": "Managerial: not GAAP-mandated, flexible; Financial: GAAP/IFRS required, standardized."
     },
     {
-      "front": "Ethical standards in managerial accounting",
-      "back": "competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice)"
+      "front": "Managerial vs Financial accounting: frequency and timeliness?",
+      "back": "Managerial: frequent, as needed; Financial: periodic (quarterly/annual), less frequent."
     },
     {
-      "front": "Organizational structure",
-      "back": "line vs staff positions; CFO/Controller/Treasurer roles"
-    },
-    {
-      "front": "Value chain overview (preview)",
-      "back": "R&D, design, production/purchases, marketing, distribution, customer service"
-    },
-    {
-      "front": "Corporate governance",
-      "back": "internal controls and SOX implications for managerial reporting"
-    },
-    {
-      "front": "Sustainability & triple bottom line",
-      "back": "people, planet, profit; sustainability reporting’s managerial implications"
-    },
-    {
-      "front": "Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)",
-      "back": "Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)"
-    },
-    {
-      "front": "Cost classifications",
-      "back": "direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview)"
-    },
-    {
-      "front": "Manufacturing inventories",
-      "back": "raw materials, work in process, finished goods—balance sheet presentation"
-    },
-    {
-      "front": "Which is primarily future‑oriented and internal?",
-      "back": "Correct: Managerial accounting — Managerial focuses on internal decisions and future planning."
-    },
-    {
-      "front": "A budget is most closely associated with:",
-      "back": "Correct: Planning — Budgets are part of planning activities."
-    },
-    {
-      "front": "Which is NOT a manufacturer’s inventory?",
-      "back": "Correct: Merchandise inventory — Merchandise inventory applies to merchandisers."
-    },
-    {
-      "front": "IMA standard addressing confidentiality breaches:",
-      "back": "Correct: Confidentiality — Confidentiality requires safeguarding information."
-    },
-    {
-      "front": "Put value chain in order",
-      "back": "R&D → Design → Production/Purchases → Marketing → Distribution → Customer service"
-    },
-    {
-      "front": "Controller",
-      "back": "Accounting and reporting"
-    },
-    {
-      "front": "Treasurer",
-      "back": "Financing and cash management"
-    },
-    {
-      "front": "CFO",
-      "back": "Overall financial leadership"
-    },
-    {
-      "front": "Which best matches: Four responsibilities of managers",
-      "back": "Correct: Planning, directing, controlling, decision making — Correct match for “Four responsibilities of managers” is: Planning, directing, controlling, decision making."
-    },
-    {
-      "front": "Which best matches: Difference in users (financial vs managerial)",
-      "back": "Correct: External stakeholders vs internal managers — Correct match for “Difference in users (financial vs managerial)” is: External stakeholders vs internal managers."
-    },
-    {
-      "front": "Which best matches: IMA ethical principles",
-      "back": "Correct: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility — Correct match for “IMA ethical principles” is: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility."
-    },
-    {
-      "front": "Which best matches: Three types of companies",
-      "back": "Correct: Service, merchandising, manufacturing — Correct match for “Three types of companies” is: Service, merchandising, manufacturing."
-    },
-    {
-      "front": "Which best matches: Inventories for manufacturers",
-      "back": "Correct: Raw materials, Work in process, Finished goods — Correct match for “Inventories for manufacturers” is: Raw materials, Work in process, Finished goods."
-    },
-    {
-      "front": "Which best matches: Purpose of controlling",
-      "back": "Correct: Evaluate performance and implement corrective action — Correct match for “Purpose of controlling” is: Evaluate performance and implement corrective action."
-    },
-    {
-      "front": "Which best matches: Managerial vs Financial accounting",
-      "back": "Correct: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance — Correct match for “Managerial vs Financial accounting” is: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance."
-    },
-    {
-      "front": "Which best matches: Manager’s responsibilities",
-      "back": "Correct: planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives) — Correct match for “Manager’s responsibilities” is: planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives)."
-    },
-    {
-      "front": "Which best matches: Ethical standards in managerial accounting",
-      "back": "Correct: competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice) — Correct match for “Ethical standards in managerial accounting” is: competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice)."
-    },
-    {
-      "front": "Which best matches: Organizational structure",
-      "back": "Correct: line vs staff positions; CFO/Controller/Treasurer roles — Correct match for “Organizational structure” is: line vs staff positions; CFO/Controller/Treasurer roles."
-    },
-    {
-      "front": "Which best matches: Value chain overview (preview)",
-      "back": "Correct: R&D, design, production/purchases, marketing, distribution, customer service — Correct match for “Value chain overview (preview)” is: R&D, design, production/purchases, marketing, distribution, customer service."
-    },
-    {
-      "front": "Which best matches: Corporate governance",
-      "back": "Correct: internal controls and SOX implications for managerial reporting — Correct match for “Corporate governance” is: internal controls and SOX implications for managerial reporting."
-    },
-    {
-      "front": "Which best matches: Sustainability & triple bottom line",
-      "back": "Correct: people, planet, profit; sustainability reporting’s managerial implications — Correct match for “Sustainability & triple bottom line” is: people, planet, profit; sustainability reporting’s managerial implications."
-    },
-    {
-      "front": "Which best matches: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)",
-      "back": "Correct: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows) — Correct match for “Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)” is: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)."
-    },
-    {
-      "front": "Which best matches: Cost classifications",
-      "back": "Correct: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview) — Correct match for “Cost classifications” is: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview)."
-    },
-    {
-      "front": "Which best matches: Manufacturing inventories",
-      "back": "Correct: raw materials, work in process, finished goods—balance sheet presentation — Correct match for “Manufacturing inventories” is: raw materials, work in process, finished goods—balance sheet presentation."
-    },
-    {
-      "front": "Which best matches: Which is primarily future‑oriented and internal?",
-      "back": "Correct: Correct: Managerial accounting — Managerial focuses on internal decisions and future planning. — Correct match for “Which is primarily future‑oriented and internal?” is: Correct: Managerial accounting — Managerial focuses on internal decisions and future planning.."
-    },
-    {
-      "front": "Which best matches: A budget is most closely associated with:",
-      "back": "Correct: Correct: Planning — Budgets are part of planning activities. — Correct match for “A budget is most closely associated with:” is: Correct: Planning — Budgets are part of planning activities.."
-    },
-    {
-      "front": "Which best matches: Which is NOT a manufacturer’s inventory?",
-      "back": "Correct: Correct: Merchandise inventory — Merchandise inventory applies to merchandisers. — Correct match for “Which is NOT a manufacturer’s inventory?” is: Correct: Merchandise inventory — Merchandise inventory applies to merchandisers.."
-    },
-    {
-      "front": "Which best matches: IMA standard addressing confidentiality breaches:",
-      "back": "Correct: Correct: Confidentiality — Confidentiality requires safeguarding information. — Correct match for “IMA standard addressing confidentiality breaches:” is: Correct: Confidentiality — Confidentiality requires safeguarding information.."
-    },
-    {
-      "front": "Which best matches: Put value chain in order",
-      "back": "Correct: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service — Correct match for “Put value chain in order” is: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service."
-    },
-    {
-      "front": "Which best matches: Controller",
-      "back": "Correct: Accounting and reporting — Correct match for “Controller” is: Accounting and reporting."
-    },
-    {
-      "front": "Which best matches: Treasurer",
-      "back": "Correct: Financing and cash management — Correct match for “Treasurer” is: Financing and cash management."
-    },
-    {
-      "front": "Which best matches: CFO",
-      "back": "Correct: Overall financial leadership — Correct match for “CFO” is: Overall financial leadership."
-    },
-    {
-      "front": "Put the sequence in order – derived from: Four responsibilities of managers",
-      "back": "Planning → directing → controlling → decision making"
-    },
-    {
-      "front": "Put the sequence in order – derived from: IMA ethical principles",
-      "back": "Honesty → fairness → objectivity → responsibility; standards include competence → confidentiality → integrity → credibility"
-    },
-    {
-      "front": "Put the sequence in order – derived from: Three types of companies",
-      "back": "Service → merchandising → manufacturing"
-    },
-    {
-      "front": "Put the sequence in order – derived from: Inventories for manufacturers",
-      "back": "Raw materials → Work in process → Finished goods"
-    },
-    {
-      "front": "Put the sequence in order – derived from: Manager’s responsibilities",
-      "back": "planning (budgets) → directing (daily operations) → controlling (performance evaluation) → decision making (choose among alternatives)"
+      "front": "Ethical considerations in managerial accounting?",
+      "back": "Confidentiality, integrity, credibility; avoid conflicts of interest and ensure decision-useful reporting."
     }
   ],
   "quiz": [
     {
-      "question": "Which best matches: Four responsibilities of managers",
+      "question": "What are the four primary responsibilities of managers?",
       "options": [
-        "Planning, directing, controlling, decision making",
-        "Correct: people, planet, profit; sustainability reporting’s managerial implications — Correct match for “Sustainability & triple bottom line” is: people, planet, profit; sustainability reporting’s managerial implications.",
-        "Correct: External stakeholders vs internal managers — Correct match for “Difference in users (financial vs managerial)” is: External stakeholders vs internal managers.",
-        "Financing and cash management"
-      ],
-      "answer": 0,
-      "explanation": "Correct: Planning, directing, controlling, decision making"
-    },
-    {
-      "question": "Which best matches: Difference in users (financial vs managerial)",
-      "options": [
-        "Correct: Correct: Merchandise inventory — Merchandise inventory applies to merchandisers. — Correct match for “Which is NOT a manufacturer’s inventory?” is: Correct: Merchandise inventory — Merchandise inventory applies to merchandisers..",
-        "Correct: line vs staff positions; CFO/Controller/Treasurer roles — Correct match for “Organizational structure” is: line vs staff positions; CFO/Controller/Treasurer roles.",
-        "Correct: Correct: Planning — Budgets are part of planning activities. — Correct match for “A budget is most closely associated with:” is: Correct: Planning — Budgets are part of planning activities..",
-        "External stakeholders vs internal managers"
+        "Provides forecasts, budgets, and what-if analyses to set goals and select strategies.",
+        "Managerial: frequent, as needed; Financial: periodic (quarterly/annual), less frequent.",
+        "Managerial: future-oriented, detailed segments; Financial: historical, company-wide aggregates.",
+        "Planning, Directing, Controlling, and Decision-making (evaluating alternatives using relevant info)."
       ],
       "answer": 3,
-      "explanation": "Correct: External stakeholders vs internal managers"
+      "explanation": "Planning, Directing, Controlling, and Decision-making (evaluating alternatives using relevant info)."
     },
     {
-      "question": "Which best matches: IMA ethical principles",
+      "question": "How does managerial accounting support Planning?",
       "options": [
-        "Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility",
-        "Correct: Correct: Planning — Budgets are part of planning activities. — Correct match for “A budget is most closely associated with:” is: Correct: Planning — Budgets are part of planning activities..",
-        "Accounting and reporting",
-        "Correct: R&D, design, production/purchases, marketing, distribution, customer service — Correct match for “Value chain overview (preview)” is: R&D, design, production/purchases, marketing, distribution, customer service."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility"
-    },
-    {
-      "question": "Which best matches: Three types of companies",
-      "options": [
-        "Service, merchandising, manufacturing",
-        "Correct: competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice) — Correct match for “Ethical standards in managerial accounting” is: competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice).",
-        "Correct: Evaluate performance and implement corrective action — Correct match for “Purpose of controlling” is: Evaluate performance and implement corrective action.",
-        "planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives)"
-      ],
-      "answer": 0,
-      "explanation": "Correct: Service, merchandising, manufacturing"
-    },
-    {
-      "question": "Which best matches: Inventories for manufacturers",
-      "options": [
-        "Financing and cash management",
-        "competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice)",
-        "Raw materials, Work in process, Finished goods",
-        "Service, merchandising, manufacturing"
+        "Managerial: not GAAP-mandated, flexible; Financial: GAAP/IFRS required, standardized.",
+        "Managerial: internal managers; Financial: external users (investors, creditors, regulators).",
+        "Provides forecasts, budgets, and what-if analyses to set goals and select strategies.",
+        "Supplies real-time reports and dashboards to coordinate day-to-day operations."
       ],
       "answer": 2,
-      "explanation": "Correct: Raw materials, Work in process, Finished goods"
+      "explanation": "Provides forecasts, budgets, and what-if analyses to set goals and select strategies."
     },
     {
-      "question": "Which best matches: Purpose of controlling",
+      "question": "How does managerial accounting support Directing?",
       "options": [
-        "Correct: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility — Correct match for “IMA ethical principles” is: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility.",
-        "Evaluate performance and implement corrective action",
-        "Correct: Correct: Planning — Budgets are part of planning activities. — Correct match for “A budget is most closely associated with:” is: Correct: Planning — Budgets are part of planning activities..",
-        "Correct: External stakeholders vs internal managers — Correct match for “Difference in users (financial vs managerial)” is: External stakeholders vs internal managers."
+        "Planning, Directing, Controlling, and Decision-making (evaluating alternatives using relevant info).",
+        "Supplies real-time reports and dashboards to coordinate day-to-day operations.",
+        "Managerial: not GAAP-mandated, flexible; Financial: GAAP/IFRS required, standardized.",
+        "Managerial: frequent, as needed; Financial: periodic (quarterly/annual), less frequent."
       ],
       "answer": 1,
-      "explanation": "Correct: Evaluate performance and implement corrective action"
+      "explanation": "Supplies real-time reports and dashboards to coordinate day-to-day operations."
     },
     {
-      "question": "Which best matches: Managerial vs Financial accounting",
+      "question": "How does managerial accounting support Controlling?",
       "options": [
-        "internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance",
-        "Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility",
-        "Planning, directing, controlling, decision making",
-        "Correct: Confidentiality — Confidentiality requires safeguarding information."
-      ],
-      "answer": 0,
-      "explanation": "Correct: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance"
-    },
-    {
-      "question": "Which best matches: Manager’s responsibilities",
-      "options": [
-        "planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives)",
-        "Correct: Planning — Budgets are part of planning activities.",
-        "Financing and cash management",
-        "internal controls and SOX implications for managerial reporting"
-      ],
-      "answer": 0,
-      "explanation": "Correct: planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives)"
-    },
-    {
-      "question": "Which best matches: Ethical standards in managerial accounting",
-      "options": [
-        "Overall financial leadership",
-        "competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice)",
-        "people, planet, profit; sustainability reporting’s managerial implications",
-        "Correct: Evaluate performance and implement corrective action — Correct match for “Purpose of controlling” is: Evaluate performance and implement corrective action."
+        "Offers relevant, timely, forward-looking information to choose among alternatives.",
+        "Delivers variance analyses and performance reports to compare actuals vs. budget and take corrective action.",
+        "Managerial: frequent, as needed; Financial: periodic (quarterly/annual), less frequent.",
+        "Managerial: not GAAP-mandated, flexible; Financial: GAAP/IFRS required, standardized."
       ],
       "answer": 1,
-      "explanation": "Correct: competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice)"
+      "explanation": "Delivers variance analyses and performance reports to compare actuals vs. budget and take corrective action."
     },
     {
-      "question": "Which best matches: Organizational structure",
+      "question": "How does managerial accounting support Decision-making?",
       "options": [
-        "line vs staff positions; CFO/Controller/Treasurer roles",
-        "Planning → directing → controlling → decision making",
-        "Correct: planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives) — Correct match for “Manager’s responsibilities” is: planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives).",
-        "Correct: Correct: Confidentiality — Confidentiality requires safeguarding information. — Correct match for “IMA standard addressing confidentiality breaches:” is: Correct: Confidentiality — Confidentiality requires safeguarding information.."
-      ],
-      "answer": 0,
-      "explanation": "Correct: line vs staff positions; CFO/Controller/Treasurer roles"
-    },
-    {
-      "question": "Which best matches: Value chain overview (preview)",
-      "options": [
-        "planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives)",
-        "R&D, design, production/purchases, marketing, distribution, customer service",
-        "Correct: Correct: Planning — Budgets are part of planning activities. — Correct match for “A budget is most closely associated with:” is: Correct: Planning — Budgets are part of planning activities..",
-        "Evaluate performance and implement corrective action"
-      ],
-      "answer": 1,
-      "explanation": "Correct: R&D, design, production/purchases, marketing, distribution, customer service"
-    },
-    {
-      "question": "Which best matches: Corporate governance",
-      "options": [
-        "people, planet, profit; sustainability reporting’s managerial implications",
-        "Planning, directing, controlling, decision making",
-        "internal controls and SOX implications for managerial reporting",
-        "Correct: Evaluate performance and implement corrective action — Correct match for “Purpose of controlling” is: Evaluate performance and implement corrective action."
+        "Managerial: frequent, as needed; Financial: periodic (quarterly/annual), less frequent.",
+        "Delivers variance analyses and performance reports to compare actuals vs. budget and take corrective action.",
+        "Offers relevant, timely, forward-looking information to choose among alternatives.",
+        "Supplies real-time reports and dashboards to coordinate day-to-day operations."
       ],
       "answer": 2,
-      "explanation": "Correct: internal controls and SOX implications for managerial reporting"
+      "explanation": "Offers relevant, timely, forward-looking information to choose among alternatives."
     },
     {
-      "question": "Which best matches: Sustainability & triple bottom line",
+      "question": "Managerial vs Financial accounting: primary users?",
       "options": [
-        "direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview)",
-        "Correct: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance — Correct match for “Managerial vs Financial accounting” is: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance.",
-        "Honesty → fairness → objectivity → responsibility; standards include competence → confidentiality → integrity → credibility",
-        "people, planet, profit; sustainability reporting’s managerial implications"
-      ],
-      "answer": 3,
-      "explanation": "Correct: people, planet, profit; sustainability reporting’s managerial implications"
-    },
-    {
-      "question": "Which best matches: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)",
-      "options": [
-        "line vs staff positions; CFO/Controller/Treasurer roles",
-        "Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)",
-        "Evaluate performance and implement corrective action",
-        "Raw materials → Work in process → Finished goods"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)"
-    },
-    {
-      "question": "Which best matches: Cost classifications",
-      "options": [
-        "Correct: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service — Correct match for “Put value chain in order” is: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service.",
-        "direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview)",
-        "Raw materials, Work in process, Finished goods",
-        "R&D → Design → Production/Purchases → Marketing → Distribution → Customer service"
-      ],
-      "answer": 1,
-      "explanation": "Correct: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview)"
-    },
-    {
-      "question": "Which best matches: Manufacturing inventories",
-      "options": [
-        "Planning → directing → controlling → decision making",
-        "Service, merchandising, manufacturing",
-        "Correct: Raw materials, Work in process, Finished goods — Correct match for “Inventories for manufacturers” is: Raw materials, Work in process, Finished goods.",
-        "raw materials, work in process, finished goods—balance sheet presentation"
-      ],
-      "answer": 3,
-      "explanation": "Correct: raw materials, work in process, finished goods—balance sheet presentation"
-    },
-    {
-      "question": "Which best matches: Which is primarily future‑oriented and internal?",
-      "options": [
-        "Correct: Managerial accounting — Managerial focuses on internal decisions and future planning.",
-        "direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview)",
-        "planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives)",
-        "Overall financial leadership"
+        "Managerial: internal managers; Financial: external users (investors, creditors, regulators).",
+        "Supplies real-time reports and dashboards to coordinate day-to-day operations.",
+        "Managerial: future-oriented, detailed segments; Financial: historical, company-wide aggregates.",
+        "Planning, Directing, Controlling, and Decision-making (evaluating alternatives using relevant info)."
       ],
       "answer": 0,
-      "explanation": "Correct: Correct: Managerial accounting — Managerial focuses on internal decisions and future planning."
+      "explanation": "Managerial: internal managers; Financial: external users (investors, creditors, regulators)."
     },
     {
-      "question": "Which best matches: A budget is most closely associated with:",
+      "question": "Managerial vs Financial accounting: focus and time horizon?",
       "options": [
-        "Correct: Planning — Budgets are part of planning activities.",
-        "Service, merchandising, manufacturing",
-        "Correct: Evaluate performance and implement corrective action — Correct match for “Purpose of controlling” is: Evaluate performance and implement corrective action.",
-        "Correct: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service — Correct match for “Put value chain in order” is: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Planning — Budgets are part of planning activities."
-    },
-    {
-      "question": "Which best matches: Which is NOT a manufacturer’s inventory?",
-      "options": [
-        "Correct: Merchandise inventory — Merchandise inventory applies to merchandisers.",
-        "Correct: Planning, directing, controlling, decision making — Correct match for “Four responsibilities of managers” is: Planning, directing, controlling, decision making.",
-        "Correct: competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice) — Correct match for “Ethical standards in managerial accounting” is: competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice).",
-        "planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives)"
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Merchandise inventory — Merchandise inventory applies to merchandisers."
-    },
-    {
-      "question": "Which best matches: IMA standard addressing confidentiality breaches:",
-      "options": [
-        "Correct: raw materials, work in process, finished goods—balance sheet presentation — Correct match for “Manufacturing inventories” is: raw materials, work in process, finished goods—balance sheet presentation.",
-        "Correct: Confidentiality — Confidentiality requires safeguarding information.",
-        "Raw materials → Work in process → Finished goods",
-        "Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Confidentiality — Confidentiality requires safeguarding information."
-    },
-    {
-      "question": "Which best matches: Put value chain in order",
-      "options": [
-        "competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice)",
-        "Correct: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility — Correct match for “IMA ethical principles” is: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility.",
-        "Correct: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance — Correct match for “Managerial vs Financial accounting” is: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance.",
-        "R&D → Design → Production/Purchases → Marketing → Distribution → Customer service"
-      ],
-      "answer": 3,
-      "explanation": "Correct: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service"
-    },
-    {
-      "question": "Which best matches: Controller",
-      "options": [
-        "Planning, directing, controlling, decision making",
-        "Accounting and reporting",
-        "Correct: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview) — Correct match for “Cost classifications” is: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview).",
-        "Correct: Accounting and reporting — Correct match for “Controller” is: Accounting and reporting."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Accounting and reporting"
-    },
-    {
-      "question": "Which best matches: Treasurer",
-      "options": [
-        "Financing and cash management",
-        "Correct: line vs staff positions; CFO/Controller/Treasurer roles — Correct match for “Organizational structure” is: line vs staff positions; CFO/Controller/Treasurer roles.",
-        "Correct: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility — Correct match for “IMA ethical principles” is: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility.",
-        "Evaluate performance and implement corrective action"
-      ],
-      "answer": 0,
-      "explanation": "Correct: Financing and cash management"
-    },
-    {
-      "question": "Which best matches: CFO",
-      "options": [
-        "Correct: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service — Correct match for “Put value chain in order” is: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service.",
-        "Correct: Confidentiality — Confidentiality requires safeguarding information.",
-        "Correct: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows) — Correct match for “Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)” is: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows).",
-        "Overall financial leadership"
-      ],
-      "answer": 3,
-      "explanation": "Correct: Overall financial leadership"
-    },
-    {
-      "question": "Which best matches: Which best matches: Four responsibilities of managers",
-      "options": [
-        "Correct: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows) — Correct match for “Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)” is: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows).",
-        "Service, merchandising, manufacturing",
-        "internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance",
-        "Correct: Planning, directing, controlling, decision making — Correct match for “Four responsibilities of managers” is: Planning, directing, controlling, decision making."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Planning, directing, controlling, decision making — Correct match for “Four responsibilities of managers” is: Planning, directing, controlling, decision making."
-    },
-    {
-      "question": "Which best matches: Which best matches: Difference in users (financial vs managerial)",
-      "options": [
-        "Correct: Planning — Budgets are part of planning activities.",
-        "Correct: External stakeholders vs internal managers — Correct match for “Difference in users (financial vs managerial)” is: External stakeholders vs internal managers.",
-        "Correct: Financing and cash management — Correct match for “Treasurer” is: Financing and cash management.",
-        "R&D → Design → Production/Purchases → Marketing → Distribution → Customer service"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: External stakeholders vs internal managers — Correct match for “Difference in users (financial vs managerial)” is: External stakeholders vs internal managers."
-    },
-    {
-      "question": "Which best matches: Which best matches: IMA ethical principles",
-      "options": [
-        "Correct: Accounting and reporting — Correct match for “Controller” is: Accounting and reporting.",
-        "Correct: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance — Correct match for “Managerial vs Financial accounting” is: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance.",
-        "Correct: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility — Correct match for “IMA ethical principles” is: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility.",
-        "Correct: Planning — Budgets are part of planning activities."
+        "Provides forecasts, budgets, and what-if analyses to set goals and select strategies.",
+        "Managerial: internal managers; Financial: external users (investors, creditors, regulators).",
+        "Managerial: future-oriented, detailed segments; Financial: historical, company-wide aggregates.",
+        "Supplies real-time reports and dashboards to coordinate day-to-day operations."
       ],
       "answer": 2,
-      "explanation": "Correct: Correct: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility — Correct match for “IMA ethical principles” is: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility."
+      "explanation": "Managerial: future-oriented, detailed segments; Financial: historical, company-wide aggregates."
     },
     {
-      "question": "Which best matches: Which best matches: Three types of companies",
+      "question": "Managerial vs Financial accounting: rules and format?",
       "options": [
-        "line vs staff positions; CFO/Controller/Treasurer roles",
-        "Raw materials, Work in process, Finished goods",
-        "direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview)",
-        "Correct: Service, merchandising, manufacturing — Correct match for “Three types of companies” is: Service, merchandising, manufacturing."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Service, merchandising, manufacturing — Correct match for “Three types of companies” is: Service, merchandising, manufacturing."
-    },
-    {
-      "question": "Which best matches: Which best matches: Inventories for manufacturers",
-      "options": [
-        "internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance",
-        "Correct: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview) — Correct match for “Cost classifications” is: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview).",
-        "Correct: Raw materials, Work in process, Finished goods — Correct match for “Inventories for manufacturers” is: Raw materials, Work in process, Finished goods.",
-        "Planning, directing, controlling, decision making"
+        "Supplies real-time reports and dashboards to coordinate day-to-day operations.",
+        "Confidentiality, integrity, credibility; avoid conflicts of interest and ensure decision-useful reporting.",
+        "Managerial: not GAAP-mandated, flexible; Financial: GAAP/IFRS required, standardized.",
+        "Planning, Directing, Controlling, and Decision-making (evaluating alternatives using relevant info)."
       ],
       "answer": 2,
-      "explanation": "Correct: Correct: Raw materials, Work in process, Finished goods — Correct match for “Inventories for manufacturers” is: Raw materials, Work in process, Finished goods."
+      "explanation": "Managerial: not GAAP-mandated, flexible; Financial: GAAP/IFRS required, standardized."
     },
     {
-      "question": "Which best matches: Which best matches: Purpose of controlling",
+      "question": "Managerial vs Financial accounting: frequency and timeliness?",
       "options": [
-        "R&D → Design → Production/Purchases → Marketing → Distribution → Customer service",
-        "Correct: Evaluate performance and implement corrective action — Correct match for “Purpose of controlling” is: Evaluate performance and implement corrective action.",
-        "Correct: Merchandise inventory — Merchandise inventory applies to merchandisers.",
-        "Correct: R&D, design, production/purchases, marketing, distribution, customer service — Correct match for “Value chain overview (preview)” is: R&D, design, production/purchases, marketing, distribution, customer service."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Evaluate performance and implement corrective action — Correct match for “Purpose of controlling” is: Evaluate performance and implement corrective action."
-    },
-    {
-      "question": "Which best matches: Which best matches: Managerial vs Financial accounting",
-      "options": [
-        "Correct: Evaluate performance and implement corrective action — Correct match for “Purpose of controlling” is: Evaluate performance and implement corrective action.",
-        "Correct: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance — Correct match for “Managerial vs Financial accounting” is: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance.",
-        "Correct: line vs staff positions; CFO/Controller/Treasurer roles — Correct match for “Organizational structure” is: line vs staff positions; CFO/Controller/Treasurer roles.",
-        "internal controls and SOX implications for managerial reporting"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance — Correct match for “Managerial vs Financial accounting” is: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance."
-    },
-    {
-      "question": "Which best matches: Which best matches: Manager’s responsibilities",
-      "options": [
-        "Correct: Planning, directing, controlling, decision making — Correct match for “Four responsibilities of managers” is: Planning, directing, controlling, decision making.",
-        "Correct: raw materials, work in process, finished goods—balance sheet presentation — Correct match for “Manufacturing inventories” is: raw materials, work in process, finished goods—balance sheet presentation.",
-        "Correct: planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives) — Correct match for “Manager’s responsibilities” is: planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives).",
-        "Correct: people, planet, profit; sustainability reporting’s managerial implications — Correct match for “Sustainability & triple bottom line” is: people, planet, profit; sustainability reporting’s managerial implications."
+        "Managerial: future-oriented, detailed segments; Financial: historical, company-wide aggregates.",
+        "Managerial: internal managers; Financial: external users (investors, creditors, regulators).",
+        "Managerial: frequent, as needed; Financial: periodic (quarterly/annual), less frequent.",
+        "Confidentiality, integrity, credibility; avoid conflicts of interest and ensure decision-useful reporting."
       ],
       "answer": 2,
-      "explanation": "Correct: Correct: planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives) — Correct match for “Manager’s responsibilities” is: planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives)."
+      "explanation": "Managerial: frequent, as needed; Financial: periodic (quarterly/annual), less frequent."
     },
     {
-      "question": "Which best matches: Which best matches: Ethical standards in managerial accounting",
+      "question": "Ethical considerations in managerial accounting?",
       "options": [
-        "Correct: Service, merchandising, manufacturing — Correct match for “Three types of companies” is: Service, merchandising, manufacturing.",
-        "Correct: people, planet, profit; sustainability reporting’s managerial implications — Correct match for “Sustainability & triple bottom line” is: people, planet, profit; sustainability reporting’s managerial implications.",
-        "Correct: competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice) — Correct match for “Ethical standards in managerial accounting” is: competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice).",
-        "Correct: Evaluate performance and implement corrective action — Correct match for “Purpose of controlling” is: Evaluate performance and implement corrective action."
+        "Provides forecasts, budgets, and what-if analyses to set goals and select strategies.",
+        "Managerial: internal managers; Financial: external users (investors, creditors, regulators).",
+        "Confidentiality, integrity, credibility; avoid conflicts of interest and ensure decision-useful reporting.",
+        "Supplies real-time reports and dashboards to coordinate day-to-day operations."
       ],
       "answer": 2,
-      "explanation": "Correct: Correct: competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice) — Correct match for “Ethical standards in managerial accounting” is: competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice)."
-    },
-    {
-      "question": "Which best matches: Which best matches: Organizational structure",
-      "options": [
-        "Correct: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance — Correct match for “Managerial vs Financial accounting” is: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance.",
-        "competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice)",
-        "Correct: line vs staff positions; CFO/Controller/Treasurer roles — Correct match for “Organizational structure” is: line vs staff positions; CFO/Controller/Treasurer roles.",
-        "Correct: Planning — Budgets are part of planning activities."
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: line vs staff positions; CFO/Controller/Treasurer roles — Correct match for “Organizational structure” is: line vs staff positions; CFO/Controller/Treasurer roles."
-    },
-    {
-      "question": "Which best matches: Which best matches: Value chain overview (preview)",
-      "options": [
-        "Correct: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service — Correct match for “Put value chain in order” is: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service.",
-        "Correct: R&D, design, production/purchases, marketing, distribution, customer service — Correct match for “Value chain overview (preview)” is: R&D, design, production/purchases, marketing, distribution, customer service.",
-        "Correct: Correct: Managerial accounting — Managerial focuses on internal decisions and future planning. — Correct match for “Which is primarily future‑oriented and internal?” is: Correct: Managerial accounting — Managerial focuses on internal decisions and future planning..",
-        "direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview)"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: R&D, design, production/purchases, marketing, distribution, customer service — Correct match for “Value chain overview (preview)” is: R&D, design, production/purchases, marketing, distribution, customer service."
-    },
-    {
-      "question": "Which best matches: Which best matches: Corporate governance",
-      "options": [
-        "R&D, design, production/purchases, marketing, distribution, customer service",
-        "External stakeholders vs internal managers",
-        "Raw materials, Work in process, Finished goods",
-        "Correct: internal controls and SOX implications for managerial reporting — Correct match for “Corporate governance” is: internal controls and SOX implications for managerial reporting."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: internal controls and SOX implications for managerial reporting — Correct match for “Corporate governance” is: internal controls and SOX implications for managerial reporting."
-    },
-    {
-      "question": "Which best matches: Which best matches: Sustainability & triple bottom line",
-      "options": [
-        "competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice)",
-        "Correct: people, planet, profit; sustainability reporting’s managerial implications — Correct match for “Sustainability & triple bottom line” is: people, planet, profit; sustainability reporting’s managerial implications.",
-        "Correct: Financing and cash management — Correct match for “Treasurer” is: Financing and cash management.",
-        "External stakeholders vs internal managers"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: people, planet, profit; sustainability reporting’s managerial implications — Correct match for “Sustainability & triple bottom line” is: people, planet, profit; sustainability reporting’s managerial implications."
-    },
-    {
-      "question": "Which best matches: Which best matches: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)",
-      "options": [
-        "Correct: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows) — Correct match for “Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)” is: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows).",
-        "Correct: raw materials, work in process, finished goods—balance sheet presentation — Correct match for “Manufacturing inventories” is: raw materials, work in process, finished goods—balance sheet presentation.",
-        "direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview)",
-        "Accounting and reporting"
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows) — Correct match for “Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)” is: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)."
-    },
-    {
-      "question": "Which best matches: Which best matches: Cost classifications",
-      "options": [
-        "people, planet, profit; sustainability reporting’s managerial implications",
-        "R&D → Design → Production/Purchases → Marketing → Distribution → Customer service",
-        "internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance",
-        "Correct: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview) — Correct match for “Cost classifications” is: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview)."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview) — Correct match for “Cost classifications” is: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview)."
-    },
-    {
-      "question": "Which best matches: Which best matches: Manufacturing inventories",
-      "options": [
-        "Overall financial leadership",
-        "Correct: raw materials, work in process, finished goods—balance sheet presentation — Correct match for “Manufacturing inventories” is: raw materials, work in process, finished goods—balance sheet presentation.",
-        "Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)",
-        "Correct: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility — Correct match for “IMA ethical principles” is: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: raw materials, work in process, finished goods—balance sheet presentation — Correct match for “Manufacturing inventories” is: raw materials, work in process, finished goods—balance sheet presentation."
-    },
-    {
-      "question": "Which best matches: Which best matches: Which is primarily future‑oriented and internal?",
-      "options": [
-        "Correct: Accounting and reporting — Correct match for “Controller” is: Accounting and reporting.",
-        "R&D → Design → Production/Purchases → Marketing → Distribution → Customer service",
-        "Correct: Correct: Managerial accounting — Managerial focuses on internal decisions and future planning. — Correct match for “Which is primarily future‑oriented and internal?” is: Correct: Managerial accounting — Managerial focuses on internal decisions and future planning..",
-        "Correct: Evaluate performance and implement corrective action — Correct match for “Purpose of controlling” is: Evaluate performance and implement corrective action."
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: Correct: Managerial accounting — Managerial focuses on internal decisions and future planning. — Correct match for “Which is primarily future‑oriented and internal?” is: Correct: Managerial accounting — Managerial focuses on internal decisions and future planning.."
-    },
-    {
-      "question": "Which best matches: Which best matches: A budget is most closely associated with:",
-      "options": [
-        "Correct: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview) — Correct match for “Cost classifications” is: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview).",
-        "Correct: Correct: Planning — Budgets are part of planning activities. — Correct match for “A budget is most closely associated with:” is: Correct: Planning — Budgets are part of planning activities..",
-        "Raw materials, Work in process, Finished goods",
-        "Correct: Planning, directing, controlling, decision making — Correct match for “Four responsibilities of managers” is: Planning, directing, controlling, decision making."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Correct: Planning — Budgets are part of planning activities. — Correct match for “A budget is most closely associated with:” is: Correct: Planning — Budgets are part of planning activities.."
-    },
-    {
-      "question": "Which best matches: Which best matches: Which is NOT a manufacturer’s inventory?",
-      "options": [
-        "planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives)",
-        "Correct: Planning, directing, controlling, decision making — Correct match for “Four responsibilities of managers” is: Planning, directing, controlling, decision making.",
-        "Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)",
-        "Correct: Correct: Merchandise inventory — Merchandise inventory applies to merchandisers. — Correct match for “Which is NOT a manufacturer’s inventory?” is: Correct: Merchandise inventory — Merchandise inventory applies to merchandisers.."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Correct: Merchandise inventory — Merchandise inventory applies to merchandisers. — Correct match for “Which is NOT a manufacturer’s inventory?” is: Correct: Merchandise inventory — Merchandise inventory applies to merchandisers.."
-    },
-    {
-      "question": "Which best matches: Which best matches: IMA standard addressing confidentiality breaches:",
-      "options": [
-        "Correct: Correct: Confidentiality — Confidentiality requires safeguarding information. — Correct match for “IMA standard addressing confidentiality breaches:” is: Correct: Confidentiality — Confidentiality requires safeguarding information..",
-        "Correct: Overall financial leadership — Correct match for “CFO” is: Overall financial leadership.",
-        "Evaluate performance and implement corrective action",
-        "Correct: Planning — Budgets are part of planning activities."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Correct: Confidentiality — Confidentiality requires safeguarding information. — Correct match for “IMA standard addressing confidentiality breaches:” is: Correct: Confidentiality — Confidentiality requires safeguarding information.."
-    },
-    {
-      "question": "Which best matches: Which best matches: Put value chain in order",
-      "options": [
-        "Correct: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service — Correct match for “Put value chain in order” is: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service.",
-        "Correct: Service, merchandising, manufacturing — Correct match for “Three types of companies” is: Service, merchandising, manufacturing.",
-        "planning (budgets) → directing (daily operations) → controlling (performance evaluation) → decision making (choose among alternatives)",
-        "Correct: Overall financial leadership — Correct match for “CFO” is: Overall financial leadership."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service — Correct match for “Put value chain in order” is: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service."
-    },
-    {
-      "question": "Which best matches: Which best matches: Controller",
-      "options": [
-        "Correct: Accounting and reporting — Correct match for “Controller” is: Accounting and reporting.",
-        "competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice)",
-        "Planning → directing → controlling → decision making",
-        "Correct: people, planet, profit; sustainability reporting’s managerial implications — Correct match for “Sustainability & triple bottom line” is: people, planet, profit; sustainability reporting’s managerial implications."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Accounting and reporting — Correct match for “Controller” is: Accounting and reporting."
-    },
-    {
-      "question": "Which best matches: Which best matches: Treasurer",
-      "options": [
-        "Correct: Raw materials, Work in process, Finished goods — Correct match for “Inventories for manufacturers” is: Raw materials, Work in process, Finished goods.",
-        "Correct: Financing and cash management — Correct match for “Treasurer” is: Financing and cash management.",
-        "Correct: Confidentiality — Confidentiality requires safeguarding information.",
-        "Correct: R&D, design, production/purchases, marketing, distribution, customer service — Correct match for “Value chain overview (preview)” is: R&D, design, production/purchases, marketing, distribution, customer service."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Financing and cash management — Correct match for “Treasurer” is: Financing and cash management."
-    },
-    {
-      "question": "Which best matches: Which best matches: CFO",
-      "options": [
-        "Correct: people, planet, profit; sustainability reporting’s managerial implications — Correct match for “Sustainability & triple bottom line” is: people, planet, profit; sustainability reporting’s managerial implications.",
-        "Correct: Overall financial leadership — Correct match for “CFO” is: Overall financial leadership.",
-        "Correct: Correct: Confidentiality — Confidentiality requires safeguarding information. — Correct match for “IMA standard addressing confidentiality breaches:” is: Correct: Confidentiality — Confidentiality requires safeguarding information..",
-        "Correct: Accounting and reporting — Correct match for “Controller” is: Accounting and reporting."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Overall financial leadership — Correct match for “CFO” is: Overall financial leadership."
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: Four responsibilities of managers",
-      "options": [
-        "Correct: Evaluate performance and implement corrective action — Correct match for “Purpose of controlling” is: Evaluate performance and implement corrective action.",
-        "Planning → directing → controlling → decision making",
-        "Overall financial leadership",
-        "R&D → Design → Production/Purchases → Marketing → Distribution → Customer service"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Planning → directing → controlling → decision making"
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: IMA ethical principles",
-      "options": [
-        "Correct: Evaluate performance and implement corrective action — Correct match for “Purpose of controlling” is: Evaluate performance and implement corrective action.",
-        "Correct: Financing and cash management — Correct match for “Treasurer” is: Financing and cash management.",
-        "Correct: Planning, directing, controlling, decision making — Correct match for “Four responsibilities of managers” is: Planning, directing, controlling, decision making.",
-        "Honesty → fairness → objectivity → responsibility; standards include competence → confidentiality → integrity → credibility"
-      ],
-      "answer": 3,
-      "explanation": "Correct: Honesty → fairness → objectivity → responsibility; standards include competence → confidentiality → integrity → credibility"
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: Three types of companies",
-      "options": [
-        "Accounting and reporting",
-        "Correct: Planning, directing, controlling, decision making — Correct match for “Four responsibilities of managers” is: Planning, directing, controlling, decision making.",
-        "Service → merchandising → manufacturing",
-        "Correct: people, planet, profit; sustainability reporting’s managerial implications — Correct match for “Sustainability & triple bottom line” is: people, planet, profit; sustainability reporting’s managerial implications."
-      ],
-      "answer": 2,
-      "explanation": "Correct: Service → merchandising → manufacturing"
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: Inventories for manufacturers",
-      "options": [
-        "External stakeholders vs internal managers",
-        "Correct: Evaluate performance and implement corrective action — Correct match for “Purpose of controlling” is: Evaluate performance and implement corrective action.",
-        "Raw materials → Work in process → Finished goods",
-        "Accounting and reporting"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Raw materials → Work in process → Finished goods"
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: Manager’s responsibilities",
-      "options": [
-        "planning (budgets) → directing (daily operations) → controlling (performance evaluation) → decision making (choose among alternatives)",
-        "Correct: Correct: Confidentiality — Confidentiality requires safeguarding information. — Correct match for “IMA standard addressing confidentiality breaches:” is: Correct: Confidentiality — Confidentiality requires safeguarding information..",
-        "Raw materials, Work in process, Finished goods",
-        "Correct: line vs staff positions; CFO/Controller/Treasurer roles — Correct match for “Organizational structure” is: line vs staff positions; CFO/Controller/Treasurer roles."
-      ],
-      "answer": 0,
-      "explanation": "Correct: planning (budgets) → directing (daily operations) → controlling (performance evaluation) → decision making (choose among alternatives)"
+      "explanation": "Confidentiality, integrity, credibility; avoid conflicts of interest and ensure decision-useful reporting."
     }
   ],
   "games": [
     {
       "type": "matching",
-      "title": "Matching Set 1",
+      "title": "Match core ideas",
       "questions": [
         {
-          "prompt": "Match each term/concept to its definition/statement.",
+          "prompt": "Match each prompt to the correct explanation",
           "pairs": [
             [
-              "Four responsibilities of managers",
-              "Planning, directing, controlling, decision making"
+              "What are the four primary responsibilities of managers?",
+              "Planning, Directing, Controlling, and Decision-making (evaluating alternatives using relevant info)."
             ],
             [
-              "Difference in users (financial vs managerial)",
-              "External stakeholders vs internal managers"
+              "How does managerial accounting support Planning?",
+              "Provides forecasts, budgets, and what-if analyses to set goals and select strategies."
             ],
             [
-              "IMA ethical principles",
-              "Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility"
+              "How does managerial accounting support Directing?",
+              "Supplies real-time reports and dashboards to coordinate day-to-day operations."
             ],
             [
-              "Three types of companies",
-              "Service, merchandising, manufacturing"
+              "How does managerial accounting support Controlling?",
+              "Delivers variance analyses and performance reports to compare actuals vs. budget and take corrective action."
             ],
             [
-              "Inventories for manufacturers",
-              "Raw materials, Work in process, Finished goods"
+              "How does managerial accounting support Decision-making?",
+              "Offers relevant, timely, forward-looking information to choose among alternatives."
             ],
             [
-              "Purpose of controlling",
-              "Evaluate performance and implement corrective action"
+              "Managerial vs Financial accounting: primary users?",
+              "Managerial: internal managers; Financial: external users (investors, creditors, regulators)."
             ],
             [
-              "Managerial vs Financial accounting",
-              "internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance"
+              "Managerial vs Financial accounting: focus and time horizon?",
+              "Managerial: future-oriented, detailed segments; Financial: historical, company-wide aggregates."
             ],
             [
-              "Manager’s responsibilities",
-              "planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives)"
+              "Managerial vs Financial accounting: rules and format?",
+              "Managerial: not GAAP-mandated, flexible; Financial: GAAP/IFRS required, standardized."
             ],
             [
-              "Ethical standards in managerial accounting",
-              "competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice)"
+              "Managerial vs Financial accounting: frequency and timeliness?",
+              "Managerial: frequent, as needed; Financial: periodic (quarterly/annual), less frequent."
             ],
             [
-              "Organizational structure",
-              "line vs staff positions; CFO/Controller/Treasurer roles"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Matching Set 2",
-      "questions": [
-        {
-          "prompt": "Match each term/concept to its definition/statement.",
-          "pairs": [
-            [
-              "Value chain overview (preview)",
-              "R&D, design, production/purchases, marketing, distribution, customer service"
-            ],
-            [
-              "Corporate governance",
-              "internal controls and SOX implications for managerial reporting"
-            ],
-            [
-              "Sustainability & triple bottom line",
-              "people, planet, profit; sustainability reporting’s managerial implications"
-            ],
-            [
-              "Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)",
-              "Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)"
-            ],
-            [
-              "Cost classifications",
-              "direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview)"
-            ],
-            [
-              "Manufacturing inventories",
-              "raw materials, work in process, finished goods—balance sheet presentation"
-            ],
-            [
-              "Which is primarily future‑oriented and internal?",
-              "Correct: Managerial accounting — Managerial focuses on internal decisions and future planning."
-            ],
-            [
-              "A budget is most closely associated with:",
-              "Correct: Planning — Budgets are part of planning activities."
-            ],
-            [
-              "Which is NOT a manufacturer’s inventory?",
-              "Correct: Merchandise inventory — Merchandise inventory applies to merchandisers."
-            ],
-            [
-              "IMA standard addressing confidentiality breaches:",
-              "Correct: Confidentiality — Confidentiality requires safeguarding information."
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Matching Set 3",
-      "questions": [
-        {
-          "prompt": "Match each term/concept to its definition/statement.",
-          "pairs": [
-            [
-              "Put value chain in order",
-              "R&D → Design → Production/Purchases → Marketing → Distribution → Customer service"
-            ],
-            [
-              "Controller",
-              "Accounting and reporting"
-            ],
-            [
-              "Treasurer",
-              "Financing and cash management"
-            ],
-            [
-              "CFO",
-              "Overall financial leadership"
-            ],
-            [
-              "Which best matches: Four responsibilities of managers",
-              "Correct: Planning, directing, controlling, decision making — Correct match for “Four responsibilities of managers” is: Planning, directing, controlling, decision making."
-            ],
-            [
-              "Which best matches: Difference in users (financial vs managerial)",
-              "Correct: External stakeholders vs internal managers — Correct match for “Difference in users (financial vs managerial)” is: External stakeholders vs internal managers."
-            ],
-            [
-              "Which best matches: IMA ethical principles",
-              "Correct: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility — Correct match for “IMA ethical principles” is: Honesty, fairness, objectivity, responsibility; standards include competence, confidentiality, integrity, credibility."
-            ],
-            [
-              "Which best matches: Three types of companies",
-              "Correct: Service, merchandising, manufacturing — Correct match for “Three types of companies” is: Service, merchandising, manufacturing."
-            ],
-            [
-              "Which best matches: Inventories for manufacturers",
-              "Correct: Raw materials, Work in process, Finished goods — Correct match for “Inventories for manufacturers” is: Raw materials, Work in process, Finished goods."
-            ],
-            [
-              "Which best matches: Purpose of controlling",
-              "Correct: Evaluate performance and implement corrective action — Correct match for “Purpose of controlling” is: Evaluate performance and implement corrective action."
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Matching Set 4",
-      "questions": [
-        {
-          "prompt": "Match each term/concept to its definition/statement.",
-          "pairs": [
-            [
-              "Which best matches: Managerial vs Financial accounting",
-              "Correct: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance — Correct match for “Managerial vs Financial accounting” is: internal vs external focus; relevance vs reliability; future vs past orientation; no GAAP vs GAAP compliance."
-            ],
-            [
-              "Which best matches: Manager’s responsibilities",
-              "Correct: planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives) — Correct match for “Manager’s responsibilities” is: planning (budgets), directing (daily operations), controlling (performance evaluation), decision making (choose among alternatives)."
-            ],
-            [
-              "Which best matches: Ethical standards in managerial accounting",
-              "Correct: competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice) — Correct match for “Ethical standards in managerial accounting” is: competence, confidentiality, integrity, credibility (IMA Statement of Ethical Professional Practice)."
-            ],
-            [
-              "Which best matches: Organizational structure",
-              "Correct: line vs staff positions; CFO/Controller/Treasurer roles — Correct match for “Organizational structure” is: line vs staff positions; CFO/Controller/Treasurer roles."
-            ],
-            [
-              "Which best matches: Value chain overview (preview)",
-              "Correct: R&D, design, production/purchases, marketing, distribution, customer service — Correct match for “Value chain overview (preview)” is: R&D, design, production/purchases, marketing, distribution, customer service."
-            ],
-            [
-              "Which best matches: Corporate governance",
-              "Correct: internal controls and SOX implications for managerial reporting — Correct match for “Corporate governance” is: internal controls and SOX implications for managerial reporting."
-            ],
-            [
-              "Which best matches: Sustainability & triple bottom line",
-              "Correct: people, planet, profit; sustainability reporting’s managerial implications — Correct match for “Sustainability & triple bottom line” is: people, planet, profit; sustainability reporting’s managerial implications."
-            ],
-            [
-              "Which best matches: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)",
-              "Correct: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows) — Correct match for “Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)” is: Service vs merchandising vs manufacturing company characteristics (inventory, cost flows)."
-            ],
-            [
-              "Which best matches: Cost classifications",
-              "Correct: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview) — Correct match for “Cost classifications” is: direct/indirect; controllable/uncontrollable; relevant/irrelevant; fixed/variable/mixed (preview)."
-            ],
-            [
-              "Which best matches: Manufacturing inventories",
-              "Correct: raw materials, work in process, finished goods—balance sheet presentation — Correct match for “Manufacturing inventories” is: raw materials, work in process, finished goods—balance sheet presentation."
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Matching Set 5",
-      "questions": [
-        {
-          "prompt": "Match each term/concept to its definition/statement.",
-          "pairs": [
-            [
-              "Which best matches: Which is primarily future‑oriented and internal?",
-              "Correct: Correct: Managerial accounting — Managerial focuses on internal decisions and future planning. — Correct match for “Which is primarily future‑oriented and internal?” is: Correct: Managerial accounting — Managerial focuses on internal decisions and future planning.."
-            ],
-            [
-              "Which best matches: A budget is most closely associated with:",
-              "Correct: Correct: Planning — Budgets are part of planning activities. — Correct match for “A budget is most closely associated with:” is: Correct: Planning — Budgets are part of planning activities.."
-            ],
-            [
-              "Which best matches: Which is NOT a manufacturer’s inventory?",
-              "Correct: Correct: Merchandise inventory — Merchandise inventory applies to merchandisers. — Correct match for “Which is NOT a manufacturer’s inventory?” is: Correct: Merchandise inventory — Merchandise inventory applies to merchandisers.."
-            ],
-            [
-              "Which best matches: IMA standard addressing confidentiality breaches:",
-              "Correct: Correct: Confidentiality — Confidentiality requires safeguarding information. — Correct match for “IMA standard addressing confidentiality breaches:” is: Correct: Confidentiality — Confidentiality requires safeguarding information.."
-            ],
-            [
-              "Which best matches: Put value chain in order",
-              "Correct: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service — Correct match for “Put value chain in order” is: R&D → Design → Production/Purchases → Marketing → Distribution → Customer service."
-            ],
-            [
-              "Which best matches: Controller",
-              "Correct: Accounting and reporting — Correct match for “Controller” is: Accounting and reporting."
-            ],
-            [
-              "Which best matches: Treasurer",
-              "Correct: Financing and cash management — Correct match for “Treasurer” is: Financing and cash management."
-            ],
-            [
-              "Which best matches: CFO",
-              "Correct: Overall financial leadership — Correct match for “CFO” is: Overall financial leadership."
-            ],
-            [
-              "Put the sequence in order – derived from: Four responsibilities of managers",
-              "Planning → directing → controlling → decision making"
-            ],
-            [
-              "Put the sequence in order – derived from: IMA ethical principles",
-              "Honesty → fairness → objectivity → responsibility; standards include competence → confidentiality → integrity → credibility"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Matching Set 6",
-      "questions": [
-        {
-          "prompt": "Match each term/concept to its definition/statement.",
-          "pairs": [
-            [
-              "Put the sequence in order – derived from: Three types of companies",
-              "Service → merchandising → manufacturing"
-            ],
-            [
-              "Put the sequence in order – derived from: Inventories for manufacturers",
-              "Raw materials → Work in process → Finished goods"
-            ],
-            [
-              "Put the sequence in order – derived from: Manager’s responsibilities",
-              "planning (budgets) → directing (daily operations) → controlling (performance evaluation) → decision making (choose among alternatives)"
+              "Ethical considerations in managerial accounting?",
+              "Confidentiality, integrity, credibility; avoid conflicts of interest and ensure decision-useful reporting."
             ]
           ]
         }
@@ -1132,76 +220,93 @@
     },
     {
       "type": "ordering",
-      "title": "Ordering Set 1",
+      "title": "Study path ordering",
       "questions": [
         {
-          "prompt": "Put the sequence in order – derived from: Four responsibilities of managers",
+          "prompt": "Arrange these prompts into a sensible study order",
           "items": [
-            "Planning",
-            "directing",
-            "controlling",
-            "decision making"
+            "What are the four primary responsibilities of managers?",
+            "How does managerial accounting support Planning?",
+            "How does managerial accounting support Directing?",
+            "How does managerial accounting support Controlling?",
+            "How does managerial accounting support Decision-making?",
+            "Managerial vs Financial accounting: primary users?",
+            "Managerial vs Financial accounting: focus and time horizon?",
+            "Managerial vs Financial accounting: rules and format?",
+            "Managerial vs Financial accounting: frequency and timeliness?",
+            "Ethical considerations in managerial accounting?"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Cost-related focus",
+      "questions": [
+        {
+          "prompt": "Match terms to explanations (cost-related first)",
+          "pairs": [
+            [
+              "What are the four primary responsibilities of managers?",
+              "Planning, Directing, Controlling, and Decision-making (evaluating alternatives using relevant info)."
+            ],
+            [
+              "How does managerial accounting support Planning?",
+              "Provides forecasts, budgets, and what-if analyses to set goals and select strategies."
+            ],
+            [
+              "How does managerial accounting support Directing?",
+              "Supplies real-time reports and dashboards to coordinate day-to-day operations."
+            ],
+            [
+              "How does managerial accounting support Controlling?",
+              "Delivers variance analyses and performance reports to compare actuals vs. budget and take corrective action."
+            ],
+            [
+              "How does managerial accounting support Decision-making?",
+              "Offers relevant, timely, forward-looking information to choose among alternatives."
+            ],
+            [
+              "Managerial vs Financial accounting: primary users?",
+              "Managerial: internal managers; Financial: external users (investors, creditors, regulators)."
+            ],
+            [
+              "Managerial vs Financial accounting: focus and time horizon?",
+              "Managerial: future-oriented, detailed segments; Financial: historical, company-wide aggregates."
+            ],
+            [
+              "Managerial vs Financial accounting: rules and format?",
+              "Managerial: not GAAP-mandated, flexible; Financial: GAAP/IFRS required, standardized."
+            ],
+            [
+              "Managerial vs Financial accounting: frequency and timeliness?",
+              "Managerial: frequent, as needed; Financial: periodic (quarterly/annual), less frequent."
+            ],
+            [
+              "Ethical considerations in managerial accounting?",
+              "Confidentiality, integrity, credibility; avoid conflicts of interest and ensure decision-useful reporting."
+            ]
           ]
         }
       ]
     },
     {
       "type": "ordering",
-      "title": "Ordering Set 2",
+      "title": "Alphabetical sort",
       "questions": [
         {
-          "prompt": "Put the sequence in order – derived from: IMA ethical principles",
+          "prompt": "Sort the prompts alphabetically",
           "items": [
-            "Honesty",
-            "fairness",
-            "objectivity",
-            "responsibility; standards include competence",
-            "confidentiality",
-            "integrity",
-            "credibility"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 3",
-      "questions": [
-        {
-          "prompt": "Put the sequence in order – derived from: Three types of companies",
-          "items": [
-            "Service",
-            "merchandising",
-            "manufacturing"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 4",
-      "questions": [
-        {
-          "prompt": "Put the sequence in order – derived from: Inventories for manufacturers",
-          "items": [
-            "Raw materials",
-            "Work in process",
-            "Finished goods"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 5",
-      "questions": [
-        {
-          "prompt": "Put the sequence in order – derived from: Manager’s responsibilities",
-          "items": [
-            "planning (budgets)",
-            "directing (daily operations)",
-            "controlling (performance evaluation)",
-            "decision making (choose among alternatives)"
+            "Ethical considerations in managerial accounting?",
+            "How does managerial accounting support Controlling?",
+            "How does managerial accounting support Decision-making?",
+            "How does managerial accounting support Directing?",
+            "How does managerial accounting support Planning?",
+            "Managerial vs Financial accounting: focus and time horizon?",
+            "Managerial vs Financial accounting: frequency and timeliness?",
+            "Managerial vs Financial accounting: primary users?",
+            "Managerial vs Financial accounting: rules and format?",
+            "What are the four primary responsibilities of managers?"
           ]
         }
       ]

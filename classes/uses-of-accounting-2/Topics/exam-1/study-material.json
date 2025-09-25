@@ -1,1087 +1,449 @@
 {
-  "title": "Exam 1 – Comprehensive Review (Ch.1–6)",
-  "notes": [
-    [
-      "Cross‑chapter review: manager roles; managerial vs financial; ethics (IMA)",
-      1,
-      "Exam 1 Additional Practice Questions Ch. 1,2,3,4,5,6.pdf"
-    ],
-    [
-      "Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors",
-      1,
-      "Exam 1 Additional Practice Questions Ch. 1,2,3,4,5,6.pdf"
-    ],
-    [
-      "Job costing flow; predetermined OH rate; over/underapplied OH disposal",
-      1,
-      "Exam 1 Additional Practice Questions Ch. 1,2,3,4,5,6.pdf"
-    ],
-    [
-      "ABC workflow; COQ categories; lean concepts",
-      1,
-      "Exam 1 Additional Practice Questions Ch. 1,2,3,4,5,6.pdf"
-    ],
-    [
-      "Cost behavior methods: account analysis, scatterplots, high‑low, regression; R² and diagnostics",
-      1,
-      "Exam 1 Additional Practice Questions Ch. 1,2,3,4,5,6.pdf"
-    ],
-    [
-      "Contribution margin statement; variable vs absorption costing and income reconciliation",
-      1,
-      "Exam 1 Additional Practice Questions Ch. 1,2,3,4,5,6.pdf"
-    ]
-  ],
+  "exam": "Uses of Accounting 2 — Exam 1",
+  "version": "1.0",
+  "generated_at": "2025-09-25 00:38:53 EDT",
   "flashcards": [
     {
-      "front": "Managerial vs financial focus",
-      "back": "Internal/future vs external/historical; relevance vs reliability"
+      "front": "Management accounting: NOT an objective",
+      "back": "Preparing external financial reports (that’s financial accounting)."
     },
     {
-      "front": "Inventoriable costs",
-      "back": "DM, DL, MOH (manufacturers)"
+      "front": "Product costs (manufacturing)",
+      "back": "Direct materials + Direct labor + Manufacturing overhead."
     },
     {
-      "front": "Predetermined OH rate",
-      "back": "Estimated MOH / Estimated base"
+      "front": "Period costs",
+      "back": "Selling, general, and administrative (SG&A), R&D, marketing—expensed in the period."
     },
     {
-      "front": "COQ categories",
-      "back": "Prevention, appraisal, internal failure, external failure"
+      "front": "Manufacturing overhead (MOH)",
+      "back": "Indirect factory costs (e.g., factory utilities, depreciation, factory supervision, maintenance, indirect materials)."
     },
     {
-      "front": "High‑low slope",
-      "back": "ΔCost/ΔActivity between high and low activity points"
+      "front": "Direct materials vs Indirect materials",
+      "back": "Direct materials are traceable to a specific job/unit; indirect materials are used in production but not easily traceable per unit."
     },
     {
-      "front": "Reconciliation formula",
-      "back": "Absorption OI − Variable OI = ΔFG units × fixed MOH per unit"
+      "front": "Direct labor vs Indirect labor",
+      "back": "Direct labor is hands-on labor traceable to jobs; indirect labor supports production (maintenance, supervision)."
     },
     {
-      "front": "Cross‑chapter review",
-      "back": "manager roles; managerial vs financial; ethics (IMA)"
+      "front": "Income statement (Service company) — core structure",
+      "back": "Revenue − Operating expenses = Operating income (no inventory/COGS)."
     },
     {
-      "front": "Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...",
-      "back": "Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors"
+      "front": "Income statement (Merchandising company) — core structure",
+      "back": "Sales − COGS = Gross profit; Gross profit − Operating expenses = Operating income."
     },
     {
-      "front": "Job costing flow; predetermined OH rate; over/underapplied OH disposal",
-      "back": "Job costing flow; predetermined OH rate; over/underapplied OH disposal"
+      "front": "Income statement (Manufacturing company) — core structure",
+      "back": "Sales − COGS = Gross profit; Gross profit − Operating expenses = Operating income."
     },
     {
-      "front": "ABC workflow; COQ categories; lean concepts",
-      "back": "ABC workflow; COQ categories; lean concepts"
+      "front": "COGS (manufacturing) — formula",
+      "back": "COGS = Beginning Finished Goods + Cost of Goods Manufactured − Ending Finished Goods."
     },
     {
-      "front": "Cost behavior methods",
-      "back": "account analysis, scatterplots, high‑low, regression; R² and diagnostics"
+      "front": "COGM — formula",
+      "back": "COGM = Beginning WIP + (Direct materials used + Direct labor + MOH) − Ending WIP."
     },
     {
-      "front": "Contribution margin statement; variable vs absorption costing and income reconciliation",
-      "back": "Contribution margin statement; variable vs absorption costing and income reconciliation"
+      "front": "Direct materials used — formula",
+      "back": "DM used = Beginning Raw Materials + Purchases − Ending Raw Materials."
     },
     {
-      "front": "Which is a period cost?",
-      "back": "Correct: Sales salaries — Selling/admin are period costs."
+      "front": "Job costing vs Process costing",
+      "back": "Job: custom/unique jobs (accumulate by job). Process: mass/continuous production (accumulate by process/department)."
     },
     {
-      "front": "Best situation for ABC:",
-      "back": "Correct: Widely varying complexity and volume — ABC helps when resource use differs."
+      "front": "Production flow order (manufacturing)",
+      "back": "Raw Materials → Work in Process → Finished Goods → Cost of Goods Sold."
     },
     {
-      "front": "If inventory increases, compared with variable costing, absorption costing income will:",
-      "back": "Correct: Be higher — Some fixed MOH is deferred in inventory."
+      "front": "Tracing vs Allocating (costs to jobs)",
+      "back": "DM & DL are traced to jobs; MOH is allocated using a predetermined rate."
     },
     {
-      "front": "Under high‑low, fixed cost equals:",
-      "back": "Correct: High cost − slope×high activity — Use either high or low pair to compute intercept."
+      "front": "Predetermined MOH rate (POHR) — formula",
+      "back": "POHR = Estimated total MOH ÷ Estimated allocation base (e.g., DLH, MH)."
     },
     {
-      "front": "Overapplied OH means:",
-      "back": "Correct: Applied > actual — Decrease COGS to adjust."
+      "front": "Applied MOH — formula",
+      "back": "Applied MOH = POHR × Actual activity (e.g., actual DLH or machine hours)."
     },
     {
-      "front": "Arrange analytic steps",
-      "back": "Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals"
+      "front": "Overapplied MOH — meaning & effect",
+      "back": "Applied MOH > Actual MOH; decrease COGS if difference is immaterial and most goods sold."
     },
     {
-      "front": "Job costing",
-      "back": "Accumulate by job; apply MOH"
+      "front": "Underapplied MOH — meaning & effect",
+      "back": "Applied MOH < Actual MOH; increase COGS if difference is immaterial and most goods sold."
     },
     {
-      "front": "ABC",
-      "back": "Allocate via activities/drivers"
+      "front": "Disposing MOH difference — simple method",
+      "back": "Close entire difference to COGS if immaterial."
     },
     {
-      "front": "Variable costing",
-      "back": "Expense fixed MOH; CM format"
+      "front": "Disposing MOH difference — proration method",
+      "back": "Prorate difference to WIP, FG, and COGS based on ending balances (or applied MOH in each)."
     },
     {
-      "front": "Absorption costing",
-      "back": "Inventory fixed MOH; GAAP"
+      "front": "Activity-based costing (ABC) — core idea",
+      "back": "Assign overhead using activities and cost drivers to improve accuracy."
     },
     {
-      "front": "Which best matches: Managerial vs financial focus",
-      "back": "Correct: Internal/future vs external/historical; relevance vs reliability — Correct match for “Managerial vs financial focus” is: Internal/future vs external/historical; relevance vs reliability."
+      "front": "ABC — key steps",
+      "back": "1) Identify activities; 2) Create cost pools; 3) Select cost drivers; 4) Compute activity rates; 5) Assign to products/services."
     },
     {
-      "front": "Which best matches: Inventoriable costs",
-      "back": "Correct: DM, DL, MOH (manufacturers) — Correct match for “Inventoriable costs” is: DM, DL, MOH (manufacturers)."
+      "front": "When ABC helps most",
+      "back": "When OH is large, products/services are diverse, and non-unit drivers matter."
     },
     {
-      "front": "Which best matches: Predetermined OH rate",
-      "back": "Correct: Estimated MOH / Estimated base — Correct match for “Predetermined OH rate” is: Estimated MOH / Estimated base."
+      "front": "ABC limitations",
+      "back": "More data/effort/cost; complexity; estimates may still be imperfect; potential resistance."
     },
     {
-      "front": "Which best matches: COQ categories",
-      "back": "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “COQ categories” is: Prevention, appraisal, internal failure, external failure."
+      "front": "Costs of quality — four categories",
+      "back": "Prevention, Appraisal, Internal failure, External failure."
     },
     {
-      "front": "Which best matches: High‑low slope",
-      "back": "Correct: ΔCost/ΔActivity between high and low activity points — Correct match for “High‑low slope” is: ΔCost/ΔActivity between high and low activity points."
+      "front": "Appraisal costs — definition",
+      "back": "Costs to detect defects before delivery (inspection, testing, audits)."
     },
     {
-      "front": "Which best matches: Reconciliation formula",
-      "back": "Correct: Absorption OI − Variable OI = ΔFG units × fixed MOH per unit — Correct match for “Reconciliation formula” is: Absorption OI − Variable OI = ΔFG units × fixed MOH per unit."
+      "front": "Prevention costs — definition",
+      "back": "Costs to avoid defects (training, better design, supplier certification, process control)."
     },
     {
-      "front": "Which best matches: Cross‑chapter review",
-      "back": "Correct: manager roles; managerial vs financial; ethics (IMA) — Correct match for “Cross‑chapter review” is: manager roles; managerial vs financial; ethics (IMA)."
+      "front": "Internal failure costs — definition",
+      "back": "Defects found before shipment (rework, scrap, downtime)."
     },
     {
-      "front": "Which best matches: Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...",
-      "back": "Correct: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors — Correct match for “Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...” is: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors."
+      "front": "External failure costs — definition",
+      "back": "Defects found by customer (returns, warranty, recalls, lost reputation)."
     },
     {
-      "front": "Which best matches: Job costing flow; predetermined OH rate; over/underapplied OH disposal",
-      "back": "Correct: Job costing flow; predetermined OH rate; over/underapplied OH disposal — Correct match for “Job costing flow; predetermined OH rate; over/underapplied OH disposal” is: Job costing flow; predetermined OH rate; over/underapplied OH disposal."
+      "front": "Cost equation (mixed cost model)",
+      "back": "y = a + bX, where a = fixed cost, b = variable cost per unit, X = activity level."
     },
     {
-      "front": "Which best matches: ABC workflow; COQ categories; lean concepts",
-      "back": "Correct: ABC workflow; COQ categories; lean concepts — Correct match for “ABC workflow; COQ categories; lean concepts” is: ABC workflow; COQ categories; lean concepts."
+      "front": "High–Low method — variable rate (b)",
+      "back": "b = (Cost_high − Cost_low) ÷ (X_high − X_low)."
     },
     {
-      "front": "Which best matches: Cost behavior methods",
-      "back": "Correct: account analysis, scatterplots, high‑low, regression; R² and diagnostics — Correct match for “Cost behavior methods” is: account analysis, scatterplots, high‑low, regression; R² and diagnostics."
+      "front": "High–Low method — fixed cost (a)",
+      "back": "a = Total cost − (b × X) using either the high or low point."
     },
     {
-      "front": "Which best matches: Contribution margin statement; variable vs absorption costing and income reconciliation",
-      "back": "Correct: Contribution margin statement; variable vs absorption costing and income reconciliation — Correct match for “Contribution margin statement; variable vs absorption costing and income reconciliation” is: Contribution margin statement; variable vs absorption costing and income reconciliation."
+      "front": "Fixed cost — graph behavior",
+      "back": "Total cost is flat within relevant range; cost per unit decreases as volume rises."
     },
     {
-      "front": "Which best matches: Which is a period cost?",
-      "back": "Correct: Correct: Sales salaries — Selling/admin are period costs. — Correct match for “Which is a period cost?” is: Correct: Sales salaries — Selling/admin are period costs.."
+      "front": "Variable cost — graph behavior",
+      "back": "Total cost rises proportionally with volume; cost per unit remains constant."
     },
     {
-      "front": "Which best matches: Best situation for ABC:",
-      "back": "Correct: Correct: Widely varying complexity and volume — ABC helps when resource use differs. — Correct match for “Best situation for ABC:” is: Correct: Widely varying complexity and volume — ABC helps when resource use differs.."
+      "front": "Mixed cost — graph behavior",
+      "back": "Total cost = fixed intercept + variable slope; cost per unit decreases with higher volume."
     },
     {
-      "front": "Which best matches: If inventory increases, compared with variable costing, absorption costing income will:",
-      "back": "Correct: Correct: Be higher — Some fixed MOH is deferred in inventory. — Correct match for “If inventory increases, compared with variable costing, absorption costing income will:” is: Correct: Be higher — Some fixed MOH is deferred in inventory.."
+      "front": "Normal vs Actual costing — similarity",
+      "back": "Both record DM and DL at actual amounts; they differ in timing of MOH (applied vs actual)."
     },
     {
-      "front": "Which best matches: Under high‑low, fixed cost equals:",
-      "back": "Correct: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept. — Correct match for “Under high‑low, fixed cost equals:” is: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept.."
+      "front": "Manufacturing inventory accounts",
+      "back": "Raw Materials, Work in Process, Finished Goods."
     },
     {
-      "front": "Which best matches: Overapplied OH means:",
-      "back": "Correct: Correct: Applied > actual — Decrease COGS to adjust. — Correct match for “Overapplied OH means:” is: Correct: Applied > actual — Decrease COGS to adjust.."
-    },
-    {
-      "front": "Which best matches: Arrange analytic steps",
-      "back": "Correct: Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals — Correct match for “Arrange analytic steps” is: Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals."
-    },
-    {
-      "front": "Which best matches: Job costing",
-      "back": "Correct: Accumulate by job; apply MOH — Correct match for “Job costing” is: Accumulate by job; apply MOH."
-    },
-    {
-      "front": "Which best matches: ABC",
-      "back": "Correct: Allocate via activities/drivers — Correct match for “ABC” is: Allocate via activities/drivers."
-    },
-    {
-      "front": "Which best matches: Variable costing",
-      "back": "Correct: Expense fixed MOH; CM format — Correct match for “Variable costing” is: Expense fixed MOH; CM format."
-    },
-    {
-      "front": "Which best matches: Absorption costing",
-      "back": "Correct: Inventory fixed MOH; GAAP — Correct match for “Absorption costing” is: Inventory fixed MOH; GAAP."
-    },
-    {
-      "front": "Put the sequence in order – derived from: Inventoriable costs",
-      "back": "DM → DL → MOH (manufacturers)"
-    },
-    {
-      "front": "Put the sequence in order – derived from: COQ categories",
-      "back": "Prevention → appraisal → internal failure → external failure"
-    },
-    {
-      "front": "Put the sequence in order – derived from: Cost behavior methods",
-      "back": "account analysis → scatterplots → high‑low → regression; R² and diagnostics"
-    },
-    {
-      "front": "Put the sequence in order – derived from: Arrange analytic steps",
-      "back": "Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals"
+      "front": "COGM vs COGS — relationship",
+      "back": "COGM transfers costs to Finished Goods; COGS transfers costs from FG to the income statement."
     }
   ],
   "quiz": [
     {
-      "question": "Which best matches: Managerial vs financial focus",
+      "question": "Classify each as Product or Period cost:\n1) Factory rent $60,000\n2) Sales salaries $120,000\n3) Factory maintenance supplies $8,000\n4) CEO salary $300,000",
       "options": [
-        "Correct: Absorption OI − Variable OI = ΔFG units × fixed MOH per unit — Correct match for “Reconciliation formula” is: Absorption OI − Variable OI = ΔFG units × fixed MOH per unit.",
-        "Internal/future vs external/historical; relevance vs reliability",
-        "Correct: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors — Correct match for “Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...” is: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors.",
-        "Correct: Correct: Be higher — Some fixed MOH is deferred in inventory. — Correct match for “If inventory increases, compared with variable costing, absorption costing income will:” is: Correct: Be higher — Some fixed MOH is deferred in inventory.."
+        "1-P,2-P,3-P,4-P",
+        "1-Prod,2-Per,3-Prod,4-Per",
+        "1-Per,2-Prod,3-Per,4-Prod",
+        "All Period"
       ],
       "answer": 1,
-      "explanation": "Correct: Internal/future vs external/historical; relevance vs reliability"
+      "explanation": "Factory-related items (1 and 3) are product costs; SG&A (2 and 4) are period costs."
     },
     {
-      "question": "Which best matches: Inventoriable costs",
+      "question": "Compute DM used, COGM, and COGS.\nGiven: Beg RM 40, Purch 180, End RM 30, DL 120, MOH 160, Beg WIP 50, End WIP 70, Beg FG 25, End FG 35.",
       "options": [
-        "Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors",
-        "DM, DL, MOH (manufacturers)",
-        "Accumulate by job; apply MOH",
-        "Correct: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept. — Correct match for “Under high‑low, fixed cost equals:” is: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept.."
-      ],
-      "answer": 1,
-      "explanation": "Correct: DM, DL, MOH (manufacturers)"
-    },
-    {
-      "question": "Which best matches: Predetermined OH rate",
-      "options": [
-        "Estimated MOH / Estimated base",
-        "Correct: account analysis, scatterplots, high‑low, regression; R² and diagnostics — Correct match for “Cost behavior methods” is: account analysis, scatterplots, high‑low, regression; R² and diagnostics.",
-        "Correct: manager roles; managerial vs financial; ethics (IMA) — Correct match for “Cross‑chapter review” is: manager roles; managerial vs financial; ethics (IMA).",
-        "Prevention → appraisal → internal failure → external failure"
+        "DM 190; COGM 450; COGS 440",
+        "DM 150; COGM 410; COGS 400",
+        "DM 190; COGM 460; COGS 450",
+        "DM 170; COGM 430; COGS 420"
       ],
       "answer": 0,
-      "explanation": "Correct: Estimated MOH / Estimated base"
+      "explanation": "DM=40+180−30=190; Mfg=190+120+160=470; COGM=50+470−70=450; COGS=25+450−35=440."
     },
     {
-      "question": "Which best matches: COQ categories",
+      "question": "Job vs Process costing — which is TRUE?",
       "options": [
-        "Correct: Allocate via activities/drivers — Correct match for “ABC” is: Allocate via activities/drivers.",
-        "ABC workflow; COQ categories; lean concepts",
-        "DM, DL, MOH (manufacturers)",
-        "Prevention, appraisal, internal failure, external failure"
-      ],
-      "answer": 3,
-      "explanation": "Correct: Prevention, appraisal, internal failure, external failure"
-    },
-    {
-      "question": "Which best matches: High‑low slope",
-      "options": [
-        "Correct: Contribution margin statement; variable vs absorption costing and income reconciliation — Correct match for “Contribution margin statement; variable vs absorption costing and income reconciliation” is: Contribution margin statement; variable vs absorption costing and income reconciliation.",
-        "Correct: Job costing flow; predetermined OH rate; over/underapplied OH disposal — Correct match for “Job costing flow; predetermined OH rate; over/underapplied OH disposal” is: Job costing flow; predetermined OH rate; over/underapplied OH disposal.",
-        "ΔCost/ΔActivity between high and low activity points",
-        "Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals"
+        "Job costing accumulates costs by department for homogeneous products",
+        "Process costing accumulates costs by job for unique products",
+        "Job costing uses job cost sheets to track DM, DL, MOH per job",
+        "Process costing cannot use equivalent units"
       ],
       "answer": 2,
-      "explanation": "Correct: ΔCost/ΔActivity between high and low activity points"
+      "explanation": "Job costing is for unique/custom jobs tracked on job cost sheets; process costing is department-based for homogeneous output."
     },
     {
-      "question": "Which best matches: Reconciliation formula",
+      "question": "Predetermined MOH: Estimated MOH $600,000; Estimated DLH 200,000; Actual DLH 210,000; Actual MOH $590,000. What is applied MOH and over/under?",
       "options": [
-        "Absorption OI − Variable OI = ΔFG units × fixed MOH per unit",
-        "Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals",
-        "Correct: Widely varying complexity and volume — ABC helps when resource use differs.",
-        "Inventory fixed MOH; GAAP"
-      ],
-      "answer": 0,
-      "explanation": "Correct: Absorption OI − Variable OI = ΔFG units × fixed MOH per unit"
-    },
-    {
-      "question": "Which best matches: Cross‑chapter review",
-      "options": [
-        "manager roles; managerial vs financial; ethics (IMA)",
-        "Correct: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors — Correct match for “Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...” is: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors.",
-        "Correct: Allocate via activities/drivers — Correct match for “ABC” is: Allocate via activities/drivers.",
-        "Correct: Expense fixed MOH; CM format — Correct match for “Variable costing” is: Expense fixed MOH; CM format."
-      ],
-      "answer": 0,
-      "explanation": "Correct: manager roles; managerial vs financial; ethics (IMA)"
-    },
-    {
-      "question": "Which best matches: Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...",
-      "options": [
-        "Absorption OI − Variable OI = ΔFG units × fixed MOH per unit",
-        "Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors",
-        "Correct: account analysis, scatterplots, high‑low, regression; R² and diagnostics — Correct match for “Cost behavior methods” is: account analysis, scatterplots, high‑low, regression; R² and diagnostics.",
-        "account analysis → scatterplots → high‑low → regression; R² and diagnostics"
+        "Applied $600,000; $10,000 underapplied",
+        "Applied $630,000; $40,000 overapplied",
+        "Applied $630,000; $40,000 underapplied",
+        "Applied $590,000; no over/under"
       ],
       "answer": 1,
-      "explanation": "Correct: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors"
+      "explanation": "POHR=$600k/200k=$3/DLH; Applied=3×210k=630k; Applied−Actual=40k overapplied."
     },
     {
-      "question": "Which best matches: Job costing flow; predetermined OH rate; over/underapplied OH disposal",
+      "question": "Closing overapplied MOH (immaterial; most goods sold) should...",
       "options": [
-        "Estimated MOH / Estimated base",
-        "Job costing flow; predetermined OH rate; over/underapplied OH disposal",
-        "Prevention, appraisal, internal failure, external failure",
-        "Correct: Contribution margin statement; variable vs absorption costing and income reconciliation — Correct match for “Contribution margin statement; variable vs absorption costing and income reconciliation” is: Contribution margin statement; variable vs absorption costing and income reconciliation."
+        "Increase COGS",
+        "Decrease COGS",
+        "Increase Finished Goods",
+        "Increase Work in Process"
       ],
       "answer": 1,
-      "explanation": "Correct: Job costing flow; predetermined OH rate; over/underapplied OH disposal"
+      "explanation": "Overapplied means too much cost was expensed; reduce COGS to correct."
     },
     {
-      "question": "Which best matches: ABC workflow; COQ categories; lean concepts",
+      "question": "ABC accuracy most improves when the firm has...",
       "options": [
-        "ABC workflow; COQ categories; lean concepts",
-        "Absorption OI − Variable OI = ΔFG units × fixed MOH per unit",
-        "Correct: DM, DL, MOH (manufacturers) — Correct match for “Inventoriable costs” is: DM, DL, MOH (manufacturers).",
-        "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “COQ categories” is: Prevention, appraisal, internal failure, external failure."
+        "Low OH; similar products; one unit driver",
+        "High OH; diverse products; several non-unit drivers",
+        "Low OH; diverse products; unit driver adequate",
+        "High OH; identical products; unit driver adequate"
+      ],
+      "answer": 1,
+      "explanation": "ABC is best with complex, diverse environments and large overhead tied to non-unit drivers."
+    },
+    {
+      "question": "Costs of Quality — classify: 1) Supplier certification program  2) Final inspection testing  3) Rework  4) Warranty repairs",
+      "options": [
+        "Prevention, Appraisal, Internal Failure, External Failure",
+        "Appraisal, Prevention, External Failure, Internal Failure",
+        "Prevention, Internal Failure, Appraisal, External Failure",
+        "External Failure, Internal Failure, Appraisal, Prevention"
       ],
       "answer": 0,
-      "explanation": "Correct: ABC workflow; COQ categories; lean concepts"
+      "explanation": "1 Prevention; 2 Appraisal; 3 Internal failure; 4 External failure."
     },
     {
-      "question": "Which best matches: Cost behavior methods",
+      "question": "High–Low Method: At 10,000 units, total cost = $85,000; at 16,000 units, total cost = $109,000. Find b and a in y=a+bX.",
       "options": [
-        "ABC workflow; COQ categories; lean concepts",
-        "Expense fixed MOH; CM format",
-        "Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors",
-        "account analysis, scatterplots, high‑low, regression; R² and diagnostics"
-      ],
-      "answer": 3,
-      "explanation": "Correct: account analysis, scatterplots, high‑low, regression; R² and diagnostics"
-    },
-    {
-      "question": "Which best matches: Contribution margin statement; variable vs absorption costing and income reconciliation",
-      "options": [
-        "Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors",
-        "Correct: Estimated MOH / Estimated base — Correct match for “Predetermined OH rate” is: Estimated MOH / Estimated base.",
-        "Correct: Be higher — Some fixed MOH is deferred in inventory.",
-        "Contribution margin statement; variable vs absorption costing and income reconciliation"
-      ],
-      "answer": 3,
-      "explanation": "Correct: Contribution margin statement; variable vs absorption costing and income reconciliation"
-    },
-    {
-      "question": "Which best matches: Which is a period cost?",
-      "options": [
-        "DM, DL, MOH (manufacturers)",
-        "Correct: Sales salaries — Selling/admin are period costs.",
-        "ΔCost/ΔActivity between high and low activity points",
-        "DM → DL → MOH (manufacturers)"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Sales salaries — Selling/admin are period costs."
-    },
-    {
-      "question": "Which best matches: Best situation for ABC:",
-      "options": [
-        "Contribution margin statement; variable vs absorption costing and income reconciliation",
-        "Expense fixed MOH; CM format",
-        "Estimated MOH / Estimated base",
-        "Correct: Widely varying complexity and volume — ABC helps when resource use differs."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Widely varying complexity and volume — ABC helps when resource use differs."
-    },
-    {
-      "question": "Which best matches: If inventory increases, compared with variable costing, absorption costing income will:",
-      "options": [
-        "Correct: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors — Correct match for “Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...” is: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors.",
-        "Correct: Be higher — Some fixed MOH is deferred in inventory.",
-        "Correct: Sales salaries — Selling/admin are period costs.",
-        "Expense fixed MOH; CM format"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Be higher — Some fixed MOH is deferred in inventory."
-    },
-    {
-      "question": "Which best matches: Under high‑low, fixed cost equals:",
-      "options": [
-        "Correct: High cost − slope×high activity — Use either high or low pair to compute intercept.",
-        "Correct: Allocate via activities/drivers — Correct match for “ABC” is: Allocate via activities/drivers.",
-        "Correct: Inventory fixed MOH; GAAP — Correct match for “Absorption costing” is: Inventory fixed MOH; GAAP.",
-        "Correct: ΔCost/ΔActivity between high and low activity points — Correct match for “High‑low slope” is: ΔCost/ΔActivity between high and low activity points."
+        "b=$4, a=$45,000",
+        "b=$3, a=$55,000",
+        "b=$4, a=$50,000",
+        "Insufficient info"
       ],
       "answer": 0,
-      "explanation": "Correct: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept."
+      "explanation": "b=(109−85)/6,000=$4; a=85−(4×10)=$45 (in thousands)."
     },
     {
-      "question": "Which best matches: Overapplied OH means:",
+      "question": "Predict total cost using y = 45,000 + 4X at X = 14,000 units.",
       "options": [
-        "Inventory fixed MOH; GAAP",
-        "Correct: Correct: Applied > actual — Decrease COGS to adjust. — Correct match for “Overapplied OH means:” is: Correct: Applied > actual — Decrease COGS to adjust..",
-        "Correct: Applied > actual — Decrease COGS to adjust.",
-        "account analysis, scatterplots, high‑low, regression; R² and diagnostics"
+        "$56,000",
+        "$95,000",
+        "$101,000",
+        "$45,000"
       ],
       "answer": 2,
-      "explanation": "Correct: Correct: Applied > actual — Decrease COGS to adjust."
+      "explanation": "y=45,000 + 4×14,000 = 45,000 + 56,000 = 101,000."
     },
     {
-      "question": "Which best matches: Arrange analytic steps",
+      "question": "Cost behavior classification:\nA) Total fixed cost within relevant range\nB) Variable cost per unit\nC) Mixed cost per unit as volume increases",
       "options": [
-        "Correct: Job costing flow; predetermined OH rate; over/underapplied OH disposal — Correct match for “Job costing flow; predetermined OH rate; over/underapplied OH disposal” is: Job costing flow; predetermined OH rate; over/underapplied OH disposal.",
-        "Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals",
-        "Correct: Correct: Sales salaries — Selling/admin are period costs. — Correct match for “Which is a period cost?” is: Correct: Sales salaries — Selling/admin are period costs..",
-        "Correct: Estimated MOH / Estimated base — Correct match for “Predetermined OH rate” is: Estimated MOH / Estimated base."
+        "A increases; B increases; C increases",
+        "A constant; B constant; C decreases",
+        "A constant; B increases; C constant",
+        "A decreases; B constant; C increases"
       ],
       "answer": 1,
-      "explanation": "Correct: Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals"
+      "explanation": "Fixed total stays constant; variable per unit constant; mixed per unit falls as fixed is spread."
     },
     {
-      "question": "Which best matches: Job costing",
+      "question": "Service vs Merch vs Manufacturing — which statement is TRUE?",
       "options": [
-        "Correct: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept. — Correct match for “Under high‑low, fixed cost equals:” is: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept..",
-        "Prevention, appraisal, internal failure, external failure",
-        "Correct: Correct: Sales salaries — Selling/admin are period costs. — Correct match for “Which is a period cost?” is: Correct: Sales salaries — Selling/admin are period costs..",
-        "Accumulate by job; apply MOH"
-      ],
-      "answer": 3,
-      "explanation": "Correct: Accumulate by job; apply MOH"
-    },
-    {
-      "question": "Which best matches: ABC",
-      "options": [
-        "Absorption OI − Variable OI = ΔFG units × fixed MOH per unit",
-        "Prevention → appraisal → internal failure → external failure",
-        "Correct: ABC workflow; COQ categories; lean concepts — Correct match for “ABC workflow; COQ categories; lean concepts” is: ABC workflow; COQ categories; lean concepts.",
-        "Allocate via activities/drivers"
-      ],
-      "answer": 3,
-      "explanation": "Correct: Allocate via activities/drivers"
-    },
-    {
-      "question": "Which best matches: Variable costing",
-      "options": [
-        "account analysis → scatterplots → high‑low → regression; R² and diagnostics",
-        "Correct: account analysis, scatterplots, high‑low, regression; R² and diagnostics — Correct match for “Cost behavior methods” is: account analysis, scatterplots, high‑low, regression; R² and diagnostics.",
-        "Expense fixed MOH; CM format",
-        "DM, DL, MOH (manufacturers)"
+        "Service firms carry RM, WIP, and FG inventories",
+        "Merchandisers compute Cost of Goods Manufactured each period",
+        "Manufacturers compute both COGM and COGS",
+        "All three compute COGM"
       ],
       "answer": 2,
-      "explanation": "Correct: Expense fixed MOH; CM format"
+      "explanation": "Only manufacturers produce inventory and compute both COGM and COGS."
     },
     {
-      "question": "Which best matches: Absorption costing",
+      "question": "Best MOH allocation base when production is highly automated:",
       "options": [
-        "Correct: Expense fixed MOH; CM format — Correct match for “Variable costing” is: Expense fixed MOH; CM format.",
-        "Inventory fixed MOH; GAAP",
-        "Absorption OI − Variable OI = ΔFG units × fixed MOH per unit",
-        "Correct: ΔCost/ΔActivity between high and low activity points — Correct match for “High‑low slope” is: ΔCost/ΔActivity between high and low activity points."
+        "Direct labor hours",
+        "Machine hours",
+        "Units produced",
+        "Sales dollars"
       ],
       "answer": 1,
-      "explanation": "Correct: Inventory fixed MOH; GAAP"
-    },
-    {
-      "question": "Which best matches: Which best matches: Managerial vs financial focus",
-      "options": [
-        "Correct: Internal/future vs external/historical; relevance vs reliability — Correct match for “Managerial vs financial focus” is: Internal/future vs external/historical; relevance vs reliability.",
-        "Correct: Estimated MOH / Estimated base — Correct match for “Predetermined OH rate” is: Estimated MOH / Estimated base.",
-        "Accumulate by job; apply MOH",
-        "Correct: Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals — Correct match for “Arrange analytic steps” is: Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Internal/future vs external/historical; relevance vs reliability — Correct match for “Managerial vs financial focus” is: Internal/future vs external/historical; relevance vs reliability."
-    },
-    {
-      "question": "Which best matches: Which best matches: Inventoriable costs",
-      "options": [
-        "Prevention, appraisal, internal failure, external failure",
-        "Correct: DM, DL, MOH (manufacturers) — Correct match for “Inventoriable costs” is: DM, DL, MOH (manufacturers).",
-        "ABC workflow; COQ categories; lean concepts",
-        "Correct: Widely varying complexity and volume — ABC helps when resource use differs."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: DM, DL, MOH (manufacturers) — Correct match for “Inventoriable costs” is: DM, DL, MOH (manufacturers)."
-    },
-    {
-      "question": "Which best matches: Which best matches: Predetermined OH rate",
-      "options": [
-        "Correct: ΔCost/ΔActivity between high and low activity points — Correct match for “High‑low slope” is: ΔCost/ΔActivity between high and low activity points.",
-        "DM → DL → MOH (manufacturers)",
-        "Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals",
-        "Correct: Estimated MOH / Estimated base — Correct match for “Predetermined OH rate” is: Estimated MOH / Estimated base."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Estimated MOH / Estimated base — Correct match for “Predetermined OH rate” is: Estimated MOH / Estimated base."
-    },
-    {
-      "question": "Which best matches: Which best matches: COQ categories",
-      "options": [
-        "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “COQ categories” is: Prevention, appraisal, internal failure, external failure.",
-        "Correct: Correct: Applied > actual — Decrease COGS to adjust. — Correct match for “Overapplied OH means:” is: Correct: Applied > actual — Decrease COGS to adjust..",
-        "Inventory fixed MOH; GAAP",
-        "Correct: Be higher — Some fixed MOH is deferred in inventory."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Prevention, appraisal, internal failure, external failure — Correct match for “COQ categories” is: Prevention, appraisal, internal failure, external failure."
-    },
-    {
-      "question": "Which best matches: Which best matches: High‑low slope",
-      "options": [
-        "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “COQ categories” is: Prevention, appraisal, internal failure, external failure.",
-        "Correct: Estimated MOH / Estimated base — Correct match for “Predetermined OH rate” is: Estimated MOH / Estimated base.",
-        "Correct: ΔCost/ΔActivity between high and low activity points — Correct match for “High‑low slope” is: ΔCost/ΔActivity between high and low activity points.",
-        "Inventory fixed MOH; GAAP"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: ΔCost/ΔActivity between high and low activity points — Correct match for “High‑low slope” is: ΔCost/ΔActivity between high and low activity points."
-    },
-    {
-      "question": "Which best matches: Which best matches: Reconciliation formula",
-      "options": [
-        "Correct: account analysis, scatterplots, high‑low, regression; R² and diagnostics — Correct match for “Cost behavior methods” is: account analysis, scatterplots, high‑low, regression; R² and diagnostics.",
-        "Correct: Widely varying complexity and volume — ABC helps when resource use differs.",
-        "Correct: Correct: Applied > actual — Decrease COGS to adjust. — Correct match for “Overapplied OH means:” is: Correct: Applied > actual — Decrease COGS to adjust..",
-        "Correct: Absorption OI − Variable OI = ΔFG units × fixed MOH per unit — Correct match for “Reconciliation formula” is: Absorption OI − Variable OI = ΔFG units × fixed MOH per unit."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Absorption OI − Variable OI = ΔFG units × fixed MOH per unit — Correct match for “Reconciliation formula” is: Absorption OI − Variable OI = ΔFG units × fixed MOH per unit."
-    },
-    {
-      "question": "Which best matches: Which best matches: Cross‑chapter review",
-      "options": [
-        "Correct: manager roles; managerial vs financial; ethics (IMA) — Correct match for “Cross‑chapter review” is: manager roles; managerial vs financial; ethics (IMA).",
-        "Correct: Applied > actual — Decrease COGS to adjust.",
-        "Correct: Estimated MOH / Estimated base — Correct match for “Predetermined OH rate” is: Estimated MOH / Estimated base.",
-        "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “COQ categories” is: Prevention, appraisal, internal failure, external failure."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: manager roles; managerial vs financial; ethics (IMA) — Correct match for “Cross‑chapter review” is: manager roles; managerial vs financial; ethics (IMA)."
-    },
-    {
-      "question": "Which best matches: Which best matches: Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...",
-      "options": [
-        "Correct: ABC workflow; COQ categories; lean concepts — Correct match for “ABC workflow; COQ categories; lean concepts” is: ABC workflow; COQ categories; lean concepts.",
-        "Correct: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors — Correct match for “Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...” is: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors.",
-        "Correct: Correct: Widely varying complexity and volume — ABC helps when resource use differs. — Correct match for “Best situation for ABC:” is: Correct: Widely varying complexity and volume — ABC helps when resource use differs..",
-        "Inventory fixed MOH; GAAP"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors — Correct match for “Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...” is: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors."
-    },
-    {
-      "question": "Which best matches: Which best matches: Job costing flow; predetermined OH rate; over/underapplied OH disposal",
-      "options": [
-        "ΔCost/ΔActivity between high and low activity points",
-        "Correct: Contribution margin statement; variable vs absorption costing and income reconciliation — Correct match for “Contribution margin statement; variable vs absorption costing and income reconciliation” is: Contribution margin statement; variable vs absorption costing and income reconciliation.",
-        "Correct: Job costing flow; predetermined OH rate; over/underapplied OH disposal — Correct match for “Job costing flow; predetermined OH rate; over/underapplied OH disposal” is: Job costing flow; predetermined OH rate; over/underapplied OH disposal.",
-        "Allocate via activities/drivers"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: Job costing flow; predetermined OH rate; over/underapplied OH disposal — Correct match for “Job costing flow; predetermined OH rate; over/underapplied OH disposal” is: Job costing flow; predetermined OH rate; over/underapplied OH disposal."
-    },
-    {
-      "question": "Which best matches: Which best matches: ABC workflow; COQ categories; lean concepts",
-      "options": [
-        "Correct: ABC workflow; COQ categories; lean concepts — Correct match for “ABC workflow; COQ categories; lean concepts” is: ABC workflow; COQ categories; lean concepts.",
-        "Correct: Correct: Sales salaries — Selling/admin are period costs. — Correct match for “Which is a period cost?” is: Correct: Sales salaries — Selling/admin are period costs..",
-        "Prevention, appraisal, internal failure, external failure",
-        "Correct: High cost − slope×high activity — Use either high or low pair to compute intercept."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: ABC workflow; COQ categories; lean concepts — Correct match for “ABC workflow; COQ categories; lean concepts” is: ABC workflow; COQ categories; lean concepts."
-    },
-    {
-      "question": "Which best matches: Which best matches: Cost behavior methods",
-      "options": [
-        "Job costing flow; predetermined OH rate; over/underapplied OH disposal",
-        "Correct: account analysis, scatterplots, high‑low, regression; R² and diagnostics — Correct match for “Cost behavior methods” is: account analysis, scatterplots, high‑low, regression; R² and diagnostics.",
-        "Correct: Correct: Applied > actual — Decrease COGS to adjust. — Correct match for “Overapplied OH means:” is: Correct: Applied > actual — Decrease COGS to adjust..",
-        "Correct: ΔCost/ΔActivity between high and low activity points — Correct match for “High‑low slope” is: ΔCost/ΔActivity between high and low activity points."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: account analysis, scatterplots, high‑low, regression; R² and diagnostics — Correct match for “Cost behavior methods” is: account analysis, scatterplots, high‑low, regression; R² and diagnostics."
-    },
-    {
-      "question": "Which best matches: Which best matches: Contribution margin statement; variable vs absorption costing and income reconciliation",
-      "options": [
-        "DM, DL, MOH (manufacturers)",
-        "Correct: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors — Correct match for “Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...” is: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors.",
-        "ΔCost/ΔActivity between high and low activity points",
-        "Correct: Contribution margin statement; variable vs absorption costing and income reconciliation — Correct match for “Contribution margin statement; variable vs absorption costing and income reconciliation” is: Contribution margin statement; variable vs absorption costing and income reconciliation."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Contribution margin statement; variable vs absorption costing and income reconciliation — Correct match for “Contribution margin statement; variable vs absorption costing and income reconciliation” is: Contribution margin statement; variable vs absorption costing and income reconciliation."
-    },
-    {
-      "question": "Which best matches: Which best matches: Which is a period cost?",
-      "options": [
-        "Correct: Correct: Widely varying complexity and volume — ABC helps when resource use differs. — Correct match for “Best situation for ABC:” is: Correct: Widely varying complexity and volume — ABC helps when resource use differs..",
-        "Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals",
-        "account analysis → scatterplots → high‑low → regression; R² and diagnostics",
-        "Correct: Correct: Sales salaries — Selling/admin are period costs. — Correct match for “Which is a period cost?” is: Correct: Sales salaries — Selling/admin are period costs.."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Correct: Sales salaries — Selling/admin are period costs. — Correct match for “Which is a period cost?” is: Correct: Sales salaries — Selling/admin are period costs.."
-    },
-    {
-      "question": "Which best matches: Which best matches: Best situation for ABC:",
-      "options": [
-        "Correct: Correct: Widely varying complexity and volume — ABC helps when resource use differs. — Correct match for “Best situation for ABC:” is: Correct: Widely varying complexity and volume — ABC helps when resource use differs..",
-        "Correct: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept. — Correct match for “Under high‑low, fixed cost equals:” is: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept..",
-        "Correct: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors — Correct match for “Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...” is: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors.",
-        "Correct: Widely varying complexity and volume — ABC helps when resource use differs."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Correct: Widely varying complexity and volume — ABC helps when resource use differs. — Correct match for “Best situation for ABC:” is: Correct: Widely varying complexity and volume — ABC helps when resource use differs.."
-    },
-    {
-      "question": "Which best matches: Which best matches: If inventory increases, compared with variable costing, absorption costing income will:",
-      "options": [
-        "ΔCost/ΔActivity between high and low activity points",
-        "manager roles; managerial vs financial; ethics (IMA)",
-        "Correct: manager roles; managerial vs financial; ethics (IMA) — Correct match for “Cross‑chapter review” is: manager roles; managerial vs financial; ethics (IMA).",
-        "Correct: Correct: Be higher — Some fixed MOH is deferred in inventory. — Correct match for “If inventory increases, compared with variable costing, absorption costing income will:” is: Correct: Be higher — Some fixed MOH is deferred in inventory.."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Correct: Be higher — Some fixed MOH is deferred in inventory. — Correct match for “If inventory increases, compared with variable costing, absorption costing income will:” is: Correct: Be higher — Some fixed MOH is deferred in inventory.."
-    },
-    {
-      "question": "Which best matches: Which best matches: Under high‑low, fixed cost equals:",
-      "options": [
-        "Correct: Correct: Be higher — Some fixed MOH is deferred in inventory. — Correct match for “If inventory increases, compared with variable costing, absorption costing income will:” is: Correct: Be higher — Some fixed MOH is deferred in inventory..",
-        "Correct: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept. — Correct match for “Under high‑low, fixed cost equals:” is: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept..",
-        "account analysis → scatterplots → high‑low → regression; R² and diagnostics",
-        "Job costing flow; predetermined OH rate; over/underapplied OH disposal"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept. — Correct match for “Under high‑low, fixed cost equals:” is: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept.."
-    },
-    {
-      "question": "Which best matches: Which best matches: Overapplied OH means:",
-      "options": [
-        "Correct: account analysis, scatterplots, high‑low, regression; R² and diagnostics — Correct match for “Cost behavior methods” is: account analysis, scatterplots, high‑low, regression; R² and diagnostics.",
-        "Correct: Correct: Applied > actual — Decrease COGS to adjust. — Correct match for “Overapplied OH means:” is: Correct: Applied > actual — Decrease COGS to adjust..",
-        "Correct: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept. — Correct match for “Under high‑low, fixed cost equals:” is: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept..",
-        "Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Correct: Applied > actual — Decrease COGS to adjust. — Correct match for “Overapplied OH means:” is: Correct: Applied > actual — Decrease COGS to adjust.."
-    },
-    {
-      "question": "Which best matches: Which best matches: Arrange analytic steps",
-      "options": [
-        "Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals",
-        "Correct: Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals — Correct match for “Arrange analytic steps” is: Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals.",
-        "Correct: ABC workflow; COQ categories; lean concepts — Correct match for “ABC workflow; COQ categories; lean concepts” is: ABC workflow; COQ categories; lean concepts.",
-        "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “COQ categories” is: Prevention, appraisal, internal failure, external failure."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals — Correct match for “Arrange analytic steps” is: Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals."
-    },
-    {
-      "question": "Which best matches: Which best matches: Job costing",
-      "options": [
-        "Correct: Accumulate by job; apply MOH — Correct match for “Job costing” is: Accumulate by job; apply MOH.",
-        "Correct: Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals — Correct match for “Arrange analytic steps” is: Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals.",
-        "ΔCost/ΔActivity between high and low activity points",
-        "Correct: Absorption OI − Variable OI = ΔFG units × fixed MOH per unit — Correct match for “Reconciliation formula” is: Absorption OI − Variable OI = ΔFG units × fixed MOH per unit."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Accumulate by job; apply MOH — Correct match for “Job costing” is: Accumulate by job; apply MOH."
-    },
-    {
-      "question": "Which best matches: Which best matches: ABC",
-      "options": [
-        "Estimated MOH / Estimated base",
-        "account analysis, scatterplots, high‑low, regression; R² and diagnostics",
-        "Accumulate by job; apply MOH",
-        "Correct: Allocate via activities/drivers — Correct match for “ABC” is: Allocate via activities/drivers."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Allocate via activities/drivers — Correct match for “ABC” is: Allocate via activities/drivers."
-    },
-    {
-      "question": "Which best matches: Which best matches: Variable costing",
-      "options": [
-        "Correct: Expense fixed MOH; CM format — Correct match for “Variable costing” is: Expense fixed MOH; CM format.",
-        "account analysis → scatterplots → high‑low → regression; R² and diagnostics",
-        "manager roles; managerial vs financial; ethics (IMA)",
-        "Correct: Correct: Sales salaries — Selling/admin are period costs. — Correct match for “Which is a period cost?” is: Correct: Sales salaries — Selling/admin are period costs.."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Expense fixed MOH; CM format — Correct match for “Variable costing” is: Expense fixed MOH; CM format."
-    },
-    {
-      "question": "Which best matches: Which best matches: Absorption costing",
-      "options": [
-        "Job costing flow; predetermined OH rate; over/underapplied OH disposal",
-        "Correct: Correct: Sales salaries — Selling/admin are period costs. — Correct match for “Which is a period cost?” is: Correct: Sales salaries — Selling/admin are period costs..",
-        "Correct: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors — Correct match for “Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...” is: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors.",
-        "Correct: Inventory fixed MOH; GAAP — Correct match for “Absorption costing” is: Inventory fixed MOH; GAAP."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Inventory fixed MOH; GAAP — Correct match for “Absorption costing” is: Inventory fixed MOH; GAAP."
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: Inventoriable costs",
-      "options": [
-        "ΔCost/ΔActivity between high and low activity points",
-        "Correct: Applied > actual — Decrease COGS to adjust.",
-        "Contribution margin statement; variable vs absorption costing and income reconciliation",
-        "DM → DL → MOH (manufacturers)"
-      ],
-      "answer": 3,
-      "explanation": "Correct: DM → DL → MOH (manufacturers)"
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: COQ categories",
-      "options": [
-        "Correct: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept. — Correct match for “Under high‑low, fixed cost equals:” is: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept..",
-        "Prevention → appraisal → internal failure → external failure",
-        "DM, DL, MOH (manufacturers)",
-        "Correct: account analysis, scatterplots, high‑low, regression; R² and diagnostics — Correct match for “Cost behavior methods” is: account analysis, scatterplots, high‑low, regression; R² and diagnostics."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Prevention → appraisal → internal failure → external failure"
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: Cost behavior methods",
-      "options": [
-        "Correct: Correct: Widely varying complexity and volume — ABC helps when resource use differs. — Correct match for “Best situation for ABC:” is: Correct: Widely varying complexity and volume — ABC helps when resource use differs..",
-        "Correct: DM, DL, MOH (manufacturers) — Correct match for “Inventoriable costs” is: DM, DL, MOH (manufacturers).",
-        "Absorption OI − Variable OI = ΔFG units × fixed MOH per unit",
-        "account analysis → scatterplots → high‑low → regression; R² and diagnostics"
-      ],
-      "answer": 3,
-      "explanation": "Correct: account analysis → scatterplots → high‑low → regression; R² and diagnostics"
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: Arrange analytic steps",
-      "options": [
-        "Correct: Widely varying complexity and volume — ABC helps when resource use differs.",
-        "Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals",
-        "account analysis → scatterplots → high‑low → regression; R² and diagnostics",
-        "Prevention, appraisal, internal failure, external failure"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals"
+      "explanation": "With automation, machine hours generally correlate better with overhead usage than direct labor hours."
     }
   ],
   "games": [
     {
-      "type": "matching",
-      "title": "Matching Set 1",
+      "type": "this_or_that",
       "questions": [
         {
-          "prompt": "Match each term/concept to its definition/statement.",
-          "pairs": [
-            [
-              "Managerial vs financial focus",
-              "Internal/future vs external/historical; relevance vs reliability"
-            ],
-            [
-              "Inventoriable costs",
-              "DM, DL, MOH (manufacturers)"
-            ],
-            [
-              "Predetermined OH rate",
-              "Estimated MOH / Estimated base"
-            ],
-            [
-              "COQ categories",
-              "Prevention, appraisal, internal failure, external failure"
-            ],
-            [
-              "High‑low slope",
-              "ΔCost/ΔActivity between high and low activity points"
-            ],
-            [
-              "Reconciliation formula",
-              "Absorption OI − Variable OI = ΔFG units × fixed MOH per unit"
-            ],
-            [
-              "Cross‑chapter review",
-              "manager roles; managerial vs financial; ethics (IMA)"
-            ],
-            [
-              "Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...",
-              "Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors"
-            ],
-            [
-              "Job costing flow; predetermined OH rate; over/underapplied OH disposal",
-              "Job costing flow; predetermined OH rate; over/underapplied OH disposal"
-            ],
-            [
-              "ABC workflow; COQ categories; lean concepts",
-              "ABC workflow; COQ categories; lean concepts"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Matching Set 2",
-      "questions": [
+          "prompt": "Factory utilities",
+          "options": [
+            "Product",
+            "Period"
+          ],
+          "answer": 0,
+          "explanation": "Factory-related → product cost (MOH)."
+        },
         {
-          "prompt": "Match each term/concept to its definition/statement.",
-          "pairs": [
-            [
-              "Cost behavior methods",
-              "account analysis, scatterplots, high‑low, regression; R² and diagnostics"
-            ],
-            [
-              "Contribution margin statement; variable vs absorption costing and income reconciliation",
-              "Contribution margin statement; variable vs absorption costing and income reconciliation"
-            ],
-            [
-              "Which is a period cost?",
-              "Correct: Sales salaries — Selling/admin are period costs."
-            ],
-            [
-              "Best situation for ABC:",
-              "Correct: Widely varying complexity and volume — ABC helps when resource use differs."
-            ],
-            [
-              "If inventory increases, compared with variable costing, absorption costing income will:",
-              "Correct: Be higher — Some fixed MOH is deferred in inventory."
-            ],
-            [
-              "Under high‑low, fixed cost equals:",
-              "Correct: High cost − slope×high activity — Use either high or low pair to compute intercept."
-            ],
-            [
-              "Overapplied OH means:",
-              "Correct: Applied > actual — Decrease COGS to adjust."
-            ],
-            [
-              "Arrange analytic steps",
-              "Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals"
-            ],
-            [
-              "Job costing",
-              "Accumulate by job; apply MOH"
-            ],
-            [
-              "ABC",
-              "Allocate via activities/drivers"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Matching Set 3",
-      "questions": [
+          "prompt": "Sales commissions",
+          "options": [
+            "Product",
+            "Period"
+          ],
+          "answer": 1,
+          "explanation": "Selling costs are period costs."
+        },
         {
-          "prompt": "Match each term/concept to its definition/statement.",
-          "pairs": [
-            [
-              "Variable costing",
-              "Expense fixed MOH; CM format"
-            ],
-            [
-              "Absorption costing",
-              "Inventory fixed MOH; GAAP"
-            ],
-            [
-              "Which best matches: Managerial vs financial focus",
-              "Correct: Internal/future vs external/historical; relevance vs reliability — Correct match for “Managerial vs financial focus” is: Internal/future vs external/historical; relevance vs reliability."
-            ],
-            [
-              "Which best matches: Inventoriable costs",
-              "Correct: DM, DL, MOH (manufacturers) — Correct match for “Inventoriable costs” is: DM, DL, MOH (manufacturers)."
-            ],
-            [
-              "Which best matches: Predetermined OH rate",
-              "Correct: Estimated MOH / Estimated base — Correct match for “Predetermined OH rate” is: Estimated MOH / Estimated base."
-            ],
-            [
-              "Which best matches: COQ categories",
-              "Correct: Prevention, appraisal, internal failure, external failure — Correct match for “COQ categories” is: Prevention, appraisal, internal failure, external failure."
-            ],
-            [
-              "Which best matches: High‑low slope",
-              "Correct: ΔCost/ΔActivity between high and low activity points — Correct match for “High‑low slope” is: ΔCost/ΔActivity between high and low activity points."
-            ],
-            [
-              "Which best matches: Reconciliation formula",
-              "Correct: Absorption OI − Variable OI = ΔFG units × fixed MOH per unit — Correct match for “Reconciliation formula” is: Absorption OI − Variable OI = ΔFG units × fixed MOH per unit."
-            ],
-            [
-              "Which best matches: Cross‑chapter review",
-              "Correct: manager roles; managerial vs financial; ethics (IMA) — Correct match for “Cross‑chapter review” is: manager roles; managerial vs financial; ethics (IMA)."
-            ],
-            [
-              "Which best matches: Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...",
-              "Correct: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors — Correct match for “Company types and inventory flows; product vs period; relevant vs irrelevant; cost beha...” is: Company types and inventory flows; product vs period; relevant vs irrelevant; cost behaviors."
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Matching Set 4",
-      "questions": [
+          "prompt": "Depreciation on factory equipment",
+          "options": [
+            "Product",
+            "Period"
+          ],
+          "answer": 0,
+          "explanation": "Factory depreciation → MOH (product)."
+        },
         {
-          "prompt": "Match each term/concept to its definition/statement.",
-          "pairs": [
-            [
-              "Which best matches: Job costing flow; predetermined OH rate; over/underapplied OH disposal",
-              "Correct: Job costing flow; predetermined OH rate; over/underapplied OH disposal — Correct match for “Job costing flow; predetermined OH rate; over/underapplied OH disposal” is: Job costing flow; predetermined OH rate; over/underapplied OH disposal."
-            ],
-            [
-              "Which best matches: ABC workflow; COQ categories; lean concepts",
-              "Correct: ABC workflow; COQ categories; lean concepts — Correct match for “ABC workflow; COQ categories; lean concepts” is: ABC workflow; COQ categories; lean concepts."
-            ],
-            [
-              "Which best matches: Cost behavior methods",
-              "Correct: account analysis, scatterplots, high‑low, regression; R² and diagnostics — Correct match for “Cost behavior methods” is: account analysis, scatterplots, high‑low, regression; R² and diagnostics."
-            ],
-            [
-              "Which best matches: Contribution margin statement; variable vs absorption costing and income reconciliation",
-              "Correct: Contribution margin statement; variable vs absorption costing and income reconciliation — Correct match for “Contribution margin statement; variable vs absorption costing and income reconciliation” is: Contribution margin statement; variable vs absorption costing and income reconciliation."
-            ],
-            [
-              "Which best matches: Which is a period cost?",
-              "Correct: Correct: Sales salaries — Selling/admin are period costs. — Correct match for “Which is a period cost?” is: Correct: Sales salaries — Selling/admin are period costs.."
-            ],
-            [
-              "Which best matches: Best situation for ABC:",
-              "Correct: Correct: Widely varying complexity and volume — ABC helps when resource use differs. — Correct match for “Best situation for ABC:” is: Correct: Widely varying complexity and volume — ABC helps when resource use differs.."
-            ],
-            [
-              "Which best matches: If inventory increases, compared with variable costing, absorption costing income will:",
-              "Correct: Correct: Be higher — Some fixed MOH is deferred in inventory. — Correct match for “If inventory increases, compared with variable costing, absorption costing income will:” is: Correct: Be higher — Some fixed MOH is deferred in inventory.."
-            ],
-            [
-              "Which best matches: Under high‑low, fixed cost equals:",
-              "Correct: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept. — Correct match for “Under high‑low, fixed cost equals:” is: Correct: High cost − slope×high activity — Use either high or low pair to compute intercept.."
-            ],
-            [
-              "Which best matches: Overapplied OH means:",
-              "Correct: Correct: Applied > actual — Decrease COGS to adjust. — Correct match for “Overapplied OH means:” is: Correct: Applied > actual — Decrease COGS to adjust.."
-            ],
-            [
-              "Which best matches: Arrange analytic steps",
-              "Correct: Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals — Correct match for “Arrange analytic steps” is: Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals."
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Matching Set 5",
-      "questions": [
+          "prompt": "CEO salary",
+          "options": [
+            "Product",
+            "Period"
+          ],
+          "answer": 1,
+          "explanation": "Administrative cost → period."
+        },
         {
-          "prompt": "Match each term/concept to its definition/statement.",
-          "pairs": [
-            [
-              "Which best matches: Job costing",
-              "Correct: Accumulate by job; apply MOH — Correct match for “Job costing” is: Accumulate by job; apply MOH."
-            ],
-            [
-              "Which best matches: ABC",
-              "Correct: Allocate via activities/drivers — Correct match for “ABC” is: Allocate via activities/drivers."
-            ],
-            [
-              "Which best matches: Variable costing",
-              "Correct: Expense fixed MOH; CM format — Correct match for “Variable costing” is: Expense fixed MOH; CM format."
-            ],
-            [
-              "Which best matches: Absorption costing",
-              "Correct: Inventory fixed MOH; GAAP — Correct match for “Absorption costing” is: Inventory fixed MOH; GAAP."
-            ],
-            [
-              "Put the sequence in order – derived from: Inventoriable costs",
-              "DM → DL → MOH (manufacturers)"
-            ],
-            [
-              "Put the sequence in order – derived from: COQ categories",
-              "Prevention → appraisal → internal failure → external failure"
-            ],
-            [
-              "Put the sequence in order – derived from: Cost behavior methods",
-              "account analysis → scatterplots → high‑low → regression; R² and diagnostics"
-            ],
-            [
-              "Put the sequence in order – derived from: Arrange analytic steps",
-              "Plot scatter → Assess linearity/outliers → Choose method (high‑low/regression) → Estimate parameters → Validate with R²/residuals"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 1",
-      "questions": [
-        {
-          "prompt": "Put the sequence in order – derived from: Inventoriable costs",
-          "items": [
-            "DM",
-            "DL",
-            "MOH (manufacturers)"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 2",
-      "questions": [
-        {
-          "prompt": "Put the sequence in order – derived from: COQ categories",
-          "items": [
+          "prompt": "Quality inspection before shipment",
+          "options": [
             "Prevention",
-            "appraisal",
-            "internal failure",
-            "external failure"
-          ]
+            "Appraisal"
+          ],
+          "answer": 1,
+          "explanation": "Inspection/testing are appraisal costs."
+        },
+        {
+          "prompt": "Supplier certification program",
+          "options": [
+            "Prevention",
+            "Appraisal"
+          ],
+          "answer": 0,
+          "explanation": "Certification to avoid defects → prevention."
+        },
+        {
+          "prompt": "Total fixed cost within the relevant range",
+          "options": [
+            "Constant",
+            "Increases with volume"
+          ],
+          "answer": 0,
+          "explanation": "Total fixed cost is constant in the relevant range."
+        },
+        {
+          "prompt": "Variable cost per unit",
+          "options": [
+            "Constant",
+            "Decreases with volume"
+          ],
+          "answer": 0,
+          "explanation": "Variable per unit is constant; total varies with volume."
+        },
+        {
+          "prompt": "Mixed cost per unit as volume increases",
+          "options": [
+            "Increases",
+            "Decreases"
+          ],
+          "answer": 1,
+          "explanation": "Fixed portion is spread over more units, lowering per-unit mixed cost."
+        },
+        {
+          "prompt": "Best allocation base in a highly automated plant",
+          "options": [
+            "Direct labor hours",
+            "Machine hours"
+          ],
+          "answer": 1,
+          "explanation": "Machine hours better reflect OH usage in automation."
         }
       ]
     },
     {
-      "type": "ordering",
-      "title": "Ordering Set 3",
+      "type": "fill_in_the_blank",
       "questions": [
         {
-          "prompt": "Put the sequence in order – derived from: Cost behavior methods",
-          "items": [
-            "account analysis",
-            "scatterplots",
-            "high‑low",
-            "regression; R² and diagnostics"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 4",
-      "questions": [
+          "prompt": "COGS = Beginning Finished Goods + ___ − Ending Finished Goods",
+          "answer": "Cost of Goods Manufactured",
+          "explanation": "COGS draws from FG; COGM is what was transferred into FG."
+        },
         {
-          "prompt": "Put the sequence in order – derived from: Arrange analytic steps",
-          "items": [
-            "Plot scatter",
-            "Assess linearity/outliers",
-            "Choose method (high‑low/regression)",
-            "Estimate parameters",
-            "Validate with R²/residuals"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 5",
-      "questions": [
+          "prompt": "COGM = Beginning WIP + (DM used + DL + ___) − Ending WIP",
+          "answer": "Manufacturing overhead",
+          "explanation": "Three manufacturing cost elements: DM, DL, MOH."
+        },
         {
-          "prompt": "Put the sequence in order – derived from: Which best matches: Inventoriable costs",
-          "items": [
-            "Correct: DM",
-            "DL",
-            "MOH (manufacturers) — Correct match for “Inventoriable costs” is: DM",
-            "DL",
-            "MOH (manufacturers)."
-          ]
+          "prompt": "Direct materials used = Beginning Raw Materials + ___ − Ending Raw Materials",
+          "answer": "Purchases",
+          "explanation": "Purchases increase available raw materials."
+        },
+        {
+          "prompt": "Predetermined MOH rate (POHR) = Estimated MOH ÷ Estimated ___",
+          "answer": "Allocation base",
+          "explanation": "Common bases: DL hours, machine hours."
+        },
+        {
+          "prompt": "Applied MOH = POHR × Actual ___",
+          "answer": "Activity",
+          "explanation": "Apply using actual measure of the chosen base."
+        },
+        {
+          "prompt": "Mixed cost model: y = a + ___ × X",
+          "answer": "b",
+          "explanation": "b is the variable rate per unit of activity."
+        },
+        {
+          "prompt": "High–Low: b = (Cost_high − Cost_low) ÷ (___high − ___low)",
+          "answer": "Activity",
+          "explanation": "Use the high/low activity levels, not costs, in the denominator."
+        },
+        {
+          "prompt": "In job costing, DM and DL are ___ to jobs, MOH is ___",
+          "answer": "traced; allocated",
+          "explanation": "Traceable vs allocated is the key distinction."
+        },
+        {
+          "prompt": "Four quality cost categories: Prevention, Appraisal, Internal failure, ___ failure",
+          "answer": "External",
+          "explanation": "External = costs after delivery (warranty, returns)."
+        },
+        {
+          "prompt": "Production inventory flow: Raw Materials → Work in Process → ___ → COGS",
+          "answer": "Finished Goods",
+          "explanation": "Finished Goods precede expense recognition as COGS."
         }
       ]
     }
-  ],
-  "sources": [
-    "Exam 1 Additional Practice Questions Ch. 1,2,3,4,5,6.pdf"
   ]
 }

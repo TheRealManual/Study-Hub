@@ -1,0 +1,610 @@
+{
+  "title": "Terminology - Chapter 4",
+  "notes": [
+    [
+      "Activity-Based-Costing (ABC): A costing system that identifies the various activities performed in a firm and uses multiple cost drivers (non-volume as well as volume based cost drivers) to assign overhead costs (or indirect costs) to products, services and / or customers. ABC recognizes the causal relationship of cost drivers with activities.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Activity-Based Management (ABM): A management approach that focuses on managing activities as a way of eliminating waste, reducing delays and defects, and increasing profits while satisfying customer needs.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Appraisal Costs: Costs that are incurred to identify defective products before the products are shipped to customers.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Batch-Level Activities: Activities that must be performed every time a batch of a particular product is produced, regardless of the number of units in the batch.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Cost Distortion: Overcosting some products while undercosting others. Occurs when indirect costs are allocated with cost drivers that do not relate well to the actual incurrence of those costs.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Cost of Quality Report: A report that details appraisal cost, prevention cost, internal failure cost, and external failure cost.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Departmental Overhead Rates: A different predetermined overhead rate is set for each department of a factory, rather than having a single predetermined rate for the entire factory.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "External Failure Costs: External Failure Costs come from costs associated with defects that are found after the customer receives the product or service; may include warranty repairs, recalls, legal actions and lost sales.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Facility-Level Activities: Also called 'organization sustaining activities', supports business operations in general and cannot be traced to individual units, batches, or products.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Internal Failure Costs: Category of quality costs incurred because products and services fail to conform to requirements before making delivery to customers, such as scrap and rework.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Lean Production: An assembly-line methodology developed originally for Toyota and the manufacturing of automobiles. It is a philosophy focused on eliminating waste and empowering workers, reduced inventory and improved productivity.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Non-Value-Added Activities: Activities that do not contribute to the product or the process and should therefore be eliminated. Non-value added activities include expediting, waiting, moving, counting, scheduling, and queue time.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Plantwide Overhead Rate: A single predetermined overhead rate is used in all departments of a company, rather than having a separate rate for each department, to allocate overhead to every product produced.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Prevention Costs: Prevention costs are costs of all activities that are designed to prevent poor quality from arising in products or services. Examples include the costs for: Quality planning, Supplier evaluation, New product review, Error proofing, Capability evaluations, Quality improvement team meetings, Quality improvement projects, Quality education and training.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Product-Level Costs: Activities that relate to specific products and must be carried out regardless of how many batches or units of a product are produced or sold. Examples include: designing a product, advertising a product, maintaining product specifications, performing engineering change notices and developing special testing routines.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Total Quality Management (TQM): The continuous process of reducing or eliminating errors in manufacturing, streamlining supply chain management, improving the customer experience and ensuring that employees are current with their training.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Unit-Level Activities: Activities that arise as a result of the total volume of goods and services that are produced, and that are performed each time a unit is produced.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Value Engineering: Eliminating waste in the system by making the company\u2019s processes as effective as and efficient as possible.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Value-Added Activities: Activities for which a customer is willing to pay because they add value to the final product or service.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ],
+    [
+      "Waste Activities: Waste is any activity that does not add value to the product or service. The activity does not add value if the customer is not willing to pay more money for this activity. Also referred to as 'Non-Value-Added Activities'.",
+      1,
+      "Chapter 4 Key Terms.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Activity-Based-Costing (ABC)",
+      "back": "A costing system that identifies the various activities performed in a firm and uses multiple cost drivers (non-volume as well as volume based cost drivers) to assign overhead costs (or indirect costs) to products, services and / or customers. ABC recognizes the causal relationship of cost drivers with activities."
+    },
+    {
+      "front": "Activity-Based Management (ABM)",
+      "back": "A management approach that focuses on managing activities as a way of eliminating waste, reducing delays and defects, and increasing profits while satisfying customer needs."
+    },
+    {
+      "front": "Appraisal Costs",
+      "back": "Costs that are incurred to identify defective products before the products are shipped to customers."
+    },
+    {
+      "front": "Batch-Level Activities",
+      "back": "Activities that must be performed every time a batch of a particular product is produced, regardless of the number of units in the batch."
+    },
+    {
+      "front": "Cost Distortion",
+      "back": "Overcosting some products while undercosting others. Occurs when indirect costs are allocated with cost drivers that do not relate well to the actual incurrence of those costs."
+    },
+    {
+      "front": "Cost of Quality Report",
+      "back": "A report that details appraisal cost, prevention cost, internal failure cost, and external failure cost."
+    },
+    {
+      "front": "Departmental Overhead Rates",
+      "back": "A different predetermined overhead rate is set for each department of a factory, rather than having a single predetermined rate for the entire factory."
+    },
+    {
+      "front": "External Failure Costs",
+      "back": "External Failure Costs come from costs associated with defects that are found after the customer receives the product or service; may include warranty repairs, recalls, legal actions and lost sales."
+    },
+    {
+      "front": "Facility-Level Activities",
+      "back": "Also called 'organization sustaining activities', supports business operations in general and cannot be traced to individual units, batches, or products."
+    },
+    {
+      "front": "Internal Failure Costs",
+      "back": "Category of quality costs incurred because products and services fail to conform to requirements before making delivery to customers, such as scrap and rework."
+    },
+    {
+      "front": "Lean Production",
+      "back": "An assembly-line methodology developed originally for Toyota and the manufacturing of automobiles. It is a philosophy focused on eliminating waste and empowering workers, reduced inventory and improved productivity."
+    },
+    {
+      "front": "Non-Value-Added Activities",
+      "back": "Activities that do not contribute to the product or the process and should therefore be eliminated. Non-value added activities include expediting, waiting, moving, counting, scheduling, and queue time."
+    },
+    {
+      "front": "Plantwide Overhead Rate",
+      "back": "A single predetermined overhead rate is used in all departments of a company, rather than having a separate rate for each department, to allocate overhead to every product produced."
+    },
+    {
+      "front": "Prevention Costs",
+      "back": "Prevention costs are costs of all activities that are designed to prevent poor quality from arising in products or services. Examples include the costs for: Quality planning, Supplier evaluation, New product review, Error proofing, Capability evaluations, Quality improvement team meetings, Quality improvement projects, Quality education and training."
+    },
+    {
+      "front": "Product-Level Costs",
+      "back": "Activities that relate to specific products and must be carried out regardless of how many batches or units of a product are produced or sold. Examples include: designing a product, advertising a product, maintaining product specifications, performing engineering change notices and developing special testing routines."
+    },
+    {
+      "front": "Total Quality Management (TQM)",
+      "back": "The continuous process of reducing or eliminating errors in manufacturing, streamlining supply chain management, improving the customer experience and ensuring that employees are current with their training."
+    },
+    {
+      "front": "Unit-Level Activities",
+      "back": "Activities that arise as a result of the total volume of goods and services that are produced, and that are performed each time a unit is produced."
+    },
+    {
+      "front": "Value Engineering",
+      "back": "Eliminating waste in the system by making the company\u2019s processes as effective as and efficient as possible."
+    },
+    {
+      "front": "Value-Added Activities",
+      "back": "Activities for which a customer is willing to pay because they add value to the final product or service."
+    },
+    {
+      "front": "Waste Activities",
+      "back": "Waste is any activity that does not add value to the product or service. The activity does not add value if the customer is not willing to pay more money for this activity. Also referred to as 'Non-Value-Added Activities'."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is the definition of 'Activity-Based-Costing (ABC)'?",
+      "options": [
+        "A different predetermined overhead rate is set for each department of a factory, rather than having a single predetermined rate for the entire factory.",
+        "A costing system that identifies the various activities performed in a firm and uses multiple cost drivers (non-volume as well as volume based cost drivers) to assign overhead costs (or indirect costs) to products, services and / or customers. ABC recognizes the causal relationship of cost drivers with activities.",
+        "Also called 'organization sustaining activities', supports business operations in general and cannot be traced to individual units, batches, or products.",
+        "Costs that are incurred to identify defective products before the products are shipped to customers."
+      ],
+      "answer": 1,
+      "explanation": "'Activity-Based-Costing (ABC)' is defined as: A costing system that identifies the various activities performed in a firm and uses multiple cost drivers (non-volume as well as volume based cost drivers) to assign overhead costs (or indirect costs) to products, services and / or customers. ABC recognizes the causal relationship of cost drivers with activities."
+    },
+    {
+      "question": "What is the definition of 'Activity-Based Management (ABM)'?",
+      "options": [
+        "An assembly-line methodology developed originally for Toyota and the manufacturing of automobiles. It is a philosophy focused on eliminating waste and empowering workers, reduced inventory and improved productivity.",
+        "Also called 'organization sustaining activities', supports business operations in general and cannot be traced to individual units, batches, or products.",
+        "A management approach that focuses on managing activities as a way of eliminating waste, reducing delays and defects, and increasing profits while satisfying customer needs.",
+        "The continuous process of reducing or eliminating errors in manufacturing, streamlining supply chain management, improving the customer experience and ensuring that employees are current with their training."
+      ],
+      "answer": 2,
+      "explanation": "'Activity-Based Management (ABM)' is defined as: A management approach that focuses on managing activities as a way of eliminating waste, reducing delays and defects, and increasing profits while satisfying customer needs."
+    },
+    {
+      "question": "What is the definition of 'Appraisal Costs'?",
+      "options": [
+        "Costs that are incurred to identify defective products before the products are shipped to customers.",
+        "The continuous process of reducing or eliminating errors in manufacturing, streamlining supply chain management, improving the customer experience and ensuring that employees are current with their training.",
+        "Waste is any activity that does not add value to the product or service. The activity does not add value if the customer is not willing to pay more money for this activity. Also referred to as 'Non-Value-Added Activities'.",
+        "An assembly-line methodology developed originally for Toyota and the manufacturing of automobiles. It is a philosophy focused on eliminating waste and empowering workers, reduced inventory and improved productivity."
+      ],
+      "answer": 0,
+      "explanation": "'Appraisal Costs' is defined as: Costs that are incurred to identify defective products before the products are shipped to customers."
+    },
+    {
+      "question": "What is the definition of 'Batch-Level Activities'?",
+      "options": [
+        "A costing system that identifies the various activities performed in a firm and uses multiple cost drivers (non-volume as well as volume based cost drivers) to assign overhead costs (or indirect costs) to products, services and / or customers. ABC recognizes the causal relationship of cost drivers with activities.",
+        "A management approach that focuses on managing activities as a way of eliminating waste, reducing delays and defects, and increasing profits while satisfying customer needs.",
+        "Activities that must be performed every time a batch of a particular product is produced, regardless of the number of units in the batch.",
+        "Activities that relate to specific products and must be carried out regardless of how many batches or units of a product are produced or sold. Examples include: designing a product, advertising a product, maintaining product specifications, performing engineering change notices and developing special testing routines."
+      ],
+      "answer": 2,
+      "explanation": "'Batch-Level Activities' is defined as: Activities that must be performed every time a batch of a particular product is produced, regardless of the number of units in the batch."
+    },
+    {
+      "question": "What is the definition of 'Cost Distortion'?",
+      "options": [
+        "Also called 'organization sustaining activities', supports business operations in general and cannot be traced to individual units, batches, or products.",
+        "A report that details appraisal cost, prevention cost, internal failure cost, and external failure cost.",
+        "A management approach that focuses on managing activities as a way of eliminating waste, reducing delays and defects, and increasing profits while satisfying customer needs.",
+        "Overcosting some products while undercosting others. Occurs when indirect costs are allocated with cost drivers that do not relate well to the actual incurrence of those costs."
+      ],
+      "answer": 3,
+      "explanation": "'Cost Distortion' is defined as: Overcosting some products while undercosting others. Occurs when indirect costs are allocated with cost drivers that do not relate well to the actual incurrence of those costs."
+    },
+    {
+      "question": "What is the definition of 'Cost of Quality Report'?",
+      "options": [
+        "A costing system that identifies the various activities performed in a firm and uses multiple cost drivers (non-volume as well as volume based cost drivers) to assign overhead costs (or indirect costs) to products, services and / or customers. ABC recognizes the causal relationship of cost drivers with activities.",
+        "Also called 'organization sustaining activities', supports business operations in general and cannot be traced to individual units, batches, or products.",
+        "Eliminating waste in the system by making the company\u2019s processes as effective as and efficient as possible.",
+        "A report that details appraisal cost, prevention cost, internal failure cost, and external failure cost."
+      ],
+      "answer": 3,
+      "explanation": "'Cost of Quality Report' is defined as: A report that details appraisal cost, prevention cost, internal failure cost, and external failure cost."
+    },
+    {
+      "question": "What is the definition of 'Departmental Overhead Rates'?",
+      "options": [
+        "Activities that arise as a result of the total volume of goods and services that are produced, and that are performed each time a unit is produced.",
+        "A different predetermined overhead rate is set for each department of a factory, rather than having a single predetermined rate for the entire factory.",
+        "Prevention costs are costs of all activities that are designed to prevent poor quality from arising in products or services. Examples include the costs for: Quality planning, Supplier evaluation, New product review, Error proofing, Capability evaluations, Quality improvement team meetings, Quality improvement projects, Quality education and training.",
+        "A costing system that identifies the various activities performed in a firm and uses multiple cost drivers (non-volume as well as volume based cost drivers) to assign overhead costs (or indirect costs) to products, services and / or customers. ABC recognizes the causal relationship of cost drivers with activities."
+      ],
+      "answer": 1,
+      "explanation": "'Departmental Overhead Rates' is defined as: A different predetermined overhead rate is set for each department of a factory, rather than having a single predetermined rate for the entire factory."
+    },
+    {
+      "question": "What is the definition of 'External Failure Costs'?",
+      "options": [
+        "Costs that are incurred to identify defective products before the products are shipped to customers.",
+        "Category of quality costs incurred because products and services fail to conform to requirements before making delivery to customers, such as scrap and rework.",
+        "Activities that do not contribute to the product or the process and should therefore be eliminated. Non-value added activities include expediting, waiting, moving, counting, scheduling, and queue time.",
+        "External Failure Costs come from costs associated with defects that are found after the customer receives the product or service; may include warranty repairs, recalls, legal actions and lost sales."
+      ],
+      "answer": 3,
+      "explanation": "'External Failure Costs' is defined as: External Failure Costs come from costs associated with defects that are found after the customer receives the product or service; may include warranty repairs, recalls, legal actions and lost sales."
+    },
+    {
+      "question": "What is the definition of 'Facility-Level Activities'?",
+      "options": [
+        "An assembly-line methodology developed originally for Toyota and the manufacturing of automobiles. It is a philosophy focused on eliminating waste and empowering workers, reduced inventory and improved productivity.",
+        "Also called 'organization sustaining activities', supports business operations in general and cannot be traced to individual units, batches, or products.",
+        "External Failure Costs come from costs associated with defects that are found after the customer receives the product or service; may include warranty repairs, recalls, legal actions and lost sales.",
+        "Activities that do not contribute to the product or the process and should therefore be eliminated. Non-value added activities include expediting, waiting, moving, counting, scheduling, and queue time."
+      ],
+      "answer": 1,
+      "explanation": "'Facility-Level Activities' is defined as: Also called 'organization sustaining activities', supports business operations in general and cannot be traced to individual units, batches, or products."
+    },
+    {
+      "question": "What is the definition of 'Internal Failure Costs'?",
+      "options": [
+        "External Failure Costs come from costs associated with defects that are found after the customer receives the product or service; may include warranty repairs, recalls, legal actions and lost sales.",
+        "Also called 'organization sustaining activities', supports business operations in general and cannot be traced to individual units, batches, or products.",
+        "Category of quality costs incurred because products and services fail to conform to requirements before making delivery to customers, such as scrap and rework.",
+        "An assembly-line methodology developed originally for Toyota and the manufacturing of automobiles. It is a philosophy focused on eliminating waste and empowering workers, reduced inventory and improved productivity."
+      ],
+      "answer": 2,
+      "explanation": "'Internal Failure Costs' is defined as: Category of quality costs incurred because products and services fail to conform to requirements before making delivery to customers, such as scrap and rework."
+    },
+    {
+      "question": "What is the definition of 'Lean Production'?",
+      "options": [
+        "Activities that relate to specific products and must be carried out regardless of how many batches or units of a product are produced or sold. Examples include: designing a product, advertising a product, maintaining product specifications, performing engineering change notices and developing special testing routines.",
+        "Activities that must be performed every time a batch of a particular product is produced, regardless of the number of units in the batch.",
+        "An assembly-line methodology developed originally for Toyota and the manufacturing of automobiles. It is a philosophy focused on eliminating waste and empowering workers, reduced inventory and improved productivity.",
+        "Overcosting some products while undercosting others. Occurs when indirect costs are allocated with cost drivers that do not relate well to the actual incurrence of those costs."
+      ],
+      "answer": 2,
+      "explanation": "'Lean Production' is defined as: An assembly-line methodology developed originally for Toyota and the manufacturing of automobiles. It is a philosophy focused on eliminating waste and empowering workers, reduced inventory and improved productivity."
+    },
+    {
+      "question": "What is the definition of 'Non-Value-Added Activities'?",
+      "options": [
+        "Also called 'organization sustaining activities', supports business operations in general and cannot be traced to individual units, batches, or products.",
+        "Activities that arise as a result of the total volume of goods and services that are produced, and that are performed each time a unit is produced.",
+        "Eliminating waste in the system by making the company\u2019s processes as effective as and efficient as possible.",
+        "Activities that do not contribute to the product or the process and should therefore be eliminated. Non-value added activities include expediting, waiting, moving, counting, scheduling, and queue time."
+      ],
+      "answer": 3,
+      "explanation": "'Non-Value-Added Activities' is defined as: Activities that do not contribute to the product or the process and should therefore be eliminated. Non-value added activities include expediting, waiting, moving, counting, scheduling, and queue time."
+    },
+    {
+      "question": "What is the definition of 'Plantwide Overhead Rate'?",
+      "options": [
+        "A single predetermined overhead rate is used in all departments of a company, rather than having a separate rate for each department, to allocate overhead to every product produced.",
+        "Activities for which a customer is willing to pay because they add value to the final product or service.",
+        "Activities that must be performed every time a batch of a particular product is produced, regardless of the number of units in the batch.",
+        "A management approach that focuses on managing activities as a way of eliminating waste, reducing delays and defects, and increasing profits while satisfying customer needs."
+      ],
+      "answer": 0,
+      "explanation": "'Plantwide Overhead Rate' is defined as: A single predetermined overhead rate is used in all departments of a company, rather than having a separate rate for each department, to allocate overhead to every product produced."
+    },
+    {
+      "question": "What is the definition of 'Prevention Costs'?",
+      "options": [
+        "Prevention costs are costs of all activities that are designed to prevent poor quality from arising in products or services. Examples include the costs for: Quality planning, Supplier evaluation, New product review, Error proofing, Capability evaluations, Quality improvement team meetings, Quality improvement projects, Quality education and training.",
+        "A report that details appraisal cost, prevention cost, internal failure cost, and external failure cost.",
+        "An assembly-line methodology developed originally for Toyota and the manufacturing of automobiles. It is a philosophy focused on eliminating waste and empowering workers, reduced inventory and improved productivity.",
+        "Overcosting some products while undercosting others. Occurs when indirect costs are allocated with cost drivers that do not relate well to the actual incurrence of those costs."
+      ],
+      "answer": 0,
+      "explanation": "'Prevention Costs' is defined as: Prevention costs are costs of all activities that are designed to prevent poor quality from arising in products or services. Examples include the costs for: Quality planning, Supplier evaluation, New product review, Error proofing, Capability evaluations, Quality improvement team meetings, Quality improvement projects, Quality education and training."
+    },
+    {
+      "question": "What is the definition of 'Product-Level Costs'?",
+      "options": [
+        "Category of quality costs incurred because products and services fail to conform to requirements before making delivery to customers, such as scrap and rework.",
+        "Activities that relate to specific products and must be carried out regardless of how many batches or units of a product are produced or sold. Examples include: designing a product, advertising a product, maintaining product specifications, performing engineering change notices and developing special testing routines.",
+        "An assembly-line methodology developed originally for Toyota and the manufacturing of automobiles. It is a philosophy focused on eliminating waste and empowering workers, reduced inventory and improved productivity.",
+        "External Failure Costs come from costs associated with defects that are found after the customer receives the product or service; may include warranty repairs, recalls, legal actions and lost sales."
+      ],
+      "answer": 1,
+      "explanation": "'Product-Level Costs' is defined as: Activities that relate to specific products and must be carried out regardless of how many batches or units of a product are produced or sold. Examples include: designing a product, advertising a product, maintaining product specifications, performing engineering change notices and developing special testing routines."
+    },
+    {
+      "question": "What is the definition of 'Total Quality Management (TQM)'?",
+      "options": [
+        "Activities that relate to specific products and must be carried out regardless of how many batches or units of a product are produced or sold. Examples include: designing a product, advertising a product, maintaining product specifications, performing engineering change notices and developing special testing routines.",
+        "Activities for which a customer is willing to pay because they add value to the final product or service.",
+        "An assembly-line methodology developed originally for Toyota and the manufacturing of automobiles. It is a philosophy focused on eliminating waste and empowering workers, reduced inventory and improved productivity.",
+        "The continuous process of reducing or eliminating errors in manufacturing, streamlining supply chain management, improving the customer experience and ensuring that employees are current with their training."
+      ],
+      "answer": 3,
+      "explanation": "'Total Quality Management (TQM)' is defined as: The continuous process of reducing or eliminating errors in manufacturing, streamlining supply chain management, improving the customer experience and ensuring that employees are current with their training."
+    },
+    {
+      "question": "What is the definition of 'Unit-Level Activities'?",
+      "options": [
+        "A costing system that identifies the various activities performed in a firm and uses multiple cost drivers (non-volume as well as volume based cost drivers) to assign overhead costs (or indirect costs) to products, services and / or customers. ABC recognizes the causal relationship of cost drivers with activities.",
+        "A different predetermined overhead rate is set for each department of a factory, rather than having a single predetermined rate for the entire factory.",
+        "Costs that are incurred to identify defective products before the products are shipped to customers.",
+        "Activities that arise as a result of the total volume of goods and services that are produced, and that are performed each time a unit is produced."
+      ],
+      "answer": 3,
+      "explanation": "'Unit-Level Activities' is defined as: Activities that arise as a result of the total volume of goods and services that are produced, and that are performed each time a unit is produced."
+    },
+    {
+      "question": "What is the definition of 'Value Engineering'?",
+      "options": [
+        "Overcosting some products while undercosting others. Occurs when indirect costs are allocated with cost drivers that do not relate well to the actual incurrence of those costs.",
+        "Category of quality costs incurred because products and services fail to conform to requirements before making delivery to customers, such as scrap and rework.",
+        "Eliminating waste in the system by making the company\u2019s processes as effective as and efficient as possible.",
+        "External Failure Costs come from costs associated with defects that are found after the customer receives the product or service; may include warranty repairs, recalls, legal actions and lost sales."
+      ],
+      "answer": 2,
+      "explanation": "'Value Engineering' is defined as: Eliminating waste in the system by making the company\u2019s processes as effective as and efficient as possible."
+    },
+    {
+      "question": "What is the definition of 'Value-Added Activities'?",
+      "options": [
+        "Activities for which a customer is willing to pay because they add value to the final product or service.",
+        "Waste is any activity that does not add value to the product or service. The activity does not add value if the customer is not willing to pay more money for this activity. Also referred to as 'Non-Value-Added Activities'.",
+        "Overcosting some products while undercosting others. Occurs when indirect costs are allocated with cost drivers that do not relate well to the actual incurrence of those costs.",
+        "Activities that relate to specific products and must be carried out regardless of how many batches or units of a product are produced or sold. Examples include: designing a product, advertising a product, maintaining product specifications, performing engineering change notices and developing special testing routines."
+      ],
+      "answer": 0,
+      "explanation": "'Value-Added Activities' is defined as: Activities for which a customer is willing to pay because they add value to the final product or service."
+    },
+    {
+      "question": "What is the definition of 'Waste Activities'?",
+      "options": [
+        "Activities for which a customer is willing to pay because they add value to the final product or service.",
+        "Waste is any activity that does not add value to the product or service. The activity does not add value if the customer is not willing to pay more money for this activity. Also referred to as 'Non-Value-Added Activities'.",
+        "A management approach that focuses on managing activities as a way of eliminating waste, reducing delays and defects, and increasing profits while satisfying customer needs.",
+        "A single predetermined overhead rate is used in all departments of a company, rather than having a separate rate for each department, to allocate overhead to every product produced."
+      ],
+      "answer": 1,
+      "explanation": "'Waste Activities' is defined as: Waste is any activity that does not add value to the product or service. The activity does not add value if the customer is not willing to pay more money for this activity. Also referred to as 'Non-Value-Added Activities'."
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "title": "Match Terms with Definitions",
+      "questions": [
+        {
+          "prompt": "Match each term to its correct definition",
+          "pairs": [
+            [
+              "Activity-Based-Costing (ABC)",
+              "A costing system that identifies the various activities performed in a firm and uses multiple cost drivers (non-volume as well as volume based cost drivers) to assign overhead costs (or indirect costs) to products, services and / or customers. ABC recognizes the causal relationship of cost drivers with activities."
+            ],
+            [
+              "Activity-Based Management (ABM)",
+              "A management approach that focuses on managing activities as a way of eliminating waste, reducing delays and defects, and increasing profits while satisfying customer needs."
+            ],
+            [
+              "Appraisal Costs",
+              "Costs that are incurred to identify defective products before the products are shipped to customers."
+            ],
+            [
+              "Batch-Level Activities",
+              "Activities that must be performed every time a batch of a particular product is produced, regardless of the number of units in the batch."
+            ],
+            [
+              "Cost Distortion",
+              "Overcosting some products while undercosting others. Occurs when indirect costs are allocated with cost drivers that do not relate well to the actual incurrence of those costs."
+            ],
+            [
+              "Cost of Quality Report",
+              "A report that details appraisal cost, prevention cost, internal failure cost, and external failure cost."
+            ],
+            [
+              "Departmental Overhead Rates",
+              "A different predetermined overhead rate is set for each department of a factory, rather than having a single predetermined rate for the entire factory."
+            ],
+            [
+              "External Failure Costs",
+              "External Failure Costs come from costs associated with defects that are found after the customer receives the product or service; may include warranty repairs, recalls, legal actions and lost sales."
+            ],
+            [
+              "Facility-Level Activities",
+              "Also called 'organization sustaining activities', supports business operations in general and cannot be traced to individual units, batches, or products."
+            ],
+            [
+              "Internal Failure Costs",
+              "Category of quality costs incurred because products and services fail to conform to requirements before making delivery to customers, such as scrap and rework."
+            ],
+            [
+              "Lean Production",
+              "An assembly-line methodology developed originally for Toyota and the manufacturing of automobiles. It is a philosophy focused on eliminating waste and empowering workers, reduced inventory and improved productivity."
+            ],
+            [
+              "Non-Value-Added Activities",
+              "Activities that do not contribute to the product or the process and should therefore be eliminated. Non-value added activities include expediting, waiting, moving, counting, scheduling, and queue time."
+            ],
+            [
+              "Plantwide Overhead Rate",
+              "A single predetermined overhead rate is used in all departments of a company, rather than having a separate rate for each department, to allocate overhead to every product produced."
+            ],
+            [
+              "Prevention Costs",
+              "Prevention costs are costs of all activities that are designed to prevent poor quality from arising in products or services. Examples include the costs for: Quality planning, Supplier evaluation, New product review, Error proofing, Capability evaluations, Quality improvement team meetings, Quality improvement projects, Quality education and training."
+            ],
+            [
+              "Product-Level Costs",
+              "Activities that relate to specific products and must be carried out regardless of how many batches or units of a product are produced or sold. Examples include: designing a product, advertising a product, maintaining product specifications, performing engineering change notices and developing special testing routines."
+            ],
+            [
+              "Total Quality Management (TQM)",
+              "The continuous process of reducing or eliminating errors in manufacturing, streamlining supply chain management, improving the customer experience and ensuring that employees are current with their training."
+            ],
+            [
+              "Unit-Level Activities",
+              "Activities that arise as a result of the total volume of goods and services that are produced, and that are performed each time a unit is produced."
+            ],
+            [
+              "Value Engineering",
+              "Eliminating waste in the system by making the company\u2019s processes as effective as and efficient as possible."
+            ],
+            [
+              "Value-Added Activities",
+              "Activities for which a customer is willing to pay because they add value to the final product or service."
+            ],
+            [
+              "Waste Activities",
+              "Waste is any activity that does not add value to the product or service. The activity does not add value if the customer is not willing to pay more money for this activity. Also referred to as 'Non-Value-Added Activities'."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Alphabetical Order",
+      "questions": [
+        {
+          "prompt": "Arrange these terms alphabetically",
+          "items": [
+            "Activity-Based Management (ABM)",
+            "Activity-Based-Costing (ABC)",
+            "Appraisal Costs",
+            "Batch-Level Activities",
+            "Cost Distortion",
+            "Cost of Quality Report",
+            "Departmental Overhead Rates",
+            "External Failure Costs",
+            "Facility-Level Activities",
+            "Internal Failure Costs",
+            "Lean Production",
+            "Non-Value-Added Activities",
+            "Plantwide Overhead Rate",
+            "Prevention Costs",
+            "Product-Level Costs",
+            "Total Quality Management (TQM)",
+            "Unit-Level Activities",
+            "Value Engineering",
+            "Value-Added Activities",
+            "Waste Activities"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Match Cost-Related Terms",
+      "questions": [
+        {
+          "prompt": "Match cost-related terms to their correct definitions",
+          "pairs": [
+            [
+              "Activity-Based-Costing (ABC)",
+              "A costing system that identifies the various activities performed in a firm and uses multiple cost drivers (non-volume as well as volume based cost drivers) to assign overhead costs (or indirect costs) to products, services and / or customers. ABC recognizes the causal relationship of cost drivers with activities."
+            ],
+            [
+              "Appraisal Costs",
+              "Costs that are incurred to identify defective products before the products are shipped to customers."
+            ],
+            [
+              "Cost Distortion",
+              "Overcosting some products while undercosting others. Occurs when indirect costs are allocated with cost drivers that do not relate well to the actual incurrence of those costs."
+            ],
+            [
+              "Cost of Quality Report",
+              "A report that details appraisal cost, prevention cost, internal failure cost, and external failure cost."
+            ],
+            [
+              "External Failure Costs",
+              "External Failure Costs come from costs associated with defects that are found after the customer receives the product or service; may include warranty repairs, recalls, legal actions and lost sales."
+            ],
+            [
+              "Internal Failure Costs",
+              "Category of quality costs incurred because products and services fail to conform to requirements before making delivery to customers, such as scrap and rework."
+            ],
+            [
+              "Prevention Costs",
+              "Prevention costs are costs of all activities that are designed to prevent poor quality from arising in products or services. Examples include the costs for: Quality planning, Supplier evaluation, New product review, Error proofing, Capability evaluations, Quality improvement team meetings, Quality improvement projects, Quality education and training."
+            ],
+            [
+              "Product-Level Costs",
+              "Activities that relate to specific products and must be carried out regardless of how many batches or units of a product are produced or sold. Examples include: designing a product, advertising a product, maintaining product specifications, performing engineering change notices and developing special testing routines."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Sort by Concept Type",
+      "questions": [
+        {
+          "prompt": "Sort terms by type (Costs first, then Non-cost terms)",
+          "items": [
+            "Activity-Based-Costing (ABC)",
+            "Appraisal Costs",
+            "Cost Distortion",
+            "Cost of Quality Report",
+            "External Failure Costs",
+            "Internal Failure Costs",
+            "Prevention Costs",
+            "Product-Level Costs",
+            "Activity-Based Management (ABM)",
+            "Batch-Level Activities",
+            "Departmental Overhead Rates",
+            "Facility-Level Activities",
+            "Lean Production",
+            "Non-Value-Added Activities",
+            "Plantwide Overhead Rate",
+            "Total Quality Management (TQM)",
+            "Unit-Level Activities",
+            "Value Engineering",
+            "Value-Added Activities",
+            "Waste Activities"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Chapter 4 Key Terms.pdf"
+  ]
+}

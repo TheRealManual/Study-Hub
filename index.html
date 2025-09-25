@@ -2582,11 +2582,16 @@
                 title.className = 'topic-title';
                 title.textContent = topicData.title;
 
+                // Count only actual flashcards
+                const actualFlashcardsCount = (topicData.flashcards || []).filter(item => 
+                    item && typeof item === 'object' && item.front && item.back
+                ).length;
+                
                 const stats = document.createElement('div');
                 stats.className = 'topic-stats';
                 stats.innerHTML = `
                     <span>📝 ${topicData.notes?.length || 0}</span>
-                    <span>🗂️ ${topicData.flashcards?.length || 0}</span>
+                    <span>🗂️ ${actualFlashcardsCount}</span>
                     <span>❓ ${topicData.quiz?.length || 0}</span>
                     <span>🎮 ${topicData.games?.length || 0}</span>
                 `;
@@ -2686,8 +2691,19 @@
                 return;
             }
 
-            const dueCards = getDueCards(currentClass, currentTopic, topicData.flashcards);
-            const reviewCards = dueCards.length > 0 ? dueCards : Array.from({length: topicData.flashcards.length}, (_, i) => i);
+            // Filter to only actual flashcards (objects with front and back properties)
+            const actualFlashcards = topicData.flashcards.filter(item => 
+                item && typeof item === 'object' && item.front && item.back
+            );
+            
+            if (actualFlashcards.length === 0) {
+                const flashcardContainer = document.getElementById('topic-flashcards-container');
+                flashcardContainer.innerHTML = '<p>No flashcards available for this topic.</p>';
+                return;
+            }
+
+            const dueCards = getDueCards(currentClass, currentTopic, actualFlashcards);
+            const reviewCards = dueCards.length > 0 ? dueCards : Array.from({length: actualFlashcards.length}, (_, i) => i);
             
             // Initialize the universal flashcard system
             const flashcardContainer = document.getElementById('topic-flashcards-container');
@@ -2698,7 +2714,7 @@
             }
             
             topicFlashcardSystem = new FlashcardSystem({
-                flashcards: topicData.flashcards,
+                flashcards: actualFlashcards,
                 containerElement: flashcardContainer,
                 reviewCards: reviewCards,
                 enableSpacedRepetition: true,
@@ -4639,7 +4655,17 @@
 
         // Render games tab
         function renderGames(topicData) {
-            const container = document.getElementById('game-container');
+            // Try both possible container IDs
+            let container = document.getElementById('game-container');
+            if (!container) {
+                container = document.getElementById('games-grid');
+            }
+            
+            // If still no container found, create error message
+            if (!container) {
+                console.error('Neither game-container nor games-grid found');
+                return;
+            }
             
             // Always show games section (at minimum Lightning and Memory)
             let customGamesHtml = '';
@@ -5146,13 +5172,19 @@
 
         function playMemoryGame() {
             const topicData = studyData[currentClass].topics[currentTopic];
-            if (!topicData.flashcards || topicData.flashcards.length < 2) {
+            
+            // Filter to only actual flashcards
+            const actualFlashcards = (topicData.flashcards || []).filter(item => 
+                item && typeof item === 'object' && item.front && item.back
+            );
+            
+            if (actualFlashcards.length < 2) {
                 showToast('Need at least 2 flashcards for memory game', 'warning');
                 return;
             }
 
             const container = document.getElementById('game-container');
-            const cards = topicData.flashcards.slice(0, 8); // Limit to 8 pairs max
+            const cards = actualFlashcards.slice(0, 8); // Limit to 8 pairs max
             const gameCards = [];
             
             // Create pairs (front and back of each flashcard)
@@ -5280,13 +5312,19 @@
 
         function playLightningGame() {
             const topicData = studyData[currentClass].topics[currentTopic];
-            if (!topicData.flashcards || topicData.flashcards.length === 0) {
+            
+            // Filter to only actual flashcards
+            const actualFlashcards = (topicData.flashcards || []).filter(item => 
+                item && typeof item === 'object' && item.front && item.back
+            );
+            
+            if (actualFlashcards.length === 0) {
                 showToast('No flashcards available for lightning round', 'warning');
                 return;
             }
 
             const container = document.getElementById('game-container');
-            const cards = [...topicData.flashcards].sort(() => Math.random() - 0.5);
+            const cards = [...actualFlashcards].sort(() => Math.random() - 0.5);
             let currentCard = 0;
             let score = 0;
             let timeLeft = 60; // 60 seconds
@@ -5587,9 +5625,12 @@
                     
                     const topicData = studyData[className].topics[topicName];
                     
-                    // Add flashcards
+                    // Add flashcards (filter to only actual flashcards)
                     if (includeFlashcards && topicData.flashcards) {
-                        topicData.flashcards.forEach((card, index) => {
+                        const actualFlashcards = topicData.flashcards.filter(item => 
+                            item && typeof item === 'object' && item.front && item.back
+                        );
+                        actualFlashcards.forEach((card, index) => {
                             content.push({
                                 type: 'flashcard',
                                 class: className,
@@ -6245,27 +6286,37 @@
             
             if (settingsId === 'flashcards-settings' || settingsId === 'topic-flashcard-settings') {
                 if (topicData.flashcards && topicData.flashcards.length > 0) {
-                    // Get the current flashcard system instance to show correct order
-                    let reviewCards = Array.from({length: topicData.flashcards.length}, (_, i) => i);
-                    let currentCardIndex = 0;
+                    // Filter to only actual flashcards (objects with front and back properties)
+                    const actualFlashcards = topicData.flashcards.filter(item => 
+                        item && typeof item === 'object' && item.front && item.back
+                    );
                     
-                    if (window.topicFlashcardInstance) {
-                        reviewCards = window.topicFlashcardInstance.reviewCards;
-                        currentCardIndex = window.topicFlashcardInstance.currentIndex;
-                    }
-                    
-                    contentContainer.innerHTML = reviewCards.map((cardIndex, displayIndex) => {
-                        const card = topicData.flashcards[cardIndex];
-                        return `
-                            <div class="settings-item">
-                                <div class="settings-item-title">Flashcard ${displayIndex + 1}${currentCardIndex === displayIndex ? ' (Current)' : ''}</div>
-                                <div class="settings-item-content">
-                                    <strong>Front:</strong> ${card.front}<br>
-                                    <strong>Back:</strong> ${card.back}
+                    if (actualFlashcards.length > 0) {
+                        // Get the current flashcard system instance to show correct order
+                        let reviewCards = Array.from({length: actualFlashcards.length}, (_, i) => i);
+                        let currentCardIndex = 0;
+                        
+                        if (window.topicFlashcardInstance) {
+                            reviewCards = window.topicFlashcardInstance.reviewCards;
+                            currentCardIndex = window.topicFlashcardInstance.currentIndex;
+                        }
+                        
+                        contentContainer.innerHTML = reviewCards.map((cardIndex, displayIndex) => {
+                            const card = actualFlashcards[cardIndex];
+                            if (!card) return ''; // Safety check
+                            return `
+                                <div class="settings-item">
+                                    <div class="settings-item-title">Flashcard ${displayIndex + 1}${currentCardIndex === displayIndex ? ' (Current)' : ''}</div>
+                                    <div class="settings-item-content">
+                                        <strong>Front:</strong> ${card.front}<br>
+                                        <strong>Back:</strong> ${card.back}
+                                    </div>
                                 </div>
-                            </div>
-                        `;
-                    }).join('');
+                            `;
+                        }).join('');
+                    } else {
+                        contentContainer.innerHTML = '<div class="settings-item">No flashcards available for this topic.</div>';
+                    }
                 } else {
                     contentContainer.innerHTML = '<div class="settings-item">No flashcards available for this topic.</div>';
                 }
@@ -6341,8 +6392,13 @@
             const contentContainer = document.getElementById(`game-settings-content-${gameIndex}`);
             
             if (gameType === 'lightning') {
-                if (topicData.flashcards && topicData.flashcards.length > 0) {
-                    contentContainer.innerHTML = topicData.flashcards.map((card, index) => `
+                // Filter to only actual flashcards
+                const actualFlashcards = (topicData.flashcards || []).filter(item => 
+                    item && typeof item === 'object' && item.front && item.back
+                );
+                
+                if (actualFlashcards.length > 0) {
+                    contentContainer.innerHTML = actualFlashcards.map((card, index) => `
                         <div class="settings-item">
                             <div class="settings-item-title">Lightning Question ${index + 1}</div>
                             <div class="settings-item-content">
@@ -6355,8 +6411,13 @@
                     contentContainer.innerHTML = '<div class="settings-item">No flashcards available for Lightning Round.</div>';
                 }
             } else if (gameType === 'memory') {
-                if (topicData.flashcards && topicData.flashcards.length > 0) {
-                    contentContainer.innerHTML = topicData.flashcards.map((card, index) => `
+                // Filter to only actual flashcards
+                const actualFlashcards = (topicData.flashcards || []).filter(item => 
+                    item && typeof item === 'object' && item.front && item.back
+                );
+                
+                if (actualFlashcards.length > 0) {
+                    contentContainer.innerHTML = actualFlashcards.map((card, index) => `
                         <div class="settings-item">
                             <div class="settings-item-title">Memory Pair ${index + 1}</div>
                             <div class="settings-item-content">

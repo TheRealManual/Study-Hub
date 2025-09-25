@@ -1,1033 +1,297 @@
 {
-  "title": "Chapter 3 – Job Costing",
+  "title": "Chapter 3 \u2013 Job Costing (Objectives)",
   "notes": [
     [
-      "Job vs process costing: customized jobs vs mass production; cost accumulation differences",
+      "Distinguish between job and process costing systems",
       1,
-      "Chapter 3 Key Terms.pdf"
+      "Chapter 3 Part I - Cost Accumulation and Measurement.pdf"
     ],
     [
-      "Cost flow in job costing: DM and DL traced to jobs; MOH applied via predetermined rate",
+      "Describe the flow of production in a manufacturing firm and identify how direct material costs and direct labor costs are traced to jobs",
       1,
-      "Chapter 3 Key Terms.pdf"
+      "Chapter 3 Part I - Cost Accumulation and Measurement.pdf"
     ],
     [
-      "Predetermined MOH rate computation and use; normal costing",
+      "Calculate a predetermined manufacturing overhead rate and use it to allocate manufacturing overhead costs to jobs",
       1,
-      "Chapter 3 Key Terms.pdf"
+      "Chapter 3 Part I - Cost Accumulation and Measurement.pdf"
     ],
     [
-      "Journal entries: purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS)",
+      "Determine the cost of a particular job and use the information to make business decisions",
       1,
-      "Chapter 3 Key Terms.pdf"
+      "Chapter 3 Part I - Cost Accumulation and Measurement.pdf"
     ],
     [
-      "Job cost record contents and uses (pricing, profitability, bidding)",
+      "Determine if manufacturing overhead is overallocated or underallocated and allocate the related variance",
       1,
-      "Chapter 3 Key Terms.pdf"
-    ],
-    [
-      "Over/underapplied MOH and its disposal (COGS or prorated)",
-      10,
-      "Chapter 3 Part II- Cost Allocation.pdf"
-    ],
-    [
-      "Selection of allocation base (DLH, MH) and implications for accuracy",
-      1,
-      "Ch. 3 Job Costing Activities #1 - #3 - SV - Tagged.pdf"
-    ],
-    [
-      "Nonmanufacturing costs period treatment; service industry job costing considerations",
-      1,
-      "Chapter 3 Key Terms.pdf"
+      "Chapter 3 Part I - Cost Accumulation and Measurement.pdf"
     ]
   ],
   "flashcards": [
     {
-      "front": "Predetermined OH rate",
-      "back": "Estimated MOH / Estimated allocation base"
+      "front": "Job vs Process costing: when to use each?",
+      "back": "Job: custom, small batches, distinct jobs; Process: homogeneous, continuous mass production."
     },
     {
-      "front": "Why use predetermined rate?",
-      "back": "Apply OH during the year; avoid seasonal fluctuations"
+      "front": "Examples: Job vs Process.",
+      "back": "Job: construction, custom furniture. Process: chemicals, paper, oil refining."
     },
     {
-      "front": "Job cost record",
-      "back": "Tracks DM, DL, applied MOH for each job"
+      "front": "Production cost flow (job costing): key steps?",
+      "back": "DM requisitioned to job; DL time to job; MOH applied via POHR; total = Job cost \u2192 FG \u2192 COGS."
     },
     {
-      "front": "MOH overapplied means",
-      "back": "Applied > actual (decrease COGS at period end)"
+      "front": "Documents used to trace DM and DL to jobs?",
+      "back": "Materials requisition forms (DM) and labor time records (DL)."
     },
     {
-      "front": "Allocation base examples",
-      "back": "Direct labor hours, machine hours, direct labor cost"
+      "front": "What is a job cost record?",
+      "back": "Tracks DM, DL, and applied MOH for a specific job; basis for pricing and profitability."
     },
     {
-      "front": "Entry when a job completes",
-      "back": "Debit FG, credit WIP"
+      "front": "Predetermined MOH rate (POHR) formula?",
+      "back": "POHR = Est. total MOH \u00f7 Est. total allocation base (e.g., DLH, MH, DL$)."
     },
     {
-      "front": "Job vs process costing",
-      "back": "customized jobs vs mass production; cost accumulation differences"
+      "front": "Applying MOH to a job: formula?",
+      "back": "Applied MOH = POHR \u00d7 Actual activity for the job."
     },
     {
-      "front": "Cost flow in job costing",
-      "back": "DM and DL traced to jobs; MOH applied via predetermined rate"
+      "front": "Total job cost and unit cost: formulas.",
+      "back": "Job cost = DM + DL + Applied MOH; Unit cost = Job cost \u00f7 Units."
     },
     {
-      "front": "Predetermined MOH rate computation and use; normal costing",
-      "back": "Predetermined MOH rate computation and use; normal costing"
+      "front": "Using job cost for decisions: examples.",
+      "back": "Set prices (cost-plus), analyze profitability, accept/reject special orders."
     },
     {
-      "front": "Journal entries",
-      "back": "purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS)"
+      "front": "Over/Under-applied MOH: meaning?",
+      "back": "Overapplied: applied > actual (COGS too high); Underapplied: applied < actual (COGS too low)."
     },
     {
-      "front": "Job cost record contents and uses (pricing, profitability, bidding)",
-      "back": "Job cost record contents and uses (pricing, profitability, bidding)"
-    },
-    {
-      "front": "Over/underapplied MOH and its disposal (COGS or prorated)",
-      "back": "Over/underapplied MOH and its disposal (COGS or prorated)"
-    },
-    {
-      "front": "Selection of allocation base (DLH, MH) and implications for accuracy",
-      "back": "Selection of allocation base (DLH, MH) and implications for accuracy"
-    },
-    {
-      "front": "Nonmanufacturing costs period treatment; service industry job costing considerations",
-      "back": "Nonmanufacturing costs period treatment; service industry job costing considerations"
-    },
-    {
-      "front": "In job costing, DL is:",
-      "back": "Correct: Traced to jobs — DL is traced directly to jobs."
-    },
-    {
-      "front": "Which is MOST appropriate allocation base in automated plant?",
-      "back": "Correct: Machine hours — Machine hours better reflect OH consumption."
-    },
-    {
-      "front": "Overapplied OH effect on COGS:",
-      "back": "Correct: Decrease — Decrease COGS to adjust."
-    },
-    {
-      "front": "Predetermined OH rate is computed:",
-      "back": "Correct: Before the period — Computed before the year begins."
-    },
-    {
-      "front": "Put entries in order",
-      "back": "Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS"
-    },
-    {
-      "front": "Materials requisition",
-      "back": "Request DM to production"
-    },
-    {
-      "front": "Labor time record",
-      "back": "Assign DL to jobs"
-    },
-    {
-      "front": "Job cost record",
-      "back": "Accumulate job costs"
-    },
-    {
-      "front": "Which best matches: Predetermined OH rate",
-      "back": "Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined OH rate” is: Estimated MOH / Estimated allocation base."
-    },
-    {
-      "front": "Which best matches: Why use predetermined rate?",
-      "back": "Correct: Apply OH during the year; avoid seasonal fluctuations — Correct match for “Why use predetermined rate?” is: Apply OH during the year; avoid seasonal fluctuations."
-    },
-    {
-      "front": "Which best matches: Job cost record",
-      "back": "Correct: Tracks DM, DL, applied MOH for each job — Correct match for “Job cost record” is: Tracks DM, DL, applied MOH for each job."
-    },
-    {
-      "front": "Which best matches: MOH overapplied means",
-      "back": "Correct: Applied > actual (decrease COGS at period end) — Correct match for “MOH overapplied means” is: Applied > actual (decrease COGS at period end)."
-    },
-    {
-      "front": "Which best matches: Allocation base examples",
-      "back": "Correct: Direct labor hours, machine hours, direct labor cost — Correct match for “Allocation base examples” is: Direct labor hours, machine hours, direct labor cost."
-    },
-    {
-      "front": "Which best matches: Entry when a job completes",
-      "back": "Correct: Debit FG, credit WIP — Correct match for “Entry when a job completes” is: Debit FG, credit WIP."
-    },
-    {
-      "front": "Which best matches: Job vs process costing",
-      "back": "Correct: customized jobs vs mass production; cost accumulation differences — Correct match for “Job vs process costing” is: customized jobs vs mass production; cost accumulation differences."
-    },
-    {
-      "front": "Which best matches: Cost flow in job costing",
-      "back": "Correct: DM and DL traced to jobs; MOH applied via predetermined rate — Correct match for “Cost flow in job costing” is: DM and DL traced to jobs; MOH applied via predetermined rate."
-    },
-    {
-      "front": "Which best matches: Predetermined MOH rate computation and use; normal costing",
-      "back": "Correct: Predetermined MOH rate computation and use; normal costing — Correct match for “Predetermined MOH rate computation and use; normal costing” is: Predetermined MOH rate computation and use; normal costing."
-    },
-    {
-      "front": "Which best matches: Journal entries",
-      "back": "Correct: purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS) — Correct match for “Journal entries” is: purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS)."
-    },
-    {
-      "front": "Which best matches: Job cost record contents and uses (pricing, profitability, bidding)",
-      "back": "Correct: Job cost record contents and uses (pricing, profitability, bidding) — Correct match for “Job cost record contents and uses (pricing, profitability, bidding)” is: Job cost record contents and uses (pricing, profitability, bidding)."
-    },
-    {
-      "front": "Which best matches: Over/underapplied MOH and its disposal (COGS or prorated)",
-      "back": "Correct: Over/underapplied MOH and its disposal (COGS or prorated) — Correct match for “Over/underapplied MOH and its disposal (COGS or prorated)” is: Over/underapplied MOH and its disposal (COGS or prorated)."
-    },
-    {
-      "front": "Which best matches: Selection of allocation base (DLH, MH) and implications for accuracy",
-      "back": "Correct: Selection of allocation base (DLH, MH) and implications for accuracy — Correct match for “Selection of allocation base (DLH, MH) and implications for accuracy” is: Selection of allocation base (DLH, MH) and implications for accuracy."
-    },
-    {
-      "front": "Which best matches: Nonmanufacturing costs period treatment; service industry job costing considerations",
-      "back": "Correct: Nonmanufacturing costs period treatment; service industry job costing considerations — Correct match for “Nonmanufacturing costs period treatment; service industry job costing considerations” is: Nonmanufacturing costs period treatment; service industry job costing considerations."
-    },
-    {
-      "front": "Which best matches: In job costing, DL is:",
-      "back": "Correct: Correct: Traced to jobs — DL is traced directly to jobs. — Correct match for “In job costing, DL is:” is: Correct: Traced to jobs — DL is traced directly to jobs.."
-    },
-    {
-      "front": "Which best matches: Which is MOST appropriate allocation base in automated plant?",
-      "back": "Correct: Correct: Machine hours — Machine hours better reflect OH consumption. — Correct match for “Which is MOST appropriate allocation base in automated plant?” is: Correct: Machine hours — Machine hours better reflect OH consumption.."
-    },
-    {
-      "front": "Which best matches: Overapplied OH effect on COGS:",
-      "back": "Correct: Correct: Decrease — Decrease COGS to adjust. — Correct match for “Overapplied OH effect on COGS:” is: Correct: Decrease — Decrease COGS to adjust.."
-    },
-    {
-      "front": "Which best matches: Predetermined OH rate is computed:",
-      "back": "Correct: Correct: Before the period — Computed before the year begins. — Correct match for “Predetermined OH rate is computed:” is: Correct: Before the period — Computed before the year begins.."
-    },
-    {
-      "front": "Which best matches: Put entries in order",
-      "back": "Correct: Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS — Correct match for “Put entries in order” is: Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS."
-    },
-    {
-      "front": "Which best matches: Materials requisition",
-      "back": "Correct: Request DM to production — Correct match for “Materials requisition” is: Request DM to production."
-    },
-    {
-      "front": "Which best matches: Labor time record",
-      "back": "Correct: Assign DL to jobs — Correct match for “Labor time record” is: Assign DL to jobs."
-    },
-    {
-      "front": "Which best matches: Job cost record",
-      "back": "Correct: Accumulate job costs — Correct match for “Job cost record” is: Accumulate job costs."
-    },
-    {
-      "front": "Put the sequence in order – derived from: Job cost record",
-      "back": "Tracks DM → DL → applied MOH for each job"
-    },
-    {
-      "front": "Put the sequence in order – derived from: Allocation base examples",
-      "back": "Direct labor hours → machine hours → direct labor cost"
-    },
-    {
-      "front": "Put the sequence in order – derived from: Journal entries",
-      "back": "purchase RM → requisition DM → incur DL → apply MOH → complete jobs (to FG) → sell (to COGS)"
-    },
-    {
-      "front": "Put the sequence in order – derived from: Job cost record contents and uses (pricing, profitability, bidding)",
-      "back": "Job cost record contents and uses (pricing → profitability → bidding)"
-    },
-    {
-      "front": "Put the sequence in order – derived from: Put entries in order",
-      "back": "Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS"
+      "front": "Closing MOH variance: simple method.",
+      "back": "Close to COGS; decrease COGS if overapplied, increase if underapplied."
     }
   ],
   "quiz": [
     {
-      "question": "Which best matches: Predetermined OH rate",
+      "question": "Job vs Process costing: when to use each?",
       "options": [
-        "Estimated MOH / Estimated allocation base",
-        "Correct: DM and DL traced to jobs; MOH applied via predetermined rate — Correct match for “Cost flow in job costing” is: DM and DL traced to jobs; MOH applied via predetermined rate.",
-        "purchase RM → requisition DM → incur DL → apply MOH → complete jobs (to FG) → sell (to COGS)",
-        "Correct: Applied > actual (decrease COGS at period end) — Correct match for “MOH overapplied means” is: Applied > actual (decrease COGS at period end)."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Estimated MOH / Estimated allocation base"
-    },
-    {
-      "question": "Which best matches: Why use predetermined rate?",
-      "options": [
-        "Request DM to production",
-        "Nonmanufacturing costs period treatment; service industry job costing considerations",
-        "Apply OH during the year; avoid seasonal fluctuations",
-        "purchase RM → requisition DM → incur DL → apply MOH → complete jobs (to FG) → sell (to COGS)"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Apply OH during the year; avoid seasonal fluctuations"
-    },
-    {
-      "question": "Which best matches: Job cost record",
-      "options": [
-        "Tracks DM, DL, applied MOH for each job",
-        "Job cost record contents and uses (pricing, profitability, bidding)",
-        "Correct: Job cost record contents and uses (pricing, profitability, bidding) — Correct match for “Job cost record contents and uses (pricing, profitability, bidding)” is: Job cost record contents and uses (pricing, profitability, bidding).",
-        "Correct: Correct: Before the period — Computed before the year begins. — Correct match for “Predetermined OH rate is computed:” is: Correct: Before the period — Computed before the year begins.."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Tracks DM, DL, applied MOH for each job"
-    },
-    {
-      "question": "Which best matches: MOH overapplied means",
-      "options": [
-        "Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS",
-        "Over/underapplied MOH and its disposal (COGS or prorated)",
-        "Job cost record contents and uses (pricing → profitability → bidding)",
-        "Applied > actual (decrease COGS at period end)"
-      ],
-      "answer": 3,
-      "explanation": "Correct: Applied > actual (decrease COGS at period end)"
-    },
-    {
-      "question": "Which best matches: Allocation base examples",
-      "options": [
-        "Correct: Assign DL to jobs — Correct match for “Labor time record” is: Assign DL to jobs.",
-        "Correct: Decrease — Decrease COGS to adjust.",
-        "Correct: Direct labor hours, machine hours, direct labor cost — Correct match for “Allocation base examples” is: Direct labor hours, machine hours, direct labor cost.",
-        "Direct labor hours, machine hours, direct labor cost"
-      ],
-      "answer": 3,
-      "explanation": "Correct: Direct labor hours, machine hours, direct labor cost"
-    },
-    {
-      "question": "Which best matches: Entry when a job completes",
-      "options": [
-        "customized jobs vs mass production; cost accumulation differences",
-        "Debit FG, credit WIP",
-        "Correct: Traced to jobs — DL is traced directly to jobs.",
-        "Correct: Correct: Traced to jobs — DL is traced directly to jobs. — Correct match for “In job costing, DL is:” is: Correct: Traced to jobs — DL is traced directly to jobs.."
+        "DM requisitioned to job; DL time to job; MOH applied via POHR; total = Job cost \u2192 FG \u2192 COGS.",
+        "Job: custom, small batches, distinct jobs; Process: homogeneous, continuous mass production.",
+        "Set prices (cost-plus), analyze profitability, accept/reject special orders.",
+        "Applied MOH = POHR \u00d7 Actual activity for the job."
       ],
       "answer": 1,
-      "explanation": "Correct: Debit FG, credit WIP"
+      "explanation": "Job: custom, small batches, distinct jobs; Process: homogeneous, continuous mass production."
     },
     {
-      "question": "Which best matches: Job vs process costing",
+      "question": "Examples: Job vs Process.",
       "options": [
-        "customized jobs vs mass production; cost accumulation differences",
-        "Correct: Nonmanufacturing costs period treatment; service industry job costing considerations — Correct match for “Nonmanufacturing costs period treatment; service industry job costing considerations” is: Nonmanufacturing costs period treatment; service industry job costing considerations.",
-        "Nonmanufacturing costs period treatment; service industry job costing considerations",
-        "Correct: Correct: Traced to jobs — DL is traced directly to jobs. — Correct match for “In job costing, DL is:” is: Correct: Traced to jobs — DL is traced directly to jobs.."
-      ],
-      "answer": 0,
-      "explanation": "Correct: customized jobs vs mass production; cost accumulation differences"
-    },
-    {
-      "question": "Which best matches: Cost flow in job costing",
-      "options": [
-        "DM and DL traced to jobs; MOH applied via predetermined rate",
-        "Job cost record contents and uses (pricing, profitability, bidding)",
-        "Job cost record contents and uses (pricing → profitability → bidding)",
-        "Selection of allocation base (DLH, MH) and implications for accuracy"
-      ],
-      "answer": 0,
-      "explanation": "Correct: DM and DL traced to jobs; MOH applied via predetermined rate"
-    },
-    {
-      "question": "Which best matches: Predetermined MOH rate computation and use; normal costing",
-      "options": [
-        "Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS",
-        "Predetermined MOH rate computation and use; normal costing",
-        "Correct: purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS) — Correct match for “Journal entries” is: purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS).",
-        "Request DM to production"
+        "DM requisitioned to job; DL time to job; MOH applied via POHR; total = Job cost \u2192 FG \u2192 COGS.",
+        "Job: construction, custom furniture. Process: chemicals, paper, oil refining.",
+        "Job cost = DM + DL + Applied MOH; Unit cost = Job cost \u00f7 Units.",
+        "Close to COGS; decrease COGS if overapplied, increase if underapplied."
       ],
       "answer": 1,
-      "explanation": "Correct: Predetermined MOH rate computation and use; normal costing"
+      "explanation": "Job: construction, custom furniture. Process: chemicals, paper, oil refining."
     },
     {
-      "question": "Which best matches: Journal entries",
+      "question": "Production cost flow (job costing): key steps?",
       "options": [
-        "Correct: Selection of allocation base (DLH, MH) and implications for accuracy — Correct match for “Selection of allocation base (DLH, MH) and implications for accuracy” is: Selection of allocation base (DLH, MH) and implications for accuracy.",
-        "Correct: Traced to jobs — DL is traced directly to jobs.",
-        "purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS)",
-        "Correct: customized jobs vs mass production; cost accumulation differences — Correct match for “Job vs process costing” is: customized jobs vs mass production; cost accumulation differences."
+        "Job cost = DM + DL + Applied MOH; Unit cost = Job cost \u00f7 Units.",
+        "Overapplied: applied > actual (COGS too high); Underapplied: applied < actual (COGS too low).",
+        "DM requisitioned to job; DL time to job; MOH applied via POHR; total = Job cost \u2192 FG \u2192 COGS.",
+        "Tracks DM, DL, and applied MOH for a specific job; basis for pricing and profitability."
       ],
       "answer": 2,
-      "explanation": "Correct: purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS)"
+      "explanation": "DM requisitioned to job; DL time to job; MOH applied via POHR; total = Job cost \u2192 FG \u2192 COGS."
     },
     {
-      "question": "Which best matches: Job cost record contents and uses (pricing, profitability, bidding)",
+      "question": "Documents used to trace DM and DL to jobs?",
       "options": [
-        "Tracks DM, DL, applied MOH for each job",
-        "Job cost record contents and uses (pricing, profitability, bidding)",
-        "Debit FG, credit WIP",
-        "Correct: Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS — Correct match for “Put entries in order” is: Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS."
+        "Job: construction, custom furniture. Process: chemicals, paper, oil refining.",
+        "Materials requisition forms (DM) and labor time records (DL).",
+        "DM requisitioned to job; DL time to job; MOH applied via POHR; total = Job cost \u2192 FG \u2192 COGS.",
+        "Close to COGS; decrease COGS if overapplied, increase if underapplied."
       ],
       "answer": 1,
-      "explanation": "Correct: Job cost record contents and uses (pricing, profitability, bidding)"
+      "explanation": "Materials requisition forms (DM) and labor time records (DL)."
     },
     {
-      "question": "Which best matches: Over/underapplied MOH and its disposal (COGS or prorated)",
+      "question": "What is a job cost record?",
       "options": [
-        "Debit FG, credit WIP",
-        "Correct: Predetermined MOH rate computation and use; normal costing — Correct match for “Predetermined MOH rate computation and use; normal costing” is: Predetermined MOH rate computation and use; normal costing.",
-        "Over/underapplied MOH and its disposal (COGS or prorated)",
-        "Correct: Applied > actual (decrease COGS at period end) — Correct match for “MOH overapplied means” is: Applied > actual (decrease COGS at period end)."
-      ],
-      "answer": 2,
-      "explanation": "Correct: Over/underapplied MOH and its disposal (COGS or prorated)"
-    },
-    {
-      "question": "Which best matches: Selection of allocation base (DLH, MH) and implications for accuracy",
-      "options": [
-        "Correct: Tracks DM, DL, applied MOH for each job — Correct match for “Job cost record” is: Tracks DM, DL, applied MOH for each job.",
-        "Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS",
-        "Selection of allocation base (DLH, MH) and implications for accuracy",
-        "Correct: Assign DL to jobs — Correct match for “Labor time record” is: Assign DL to jobs."
-      ],
-      "answer": 2,
-      "explanation": "Correct: Selection of allocation base (DLH, MH) and implications for accuracy"
-    },
-    {
-      "question": "Which best matches: Nonmanufacturing costs period treatment; service industry job costing considerations",
-      "options": [
-        "Correct: Predetermined MOH rate computation and use; normal costing — Correct match for “Predetermined MOH rate computation and use; normal costing” is: Predetermined MOH rate computation and use; normal costing.",
-        "Correct: Direct labor hours, machine hours, direct labor cost — Correct match for “Allocation base examples” is: Direct labor hours, machine hours, direct labor cost.",
-        "Nonmanufacturing costs period treatment; service industry job costing considerations",
-        "Job cost record contents and uses (pricing, profitability, bidding)"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Nonmanufacturing costs period treatment; service industry job costing considerations"
-    },
-    {
-      "question": "Which best matches: In job costing, DL is:",
-      "options": [
-        "Correct: customized jobs vs mass production; cost accumulation differences — Correct match for “Job vs process costing” is: customized jobs vs mass production; cost accumulation differences.",
-        "Correct: Traced to jobs — DL is traced directly to jobs.",
-        "Correct: Accumulate job costs — Correct match for “Job cost record” is: Accumulate job costs.",
-        "Correct: Tracks DM, DL, applied MOH for each job — Correct match for “Job cost record” is: Tracks DM, DL, applied MOH for each job."
+        "Overapplied: applied > actual (COGS too high); Underapplied: applied < actual (COGS too low).",
+        "Tracks DM, DL, and applied MOH for a specific job; basis for pricing and profitability.",
+        "Job cost = DM + DL + Applied MOH; Unit cost = Job cost \u00f7 Units.",
+        "Job: custom, small batches, distinct jobs; Process: homogeneous, continuous mass production."
       ],
       "answer": 1,
-      "explanation": "Correct: Correct: Traced to jobs — DL is traced directly to jobs."
+      "explanation": "Tracks DM, DL, and applied MOH for a specific job; basis for pricing and profitability."
     },
     {
-      "question": "Which best matches: Which is MOST appropriate allocation base in automated plant?",
+      "question": "Predetermined MOH rate (POHR) formula?",
       "options": [
-        "Nonmanufacturing costs period treatment; service industry job costing considerations",
-        "purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS)",
-        "Correct: Machine hours — Machine hours better reflect OH consumption.",
-        "Predetermined MOH rate computation and use; normal costing"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: Machine hours — Machine hours better reflect OH consumption."
-    },
-    {
-      "question": "Which best matches: Overapplied OH effect on COGS:",
-      "options": [
-        "Correct: Decrease — Decrease COGS to adjust.",
-        "Correct: Apply OH during the year; avoid seasonal fluctuations — Correct match for “Why use predetermined rate?” is: Apply OH during the year; avoid seasonal fluctuations.",
-        "Correct: Predetermined MOH rate computation and use; normal costing — Correct match for “Predetermined MOH rate computation and use; normal costing” is: Predetermined MOH rate computation and use; normal costing.",
-        "Correct: Job cost record contents and uses (pricing, profitability, bidding) — Correct match for “Job cost record contents and uses (pricing, profitability, bidding)” is: Job cost record contents and uses (pricing, profitability, bidding)."
+        "POHR = Est. total MOH \u00f7 Est. total allocation base (e.g., DLH, MH, DL$).",
+        "Overapplied: applied > actual (COGS too high); Underapplied: applied < actual (COGS too low).",
+        "Job: custom, small batches, distinct jobs; Process: homogeneous, continuous mass production.",
+        "Job cost = DM + DL + Applied MOH; Unit cost = Job cost \u00f7 Units."
       ],
       "answer": 0,
-      "explanation": "Correct: Correct: Decrease — Decrease COGS to adjust."
+      "explanation": "POHR = Est. total MOH \u00f7 Est. total allocation base (e.g., DLH, MH, DL$)."
     },
     {
-      "question": "Which best matches: Predetermined OH rate is computed:",
+      "question": "Applying MOH to a job: formula?",
       "options": [
-        "Request DM to production",
-        "Correct: Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS — Correct match for “Put entries in order” is: Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS.",
-        "purchase RM → requisition DM → incur DL → apply MOH → complete jobs (to FG) → sell (to COGS)",
-        "Correct: Before the period — Computed before the year begins."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Before the period — Computed before the year begins."
-    },
-    {
-      "question": "Which best matches: Put entries in order",
-      "options": [
-        "Correct: Accumulate job costs — Correct match for “Job cost record” is: Accumulate job costs.",
-        "Correct: Tracks DM, DL, applied MOH for each job — Correct match for “Job cost record” is: Tracks DM, DL, applied MOH for each job.",
-        "Direct labor hours → machine hours → direct labor cost",
-        "Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS"
-      ],
-      "answer": 3,
-      "explanation": "Correct: Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS"
-    },
-    {
-      "question": "Which best matches: Materials requisition",
-      "options": [
-        "Request DM to production",
-        "Correct: Correct: Decrease — Decrease COGS to adjust. — Correct match for “Overapplied OH effect on COGS:” is: Correct: Decrease — Decrease COGS to adjust..",
-        "Correct: customized jobs vs mass production; cost accumulation differences — Correct match for “Job vs process costing” is: customized jobs vs mass production; cost accumulation differences.",
-        "Direct labor hours → machine hours → direct labor cost"
-      ],
-      "answer": 0,
-      "explanation": "Correct: Request DM to production"
-    },
-    {
-      "question": "Which best matches: Labor time record",
-      "options": [
-        "Correct: Over/underapplied MOH and its disposal (COGS or prorated) — Correct match for “Over/underapplied MOH and its disposal (COGS or prorated)” is: Over/underapplied MOH and its disposal (COGS or prorated).",
-        "Assign DL to jobs",
-        "DM and DL traced to jobs; MOH applied via predetermined rate",
-        "Job cost record contents and uses (pricing → profitability → bidding)"
+        "Overapplied: applied > actual (COGS too high); Underapplied: applied < actual (COGS too low).",
+        "Applied MOH = POHR \u00d7 Actual activity for the job.",
+        "POHR = Est. total MOH \u00f7 Est. total allocation base (e.g., DLH, MH, DL$).",
+        "DM requisitioned to job; DL time to job; MOH applied via POHR; total = Job cost \u2192 FG \u2192 COGS."
       ],
       "answer": 1,
-      "explanation": "Correct: Assign DL to jobs"
+      "explanation": "Applied MOH = POHR \u00d7 Actual activity for the job."
     },
     {
-      "question": "Which best matches: Job cost record",
+      "question": "Total job cost and unit cost: formulas.",
       "options": [
-        "Request DM to production",
-        "Correct: Traced to jobs — DL is traced directly to jobs.",
-        "Applied > actual (decrease COGS at period end)",
-        "Accumulate job costs"
-      ],
-      "answer": 3,
-      "explanation": "Correct: Accumulate job costs"
-    },
-    {
-      "question": "Which best matches: Which best matches: Predetermined OH rate",
-      "options": [
-        "Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined OH rate” is: Estimated MOH / Estimated allocation base.",
-        "Applied > actual (decrease COGS at period end)",
-        "purchase RM → requisition DM → incur DL → apply MOH → complete jobs (to FG) → sell (to COGS)",
-        "Nonmanufacturing costs period treatment; service industry job costing considerations"
+        "Job cost = DM + DL + Applied MOH; Unit cost = Job cost \u00f7 Units.",
+        "Job: construction, custom furniture. Process: chemicals, paper, oil refining.",
+        "Overapplied: applied > actual (COGS too high); Underapplied: applied < actual (COGS too low).",
+        "DM requisitioned to job; DL time to job; MOH applied via POHR; total = Job cost \u2192 FG \u2192 COGS."
       ],
       "answer": 0,
-      "explanation": "Correct: Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined OH rate” is: Estimated MOH / Estimated allocation base."
+      "explanation": "Job cost = DM + DL + Applied MOH; Unit cost = Job cost \u00f7 Units."
     },
     {
-      "question": "Which best matches: Which best matches: Why use predetermined rate?",
+      "question": "Using job cost for decisions: examples.",
       "options": [
-        "Correct: Apply OH during the year; avoid seasonal fluctuations — Correct match for “Why use predetermined rate?” is: Apply OH during the year; avoid seasonal fluctuations.",
-        "Correct: purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS) — Correct match for “Journal entries” is: purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS).",
-        "Debit FG, credit WIP",
-        "Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS"
+        "POHR = Est. total MOH \u00f7 Est. total allocation base (e.g., DLH, MH, DL$).",
+        "Set prices (cost-plus), analyze profitability, accept/reject special orders.",
+        "Materials requisition forms (DM) and labor time records (DL).",
+        "Close to COGS; decrease COGS if overapplied, increase if underapplied."
+      ],
+      "answer": 1,
+      "explanation": "Set prices (cost-plus), analyze profitability, accept/reject special orders."
+    },
+    {
+      "question": "Over/Under-applied MOH: meaning?",
+      "options": [
+        "Overapplied: applied > actual (COGS too high); Underapplied: applied < actual (COGS too low).",
+        "Close to COGS; decrease COGS if overapplied, increase if underapplied.",
+        "DM requisitioned to job; DL time to job; MOH applied via POHR; total = Job cost \u2192 FG \u2192 COGS.",
+        "Job: custom, small batches, distinct jobs; Process: homogeneous, continuous mass production."
       ],
       "answer": 0,
-      "explanation": "Correct: Correct: Apply OH during the year; avoid seasonal fluctuations — Correct match for “Why use predetermined rate?” is: Apply OH during the year; avoid seasonal fluctuations."
+      "explanation": "Overapplied: applied > actual (COGS too high); Underapplied: applied < actual (COGS too low)."
     },
     {
-      "question": "Which best matches: Which best matches: Job cost record",
+      "question": "Closing MOH variance: simple method.",
       "options": [
-        "Correct: Request DM to production — Correct match for “Materials requisition” is: Request DM to production.",
-        "purchase RM → requisition DM → incur DL → apply MOH → complete jobs (to FG) → sell (to COGS)",
-        "Applied > actual (decrease COGS at period end)",
-        "Correct: Tracks DM, DL, applied MOH for each job — Correct match for “Job cost record” is: Tracks DM, DL, applied MOH for each job."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Tracks DM, DL, applied MOH for each job — Correct match for “Job cost record” is: Tracks DM, DL, applied MOH for each job."
-    },
-    {
-      "question": "Which best matches: Which best matches: MOH overapplied means",
-      "options": [
-        "Correct: customized jobs vs mass production; cost accumulation differences — Correct match for “Job vs process costing” is: customized jobs vs mass production; cost accumulation differences.",
-        "Correct: Applied > actual (decrease COGS at period end) — Correct match for “MOH overapplied means” is: Applied > actual (decrease COGS at period end).",
-        "Correct: Nonmanufacturing costs period treatment; service industry job costing considerations — Correct match for “Nonmanufacturing costs period treatment; service industry job costing considerations” is: Nonmanufacturing costs period treatment; service industry job costing considerations.",
-        "DM and DL traced to jobs; MOH applied via predetermined rate"
+        "DM requisitioned to job; DL time to job; MOH applied via POHR; total = Job cost \u2192 FG \u2192 COGS.",
+        "Close to COGS; decrease COGS if overapplied, increase if underapplied.",
+        "Job: construction, custom furniture. Process: chemicals, paper, oil refining.",
+        "Set prices (cost-plus), analyze profitability, accept/reject special orders."
       ],
       "answer": 1,
-      "explanation": "Correct: Correct: Applied > actual (decrease COGS at period end) — Correct match for “MOH overapplied means” is: Applied > actual (decrease COGS at period end)."
-    },
-    {
-      "question": "Which best matches: Which best matches: Allocation base examples",
-      "options": [
-        "Assign DL to jobs",
-        "Correct: Correct: Traced to jobs — DL is traced directly to jobs. — Correct match for “In job costing, DL is:” is: Correct: Traced to jobs — DL is traced directly to jobs..",
-        "Correct: Correct: Decrease — Decrease COGS to adjust. — Correct match for “Overapplied OH effect on COGS:” is: Correct: Decrease — Decrease COGS to adjust..",
-        "Correct: Direct labor hours, machine hours, direct labor cost — Correct match for “Allocation base examples” is: Direct labor hours, machine hours, direct labor cost."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Direct labor hours, machine hours, direct labor cost — Correct match for “Allocation base examples” is: Direct labor hours, machine hours, direct labor cost."
-    },
-    {
-      "question": "Which best matches: Which best matches: Entry when a job completes",
-      "options": [
-        "Correct: Debit FG, credit WIP — Correct match for “Entry when a job completes” is: Debit FG, credit WIP.",
-        "Correct: Before the period — Computed before the year begins.",
-        "Correct: customized jobs vs mass production; cost accumulation differences — Correct match for “Job vs process costing” is: customized jobs vs mass production; cost accumulation differences.",
-        "Correct: Assign DL to jobs — Correct match for “Labor time record” is: Assign DL to jobs."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Debit FG, credit WIP — Correct match for “Entry when a job completes” is: Debit FG, credit WIP."
-    },
-    {
-      "question": "Which best matches: Which best matches: Job vs process costing",
-      "options": [
-        "Predetermined MOH rate computation and use; normal costing",
-        "Correct: customized jobs vs mass production; cost accumulation differences — Correct match for “Job vs process costing” is: customized jobs vs mass production; cost accumulation differences.",
-        "purchase RM → requisition DM → incur DL → apply MOH → complete jobs (to FG) → sell (to COGS)",
-        "Correct: Before the period — Computed before the year begins."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: customized jobs vs mass production; cost accumulation differences — Correct match for “Job vs process costing” is: customized jobs vs mass production; cost accumulation differences."
-    },
-    {
-      "question": "Which best matches: Which best matches: Cost flow in job costing",
-      "options": [
-        "Nonmanufacturing costs period treatment; service industry job costing considerations",
-        "Correct: DM and DL traced to jobs; MOH applied via predetermined rate — Correct match for “Cost flow in job costing” is: DM and DL traced to jobs; MOH applied via predetermined rate.",
-        "purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS)",
-        "Job cost record contents and uses (pricing → profitability → bidding)"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: DM and DL traced to jobs; MOH applied via predetermined rate — Correct match for “Cost flow in job costing” is: DM and DL traced to jobs; MOH applied via predetermined rate."
-    },
-    {
-      "question": "Which best matches: Which best matches: Predetermined MOH rate computation and use; normal costing",
-      "options": [
-        "Apply OH during the year; avoid seasonal fluctuations",
-        "Debit FG, credit WIP",
-        "Correct: Predetermined MOH rate computation and use; normal costing — Correct match for “Predetermined MOH rate computation and use; normal costing” is: Predetermined MOH rate computation and use; normal costing.",
-        "Direct labor hours → machine hours → direct labor cost"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: Predetermined MOH rate computation and use; normal costing — Correct match for “Predetermined MOH rate computation and use; normal costing” is: Predetermined MOH rate computation and use; normal costing."
-    },
-    {
-      "question": "Which best matches: Which best matches: Journal entries",
-      "options": [
-        "Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined OH rate” is: Estimated MOH / Estimated allocation base.",
-        "Correct: Job cost record contents and uses (pricing, profitability, bidding) — Correct match for “Job cost record contents and uses (pricing, profitability, bidding)” is: Job cost record contents and uses (pricing, profitability, bidding).",
-        "Correct: Request DM to production — Correct match for “Materials requisition” is: Request DM to production.",
-        "Correct: purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS) — Correct match for “Journal entries” is: purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS)."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS) — Correct match for “Journal entries” is: purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS)."
-    },
-    {
-      "question": "Which best matches: Which best matches: Job cost record contents and uses (pricing, profitability, bidding)",
-      "options": [
-        "Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined OH rate” is: Estimated MOH / Estimated allocation base.",
-        "Tracks DM → DL → applied MOH for each job",
-        "Correct: Job cost record contents and uses (pricing, profitability, bidding) — Correct match for “Job cost record contents and uses (pricing, profitability, bidding)” is: Job cost record contents and uses (pricing, profitability, bidding).",
-        "Correct: Accumulate job costs — Correct match for “Job cost record” is: Accumulate job costs."
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: Job cost record contents and uses (pricing, profitability, bidding) — Correct match for “Job cost record contents and uses (pricing, profitability, bidding)” is: Job cost record contents and uses (pricing, profitability, bidding)."
-    },
-    {
-      "question": "Which best matches: Which best matches: Over/underapplied MOH and its disposal (COGS or prorated)",
-      "options": [
-        "Correct: Accumulate job costs — Correct match for “Job cost record” is: Accumulate job costs.",
-        "Correct: Correct: Before the period — Computed before the year begins. — Correct match for “Predetermined OH rate is computed:” is: Correct: Before the period — Computed before the year begins..",
-        "Correct: Selection of allocation base (DLH, MH) and implications for accuracy — Correct match for “Selection of allocation base (DLH, MH) and implications for accuracy” is: Selection of allocation base (DLH, MH) and implications for accuracy.",
-        "Correct: Over/underapplied MOH and its disposal (COGS or prorated) — Correct match for “Over/underapplied MOH and its disposal (COGS or prorated)” is: Over/underapplied MOH and its disposal (COGS or prorated)."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Over/underapplied MOH and its disposal (COGS or prorated) — Correct match for “Over/underapplied MOH and its disposal (COGS or prorated)” is: Over/underapplied MOH and its disposal (COGS or prorated)."
-    },
-    {
-      "question": "Which best matches: Which best matches: Selection of allocation base (DLH, MH) and implications for accuracy",
-      "options": [
-        "Correct: Nonmanufacturing costs period treatment; service industry job costing considerations — Correct match for “Nonmanufacturing costs period treatment; service industry job costing considerations” is: Nonmanufacturing costs period treatment; service industry job costing considerations.",
-        "Correct: Selection of allocation base (DLH, MH) and implications for accuracy — Correct match for “Selection of allocation base (DLH, MH) and implications for accuracy” is: Selection of allocation base (DLH, MH) and implications for accuracy.",
-        "Assign DL to jobs",
-        "Correct: Applied > actual (decrease COGS at period end) — Correct match for “MOH overapplied means” is: Applied > actual (decrease COGS at period end)."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Selection of allocation base (DLH, MH) and implications for accuracy — Correct match for “Selection of allocation base (DLH, MH) and implications for accuracy” is: Selection of allocation base (DLH, MH) and implications for accuracy."
-    },
-    {
-      "question": "Which best matches: Which best matches: Nonmanufacturing costs period treatment; service industry job costing considerations",
-      "options": [
-        "Correct: Correct: Decrease — Decrease COGS to adjust. — Correct match for “Overapplied OH effect on COGS:” is: Correct: Decrease — Decrease COGS to adjust..",
-        "Correct: Decrease — Decrease COGS to adjust.",
-        "Correct: Nonmanufacturing costs period treatment; service industry job costing considerations — Correct match for “Nonmanufacturing costs period treatment; service industry job costing considerations” is: Nonmanufacturing costs period treatment; service industry job costing considerations.",
-        "Correct: Correct: Machine hours — Machine hours better reflect OH consumption. — Correct match for “Which is MOST appropriate allocation base in automated plant?” is: Correct: Machine hours — Machine hours better reflect OH consumption.."
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: Nonmanufacturing costs period treatment; service industry job costing considerations — Correct match for “Nonmanufacturing costs period treatment; service industry job costing considerations” is: Nonmanufacturing costs period treatment; service industry job costing considerations."
-    },
-    {
-      "question": "Which best matches: Which best matches: In job costing, DL is:",
-      "options": [
-        "Correct: Correct: Traced to jobs — DL is traced directly to jobs. — Correct match for “In job costing, DL is:” is: Correct: Traced to jobs — DL is traced directly to jobs..",
-        "Correct: Correct: Decrease — Decrease COGS to adjust. — Correct match for “Overapplied OH effect on COGS:” is: Correct: Decrease — Decrease COGS to adjust..",
-        "Correct: Decrease — Decrease COGS to adjust.",
-        "Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS"
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Correct: Traced to jobs — DL is traced directly to jobs. — Correct match for “In job costing, DL is:” is: Correct: Traced to jobs — DL is traced directly to jobs.."
-    },
-    {
-      "question": "Which best matches: Which best matches: Which is MOST appropriate allocation base in automated plant?",
-      "options": [
-        "Correct: Request DM to production — Correct match for “Materials requisition” is: Request DM to production.",
-        "Correct: customized jobs vs mass production; cost accumulation differences — Correct match for “Job vs process costing” is: customized jobs vs mass production; cost accumulation differences.",
-        "Correct: Correct: Before the period — Computed before the year begins. — Correct match for “Predetermined OH rate is computed:” is: Correct: Before the period — Computed before the year begins..",
-        "Correct: Correct: Machine hours — Machine hours better reflect OH consumption. — Correct match for “Which is MOST appropriate allocation base in automated plant?” is: Correct: Machine hours — Machine hours better reflect OH consumption.."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Correct: Machine hours — Machine hours better reflect OH consumption. — Correct match for “Which is MOST appropriate allocation base in automated plant?” is: Correct: Machine hours — Machine hours better reflect OH consumption.."
-    },
-    {
-      "question": "Which best matches: Which best matches: Overapplied OH effect on COGS:",
-      "options": [
-        "Over/underapplied MOH and its disposal (COGS or prorated)",
-        "Correct: Correct: Decrease — Decrease COGS to adjust. — Correct match for “Overapplied OH effect on COGS:” is: Correct: Decrease — Decrease COGS to adjust..",
-        "Correct: Accumulate job costs — Correct match for “Job cost record” is: Accumulate job costs.",
-        "Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Correct: Decrease — Decrease COGS to adjust. — Correct match for “Overapplied OH effect on COGS:” is: Correct: Decrease — Decrease COGS to adjust.."
-    },
-    {
-      "question": "Which best matches: Which best matches: Predetermined OH rate is computed:",
-      "options": [
-        "Tracks DM, DL, applied MOH for each job",
-        "Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS",
-        "Correct: Correct: Traced to jobs — DL is traced directly to jobs. — Correct match for “In job costing, DL is:” is: Correct: Traced to jobs — DL is traced directly to jobs..",
-        "Correct: Correct: Before the period — Computed before the year begins. — Correct match for “Predetermined OH rate is computed:” is: Correct: Before the period — Computed before the year begins.."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Correct: Before the period — Computed before the year begins. — Correct match for “Predetermined OH rate is computed:” is: Correct: Before the period — Computed before the year begins.."
-    },
-    {
-      "question": "Which best matches: Which best matches: Put entries in order",
-      "options": [
-        "Over/underapplied MOH and its disposal (COGS or prorated)",
-        "purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS)",
-        "Correct: Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS — Correct match for “Put entries in order” is: Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS.",
-        "Tracks DM → DL → applied MOH for each job"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS — Correct match for “Put entries in order” is: Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS."
-    },
-    {
-      "question": "Which best matches: Which best matches: Materials requisition",
-      "options": [
-        "Correct: Applied > actual (decrease COGS at period end) — Correct match for “MOH overapplied means” is: Applied > actual (decrease COGS at period end).",
-        "purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS)",
-        "Correct: Request DM to production — Correct match for “Materials requisition” is: Request DM to production.",
-        "Selection of allocation base (DLH, MH) and implications for accuracy"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: Request DM to production — Correct match for “Materials requisition” is: Request DM to production."
-    },
-    {
-      "question": "Which best matches: Which best matches: Labor time record",
-      "options": [
-        "Accumulate job costs",
-        "Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS",
-        "Correct: Assign DL to jobs — Correct match for “Labor time record” is: Assign DL to jobs.",
-        "Correct: Applied > actual (decrease COGS at period end) — Correct match for “MOH overapplied means” is: Applied > actual (decrease COGS at period end)."
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: Assign DL to jobs — Correct match for “Labor time record” is: Assign DL to jobs."
-    },
-    {
-      "question": "Which best matches: Which best matches: Job cost record",
-      "options": [
-        "Job cost record contents and uses (pricing → profitability → bidding)",
-        "Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS",
-        "Correct: Accumulate job costs — Correct match for “Job cost record” is: Accumulate job costs.",
-        "Correct: DM and DL traced to jobs; MOH applied via predetermined rate — Correct match for “Cost flow in job costing” is: DM and DL traced to jobs; MOH applied via predetermined rate."
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: Accumulate job costs — Correct match for “Job cost record” is: Accumulate job costs."
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: Job cost record",
-      "options": [
-        "Applied > actual (decrease COGS at period end)",
-        "Tracks DM → DL → applied MOH for each job",
-        "Correct: Request DM to production — Correct match for “Materials requisition” is: Request DM to production.",
-        "Estimated MOH / Estimated allocation base"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Tracks DM → DL → applied MOH for each job"
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: Allocation base examples",
-      "options": [
-        "Direct labor hours → machine hours → direct labor cost",
-        "Correct: Nonmanufacturing costs period treatment; service industry job costing considerations — Correct match for “Nonmanufacturing costs period treatment; service industry job costing considerations” is: Nonmanufacturing costs period treatment; service industry job costing considerations.",
-        "Correct: customized jobs vs mass production; cost accumulation differences — Correct match for “Job vs process costing” is: customized jobs vs mass production; cost accumulation differences.",
-        "Nonmanufacturing costs period treatment; service industry job costing considerations"
-      ],
-      "answer": 0,
-      "explanation": "Correct: Direct labor hours → machine hours → direct labor cost"
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: Journal entries",
-      "options": [
-        "purchase RM → requisition DM → incur DL → apply MOH → complete jobs (to FG) → sell (to COGS)",
-        "Correct: Correct: Decrease — Decrease COGS to adjust. — Correct match for “Overapplied OH effect on COGS:” is: Correct: Decrease — Decrease COGS to adjust..",
-        "Assign DL to jobs",
-        "Correct: Applied > actual (decrease COGS at period end) — Correct match for “MOH overapplied means” is: Applied > actual (decrease COGS at period end)."
-      ],
-      "answer": 0,
-      "explanation": "Correct: purchase RM → requisition DM → incur DL → apply MOH → complete jobs (to FG) → sell (to COGS)"
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: Job cost record contents and uses (pricing, profitability, bidding)",
-      "options": [
-        "Correct: Predetermined MOH rate computation and use; normal costing — Correct match for “Predetermined MOH rate computation and use; normal costing” is: Predetermined MOH rate computation and use; normal costing.",
-        "Correct: Direct labor hours, machine hours, direct labor cost — Correct match for “Allocation base examples” is: Direct labor hours, machine hours, direct labor cost.",
-        "Job cost record contents and uses (pricing → profitability → bidding)",
-        "Accumulate job costs"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Job cost record contents and uses (pricing → profitability → bidding)"
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: Put entries in order",
-      "options": [
-        "Correct: Over/underapplied MOH and its disposal (COGS or prorated) — Correct match for “Over/underapplied MOH and its disposal (COGS or prorated)” is: Over/underapplied MOH and its disposal (COGS or prorated).",
-        "Correct: Tracks DM, DL, applied MOH for each job — Correct match for “Job cost record” is: Tracks DM, DL, applied MOH for each job.",
-        "Correct: Correct: Decrease — Decrease COGS to adjust. — Correct match for “Overapplied OH effect on COGS:” is: Correct: Decrease — Decrease COGS to adjust..",
-        "Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS"
-      ],
-      "answer": 3,
-      "explanation": "Correct: Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS"
+      "explanation": "Close to COGS; decrease COGS if overapplied, increase if underapplied."
     }
   ],
   "games": [
     {
       "type": "matching",
-      "title": "Matching Set 1",
+      "title": "Match core ideas",
       "questions": [
         {
-          "prompt": "Match each term/concept to its definition/statement.",
+          "prompt": "Match each prompt to the correct explanation",
           "pairs": [
             [
-              "Predetermined OH rate",
-              "Estimated MOH / Estimated allocation base"
+              "Job vs Process costing: when to use each?",
+              "Job: custom, small batches, distinct jobs; Process: homogeneous, continuous mass production."
             ],
             [
-              "Why use predetermined rate?",
-              "Apply OH during the year; avoid seasonal fluctuations"
+              "Examples: Job vs Process.",
+              "Job: construction, custom furniture. Process: chemicals, paper, oil refining."
             ],
             [
-              "Job cost record",
-              "Tracks DM, DL, applied MOH for each job"
+              "Production cost flow (job costing): key steps?",
+              "DM requisitioned to job; DL time to job; MOH applied via POHR; total = Job cost \u2192 FG \u2192 COGS."
             ],
             [
-              "MOH overapplied means",
-              "Applied > actual (decrease COGS at period end)"
+              "Documents used to trace DM and DL to jobs?",
+              "Materials requisition forms (DM) and labor time records (DL)."
             ],
             [
-              "Allocation base examples",
-              "Direct labor hours, machine hours, direct labor cost"
+              "What is a job cost record?",
+              "Tracks DM, DL, and applied MOH for a specific job; basis for pricing and profitability."
             ],
             [
-              "Entry when a job completes",
-              "Debit FG, credit WIP"
+              "Predetermined MOH rate (POHR) formula?",
+              "POHR = Est. total MOH \u00f7 Est. total allocation base (e.g., DLH, MH, DL$)."
             ],
             [
-              "Job vs process costing",
-              "customized jobs vs mass production; cost accumulation differences"
+              "Applying MOH to a job: formula?",
+              "Applied MOH = POHR \u00d7 Actual activity for the job."
             ],
             [
-              "Cost flow in job costing",
-              "DM and DL traced to jobs; MOH applied via predetermined rate"
+              "Total job cost and unit cost: formulas.",
+              "Job cost = DM + DL + Applied MOH; Unit cost = Job cost \u00f7 Units."
             ],
             [
-              "Predetermined MOH rate computation and use; normal costing",
-              "Predetermined MOH rate computation and use; normal costing"
+              "Using job cost for decisions: examples.",
+              "Set prices (cost-plus), analyze profitability, accept/reject special orders."
             ],
             [
-              "Journal entries",
-              "purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS)"
+              "Over/Under-applied MOH: meaning?",
+              "Overapplied: applied > actual (COGS too high); Underapplied: applied < actual (COGS too low)."
+            ],
+            [
+              "Closing MOH variance: simple method.",
+              "Close to COGS; decrease COGS if overapplied, increase if underapplied."
             ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Study path ordering",
+      "questions": [
+        {
+          "prompt": "Arrange these prompts into a sensible study order",
+          "items": [
+            "Job vs Process costing: when to use each?",
+            "Examples: Job vs Process.",
+            "Production cost flow (job costing): key steps?",
+            "Documents used to trace DM and DL to jobs?",
+            "What is a job cost record?",
+            "Predetermined MOH rate (POHR) formula?",
+            "Applying MOH to a job: formula?",
+            "Total job cost and unit cost: formulas.",
+            "Using job cost for decisions: examples.",
+            "Over/Under-applied MOH: meaning?",
+            "Closing MOH variance: simple method."
           ]
         }
       ]
     },
     {
       "type": "matching",
-      "title": "Matching Set 2",
+      "title": "Cost-related focus",
       "questions": [
         {
-          "prompt": "Match each term/concept to its definition/statement.",
+          "prompt": "Match terms to explanations (cost-related first)",
           "pairs": [
             [
-              "Job cost record contents and uses (pricing, profitability, bidding)",
-              "Job cost record contents and uses (pricing, profitability, bidding)"
+              "Predetermined MOH rate (POHR) formula?",
+              "POHR = Est. total MOH \u00f7 Est. total allocation base (e.g., DLH, MH, DL$)."
             ],
             [
-              "Over/underapplied MOH and its disposal (COGS or prorated)",
-              "Over/underapplied MOH and its disposal (COGS or prorated)"
+              "Total job cost and unit cost: formulas.",
+              "Job cost = DM + DL + Applied MOH; Unit cost = Job cost \u00f7 Units."
             ],
             [
-              "Selection of allocation base (DLH, MH) and implications for accuracy",
-              "Selection of allocation base (DLH, MH) and implications for accuracy"
-            ],
-            [
-              "Nonmanufacturing costs period treatment; service industry job costing considerations",
-              "Nonmanufacturing costs period treatment; service industry job costing considerations"
-            ],
-            [
-              "In job costing, DL is:",
-              "Correct: Traced to jobs — DL is traced directly to jobs."
-            ],
-            [
-              "Which is MOST appropriate allocation base in automated plant?",
-              "Correct: Machine hours — Machine hours better reflect OH consumption."
-            ],
-            [
-              "Overapplied OH effect on COGS:",
-              "Correct: Decrease — Decrease COGS to adjust."
-            ],
-            [
-              "Predetermined OH rate is computed:",
-              "Correct: Before the period — Computed before the year begins."
-            ],
-            [
-              "Put entries in order",
-              "Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS"
-            ],
-            [
-              "Materials requisition",
-              "Request DM to production"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Matching Set 3",
-      "questions": [
-        {
-          "prompt": "Match each term/concept to its definition/statement.",
-          "pairs": [
-            [
-              "Labor time record",
-              "Assign DL to jobs"
-            ],
-            [
-              "Job cost record",
-              "Accumulate job costs"
-            ],
-            [
-              "Which best matches: Predetermined OH rate",
-              "Correct: Estimated MOH / Estimated allocation base — Correct match for “Predetermined OH rate” is: Estimated MOH / Estimated allocation base."
-            ],
-            [
-              "Which best matches: Why use predetermined rate?",
-              "Correct: Apply OH during the year; avoid seasonal fluctuations — Correct match for “Why use predetermined rate?” is: Apply OH during the year; avoid seasonal fluctuations."
-            ],
-            [
-              "Which best matches: Job cost record",
-              "Correct: Tracks DM, DL, applied MOH for each job — Correct match for “Job cost record” is: Tracks DM, DL, applied MOH for each job."
-            ],
-            [
-              "Which best matches: MOH overapplied means",
-              "Correct: Applied > actual (decrease COGS at period end) — Correct match for “MOH overapplied means” is: Applied > actual (decrease COGS at period end)."
-            ],
-            [
-              "Which best matches: Allocation base examples",
-              "Correct: Direct labor hours, machine hours, direct labor cost — Correct match for “Allocation base examples” is: Direct labor hours, machine hours, direct labor cost."
-            ],
-            [
-              "Which best matches: Entry when a job completes",
-              "Correct: Debit FG, credit WIP — Correct match for “Entry when a job completes” is: Debit FG, credit WIP."
-            ],
-            [
-              "Which best matches: Job vs process costing",
-              "Correct: customized jobs vs mass production; cost accumulation differences — Correct match for “Job vs process costing” is: customized jobs vs mass production; cost accumulation differences."
-            ],
-            [
-              "Which best matches: Cost flow in job costing",
-              "Correct: DM and DL traced to jobs; MOH applied via predetermined rate — Correct match for “Cost flow in job costing” is: DM and DL traced to jobs; MOH applied via predetermined rate."
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Matching Set 4",
-      "questions": [
-        {
-          "prompt": "Match each term/concept to its definition/statement.",
-          "pairs": [
-            [
-              "Which best matches: Predetermined MOH rate computation and use; normal costing",
-              "Correct: Predetermined MOH rate computation and use; normal costing — Correct match for “Predetermined MOH rate computation and use; normal costing” is: Predetermined MOH rate computation and use; normal costing."
-            ],
-            [
-              "Which best matches: Journal entries",
-              "Correct: purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS) — Correct match for “Journal entries” is: purchase RM, requisition DM, incur DL, apply MOH, complete jobs (to FG), sell (to COGS)."
-            ],
-            [
-              "Which best matches: Job cost record contents and uses (pricing, profitability, bidding)",
-              "Correct: Job cost record contents and uses (pricing, profitability, bidding) — Correct match for “Job cost record contents and uses (pricing, profitability, bidding)” is: Job cost record contents and uses (pricing, profitability, bidding)."
-            ],
-            [
-              "Which best matches: Over/underapplied MOH and its disposal (COGS or prorated)",
-              "Correct: Over/underapplied MOH and its disposal (COGS or prorated) — Correct match for “Over/underapplied MOH and its disposal (COGS or prorated)” is: Over/underapplied MOH and its disposal (COGS or prorated)."
-            ],
-            [
-              "Which best matches: Selection of allocation base (DLH, MH) and implications for accuracy",
-              "Correct: Selection of allocation base (DLH, MH) and implications for accuracy — Correct match for “Selection of allocation base (DLH, MH) and implications for accuracy” is: Selection of allocation base (DLH, MH) and implications for accuracy."
-            ],
-            [
-              "Which best matches: Nonmanufacturing costs period treatment; service industry job costing considerations",
-              "Correct: Nonmanufacturing costs period treatment; service industry job costing considerations — Correct match for “Nonmanufacturing costs period treatment; service industry job costing considerations” is: Nonmanufacturing costs period treatment; service industry job costing considerations."
-            ],
-            [
-              "Which best matches: In job costing, DL is:",
-              "Correct: Correct: Traced to jobs — DL is traced directly to jobs. — Correct match for “In job costing, DL is:” is: Correct: Traced to jobs — DL is traced directly to jobs.."
-            ],
-            [
-              "Which best matches: Which is MOST appropriate allocation base in automated plant?",
-              "Correct: Correct: Machine hours — Machine hours better reflect OH consumption. — Correct match for “Which is MOST appropriate allocation base in automated plant?” is: Correct: Machine hours — Machine hours better reflect OH consumption.."
-            ],
-            [
-              "Which best matches: Overapplied OH effect on COGS:",
-              "Correct: Correct: Decrease — Decrease COGS to adjust. — Correct match for “Overapplied OH effect on COGS:” is: Correct: Decrease — Decrease COGS to adjust.."
-            ],
-            [
-              "Which best matches: Predetermined OH rate is computed:",
-              "Correct: Correct: Before the period — Computed before the year begins. — Correct match for “Predetermined OH rate is computed:” is: Correct: Before the period — Computed before the year begins.."
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Matching Set 5",
-      "questions": [
-        {
-          "prompt": "Match each term/concept to its definition/statement.",
-          "pairs": [
-            [
-              "Which best matches: Put entries in order",
-              "Correct: Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS — Correct match for “Put entries in order” is: Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS."
-            ],
-            [
-              "Which best matches: Materials requisition",
-              "Correct: Request DM to production — Correct match for “Materials requisition” is: Request DM to production."
-            ],
-            [
-              "Which best matches: Labor time record",
-              "Correct: Assign DL to jobs — Correct match for “Labor time record” is: Assign DL to jobs."
-            ],
-            [
-              "Which best matches: Job cost record",
-              "Correct: Accumulate job costs — Correct match for “Job cost record” is: Accumulate job costs."
-            ],
-            [
-              "Put the sequence in order – derived from: Job cost record",
-              "Tracks DM → DL → applied MOH for each job"
-            ],
-            [
-              "Put the sequence in order – derived from: Allocation base examples",
-              "Direct labor hours → machine hours → direct labor cost"
-            ],
-            [
-              "Put the sequence in order – derived from: Journal entries",
-              "purchase RM → requisition DM → incur DL → apply MOH → complete jobs (to FG) → sell (to COGS)"
-            ],
-            [
-              "Put the sequence in order – derived from: Job cost record contents and uses (pricing, profitability, bidding)",
-              "Job cost record contents and uses (pricing → profitability → bidding)"
-            ],
-            [
-              "Put the sequence in order – derived from: Put entries in order",
-              "Purchase raw materials → Requisition DM to WIP → Record DL → Apply MOH → Complete job to FG → Sell job to COGS"
+              "Over/Under-applied MOH: meaning?",
+              "Overapplied: applied > actual (COGS too high); Underapplied: applied < actual (COGS too low)."
             ]
           ]
         }
@@ -1035,76 +299,22 @@
     },
     {
       "type": "ordering",
-      "title": "Ordering Set 1",
+      "title": "Alphabetical sort",
       "questions": [
         {
-          "prompt": "Put the sequence in order – derived from: Job cost record",
+          "prompt": "Sort the prompts alphabetically",
           "items": [
-            "Tracks DM",
-            "DL",
-            "applied MOH for each job"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 2",
-      "questions": [
-        {
-          "prompt": "Put the sequence in order – derived from: Allocation base examples",
-          "items": [
-            "Direct labor hours",
-            "machine hours",
-            "direct labor cost"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 3",
-      "questions": [
-        {
-          "prompt": "Put the sequence in order – derived from: Journal entries",
-          "items": [
-            "purchase RM",
-            "requisition DM",
-            "incur DL",
-            "apply MOH",
-            "complete jobs (to FG)",
-            "sell (to COGS)"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 4",
-      "questions": [
-        {
-          "prompt": "Put the sequence in order – derived from: Job cost record contents and uses (pricing, profitability, bidding)",
-          "items": [
-            "Job cost record contents and uses (pricing",
-            "profitability",
-            "bidding)"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 5",
-      "questions": [
-        {
-          "prompt": "Put the sequence in order – derived from: Put entries in order",
-          "items": [
-            "Purchase raw materials",
-            "Requisition DM to WIP",
-            "Record DL",
-            "Apply MOH",
-            "Complete job to FG",
-            "Sell job to COGS"
+            "Applying MOH to a job: formula?",
+            "Closing MOH variance: simple method.",
+            "Documents used to trace DM and DL to jobs?",
+            "Examples: Job vs Process.",
+            "Job vs Process costing: when to use each?",
+            "Over/Under-applied MOH: meaning?",
+            "Predetermined MOH rate (POHR) formula?",
+            "Production cost flow (job costing): key steps?",
+            "Total job cost and unit cost: formulas.",
+            "Using job cost for decisions: examples.",
+            "What is a job cost record?"
           ]
         }
       ]

@@ -1,1031 +1,356 @@
 {
-  "title": "Chapter 6 – Cost Behavior & Analysis",
+  "title": "Chapter 6 \u2013 Cost Behavior & Cost Estimation (Objectives)",
   "notes": [
     [
-      "Identify cost behaviors: variable, fixed, mixed, step; understand graphs and linearity assumptions",
+      "Describe key characteristics and graphs of various cost behaviors",
       1,
-      "Chapter 6 Key Terms.pdf"
+      "Chapter 6 Part I Cost Behaviors.pdf"
     ],
     [
-      "Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)",
+      "Use cost equations to express and predict costs",
       1,
-      "Chapter 6 Key Terms.pdf"
+      "Chapter 6 Part I Cost Behaviors.pdf"
     ],
     [
-      "Account analysis and scatterplots to hypothesize cost behavior",
+      "Use account analysis and scatterplots to analyze cost behavior",
       1,
-      "Chapter 6 Key Terms.pdf"
+      "Chapter 6 Part I Cost Behaviors.pdf"
     ],
     [
-      "High‑low method steps and limitations (outliers, two‑point sensitivity)",
+      "Use the high-low method to analyze cost behavior",
       1,
-      "Chapter 6 Key Terms.pdf"
+      "Chapter 6 Part I Cost Behaviors.pdf"
     ],
     [
-      "Regression analysis basics (least squares), R² interpretation, significance of intercept/slope",
+      "Use regression analysis to analyze cost behavior",
       1,
-      "Activity #4 - Use H-L and Regression to Analyze Costs-SV - Tagged.pdf"
+      "Chapter 6 Part I Cost Behaviors.pdf"
     ],
     [
-      "Contribution margin and the CM income statement (variable costing)",
+      "Describe variable costing and prepare a contribution margin income statement",
       1,
-      "Chapter 6 Key Terms.pdf"
-    ],
-    [
-      "Variable vs absorption costing: income effects when inventory changes; reconciliation formula",
-      1,
-      "Chapter 6 Key Terms.pdf"
+      "Chapter 6 Part I Cost Behaviors.pdf"
     ]
   ],
   "flashcards": [
     {
-      "front": "Cost equation",
-      "back": "y = a + b x"
+      "front": "Cost behaviors: variable vs fixed vs mixed vs step.",
+      "back": "Variable: total \u2191 with volume; Fixed: total constant in relevant range; Mixed: fixed + variable; Step: jumps at thresholds."
     },
     {
-      "front": "High‑low variable rate",
-      "back": "(Cost_high − Cost_low)/(Activity_high − Activity_low)"
+      "front": "Relevant range: why it matters.",
+      "back": "Cost behavior assumptions hold only within the normal capacity/activity band."
     },
     {
-      "front": "Contribution margin",
-      "back": "Sales − Variable costs"
+      "front": "Cost equation (mixed cost).",
+      "back": "y = f + vx, where f=fixed, v=variable rate, x=activity; predict cost at a given x."
     },
     {
-      "front": "R² meaning",
-      "back": "Proportion of variability explained by the model"
+      "front": "Total vs Average cost with volume change.",
+      "back": "Total fixed unchanged; average fixed \u2193 as volume \u2191; variable total changes with x."
     },
     {
-      "front": "Variable vs absorption costing",
-      "back": "Treatment of fixed MOH differs"
+      "front": "Account analysis & scatterplots: purpose.",
+      "back": "Classify accounts as fixed/variable/mixed; visualize cost-volume relationship and detect outliers."
     },
     {
-      "front": "Scatterplot use",
-      "back": "Assess linearity and outliers before modeling"
+      "front": "High-low method: steps.",
+      "back": "Pick highest and lowest activity points \u2192 v = \u0394cost/\u0394activity \u2192 f = total \u2212 v\u00d7x \u2192 cost equation."
     },
     {
-      "front": "Identify cost behaviors",
-      "back": "variable, fixed, mixed, step; understand graphs and linearity assumptions"
+      "front": "High-low: pros and cons.",
+      "back": "Simple, quick; uses only two points, sensitive to outliers."
     },
     {
-      "front": "Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)",
-      "back": "Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)"
+      "front": "Regression analysis: advantage over high-low.",
+      "back": "Uses all data points to fit best line; provides R\u00b2, intercept (f), slope (v); tests significance."
     },
     {
-      "front": "Account analysis and scatterplots to hypothesize cost behavior",
-      "back": "Account analysis and scatterplots to hypothesize cost behavior"
+      "front": "Interpreting R\u00b2 in cost estimation.",
+      "back": "Proportion of variance in cost explained by activity; higher is generally better (context matters)."
     },
     {
-      "front": "High‑low method steps and limitations (outliers, two‑point sensitivity)",
-      "back": "High‑low method steps and limitations (outliers, two‑point sensitivity)"
+      "front": "Variable vs Absorption costing: key difference.",
+      "back": "Absorption inventories fixed MOH in product cost (required for GAAP); Variable treats fixed MOH as period cost (internal)."
     },
     {
-      "front": "Regression analysis basics (least squares), R² interpretation, significance of intercep...",
-      "back": "Regression analysis basics (least squares), R² interpretation, significance of intercept/slope"
-    },
-    {
-      "front": "Contribution margin and the CM income statement (variable costing)",
-      "back": "Contribution margin and the CM income statement (variable costing)"
-    },
-    {
-      "front": "Variable vs absorption costing",
-      "back": "income effects when inventory changes; reconciliation formula"
-    },
-    {
-      "front": "Which statement about mixed costs is TRUE?",
-      "back": "Correct: Contain both fixed and variable elements — Mixed costs include both components."
-    },
-    {
-      "front": "High‑low method first step:",
-      "back": "Correct: Pick highest/lowest activity points — Select high and low activity levels."
-    },
-    {
-      "front": "Contribution margin income statement groups costs by:",
-      "back": "Correct: Behavior — Variable vs fixed."
-    },
-    {
-      "front": "Under absorption costing, fixed MOH is:",
-      "back": "Correct: Inventoried into product cost — Part of product cost under GAAP."
-    },
-    {
-      "front": "Sequence the high‑low method",
-      "back": "Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs"
-    },
-    {
-      "front": "Variable",
-      "back": "Upward‑sloping line through origin"
-    },
-    {
-      "front": "Fixed",
-      "back": "Horizontal line"
-    },
-    {
-      "front": "Mixed",
-      "back": "Upward‑sloping line with positive intercept"
-    },
-    {
-      "front": "Which best matches: Cost equation",
-      "back": "Correct: y = a + b x — Correct match for “Cost equation” is: y = a + b x."
-    },
-    {
-      "front": "Which best matches: High‑low variable rate",
-      "back": "Correct: (Cost_high − Cost_low)/(Activity_high − Activity_low) — Correct match for “High‑low variable rate” is: (Cost_high − Cost_low)/(Activity_high − Activity_low)."
-    },
-    {
-      "front": "Which best matches: Contribution margin",
-      "back": "Correct: Sales − Variable costs — Correct match for “Contribution margin” is: Sales − Variable costs."
-    },
-    {
-      "front": "Which best matches: R² meaning",
-      "back": "Correct: Proportion of variability explained by the model — Correct match for “R² meaning” is: Proportion of variability explained by the model."
-    },
-    {
-      "front": "Which best matches: Variable vs absorption costing",
-      "back": "Correct: Treatment of fixed MOH differs — Correct match for “Variable vs absorption costing” is: Treatment of fixed MOH differs."
-    },
-    {
-      "front": "Which best matches: Scatterplot use",
-      "back": "Correct: Assess linearity and outliers before modeling — Correct match for “Scatterplot use” is: Assess linearity and outliers before modeling."
-    },
-    {
-      "front": "Which best matches: Identify cost behaviors",
-      "back": "Correct: variable, fixed, mixed, step; understand graphs and linearity assumptions — Correct match for “Identify cost behaviors” is: variable, fixed, mixed, step; understand graphs and linearity assumptions."
-    },
-    {
-      "front": "Which best matches: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)",
-      "back": "Correct: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate) — Correct match for “Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)” is: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)."
-    },
-    {
-      "front": "Which best matches: Account analysis and scatterplots to hypothesize cost behavior",
-      "back": "Correct: Account analysis and scatterplots to hypothesize cost behavior — Correct match for “Account analysis and scatterplots to hypothesize cost behavior” is: Account analysis and scatterplots to hypothesize cost behavior."
-    },
-    {
-      "front": "Which best matches: High‑low method steps and limitations (outliers, two‑point sensitivity)",
-      "back": "Correct: High‑low method steps and limitations (outliers, two‑point sensitivity) — Correct match for “High‑low method steps and limitations (outliers, two‑point sensitivity)” is: High‑low method steps and limitations (outliers, two‑point sensitivity)."
-    },
-    {
-      "front": "Which best matches: Regression analysis basics (least squares), R² interpretation, significance of intercep...",
-      "back": "Correct: Regression analysis basics (least squares), R² interpretation, significance of intercept/slope — Correct match for “Regression analysis basics (least squares), R² interpretation, significance of intercep...” is: Regression analysis basics (least squares), R² interpretation, significance of intercept/slope."
-    },
-    {
-      "front": "Which best matches: Contribution margin and the CM income statement (variable costing)",
-      "back": "Correct: Contribution margin and the CM income statement (variable costing) — Correct match for “Contribution margin and the CM income statement (variable costing)” is: Contribution margin and the CM income statement (variable costing)."
-    },
-    {
-      "front": "Which best matches: Variable vs absorption costing",
-      "back": "Correct: income effects when inventory changes; reconciliation formula — Correct match for “Variable vs absorption costing” is: income effects when inventory changes; reconciliation formula."
-    },
-    {
-      "front": "Which best matches: Which statement about mixed costs is TRUE?",
-      "back": "Correct: Correct: Contain both fixed and variable elements — Mixed costs include both components. — Correct match for “Which statement about mixed costs is TRUE?” is: Correct: Contain both fixed and variable elements — Mixed costs include both components.."
-    },
-    {
-      "front": "Which best matches: High‑low method first step:",
-      "back": "Correct: Correct: Pick highest/lowest activity points — Select high and low activity levels. — Correct match for “High‑low method first step:” is: Correct: Pick highest/lowest activity points — Select high and low activity levels.."
-    },
-    {
-      "front": "Which best matches: Contribution margin income statement groups costs by:",
-      "back": "Correct: Correct: Behavior — Variable vs fixed. — Correct match for “Contribution margin income statement groups costs by:” is: Correct: Behavior — Variable vs fixed.."
-    },
-    {
-      "front": "Which best matches: Under absorption costing, fixed MOH is:",
-      "back": "Correct: Correct: Inventoried into product cost — Part of product cost under GAAP. — Correct match for “Under absorption costing, fixed MOH is:” is: Correct: Inventoried into product cost — Part of product cost under GAAP.."
-    },
-    {
-      "front": "Which best matches: Sequence the high‑low method",
-      "back": "Correct: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs — Correct match for “Sequence the high‑low method” is: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs."
-    },
-    {
-      "front": "Which best matches: Variable",
-      "back": "Correct: Upward‑sloping line through origin — Correct match for “Variable” is: Upward‑sloping line through origin."
-    },
-    {
-      "front": "Which best matches: Fixed",
-      "back": "Correct: Horizontal line — Correct match for “Fixed” is: Horizontal line."
-    },
-    {
-      "front": "Which best matches: Mixed",
-      "back": "Correct: Upward‑sloping line with positive intercept — Correct match for “Mixed” is: Upward‑sloping line with positive intercept."
-    },
-    {
-      "front": "Put the sequence in order – derived from: Identify cost behaviors",
-      "back": "variable → fixed → mixed → step; understand graphs and linearity assumptions"
-    },
-    {
-      "front": "Put the sequence in order – derived from: Regression analysis basics (least squares), R² interpretation, significance of intercep...",
-      "back": "Regression analysis basics (least squares) → R² interpretation → significance of intercept/slope"
-    },
-    {
-      "front": "Put the sequence in order – derived from: Sequence the high‑low method",
-      "back": "Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs"
+      "front": "Contribution margin income statement format.",
+      "back": "Sales \u2212 Variable costs = CM; CM \u2212 Fixed costs = Operating income."
     }
   ],
   "quiz": [
     {
-      "question": "Which best matches: Cost equation",
+      "question": "Cost behaviors: variable vs fixed vs mixed vs step.",
       "options": [
-        "y = a + b x",
-        "Correct: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate) — Correct match for “Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)” is: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate).",
-        "Correct: Proportion of variability explained by the model — Correct match for “R² meaning” is: Proportion of variability explained by the model.",
-        "Correct: High‑low method steps and limitations (outliers, two‑point sensitivity) — Correct match for “High‑low method steps and limitations (outliers, two‑point sensitivity)” is: High‑low method steps and limitations (outliers, two‑point sensitivity)."
+        "y = f + vx, where f=fixed, v=variable rate, x=activity; predict cost at a given x.",
+        "Variable: total \u2191 with volume; Fixed: total constant in relevant range; Mixed: fixed + variable; Step: jumps at thresholds.",
+        "Proportion of variance in cost explained by activity; higher is generally better (context matters).",
+        "Pick highest and lowest activity points \u2192 v = \u0394cost/\u0394activity \u2192 f = total \u2212 v\u00d7x \u2192 cost equation."
+      ],
+      "answer": 1,
+      "explanation": "Variable: total \u2191 with volume; Fixed: total constant in relevant range; Mixed: fixed + variable; Step: jumps at thresholds."
+    },
+    {
+      "question": "Relevant range: why it matters.",
+      "options": [
+        "Cost behavior assumptions hold only within the normal capacity/activity band.",
+        "Simple, quick; uses only two points, sensitive to outliers.",
+        "Proportion of variance in cost explained by activity; higher is generally better (context matters).",
+        "Total fixed unchanged; average fixed \u2193 as volume \u2191; variable total changes with x."
       ],
       "answer": 0,
-      "explanation": "Correct: y = a + b x"
+      "explanation": "Cost behavior assumptions hold only within the normal capacity/activity band."
     },
     {
-      "question": "Which best matches: High‑low variable rate",
+      "question": "Cost equation (mixed cost).",
       "options": [
-        "Correct: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate) — Correct match for “Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)” is: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate).",
-        "Correct: Upward‑sloping line with positive intercept — Correct match for “Mixed” is: Upward‑sloping line with positive intercept.",
-        "(Cost_high − Cost_low)/(Activity_high − Activity_low)",
-        "Sales − Variable costs"
-      ],
-      "answer": 2,
-      "explanation": "Correct: (Cost_high − Cost_low)/(Activity_high − Activity_low)"
-    },
-    {
-      "question": "Which best matches: Contribution margin",
-      "options": [
-        "Correct: variable, fixed, mixed, step; understand graphs and linearity assumptions — Correct match for “Identify cost behaviors” is: variable, fixed, mixed, step; understand graphs and linearity assumptions.",
-        "Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs",
-        "Sales − Variable costs",
-        "Contribution margin and the CM income statement (variable costing)"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Sales − Variable costs"
-    },
-    {
-      "question": "Which best matches: R² meaning",
-      "options": [
-        "Correct: Contribution margin and the CM income statement (variable costing) — Correct match for “Contribution margin and the CM income statement (variable costing)” is: Contribution margin and the CM income statement (variable costing).",
-        "Treatment of fixed MOH differs",
-        "Proportion of variability explained by the model",
-        "Correct: Inventoried into product cost — Part of product cost under GAAP."
-      ],
-      "answer": 2,
-      "explanation": "Correct: Proportion of variability explained by the model"
-    },
-    {
-      "question": "Which best matches: Variable vs absorption costing",
-      "options": [
-        "Correct: Treatment of fixed MOH differs — Correct match for “Variable vs absorption costing” is: Treatment of fixed MOH differs.",
-        "Correct: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs — Correct match for “Sequence the high‑low method” is: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs.",
-        "Correct: (Cost_high − Cost_low)/(Activity_high − Activity_low) — Correct match for “High‑low variable rate” is: (Cost_high − Cost_low)/(Activity_high − Activity_low).",
-        "Treatment of fixed MOH differs"
+        "Absorption inventories fixed MOH in product cost (required for GAAP); Variable treats fixed MOH as period cost (internal).",
+        "Cost behavior assumptions hold only within the normal capacity/activity band.",
+        "Total fixed unchanged; average fixed \u2193 as volume \u2191; variable total changes with x.",
+        "y = f + vx, where f=fixed, v=variable rate, x=activity; predict cost at a given x."
       ],
       "answer": 3,
-      "explanation": "Correct: Treatment of fixed MOH differs"
+      "explanation": "y = f + vx, where f=fixed, v=variable rate, x=activity; predict cost at a given x."
     },
     {
-      "question": "Which best matches: Scatterplot use",
+      "question": "Total vs Average cost with volume change.",
       "options": [
-        "Correct: Inventoried into product cost — Part of product cost under GAAP.",
-        "Horizontal line",
-        "Correct: Account analysis and scatterplots to hypothesize cost behavior — Correct match for “Account analysis and scatterplots to hypothesize cost behavior” is: Account analysis and scatterplots to hypothesize cost behavior.",
-        "Assess linearity and outliers before modeling"
+        "Proportion of variance in cost explained by activity; higher is generally better (context matters).",
+        "Total fixed unchanged; average fixed \u2193 as volume \u2191; variable total changes with x.",
+        "Pick highest and lowest activity points \u2192 v = \u0394cost/\u0394activity \u2192 f = total \u2212 v\u00d7x \u2192 cost equation.",
+        "Sales \u2212 Variable costs = CM; CM \u2212 Fixed costs = Operating income."
+      ],
+      "answer": 1,
+      "explanation": "Total fixed unchanged; average fixed \u2193 as volume \u2191; variable total changes with x."
+    },
+    {
+      "question": "Account analysis & scatterplots: purpose.",
+      "options": [
+        "Variable: total \u2191 with volume; Fixed: total constant in relevant range; Mixed: fixed + variable; Step: jumps at thresholds.",
+        "Absorption inventories fixed MOH in product cost (required for GAAP); Variable treats fixed MOH as period cost (internal).",
+        "Classify accounts as fixed/variable/mixed; visualize cost-volume relationship and detect outliers.",
+        "Simple, quick; uses only two points, sensitive to outliers."
+      ],
+      "answer": 2,
+      "explanation": "Classify accounts as fixed/variable/mixed; visualize cost-volume relationship and detect outliers."
+    },
+    {
+      "question": "High-low method: steps.",
+      "options": [
+        "Uses all data points to fit best line; provides R\u00b2, intercept (f), slope (v); tests significance.",
+        "Pick highest and lowest activity points \u2192 v = \u0394cost/\u0394activity \u2192 f = total \u2212 v\u00d7x \u2192 cost equation.",
+        "y = f + vx, where f=fixed, v=variable rate, x=activity; predict cost at a given x.",
+        "Proportion of variance in cost explained by activity; higher is generally better (context matters)."
+      ],
+      "answer": 1,
+      "explanation": "Pick highest and lowest activity points \u2192 v = \u0394cost/\u0394activity \u2192 f = total \u2212 v\u00d7x \u2192 cost equation."
+    },
+    {
+      "question": "High-low: pros and cons.",
+      "options": [
+        "Pick highest and lowest activity points \u2192 v = \u0394cost/\u0394activity \u2192 f = total \u2212 v\u00d7x \u2192 cost equation.",
+        "Total fixed unchanged; average fixed \u2193 as volume \u2191; variable total changes with x.",
+        "Sales \u2212 Variable costs = CM; CM \u2212 Fixed costs = Operating income.",
+        "Simple, quick; uses only two points, sensitive to outliers."
       ],
       "answer": 3,
-      "explanation": "Correct: Assess linearity and outliers before modeling"
+      "explanation": "Simple, quick; uses only two points, sensitive to outliers."
     },
     {
-      "question": "Which best matches: Identify cost behaviors",
+      "question": "Regression analysis: advantage over high-low.",
       "options": [
-        "variable, fixed, mixed, step; understand graphs and linearity assumptions",
-        "Correct: Treatment of fixed MOH differs — Correct match for “Variable vs absorption costing” is: Treatment of fixed MOH differs.",
-        "Correct: y = a + b x — Correct match for “Cost equation” is: y = a + b x.",
-        "income effects when inventory changes; reconciliation formula"
+        "Uses all data points to fit best line; provides R\u00b2, intercept (f), slope (v); tests significance.",
+        "Total fixed unchanged; average fixed \u2193 as volume \u2191; variable total changes with x.",
+        "Absorption inventories fixed MOH in product cost (required for GAAP); Variable treats fixed MOH as period cost (internal).",
+        "Cost behavior assumptions hold only within the normal capacity/activity band."
       ],
       "answer": 0,
-      "explanation": "Correct: variable, fixed, mixed, step; understand graphs and linearity assumptions"
+      "explanation": "Uses all data points to fit best line; provides R\u00b2, intercept (f), slope (v); tests significance."
     },
     {
-      "question": "Which best matches: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)",
+      "question": "Interpreting R\u00b2 in cost estimation.",
       "options": [
-        "Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)",
-        "Correct: Correct: Behavior — Variable vs fixed. — Correct match for “Contribution margin income statement groups costs by:” is: Correct: Behavior — Variable vs fixed..",
-        "Correct: Account analysis and scatterplots to hypothesize cost behavior — Correct match for “Account analysis and scatterplots to hypothesize cost behavior” is: Account analysis and scatterplots to hypothesize cost behavior.",
-        "(Cost_high − Cost_low)/(Activity_high − Activity_low)"
-      ],
-      "answer": 0,
-      "explanation": "Correct: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)"
-    },
-    {
-      "question": "Which best matches: Account analysis and scatterplots to hypothesize cost behavior",
-      "options": [
-        "Correct: Horizontal line — Correct match for “Fixed” is: Horizontal line.",
-        "Correct: y = a + b x — Correct match for “Cost equation” is: y = a + b x.",
-        "Account analysis and scatterplots to hypothesize cost behavior",
-        "y = a + b x"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Account analysis and scatterplots to hypothesize cost behavior"
-    },
-    {
-      "question": "Which best matches: High‑low method steps and limitations (outliers, two‑point sensitivity)",
-      "options": [
-        "y = a + b x",
-        "Correct: y = a + b x — Correct match for “Cost equation” is: y = a + b x.",
-        "Correct: Correct: Behavior — Variable vs fixed. — Correct match for “Contribution margin income statement groups costs by:” is: Correct: Behavior — Variable vs fixed..",
-        "High‑low method steps and limitations (outliers, two‑point sensitivity)"
+        "Cost behavior assumptions hold only within the normal capacity/activity band.",
+        "Pick highest and lowest activity points \u2192 v = \u0394cost/\u0394activity \u2192 f = total \u2212 v\u00d7x \u2192 cost equation.",
+        "Absorption inventories fixed MOH in product cost (required for GAAP); Variable treats fixed MOH as period cost (internal).",
+        "Proportion of variance in cost explained by activity; higher is generally better (context matters)."
       ],
       "answer": 3,
-      "explanation": "Correct: High‑low method steps and limitations (outliers, two‑point sensitivity)"
+      "explanation": "Proportion of variance in cost explained by activity; higher is generally better (context matters)."
     },
     {
-      "question": "Which best matches: Regression analysis basics (least squares), R² interpretation, significance of intercep...",
+      "question": "Variable vs Absorption costing: key difference.",
       "options": [
-        "Correct: Regression analysis basics (least squares), R² interpretation, significance of intercept/slope — Correct match for “Regression analysis basics (least squares), R² interpretation, significance of intercep...” is: Regression analysis basics (least squares), R² interpretation, significance of intercept/slope.",
-        "Sales − Variable costs",
-        "Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs",
-        "Regression analysis basics (least squares), R² interpretation, significance of intercept/slope"
-      ],
-      "answer": 3,
-      "explanation": "Correct: Regression analysis basics (least squares), R² interpretation, significance of intercept/slope"
-    },
-    {
-      "question": "Which best matches: Contribution margin and the CM income statement (variable costing)",
-      "options": [
-        "Correct: Correct: Contain both fixed and variable elements — Mixed costs include both components. — Correct match for “Which statement about mixed costs is TRUE?” is: Correct: Contain both fixed and variable elements — Mixed costs include both components..",
-        "Sales − Variable costs",
-        "Contribution margin and the CM income statement (variable costing)",
-        "Proportion of variability explained by the model"
+        "y = f + vx, where f=fixed, v=variable rate, x=activity; predict cost at a given x.",
+        "Simple, quick; uses only two points, sensitive to outliers.",
+        "Absorption inventories fixed MOH in product cost (required for GAAP); Variable treats fixed MOH as period cost (internal).",
+        "Variable: total \u2191 with volume; Fixed: total constant in relevant range; Mixed: fixed + variable; Step: jumps at thresholds."
       ],
       "answer": 2,
-      "explanation": "Correct: Contribution margin and the CM income statement (variable costing)"
+      "explanation": "Absorption inventories fixed MOH in product cost (required for GAAP); Variable treats fixed MOH as period cost (internal)."
     },
     {
-      "question": "Which best matches: Variable vs absorption costing",
+      "question": "Contribution margin income statement format.",
       "options": [
-        "income effects when inventory changes; reconciliation formula",
-        "variable → fixed → mixed → step; understand graphs and linearity assumptions",
-        "Correct: variable, fixed, mixed, step; understand graphs and linearity assumptions — Correct match for “Identify cost behaviors” is: variable, fixed, mixed, step; understand graphs and linearity assumptions.",
-        "(Cost_high − Cost_low)/(Activity_high − Activity_low)"
-      ],
-      "answer": 0,
-      "explanation": "Correct: income effects when inventory changes; reconciliation formula"
-    },
-    {
-      "question": "Which best matches: Which statement about mixed costs is TRUE?",
-      "options": [
-        "Correct: Sales − Variable costs — Correct match for “Contribution margin” is: Sales − Variable costs.",
-        "Correct: Contain both fixed and variable elements — Mixed costs include both components.",
-        "variable → fixed → mixed → step; understand graphs and linearity assumptions",
-        "Correct: Pick highest/lowest activity points — Select high and low activity levels."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Contain both fixed and variable elements — Mixed costs include both components."
-    },
-    {
-      "question": "Which best matches: High‑low method first step:",
-      "options": [
-        "Upward‑sloping line with positive intercept",
-        "Correct: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate) — Correct match for “Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)” is: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate).",
-        "Correct: Pick highest/lowest activity points — Select high and low activity levels.",
-        "Correct: Contain both fixed and variable elements — Mixed costs include both components."
+        "Simple, quick; uses only two points, sensitive to outliers.",
+        "Pick highest and lowest activity points \u2192 v = \u0394cost/\u0394activity \u2192 f = total \u2212 v\u00d7x \u2192 cost equation.",
+        "Sales \u2212 Variable costs = CM; CM \u2212 Fixed costs = Operating income.",
+        "Uses all data points to fit best line; provides R\u00b2, intercept (f), slope (v); tests significance."
       ],
       "answer": 2,
-      "explanation": "Correct: Correct: Pick highest/lowest activity points — Select high and low activity levels."
-    },
-    {
-      "question": "Which best matches: Contribution margin income statement groups costs by:",
-      "options": [
-        "Upward‑sloping line through origin",
-        "Correct: Behavior — Variable vs fixed.",
-        "Correct: variable, fixed, mixed, step; understand graphs and linearity assumptions — Correct match for “Identify cost behaviors” is: variable, fixed, mixed, step; understand graphs and linearity assumptions.",
-        "Regression analysis basics (least squares) → R² interpretation → significance of intercept/slope"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Behavior — Variable vs fixed."
-    },
-    {
-      "question": "Which best matches: Under absorption costing, fixed MOH is:",
-      "options": [
-        "Correct: Correct: Contain both fixed and variable elements — Mixed costs include both components. — Correct match for “Which statement about mixed costs is TRUE?” is: Correct: Contain both fixed and variable elements — Mixed costs include both components..",
-        "Correct: Inventoried into product cost — Part of product cost under GAAP.",
-        "Correct: Assess linearity and outliers before modeling — Correct match for “Scatterplot use” is: Assess linearity and outliers before modeling.",
-        "Correct: Treatment of fixed MOH differs — Correct match for “Variable vs absorption costing” is: Treatment of fixed MOH differs."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Inventoried into product cost — Part of product cost under GAAP."
-    },
-    {
-      "question": "Which best matches: Sequence the high‑low method",
-      "options": [
-        "Correct: Correct: Inventoried into product cost — Part of product cost under GAAP. — Correct match for “Under absorption costing, fixed MOH is:” is: Correct: Inventoried into product cost — Part of product cost under GAAP..",
-        "Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs",
-        "Correct: Sales − Variable costs — Correct match for “Contribution margin” is: Sales − Variable costs.",
-        "Correct: Horizontal line — Correct match for “Fixed” is: Horizontal line."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs"
-    },
-    {
-      "question": "Which best matches: Variable",
-      "options": [
-        "Proportion of variability explained by the model",
-        "Correct: Assess linearity and outliers before modeling — Correct match for “Scatterplot use” is: Assess linearity and outliers before modeling.",
-        "Upward‑sloping line through origin",
-        "(Cost_high − Cost_low)/(Activity_high − Activity_low)"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Upward‑sloping line through origin"
-    },
-    {
-      "question": "Which best matches: Fixed",
-      "options": [
-        "Correct: (Cost_high − Cost_low)/(Activity_high − Activity_low) — Correct match for “High‑low variable rate” is: (Cost_high − Cost_low)/(Activity_high − Activity_low).",
-        "Regression analysis basics (least squares), R² interpretation, significance of intercept/slope",
-        "Horizontal line",
-        "Correct: Contain both fixed and variable elements — Mixed costs include both components."
-      ],
-      "answer": 2,
-      "explanation": "Correct: Horizontal line"
-    },
-    {
-      "question": "Which best matches: Mixed",
-      "options": [
-        "Correct: income effects when inventory changes; reconciliation formula — Correct match for “Variable vs absorption costing” is: income effects when inventory changes; reconciliation formula.",
-        "Horizontal line",
-        "Upward‑sloping line with positive intercept",
-        "Correct: Correct: Pick highest/lowest activity points — Select high and low activity levels. — Correct match for “High‑low method first step:” is: Correct: Pick highest/lowest activity points — Select high and low activity levels.."
-      ],
-      "answer": 2,
-      "explanation": "Correct: Upward‑sloping line with positive intercept"
-    },
-    {
-      "question": "Which best matches: Which best matches: Cost equation",
-      "options": [
-        "Correct: Correct: Pick highest/lowest activity points — Select high and low activity levels. — Correct match for “High‑low method first step:” is: Correct: Pick highest/lowest activity points — Select high and low activity levels..",
-        "Correct: y = a + b x — Correct match for “Cost equation” is: y = a + b x.",
-        "Correct: Sales − Variable costs — Correct match for “Contribution margin” is: Sales − Variable costs.",
-        "variable → fixed → mixed → step; understand graphs and linearity assumptions"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: y = a + b x — Correct match for “Cost equation” is: y = a + b x."
-    },
-    {
-      "question": "Which best matches: Which best matches: High‑low variable rate",
-      "options": [
-        "Correct: Account analysis and scatterplots to hypothesize cost behavior — Correct match for “Account analysis and scatterplots to hypothesize cost behavior” is: Account analysis and scatterplots to hypothesize cost behavior.",
-        "Correct: Upward‑sloping line with positive intercept — Correct match for “Mixed” is: Upward‑sloping line with positive intercept.",
-        "Proportion of variability explained by the model",
-        "Correct: (Cost_high − Cost_low)/(Activity_high − Activity_low) — Correct match for “High‑low variable rate” is: (Cost_high − Cost_low)/(Activity_high − Activity_low)."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: (Cost_high − Cost_low)/(Activity_high − Activity_low) — Correct match for “High‑low variable rate” is: (Cost_high − Cost_low)/(Activity_high − Activity_low)."
-    },
-    {
-      "question": "Which best matches: Which best matches: Contribution margin",
-      "options": [
-        "Correct: Correct: Pick highest/lowest activity points — Select high and low activity levels. — Correct match for “High‑low method first step:” is: Correct: Pick highest/lowest activity points — Select high and low activity levels..",
-        "Correct: y = a + b x — Correct match for “Cost equation” is: y = a + b x.",
-        "Correct: Sales − Variable costs — Correct match for “Contribution margin” is: Sales − Variable costs.",
-        "Correct: Pick highest/lowest activity points — Select high and low activity levels."
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: Sales − Variable costs — Correct match for “Contribution margin” is: Sales − Variable costs."
-    },
-    {
-      "question": "Which best matches: Which best matches: R² meaning",
-      "options": [
-        "High‑low method steps and limitations (outliers, two‑point sensitivity)",
-        "Contribution margin and the CM income statement (variable costing)",
-        "Correct: Proportion of variability explained by the model — Correct match for “R² meaning” is: Proportion of variability explained by the model.",
-        "variable → fixed → mixed → step; understand graphs and linearity assumptions"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: Proportion of variability explained by the model — Correct match for “R² meaning” is: Proportion of variability explained by the model."
-    },
-    {
-      "question": "Which best matches: Which best matches: Variable vs absorption costing",
-      "options": [
-        "Correct: Correct: Contain both fixed and variable elements — Mixed costs include both components. — Correct match for “Which statement about mixed costs is TRUE?” is: Correct: Contain both fixed and variable elements — Mixed costs include both components..",
-        "Correct: Treatment of fixed MOH differs — Correct match for “Variable vs absorption costing” is: Treatment of fixed MOH differs.",
-        "Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs",
-        "Correct: Upward‑sloping line with positive intercept — Correct match for “Mixed” is: Upward‑sloping line with positive intercept."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Treatment of fixed MOH differs — Correct match for “Variable vs absorption costing” is: Treatment of fixed MOH differs."
-    },
-    {
-      "question": "Which best matches: Which best matches: Scatterplot use",
-      "options": [
-        "High‑low method steps and limitations (outliers, two‑point sensitivity)",
-        "Correct: Assess linearity and outliers before modeling — Correct match for “Scatterplot use” is: Assess linearity and outliers before modeling.",
-        "variable → fixed → mixed → step; understand graphs and linearity assumptions",
-        "Correct: Upward‑sloping line with positive intercept — Correct match for “Mixed” is: Upward‑sloping line with positive intercept."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Assess linearity and outliers before modeling — Correct match for “Scatterplot use” is: Assess linearity and outliers before modeling."
-    },
-    {
-      "question": "Which best matches: Which best matches: Identify cost behaviors",
-      "options": [
-        "Correct: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs — Correct match for “Sequence the high‑low method” is: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs.",
-        "Correct: variable, fixed, mixed, step; understand graphs and linearity assumptions — Correct match for “Identify cost behaviors” is: variable, fixed, mixed, step; understand graphs and linearity assumptions.",
-        "Regression analysis basics (least squares), R² interpretation, significance of intercept/slope",
-        "Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: variable, fixed, mixed, step; understand graphs and linearity assumptions — Correct match for “Identify cost behaviors” is: variable, fixed, mixed, step; understand graphs and linearity assumptions."
-    },
-    {
-      "question": "Which best matches: Which best matches: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)",
-      "options": [
-        "Correct: Correct: Pick highest/lowest activity points — Select high and low activity levels. — Correct match for “High‑low method first step:” is: Correct: Pick highest/lowest activity points — Select high and low activity levels..",
-        "Correct: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate) — Correct match for “Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)” is: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate).",
-        "Correct: Proportion of variability explained by the model — Correct match for “R² meaning” is: Proportion of variability explained by the model.",
-        "Treatment of fixed MOH differs"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate) — Correct match for “Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)” is: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)."
-    },
-    {
-      "question": "Which best matches: Which best matches: Account analysis and scatterplots to hypothesize cost behavior",
-      "options": [
-        "Correct: Pick highest/lowest activity points — Select high and low activity levels.",
-        "Correct: Inventoried into product cost — Part of product cost under GAAP.",
-        "Correct: Upward‑sloping line with positive intercept — Correct match for “Mixed” is: Upward‑sloping line with positive intercept.",
-        "Correct: Account analysis and scatterplots to hypothesize cost behavior — Correct match for “Account analysis and scatterplots to hypothesize cost behavior” is: Account analysis and scatterplots to hypothesize cost behavior."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Account analysis and scatterplots to hypothesize cost behavior — Correct match for “Account analysis and scatterplots to hypothesize cost behavior” is: Account analysis and scatterplots to hypothesize cost behavior."
-    },
-    {
-      "question": "Which best matches: Which best matches: High‑low method steps and limitations (outliers, two‑point sensitivity)",
-      "options": [
-        "Upward‑sloping line through origin",
-        "Correct: High‑low method steps and limitations (outliers, two‑point sensitivity) — Correct match for “High‑low method steps and limitations (outliers, two‑point sensitivity)” is: High‑low method steps and limitations (outliers, two‑point sensitivity).",
-        "Correct: Behavior — Variable vs fixed.",
-        "Contribution margin and the CM income statement (variable costing)"
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: High‑low method steps and limitations (outliers, two‑point sensitivity) — Correct match for “High‑low method steps and limitations (outliers, two‑point sensitivity)” is: High‑low method steps and limitations (outliers, two‑point sensitivity)."
-    },
-    {
-      "question": "Which best matches: Which best matches: Regression analysis basics (least squares), R² interpretation, significance of intercep...",
-      "options": [
-        "Contribution margin and the CM income statement (variable costing)",
-        "Correct: Proportion of variability explained by the model — Correct match for “R² meaning” is: Proportion of variability explained by the model.",
-        "Correct: Regression analysis basics (least squares), R² interpretation, significance of intercept/slope — Correct match for “Regression analysis basics (least squares), R² interpretation, significance of intercep...” is: Regression analysis basics (least squares), R² interpretation, significance of intercept/slope.",
-        "Upward‑sloping line through origin"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: Regression analysis basics (least squares), R² interpretation, significance of intercept/slope — Correct match for “Regression analysis basics (least squares), R² interpretation, significance of intercep...” is: Regression analysis basics (least squares), R² interpretation, significance of intercept/slope."
-    },
-    {
-      "question": "Which best matches: Which best matches: Contribution margin and the CM income statement (variable costing)",
-      "options": [
-        "Correct: Horizontal line — Correct match for “Fixed” is: Horizontal line.",
-        "Treatment of fixed MOH differs",
-        "Upward‑sloping line through origin",
-        "Correct: Contribution margin and the CM income statement (variable costing) — Correct match for “Contribution margin and the CM income statement (variable costing)” is: Contribution margin and the CM income statement (variable costing)."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Contribution margin and the CM income statement (variable costing) — Correct match for “Contribution margin and the CM income statement (variable costing)” is: Contribution margin and the CM income statement (variable costing)."
-    },
-    {
-      "question": "Which best matches: Which best matches: Variable vs absorption costing",
-      "options": [
-        "Correct: Correct: Pick highest/lowest activity points — Select high and low activity levels. — Correct match for “High‑low method first step:” is: Correct: Pick highest/lowest activity points — Select high and low activity levels..",
-        "Correct: income effects when inventory changes; reconciliation formula — Correct match for “Variable vs absorption costing” is: income effects when inventory changes; reconciliation formula.",
-        "Correct: Correct: Inventoried into product cost — Part of product cost under GAAP. — Correct match for “Under absorption costing, fixed MOH is:” is: Correct: Inventoried into product cost — Part of product cost under GAAP..",
-        "Correct: Regression analysis basics (least squares), R² interpretation, significance of intercept/slope — Correct match for “Regression analysis basics (least squares), R² interpretation, significance of intercep...” is: Regression analysis basics (least squares), R² interpretation, significance of intercept/slope."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: income effects when inventory changes; reconciliation formula — Correct match for “Variable vs absorption costing” is: income effects when inventory changes; reconciliation formula."
-    },
-    {
-      "question": "Which best matches: Which best matches: Which statement about mixed costs is TRUE?",
-      "options": [
-        "Correct: y = a + b x — Correct match for “Cost equation” is: y = a + b x.",
-        "Contribution margin and the CM income statement (variable costing)",
-        "Correct: Correct: Contain both fixed and variable elements — Mixed costs include both components. — Correct match for “Which statement about mixed costs is TRUE?” is: Correct: Contain both fixed and variable elements — Mixed costs include both components..",
-        "Correct: Upward‑sloping line with positive intercept — Correct match for “Mixed” is: Upward‑sloping line with positive intercept."
-      ],
-      "answer": 2,
-      "explanation": "Correct: Correct: Correct: Contain both fixed and variable elements — Mixed costs include both components. — Correct match for “Which statement about mixed costs is TRUE?” is: Correct: Contain both fixed and variable elements — Mixed costs include both components.."
-    },
-    {
-      "question": "Which best matches: Which best matches: High‑low method first step:",
-      "options": [
-        "Correct: Assess linearity and outliers before modeling — Correct match for “Scatterplot use” is: Assess linearity and outliers before modeling.",
-        "Correct: Correct: Pick highest/lowest activity points — Select high and low activity levels. — Correct match for “High‑low method first step:” is: Correct: Pick highest/lowest activity points — Select high and low activity levels..",
-        "Regression analysis basics (least squares) → R² interpretation → significance of intercept/slope",
-        "Correct: High‑low method steps and limitations (outliers, two‑point sensitivity) — Correct match for “High‑low method steps and limitations (outliers, two‑point sensitivity)” is: High‑low method steps and limitations (outliers, two‑point sensitivity)."
-      ],
-      "answer": 1,
-      "explanation": "Correct: Correct: Correct: Pick highest/lowest activity points — Select high and low activity levels. — Correct match for “High‑low method first step:” is: Correct: Pick highest/lowest activity points — Select high and low activity levels.."
-    },
-    {
-      "question": "Which best matches: Which best matches: Contribution margin income statement groups costs by:",
-      "options": [
-        "Correct: Correct: Behavior — Variable vs fixed. — Correct match for “Contribution margin income statement groups costs by:” is: Correct: Behavior — Variable vs fixed..",
-        "Contribution margin and the CM income statement (variable costing)",
-        "Correct: variable, fixed, mixed, step; understand graphs and linearity assumptions — Correct match for “Identify cost behaviors” is: variable, fixed, mixed, step; understand graphs and linearity assumptions.",
-        "Correct: Correct: Contain both fixed and variable elements — Mixed costs include both components. — Correct match for “Which statement about mixed costs is TRUE?” is: Correct: Contain both fixed and variable elements — Mixed costs include both components.."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Correct: Behavior — Variable vs fixed. — Correct match for “Contribution margin income statement groups costs by:” is: Correct: Behavior — Variable vs fixed.."
-    },
-    {
-      "question": "Which best matches: Which best matches: Under absorption costing, fixed MOH is:",
-      "options": [
-        "Correct: Correct: Inventoried into product cost — Part of product cost under GAAP. — Correct match for “Under absorption costing, fixed MOH is:” is: Correct: Inventoried into product cost — Part of product cost under GAAP..",
-        "income effects when inventory changes; reconciliation formula",
-        "Correct: (Cost_high − Cost_low)/(Activity_high − Activity_low) — Correct match for “High‑low variable rate” is: (Cost_high − Cost_low)/(Activity_high − Activity_low).",
-        "Correct: Inventoried into product cost — Part of product cost under GAAP."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Correct: Inventoried into product cost — Part of product cost under GAAP. — Correct match for “Under absorption costing, fixed MOH is:” is: Correct: Inventoried into product cost — Part of product cost under GAAP.."
-    },
-    {
-      "question": "Which best matches: Which best matches: Sequence the high‑low method",
-      "options": [
-        "Correct: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs — Correct match for “Sequence the high‑low method” is: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs.",
-        "Correct: Correct: Behavior — Variable vs fixed. — Correct match for “Contribution margin income statement groups costs by:” is: Correct: Behavior — Variable vs fixed..",
-        "Treatment of fixed MOH differs",
-        "Correct: Assess linearity and outliers before modeling — Correct match for “Scatterplot use” is: Assess linearity and outliers before modeling."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs — Correct match for “Sequence the high‑low method” is: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs."
-    },
-    {
-      "question": "Which best matches: Which best matches: Variable",
-      "options": [
-        "Correct: income effects when inventory changes; reconciliation formula — Correct match for “Variable vs absorption costing” is: income effects when inventory changes; reconciliation formula.",
-        "Correct: Inventoried into product cost — Part of product cost under GAAP.",
-        "Correct: Correct: Behavior — Variable vs fixed. — Correct match for “Contribution margin income statement groups costs by:” is: Correct: Behavior — Variable vs fixed..",
-        "Correct: Upward‑sloping line through origin — Correct match for “Variable” is: Upward‑sloping line through origin."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Upward‑sloping line through origin — Correct match for “Variable” is: Upward‑sloping line through origin."
-    },
-    {
-      "question": "Which best matches: Which best matches: Fixed",
-      "options": [
-        "Correct: Regression analysis basics (least squares), R² interpretation, significance of intercept/slope — Correct match for “Regression analysis basics (least squares), R² interpretation, significance of intercep...” is: Regression analysis basics (least squares), R² interpretation, significance of intercept/slope.",
-        "Correct: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs — Correct match for “Sequence the high‑low method” is: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs.",
-        "High‑low method steps and limitations (outliers, two‑point sensitivity)",
-        "Correct: Horizontal line — Correct match for “Fixed” is: Horizontal line."
-      ],
-      "answer": 3,
-      "explanation": "Correct: Correct: Horizontal line — Correct match for “Fixed” is: Horizontal line."
-    },
-    {
-      "question": "Which best matches: Which best matches: Mixed",
-      "options": [
-        "Correct: Upward‑sloping line with positive intercept — Correct match for “Mixed” is: Upward‑sloping line with positive intercept.",
-        "Correct: (Cost_high − Cost_low)/(Activity_high − Activity_low) — Correct match for “High‑low variable rate” is: (Cost_high − Cost_low)/(Activity_high − Activity_low).",
-        "Correct: Proportion of variability explained by the model — Correct match for “R² meaning” is: Proportion of variability explained by the model.",
-        "Correct: income effects when inventory changes; reconciliation formula — Correct match for “Variable vs absorption costing” is: income effects when inventory changes; reconciliation formula."
-      ],
-      "answer": 0,
-      "explanation": "Correct: Correct: Upward‑sloping line with positive intercept — Correct match for “Mixed” is: Upward‑sloping line with positive intercept."
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: Identify cost behaviors",
-      "options": [
-        "variable → fixed → mixed → step; understand graphs and linearity assumptions",
-        "Correct: Contribution margin and the CM income statement (variable costing) — Correct match for “Contribution margin and the CM income statement (variable costing)” is: Contribution margin and the CM income statement (variable costing).",
-        "(Cost_high − Cost_low)/(Activity_high − Activity_low)",
-        "Correct: (Cost_high − Cost_low)/(Activity_high − Activity_low) — Correct match for “High‑low variable rate” is: (Cost_high − Cost_low)/(Activity_high − Activity_low)."
-      ],
-      "answer": 0,
-      "explanation": "Correct: variable → fixed → mixed → step; understand graphs and linearity assumptions"
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: Regression analysis basics (least squares), R² interpretation, significance of intercep...",
-      "options": [
-        "Proportion of variability explained by the model",
-        "Correct: High‑low method steps and limitations (outliers, two‑point sensitivity) — Correct match for “High‑low method steps and limitations (outliers, two‑point sensitivity)” is: High‑low method steps and limitations (outliers, two‑point sensitivity).",
-        "Regression analysis basics (least squares) → R² interpretation → significance of intercept/slope",
-        "Upward‑sloping line with positive intercept"
-      ],
-      "answer": 2,
-      "explanation": "Correct: Regression analysis basics (least squares) → R² interpretation → significance of intercept/slope"
-    },
-    {
-      "question": "Which best matches: Put the sequence in order – derived from: Sequence the high‑low method",
-      "options": [
-        "Correct: Correct: Contain both fixed and variable elements — Mixed costs include both components. — Correct match for “Which statement about mixed costs is TRUE?” is: Correct: Contain both fixed and variable elements — Mixed costs include both components..",
-        "income effects when inventory changes; reconciliation formula",
-        "Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs",
-        "Correct: (Cost_high − Cost_low)/(Activity_high − Activity_low) — Correct match for “High‑low variable rate” is: (Cost_high − Cost_low)/(Activity_high − Activity_low)."
-      ],
-      "answer": 2,
-      "explanation": "Correct: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs"
+      "explanation": "Sales \u2212 Variable costs = CM; CM \u2212 Fixed costs = Operating income."
     }
   ],
   "games": [
     {
       "type": "matching",
-      "title": "Matching Set 1",
+      "title": "Match core ideas",
       "questions": [
         {
-          "prompt": "Match each term/concept to its definition/statement.",
+          "prompt": "Match each prompt to the correct explanation",
           "pairs": [
             [
-              "Cost equation",
-              "y = a + b x"
+              "Cost behaviors: variable vs fixed vs mixed vs step.",
+              "Variable: total \u2191 with volume; Fixed: total constant in relevant range; Mixed: fixed + variable; Step: jumps at thresholds."
             ],
             [
-              "High‑low variable rate",
-              "(Cost_high − Cost_low)/(Activity_high − Activity_low)"
+              "Relevant range: why it matters.",
+              "Cost behavior assumptions hold only within the normal capacity/activity band."
             ],
             [
-              "Contribution margin",
-              "Sales − Variable costs"
+              "Cost equation (mixed cost).",
+              "y = f + vx, where f=fixed, v=variable rate, x=activity; predict cost at a given x."
             ],
             [
-              "R² meaning",
-              "Proportion of variability explained by the model"
+              "Total vs Average cost with volume change.",
+              "Total fixed unchanged; average fixed \u2193 as volume \u2191; variable total changes with x."
             ],
             [
-              "Variable vs absorption costing",
-              "Treatment of fixed MOH differs"
+              "Account analysis & scatterplots: purpose.",
+              "Classify accounts as fixed/variable/mixed; visualize cost-volume relationship and detect outliers."
             ],
             [
-              "Scatterplot use",
-              "Assess linearity and outliers before modeling"
+              "High-low method: steps.",
+              "Pick highest and lowest activity points \u2192 v = \u0394cost/\u0394activity \u2192 f = total \u2212 v\u00d7x \u2192 cost equation."
             ],
             [
-              "Identify cost behaviors",
-              "variable, fixed, mixed, step; understand graphs and linearity assumptions"
+              "High-low: pros and cons.",
+              "Simple, quick; uses only two points, sensitive to outliers."
             ],
             [
-              "Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)",
-              "Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)"
+              "Regression analysis: advantage over high-low.",
+              "Uses all data points to fit best line; provides R\u00b2, intercept (f), slope (v); tests significance."
             ],
             [
-              "Account analysis and scatterplots to hypothesize cost behavior",
-              "Account analysis and scatterplots to hypothesize cost behavior"
+              "Interpreting R\u00b2 in cost estimation.",
+              "Proportion of variance in cost explained by activity; higher is generally better (context matters)."
             ],
             [
-              "High‑low method steps and limitations (outliers, two‑point sensitivity)",
-              "High‑low method steps and limitations (outliers, two‑point sensitivity)"
+              "Variable vs Absorption costing: key difference.",
+              "Absorption inventories fixed MOH in product cost (required for GAAP); Variable treats fixed MOH as period cost (internal)."
+            ],
+            [
+              "Contribution margin income statement format.",
+              "Sales \u2212 Variable costs = CM; CM \u2212 Fixed costs = Operating income."
             ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Study path ordering",
+      "questions": [
+        {
+          "prompt": "Arrange these prompts into a sensible study order",
+          "items": [
+            "Cost behaviors: variable vs fixed vs mixed vs step.",
+            "Relevant range: why it matters.",
+            "Cost equation (mixed cost).",
+            "Total vs Average cost with volume change.",
+            "Account analysis & scatterplots: purpose.",
+            "High-low method: steps.",
+            "High-low: pros and cons.",
+            "Regression analysis: advantage over high-low.",
+            "Interpreting R\u00b2 in cost estimation.",
+            "Variable vs Absorption costing: key difference.",
+            "Contribution margin income statement format."
           ]
         }
       ]
     },
     {
       "type": "matching",
-      "title": "Matching Set 2",
+      "title": "Cost-related focus",
       "questions": [
         {
-          "prompt": "Match each term/concept to its definition/statement.",
+          "prompt": "Match terms to explanations (cost-related first)",
           "pairs": [
             [
-              "Regression analysis basics (least squares), R² interpretation, significance of intercep...",
-              "Regression analysis basics (least squares), R² interpretation, significance of intercept/slope"
+              "Cost behaviors: variable vs fixed vs mixed vs step.",
+              "Variable: total \u2191 with volume; Fixed: total constant in relevant range; Mixed: fixed + variable; Step: jumps at thresholds."
             ],
             [
-              "Contribution margin and the CM income statement (variable costing)",
-              "Contribution margin and the CM income statement (variable costing)"
+              "Cost equation (mixed cost).",
+              "y = f + vx, where f=fixed, v=variable rate, x=activity; predict cost at a given x."
             ],
             [
-              "Variable vs absorption costing",
-              "income effects when inventory changes; reconciliation formula"
+              "Account analysis & scatterplots: purpose.",
+              "Classify accounts as fixed/variable/mixed; visualize cost-volume relationship and detect outliers."
             ],
             [
-              "Which statement about mixed costs is TRUE?",
-              "Correct: Contain both fixed and variable elements — Mixed costs include both components."
-            ],
-            [
-              "High‑low method first step:",
-              "Correct: Pick highest/lowest activity points — Select high and low activity levels."
-            ],
-            [
-              "Contribution margin income statement groups costs by:",
-              "Correct: Behavior — Variable vs fixed."
-            ],
-            [
-              "Under absorption costing, fixed MOH is:",
-              "Correct: Inventoried into product cost — Part of product cost under GAAP."
-            ],
-            [
-              "Sequence the high‑low method",
-              "Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs"
-            ],
-            [
-              "Variable",
-              "Upward‑sloping line through origin"
-            ],
-            [
-              "Fixed",
-              "Horizontal line"
+              "Regression analysis: advantage over high-low.",
+              "Uses all data points to fit best line; provides R\u00b2, intercept (f), slope (v); tests significance."
             ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Alphabetical sort",
+      "questions": [
+        {
+          "prompt": "Sort the prompts alphabetically",
+          "items": [
+            "Account analysis & scatterplots: purpose.",
+            "Contribution margin income statement format.",
+            "Cost behaviors: variable vs fixed vs mixed vs step.",
+            "Cost equation (mixed cost).",
+            "High-low method: steps.",
+            "High-low: pros and cons.",
+            "Interpreting R\u00b2 in cost estimation.",
+            "Regression analysis: advantage over high-low.",
+            "Relevant range: why it matters.",
+            "Total vs Average cost with volume change.",
+            "Variable vs Absorption costing: key difference."
           ]
         }
       ]
     },
     {
       "type": "matching",
-      "title": "Matching Set 3",
+      "title": "Match equations and interpretations",
       "questions": [
         {
-          "prompt": "Match each term/concept to its definition/statement.",
+          "prompt": "Match each equation or metric to its meaning",
           "pairs": [
             [
-              "Mixed",
-              "Upward‑sloping line with positive intercept"
+              "y = f + vx",
+              "Mixed cost equation (fixed + variable)"
             ],
             [
-              "Which best matches: Cost equation",
-              "Correct: y = a + b x — Correct match for “Cost equation” is: y = a + b x."
+              "R\u00b2 (coefficient of determination)",
+              "Share of cost variance explained by activity"
             ],
             [
-              "Which best matches: High‑low variable rate",
-              "Correct: (Cost_high − Cost_low)/(Activity_high − Activity_low) — Correct match for “High‑low variable rate” is: (Cost_high − Cost_low)/(Activity_high − Activity_low)."
+              "v = \u0394cost/\u0394activity",
+              "High-low variable rate"
             ],
             [
-              "Which best matches: Contribution margin",
-              "Correct: Sales − Variable costs — Correct match for “Contribution margin” is: Sales − Variable costs."
-            ],
-            [
-              "Which best matches: R² meaning",
-              "Correct: Proportion of variability explained by the model — Correct match for “R² meaning” is: Proportion of variability explained by the model."
-            ],
-            [
-              "Which best matches: Variable vs absorption costing",
-              "Correct: Treatment of fixed MOH differs — Correct match for “Variable vs absorption costing” is: Treatment of fixed MOH differs."
-            ],
-            [
-              "Which best matches: Scatterplot use",
-              "Correct: Assess linearity and outliers before modeling — Correct match for “Scatterplot use” is: Assess linearity and outliers before modeling."
-            ],
-            [
-              "Which best matches: Identify cost behaviors",
-              "Correct: variable, fixed, mixed, step; understand graphs and linearity assumptions — Correct match for “Identify cost behaviors” is: variable, fixed, mixed, step; understand graphs and linearity assumptions."
-            ],
-            [
-              "Which best matches: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)",
-              "Correct: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate) — Correct match for “Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)” is: Cost equation y = a + b x; interpret intercept (fixed) and slope (variable rate)."
-            ],
-            [
-              "Which best matches: Account analysis and scatterplots to hypothesize cost behavior",
-              "Correct: Account analysis and scatterplots to hypothesize cost behavior — Correct match for “Account analysis and scatterplots to hypothesize cost behavior” is: Account analysis and scatterplots to hypothesize cost behavior."
+              "Intercept (regression)",
+              "Estimated fixed cost (f)"
             ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Matching Set 4",
-      "questions": [
-        {
-          "prompt": "Match each term/concept to its definition/statement.",
-          "pairs": [
-            [
-              "Which best matches: High‑low method steps and limitations (outliers, two‑point sensitivity)",
-              "Correct: High‑low method steps and limitations (outliers, two‑point sensitivity) — Correct match for “High‑low method steps and limitations (outliers, two‑point sensitivity)” is: High‑low method steps and limitations (outliers, two‑point sensitivity)."
-            ],
-            [
-              "Which best matches: Regression analysis basics (least squares), R² interpretation, significance of intercep...",
-              "Correct: Regression analysis basics (least squares), R² interpretation, significance of intercept/slope — Correct match for “Regression analysis basics (least squares), R² interpretation, significance of intercep...” is: Regression analysis basics (least squares), R² interpretation, significance of intercept/slope."
-            ],
-            [
-              "Which best matches: Contribution margin and the CM income statement (variable costing)",
-              "Correct: Contribution margin and the CM income statement (variable costing) — Correct match for “Contribution margin and the CM income statement (variable costing)” is: Contribution margin and the CM income statement (variable costing)."
-            ],
-            [
-              "Which best matches: Variable vs absorption costing",
-              "Correct: income effects when inventory changes; reconciliation formula — Correct match for “Variable vs absorption costing” is: income effects when inventory changes; reconciliation formula."
-            ],
-            [
-              "Which best matches: Which statement about mixed costs is TRUE?",
-              "Correct: Correct: Contain both fixed and variable elements — Mixed costs include both components. — Correct match for “Which statement about mixed costs is TRUE?” is: Correct: Contain both fixed and variable elements — Mixed costs include both components.."
-            ],
-            [
-              "Which best matches: High‑low method first step:",
-              "Correct: Correct: Pick highest/lowest activity points — Select high and low activity levels. — Correct match for “High‑low method first step:” is: Correct: Pick highest/lowest activity points — Select high and low activity levels.."
-            ],
-            [
-              "Which best matches: Contribution margin income statement groups costs by:",
-              "Correct: Correct: Behavior — Variable vs fixed. — Correct match for “Contribution margin income statement groups costs by:” is: Correct: Behavior — Variable vs fixed.."
-            ],
-            [
-              "Which best matches: Under absorption costing, fixed MOH is:",
-              "Correct: Correct: Inventoried into product cost — Part of product cost under GAAP. — Correct match for “Under absorption costing, fixed MOH is:” is: Correct: Inventoried into product cost — Part of product cost under GAAP.."
-            ],
-            [
-              "Which best matches: Sequence the high‑low method",
-              "Correct: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs — Correct match for “Sequence the high‑low method” is: Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs."
-            ],
-            [
-              "Which best matches: Variable",
-              "Correct: Upward‑sloping line through origin — Correct match for “Variable” is: Upward‑sloping line through origin."
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "matching",
-      "title": "Matching Set 5",
-      "questions": [
-        {
-          "prompt": "Match each term/concept to its definition/statement.",
-          "pairs": [
-            [
-              "Which best matches: Fixed",
-              "Correct: Horizontal line — Correct match for “Fixed” is: Horizontal line."
-            ],
-            [
-              "Which best matches: Mixed",
-              "Correct: Upward‑sloping line with positive intercept — Correct match for “Mixed” is: Upward‑sloping line with positive intercept."
-            ],
-            [
-              "Put the sequence in order – derived from: Identify cost behaviors",
-              "variable → fixed → mixed → step; understand graphs and linearity assumptions"
-            ],
-            [
-              "Put the sequence in order – derived from: Regression analysis basics (least squares), R² interpretation, significance of intercep...",
-              "Regression analysis basics (least squares) → R² interpretation → significance of intercept/slope"
-            ],
-            [
-              "Put the sequence in order – derived from: Sequence the high‑low method",
-              "Identify high/low activity → Compute variable rate → Compute fixed cost (intercept) → Form cost equation → Predict costs"
-            ]
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 1",
-      "questions": [
-        {
-          "prompt": "Put the sequence in order – derived from: Identify cost behaviors",
-          "items": [
-            "variable",
-            "fixed",
-            "mixed",
-            "step; understand graphs and linearity assumptions"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 2",
-      "questions": [
-        {
-          "prompt": "Put the sequence in order – derived from: Regression analysis basics (least squares), R² interpretation, significance of intercep...",
-          "items": [
-            "Regression analysis basics (least squares)",
-            "R² interpretation",
-            "significance of intercept/slope"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 3",
-      "questions": [
-        {
-          "prompt": "Put the sequence in order – derived from: Sequence the high‑low method",
-          "items": [
-            "Identify high/low activity",
-            "Compute variable rate",
-            "Compute fixed cost (intercept)",
-            "Form cost equation",
-            "Predict costs"
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 4",
-      "questions": [
-        {
-          "prompt": "Put the sequence in order – derived from: Which best matches: Identify cost behaviors",
-          "items": [
-            "Correct: variable",
-            "fixed",
-            "mixed",
-            "step; understand graphs and linearity assumptions — Correct match for “Identify cost behaviors” is: variable",
-            "fixed",
-            "mixed",
-            "step; understand graphs and linearity assumptions."
-          ]
-        }
-      ]
-    },
-    {
-      "type": "ordering",
-      "title": "Ordering Set 5",
-      "questions": [
-        {
-          "prompt": "Put the sequence in order – derived from: Which best matches: High‑low method steps and limitations (outliers, two‑point sensitivity)",
-          "items": [
-            "Correct: High‑low method steps and limitations (outliers",
-            "two‑point sensitivity) — Correct match for “High‑low method steps and limitations (outliers",
-            "two‑point sensitivity)” is: High‑low method steps and limitations (outliers",
-            "two‑point sensitivity)."
           ]
         }
       ]
@@ -1034,12 +359,12 @@
   "sources": [
     "Chapter 6 Part I Cost Behaviors.pdf",
     "Chapter 6 Part II How to estimate cost behaviors.pdf",
-    "Chapter 6 Part III Absorption and Variable costing.pdf",
     "Graphs of Cost Behavior - Tagged.pdf",
     "Activity #1 - Cost Behavior - SV - Tagged.pdf",
     "Activity #2 - Use Cost Equation to Predict Costs - SV - Tagged.pdf",
     "Activity #3 - Use High-Low Method to Analyze Costs- SV - Tagged.pdf",
     "Activity #4 - Use H-L and Regression to Analyze Costs-SV - Tagged.pdf",
-    "Activity #5 - Cost Behavior, High Low, Contribution Margin I.S.-SV - Tagged.pdf"
+    "Activity #5 - Cost Behavior, High Low, Contribution Margin I.S.-SV - Tagged.pdf",
+    "Chapter 6 Part III Absorption and Variable costing.pdf"
   ]
 }

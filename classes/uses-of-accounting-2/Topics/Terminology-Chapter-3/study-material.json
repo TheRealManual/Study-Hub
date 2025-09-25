@@ -1,0 +1,546 @@
+{
+  "title": "Terminology - Chapter 3",
+  "notes": [
+    [
+      "Bill of Materials: A comprehensive list of raw materials, components and assemblies required to build or manufacture a product.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Billing Rate: The labor rate charged to a customer which includes both cost and profit components.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Cost Driver: A factor that can cause a change in the cost of an activity.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Cost-Plus Pricing: A costing approach where the price of a product is set at the cost of production plus a certain profit margin.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Job Cost Record: A written or electronic document that shows the cost of direct material, direct labor and manufacturing overhead assigned to a particular product or batch of products.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Job Costing: A system used for assigning costs to products or services that differ in the amount of materials, labor and overhead required. Typically used by manufacturers that produce unique or custom-ordered products in small batches.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Labor Time Record: A written or electronic record of the time a particular direct laborer spends on each job.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Materials Requisition: A detailed source document that specifies the type and quantity of materials that are to be drawn from the storeroom and identifies the job to which the costs of materials are to be charged.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Overallocated Manufacturing Overhead: The amount of overhead applied to jobs exceeds the actual manufacturing overhead costs incurred; results in jobs being overcosted.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Predetermined Manufacturing Overhead Rate: The rate used to apply manufacturing overhead to individual jobs; calculated before the period begins; calculated by dividing estimated total manufacturing overhead costs by the estimated total amount of cost driver or activity base. Common activity bases used in the calculation include direct labor costs, direct labor hours, or machine hours.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Process Costing: The process of allocating costs to products by averaging costs over large numbers of identical products that pass through a series of uniform production steps.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Production Schedule: An electronic or written document that identifies the types and quantities of products that will be produced in a particular period.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Purchase Order: A purchase order is a document sent to a supplier or vendor, authorizing shipment of a product to the customer at a specified price and terms. The creation of a purchase order creates a legally binding contract which cannot be changed without the consent of both parties.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Raw Materials Record: A written or electronic document listing the type, quantity and cost of all raw materials units received, used in production and currently in stock. A separate record is maintained for each type of raw material kept in stock.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Receiving Report: A written or electronic document used to report the type and quantity of items received in an incoming shipment. A 'blind' receiving report does not pre-list the type or quantities of items expected in a particular shipment. This is done to force the receiving department to identify, count and document everything received (instead of simply checking-off items/quantities that appear on a form without performing an actual item count).",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Stock Inventory: Items normally kept on-hand to allow a company to quickly fulfill customer orders.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Subsidiary Ledger: A subsidiary ledger is a group of similar accounts whose combined balances equal the balance in a specific general ledger account. The general ledger account that summarizes a subsidiary ledger's account balances is called a control account or master account.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ],
+    [
+      "Underallocated Manufacturing Overhead: The amount of manufacturing overhead applied to jobs is less than the amount of manufacturing overhead actually incurred; results in jobs being undercosted.",
+      1,
+      "Chapter 3 Key Terms.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Bill of Materials",
+      "back": "A comprehensive list of raw materials, components and assemblies required to build or manufacture a product."
+    },
+    {
+      "front": "Billing Rate",
+      "back": "The labor rate charged to a customer which includes both cost and profit components."
+    },
+    {
+      "front": "Cost Driver",
+      "back": "A factor that can cause a change in the cost of an activity."
+    },
+    {
+      "front": "Cost-Plus Pricing",
+      "back": "A costing approach where the price of a product is set at the cost of production plus a certain profit margin."
+    },
+    {
+      "front": "Job Cost Record",
+      "back": "A written or electronic document that shows the cost of direct material, direct labor and manufacturing overhead assigned to a particular product or batch of products."
+    },
+    {
+      "front": "Job Costing",
+      "back": "A system used for assigning costs to products or services that differ in the amount of materials, labor and overhead required. Typically used by manufacturers that produce unique or custom-ordered products in small batches."
+    },
+    {
+      "front": "Labor Time Record",
+      "back": "A written or electronic record of the time a particular direct laborer spends on each job."
+    },
+    {
+      "front": "Materials Requisition",
+      "back": "A detailed source document that specifies the type and quantity of materials that are to be drawn from the storeroom and identifies the job to which the costs of materials are to be charged."
+    },
+    {
+      "front": "Overallocated Manufacturing Overhead",
+      "back": "The amount of overhead applied to jobs exceeds the actual manufacturing overhead costs incurred; results in jobs being overcosted."
+    },
+    {
+      "front": "Predetermined Manufacturing Overhead Rate",
+      "back": "The rate used to apply manufacturing overhead to individual jobs; calculated before the period begins; calculated by dividing estimated total manufacturing overhead costs by the estimated total amount of cost driver or activity base. Common activity bases used in the calculation include direct labor costs, direct labor hours, or machine hours."
+    },
+    {
+      "front": "Process Costing",
+      "back": "The process of allocating costs to products by averaging costs over large numbers of identical products that pass through a series of uniform production steps."
+    },
+    {
+      "front": "Production Schedule",
+      "back": "An electronic or written document that identifies the types and quantities of products that will be produced in a particular period."
+    },
+    {
+      "front": "Purchase Order",
+      "back": "A purchase order is a document sent to a supplier or vendor, authorizing shipment of a product to the customer at a specified price and terms. The creation of a purchase order creates a legally binding contract which cannot be changed without the consent of both parties."
+    },
+    {
+      "front": "Raw Materials Record",
+      "back": "A written or electronic document listing the type, quantity and cost of all raw materials units received, used in production and currently in stock. A separate record is maintained for each type of raw material kept in stock."
+    },
+    {
+      "front": "Receiving Report",
+      "back": "A written or electronic document used to report the type and quantity of items received in an incoming shipment. A 'blind' receiving report does not pre-list the type or quantities of items expected in a particular shipment. This is done to force the receiving department to identify, count and document everything received (instead of simply checking-off items/quantities that appear on a form without performing an actual item count)."
+    },
+    {
+      "front": "Stock Inventory",
+      "back": "Items normally kept on-hand to allow a company to quickly fulfill customer orders."
+    },
+    {
+      "front": "Subsidiary Ledger",
+      "back": "A subsidiary ledger is a group of similar accounts whose combined balances equal the balance in a specific general ledger account. The general ledger account that summarizes a subsidiary ledger's account balances is called a control account or master account."
+    },
+    {
+      "front": "Underallocated Manufacturing Overhead",
+      "back": "The amount of manufacturing overhead applied to jobs is less than the amount of manufacturing overhead actually incurred; results in jobs being undercosted."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is the definition of 'Bill of Materials'?",
+      "options": [
+        "A purchase order is a document sent to a supplier or vendor, authorizing shipment of a product to the customer at a specified price and terms. The creation of a purchase order creates a legally binding contract which cannot be changed without the consent of both parties.",
+        "A comprehensive list of raw materials, components and assemblies required to build or manufacture a product.",
+        "The process of allocating costs to products by averaging costs over large numbers of identical products that pass through a series of uniform production steps.",
+        "An electronic or written document that identifies the types and quantities of products that will be produced in a particular period."
+      ],
+      "answer": 1,
+      "explanation": "'Bill of Materials' is defined as: A comprehensive list of raw materials, components and assemblies required to build or manufacture a product."
+    },
+    {
+      "question": "What is the definition of 'Billing Rate'?",
+      "options": [
+        "A comprehensive list of raw materials, components and assemblies required to build or manufacture a product.",
+        "The labor rate charged to a customer which includes both cost and profit components.",
+        "A purchase order is a document sent to a supplier or vendor, authorizing shipment of a product to the customer at a specified price and terms. The creation of a purchase order creates a legally binding contract which cannot be changed without the consent of both parties.",
+        "A written or electronic document that shows the cost of direct material, direct labor and manufacturing overhead assigned to a particular product or batch of products."
+      ],
+      "answer": 1,
+      "explanation": "'Billing Rate' is defined as: The labor rate charged to a customer which includes both cost and profit components."
+    },
+    {
+      "question": "What is the definition of 'Cost Driver'?",
+      "options": [
+        "A system used for assigning costs to products or services that differ in the amount of materials, labor and overhead required. Typically used by manufacturers that produce unique or custom-ordered products in small batches.",
+        "A written or electronic document used to report the type and quantity of items received in an incoming shipment. A 'blind' receiving report does not pre-list the type or quantities of items expected in a particular shipment. This is done to force the receiving department to identify, count and document everything received (instead of simply checking-off items/quantities that appear on a form without performing an actual item count).",
+        "The rate used to apply manufacturing overhead to individual jobs; calculated before the period begins; calculated by dividing estimated total manufacturing overhead costs by the estimated total amount of cost driver or activity base. Common activity bases used in the calculation include direct labor costs, direct labor hours, or machine hours.",
+        "A factor that can cause a change in the cost of an activity."
+      ],
+      "answer": 3,
+      "explanation": "'Cost Driver' is defined as: A factor that can cause a change in the cost of an activity."
+    },
+    {
+      "question": "What is the definition of 'Cost-Plus Pricing'?",
+      "options": [
+        "The rate used to apply manufacturing overhead to individual jobs; calculated before the period begins; calculated by dividing estimated total manufacturing overhead costs by the estimated total amount of cost driver or activity base. Common activity bases used in the calculation include direct labor costs, direct labor hours, or machine hours.",
+        "A system used for assigning costs to products or services that differ in the amount of materials, labor and overhead required. Typically used by manufacturers that produce unique or custom-ordered products in small batches.",
+        "An electronic or written document that identifies the types and quantities of products that will be produced in a particular period.",
+        "A costing approach where the price of a product is set at the cost of production plus a certain profit margin."
+      ],
+      "answer": 3,
+      "explanation": "'Cost-Plus Pricing' is defined as: A costing approach where the price of a product is set at the cost of production plus a certain profit margin."
+    },
+    {
+      "question": "What is the definition of 'Job Cost Record'?",
+      "options": [
+        "A detailed source document that specifies the type and quantity of materials that are to be drawn from the storeroom and identifies the job to which the costs of materials are to be charged.",
+        "A written or electronic document that shows the cost of direct material, direct labor and manufacturing overhead assigned to a particular product or batch of products.",
+        "The labor rate charged to a customer which includes both cost and profit components.",
+        "A purchase order is a document sent to a supplier or vendor, authorizing shipment of a product to the customer at a specified price and terms. The creation of a purchase order creates a legally binding contract which cannot be changed without the consent of both parties."
+      ],
+      "answer": 1,
+      "explanation": "'Job Cost Record' is defined as: A written or electronic document that shows the cost of direct material, direct labor and manufacturing overhead assigned to a particular product or batch of products."
+    },
+    {
+      "question": "What is the definition of 'Job Costing'?",
+      "options": [
+        "The process of allocating costs to products by averaging costs over large numbers of identical products that pass through a series of uniform production steps.",
+        "An electronic or written document that identifies the types and quantities of products that will be produced in a particular period.",
+        "A system used for assigning costs to products or services that differ in the amount of materials, labor and overhead required. Typically used by manufacturers that produce unique or custom-ordered products in small batches.",
+        "The amount of overhead applied to jobs exceeds the actual manufacturing overhead costs incurred; results in jobs being overcosted."
+      ],
+      "answer": 2,
+      "explanation": "'Job Costing' is defined as: A system used for assigning costs to products or services that differ in the amount of materials, labor and overhead required. Typically used by manufacturers that produce unique or custom-ordered products in small batches."
+    },
+    {
+      "question": "What is the definition of 'Labor Time Record'?",
+      "options": [
+        "A costing approach where the price of a product is set at the cost of production plus a certain profit margin.",
+        "A detailed source document that specifies the type and quantity of materials that are to be drawn from the storeroom and identifies the job to which the costs of materials are to be charged.",
+        "A written or electronic record of the time a particular direct laborer spends on each job.",
+        "The amount of manufacturing overhead applied to jobs is less than the amount of manufacturing overhead actually incurred; results in jobs being undercosted."
+      ],
+      "answer": 2,
+      "explanation": "'Labor Time Record' is defined as: A written or electronic record of the time a particular direct laborer spends on each job."
+    },
+    {
+      "question": "What is the definition of 'Materials Requisition'?",
+      "options": [
+        "A detailed source document that specifies the type and quantity of materials that are to be drawn from the storeroom and identifies the job to which the costs of materials are to be charged.",
+        "The amount of manufacturing overhead applied to jobs is less than the amount of manufacturing overhead actually incurred; results in jobs being undercosted.",
+        "The process of allocating costs to products by averaging costs over large numbers of identical products that pass through a series of uniform production steps.",
+        "A subsidiary ledger is a group of similar accounts whose combined balances equal the balance in a specific general ledger account. The general ledger account that summarizes a subsidiary ledger's account balances is called a control account or master account."
+      ],
+      "answer": 0,
+      "explanation": "'Materials Requisition' is defined as: A detailed source document that specifies the type and quantity of materials that are to be drawn from the storeroom and identifies the job to which the costs of materials are to be charged."
+    },
+    {
+      "question": "What is the definition of 'Overallocated Manufacturing Overhead'?",
+      "options": [
+        "A system used for assigning costs to products or services that differ in the amount of materials, labor and overhead required. Typically used by manufacturers that produce unique or custom-ordered products in small batches.",
+        "Items normally kept on-hand to allow a company to quickly fulfill customer orders.",
+        "A subsidiary ledger is a group of similar accounts whose combined balances equal the balance in a specific general ledger account. The general ledger account that summarizes a subsidiary ledger's account balances is called a control account or master account.",
+        "The amount of overhead applied to jobs exceeds the actual manufacturing overhead costs incurred; results in jobs being overcosted."
+      ],
+      "answer": 3,
+      "explanation": "'Overallocated Manufacturing Overhead' is defined as: The amount of overhead applied to jobs exceeds the actual manufacturing overhead costs incurred; results in jobs being overcosted."
+    },
+    {
+      "question": "What is the definition of 'Predetermined Manufacturing Overhead Rate'?",
+      "options": [
+        "A written or electronic document used to report the type and quantity of items received in an incoming shipment. A 'blind' receiving report does not pre-list the type or quantities of items expected in a particular shipment. This is done to force the receiving department to identify, count and document everything received (instead of simply checking-off items/quantities that appear on a form without performing an actual item count).",
+        "A subsidiary ledger is a group of similar accounts whose combined balances equal the balance in a specific general ledger account. The general ledger account that summarizes a subsidiary ledger's account balances is called a control account or master account.",
+        "A detailed source document that specifies the type and quantity of materials that are to be drawn from the storeroom and identifies the job to which the costs of materials are to be charged.",
+        "The rate used to apply manufacturing overhead to individual jobs; calculated before the period begins; calculated by dividing estimated total manufacturing overhead costs by the estimated total amount of cost driver or activity base. Common activity bases used in the calculation include direct labor costs, direct labor hours, or machine hours."
+      ],
+      "answer": 3,
+      "explanation": "'Predetermined Manufacturing Overhead Rate' is defined as: The rate used to apply manufacturing overhead to individual jobs; calculated before the period begins; calculated by dividing estimated total manufacturing overhead costs by the estimated total amount of cost driver or activity base. Common activity bases used in the calculation include direct labor costs, direct labor hours, or machine hours."
+    },
+    {
+      "question": "What is the definition of 'Process Costing'?",
+      "options": [
+        "A written or electronic document used to report the type and quantity of items received in an incoming shipment. A 'blind' receiving report does not pre-list the type or quantities of items expected in a particular shipment. This is done to force the receiving department to identify, count and document everything received (instead of simply checking-off items/quantities that appear on a form without performing an actual item count).",
+        "A subsidiary ledger is a group of similar accounts whose combined balances equal the balance in a specific general ledger account. The general ledger account that summarizes a subsidiary ledger's account balances is called a control account or master account.",
+        "The amount of overhead applied to jobs exceeds the actual manufacturing overhead costs incurred; results in jobs being overcosted.",
+        "The process of allocating costs to products by averaging costs over large numbers of identical products that pass through a series of uniform production steps."
+      ],
+      "answer": 3,
+      "explanation": "'Process Costing' is defined as: The process of allocating costs to products by averaging costs over large numbers of identical products that pass through a series of uniform production steps."
+    },
+    {
+      "question": "What is the definition of 'Production Schedule'?",
+      "options": [
+        "The process of allocating costs to products by averaging costs over large numbers of identical products that pass through a series of uniform production steps.",
+        "An electronic or written document that identifies the types and quantities of products that will be produced in a particular period.",
+        "The rate used to apply manufacturing overhead to individual jobs; calculated before the period begins; calculated by dividing estimated total manufacturing overhead costs by the estimated total amount of cost driver or activity base. Common activity bases used in the calculation include direct labor costs, direct labor hours, or machine hours.",
+        "A written or electronic document that shows the cost of direct material, direct labor and manufacturing overhead assigned to a particular product or batch of products."
+      ],
+      "answer": 1,
+      "explanation": "'Production Schedule' is defined as: An electronic or written document that identifies the types and quantities of products that will be produced in a particular period."
+    },
+    {
+      "question": "What is the definition of 'Purchase Order'?",
+      "options": [
+        "A system used for assigning costs to products or services that differ in the amount of materials, labor and overhead required. Typically used by manufacturers that produce unique or custom-ordered products in small batches.",
+        "The rate used to apply manufacturing overhead to individual jobs; calculated before the period begins; calculated by dividing estimated total manufacturing overhead costs by the estimated total amount of cost driver or activity base. Common activity bases used in the calculation include direct labor costs, direct labor hours, or machine hours.",
+        "A purchase order is a document sent to a supplier or vendor, authorizing shipment of a product to the customer at a specified price and terms. The creation of a purchase order creates a legally binding contract which cannot be changed without the consent of both parties.",
+        "A detailed source document that specifies the type and quantity of materials that are to be drawn from the storeroom and identifies the job to which the costs of materials are to be charged."
+      ],
+      "answer": 2,
+      "explanation": "'Purchase Order' is defined as: A purchase order is a document sent to a supplier or vendor, authorizing shipment of a product to the customer at a specified price and terms. The creation of a purchase order creates a legally binding contract which cannot be changed without the consent of both parties."
+    },
+    {
+      "question": "What is the definition of 'Raw Materials Record'?",
+      "options": [
+        "A written or electronic document that shows the cost of direct material, direct labor and manufacturing overhead assigned to a particular product or batch of products.",
+        "A written or electronic document listing the type, quantity and cost of all raw materials units received, used in production and currently in stock. A separate record is maintained for each type of raw material kept in stock.",
+        "The amount of manufacturing overhead applied to jobs is less than the amount of manufacturing overhead actually incurred; results in jobs being undercosted.",
+        "An electronic or written document that identifies the types and quantities of products that will be produced in a particular period."
+      ],
+      "answer": 1,
+      "explanation": "'Raw Materials Record' is defined as: A written or electronic document listing the type, quantity and cost of all raw materials units received, used in production and currently in stock. A separate record is maintained for each type of raw material kept in stock."
+    },
+    {
+      "question": "What is the definition of 'Receiving Report'?",
+      "options": [
+        "A written or electronic document used to report the type and quantity of items received in an incoming shipment. A 'blind' receiving report does not pre-list the type or quantities of items expected in a particular shipment. This is done to force the receiving department to identify, count and document everything received (instead of simply checking-off items/quantities that appear on a form without performing an actual item count).",
+        "A written or electronic document listing the type, quantity and cost of all raw materials units received, used in production and currently in stock. A separate record is maintained for each type of raw material kept in stock.",
+        "A detailed source document that specifies the type and quantity of materials that are to be drawn from the storeroom and identifies the job to which the costs of materials are to be charged.",
+        "Items normally kept on-hand to allow a company to quickly fulfill customer orders."
+      ],
+      "answer": 0,
+      "explanation": "'Receiving Report' is defined as: A written or electronic document used to report the type and quantity of items received in an incoming shipment. A 'blind' receiving report does not pre-list the type or quantities of items expected in a particular shipment. This is done to force the receiving department to identify, count and document everything received (instead of simply checking-off items/quantities that appear on a form without performing an actual item count)."
+    },
+    {
+      "question": "What is the definition of 'Stock Inventory'?",
+      "options": [
+        "A written or electronic record of the time a particular direct laborer spends on each job.",
+        "A purchase order is a document sent to a supplier or vendor, authorizing shipment of a product to the customer at a specified price and terms. The creation of a purchase order creates a legally binding contract which cannot be changed without the consent of both parties.",
+        "Items normally kept on-hand to allow a company to quickly fulfill customer orders.",
+        "A comprehensive list of raw materials, components and assemblies required to build or manufacture a product."
+      ],
+      "answer": 2,
+      "explanation": "'Stock Inventory' is defined as: Items normally kept on-hand to allow a company to quickly fulfill customer orders."
+    },
+    {
+      "question": "What is the definition of 'Subsidiary Ledger'?",
+      "options": [
+        "The amount of overhead applied to jobs exceeds the actual manufacturing overhead costs incurred; results in jobs being overcosted.",
+        "A subsidiary ledger is a group of similar accounts whose combined balances equal the balance in a specific general ledger account. The general ledger account that summarizes a subsidiary ledger's account balances is called a control account or master account.",
+        "A comprehensive list of raw materials, components and assemblies required to build or manufacture a product.",
+        "The process of allocating costs to products by averaging costs over large numbers of identical products that pass through a series of uniform production steps."
+      ],
+      "answer": 1,
+      "explanation": "'Subsidiary Ledger' is defined as: A subsidiary ledger is a group of similar accounts whose combined balances equal the balance in a specific general ledger account. The general ledger account that summarizes a subsidiary ledger's account balances is called a control account or master account."
+    },
+    {
+      "question": "What is the definition of 'Underallocated Manufacturing Overhead'?",
+      "options": [
+        "A purchase order is a document sent to a supplier or vendor, authorizing shipment of a product to the customer at a specified price and terms. The creation of a purchase order creates a legally binding contract which cannot be changed without the consent of both parties.",
+        "A costing approach where the price of a product is set at the cost of production plus a certain profit margin.",
+        "A written or electronic document used to report the type and quantity of items received in an incoming shipment. A 'blind' receiving report does not pre-list the type or quantities of items expected in a particular shipment. This is done to force the receiving department to identify, count and document everything received (instead of simply checking-off items/quantities that appear on a form without performing an actual item count).",
+        "The amount of manufacturing overhead applied to jobs is less than the amount of manufacturing overhead actually incurred; results in jobs being undercosted."
+      ],
+      "answer": 3,
+      "explanation": "'Underallocated Manufacturing Overhead' is defined as: The amount of manufacturing overhead applied to jobs is less than the amount of manufacturing overhead actually incurred; results in jobs being undercosted."
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "title": "Match Terms with Definitions",
+      "questions": [
+        {
+          "prompt": "Match each term to its correct definition",
+          "pairs": [
+            [
+              "Bill of Materials",
+              "A comprehensive list of raw materials, components and assemblies required to build or manufacture a product."
+            ],
+            [
+              "Billing Rate",
+              "The labor rate charged to a customer which includes both cost and profit components."
+            ],
+            [
+              "Cost Driver",
+              "A factor that can cause a change in the cost of an activity."
+            ],
+            [
+              "Cost-Plus Pricing",
+              "A costing approach where the price of a product is set at the cost of production plus a certain profit margin."
+            ],
+            [
+              "Job Cost Record",
+              "A written or electronic document that shows the cost of direct material, direct labor and manufacturing overhead assigned to a particular product or batch of products."
+            ],
+            [
+              "Job Costing",
+              "A system used for assigning costs to products or services that differ in the amount of materials, labor and overhead required. Typically used by manufacturers that produce unique or custom-ordered products in small batches."
+            ],
+            [
+              "Labor Time Record",
+              "A written or electronic record of the time a particular direct laborer spends on each job."
+            ],
+            [
+              "Materials Requisition",
+              "A detailed source document that specifies the type and quantity of materials that are to be drawn from the storeroom and identifies the job to which the costs of materials are to be charged."
+            ],
+            [
+              "Overallocated Manufacturing Overhead",
+              "The amount of overhead applied to jobs exceeds the actual manufacturing overhead costs incurred; results in jobs being overcosted."
+            ],
+            [
+              "Predetermined Manufacturing Overhead Rate",
+              "The rate used to apply manufacturing overhead to individual jobs; calculated before the period begins; calculated by dividing estimated total manufacturing overhead costs by the estimated total amount of cost driver or activity base. Common activity bases used in the calculation include direct labor costs, direct labor hours, or machine hours."
+            ],
+            [
+              "Process Costing",
+              "The process of allocating costs to products by averaging costs over large numbers of identical products that pass through a series of uniform production steps."
+            ],
+            [
+              "Production Schedule",
+              "An electronic or written document that identifies the types and quantities of products that will be produced in a particular period."
+            ],
+            [
+              "Purchase Order",
+              "A purchase order is a document sent to a supplier or vendor, authorizing shipment of a product to the customer at a specified price and terms. The creation of a purchase order creates a legally binding contract which cannot be changed without the consent of both parties."
+            ],
+            [
+              "Raw Materials Record",
+              "A written or electronic document listing the type, quantity and cost of all raw materials units received, used in production and currently in stock. A separate record is maintained for each type of raw material kept in stock."
+            ],
+            [
+              "Receiving Report",
+              "A written or electronic document used to report the type and quantity of items received in an incoming shipment. A 'blind' receiving report does not pre-list the type or quantities of items expected in a particular shipment. This is done to force the receiving department to identify, count and document everything received (instead of simply checking-off items/quantities that appear on a form without performing an actual item count)."
+            ],
+            [
+              "Stock Inventory",
+              "Items normally kept on-hand to allow a company to quickly fulfill customer orders."
+            ],
+            [
+              "Subsidiary Ledger",
+              "A subsidiary ledger is a group of similar accounts whose combined balances equal the balance in a specific general ledger account. The general ledger account that summarizes a subsidiary ledger's account balances is called a control account or master account."
+            ],
+            [
+              "Underallocated Manufacturing Overhead",
+              "The amount of manufacturing overhead applied to jobs is less than the amount of manufacturing overhead actually incurred; results in jobs being undercosted."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Alphabetical Order",
+      "questions": [
+        {
+          "prompt": "Arrange these terms alphabetically",
+          "items": [
+            "Bill of Materials",
+            "Billing Rate",
+            "Cost Driver",
+            "Cost-Plus Pricing",
+            "Job Cost Record",
+            "Job Costing",
+            "Labor Time Record",
+            "Materials Requisition",
+            "Overallocated Manufacturing Overhead",
+            "Predetermined Manufacturing Overhead Rate",
+            "Process Costing",
+            "Production Schedule",
+            "Purchase Order",
+            "Raw Materials Record",
+            "Receiving Report",
+            "Stock Inventory",
+            "Subsidiary Ledger",
+            "Underallocated Manufacturing Overhead"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Match Cost-Related Terms",
+      "questions": [
+        {
+          "prompt": "Match cost-related terms to their correct definitions",
+          "pairs": [
+            [
+              "Cost Driver",
+              "A factor that can cause a change in the cost of an activity."
+            ],
+            [
+              "Cost-Plus Pricing",
+              "A costing approach where the price of a product is set at the cost of production plus a certain profit margin."
+            ],
+            [
+              "Job Cost Record",
+              "A written or electronic document that shows the cost of direct material, direct labor and manufacturing overhead assigned to a particular product or batch of products."
+            ],
+            [
+              "Job Costing",
+              "A system used for assigning costs to products or services that differ in the amount of materials, labor and overhead required. Typically used by manufacturers that produce unique or custom-ordered products in small batches."
+            ],
+            [
+              "Process Costing",
+              "The process of allocating costs to products by averaging costs over large numbers of identical products that pass through a series of uniform production steps."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Sort by Concept Type",
+      "questions": [
+        {
+          "prompt": "Sort terms by type (Costs first, then Non-cost terms)",
+          "items": [
+            "Cost Driver",
+            "Cost-Plus Pricing",
+            "Job Cost Record",
+            "Job Costing",
+            "Process Costing",
+            "Bill of Materials",
+            "Billing Rate",
+            "Labor Time Record",
+            "Materials Requisition",
+            "Overallocated Manufacturing Overhead",
+            "Predetermined Manufacturing Overhead Rate",
+            "Production Schedule",
+            "Purchase Order",
+            "Raw Materials Record",
+            "Receiving Report",
+            "Stock Inventory",
+            "Subsidiary Ledger",
+            "Underallocated Manufacturing Overhead"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Chapter 3 Key Terms.pdf"
+  ]
+}

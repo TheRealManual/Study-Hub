@@ -1,0 +1,596 @@
+{
+  "title": "Terminology - Chapter 6",
+  "notes": [
+    [
+      "Absorption Costing: A costing method that includes all manufacturing costs - direct materials, direct labor, and both variable and fixed overhead - as part of the cost of a finished unit of product. This term is synonymous with full costing method.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Account Analysis: A method for analyzing cost behavior in which each account under consideration is classified as either variable or fixed based on the analyst's prior knowledge of how the cost in the account behaves.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Committed Fixed Costs: Committed fixed costs are those fixed costs that are difficult to adjust and that relate to the investment in facilities, equipment, and the basic organizational structure of a firm.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Contribution Margin: The difference between total sales revenue and total variable costs.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Contribution Margin Income Statement: Income statement that organizes cost by behavior. It shows the relationship of variable costs and fixed costs, regardless of the functions a given cost item is associated with.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Cost Behavior: Cost behavior refers to how a cost will react or respond to changes in the level of business activity or volume. As the level of activity rises and falls, a particular cost may rise and fall as well--or it may remain constant.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Cost Equation: A mathematical equation for a straight line that expresses how a cost behaves.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Curvilinear Costs: A cost that changes with volume but not at a constant rate. A cost function that cannot be represented with a straight line but instead is represented with a curve that reflects either increasing or decreasing marginal costs.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Discretionary Costs: A cost changed easily in the short-run by management decision such as advertising, repairs and maintenance, and research and development; also called managed cost.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Fixed Costs: A cost that does not vary depending on production or sales levels, such as rent, property tax, insurance, or interest expense.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "High-Low Method: An algebraic procedure used to separate a semivariable cost or mixed cost into the fixed and the variable components. The high-low method, as the name indicates, uses two extreme data points to determine the values of a (the fixed cost portion) and b (the variable rate) in the cost - volume formula y = a + bx.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Mixed Cost: A cost that has both a variable and a fixed component; it varies with changes in activity, but not proportionately.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Regression Analysis: A statistical procedure for determining the line that best fits the data by using all of the data points, not just the high and low data points.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Relevant Range: The band of volume for which cost-behavior assumptions (fixed cost, fixed cost, variable cost) remain valid.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Scatter Plot: The scatter plot method involves estimating the fixed and variable elements of a mixed cost visually on a graph by plotting historical cost and volume data.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Step Costs: Costs that are approximately fixed over a small volume range, but are variable over a large volume range. For example, supervision costs are fixed for a given range of production volume, but increased production often requires additional work shifts leading to added supervisory costs in a lump-sum fashion.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Outliers: Abnormal data points; data points that do not fall in the same general pattern as the other data points in a data set.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Variable Costs: A cost that is directly proportional to the volume of output produced.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ],
+    [
+      "Variable Costing: A costing method in which the costs to be inventoried include only variable manufacturing costs (direct materials, direct labor and variable manufacturing overhead). Fixed factory overhead is treated as a period cost and is deducted along with selling and administrative expenses in the period incurred.",
+      1,
+      "Chapter 6 Key Terms.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Absorption Costing",
+      "back": "A costing method that includes all manufacturing costs - direct materials, direct labor, and both variable and fixed overhead - as part of the cost of a finished unit of product. This term is synonymous with full costing method."
+    },
+    {
+      "front": "Account Analysis",
+      "back": "A method for analyzing cost behavior in which each account under consideration is classified as either variable or fixed based on the analyst's prior knowledge of how the cost in the account behaves."
+    },
+    {
+      "front": "Committed Fixed Costs",
+      "back": "Committed fixed costs are those fixed costs that are difficult to adjust and that relate to the investment in facilities, equipment, and the basic organizational structure of a firm."
+    },
+    {
+      "front": "Contribution Margin",
+      "back": "The difference between total sales revenue and total variable costs."
+    },
+    {
+      "front": "Contribution Margin Income Statement",
+      "back": "Income statement that organizes cost by behavior. It shows the relationship of variable costs and fixed costs, regardless of the functions a given cost item is associated with."
+    },
+    {
+      "front": "Cost Behavior",
+      "back": "Cost behavior refers to how a cost will react or respond to changes in the level of business activity or volume. As the level of activity rises and falls, a particular cost may rise and fall as well--or it may remain constant."
+    },
+    {
+      "front": "Cost Equation",
+      "back": "A mathematical equation for a straight line that expresses how a cost behaves."
+    },
+    {
+      "front": "Curvilinear Costs",
+      "back": "A cost that changes with volume but not at a constant rate. A cost function that cannot be represented with a straight line but instead is represented with a curve that reflects either increasing or decreasing marginal costs."
+    },
+    {
+      "front": "Discretionary Costs",
+      "back": "A cost changed easily in the short-run by management decision such as advertising, repairs and maintenance, and research and development; also called managed cost."
+    },
+    {
+      "front": "Fixed Costs",
+      "back": "A cost that does not vary depending on production or sales levels, such as rent, property tax, insurance, or interest expense."
+    },
+    {
+      "front": "High-Low Method",
+      "back": "An algebraic procedure used to separate a semivariable cost or mixed cost into the fixed and the variable components. The high-low method, as the name indicates, uses two extreme data points to determine the values of a (the fixed cost portion) and b (the variable rate) in the cost - volume formula y = a + bx."
+    },
+    {
+      "front": "Mixed Cost",
+      "back": "A cost that has both a variable and a fixed component; it varies with changes in activity, but not proportionately."
+    },
+    {
+      "front": "Regression Analysis",
+      "back": "A statistical procedure for determining the line that best fits the data by using all of the data points, not just the high and low data points."
+    },
+    {
+      "front": "Relevant Range",
+      "back": "The band of volume for which cost-behavior assumptions (fixed cost, fixed cost, variable cost) remain valid."
+    },
+    {
+      "front": "Scatter Plot",
+      "back": "The scatter plot method involves estimating the fixed and variable elements of a mixed cost visually on a graph by plotting historical cost and volume data."
+    },
+    {
+      "front": "Step Costs",
+      "back": "Costs that are approximately fixed over a small volume range, but are variable over a large volume range. For example, supervision costs are fixed for a given range of production volume, but increased production often requires additional work shifts leading to added supervisory costs in a lump-sum fashion."
+    },
+    {
+      "front": "Outliers",
+      "back": "Abnormal data points; data points that do not fall in the same general pattern as the other data points in a data set."
+    },
+    {
+      "front": "Variable Costs",
+      "back": "A cost that is directly proportional to the volume of output produced."
+    },
+    {
+      "front": "Variable Costing",
+      "back": "A costing method in which the costs to be inventoried include only variable manufacturing costs (direct materials, direct labor and variable manufacturing overhead). Fixed factory overhead is treated as a period cost and is deducted along with selling and administrative expenses in the period incurred."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is the definition of 'Absorption Costing'?",
+      "options": [
+        "A costing method that includes all manufacturing costs - direct materials, direct labor, and both variable and fixed overhead - as part of the cost of a finished unit of product. This term is synonymous with full costing method.",
+        "A cost that does not vary depending on production or sales levels, such as rent, property tax, insurance, or interest expense.",
+        "The difference between total sales revenue and total variable costs.",
+        "Costs that are approximately fixed over a small volume range, but are variable over a large volume range. For example, supervision costs are fixed for a given range of production volume, but increased production often requires additional work shifts leading to added supervisory costs in a lump-sum fashion."
+      ],
+      "answer": 0,
+      "explanation": "'Absorption Costing' is defined as: A costing method that includes all manufacturing costs - direct materials, direct labor, and both variable and fixed overhead - as part of the cost of a finished unit of product. This term is synonymous with full costing method."
+    },
+    {
+      "question": "What is the definition of 'Account Analysis'?",
+      "options": [
+        "A costing method that includes all manufacturing costs - direct materials, direct labor, and both variable and fixed overhead - as part of the cost of a finished unit of product. This term is synonymous with full costing method.",
+        "A method for analyzing cost behavior in which each account under consideration is classified as either variable or fixed based on the analyst's prior knowledge of how the cost in the account behaves.",
+        "A cost that is directly proportional to the volume of output produced.",
+        "A costing method in which the costs to be inventoried include only variable manufacturing costs (direct materials, direct labor and variable manufacturing overhead). Fixed factory overhead is treated as a period cost and is deducted along with selling and administrative expenses in the period incurred."
+      ],
+      "answer": 1,
+      "explanation": "'Account Analysis' is defined as: A method for analyzing cost behavior in which each account under consideration is classified as either variable or fixed based on the analyst's prior knowledge of how the cost in the account behaves."
+    },
+    {
+      "question": "What is the definition of 'Committed Fixed Costs'?",
+      "options": [
+        "A statistical procedure for determining the line that best fits the data by using all of the data points, not just the high and low data points.",
+        "Costs that are approximately fixed over a small volume range, but are variable over a large volume range. For example, supervision costs are fixed for a given range of production volume, but increased production often requires additional work shifts leading to added supervisory costs in a lump-sum fashion.",
+        "A cost that has both a variable and a fixed component; it varies with changes in activity, but not proportionately.",
+        "Committed fixed costs are those fixed costs that are difficult to adjust and that relate to the investment in facilities, equipment, and the basic organizational structure of a firm."
+      ],
+      "answer": 3,
+      "explanation": "'Committed Fixed Costs' is defined as: Committed fixed costs are those fixed costs that are difficult to adjust and that relate to the investment in facilities, equipment, and the basic organizational structure of a firm."
+    },
+    {
+      "question": "What is the definition of 'Contribution Margin'?",
+      "options": [
+        "Committed fixed costs are those fixed costs that are difficult to adjust and that relate to the investment in facilities, equipment, and the basic organizational structure of a firm.",
+        "A cost that does not vary depending on production or sales levels, such as rent, property tax, insurance, or interest expense.",
+        "A cost that is directly proportional to the volume of output produced.",
+        "The difference between total sales revenue and total variable costs."
+      ],
+      "answer": 3,
+      "explanation": "'Contribution Margin' is defined as: The difference between total sales revenue and total variable costs."
+    },
+    {
+      "question": "What is the definition of 'Contribution Margin Income Statement'?",
+      "options": [
+        "A cost that changes with volume but not at a constant rate. A cost function that cannot be represented with a straight line but instead is represented with a curve that reflects either increasing or decreasing marginal costs.",
+        "A costing method in which the costs to be inventoried include only variable manufacturing costs (direct materials, direct labor and variable manufacturing overhead). Fixed factory overhead is treated as a period cost and is deducted along with selling and administrative expenses in the period incurred.",
+        "Income statement that organizes cost by behavior. It shows the relationship of variable costs and fixed costs, regardless of the functions a given cost item is associated with.",
+        "Committed fixed costs are those fixed costs that are difficult to adjust and that relate to the investment in facilities, equipment, and the basic organizational structure of a firm."
+      ],
+      "answer": 2,
+      "explanation": "'Contribution Margin Income Statement' is defined as: Income statement that organizes cost by behavior. It shows the relationship of variable costs and fixed costs, regardless of the functions a given cost item is associated with."
+    },
+    {
+      "question": "What is the definition of 'Cost Behavior'?",
+      "options": [
+        "A cost changed easily in the short-run by management decision such as advertising, repairs and maintenance, and research and development; also called managed cost.",
+        "The difference between total sales revenue and total variable costs.",
+        "A cost that has both a variable and a fixed component; it varies with changes in activity, but not proportionately.",
+        "Cost behavior refers to how a cost will react or respond to changes in the level of business activity or volume. As the level of activity rises and falls, a particular cost may rise and fall as well--or it may remain constant."
+      ],
+      "answer": 3,
+      "explanation": "'Cost Behavior' is defined as: Cost behavior refers to how a cost will react or respond to changes in the level of business activity or volume. As the level of activity rises and falls, a particular cost may rise and fall as well--or it may remain constant."
+    },
+    {
+      "question": "What is the definition of 'Cost Equation'?",
+      "options": [
+        "A mathematical equation for a straight line that expresses how a cost behaves.",
+        "A cost that is directly proportional to the volume of output produced.",
+        "Costs that are approximately fixed over a small volume range, but are variable over a large volume range. For example, supervision costs are fixed for a given range of production volume, but increased production often requires additional work shifts leading to added supervisory costs in a lump-sum fashion.",
+        "Cost behavior refers to how a cost will react or respond to changes in the level of business activity or volume. As the level of activity rises and falls, a particular cost may rise and fall as well--or it may remain constant."
+      ],
+      "answer": 0,
+      "explanation": "'Cost Equation' is defined as: A mathematical equation for a straight line that expresses how a cost behaves."
+    },
+    {
+      "question": "What is the definition of 'Curvilinear Costs'?",
+      "options": [
+        "A costing method in which the costs to be inventoried include only variable manufacturing costs (direct materials, direct labor and variable manufacturing overhead). Fixed factory overhead is treated as a period cost and is deducted along with selling and administrative expenses in the period incurred.",
+        "A cost that changes with volume but not at a constant rate. A cost function that cannot be represented with a straight line but instead is represented with a curve that reflects either increasing or decreasing marginal costs.",
+        "A costing method that includes all manufacturing costs - direct materials, direct labor, and both variable and fixed overhead - as part of the cost of a finished unit of product. This term is synonymous with full costing method.",
+        "Abnormal data points; data points that do not fall in the same general pattern as the other data points in a data set."
+      ],
+      "answer": 1,
+      "explanation": "'Curvilinear Costs' is defined as: A cost that changes with volume but not at a constant rate. A cost function that cannot be represented with a straight line but instead is represented with a curve that reflects either increasing or decreasing marginal costs."
+    },
+    {
+      "question": "What is the definition of 'Discretionary Costs'?",
+      "options": [
+        "A cost that does not vary depending on production or sales levels, such as rent, property tax, insurance, or interest expense.",
+        "A costing method in which the costs to be inventoried include only variable manufacturing costs (direct materials, direct labor and variable manufacturing overhead). Fixed factory overhead is treated as a period cost and is deducted along with selling and administrative expenses in the period incurred.",
+        "Committed fixed costs are those fixed costs that are difficult to adjust and that relate to the investment in facilities, equipment, and the basic organizational structure of a firm.",
+        "A cost changed easily in the short-run by management decision such as advertising, repairs and maintenance, and research and development; also called managed cost."
+      ],
+      "answer": 3,
+      "explanation": "'Discretionary Costs' is defined as: A cost changed easily in the short-run by management decision such as advertising, repairs and maintenance, and research and development; also called managed cost."
+    },
+    {
+      "question": "What is the definition of 'Fixed Costs'?",
+      "options": [
+        "A mathematical equation for a straight line that expresses how a cost behaves.",
+        "A costing method in which the costs to be inventoried include only variable manufacturing costs (direct materials, direct labor and variable manufacturing overhead). Fixed factory overhead is treated as a period cost and is deducted along with selling and administrative expenses in the period incurred.",
+        "A cost that does not vary depending on production or sales levels, such as rent, property tax, insurance, or interest expense.",
+        "Cost behavior refers to how a cost will react or respond to changes in the level of business activity or volume. As the level of activity rises and falls, a particular cost may rise and fall as well--or it may remain constant."
+      ],
+      "answer": 2,
+      "explanation": "'Fixed Costs' is defined as: A cost that does not vary depending on production or sales levels, such as rent, property tax, insurance, or interest expense."
+    },
+    {
+      "question": "What is the definition of 'High-Low Method'?",
+      "options": [
+        "A costing method that includes all manufacturing costs - direct materials, direct labor, and both variable and fixed overhead - as part of the cost of a finished unit of product. This term is synonymous with full costing method.",
+        "A statistical procedure for determining the line that best fits the data by using all of the data points, not just the high and low data points.",
+        "Abnormal data points; data points that do not fall in the same general pattern as the other data points in a data set.",
+        "An algebraic procedure used to separate a semivariable cost or mixed cost into the fixed and the variable components. The high-low method, as the name indicates, uses two extreme data points to determine the values of a (the fixed cost portion) and b (the variable rate) in the cost - volume formula y = a + bx."
+      ],
+      "answer": 3,
+      "explanation": "'High-Low Method' is defined as: An algebraic procedure used to separate a semivariable cost or mixed cost into the fixed and the variable components. The high-low method, as the name indicates, uses two extreme data points to determine the values of a (the fixed cost portion) and b (the variable rate) in the cost - volume formula y = a + bx."
+    },
+    {
+      "question": "What is the definition of 'Mixed Cost'?",
+      "options": [
+        "Abnormal data points; data points that do not fall in the same general pattern as the other data points in a data set.",
+        "A cost that has both a variable and a fixed component; it varies with changes in activity, but not proportionately.",
+        "The band of volume for which cost-behavior assumptions (fixed cost, fixed cost, variable cost) remain valid.",
+        "Committed fixed costs are those fixed costs that are difficult to adjust and that relate to the investment in facilities, equipment, and the basic organizational structure of a firm."
+      ],
+      "answer": 1,
+      "explanation": "'Mixed Cost' is defined as: A cost that has both a variable and a fixed component; it varies with changes in activity, but not proportionately."
+    },
+    {
+      "question": "What is the definition of 'Regression Analysis'?",
+      "options": [
+        "A statistical procedure for determining the line that best fits the data by using all of the data points, not just the high and low data points.",
+        "Committed fixed costs are those fixed costs that are difficult to adjust and that relate to the investment in facilities, equipment, and the basic organizational structure of a firm.",
+        "A method for analyzing cost behavior in which each account under consideration is classified as either variable or fixed based on the analyst's prior knowledge of how the cost in the account behaves.",
+        "The scatter plot method involves estimating the fixed and variable elements of a mixed cost visually on a graph by plotting historical cost and volume data."
+      ],
+      "answer": 0,
+      "explanation": "'Regression Analysis' is defined as: A statistical procedure for determining the line that best fits the data by using all of the data points, not just the high and low data points."
+    },
+    {
+      "question": "What is the definition of 'Relevant Range'?",
+      "options": [
+        "Committed fixed costs are those fixed costs that are difficult to adjust and that relate to the investment in facilities, equipment, and the basic organizational structure of a firm.",
+        "A method for analyzing cost behavior in which each account under consideration is classified as either variable or fixed based on the analyst's prior knowledge of how the cost in the account behaves.",
+        "A cost changed easily in the short-run by management decision such as advertising, repairs and maintenance, and research and development; also called managed cost.",
+        "The band of volume for which cost-behavior assumptions (fixed cost, fixed cost, variable cost) remain valid."
+      ],
+      "answer": 3,
+      "explanation": "'Relevant Range' is defined as: The band of volume for which cost-behavior assumptions (fixed cost, fixed cost, variable cost) remain valid."
+    },
+    {
+      "question": "What is the definition of 'Scatter Plot'?",
+      "options": [
+        "Income statement that organizes cost by behavior. It shows the relationship of variable costs and fixed costs, regardless of the functions a given cost item is associated with.",
+        "A mathematical equation for a straight line that expresses how a cost behaves.",
+        "The scatter plot method involves estimating the fixed and variable elements of a mixed cost visually on a graph by plotting historical cost and volume data.",
+        "Costs that are approximately fixed over a small volume range, but are variable over a large volume range. For example, supervision costs are fixed for a given range of production volume, but increased production often requires additional work shifts leading to added supervisory costs in a lump-sum fashion."
+      ],
+      "answer": 2,
+      "explanation": "'Scatter Plot' is defined as: The scatter plot method involves estimating the fixed and variable elements of a mixed cost visually on a graph by plotting historical cost and volume data."
+    },
+    {
+      "question": "What is the definition of 'Step Costs'?",
+      "options": [
+        "A mathematical equation for a straight line that expresses how a cost behaves.",
+        "A cost changed easily in the short-run by management decision such as advertising, repairs and maintenance, and research and development; also called managed cost.",
+        "Costs that are approximately fixed over a small volume range, but are variable over a large volume range. For example, supervision costs are fixed for a given range of production volume, but increased production often requires additional work shifts leading to added supervisory costs in a lump-sum fashion.",
+        "The scatter plot method involves estimating the fixed and variable elements of a mixed cost visually on a graph by plotting historical cost and volume data."
+      ],
+      "answer": 2,
+      "explanation": "'Step Costs' is defined as: Costs that are approximately fixed over a small volume range, but are variable over a large volume range. For example, supervision costs are fixed for a given range of production volume, but increased production often requires additional work shifts leading to added supervisory costs in a lump-sum fashion."
+    },
+    {
+      "question": "What is the definition of 'Outliers'?",
+      "options": [
+        "Cost behavior refers to how a cost will react or respond to changes in the level of business activity or volume. As the level of activity rises and falls, a particular cost may rise and fall as well--or it may remain constant.",
+        "Abnormal data points; data points that do not fall in the same general pattern as the other data points in a data set.",
+        "A cost that does not vary depending on production or sales levels, such as rent, property tax, insurance, or interest expense.",
+        "A costing method in which the costs to be inventoried include only variable manufacturing costs (direct materials, direct labor and variable manufacturing overhead). Fixed factory overhead is treated as a period cost and is deducted along with selling and administrative expenses in the period incurred."
+      ],
+      "answer": 1,
+      "explanation": "'Outliers' is defined as: Abnormal data points; data points that do not fall in the same general pattern as the other data points in a data set."
+    },
+    {
+      "question": "What is the definition of 'Variable Costs'?",
+      "options": [
+        "Abnormal data points; data points that do not fall in the same general pattern as the other data points in a data set.",
+        "The scatter plot method involves estimating the fixed and variable elements of a mixed cost visually on a graph by plotting historical cost and volume data.",
+        "A cost that is directly proportional to the volume of output produced.",
+        "A statistical procedure for determining the line that best fits the data by using all of the data points, not just the high and low data points."
+      ],
+      "answer": 2,
+      "explanation": "'Variable Costs' is defined as: A cost that is directly proportional to the volume of output produced."
+    },
+    {
+      "question": "What is the definition of 'Variable Costing'?",
+      "options": [
+        "A statistical procedure for determining the line that best fits the data by using all of the data points, not just the high and low data points.",
+        "A cost changed easily in the short-run by management decision such as advertising, repairs and maintenance, and research and development; also called managed cost.",
+        "A costing method that includes all manufacturing costs - direct materials, direct labor, and both variable and fixed overhead - as part of the cost of a finished unit of product. This term is synonymous with full costing method.",
+        "A costing method in which the costs to be inventoried include only variable manufacturing costs (direct materials, direct labor and variable manufacturing overhead). Fixed factory overhead is treated as a period cost and is deducted along with selling and administrative expenses in the period incurred."
+      ],
+      "answer": 3,
+      "explanation": "'Variable Costing' is defined as: A costing method in which the costs to be inventoried include only variable manufacturing costs (direct materials, direct labor and variable manufacturing overhead). Fixed factory overhead is treated as a period cost and is deducted along with selling and administrative expenses in the period incurred."
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "title": "Match Terms with Definitions",
+      "questions": [
+        {
+          "prompt": "Match each term to its correct definition",
+          "pairs": [
+            [
+              "Absorption Costing",
+              "A costing method that includes all manufacturing costs - direct materials, direct labor, and both variable and fixed overhead - as part of the cost of a finished unit of product. This term is synonymous with full costing method."
+            ],
+            [
+              "Account Analysis",
+              "A method for analyzing cost behavior in which each account under consideration is classified as either variable or fixed based on the analyst's prior knowledge of how the cost in the account behaves."
+            ],
+            [
+              "Committed Fixed Costs",
+              "Committed fixed costs are those fixed costs that are difficult to adjust and that relate to the investment in facilities, equipment, and the basic organizational structure of a firm."
+            ],
+            [
+              "Contribution Margin",
+              "The difference between total sales revenue and total variable costs."
+            ],
+            [
+              "Contribution Margin Income Statement",
+              "Income statement that organizes cost by behavior. It shows the relationship of variable costs and fixed costs, regardless of the functions a given cost item is associated with."
+            ],
+            [
+              "Cost Behavior",
+              "Cost behavior refers to how a cost will react or respond to changes in the level of business activity or volume. As the level of activity rises and falls, a particular cost may rise and fall as well--or it may remain constant."
+            ],
+            [
+              "Cost Equation",
+              "A mathematical equation for a straight line that expresses how a cost behaves."
+            ],
+            [
+              "Curvilinear Costs",
+              "A cost that changes with volume but not at a constant rate. A cost function that cannot be represented with a straight line but instead is represented with a curve that reflects either increasing or decreasing marginal costs."
+            ],
+            [
+              "Discretionary Costs",
+              "A cost changed easily in the short-run by management decision such as advertising, repairs and maintenance, and research and development; also called managed cost."
+            ],
+            [
+              "Fixed Costs",
+              "A cost that does not vary depending on production or sales levels, such as rent, property tax, insurance, or interest expense."
+            ],
+            [
+              "High-Low Method",
+              "An algebraic procedure used to separate a semivariable cost or mixed cost into the fixed and the variable components. The high-low method, as the name indicates, uses two extreme data points to determine the values of a (the fixed cost portion) and b (the variable rate) in the cost - volume formula y = a + bx."
+            ],
+            [
+              "Mixed Cost",
+              "A cost that has both a variable and a fixed component; it varies with changes in activity, but not proportionately."
+            ],
+            [
+              "Regression Analysis",
+              "A statistical procedure for determining the line that best fits the data by using all of the data points, not just the high and low data points."
+            ],
+            [
+              "Relevant Range",
+              "The band of volume for which cost-behavior assumptions (fixed cost, fixed cost, variable cost) remain valid."
+            ],
+            [
+              "Scatter Plot",
+              "The scatter plot method involves estimating the fixed and variable elements of a mixed cost visually on a graph by plotting historical cost and volume data."
+            ],
+            [
+              "Step Costs",
+              "Costs that are approximately fixed over a small volume range, but are variable over a large volume range. For example, supervision costs are fixed for a given range of production volume, but increased production often requires additional work shifts leading to added supervisory costs in a lump-sum fashion."
+            ],
+            [
+              "Outliers",
+              "Abnormal data points; data points that do not fall in the same general pattern as the other data points in a data set."
+            ],
+            [
+              "Variable Costs",
+              "A cost that is directly proportional to the volume of output produced."
+            ],
+            [
+              "Variable Costing",
+              "A costing method in which the costs to be inventoried include only variable manufacturing costs (direct materials, direct labor and variable manufacturing overhead). Fixed factory overhead is treated as a period cost and is deducted along with selling and administrative expenses in the period incurred."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Alphabetical Order",
+      "questions": [
+        {
+          "prompt": "Arrange these terms alphabetically",
+          "items": [
+            "Absorption Costing",
+            "Account Analysis",
+            "Committed Fixed Costs",
+            "Contribution Margin",
+            "Contribution Margin Income Statement",
+            "Cost Behavior",
+            "Cost Equation",
+            "Curvilinear Costs",
+            "Discretionary Costs",
+            "Fixed Costs",
+            "High-Low Method",
+            "Mixed Cost",
+            "Outliers",
+            "Regression Analysis",
+            "Relevant Range",
+            "Scatter Plot",
+            "Step Costs",
+            "Variable Costing",
+            "Variable Costs"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Match Cost-Related Terms",
+      "questions": [
+        {
+          "prompt": "Match cost-related terms to their correct definitions",
+          "pairs": [
+            [
+              "Absorption Costing",
+              "A costing method that includes all manufacturing costs - direct materials, direct labor, and both variable and fixed overhead - as part of the cost of a finished unit of product. This term is synonymous with full costing method."
+            ],
+            [
+              "Committed Fixed Costs",
+              "Committed fixed costs are those fixed costs that are difficult to adjust and that relate to the investment in facilities, equipment, and the basic organizational structure of a firm."
+            ],
+            [
+              "Cost Behavior",
+              "Cost behavior refers to how a cost will react or respond to changes in the level of business activity or volume. As the level of activity rises and falls, a particular cost may rise and fall as well--or it may remain constant."
+            ],
+            [
+              "Cost Equation",
+              "A mathematical equation for a straight line that expresses how a cost behaves."
+            ],
+            [
+              "Curvilinear Costs",
+              "A cost that changes with volume but not at a constant rate. A cost function that cannot be represented with a straight line but instead is represented with a curve that reflects either increasing or decreasing marginal costs."
+            ],
+            [
+              "Discretionary Costs",
+              "A cost changed easily in the short-run by management decision such as advertising, repairs and maintenance, and research and development; also called managed cost."
+            ],
+            [
+              "Fixed Costs",
+              "A cost that does not vary depending on production or sales levels, such as rent, property tax, insurance, or interest expense."
+            ],
+            [
+              "Mixed Cost",
+              "A cost that has both a variable and a fixed component; it varies with changes in activity, but not proportionately."
+            ],
+            [
+              "Step Costs",
+              "Costs that are approximately fixed over a small volume range, but are variable over a large volume range. For example, supervision costs are fixed for a given range of production volume, but increased production often requires additional work shifts leading to added supervisory costs in a lump-sum fashion."
+            ],
+            [
+              "Variable Costs",
+              "A cost that is directly proportional to the volume of output produced."
+            ],
+            [
+              "Variable Costing",
+              "A costing method in which the costs to be inventoried include only variable manufacturing costs (direct materials, direct labor and variable manufacturing overhead). Fixed factory overhead is treated as a period cost and is deducted along with selling and administrative expenses in the period incurred."
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "type": "ordering",
+      "title": "Sort by Concept Type",
+      "questions": [
+        {
+          "prompt": "Sort terms by type (Costs first, then Non-cost terms)",
+          "items": [
+            "Absorption Costing",
+            "Committed Fixed Costs",
+            "Cost Behavior",
+            "Cost Equation",
+            "Curvilinear Costs",
+            "Discretionary Costs",
+            "Fixed Costs",
+            "Mixed Cost",
+            "Step Costs",
+            "Variable Costing",
+            "Variable Costs",
+            "Account Analysis",
+            "Contribution Margin",
+            "Contribution Margin Income Statement",
+            "High-Low Method",
+            "Outliers",
+            "Regression Analysis",
+            "Relevant Range",
+            "Scatter Plot"
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Chapter 6 Key Terms.pdf"
+  ]
+}
