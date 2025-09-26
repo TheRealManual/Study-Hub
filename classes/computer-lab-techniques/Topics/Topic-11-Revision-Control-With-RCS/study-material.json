@@ -1,0 +1,143 @@
+{
+  "topic": "Topic 11 - Revision Control with RCS",
+  "notes": [
+    {
+      "title": "Introduction to RCS",
+      "content": "The Revision Control System (RCS) is an early version control tool used to track file revisions, commonly used in Unix environments before Git and SVN.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "146-160"
+    },
+    {
+      "title": "RCS Directory Setup",
+      "content": "RCS stores its metadata in an RCS subdirectory. To use RCS, you must create this directory with 'mkdir RCS'. Never manually edit its contents.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "147"
+    },
+    {
+      "title": "Basic Workflow",
+      "content": "1. Create or edit a file.\n2. Check the file in with 'ci'.\n3. Retrieve it with 'co' when needed.\n4. Use 'rlog' to view revision history and 'rcsdiff' to compare revisions.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "148-150"
+    },
+    {
+      "title": "Important Commands",
+      "content": "ci (check in), co (check out), rcsdiff (compare versions), rlog (view history), ident (show embedded IDs). Options like -l (lock), -u (unlock), and -r (specify revision) are frequently used.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "151-155"
+    },
+    {
+      "title": "RCS Keywords",
+      "content": "RCS supports embedded keywords like $Id$ that expand when files are checked in or out. These are useful for embedding version information directly in source files.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "156-157"
+    },
+    {
+      "title": "RCS Limitations",
+      "content": "RCS is file-based, not repository-based, which makes it unsuitable for large multi-file projects. Modern systems like Git are preferred, but RCS principles remain foundational.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "158-160"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What does RCS stand for?",
+      "back": "Revision Control System",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "146"
+    },
+    {
+      "front": "Which command checks a file into RCS?",
+      "back": "ci (check in)",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "148"
+    },
+    {
+      "front": "Where are RCS metadata files stored?",
+      "back": "Inside the RCS subdirectory",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "147"
+    },
+    {
+      "front": "What does the $Id$ keyword do in RCS?",
+      "back": "Embeds version control information directly in a source file",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "156"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is the purpose of the 'ci' command in RCS?",
+      "options": [
+        "Check in a file to the repository",
+        "Check out a file from the repository",
+        "Compare file revisions",
+        "List file history"
+      ],
+      "answer": 0,
+      "explanation": "'ci' is used to check in files, creating a new revision in RCS.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "148"
+    },
+    {
+      "question": "Which RCS command compares two revisions of a file?",
+      "options": [
+        "rlog",
+        "ident",
+        "rcsdiff",
+        "ci"
+      ],
+      "answer": 2,
+      "explanation": "'rcsdiff' is used to show differences between two versions of a file.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "150"
+    },
+    {
+      "question": "What happens when you run 'co -l filename'?",
+      "options": [
+        "Checks the file in and locks it",
+        "Checks the file out and locks it for editing",
+        "Unlocks the file",
+        "Shows the revision log"
+      ],
+      "answer": 1,
+      "explanation": "'co -l' checks out the file and locks it so others cannot modify it until checked back in.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "152"
+    }
+  ],
+  "games": {
+    "ordering": [
+      {
+        "prompt": "Arrange the steps of the typical RCS workflow in order.",
+        "items": [
+          "Create or edit a file",
+          "Check in with ci",
+          "Check out with co",
+          "Use rlog or rcsdiff for history/changes"
+        ],
+        "answer": [
+          "Create or edit a file",
+          "Check in with ci",
+          "Check out with co",
+          "Use rlog or rcsdiff for history/changes"
+        ],
+        "source": "Generated Textbook On Topics.pdf",
+        "pages": "148-150"
+      }
+    ],
+    "matching": [
+      {
+        "prompt": "Match RCS commands with their purposes.",
+        "pairs": {
+          "ci": "Check in a file",
+          "co": "Check out a file",
+          "rlog": "Show revision history",
+          "rcsdiff": "Compare revisions",
+          "ident": "Show embedded version IDs"
+        },
+        "source": "Generated Textbook On Topics.pdf",
+        "pages": "151-155"
+      }
+    ]
+  }
+}

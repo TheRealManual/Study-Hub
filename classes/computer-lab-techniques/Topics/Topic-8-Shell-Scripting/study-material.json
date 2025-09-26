@@ -1,0 +1,274 @@
+{
+  "title": "Topic 8 - Shell Scripting",
+  "notes": [
+    [
+      "Why shell scripting: automate repetitive tasks, glue commands together, simplify workflows.",
+      100,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Structure of a script: shebang, comments, commands, exit codes.",
+      101,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Shebang line: #!/bin/bash chooses interpreter; must be first line.",
+      101,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Execution: chmod +x script.sh, run as ./script.sh; or sh script.sh without exec perms.",
+      102,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Variables: assignment without spaces (x=5); usage with $x; exporting to environment.",
+      103,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Quoting in scripts: ' ' literal, \" \" allows vars, \\ escapes.",
+      103,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Positional parameters: $0 script name, $1 first arg, $# count, $@ all args.",
+      104,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Exit codes: 0 success, non-zero error; check with echo $?.",
+      105,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Conditionals: if/then/elif/else/fi; test [ expr ] or [[ expr ]].",
+      106,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Case statement: case var in pattern) commands;; esac.",
+      107,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Loops: for item in list; do ... done; while condition; do ... done; until loops.",
+      108,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Functions: name() { commands; }; return values with exit codes.",
+      109,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Input/output: read var; echo text; printf for formatting.",
+      110,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Redirection in scripts: >, >>, <, 2>, &>.",
+      111,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Error handling: set -e (exit on error), trap to handle signals.",
+      112,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Here documents: <<EOF ... EOF for multiline input.",
+      113,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Here strings: <<< for single-line input.",
+      113,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Arrays: arr=(a b c); echo ${arr[1]}; iterate with for i in ${arr[@]}.",
+      114,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Practical example: backup script copying files with date stamps.",
+      115,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Course relevance: required for labs combining filters, make, and debugging tools.",
+      116,
+      "Generated Textbook On Topics.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "First line of shell script specifying interpreter",
+      "back": "#!/bin/bash"
+    },
+    {
+      "front": "Command to make script executable",
+      "back": "chmod +x script.sh"
+    },
+    {
+      "front": "Variable assignment syntax",
+      "back": "x=5"
+    },
+    {
+      "front": "Positional parameter for first argument",
+      "back": "$1"
+    },
+    {
+      "front": "Exit code meaning success",
+      "back": "0"
+    },
+    {
+      "front": "Check last exit code",
+      "back": "echo $?"
+    },
+    {
+      "front": "Syntax to start if-statement",
+      "back": "if [ condition ]; then"
+    },
+    {
+      "front": "Loop that iterates over list",
+      "back": "for item in list; do ... done"
+    },
+    {
+      "front": "Define a function named foo",
+      "back": "foo() { commands; }"
+    },
+    {
+      "front": "Syntax for here document",
+      "back": "<<EOF ... EOF"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What does the first line #!/bin/bash in a script specify?",
+      "options": [
+        "Default PATH",
+        "Interpreter to execute the script",
+        "Script author",
+        "Shell history file"
+      ],
+      "answer": 1,
+      "explanation": "Shebang tells kernel which interpreter to use."
+    },
+    {
+      "question": "How do you make a script executable?",
+      "options": [
+        "sh script.sh",
+        "chmod +x script.sh",
+        "run script.sh",
+        "exec script.sh"
+      ],
+      "answer": 1,
+      "explanation": "chmod +x adds execute permission."
+    },
+    {
+      "question": "What variable holds the number of positional parameters?",
+      "options": [
+        "$@",
+        "$#",
+        "$0",
+        "$*"
+      ],
+      "answer": 1,
+      "explanation": "$# expands to count of arguments."
+    },
+    {
+      "question": "Which loop runs while condition is true?",
+      "options": [
+        "for",
+        "while",
+        "until",
+        "case"
+      ],
+      "answer": 1,
+      "explanation": "while repeats until condition fails."
+    },
+    {
+      "question": "Which keyword ends an if statement block?",
+      "options": [
+        "done",
+        "fi",
+        "esac",
+        "exit"
+      ],
+      "answer": 1,
+      "explanation": "if blocks end with fi."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "Backup Script Workflow",
+      "questions": [
+        {
+          "prompt": "Order steps in writing and running a backup script",
+          "items": [
+            "Write commands in script.sh with shebang",
+            "Mark file executable with chmod +x script.sh",
+            "Run ./script.sh",
+            "Check exit status with echo $?"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Shell Scripting Elements",
+      "questions": [
+        {
+          "pairs": [
+            {
+              "left": "$0",
+              "right": "Script name"
+            },
+            {
+              "left": "$1",
+              "right": "First argument"
+            },
+            {
+              "left": "$#",
+              "right": "Number of arguments"
+            },
+            {
+              "left": "$@",
+              "right": "All arguments"
+            },
+            {
+              "left": "if [ ]",
+              "right": "Conditional statement"
+            },
+            {
+              "left": "for ... done",
+              "right": "Loop structure"
+            },
+            {
+              "left": "function foo()",
+              "right": "Define function"
+            },
+            {
+              "left": "set -e",
+              "right": "Exit script on error"
+            },
+            {
+              "left": "trap",
+              "right": "Handle signals"
+            },
+            {
+              "left": "<<EOF",
+              "right": "Here document start"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Generated Textbook On Topics.pdf"
+  ]
+}

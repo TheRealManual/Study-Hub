@@ -1,0 +1,111 @@
+{
+  "topic": "Topic 10- Web Publishing & CGI",
+  "notes": [
+    {
+      "title": "Introduction to Web Publishing",
+      "content": "Web publishing on Unix systems typically involves using Apache or another web server to serve static files or dynamic content. Each user may have a public_html directory for hosting pages.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "136-145"
+    },
+    {
+      "title": "CGI Basics",
+      "content": "The Common Gateway Interface (CGI) allows a web server to run external programs to generate dynamic web content. These programs can be written in C, Python, Perl, or shell scripts.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "136-145"
+    },
+    {
+      "title": "CGI Workflow",
+      "content": "1. Browser requests a URL.\n2. Server executes the CGI script.\n3. Script processes input and produces HTML.\n4. Server returns HTML to the browser.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "136-145"
+    },
+    {
+      "title": "Permissions & Security",
+      "content": "CGI scripts must be executable by the web server and carefully secured to avoid vulnerabilities such as code injection. Use correct shebangs, validate input, and set appropriate permissions.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "136-145"
+    }
+  ],
+  "flashcards": [
+    {
+      "front": "What does CGI stand for in web publishing?",
+      "back": "Common Gateway Interface",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "136"
+    },
+    {
+      "front": "Where do Unix users typically store web pages for publishing?",
+      "back": "In their public_html directory",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "137"
+    },
+    {
+      "front": "What is the role of the shebang (#!) in CGI scripts?",
+      "back": "It specifies the interpreter that should run the script (e.g., #!/usr/bin/python3).",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "140"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which of the following is true about CGI scripts?",
+      "options": [
+        "They must be written only in C.",
+        "They allow servers to generate dynamic web pages.",
+        "They can only serve static content.",
+        "They cannot accept user input."
+      ],
+      "answer": 1,
+      "explanation": "CGI allows web servers to run programs that produce dynamic content, not just static files.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "138-139"
+    },
+    {
+      "question": "Where should CGI scripts usually be placed for execution by a web server?",
+      "options": [
+        "Anywhere in the file system",
+        "The /cgi-bin/ directory or designated CGI-enabled directories",
+        "Inside /etc/",
+        "Inside /usr/lib/"
+      ],
+      "answer": 1,
+      "explanation": "Traditionally, CGI scripts are placed in /cgi-bin/ or other directories configured by the web server.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "139"
+    }
+  ],
+  "games": {
+    "ordering": [
+      {
+        "prompt": "Arrange the steps of a CGI request-response workflow in order.",
+        "items": [
+          "Browser sends request to server",
+          "Server runs CGI script",
+          "CGI script generates output",
+          "Server sends output to browser"
+        ],
+        "answer": [
+          "Browser sends request to server",
+          "Server runs CGI script",
+          "CGI script generates output",
+          "Server sends output to browser"
+        ],
+        "source": "Generated Textbook On Topics.pdf",
+        "pages": "141"
+      }
+    ],
+    "matching": [
+      {
+        "prompt": "Match the web publishing/CGI terms to their descriptions.",
+        "pairs": {
+          "public_html": "Directory where users place web pages",
+          "CGI": "Standard for running programs via web servers",
+          "Shebang": "Specifies interpreter for a script",
+          "Apache": "Commonly used Unix web server"
+        },
+        "source": "Generated Textbook On Topics.pdf",
+        "pages": "142-145"
+      }
+    ]
+  }
+}

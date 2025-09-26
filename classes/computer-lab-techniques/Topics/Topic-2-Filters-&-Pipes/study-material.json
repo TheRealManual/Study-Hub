@@ -1,0 +1,212 @@
+{
+  "title": "Topic 2 - Filters & Pipes",
+  "notes": [
+    [
+      "Filters and Pipes are one of Unix\u2019s most powerful features: they allow chaining simple commands into complex workflows by passing the output of one command as the input to the next.",
+      15,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "The `grep` command searches for text patterns in files or input streams. It supports basic regular expressions such as `.`, `[]`, `[^]`, `*`, `^`, and `$`.",
+      16,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Extended regular expressions require `egrep` or `grep -E`, adding operators like `?`, `+`, `{n,m}`, and grouping `(pat1|pat2)`.",
+      17,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Common `grep` flags: `-c` (count), `-i` (ignore case), `-l` (list filenames), `-n` (line numbers), `-v` (invert match), `-w` (whole words), `-o` (only matching part).",
+      18,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "The `sed` command is a stream editor that can substitute or delete lines using regex. Syntax: `sed -e 's/pattern/replacement/' file`.",
+      19,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "To replace globally across a line in sed, add `g` as in `sed -e 's/foo/bar/g'`. To delete matching lines, use `sed -e '/pattern/d'`.",
+      20,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "The `tr` command translates or deletes characters. Examples: `tr A-Z a-z` (lowercase), `tr -d '0-9'` (remove digits).",
+      21,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Flags for `tr`: `-c` complement set, `-s` squeeze repeats, `-d` delete characters. Example: `tr -cs A-Za-z '\\n'` splits words onto new lines.",
+      22,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "The `sort` command orders lines of text. By default it sorts alphabetically. Use `-n` for numeric, `-r` for reverse, `-u` for unique.",
+      23,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "You can sort by columns with `-k`. Example: `sort -k2,2 file` sorts based on the 2nd field. Combine multiple keys for tie-breaking.",
+      24,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "The `cut` command selects portions of lines by byte (`-b`) or field (`-f`). Example: `cut -f1,3 -d',' file.csv` extracts first and third CSV columns.",
+      25,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "The `paste` command merges files line by line with a delimiter. Example: `paste file1 file2` produces side-by-side output.",
+      26,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "With `paste -d` you can set custom delimiters, and combined with `sed` you can produce CSV outputs.",
+      27,
+      "Generated Textbook On Topics.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "prompt": "Command to search text using patterns",
+      "answer": "grep"
+    },
+    {
+      "prompt": "Command to edit streams with substitutions",
+      "answer": "sed"
+    },
+    {
+      "prompt": "Flag in grep to ignore case",
+      "answer": "-i"
+    },
+    {
+      "prompt": "Command to translate or delete characters",
+      "answer": "tr"
+    },
+    {
+      "prompt": "Flag in sort to ensure only unique lines",
+      "answer": "-u"
+    },
+    {
+      "prompt": "Command to select specific columns from text",
+      "answer": "cut"
+    },
+    {
+      "prompt": "Command to merge files line by line",
+      "answer": "paste"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which grep option shows line numbers of matches?",
+      "options": [
+        "-n",
+        "-l",
+        "-c",
+        "-o"
+      ],
+      "answer": 0,
+      "explanation": "`-n` shows line numbers with matches."
+    },
+    {
+      "question": "What does `sed -e '/error/d' logfile` do?",
+      "options": [
+        "Replaces 'error' with 'd'",
+        "Deletes lines containing 'error'",
+        "Prints only 'error' lines",
+        "Does nothing"
+      ],
+      "answer": 1,
+      "explanation": "`/pattern/d` deletes lines containing the pattern."
+    },
+    {
+      "question": "Which tr command removes digits from input?",
+      "options": [
+        "tr 0-9 ''",
+        "tr -d '0-9'",
+        "tr -c 0-9",
+        "tr -s 0-9"
+      ],
+      "answer": 1,
+      "explanation": "`-d` deletes characters in the given set."
+    },
+    {
+      "question": "How would you sort numbers in descending order?",
+      "options": [
+        "sort -nr",
+        "sort -n",
+        "sort -r",
+        "sort -u"
+      ],
+      "answer": 0,
+      "explanation": "`-n` numeric sort, `-r` reverse \u2192 together `-nr`."
+    },
+    {
+      "question": "What does `cut -f2 -d',' data.csv` output?",
+      "options": [
+        "All columns",
+        "Second column",
+        "First two columns",
+        "Deletes second column"
+      ],
+      "answer": 1,
+      "explanation": "`-f2` selects field 2 with comma delimiter."
+    },
+    {
+      "question": "Which paste command produces CSV output?",
+      "options": [
+        "paste file1 file2",
+        "paste -d, file1 file2",
+        "paste -u file1 file2",
+        "paste -s file1 file2"
+      ],
+      "answer": 1,
+      "explanation": "`-d,` sets comma as delimiter."
+    }
+  ],
+  "games": {
+    "ordering": [
+      {
+        "prompt": "Arrange the workflow for filtering and processing log files",
+        "items": [
+          "Generate log output with a program",
+          "Filter lines containing errors with grep",
+          "Transform or clean data with sed/tr",
+          "Sort results and remove duplicates with sort -u",
+          "Save processed output to file"
+        ]
+      }
+    ],
+    "matching": [
+      {
+        "pairs": [
+          {
+            "left": "grep -v",
+            "right": "Show lines that do NOT match pattern"
+          },
+          {
+            "left": "sed 's/foo/bar/g'",
+            "right": "Replace all 'foo' with 'bar'"
+          },
+          {
+            "left": "tr A-Z a-z",
+            "right": "Convert uppercase to lowercase"
+          },
+          {
+            "left": "sort -k2,2",
+            "right": "Sort based on second field"
+          },
+          {
+            "left": "cut -f1,3 -d','",
+            "right": "Extract 1st and 3rd columns from CSV"
+          },
+          {
+            "left": "paste -d '|'",
+            "right": "Join files with pipe delimiter"
+          }
+        ]
+      }
+    ]
+  }
+}

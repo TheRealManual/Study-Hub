@@ -1,0 +1,419 @@
+{
+  "title": "Topic 1 - Unix Basics & File Management",
+  "notes": [
+    [
+      "Unix philosophy: small tools, text streams, and composition via pipes; 'everything is a file' abstraction.",
+      1,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Filesystem tree: root (/), standard dirs (/bin, /etc, /usr, /var, /home), purpose and typical contents.",
+      1,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Absolute vs relative paths; PWD, ., .., and ~ (home expansion); when to prefer absolute paths for scripts.",
+      2,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "pwd prints current directory; cd changes directory; cd - toggles back; cd ~user jumps to another user\u2019s home.",
+      2,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Globbing happens in the shell: *, ?, [abc]; differs from regex used by grep/sed/awk (performed inside the program).",
+      3,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Viewing files: cat for concatenation; less/more for paging; less supports search (/pattern), backward nav (b), and follow (F).",
+      3,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Previewing content: head -n, tail -n; tail -f follows growing logs; less +F similar to follow mode.",
+      4,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Identify file types: file uses magic database (MIME-like); contrast with relying on extensions.",
+      4,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Counting: wc -l (lines), -w (words), -c (bytes). Combine with pipes to summarize many files.",
+      5,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Create/update timestamps: touch creates empty files if absent; updates mtime if present.",
+      5,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Copy/move/rename: cp [-iR]; mv [-i]; prefer -i for safety; beware of clobbering without -i.",
+      6,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Remove: rm [-i|-r|-f]; rmdir removes empty dirs; prefer rmdir for empty trees; test with echo first.",
+      6,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Directories: mkdir [-p] makes nested trees; organize projects with src/, bin/, data/, docs/ for clarity.",
+      7,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Listing: ls -l (long), -a (dotfiles), -h (human sizes), -t (mtime sort), -r (reverse), -d (dir entry itself).",
+      7,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Exploring trees: tree renders hierarchies; alternatives when tree isn\u2019t installed: find . -maxdepth N -type d -print.",
+      8,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Search by attributes: find predicates (-name, -type, -mtime, -size, -user, -perm) and actions (-print, -delete, -exec).",
+      8,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Safe find workflow: run with -print first; confirm; then apply -delete or -exec ... {} \\; ; quote globs to avoid shell expansion.",
+      9,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "locate uses prebuilt DB; fast but may be stale; updatedb refreshes index; good for name-only lookups.",
+      9,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Permissions model: rwx bits for user/group/others; numeric 4/2/1; examples 0644 (-rw-r--r--) and 0755 (-rwxr-xr-x).",
+      10,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "chmod symbolic (u/g/o +/- r/w/x) and octal; common recipes for scripts and data files; beware executable bit.",
+      10,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Ownership: chown user[:group] file; chgrp group file; requires privileges; how ownership interacts with shared dirs.",
+      11,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Umask defaults restrict new-file permissions; compute effective mode as base minus umask; e.g., umask 022 \u2192 files 644, dirs 755.",
+      11,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Disk usage and quotas: du -sh dir/ summarizes; df -h shows filesystems; watch for large temp/log files.",
+      12,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Mini-workflow: find large logs: find logs -type f -size +1M -print | xargs -r ls -lh | sort -k5 -h.",
+      12,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Mini-workflow: top 10 biggest files: find . -type f -printf \"%s %p\\n\" | sort -nr | head.",
+      13,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Mini-workflow: confirm and clean tmp: find tmp -type f -mtime +7 -print; then add -delete once reviewed.",
+      13,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Best safety practices: interactive flags (-i), quoting paths with spaces, testing commands with echo, and using -- to end options.",
+      14,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Scripting hooks: combine find/grep/wc for quick reports; capture outputs into logs and audit trails.",
+      14,
+      "Generated Textbook On Topics.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Print working directory",
+      "back": "pwd"
+    },
+    {
+      "front": "Change to previous directory",
+      "back": "cd -"
+    },
+    {
+      "front": "Home directory shorthand",
+      "back": "~ (tilde; expands by shell)"
+    },
+    {
+      "front": "List all files incl. dotfiles (long)",
+      "back": "ls -la"
+    },
+    {
+      "front": "Human-readable sizes",
+      "back": "ls -lh"
+    },
+    {
+      "front": "View first 20 lines",
+      "back": "head -n 20 filename"
+    },
+    {
+      "front": "Follow a growing log",
+      "back": "tail -f logfile"
+    },
+    {
+      "front": "Page through, search text",
+      "back": "less (/, n, N, b, g, G, q)"
+    },
+    {
+      "front": "Identify file type",
+      "back": "file path/to/object"
+    },
+    {
+      "front": "Count lines",
+      "back": "wc -l file"
+    },
+    {
+      "front": "Create empty file/update mtime",
+      "back": "touch file"
+    },
+    {
+      "front": "Copy dir recursively (ask before overwrite)",
+      "back": "cp -iR src/ dst/"
+    },
+    {
+      "front": "Rename/move (interactive)",
+      "back": "mv -i old new"
+    },
+    {
+      "front": "Remove recursively (use with caution)",
+      "back": "rm -r path"
+    },
+    {
+      "front": "Remove empty directory",
+      "back": "rmdir dirname"
+    },
+    {
+      "front": "Make nested directories",
+      "back": "mkdir -p a/b/c"
+    },
+    {
+      "front": "Find by name (literal)",
+      "back": "find . -name 'pattern' -print"
+    },
+    {
+      "front": "Delete with find (after preview!)",
+      "back": "find \u2026 -delete"
+    },
+    {
+      "front": "Permissions 755",
+      "back": "rwxr-xr-x"
+    },
+    {
+      "front": "Numeric rwx values",
+      "back": "r=4, w=2, x=1"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which command shows the present working directory?",
+      "options": [
+        "whereami",
+        "pwd",
+        "cwd",
+        "ls -d"
+      ],
+      "answer": 1,
+      "explanation": "`pwd` prints the absolute path of your current directory."
+    },
+    {
+      "question": "What does `ls -la` display?",
+      "options": [
+        "Only directories",
+        "Only hidden files",
+        "All files including dotfiles, in long format",
+        "Long format without hidden files"
+      ],
+      "answer": 2,
+      "explanation": "`-l` is long listing; `-a` includes dotfiles."
+    },
+    {
+      "question": "Which option makes `cp` ask before overwriting?",
+      "options": [
+        "-r",
+        "-R",
+        "-i",
+        "-f"
+      ],
+      "answer": 2,
+      "explanation": "`-i` prompts interactively, preventing accidental clobber."
+    },
+    {
+      "question": "What permissions does `chmod 755 script.sh` set?",
+      "options": [
+        "rw-rw-r--",
+        "rwxr-xr-x",
+        "rwx------",
+        "rw-r--r--"
+      ],
+      "answer": 1,
+      "explanation": "Owner can rwx; group/others can rx."
+    },
+    {
+      "question": "Which command follows a growing file and prints new lines as they arrive?",
+      "options": [
+        "head -n 50",
+        "tail -f",
+        "less +F",
+        "file -f"
+      ],
+      "answer": 1,
+      "explanation": "`tail -f` streams appended lines; `less +F` is similar."
+    },
+    {
+      "question": "In Unix permissions, what are the numeric values of r, w, x?",
+      "options": [
+        "1,2,4",
+        "2,4,1",
+        "4,2,1",
+        "7,5,3"
+      ],
+      "answer": 2,
+      "explanation": "Read=4, write=2, execute=1."
+    },
+    {
+      "question": "Which command safely removes only empty directories?",
+      "options": [
+        "rm -r",
+        "rm -f",
+        "rmdir",
+        "unlink -d"
+      ],
+      "answer": 2,
+      "explanation": "`rmdir` fails if the directory is not empty\u2014safer semantics."
+    },
+    {
+      "question": "Which `find` predicate matches files modified in the last 24 hours?",
+      "options": [
+        "-mtime 0",
+        "-mtime -1",
+        "-ctime -1",
+        "-atime 0"
+      ],
+      "answer": 1,
+      "explanation": "`-mtime -1` means 'less than 1 day ago'."
+    },
+    {
+      "question": "`touch report.txt` will:",
+      "options": [
+        "Delete the file",
+        "Print the file\u2019s inode",
+        "Create the file if missing or update its mtime",
+        "Set permissions to 000"
+      ],
+      "answer": 2,
+      "explanation": "`touch` creates if absent, or updates mtime if present."
+    },
+    {
+      "question": "Which statement about `locate` is TRUE?",
+      "options": [
+        "It walks the filesystem live each time",
+        "It requires a prebuilt database and may be stale",
+        "It only finds directories",
+        "It matches by file size only"
+      ],
+      "answer": 1,
+      "explanation": "`locate` queries a database (updated by updatedb)."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "Safe Deletion Workflow",
+      "questions": [
+        {
+          "prompt": "Put these steps in order to safely delete logs larger than 10MB in ./logs",
+          "items": [
+            "Preview candidates: find ./logs -type f -size +10M -print",
+            "Confirm the list looks correct",
+            "Delete with find \u2026 -delete or -exec rm {} \\;",
+            "Verify disk usage again with du -sh ./logs"
+          ]
+        },
+        {
+          "prompt": "Arrange a clean project directory structure",
+          "items": [
+            "Plan the tree: src/, bin/, docs/, data/",
+            "Create: mkdir -p project/{src,bin,docs,data}",
+            "Seed docs/ with README and notes",
+            "List structure with tree project"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Command to Purpose",
+      "questions": [
+        {
+          "prompt": "Match command to typical purpose",
+          "pairs": [
+            [
+              "pwd",
+              "Print working directory"
+            ],
+            [
+              "file",
+              "Identify file type via magic"
+            ],
+            [
+              "wc -l",
+              "Count lines"
+            ],
+            [
+              "ls -lh",
+              "Long listing with human sizes"
+            ],
+            [
+              "tail -f",
+              "Follow appended lines in real time"
+            ],
+            [
+              "cp -i",
+              "Interactive copy (ask before overwrite)"
+            ],
+            [
+              "mv",
+              "Move/rename files or directories"
+            ],
+            [
+              "rm -r",
+              "Recursive remove (use with caution)"
+            ],
+            [
+              "mkdir -p",
+              "Create parent directories as needed"
+            ],
+            [
+              "chmod 644",
+              "rw-r--r-- (owner rw, group r, others r)"
+            ]
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Generated Textbook On Topics.pdf"
+  ]
+}

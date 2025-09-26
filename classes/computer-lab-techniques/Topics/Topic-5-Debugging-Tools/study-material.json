@@ -1,0 +1,277 @@
+{
+  "title": "Topic 5 - Debugging Tools",
+  "notes": [
+    [
+      "Why debugging tools matter: systematic diagnosis vs. print statements; reducing trial-and-error.",
+      55,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "The debugging cycle: reproduce bug, isolate cause, hypothesize fix, verify resolution.",
+      56,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "GDB overview: GNU Debugger for C/C++ on Unix; works with programs compiled with -g.",
+      57,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Starting GDB: gdb ./a.out; running program inside with run args.",
+      57,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Breakpoints: break main; break file.c:42; conditional breakpoints with break if x>10.",
+      58,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Stepping: next (step over), step (into), finish (run until return), continue (resume).",
+      58,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Inspecting state: print var, display expr, info locals, info args.",
+      59,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Backtrace: bt shows call stack; frame n to switch context; up/down to move stack frames.",
+      59,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Watches: watch var; rwatch expr; awatch expr; stop when condition triggered.",
+      60,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Core dumps: enabling ulimit -c unlimited; loading with gdb ./a.out core.",
+      61,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Scripting GDB: source script.gdb; commands; define macros.",
+      61,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Valgrind overview: dynamic analysis tool; memcheck detects leaks/invalid memory use.",
+      62,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Running under valgrind: valgrind --leak-check=full ./a.out.",
+      62,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Typical Valgrind output: invalid read/write, use of uninitialized values, memory leak summary.",
+      63,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Other Valgrind tools: callgrind (profiling), helgrind (threads), massif (heap profiler).",
+      64,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "ddd and IDE integrations: graphical frontends for GDB.",
+      65,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Sanitizers in GCC/Clang: -fsanitize=address,undefined,thread.",
+      65,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Logging vs. debugging: complementary roles; structured logs, asserts, and debug symbols.",
+      66,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Best practices: small reproducible tests, isolate modules, automate regression checks.",
+      67,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Course context: required for larger C projects and system programming labs.",
+      68,
+      "Generated Textbook On Topics.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Command to start GDB on program a.out",
+      "back": "gdb ./a.out"
+    },
+    {
+      "front": "GDB: set breakpoint at function main",
+      "back": "break main"
+    },
+    {
+      "front": "GDB: print variable var",
+      "back": "print var"
+    },
+    {
+      "front": "GDB: show call stack",
+      "back": "backtrace (bt)"
+    },
+    {
+      "front": "GDB: move into next line of code",
+      "back": "step"
+    },
+    {
+      "front": "GDB: skip over function calls",
+      "back": "next"
+    },
+    {
+      "front": "Enable core dumps in shell",
+      "back": "ulimit -c unlimited"
+    },
+    {
+      "front": "Valgrind command to check for leaks",
+      "back": "valgrind --leak-check=full ./a.out"
+    },
+    {
+      "front": "Valgrind tool for profiling CPU calls",
+      "back": "callgrind"
+    },
+    {
+      "front": "Compiler flag to include debug info",
+      "back": "-g"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which compiler flag is necessary to make programs debuggable with GDB?",
+      "options": [
+        "-Wall",
+        "-O2",
+        "-g",
+        "-c"
+      ],
+      "answer": 2,
+      "explanation": "`-g` includes debug symbols in the compiled binary."
+    },
+    {
+      "question": "What does the GDB command `bt` show?",
+      "options": [
+        "Breakpoints",
+        "Binary trace",
+        "Backtrace (call stack)",
+        "Buffer table"
+      ],
+      "answer": 2,
+      "explanation": "`bt` shows the call stack."
+    },
+    {
+      "question": "How do you set a conditional breakpoint in GDB?",
+      "options": [
+        "break if condition",
+        "cond break",
+        "break file:line if condition",
+        "stop condition"
+      ],
+      "answer": 0,
+      "explanation": "Use `break ... if condition` syntax."
+    },
+    {
+      "question": "Which Valgrind tool detects memory leaks and invalid memory use?",
+      "options": [
+        "helgrind",
+        "memcheck",
+        "callgrind",
+        "massif"
+      ],
+      "answer": 1,
+      "explanation": "`memcheck` is the default tool for leaks and invalid memory."
+    },
+    {
+      "question": "What is the purpose of `ulimit -c unlimited`?",
+      "options": [
+        "Unlimited memory allocation",
+        "Enable core dumps of any size",
+        "Unlimited processes",
+        "Unlimited CPU time"
+      ],
+      "answer": 1,
+      "explanation": "Allows generation of core dump files when program crashes."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "Debugging Workflow",
+      "questions": [
+        {
+          "prompt": "Order the basic steps of debugging with GDB",
+          "items": [
+            "Compile program with -g",
+            "Start GDB with executable",
+            "Set breakpoints",
+            "Run program inside GDB",
+            "Inspect variables and stack frames",
+            "Step through execution or continue",
+            "Apply fix in source and recompile"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Debugging Commands & Tools",
+      "questions": [
+        {
+          "pairs": [
+            {
+              "left": "break main",
+              "right": "Set breakpoint at function main"
+            },
+            {
+              "left": "next",
+              "right": "Step over function call"
+            },
+            {
+              "left": "step",
+              "right": "Step into function call"
+            },
+            {
+              "left": "print var",
+              "right": "Show variable value"
+            },
+            {
+              "left": "backtrace",
+              "right": "Display call stack"
+            },
+            {
+              "left": "watch x",
+              "right": "Stop when x changes"
+            },
+            {
+              "left": "valgrind --leak-check=full",
+              "right": "Detect memory leaks"
+            },
+            {
+              "left": "callgrind",
+              "right": "Profile program execution"
+            },
+            {
+              "left": "helgrind",
+              "right": "Detect thread race conditions"
+            },
+            {
+              "left": "-fsanitize=address",
+              "right": "Compiler sanitizer for memory errors"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Generated Textbook On Topics.pdf"
+  ]
+}

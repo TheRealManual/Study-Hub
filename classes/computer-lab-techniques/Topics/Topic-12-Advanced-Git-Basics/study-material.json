@@ -1,0 +1,239 @@
+{
+  "title": "Topic 12 - Advanced Git Basics",
+  "notes": [
+    [
+      "Git vs. RCS: Git is distributed and repository-based; supports branching, merging, collaboration.",
+      161,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "git init creates a repository; .git directory stores history and config.",
+      162,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Staging area: git add adds files to staging, git commit saves snapshot.",
+      163,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Branching: git branch list branches; git checkout switch; git merge combine changes.",
+      164,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Remote repos: git remote add origin URL; git push origin master; git pull origin master.",
+      165,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Cloning: git clone URL to copy repository.",
+      166,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Viewing history: git log shows commits; git diff shows changes.",
+      167,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Tagging versions: git tag v1.0 marks commits; lightweight vs. annotated tags.",
+      168,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Undoing changes: git checkout -- file resets; git reset, git revert.",
+      169,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      ".gitignore: specify files Git should ignore (logs, build artifacts).",
+      170,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Collaboration workflow: fork, clone, branch, commit, push, pull request, merge.",
+      171,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Merging conflicts: conflicts marked with <<<, ===, >>>; must resolve manually.",
+      172,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Best practices: frequent commits, meaningful messages, small branches, test merges.",
+      173,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Git config: user.name, user.email, aliases in ~/.gitconfig.",
+      174,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Course relevance: modern replacement for RCS, required for team projects.",
+      175,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Industry use: cornerstone of collaborative software development.",
+      176,
+      "Generated Textbook On Topics.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Command to initialize a new Git repo",
+      "back": "git init"
+    },
+    {
+      "front": "Command to stage changes",
+      "back": "git add"
+    },
+    {
+      "front": "Command to save staged changes",
+      "back": "git commit"
+    },
+    {
+      "front": "Command to list branches",
+      "back": "git branch"
+    },
+    {
+      "front": "Command to switch branches",
+      "back": "git checkout"
+    },
+    {
+      "front": "Command to combine branch changes",
+      "back": "git merge"
+    },
+    {
+      "front": "Command to copy a remote repository",
+      "back": "git clone URL"
+    },
+    {
+      "front": "Command to view commit history",
+      "back": "git log"
+    },
+    {
+      "front": "File to exclude files from Git tracking",
+      "back": ".gitignore"
+    },
+    {
+      "front": "Git file containing repo history and config",
+      "back": ".git directory"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What does 'git add' do?",
+      "options": [
+        "Commits changes to history",
+        "Stages files for commit",
+        "Creates a new repo",
+        "Shows diff"
+      ],
+      "answer": 1,
+      "explanation": "'git add' stages files into the index (staging area).",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "163"
+    },
+    {
+      "question": "Which command creates a local copy of a remote repo?",
+      "options": [
+        "git init",
+        "git fetch",
+        "git clone",
+        "git merge"
+      ],
+      "answer": 2,
+      "explanation": "'git clone' downloads and initializes a local copy.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "166"
+    },
+    {
+      "question": "How does Git handle merging conflicts?",
+      "options": [
+        "Ignores them",
+        "Marks conflict sections in files",
+        "Deletes one version",
+        "Asks to run ci"
+      ],
+      "answer": 1,
+      "explanation": "Git inserts conflict markers <<< === >>> for manual resolution.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "172"
+    },
+    {
+      "question": "Which file lists patterns for files Git should ignore?",
+      "options": [
+        "gitconfig",
+        ".gitignore",
+        "rcsfile",
+        ".gitdir"
+      ],
+      "answer": 1,
+      "explanation": ".gitignore lists paths not tracked by Git.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "170"
+    },
+    {
+      "question": "Which Git command shows commit history?",
+      "options": [
+        "git branch",
+        "git diff",
+        "git log",
+        "git tag"
+      ],
+      "answer": 2,
+      "explanation": "'git log' lists commits chronologically.",
+      "source": "Generated Textbook On Topics.pdf",
+      "pages": "167"
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "Git Workflow",
+      "questions": [
+        {
+          "prompt": "Order the steps of a typical Git workflow",
+          "items": [
+            "git init or git clone",
+            "git add changes",
+            "git commit -m 'message'",
+            "git push origin branch"
+          ],
+          "source": "Generated Textbook On Topics.pdf",
+          "pages": "161-165"
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Git Commands",
+      "questions": [
+        {
+          "prompt": "Match Git commands to their functions",
+          "pairs": {
+            "git init": "Initialize repo",
+            "git add": "Stage changes",
+            "git commit": "Save snapshot",
+            "git branch": "List/create branches",
+            "git checkout": "Switch branch",
+            "git merge": "Combine branches",
+            "git log": "Show commit history",
+            "git diff": "Show changes",
+            "git tag": "Mark versions",
+            ".gitignore": "Ignore listed files"
+          },
+          "source": "Generated Textbook On Topics.pdf",
+          "pages": "163-170"
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Generated Textbook On Topics.pdf"
+  ]
+}

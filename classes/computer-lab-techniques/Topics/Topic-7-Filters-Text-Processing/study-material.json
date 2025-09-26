@@ -1,0 +1,262 @@
+{
+  "title": "Topic 7 - Filters & Text Processing",
+  "notes": [
+    [
+      "Filters concept: programs that transform input to output in pipelines.",
+      83,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "grep basics: grep pattern file; prints lines matching regex.",
+      84,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "grep options: -i (ignore case), -v (invert match), -n (line numbers), -c (count).",
+      84,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Extended regex with egrep or grep -E: +, ?, |, {n,m}.",
+      85,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "sed basics: stream editor; s/pattern/repl/; global flag g; d deletes lines.",
+      86,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "sed examples: sed -e 's/foo/bar/g' file; sed -e '/^$/d' remove blank lines.",
+      86,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "awk basics: pattern {action}; fields $1, $2, $0; NR, NF built-ins.",
+      87,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "awk example: awk '{print $1,$3}' file; sums: awk '{s+=$1} END {print s}'.",
+      87,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "tr basics: character translation; tr A-Z a-z; -d delete; -s squeeze.",
+      88,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "sort basics: sort file; -n numeric, -r reverse, -k column, -u unique.",
+      89,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "cut basics: cut -b byte-range, cut -f field-range -d delimiter.",
+      90,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "paste basics: merge lines of files side by side; paste f1 f2.",
+      91,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Combining filters in pipelines for data processing.",
+      92,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "find vs. grep: file discovery vs. content matching.",
+      93,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Examples: grep error logfile | wc -l; cut -d',' -f2 data.csv | sort -u.",
+      94,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Regular expressions cheat sheet for grep/sed/awk.",
+      95,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Best practices: quote regex, test incrementally, prefer awk for structured data.",
+      96,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Performance notes: grep -F faster for fixed strings; LC_ALL=C speeds up sort.",
+      97,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Course relevance: essential for labs, log parsing, automation.",
+      98,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Outside class: used in scripting, pipelines, and DevOps tooling.",
+      99,
+      "Generated Textbook On Topics.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "grep option to ignore case",
+      "back": "-i"
+    },
+    {
+      "front": "grep option to count matches",
+      "back": "-c"
+    },
+    {
+      "front": "sed command to replace foo with bar globally",
+      "back": "sed -e 's/foo/bar/g'"
+    },
+    {
+      "front": "sed command to delete blank lines",
+      "back": "sed -e '/^$/d'"
+    },
+    {
+      "front": "awk field variable for whole line",
+      "back": "$0"
+    },
+    {
+      "front": "awk built-in variable for record number",
+      "back": "NR"
+    },
+    {
+      "front": "tr command to convert to lowercase",
+      "back": "tr A-Z a-z"
+    },
+    {
+      "front": "sort flag for numeric sort",
+      "back": "-n"
+    },
+    {
+      "front": "cut flag to select by fields with delimiter",
+      "back": "-f -d"
+    },
+    {
+      "front": "paste command purpose",
+      "back": "Combine files line by line"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which tool is best for replacing text patterns in a stream?",
+      "options": [
+        "grep",
+        "awk",
+        "sed",
+        "cut"
+      ],
+      "answer": 2,
+      "explanation": "sed is a stream editor designed for substitutions and deletions."
+    },
+    {
+      "question": "What does `awk '{s+=$1} END {print s}' data.txt` do?",
+      "options": [
+        "Prints first column",
+        "Counts lines",
+        "Sums first column",
+        "Sorts file"
+      ],
+      "answer": 2,
+      "explanation": "Adds first field of each line and prints total."
+    },
+    {
+      "question": "Which grep flag inverts the match?",
+      "options": [
+        "-i",
+        "-c",
+        "-v",
+        "-n"
+      ],
+      "answer": 2,
+      "explanation": "-v selects non-matching lines."
+    },
+    {
+      "question": "What does `tr -s '\\n' ' '` do?",
+      "options": [
+        "Deletes newlines",
+        "Converts spaces to newlines",
+        "Squeezes newlines into spaces",
+        "Sorts input"
+      ],
+      "answer": 2,
+      "explanation": "Squeezes sequences of newlines into single spaces."
+    },
+    {
+      "question": "Which filter merges lines of two files side by side?",
+      "options": [
+        "cut",
+        "sort",
+        "paste",
+        "uniq"
+      ],
+      "answer": 2,
+      "explanation": "paste joins files column-wise."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "Pipeline for Error Codes",
+      "questions": [
+        {
+          "prompt": "Order a pipeline to count unique error codes from a CSV log",
+          "items": [
+            "cut -d',' -f3 logfile.csv",
+            "sort",
+            "uniq -c",
+            "grep 'ERROR' logfile.csv"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Filter Tools",
+      "questions": [
+        {
+          "pairs": [
+            {
+              "left": "grep",
+              "right": "Filter lines by regex match"
+            },
+            {
+              "left": "sed",
+              "right": "Stream editing: substitute or delete"
+            },
+            {
+              "left": "awk",
+              "right": "Pattern scanning & processing"
+            },
+            {
+              "left": "tr",
+              "right": "Translate or delete characters"
+            },
+            {
+              "left": "sort",
+              "right": "Order lines of text"
+            },
+            {
+              "left": "cut",
+              "right": "Extract columns or byte ranges"
+            },
+            {
+              "left": "paste",
+              "right": "Combine files line by line"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Generated Textbook On Topics.pdf"
+  ]
+}

@@ -1,0 +1,274 @@
+{
+  "title": "Topic 9 - Web & Networking Tools",
+  "notes": [
+    [
+      "Networking in Unix: text-based tools for web and remote systems.",
+      117,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "wget basics: wget URL; recursive download with -r; mirror site with -m.",
+      118,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "wget options: -O file to rename output; -c continue download; --limit-rate=200k.",
+      119,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "curl basics: curl URL; supports multiple protocols (HTTP, FTP, etc).",
+      120,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "curl options: -o file save output; -I fetch headers; -d send POST data; -H custom headers.",
+      121,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Using curl for APIs: curl -X GET/POST; JSON payloads; authentication headers.",
+      122,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "scp basics: secure copy between hosts; scp file user@host:/path.",
+      123,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "scp options: -r recursive copy; -P port; preserve attributes with -p.",
+      123,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "sftp basics: interactive file transfer over SSH.",
+      124,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "ssh basics: ssh user@host; authentication via password or key pair.",
+      125,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "ssh config file (~/.ssh/config): Host, User, Port, IdentityFile entries.",
+      126,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Port forwarding: ssh -L local:remote; remote tunneling ssh -R.",
+      127,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Security practices: disable root login, use key auth, change default port.",
+      128,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "netcat (nc): general networking tool; nc host port; listen with -l.",
+      129,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Ping & traceroute: basic connectivity and path diagnostics.",
+      130,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "dig & nslookup: DNS queries; resolve domain info.",
+      131,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "wget vs. curl: wget for bulk/mirror, curl for flexible APIs.",
+      132,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Automation: scripting with wget/curl; cron jobs for data pulls.",
+      133,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Course context: web and ssh required for labs; real-world sysadmin relevance.",
+      134,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Industry use: APIs, deployment scripts, server monitoring, backups.",
+      135,
+      "Generated Textbook On Topics.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Command to download a file via HTTP",
+      "back": "wget URL"
+    },
+    {
+      "front": "wget option to continue interrupted download",
+      "back": "-c"
+    },
+    {
+      "front": "curl option to fetch headers only",
+      "back": "-I"
+    },
+    {
+      "front": "curl option to send POST data",
+      "back": "-d"
+    },
+    {
+      "front": "scp command to copy local.txt to remote host:/tmp",
+      "back": "scp local.txt user@host:/tmp"
+    },
+    {
+      "front": "scp flag for recursive copy",
+      "back": "-r"
+    },
+    {
+      "front": "ssh config default location",
+      "back": "~/.ssh/config"
+    },
+    {
+      "front": "ssh option for local port forwarding",
+      "back": "-L"
+    },
+    {
+      "front": "Command to resolve domain DNS info",
+      "back": "dig domain.com"
+    },
+    {
+      "front": "Networking tool for arbitrary TCP connections",
+      "back": "netcat (nc)"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which command is better suited for interacting with web APIs?",
+      "options": [
+        "wget",
+        "curl",
+        "scp",
+        "ssh"
+      ],
+      "answer": 1,
+      "explanation": "curl supports headers, data payloads, and multiple protocols."
+    },
+    {
+      "question": "How do you resume an interrupted download with wget?",
+      "options": [
+        "-O",
+        "-c",
+        "-r",
+        "-m"
+      ],
+      "answer": 1,
+      "explanation": "The -c option continues partial downloads."
+    },
+    {
+      "question": "Which ssh command sets up local port forwarding?",
+      "options": [
+        "ssh -R",
+        "ssh -X",
+        "ssh -L",
+        "ssh -P"
+      ],
+      "answer": 2,
+      "explanation": "ssh -L forwards local_port:remote_host:remote_port."
+    },
+    {
+      "question": "What does scp -r do?",
+      "options": [
+        "Copies files with retries",
+        "Copies recursively including directories",
+        "Renames destination",
+        "Runs in restricted mode"
+      ],
+      "answer": 1,
+      "explanation": "-r enables recursive directory copy."
+    },
+    {
+      "question": "Which command shows DNS information about a domain?",
+      "options": [
+        "ping",
+        "traceroute",
+        "dig",
+        "scp"
+      ],
+      "answer": 2,
+      "explanation": "dig performs DNS lookups with detailed results."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "SSH Key-Based File Transfer Workflow",
+      "questions": [
+        {
+          "prompt": "Order the steps for secure file transfer with SSH keys",
+          "items": [
+            "Generate SSH key with ssh-keygen",
+            "Copy public key to remote ~/.ssh/authorized_keys",
+            "Test login with ssh user@host",
+            "Use scp or sftp to transfer files without password"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Networking Tools",
+      "questions": [
+        {
+          "pairs": [
+            {
+              "left": "wget",
+              "right": "Download files via HTTP/FTP"
+            },
+            {
+              "left": "curl",
+              "right": "Interact with APIs or fetch URLs"
+            },
+            {
+              "left": "scp",
+              "right": "Copy files over SSH"
+            },
+            {
+              "left": "sftp",
+              "right": "Interactive file transfer over SSH"
+            },
+            {
+              "left": "ssh",
+              "right": "Remote login over encrypted connection"
+            },
+            {
+              "left": "netcat",
+              "right": "Arbitrary TCP/UDP tool"
+            },
+            {
+              "left": "ping",
+              "right": "Check connectivity"
+            },
+            {
+              "left": "traceroute",
+              "right": "Show network path"
+            },
+            {
+              "left": "dig",
+              "right": "DNS queries"
+            },
+            {
+              "left": "~/.ssh/config",
+              "right": "Custom SSH host settings"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Generated Textbook On Topics.pdf"
+  ]
+}

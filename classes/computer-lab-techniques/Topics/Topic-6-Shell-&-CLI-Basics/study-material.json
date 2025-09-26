@@ -1,0 +1,274 @@
+{
+  "title": "Topic 6 - Shell & CLI Basics",
+  "notes": [
+    [
+      "The Unix shell as command-line interpreter: interface between user and OS.",
+      69,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Types of shells: sh, bash, zsh, tcsh; differences in scripting features.",
+      70,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Command execution model: parsing, expansions, redirections, fork/exec.",
+      70,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "History expansion: !!, !-n, !string; editing with ^old^new.",
+      71,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Aliases: creating shortcuts (alias ll='ls -l'); unalias to remove.",
+      71,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Brace expansion: generates sets of strings (touch file{1,2,3}.txt).",
+      72,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Tilde expansion: ~ maps to home directories; ~user to another user\u2019s home.",
+      72,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Variable substitution: $VAR; assigning VAR=value; exporting to environment.",
+      73,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Command substitution: $(cmd) or backticks; nesting allowed with $( ).",
+      73,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Arithmetic expansion: $((expr)); supports +, -, *, /, %.",
+      74,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Quoting: single quotes (literal), double quotes (allow vars), backslash escapes.",
+      74,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Wildcards (globbing): *, ?, [list]; filename expansion distinct from regex.",
+      75,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Job control: &, fg, bg, jobs, kill; suspending with ^Z.",
+      76,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Redirection: > outfile, >> append, < infile, 2> errors, &> both streams.",
+      76,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Pipelines: cmd1 | cmd2; stderr handling with 2>&1.",
+      77,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Builtins vs. external commands; type and which to distinguish.",
+      78,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Customizing environment: .bashrc, .profile; PATH variable.",
+      79,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Scripting basics: shebang #!/bin/bash; chmod +x script.sh.",
+      80,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Control structures: if/then/else, case, for, while; test/[ ] syntax.",
+      81,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Course relevance: builds foundations for shell scripting and automation.",
+      82,
+      "Generated Textbook On Topics.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Default shell on most Linux systems",
+      "back": "bash"
+    },
+    {
+      "front": "Shortcut to repeat last command",
+      "back": "!!"
+    },
+    {
+      "front": "Syntax to define alias ll = ls -l",
+      "back": "alias ll='ls -l'"
+    },
+    {
+      "front": "Command substitution modern syntax",
+      "back": "$(command)"
+    },
+    {
+      "front": "Arithmetic expansion syntax",
+      "back": "$((expression))"
+    },
+    {
+      "front": "Wildcard matching any number of chars",
+      "back": "*"
+    },
+    {
+      "front": "Move job to background",
+      "back": "bg"
+    },
+    {
+      "front": "Redirect stderr only",
+      "back": "2> file"
+    },
+    {
+      "front": "Where to set PATH permanently",
+      "back": "~/.bashrc or ~/.profile"
+    },
+    {
+      "front": "Interpreter line at top of scripts",
+      "back": "#!/bin/bash"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which shell feature lets you reuse commands from your session history?",
+      "options": [
+        "Aliases",
+        "History expansion",
+        "Command substitution",
+        "Globbing"
+      ],
+      "answer": 1,
+      "explanation": "History expansion (!!, !n) recalls past commands."
+    },
+    {
+      "question": "What does the wildcard '?' match in shell globbing?",
+      "options": [
+        "Any string",
+        "Any single character",
+        "Whitespace",
+        "End of line"
+      ],
+      "answer": 1,
+      "explanation": "? matches exactly one character."
+    },
+    {
+      "question": "Which command places a job in the background?",
+      "options": [
+        "fg",
+        "bg",
+        "jobs",
+        "kill"
+      ],
+      "answer": 1,
+      "explanation": "bg resumes a stopped job in the background."
+    },
+    {
+      "question": "How do you append stdout to an existing file?",
+      "options": [
+        ">>",
+        ">",
+        "<",
+        "2>"
+      ],
+      "answer": 0,
+      "explanation": ">> appends stdout to the file."
+    },
+    {
+      "question": "What does the shebang line (#!/bin/bash) do in a script?",
+      "options": [
+        "Comments script",
+        "Specifies shell to execute the script",
+        "Exports variables",
+        "Starts interactive mode"
+      ],
+      "answer": 1,
+      "explanation": "Shebang specifies interpreter path for execution."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "Shell Script Creation Workflow",
+      "questions": [
+        {
+          "prompt": "Order the steps in creating and running a shell script",
+          "items": [
+            "Write commands into file script.sh",
+            "Add shebang line at top",
+            "Mark script executable with chmod +x script.sh",
+            "Run with ./script.sh"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Shell Features & Commands",
+      "questions": [
+        {
+          "pairs": [
+            {
+              "left": "!!",
+              "right": "Repeat last command"
+            },
+            {
+              "left": "alias ll='ls -l'",
+              "right": "Create alias ll"
+            },
+            {
+              "left": "$(date)",
+              "right": "Command substitution"
+            },
+            {
+              "left": "$((2+3))",
+              "right": "Arithmetic expansion"
+            },
+            {
+              "left": "*",
+              "right": "Matches any number of characters"
+            },
+            {
+              "left": "?",
+              "right": "Matches one character"
+            },
+            {
+              "left": "fg",
+              "right": "Bring job to foreground"
+            },
+            {
+              "left": "bg",
+              "right": "Run job in background"
+            },
+            {
+              "left": "2>",
+              "right": "Redirect standard error"
+            },
+            {
+              "left": "#!/bin/bash",
+              "right": "Shebang interpreter declaration"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Generated Textbook On Topics.pdf"
+  ]
+}

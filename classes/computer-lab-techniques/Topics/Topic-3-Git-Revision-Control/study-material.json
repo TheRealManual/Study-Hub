@@ -1,0 +1,316 @@
+{
+  "title": "Topic 3 - Git Revision Control",
+  "notes": [
+    [
+      "Why revision control: history, collaboration, rollback, audit trails; contrast ad\u2011hoc filenames vs. formal VCS.",
+      28,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "RCS overview: per\u2011file versioning; RCS/, ,v files; checkout (co), checkin (ci), and locks.",
+      29,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Basic RCS workflow: mkdir RCS; ci -l file.c (check in + lock); edit; ci -u file.c (unlock); co -l file.c (lock for edit).",
+      29,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "RCS inspection: rlog to view history; rcsdiff to compare revisions; ident to extract $Id$ keywords.",
+      "30",
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Locking model in RCS: purpose, team etiquette, avoiding concurrent edits; using rcs -l / -u to manage locks.",
+      30,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Embedding keywords: $Id$, $Revision$, $Author$; enabling ident(1); benefits for ops & debugging.",
+      31,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "When to prefer RCS in course context: single files, config snapshots, small lab artifacts.",
+      31,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Git overview: distributed VCS; repository = object database (blobs, trees, commits); staging area (index).",
+      32,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Git init & first commit: git init; git add .; git commit -m 'msg'; anatomy of a commit (tree, parent, message).",
+      33,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Inspect state: git status; git log --oneline --graph; git diff; git show <obj>.",
+      33,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Branching model: lightweight branches; git switch -c feature; merge basics; fast\u2011forward vs. merge commit.",
+      34,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Rewriting history carefully: git commit --amend; interactive rebase basics; when NOT to rewrite (shared branches).",
+      35,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Remote collaboration: git remote add; fetch vs. pull; pushing branches; handling diverged histories.",
+      36,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Ignoring build artifacts: .gitignore patterns; common entries for C/Unix projects (bin/, *.o, *.swp).",
+      36,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Tags & releases: git tag -a v1.0; lightweight vs. annotated; signing tags (overview).",
+      37,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Bisect to find regressions: git bisect start; mark good/bad; binary search debugging workflow.",
+      38,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Stashing work: git stash push -m 'wip'; listing/applying; when to prefer branches.",
+      38,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Snapshot vs. delta: how git stores content (content\u2011addressable by SHA\u20111/oid); meaning for dedup & speed.",
+      39,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Backups & safety: cloning as backup; verifying with git fsck; recovering with git reflog.",
+      39,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Course policy & etiquette: meaningful messages, small commits, include README/BUILD notes; pair\u2011work tips.",
+      40,
+      "Generated Textbook On Topics.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Create RCS directory for current project",
+      "back": "mkdir RCS"
+    },
+    {
+      "front": "RCS: check in and lock file.c",
+      "back": "ci -l file.c"
+    },
+    {
+      "front": "RCS: check out (read\u2011only) latest",
+      "back": "co file.c"
+    },
+    {
+      "front": "RCS: view revision history",
+      "back": "rlog file.c"
+    },
+    {
+      "front": "RCS: show diffs between revisions",
+      "back": "rcsdiff -r1.2 -r1.3 file.c"
+    },
+    {
+      "front": "Git: initialize a repo",
+      "back": "git init"
+    },
+    {
+      "front": "Git: stage all changes",
+      "back": "git add ."
+    },
+    {
+      "front": "Git: commit with message",
+      "back": "git commit -m 'message'"
+    },
+    {
+      "front": "Git: create/switch to new branch",
+      "back": "git switch -c feature"
+    },
+    {
+      "front": "Git: show concise history graph",
+      "back": "git log --oneline --graph"
+    },
+    {
+      "front": "Git: compare working tree vs. index",
+      "back": "git diff"
+    },
+    {
+      "front": "Git: stash current WIP",
+      "back": "git stash push -m 'wip'"
+    },
+    {
+      "front": "Git: bisect to find bad commit",
+      "back": "git bisect start \u2192 mark good/bad"
+    },
+    {
+      "front": ".gitignore entry for object files",
+      "back": "*.o"
+    },
+    {
+      "front": "Recover lost branch tip",
+      "back": "git reflog"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which RCS command shows the revision history of a file?",
+      "options": [
+        "rcsdiff",
+        "rlog",
+        "ci",
+        "co"
+      ],
+      "answer": 1,
+      "explanation": "`rlog` prints the log of revisions; `rcsdiff` compares versions."
+    },
+    {
+      "question": "In a typical RCS workflow, which command locks the file for editing during check\u2011in?",
+      "options": [
+        "ci -u",
+        "co -u",
+        "ci -l",
+        "rcs -u"
+      ],
+      "answer": 2,
+      "explanation": "`ci -l` checks in and leaves the file locked for editing."
+    },
+    {
+      "question": "What does `git init` do?",
+      "options": [
+        "Clones a remote repo",
+        "Creates a new empty repository",
+        "Stages all files",
+        "Creates a branch"
+      ],
+      "answer": 1,
+      "explanation": "`git init` creates a new, empty repository in the current directory."
+    },
+    {
+      "question": "Which command shows a compact commit history with an ASCII graph?",
+      "options": [
+        "git log",
+        "git log --oneline --graph",
+        "git show",
+        "git reflog"
+      ],
+      "answer": 1,
+      "explanation": "`git log --oneline --graph` provides a concise, branched view."
+    },
+    {
+      "question": "You need to find which commit introduced a bug. Which Git tool helps you binary\u2011search history?",
+      "options": [
+        "git fsck",
+        "git bisect",
+        "git stash",
+        "git gc"
+      ],
+      "answer": 1,
+      "explanation": "`git bisect` locates the first bad commit by binary search."
+    },
+    {
+      "question": "What\u2019s the purpose of `.gitignore`?",
+      "options": [
+        "Store commit messages",
+        "Track file permissions",
+        "Exclude matching files from version control",
+        "Speed up merges"
+      ],
+      "answer": 2,
+      "explanation": "Patterns in `.gitignore` tell Git which files not to track."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "Git & RCS Workflows",
+      "questions": [
+        {
+          "prompt": "Order the basic Git workflow for a small feature change",
+          "items": [
+            "Create and switch to a new branch",
+            "Edit files and run tests",
+            "Stage changes (git add)",
+            "Commit with a clear message",
+            "Push branch and open a review/PR",
+            "Merge back to main"
+          ]
+        },
+        {
+          "prompt": "Order an RCS locking cycle for a single C file",
+          "items": [
+            "Check out and lock for editing (co -l file.c)",
+            "Edit and test file.c",
+            "Check in and unlock (ci -u file.c)",
+            "Review changes with rlog/rcsdiff"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Tool \u2192 Purpose",
+      "questions": [
+        {
+          "pairs": [
+            {
+              "left": "rlog",
+              "right": "Show file's revision history (RCS)"
+            },
+            {
+              "left": "rcsdiff",
+              "right": "Compare two revisions (RCS)"
+            },
+            {
+              "left": "ci -l",
+              "right": "Check in & lock (RCS)"
+            },
+            {
+              "left": "co -u",
+              "right": "Check out read-only (RCS)"
+            },
+            {
+              "left": "git status",
+              "right": "Show current state and staged changes"
+            },
+            {
+              "left": "git diff",
+              "right": "Compare working tree/index/HEAD"
+            },
+            {
+              "left": "git switch -c",
+              "right": "Create and move to new branch"
+            },
+            {
+              "left": "git reflog",
+              "right": "Recover refs and history of HEAD moves"
+            },
+            {
+              "left": "git bisect",
+              "right": "Binary search for the first bad commit"
+            },
+            {
+              "left": ".gitignore",
+              "right": "Patterns of files to leave untracked"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Generated Textbook On Topics.pdf"
+  ]
+}

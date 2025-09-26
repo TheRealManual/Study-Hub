@@ -1,0 +1,275 @@
+{
+  "title": "Topic 4 - Compiling Tools",
+  "notes": [
+    [
+      "Why build automation: scaling from single\u2010file compilation to multi\u2010file projects; error prevention; reproducibility.",
+      41,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "The role of make: dependency tracking; selective recompilation; convention over configuration.",
+      42,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Makefile anatomy: targets, prerequisites, recipes; default goal is the first target.",
+      42,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Basic rules: target: deps + tab\u2010indented commands; example: hello: hello.c \u2192 gcc -o hello hello.c.",
+      43,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Variables: CC, CFLAGS, LDFLAGS; assigning with = or :=; using $(VAR).",
+      44,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Automatic variables: $@ (target), $< (first prerequisite), $^ (all prerequisites).",
+      44,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Special targets: .PHONY, .SUFFIXES, .DEFAULT, .PRECIOUS.",
+      45,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Pattern rules: %.o : %.c with compile recipe; generic build rules.",
+      45,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Implicit rules & suffix rules; built\u2010in rules database in make.",
+      46,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Dependency generation with gcc -MMD -MP for C projects.",
+      47,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Recursive make: pitfalls; alternatives with include and directory variables.",
+      48,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Debugging makefiles: make -n, make -d, make -p; tracing variable expansion.",
+      48,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Parallel builds: make -jN; race conditions; order\u2010only prerequisites.",
+      49,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Include directive: include common.mk; centralizing compiler settings.",
+      49,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Cleaning: adding clean target with rm -f *.o program.",
+      50,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Installing: install target using cp/mkdir; PREFIX variable; DESTDIR for packaging.",
+      50,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Environment variables: exporting vars into recipes; overriding make vars at CLI.",
+      51,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Advanced GNU make functions: $(wildcard), $(patsubst), $(foreach), $(shell).",
+      52,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Case study: building multi\u2010module C project with separate src/, obj/, bin/ directories.",
+      53,
+      "Generated Textbook On Topics.pdf"
+    ],
+    [
+      "Course usage: simplifying builds for labs; preparing for OS/Compilers courses.",
+      54,
+      "Generated Textbook On Topics.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Default target executed by make",
+      "back": "The first target in the Makefile"
+    },
+    {
+      "front": "Automatic variable $@",
+      "back": "Name of the target"
+    },
+    {
+      "front": "Automatic variable $<",
+      "back": "First prerequisite"
+    },
+    {
+      "front": "Automatic variable $^",
+      "back": "All prerequisites"
+    },
+    {
+      "front": "Purpose of .PHONY target",
+      "back": "Mark target as not a real file"
+    },
+    {
+      "front": "Command to run make with 4 parallel jobs",
+      "back": "make -j4"
+    },
+    {
+      "front": "Directive to include another makefile",
+      "back": "include filename.mk"
+    },
+    {
+      "front": "Target commonly used to remove build artifacts",
+      "back": "clean"
+    },
+    {
+      "front": "Flag to gcc to auto\u2010generate dependencies",
+      "back": "-MMD -MP"
+    },
+    {
+      "front": "Environment override of variable at CLI",
+      "back": "`make CFLAGS=-O2`"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "In a Makefile, which variable expands to the target name?",
+      "options": [
+        "$<",
+        "$@",
+        "$^",
+        "$*"
+      ],
+      "answer": 1,
+      "explanation": "$@ expands to the target name."
+    },
+    {
+      "question": "Which special target prevents conflicts with real files of the same name?",
+      "options": [
+        ".DEFAULT",
+        ".SUFFIXES",
+        ".PHONY",
+        ".PRECIOUS"
+      ],
+      "answer": 2,
+      "explanation": ".PHONY marks a target as not producing a file."
+    },
+    {
+      "question": "What does the command `make -j8` do?",
+      "options": [
+        "Runs silently",
+        "Runs with debug output",
+        "Runs with up to 8 jobs in parallel",
+        "Runs only target 8"
+      ],
+      "answer": 2,
+      "explanation": "-j specifies parallel job count."
+    },
+    {
+      "question": "What happens if you run `make` with no arguments?",
+      "options": [
+        "Runs all targets",
+        "Runs the first target in the Makefile",
+        "Runs clean",
+        "Errors out"
+      ],
+      "answer": 1,
+      "explanation": "Default goal is the first target."
+    },
+    {
+      "question": "Which Makefile variable is typically used for compiler flags?",
+      "options": [
+        "CFLAGS",
+        "CC",
+        "LDFLAGS",
+        "CPPFLAGS"
+      ],
+      "answer": 0,
+      "explanation": "CFLAGS is standard for compiler options passed to gcc."
+    }
+  ],
+  "games": [
+    {
+      "type": "ordering",
+      "title": "Make Build Workflow",
+      "questions": [
+        {
+          "prompt": "Order the steps in compiling and linking a simple C program with make",
+          "items": [
+            "Write Makefile with target program depending on .o files",
+            "Run `make`",
+            "Compiler builds .o files from .c sources",
+            "Linker produces final executable",
+            "Run `make clean` to remove artifacts"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "matching",
+      "title": "Makefile Terms",
+      "questions": [
+        {
+          "pairs": [
+            {
+              "left": ".PHONY",
+              "right": "Target not tied to a file"
+            },
+            {
+              "left": "$@",
+              "right": "Target name"
+            },
+            {
+              "left": "$<",
+              "right": "First prerequisite"
+            },
+            {
+              "left": "$^",
+              "right": "All prerequisites"
+            },
+            {
+              "left": "make -n",
+              "right": "Dry run (show commands only)"
+            },
+            {
+              "left": "make -d",
+              "right": "Debug output"
+            },
+            {
+              "left": "make -p",
+              "right": "Print database of rules/vars"
+            },
+            {
+              "left": "include",
+              "right": "Insert another makefile"
+            },
+            {
+              "left": "clean",
+              "right": "Remove build artifacts"
+            },
+            {
+              "left": "install",
+              "right": "Copy binaries to system paths"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "sources": [
+    "Generated Textbook On Topics.pdf"
+  ]
+}

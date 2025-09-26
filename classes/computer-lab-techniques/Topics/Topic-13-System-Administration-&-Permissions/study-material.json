@@ -1,0 +1,119 @@
+{
+    "topic": "Topic 13 - System Administration & Permissions",
+    "notes": [
+        {
+            "text": "Unix system administration covers essential tasks such as user and group management, file permissions, process monitoring, and resource allocation. Understanding these concepts is critical for maintaining security and stability in multi-user systems.",
+            "page": "177",
+            "source": "Generated Textbook On Topics.pdf"
+        },
+        {
+            "text": "User and Group Management: Commands like 'useradd', 'usermod', and 'passwd' create and modify users. Groups are managed with 'groupadd' and 'gpasswd'. Each file belongs to a user and group, which controls access permissions.",
+            "page": "178-179",
+            "source": "Generated Textbook On Topics.pdf"
+        },
+        {
+            "text": "File Permissions: Controlled with 'chmod' (change mode), 'chown' (change owner), and 'umask'. Permissions are divided into read (r), write (w), and execute (x) for user, group, and others.",
+            "page": "180-182",
+            "source": "Generated Textbook On Topics.pdf"
+        },
+        {
+            "text": "Superuser Privileges: The 'sudo' command allows permitted users to run commands as the root user. This provides administrative access without requiring a constant root login.",
+            "page": "183",
+            "source": "Generated Textbook On Topics.pdf"
+        },
+        {
+            "text": "Process Management: Tools include 'ps' to list processes, 'top' to monitor system activity in real time, and 'kill' to terminate processes by PID. 'nice' and 'renice' adjust process priorities.",
+            "page": "184-186",
+            "source": "Generated Textbook On Topics.pdf"
+        },
+        {
+            "text": "System Logs: Log files, usually located in /var/log, record system activity. Commands like 'tail', 'less', and 'journalctl' are used to inspect logs for troubleshooting.",
+            "page": "187-188",
+            "source": "Generated Textbook On Topics.pdf"
+        },
+        {
+            "text": "Security Considerations: Ensuring least privilege, auditing user activity, and monitoring file permissions are core practices in Unix system administration.",
+            "page": "189-194",
+            "source": "Generated Textbook On Topics.pdf"
+        }
+    ],
+    "flashcards": [
+        {
+            "front": "What command adds a new user in Unix?",
+            "back": "useradd"
+        },
+        {
+            "front": "Which command changes the group ownership of a file?",
+            "back": "chown"
+        },
+        {
+            "front": "What does 'chmod 755 file' set as permissions?",
+            "back": "rwxr-xr-x"
+        },
+        {
+            "front": "Which command grants temporary superuser privileges?",
+            "back": "sudo"
+        },
+        {
+            "front": "Where are most system log files stored?",
+            "back": "/var/log"
+        }
+    ],
+    "quiz": [
+        {
+            "question": "What does the 'umask' command control?",
+            "options": [
+                "Default file permissions",
+                "User password settings",
+                "Process priority",
+                "Disk usage monitoring"
+            ],
+            "answer": 0,
+            "explanation": "'umask' sets the default file permission mask applied when new files and directories are created."
+        },
+        {
+            "question": "Which command displays active processes in real time?",
+            "options": [
+                "ps",
+                "kill",
+                "top",
+                "jobs"
+            ],
+            "answer": 2,
+            "explanation": "'top' provides a dynamic, real-time view of processes and resource usage."
+        },
+        {
+            "question": "What does 'chmod go-rwx file.txt' do?",
+            "options": [
+                "Removes all permissions for group and others",
+                "Adds read/write/execute for all users",
+                "Removes only write permissions",
+                "Changes ownership to root"
+            ],
+            "answer": 0,
+            "explanation": "This removes read, write, and execute permissions from group and others, leaving only the owner with access."
+        }
+    ],
+    "games": {
+        "ordering": {
+            "prompt": "Order the steps to create a new user and configure permissions.",
+            "steps": [
+                "Run useradd to create the new user",
+                "Set the password with passwd",
+                "Assign the user to a group with usermod or gpasswd",
+                "Set appropriate file permissions with chmod/chown",
+                "Verify login and access"
+            ]
+        },
+        "matching": {
+            "prompt": "Match the administration command to its function.",
+            "pairs": {
+                "useradd": "Create a new user",
+                "chown": "Change file ownership",
+                "chmod": "Modify file permissions",
+                "sudo": "Run command as superuser",
+                "ps": "List running processes"
+            }
+        }
+    }
+}
