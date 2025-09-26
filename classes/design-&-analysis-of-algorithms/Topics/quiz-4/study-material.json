@@ -1,36 +1,36 @@
 {
   "title": "Quiz 4 – Tail Recursion, Binary Search, and Runtime (log n vs n²)",
   "notes": [
-    [
-      "Tail recursion: the recursive call is the final action; enables optimization equivalent to iteration in some languages/compilers.",
-      -1,
-      "Week 4 - Recursion & Searching.pdf"
-    ],
-    [
-      "Converting tail recursion to iteration: carry accumulators as parameters.",
-      -1,
-      "Week 4 - Recursion & Searching.pdf"
-    ],
-    [
-      "Binary search on a sorted array halves the search space each step → Θ(log n) comparisons worst case.",
-      -1,
-      "Week 4 - Recursion & Searching.pdf"
-    ],
-    [
-      "Linear vs binary search: Θ(n) vs Θ(log n) on sorted input.",
-      -1,
-      "Week 4 - Recursion & Searching.pdf"
-    ],
-    [
-      "Quadratic runtimes (Θ(n²)) arise from double-nested loops (e.g., naive pair comparisons, insertion sort worst case).",
-      -1,
-      "Week 4 - Recursion & Searching.pdf"
-    ],
-    [
-      "Recurrence for binary search: T(n)=T(n/2)+Θ(1) ⇒ Θ(log n).",
-      -1,
-      "Week 4 - Recursion & Searching.pdf"
-    ]
+  [
+    "Tail recursion: the recursive call is the final action; enables optimization equivalent to iteration in some languages/compilers.",
+    4,
+    "Week 1 - Introduction to DAA.pdf"
+  ],
+  [
+    "Converting tail recursion to iteration: carry accumulators as parameters.",
+    0,
+    "No Source"
+  ],
+  [
+    "Binary search on a sorted array halves the search space each step → Θ(log n) comparisons worst case.",
+    2,
+    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+  ],
+  [
+    "Linear vs binary search: Θ(n) vs Θ(log n) on sorted input.",
+    41,
+    "Week 3 - Brute Force and Exhaustive Search.pdf"
+  ],
+  [
+    "Quadratic runtimes (Θ(n²)) arise from double-nested loops (e.g., naive pair comparisons, insertion sort worst case).",
+    32,
+    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+  ],
+  [
+    "Recurrence for binary search: T(n)=T(n/2)+Θ(1) ⇒ Θ(log n).",
+    0,
+    "No Source"
+  ]
   ],
   "flashcards": [
     {

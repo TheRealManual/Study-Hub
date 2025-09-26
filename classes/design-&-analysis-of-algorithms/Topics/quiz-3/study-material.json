@@ -2,50 +2,140 @@
   "title": "Quiz 3 – Brute Force & Exhaustive Search (NP concepts)",
   "notes": [
     [
-      "Brute-force (exhaustive) search systematically enumerates candidates and checks feasibility/optimality.",
-      -1,
-      "Week 3 - Brute Force and Exhaustive Search.pdf"
-    ],
-    [
-      "Examples covered: Selection Sort, Bubble Sort, Traveling Salesman Problem (TSP), 0/1 Knapsack, DFS, BFS.",
-      -1,
-      "Week 3 - Brute Force and Exhaustive Search.pdf"
-    ],
-    [
-      "Exhaustive search is often exponential in worst case due to exploring all permutations/subsets/paths.",
-      -1,
-      "Week 3 - Brute Force and Exhaustive Search.pdf"
-    ],
-    [
-      "NP: decision problems whose YES instances can be verified in polynomial time given a certificate.",
-      -1,
-      "Week 3 - Brute Force and Exhaustive Search.pdf"
-    ],
-    [
-      "NP-hard: at least as hard as every problem in NP (no requirement to be in NP/decidable as decision).",
-      -1,
-      "Week 3 - Brute Force and Exhaustive Search.pdf"
-    ],
-    [
-      "NP-complete: in NP and NP-hard.",
-      -1,
-      "Week 3 - Brute Force and Exhaustive Search.pdf"
-    ],
-    [
-      "Brute force solutions exist for NP-complete problems (e.g., TSP, Knapsack) but run in exponential time.",
-      -1,
-      "Week 3 - Brute Force and Exhaustive Search.pdf"
-    ],
-    [
-      "DFS/BFS are exhaustive in the sense of exploring the search space; their runtime depends on branching factor and depth.",
-      -1,
-      "Week 3 - Brute Force and Exhaustive Search.pdf"
-    ],
-    [
-      "HeapsPermutation generates all permutations in Θ(n·n!) time and O(n) extra space (excluding output).",
-      -1,
-      "Week 3 - Brute Force and Exhaustive Search.pdf"
-    ]
+    "Week 2 frames efficiency in steps rather than seconds; count primitive operations as a function of n.",
+    2,
+    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+  ],
+  [
+    "Summations and loop analysis yield closed-form step counts that inform asymptotic bounds.",
+    15,
+    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+  ],
+  [
+    "Week 2 slides show O, Ω, Θ for bounding growth; ignore constants/lower terms for asymptotics.",
+    0,
+    "No Source"
+  ],
+  [
+    "Use step counts to derive asymptotic classes for algorithms.",
+    5,
+    "Week 1 - Introduction to DAA.pdf"
+  ],
+  [
+    "Sequential search analysis shows worst-case O(n) comparisons when element is not found.",
+    2,
+    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+  ],
+  [
+    "Nested loops multiply iteration counts; sequential blocks add their step counts together.",
+    0,
+    "No Source"
+  ],
+  [
+    "Big-O provides asymptotic upper bound, ignoring constant factors and lower-order terms.",
+    9,
+    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+  ],
+  [
+    "Common growth classes: O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(2ⁿ) < O(n!).",
+    0,
+    "No Source"
+  ],
+  [
+    "Asymptotic notations: O (upper bound), Ω (lower bound), Θ (tight bound).",
+    8,
+    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+  ],
+  [
+    "Little-o and little-omega capture non-tight bounds (strictly smaller/larger).",
+    0,
+    "No Source"
+  ],
+  [
+    "Formal Big‑O definition: f(n)=O(g(n)) if ∃ c>0, n0 s.t. ∀ n≥n0: f(n) ≤ c·g(n).",
+    0,
+    "No Source"
+  ],
+  [
+    "Common growth rates: 1 < log n < n < n log n < n^2 < n^3 < 2^n < n!.",
+    0,
+    "No Source"
+  ],
+  [
+    "Step counting uses a cost model assigning constant costs to basic operations.",
+    14,
+    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+  ],
+  [
+    "Nested loops multiply costs; consecutive loops add costs.",
+    0,
+    "No Source"
+  ],
+  [
+    "Conditionals contribute the max (worst case) or probability-weighted (average case) of branches.",
+    0,
+    "No Source"
+  ],
+  [
+    "Master Theorem handles T(n)=aT(n/b)+f(n) for many divide-and-conquer algorithms.",
+    0,
+    "No Source"
+  ],
+  [
+    "Amortized analysis averages costly operations over sequences (e.g., dynamic array resizing).",
+    2,
+    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+  ],
+  [
+    "Best, average, worst-case analyses reveal different perspectives of performance.",
+    31,
+    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+  ],
+  [
+    "Brute-force (exhaustive) search systematically enumerates candidates and checks feasibility/optimality.",
+    2,
+    "Week 3 - Brute Force and Exhaustive Search.pdf"
+  ],
+  [
+    "Examples covered: Selection Sort, Bubble Sort, Traveling Salesman Problem (TSP), 0/1 Knapsack, DFS, BFS.",
+    2,
+    "Week 3 - Brute Force and Exhaustive Search.pdf"
+  ],
+  [
+    "Exhaustive search is often exponential in worst case due to exploring all permutations/subsets/paths.",
+    17,
+    "Week 3 - Brute Force and Exhaustive Search.pdf"
+  ],
+  [
+    "NP: decision problems whose YES instances can be verified in polynomial time given a certificate.",
+    18,
+    "Week 3 - Brute Force and Exhaustive Search.pdf"
+  ],
+  [
+    "NP-hard: at least as hard as every problem in NP (no requirement to be in NP/decidable as decision).",
+    9,
+    "Week 3 - Brute Force and Exhaustive Search.pdf"
+  ],
+  [
+    "NP-complete: in NP and NP-hard.",
+    0,
+    "No Source"
+  ],
+  [
+    "Brute force solutions exist for NP-complete problems (e.g., TSP, Knapsack) but run in exponential time.",
+    9,
+    "Week 3 - Brute Force and Exhaustive Search.pdf"
+  ],
+  [
+    "DFS/BFS are exhaustive in the sense of exploring the search space; their runtime depends on branching factor and depth.",
+    1,
+    "Week 3 - Brute Force and Exhaustive Search.pdf"
+  ],
+  [
+    "HeapsPermutation generates all permutations in Θ(n·n!) time and O(n) extra space (excluding output).",
+    0,
+    "No Source"
+  ]
   ],
   "flashcards": [
     {
