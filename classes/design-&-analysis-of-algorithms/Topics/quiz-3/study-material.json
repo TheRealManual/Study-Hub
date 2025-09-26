@@ -1,0 +1,227 @@
+{
+  "title": "Quiz 3 – Brute Force & Exhaustive Search (NP concepts)",
+  "notes": [
+    [
+      "Brute-force (exhaustive) search systematically enumerates candidates and checks feasibility/optimality.",
+      -1,
+      "Week 3 - Brute Force and Exhaustive Search.pdf"
+    ],
+    [
+      "Examples covered: Selection Sort, Bubble Sort, Traveling Salesman Problem (TSP), 0/1 Knapsack, DFS, BFS.",
+      -1,
+      "Week 3 - Brute Force and Exhaustive Search.pdf"
+    ],
+    [
+      "Exhaustive search is often exponential in worst case due to exploring all permutations/subsets/paths.",
+      -1,
+      "Week 3 - Brute Force and Exhaustive Search.pdf"
+    ],
+    [
+      "NP: decision problems whose YES instances can be verified in polynomial time given a certificate.",
+      -1,
+      "Week 3 - Brute Force and Exhaustive Search.pdf"
+    ],
+    [
+      "NP-hard: at least as hard as every problem in NP (no requirement to be in NP/decidable as decision).",
+      -1,
+      "Week 3 - Brute Force and Exhaustive Search.pdf"
+    ],
+    [
+      "NP-complete: in NP and NP-hard.",
+      -1,
+      "Week 3 - Brute Force and Exhaustive Search.pdf"
+    ],
+    [
+      "Brute force solutions exist for NP-complete problems (e.g., TSP, Knapsack) but run in exponential time.",
+      -1,
+      "Week 3 - Brute Force and Exhaustive Search.pdf"
+    ],
+    [
+      "DFS/BFS are exhaustive in the sense of exploring the search space; their runtime depends on branching factor and depth.",
+      -1,
+      "Week 3 - Brute Force and Exhaustive Search.pdf"
+    ],
+    [
+      "HeapsPermutation generates all permutations in Θ(n·n!) time and O(n) extra space (excluding output).",
+      -1,
+      "Week 3 - Brute Force and Exhaustive Search.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Define brute-force (exhaustive) search.",
+      "back": "Enumerate all candidate solutions and check each against the problem constraints/goal."
+    },
+    {
+      "front": "Why is brute-force often impractical?",
+      "back": "The number of candidates grows exponentially (e.g., 2^n subsets, n! permutations)."
+    },
+    {
+      "front": "What is NP?",
+      "back": "Class of decision problems whose YES certificates are verifiable in polynomial time."
+    },
+    {
+      "front": "NP-hard vs NP-complete",
+      "back": "NP-hard: as hard as any problem in NP (not necessarily in NP). NP-complete: in NP and NP-hard."
+    },
+    {
+      "front": "Is TSP NP-hard?",
+      "back": "Yes. Decision version is NP-complete; optimization version is NP-hard."
+    },
+    {
+      "front": "Is 0/1 Knapsack NP-hard?",
+      "back": "Yes. Decision version is NP-complete; optimization version is NP-hard."
+    },
+    {
+      "front": "Do BFS/DFS solve NP-hard problems efficiently?",
+      "back": "Not in general; they may explore exponentially many states."
+    },
+    {
+      "front": "Permutation count of n items",
+      "back": "n! (factorial)."
+    },
+    {
+      "front": "Subset count of an n-element set",
+      "back": "2^n subsets."
+    },
+    {
+      "front": "What makes brute-force acceptable sometimes?",
+      "back": "Small n, pruning (branch-and-bound), or needing exact solutions for tiny inputs."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Brute-force (exhaustive) search typically explores:",
+      "options": [
+        "A polynomial number of candidates",
+        "An exponential number of candidates",
+        "A constant number of candidates"
+      ],
+      "answer": 1,
+      "explanation": "Permutations/subsets/paths scale exponentially for many problems."
+    },
+    {
+      "question": "Which statement about NP is true?",
+      "options": [
+        "Every NP problem is solvable in O(log n).",
+        "YES instances can be verified in polynomial time.",
+        "NP equals all problems with exponential-time verifiers."
+      ],
+      "answer": 1,
+      "explanation": "Definition of NP uses poly-time verifiers."
+    },
+    {
+      "question": "NP-hard means:",
+      "options": [
+        "At least as hard as the hardest problems in NP.",
+        "In NP and has a polynomial-time solver.",
+        "Easier than P."
+      ],
+      "answer": 0,
+      "explanation": "NP-hardness is hardness with respect to NP."
+    },
+    {
+      "question": "Decision-TSP ('Is there a tour ≤ K?') is:",
+      "options": [
+        "In P",
+        "NP-complete",
+        "Undecidable"
+      ],
+      "answer": 1,
+      "explanation": "Classic NP-complete problem."
+    },
+    {
+      "question": "Enumerating all subsets for 0/1 Knapsack costs (typical worst case):",
+      "options": [
+        "Θ(n)",
+        "Θ(2^n)",
+        "Θ(n!)"
+      ],
+      "answer": 1,
+      "explanation": "2^n possible subsets."
+    },
+    {
+      "question": "HeapsPermutation enumerates:",
+      "options": [
+        "Subsets",
+        "Permutations",
+        "Combinations with repetition"
+      ],
+      "answer": 1,
+      "explanation": "Heap’s algorithm generates all permutations."
+    },
+    {
+      "question": "DFS and BFS are exhaustive in that they:",
+      "options": [
+        "Prune to only optimal nodes",
+        "Systematically explore the state space",
+        "Only search along a single path"
+      ],
+      "answer": 1,
+      "explanation": "They expand reachable states by traversal."
+    },
+    {
+      "question": "Which is most accurate about brute-force for NP-complete problems?",
+      "options": [
+        "Guaranteed polynomial time",
+        "Often exponential-time in the worst case",
+        "Cannot find optimal solutions"
+      ],
+      "answer": 1,
+      "explanation": "Brute-force is exponential but exact."
+    },
+    {
+      "question": "The number of Hamiltonian cycles in worst-case TSP permutations explored is proportional to:",
+      "options": [
+        "n",
+        "n log n",
+        "(n-1)!"
+      ],
+      "answer": 2,
+      "explanation": "Permutations of cities (fixing start) ~ (n-1)!."
+    },
+    {
+      "question": "A problem is NP-complete if:",
+      "options": [
+        "It is NP-hard only.",
+        "It is in NP and NP-hard.",
+        "It has a pseudo-polynomial algorithm."
+      ],
+      "answer": 1,
+      "explanation": "Both conditions define NP-complete."
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "prompt": "Match problem to classification",
+      "pairs": [
+        [
+          "TSP (decision)",
+          "NP-complete"
+        ],
+        [
+          "0/1 Knapsack (decision)",
+          "NP-complete"
+        ],
+        [
+          "Sorting (comparison-based, decision 'is sorted?')",
+          "in P"
+        ]
+      ]
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order search spaces (small→large for n items)",
+      "items": [
+        "n",
+        "2^n",
+        "n!",
+        "2^{n+1}"
+      ]
+    }
+  ],
+  "sources": [
+    "Week 3 - Brute Force and Exhaustive Search.pdf"
+  ]
+}

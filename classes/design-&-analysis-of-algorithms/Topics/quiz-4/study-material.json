@@ -1,0 +1,213 @@
+{
+  "title": "Quiz 4 – Tail Recursion, Binary Search, and Runtime (log n vs n²)",
+  "notes": [
+    [
+      "Tail recursion: the recursive call is the final action; enables optimization equivalent to iteration in some languages/compilers.",
+      -1,
+      "Week 4 - Recursion & Searching.pdf"
+    ],
+    [
+      "Converting tail recursion to iteration: carry accumulators as parameters.",
+      -1,
+      "Week 4 - Recursion & Searching.pdf"
+    ],
+    [
+      "Binary search on a sorted array halves the search space each step → Θ(log n) comparisons worst case.",
+      -1,
+      "Week 4 - Recursion & Searching.pdf"
+    ],
+    [
+      "Linear vs binary search: Θ(n) vs Θ(log n) on sorted input.",
+      -1,
+      "Week 4 - Recursion & Searching.pdf"
+    ],
+    [
+      "Quadratic runtimes (Θ(n²)) arise from double-nested loops (e.g., naive pair comparisons, insertion sort worst case).",
+      -1,
+      "Week 4 - Recursion & Searching.pdf"
+    ],
+    [
+      "Recurrence for binary search: T(n)=T(n/2)+Θ(1) ⇒ Θ(log n).",
+      -1,
+      "Week 4 - Recursion & Searching.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Define tail recursion.",
+      "back": "A form of recursion where the recursive call is the last operation in the function."
+    },
+    {
+      "front": "Why can tail recursion be optimized?",
+      "back": "No remaining work after the call, so the stack frame can be reused (TCO) when supported."
+    },
+    {
+      "front": "Iterative equivalent of tail-recursive factorial?",
+      "back": "Use a loop with an accumulator multiplying 1..n."
+    },
+    {
+      "front": "Binary search precondition.",
+      "back": "Input must be sorted (or monotone predicate over index range)."
+    },
+    {
+      "front": "Binary search runtime (worst case).",
+      "back": "Θ(log n)."
+    },
+    {
+      "front": "Linear search runtime (worst case).",
+      "back": "Θ(n)."
+    },
+    {
+      "front": "Give an example algorithm with Θ(n²) runtime.",
+      "back": "Bubble sort / selection sort / insertion sort (worst case)."
+    },
+    {
+      "front": "Recurrence for binary search.",
+      "back": "T(n)=T(n/2)+Θ(1) ⇒ Θ(log n)."
+    },
+    {
+      "front": "Space cost of recursive binary search.",
+      "back": "Θ(log n) call stack; iterative version uses Θ(1) space."
+    },
+    {
+      "front": "Tail-recursive vs non-tail-recursive example.",
+      "back": "Tail-recursive factorial vs non-tail-recursive naive Fibonacci."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Tail recursion can be optimized by compilers because:",
+      "options": [
+        "It uses memoization by default",
+        "The recursive call is the last action and needs no additional stack frame",
+        "It unrolls loops automatically"
+      ],
+      "answer": 1,
+      "explanation": "Tail calls can reuse the current frame when supported."
+    },
+    {
+      "question": "Binary search requires:",
+      "options": [
+        "Random access",
+        "Sorted data",
+        "Both of the above"
+      ],
+      "answer": 2,
+      "explanation": "Typical array binary search assumes random access and sorted order."
+    },
+    {
+      "question": "Worst-case comparisons for binary search on n elements:",
+      "options": [
+        "Θ(n)",
+        "Θ(log n)",
+        "Θ(1)"
+      ],
+      "answer": 1,
+      "explanation": "Halving the search space yields logarithmic depth."
+    },
+    {
+      "question": "Which has Θ(n²) time in the worst case?",
+      "options": [
+        "Insertion sort",
+        "Binary search",
+        "Merge sort"
+      ],
+      "answer": 0,
+      "explanation": "Insertion sort degrades to quadratic when reversed."
+    },
+    {
+      "question": "The recurrence T(n)=T(n/2)+1 solves to:",
+      "options": [
+        "Θ(n)",
+        "Θ(log n)",
+        "Θ(n log n)"
+      ],
+      "answer": 1,
+      "explanation": "Each level contributes constant work for log n levels."
+    },
+    {
+      "question": "Space complexity of iterative binary search:",
+      "options": [
+        "Θ(1)",
+        "Θ(log n)",
+        "Θ(n)"
+      ],
+      "answer": 0,
+      "explanation": "Only a few indices maintained."
+    },
+    {
+      "question": "A function is tail-recursive if:",
+      "options": [
+        "It returns f(n-1)+1",
+        "It returns the result of the recursive call directly",
+        "It has multiple recursive calls"
+      ],
+      "answer": 1,
+      "explanation": "No work after the recursive call."
+    },
+    {
+      "question": "Comparing growth: which dominates for large n?",
+      "options": [
+        "log n",
+        "n²",
+        "They’re the same"
+      ],
+      "answer": 1,
+      "explanation": "Quadratic grows much faster than logarithmic."
+    },
+    {
+      "question": "Which statement is true?",
+      "options": [
+        "Binary search works on any unsorted array.",
+        "Binary search’s runtime is Θ(log n) because it halves the search space.",
+        "Tail recursion always reduces asymptotic time."
+      ],
+      "answer": 1,
+      "explanation": "Sorting is a precondition; tail recursion affects space/constant factors."
+    },
+    {
+      "question": "Non-tail-recursive Fibonacci has time:",
+      "options": [
+        "Θ(log n)",
+        "Θ(n)",
+        "Exponential without memoization"
+      ],
+      "answer": 2,
+      "explanation": "Two recursive branches per level → Θ(φ^n)."
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "prompt": "Match algorithm to tight complexity",
+      "pairs": [
+        [
+          "Binary search",
+          "Θ(log n)"
+        ],
+        [
+          "Insertion sort (worst)",
+          "Θ(n²)"
+        ],
+        [
+          "Linear search",
+          "Θ(n)"
+        ]
+      ]
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order by growth (slow→fast)",
+      "items": [
+        "log n",
+        "n",
+        "n log n",
+        "n²",
+        "2^n"
+      ]
+    }
+  ],
+  "sources": [
+    "Week 4 - Recursion & Searching.pdf"
+  ]
+}
