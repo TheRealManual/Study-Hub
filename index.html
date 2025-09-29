@@ -6115,6 +6115,12 @@
             // Store the preselected mode
             sessionBuilderData.sessionMode = preselectedMode;
             
+            // Set loading flag if we have existing session content
+            const hasLoadedSession = sessionBuilderData.sessionContent.length > 0;
+            if (hasLoadedSession) {
+                sessionBuilderData.isLoadingSession = true;
+            }
+            
             // Update modal title based on session mode
             const modalTitle = document.querySelector('#session-builder-modal .modal-title');
             const sessionTypes = {
@@ -6124,10 +6130,21 @@
             };
             modalTitle.textContent = sessionTypes[preselectedMode] || '📚 Session Builder';
             
+            // Populate filters and sessions
             populateSessionFilters(preselectedMode);
             populateSavedSessions();
             document.getElementById('session-builder-modal').classList.add('show');
-            refreshSessionContent();
+            
+            // Only refresh content if we don't have a loaded session
+            if (!hasLoadedSession) {
+                refreshSessionContent();
+            }
+            
+            // Clear loading flag and display content after UI is ready
+            setTimeout(() => {
+                sessionBuilderData.isLoadingSession = false;
+                displaySessionContent();
+            }, 100);
             
             // Setup back to top button after modal is shown
             setTimeout(() => {
@@ -6154,7 +6171,8 @@
             availableContent: [],
             sessionContent: [],
             savedSessions: JSON.parse(localStorage.getItem('studyHubSavedSessions') || '[]'),
-            sessionMode: '' // Track current session mode
+            sessionMode: '', // Track current session mode
+            isLoadingSession: false // Flag to prevent content refresh during session loading
         };
 
         function toggleClassSelection(className, event) {
@@ -6238,6 +6256,11 @@
                 topicCheckboxes.forEach(checkbox => {
                     checkbox.disabled = false;
                 });
+                
+                // Update select all button state - when class is first selected, no topics are checked
+                setTimeout(() => {
+                    updateSelectAllButtonState(className);
+                }, 50);
             } else {
                 // Hide entire class section with animation
                 if (classSection) {
@@ -6262,6 +6285,26 @@
             refreshSessionContent();
         }
 
+        function updateSelectAllButtonState(className) {
+            const topicCheckboxes = document.querySelectorAll(`input[data-class="${className}"]:not(:disabled)`);
+            const selectAllBtn = document.getElementById(`select-all-${className}`);
+            
+            if (!selectAllBtn || topicCheckboxes.length === 0) return;
+            
+            // Check how many topics are currently selected
+            const checkedTopics = Array.from(topicCheckboxes).filter(cb => cb.checked);
+            const allSelected = checkedTopics.length === topicCheckboxes.length;
+            
+            // Update button text and onclick handler based on current state
+            if (allSelected) {
+                selectAllBtn.innerHTML = '✗ Deselect All';
+                selectAllBtn.setAttribute('onclick', `toggleAllTopicsForClass('${className}', false)`);
+            } else {
+                selectAllBtn.innerHTML = '✓ Select All';
+                selectAllBtn.setAttribute('onclick', `toggleAllTopicsForClass('${className}', true)`);
+            }
+        }
+
         function toggleAllTopicsForClass(className, selectAll) {
             const topicCheckboxes = document.querySelectorAll(`input[data-class="${className}"]:not(:disabled)`);
             const selectAllBtn = document.getElementById(`select-all-${className}`);
@@ -6278,11 +6321,8 @@
                 checkbox.checked = selectAll;
             });
             
-            // Update button text with icons
-            if (selectAllBtn) {
-                selectAllBtn.innerHTML = selectAll ? '✗ Deselect All' : '✓ Select All';
-                selectAllBtn.onclick = () => toggleAllTopicsForClass(className, !selectAll);
-            }
+            // Update button state after toggling
+            updateSelectAllButtonState(className);
             
             // Refresh content
             refreshSessionContent();
@@ -6295,6 +6335,26 @@
             // Clear existing filters
             classFilters.innerHTML = '';
             topicFilters.innerHTML = '';
+            
+            // Determine what should be selected based on current session content
+            const currentlySelectedClasses = new Set();
+            const currentlySelectedTopics = new Set();
+            
+            console.log('Session content length:', sessionBuilderData.sessionContent.length);
+            console.log('Session content:', sessionBuilderData.sessionContent);
+            
+            if (sessionBuilderData.sessionContent.length > 0) {
+                sessionBuilderData.sessionContent.forEach(item => {
+                    if (item.class && item.topic) {
+                        currentlySelectedClasses.add(item.class);
+                        currentlySelectedTopics.add(`${item.class}-${item.topic}`);
+                    }
+                });
+                console.log('Currently selected classes:', Array.from(currentlySelectedClasses));
+                console.log('Currently selected topics:', Array.from(currentlySelectedTopics));
+            } else {
+                console.log('No session content found - starting with empty selection');
+            }
             
             // Populate class filters with matching color schemes
             Object.keys(studyData).forEach((className, index) => {
@@ -6321,12 +6381,17 @@
                 const hiddenCheckbox = document.createElement('input');
                 hiddenCheckbox.type = 'checkbox';
                 hiddenCheckbox.id = `class-${className}`;
-                hiddenCheckbox.checked = false;
+                const isClassSelected = currentlySelectedClasses.has(className);
+                hiddenCheckbox.checked = isClassSelected;
                 hiddenCheckbox.style.display = 'none';
+                console.log(`Setting class ${className} checkbox to: ${isClassSelected}`);
+                
+                const buttonText = isClassSelected ? 'Remove' : 'Add';
+                const buttonClass = isClassSelected ? 'class-action-btn remove-btn' : 'class-action-btn add-btn';
                 
                 filterOption.innerHTML = `
-                    <button class="class-action-btn add-btn" id="btn-${className}" onclick="toggleClassSelection('${className}', event)">
-                        Add
+                    <button class="${buttonClass}" id="btn-${className}" onclick="toggleClassSelection('${className}', event)">
+                        ${buttonText}
                     </button>
                     <div class="class-item-content">
                         <span class="class-name">${className.replace('-', ' ').toUpperCase()}</span>
@@ -6372,7 +6437,10 @@
                     classSection.style.setProperty('--class-color-primary', colorScheme.primary);
                     classSection.style.setProperty('--class-color-secondary', colorScheme.secondary);
                     classSection.style.setProperty('--class-color-rgb', colorScheme.rgb);
-                    classSection.style.display = 'none'; // Hide initially since no classes are selected
+                    // Show section if class is currently selected, otherwise hide it
+                    const isClassSelectedForSection = currentlySelectedClasses.has(className);
+                    classSection.style.display = isClassSelectedForSection ? 'block' : 'none';
+                    console.log(`Setting class section ${className} display to: ${isClassSelectedForSection ? 'block' : 'none'}`);
                     // Use the CSS custom property for consistent theming
                     classSection.style.borderColor = `rgba(${colorScheme.rgb}, 0.2)`;
                     
@@ -6384,12 +6452,12 @@
                     `;
                     classSection.appendChild(classHeader);
                     
-                    // Add select all button container
+                    // Add select all button container - initial state will be set after topics are created
                     const selectAllContainer = document.createElement('div');
                     selectAllContainer.className = 'select-all-container';
                     selectAllContainer.innerHTML = `
-                        <button id="select-all-${className}" class="select-all-btn" onclick="toggleAllTopicsForClass('${className}', false)">
-                            ✓ Deselect All
+                        <button id="select-all-${className}" class="select-all-btn" onclick="toggleAllTopicsForClass('${className}', true)">
+                            ✓ Select All
                         </button>
                     `;
                     classSection.appendChild(selectAllContainer);
@@ -6399,19 +6467,90 @@
                     topicsContainer.className = 'topics-for-class';
                     topicsContainer.style.paddingLeft = '1rem';
                     
+                    console.log(`Creating topics for class: ${className}, topics:`, topicsByClass);
                     topicsByClass.forEach(topicName => {
                         const filterOption = document.createElement('div');
                         filterOption.className = 'filter-option';
+                        const topicKey = `${className}-${topicName}`;
+                        const isTopicSelected = currentlySelectedTopics.has(topicKey);
+                        if (currentlySelectedTopics.size > 0) {
+                            console.log(`Checking topic key: "${topicKey}", selected: ${isTopicSelected}`);
+                        }
+                        // Determine if this class is currently selected to know if topic should be enabled
+                        const isClassSelectedForTopic = currentlySelectedClasses.has(className);
+                        const disabledAttr = isClassSelectedForTopic ? '' : 'disabled';
+                        
                         filterOption.innerHTML = `
-                            <input type="checkbox" id="topic-${className}-${topicName}" class="topic-checkbox" data-class="${className}" checked onchange="refreshSessionContent()">
+                            <input type="checkbox" id="topic-${className}-${topicName}" class="topic-checkbox" data-class="${className}" ${isTopicSelected ? 'checked' : ''} ${disabledAttr} onchange="refreshSessionContent()">
                             <label for="topic-${className}-${topicName}">${topicName.replace('-', ' ').toUpperCase()}</label>
                         `;
                         topicsContainer.appendChild(filterOption);
+                        console.log(`Created topic: ${topicName} for class: ${className}, enabled: ${isClassSelectedForTopic}, selected: ${isTopicSelected}`);
                     });
                     
                     classSection.appendChild(topicsContainer);
                     topicFilters.appendChild(classSection);
                 }
+            });
+            
+            // Note: UI initialization for loaded sessions is handled separately in initializeLoadedSessionUI()
+        }
+
+        function initializeLoadedSessionUI() {
+            // Extract classes and topics from current session content
+            const currentlySelectedClasses = new Set();
+            const currentlySelectedTopics = new Set();
+            
+            if (sessionBuilderData.sessionContent.length > 0) {
+                sessionBuilderData.sessionContent.forEach(item => {
+                    if (item.class && item.topic) {
+                        currentlySelectedClasses.add(item.class);
+                        currentlySelectedTopics.add(`${item.class}-${item.topic}`);
+                    }
+                });
+            }
+            
+            console.log('Re-initializing UI with classes:', Array.from(currentlySelectedClasses));
+            console.log('Re-initializing UI with topics:', Array.from(currentlySelectedTopics));
+            
+            // Set class button states
+            currentlySelectedClasses.forEach(className => {
+                const checkbox = document.getElementById(`class-${className}`);
+                const button = document.getElementById(`btn-${className}`);
+                
+                if (checkbox && button) {
+                    checkbox.checked = true;
+                    button.textContent = 'Remove';
+                    button.className = 'class-action-btn remove-btn';
+                    console.log(`Set class ${className} to Remove state`);
+                }
+            });
+            
+            // Set topic checkbox states and enable sections
+            currentlySelectedClasses.forEach(className => {
+                const classSection = document.getElementById(`class-section-${className}`);
+                const topicCheckboxes = document.querySelectorAll(`input[data-class="${className}"]`);
+                
+                console.log(`Initializing class section for: ${className}`, classSection);
+                
+                if (classSection) {
+                    classSection.style.display = 'block';
+                    classSection.classList.add('show');
+                    classSection.classList.remove('hide');
+                }
+                
+                // Enable and check appropriate topic checkboxes
+                topicCheckboxes.forEach(checkbox => {
+                    checkbox.disabled = false;
+                    const topicId = checkbox.id;
+                    const topicName = topicId.replace(`topic-${className}-`, '');
+                    const topicKey = `${className}-${topicName}`;
+                    
+                    if (currentlySelectedTopics.has(topicKey)) {
+                        checkbox.checked = true;
+                        console.log(`Checked topic: ${topicKey}`);
+                    }
+                });
             });
         }
 
@@ -6444,6 +6583,12 @@
         }
 
         function refreshSessionContent() {
+            // If we're in the process of loading a session, don't recalculate content
+            if (sessionBuilderData.isLoadingSession) {
+                console.log('Skipping content refresh during session loading');
+                return;
+            }
+            
             const content = [];
             
             // Get selected filters (from hidden checkboxes)
@@ -6590,49 +6735,39 @@
         function loadSession(index) {
             const session = sessionBuilderData.savedSessions[index];
             
-            // First, clear all current selections
-            clearAllSelections();
-            
-            // Load the session content
+            // Load the session content - this will be used by populateSessionFilters to restore UI state
             sessionBuilderData.sessionContent = [...session.content];
             
-            // Extract unique classes and topics from session content
-            const classesToSelect = new Set();
-            const topicsToSelect = [];
+            // Count unique classes and topics for the toast message
+            const uniqueClasses = new Set();
+            const uniqueTopics = new Set();
             
             session.content.forEach(item => {
                 if (item.class && item.topic) {
-                    classesToSelect.add(item.class);
-                    const topicKey = { className: item.class, topicName: item.topic };
-                    if (!topicsToSelect.some(t => t.className === item.class && t.topicName === item.topic)) {
-                        topicsToSelect.push(topicKey);
-                    }
+                    uniqueClasses.add(item.class);
+                    uniqueTopics.add(`${item.class}-${item.topic}`);
                 }
             });
             
-            // Select the classes
-            classesToSelect.forEach(className => {
-                const checkbox = document.getElementById(`class-${className}`);
-                const button = document.getElementById(`btn-${className}`);
-                if (checkbox && button) {
-                    checkbox.checked = true;
-                    button.textContent = 'Remove';
-                    button.className = 'class-action-btn remove-btn';
-                }
-            });
-            
-            // Select the topics
-            topicsToSelect.forEach(({ className, topicName }) => {
-                const topicCheckbox = document.getElementById(`topic-${className}-${topicName}`);
-                if (topicCheckbox) {
-                    topicCheckbox.checked = true;
-                }
-            });
-            
-            // Update displays
-            displaySessionContent();
+            // Set session name
             document.getElementById('session-name').value = session.name;
-            showToast(`Session "${session.name}" loaded with ${classesToSelect.size} classes and ${topicsToSelect.length} topics`, 'success');
+            
+            // If the session builder is currently open, refresh the filters to reflect the loaded session
+            const modal = document.getElementById('session-builder-modal');
+            if (modal && modal.classList.contains('show')) {
+                // Set loading flag to prevent content refresh during UI update
+                sessionBuilderData.isLoadingSession = true;
+                populateSessionFilters();
+                setTimeout(() => {
+                    sessionBuilderData.isLoadingSession = false;
+                    displaySessionContent();
+                }, 100);
+            } else {
+                // If modal is not open, just display the session content
+                displaySessionContent();
+            }
+            
+            showToast(`Session "${session.name}" loaded with ${uniqueClasses.size} classes and ${uniqueTopics.size} topics`, 'success');
         }
         
         function clearAllSelections() {
