@@ -1,0 +1,308 @@
+{
+  "title": "Actual Quiz 2",
+  "notes": [
+    [
+      "Big-O notation describes an asymptotic upper bound on growth (worst‑case up to constant factors).",
+      0,
+      "CS07340_Week2_Quiz_Blank.pdf"
+    ],
+    [
+      "Big-Θ (Theta) gives a tight bound—both upper and lower—capturing the dominant term up to constants.",
+      0,
+      "No Source"
+    ],
+    [
+      "Big-Ω (Omega) provides an asymptotic lower bound on growth.",
+      0,
+      "No Source"
+    ],
+    [
+      "Asymptotic notation ignores constant factors and lower‑order terms to compare dominant growth rates.",
+      0,
+      "No Source"
+    ],
+    [
+      "O(n log n) means there exists a constant c and n0 such that T(n) ≤ c·n log n for all n ≥ n0.",
+      0,
+      "No Source"
+    ],
+    [
+      "Θ(n²) means the function grows on the order of n², e.g., 5n² + 5n − 3 is Θ(n²).",
+      0,
+      "CS07340_Week2_Quiz_Blank.pdf"
+    ],
+    [
+      "When n increases fourfold (n → 4n), n³ scales by 64× because (4n)³ = 64n³.",
+      0,
+      "No Source"
+    ],
+    [
+      "When n increases fourfold, n scales by 4× because (4n) = 4n.",
+      0,
+      "No Source"
+    ],
+    [
+      "When n increases fourfold, 1/n scales by 1/4 because 1/(4n) = (1/4)·(1/n).",
+      0,
+      "No Source"
+    ],
+    [
+      "When n increases fourfold, log₂(n) increases additively by +2: log₂(4n)=log₂(n)+2.",
+      0,
+      "No Source"
+    ],
+    [
+      "Asymptotic analysis compares growth as n → ∞; it does not require calculus to be valid.",
+      0,
+      "CS07340_Week2_Quiz_Blank.pdf"
+    ],
+    [
+      "“Upper bound” language in O(·) refers to worst‑case growth bounded by a constant multiple beyond some n₀.",
+      0,
+      "No Source"
+    ],
+    [
+      "An algorithm solving a problem need not be optimal; other algorithms may run asymptotically faster.",
+      0,
+      "CS07340_Week2_Quiz_Blank.pdf"
+    ],
+    [
+      "Common growth classes: 1, log n, n, n log n, n², n³, 2^n, n! (fastest).",
+      0,
+      "No Source"
+    ],
+    [
+      "Doubling rule: if T(n)=Θ(n^k), doubling n multiplies T by 2^k; if T(n)=Θ(log n), doubling adds a constant.",
+      0,
+      "No Source"
+    ],
+    [
+      "Ignoring constants: T(n)=3n log n + 20n is Θ(n log n) because n log n dominates n.",
+      0,
+      "No Source"
+    ],
+    [
+      "Lower-order terms matter for small n but vanish asymptotically; asymptotic notation focuses on large n behavior.",
+      0,
+      "No Source"
+    ],
+    [
+      "Big-O bounds are not unique: O(n), O(n log n), O(n²) can all be true for the same function; tightest is most informative.",
+      0,
+      "No Source"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "What does Big-O notation represent?",
+      "back": "An asymptotic upper bound on a function’s growth rate up to constant factors."
+    },
+    {
+      "front": "Define Big-Θ (Theta).",
+      "back": "A tight bound indicating the function is both O(f(n)) and Ω(f(n))."
+    },
+    {
+      "front": "Define Big-Ω (Omega).",
+      "back": "An asymptotic lower bound on a function’s growth rate."
+    },
+    {
+      "front": "Why do we ignore constants in asymptotic notation?",
+      "back": "They do not affect relative growth for large n; dominant terms determine scaling."
+    },
+    {
+      "front": "Interpret Θ(n²) with an example expression.",
+      "back": "Any quadratic like 5n² + 5n − 3 grows on the order of n² (Θ(n²))."
+    },
+    {
+      "front": "If n → 4n, how does n³ change?",
+      "back": "It multiplies by 64 because (4n)³ = 64n³."
+    },
+    {
+      "front": "If n → 4n, how does n change?",
+      "back": "It multiplies by 4."
+    },
+    {
+      "front": "If n → 4n, how does 1/n change?",
+      "back": "It becomes one quarter of its original value: 1/(4n)."
+    },
+    {
+      "front": "If n → 4n, how does log₂(n) change?",
+      "back": "It increases additively by +2 (not multiplicatively)."
+    },
+    {
+      "front": "Is calculus required for asymptotic notation?",
+      "back": "No. Asymptotic comparisons can be established without calculus."
+    },
+    {
+      "front": "Does solving a problem imply optimal runtime?",
+      "back": "No. A correct algorithm may still be asymptotically slower than another."
+    },
+    {
+      "front": "List common growth rates in increasing order (roughly).",
+      "back": "1, log n, n, n log n, n², n³, 2^n, n!."
+    },
+    {
+      "front": "What is the 'doubling rule' for polynomial T(n)=Θ(n^k)?",
+      "back": "Doubling n multiplies T by 2^k."
+    },
+    {
+      "front": "How does doubling n affect logarithmic functions?",
+      "back": "Adds a constant to the logarithm; it doesn’t multiply the value."
+    },
+    {
+      "front": "What does 'tight bound' mean?",
+      "back": "A bound that matches growth both above and below up to constants (Θ)."
+    },
+    {
+      "front": "Why is O(n) more informative than O(n²) for the same T(n)?",
+      "back": "It’s a tighter (smaller) upper bound, closer to the true growth."
+    },
+    {
+      "front": "What is meant by 'dominant term'?",
+      "back": "The highest‑order term that dictates growth as n becomes large."
+    },
+    {
+      "front": "State the definition form for Big-O.",
+      "back": "∃ c>0, n₀ such that T(n) ≤ c·f(n) ∀ n ≥ n₀."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Big-O notation primarily conveys:",
+      "options": [
+        "An exact runtime",
+        "An asymptotic upper bound",
+        "A tight bound above and below",
+        "An average-case bound only"
+      ],
+      "answer": 1,
+      "explanation": "O(f(n)) bounds growth from above up to constant factors; it need not be tight."
+    },
+    {
+      "question": "Which statement about Θ(n²) is correct?",
+      "options": [
+        "It guarantees the function is O(n).",
+        "It implies Ω(n²) and O(n²).",
+        "It forbids lower-order terms.",
+        "It equals the exact runtime."
+      ],
+      "answer": 1,
+      "explanation": "Θ(n²) means both upper and lower bounds are proportional to n²; lower-order terms can exist."
+    },
+    {
+      "question": "If n increases to 4n, how does n³ change?",
+      "options": [
+        "4×",
+        "16×",
+        "64×",
+        "Add +2"
+      ],
+      "answer": 2,
+      "explanation": "(4n)³ = 64n³."
+    },
+    {
+      "question": "If n increases to 4n, how does log₂(n) change?",
+      "options": [
+        "4×",
+        "2×",
+        "Add +2",
+        "Add +log₂(4n)"
+      ],
+      "answer": 2,
+      "explanation": "log₂(4n) = log₂(n) + 2; logarithms grow additively with multiplicative changes in n."
+    },
+    {
+      "question": "If n increases to 4n, how does 1/n change?",
+      "options": [
+        "4×",
+        "1/4×",
+        "No change",
+        "Add +1/4"
+      ],
+      "answer": 1,
+      "explanation": "1/(4n) = (1/4)·(1/n)."
+    },
+    {
+      "question": "Which notation gives a tight bound?",
+      "options": [
+        "O(·)",
+        "Ω(·)",
+        "Θ(·)",
+        "o(·)"
+      ],
+      "answer": 2,
+      "explanation": "Θ(·) simultaneously gives upper and lower bounds up to constant factors."
+    },
+    {
+      "question": "Which claim is FALSE regarding asymptotics?",
+      "options": [
+        "Constants are ignored in growth-rate comparisons.",
+        "Calculus is required for validity.",
+        "Lower-order terms are ignored for large n.",
+        "Focus is on behavior as n→∞."
+      ],
+      "answer": 1,
+      "explanation": "Asymptotic reasoning does not require calculus; many comparisons use inequalities/limits."
+    },
+    {
+      "question": "Select the correct ordering (slowest to fastest growth).",
+      "options": [
+        "n < log n < n log n",
+        "log n < n < n log n",
+        "n log n < log n < n",
+        "log n < n log n < n"
+      ],
+      "answer": 1,
+      "explanation": "For large n: log n grows slower than n, which grows slower than n log n."
+    },
+    {
+      "question": "Which is TRUE about Big-O?",
+      "options": [
+        "It is unique for a function.",
+        "It must equal Θ(·).",
+        "It can be any valid upper bound, tight or not.",
+        "It equals average-case complexity."
+      ],
+      "answer": 2,
+      "explanation": "Multiple O(·) bounds can hold; tighter ones (smaller classes) are more informative."
+    },
+    {
+      "question": "For T(n)=3n log n + 20n, choose the tightest class:",
+      "options": [
+        "O(n)",
+        "O(n log n)",
+        "O(n²)",
+        "Θ(n)"
+      ],
+      "answer": 1,
+      "explanation": "The n log n term dominates; T(n)=Θ(n log n) and therefore O(n log n)."
+    },
+    {
+      "question": "Which statement about 'algorithm solves a problem' is correct?",
+      "options": [
+        "It must be optimal.",
+        "No faster algorithm can exist.",
+        "It may be correct yet asymptotically slower than another.",
+        "It implies Θ(1) time."
+      ],
+      "answer": 2,
+      "explanation": "Correctness does not imply optimality; there may be faster algorithms."
+    },
+    {
+      "question": "Choose the tightest correct bound for T(n)=5n²+5n−3.",
+      "options": [
+        "O(n)",
+        "Θ(n)",
+        "Θ(n²)",
+        "Ω(n³)"
+      ],
+      "answer": 2,
+      "explanation": "Quadratic term dominates; T(n)=Θ(n²)."
+    }
+  ],
+  "games": [],
+  "sources": [
+    "CS07340_Week2_Quiz_Blank.pdf",
+    "No Source"
+  ]
+}

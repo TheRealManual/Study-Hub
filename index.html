@@ -1178,15 +1178,32 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.7);
-            display: none;
+            background: rgba(0, 0, 0, 0);
+            display: flex;
             z-index: 1000;
             justify-content: center;
             align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
         }
 
         .modal-overlay.show {
-            display: flex;
+            opacity: 1;
+            visibility: visible;
+            background: rgba(0, 0, 0, 0.7);
+        }
+
+        .modal-overlay.closing {
+            opacity: 0;
+            visibility: hidden;
+            background: rgba(0, 0, 0, 0);
+        }
+
+        .modal-wrapper {
+            position: relative;
+            max-width: 600px;
+            width: 90%;
         }
 
         .modal {
@@ -1194,10 +1211,62 @@
             border: 1px solid var(--border);
             border-radius: 1rem;
             padding: 2rem;
-            max-width: 600px;
-            width: 90%;
+            width: 100%;
             max-height: 80vh;
             overflow-y: auto;
+            position: relative;
+        }
+        
+        /* Back to top button for modal */
+        .modal-back-to-top {
+            position: absolute !important;
+            top: 1rem !important;
+            right: 1rem !important;
+            width: 50px !important;
+            height: 50px !important;
+            background: linear-gradient(135deg, #4f46e5, #7c3aed) !important;
+            color: white !important;
+            border: 2px solid rgba(255, 255, 255, 0.2) !important;
+            border-radius: 50% !important;
+            cursor: pointer !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            font-size: 1.2rem !important;
+            font-weight: bold !important;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2) !important;
+            transition: opacity 0.3s ease, visibility 0.3s ease !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+            z-index: 1000 !important;
+        }
+        
+        .modal-back-to-top.show {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .modal-back-to-top.show:hover {
+            transform: translateY(-4px) scale(1.1) !important;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+            filter: brightness(1.2) !important;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease !important;
+        }
+        
+        .modal-back-to-top:active {
+            transform: translateY(-2px) scale(1.05) !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+        }
+        
+        .modal-back-to-top.show:hover {
+            transform: translateY(-4px) scale(1.1) !important;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4), 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+            filter: brightness(1.2) !important;
+        }
+        
+        .modal-back-to-top:active {
+            transform: translateY(-2px) scale(1.05) !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
         }
 
         .modal-header {
@@ -1226,9 +1295,419 @@
         }
 
         /* Session Builder Styles */
-        .session-builder {
+        .class-section {
+            border: 2px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.25);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            margin-bottom: 0.75rem;
+            box-shadow: 
+                0 4px 16px rgba(var(--class-color-rgb, 79, 70, 229), 0.15),
+                0 2px 4px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(var(--class-color-rgb, 79, 70, 229), 0.1);
+            transition: all 0.3s ease;
+            transform: translateY(0);
+            background: linear-gradient(145deg,
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.02),
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.08),
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.04));
+            backdrop-filter: blur(12px);
+        }
+        
+        .class-section:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 8px 28px rgba(var(--class-color-rgb, 79, 70, 229), 0.2),
+                0 4px 12px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(var(--class-color-rgb, 79, 70, 229), 0.15);
+            border-color: rgba(var(--class-color-rgb, 79, 70, 229), 0.35);
+        }
+        
+        .class-section.show {
+            animation: slideIn 0.4s ease-out;
+        }
+        
+        .class-section.hide {
+            animation: slideOut 0.3s ease-in;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        @keyframes slideOut {
+            from {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            to {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+            }
+        }
+        
+        .topic-class-header {
+            position: relative;
+            background: linear-gradient(135deg, var(--class-color-primary, #4F46E5), var(--class-color-secondary, #7C3AED));
+            color: white;
+            padding: 0.75rem;
+            margin: 0;
+        }
+        
+        .topic-class-header h4 {
+            margin: 0;
+            font-size: 1rem;
+            font-weight: 700;
+            text-shadow: 
+                0 1px 3px rgba(0, 0, 0, 0.3),
+                0 0 10px rgba(0, 0, 0, 0.1);
+            letter-spacing: 0.5px;
+            color: white;
+        }
+        
+        .select-all-container {
+            padding: 0.5rem 0.75rem;
+            background: linear-gradient(135deg, 
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.12),
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.18),
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.10));
+            border-bottom: 2px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.25);
+            border-top: 1px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.15);
+        }
+        
+        .select-all-btn {
+            background: linear-gradient(135deg, 
+                var(--class-color-primary, #4F46E5), 
+                var(--class-color-secondary, #7C3AED));
+            color: white;
+            border: 1px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.3);
+            padding: 0.4rem 0.8rem;
+            border-radius: 0.4rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 
+                0 2px 8px rgba(var(--class-color-rgb, 79, 70, 229), 0.3),
+                inset 0 1px 0 rgba(var(--class-color-rgb, 79, 70, 229), 0.1),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+            transform: translateY(0);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .select-all-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 
+                0 4px 16px rgba(var(--class-color-rgb, 79, 70, 229), 0.4),
+                inset 0 1px 0 rgba(var(--class-color-rgb, 79, 70, 229), 0.2),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+            filter: brightness(1.15) saturate(1.2);
+            border-color: rgba(var(--class-color-rgb, 79, 70, 229), 0.4);
+        }
+        
+        .select-all-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .topics-for-class {
+            padding: 0.5rem 0.75rem 0.75rem 0.75rem;
+            background: linear-gradient(160deg, 
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.08), 
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.15),
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.06));
+            border-top: 1px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.18);
+            backdrop-filter: blur(8px);
+        }
+        
+        .filter-option {
+            margin-bottom: 0.25rem;
+            padding: 0.3rem 0.5rem;
+            border-radius: 0.4rem;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, 
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.06),
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.12));
+            border: 1px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.2);
+            backdrop-filter: blur(4px);
+        }
+        
+        .filter-option:hover {
+            background: linear-gradient(135deg, 
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.18),
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.25));
+            border-color: rgba(var(--class-color-rgb, 79, 70, 229), 0.35);
+            transform: translateX(4px);
+            box-shadow: 
+                0 3px 12px rgba(var(--class-color-rgb, 79, 70, 229), 0.2),
+                inset 0 1px 0 rgba(var(--class-color-rgb, 79, 70, 229), 0.1);
+        }
+        
+        .filter-option input[type="checkbox"] {
+            margin-right: 0.5rem;
+            transform: scale(1.1);
+            accent-color: var(--class-color-primary, #4F46E5);
+        }
+        
+        .filter-option label {
+            cursor: pointer;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            color: #2D3748; /* Dark slate for high contrast */
+            font-size: 0.9rem;
+        }
+        
+        .filter-option:hover label {
+            color: var(--class-color-primary, #4F46E5);
+            font-weight: 600;
+        }
+        
+        .filter-option input:disabled + label {
+            color: #A0AEC0; /* Muted gray for disabled state */
+            font-weight: 400;
+        }
+        
+        /* Class filter specific styling with button layout */
+        .class-filter-option {
+            background: linear-gradient(135deg, 
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.08),
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.15)) !important;
+            border: 2px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.25) !important;
+            margin-bottom: 0.5rem !important;
+            padding: 0.5rem !important;
+            border-radius: 0.5rem !important;
+            display: flex !important;
+            align-items: center !important;
+            gap: 0.75rem !important;
+            overflow: hidden !important;
+            cursor: pointer !important;
+            transition: all 0.2s ease !important;
+        }
+        
+        .class-filter-option:hover {
+            background: linear-gradient(135deg, 
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.18),
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.28)) !important;
+            border-color: rgba(var(--class-color-rgb, 79, 70, 229), 0.4) !important;
+            transform: translateX(4px) !important;
+            box-shadow: 
+                0 4px 16px rgba(var(--class-color-rgb, 79, 70, 229), 0.25),
+                inset 0 1px 0 rgba(var(--class-color-rgb, 79, 70, 229), 0.1) !important;
+        }
+        
+        .class-filter-option:hover .class-name {
+            animation: pulse-text 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-text {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        
+        .class-filter-option:active {
+            transform: translateX(2px) !important;
+            box-shadow: 
+                0 2px 8px rgba(var(--class-color-rgb, 79, 70, 229), 0.2),
+                inset 0 1px 0 rgba(var(--class-color-rgb, 79, 70, 229), 0.1) !important;
+        }
+        
+        .class-item-content {
+            flex: 1;
+            padding: 0;
+        }
+        
+        .class-name {
+            font-weight: 600 !important;
+            font-size: 0.95rem !important;
+            letter-spacing: 0.5px !important;
+            color: #F8FAFC !important;
+            user-select: none;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+            transition: none; /* Remove any color transitions */
+        }
+        
+        /* Override general class-name hover for filter options - keep white always */
+        .class-filter-option .class-name,
+        .class-filter-option .class-name:hover {
+            background: none !important;
+            color: #F8FAFC !important;
+        }
+        
+        .class-action-btn {
+            background: linear-gradient(135deg, 
+                var(--class-color-primary, #4F46E5), 
+                var(--class-color-secondary, #6366F1));
+            color: white;
+            border: none;
+            padding: 0.4rem 0.8rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 0.3rem;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 2px 4px rgba(var(--class-color-rgb, 79, 70, 229), 0.3);
+            flex-shrink: 0;
+            position: relative;
+            z-index: 10;
+        }
+        
+        .class-action-btn:hover {
+            filter: brightness(1.1);
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(var(--class-color-rgb, 79, 70, 229), 0.4);
+        }
+        
+        .class-action-btn.add-btn {
+            background: linear-gradient(135deg, 
+                var(--class-color-primary, #4F46E5), 
+                var(--class-color-secondary, #6366F1));
+            opacity: 0.8;
+            position: relative;
+            overflow: visible;
+        }
+        
+        .class-action-btn.add-btn::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, 
+                #FFD700, #FFED4E, #FFC107, #FFB300, 
+                #FFD700, #FFED4E, #FFC107, #FFB300);
+            background-size: 400% 400%;
+            border-radius: 0.6rem;
+            z-index: -1;
+            opacity: 0;
+            animation: golden-glow 3s ease-in-out infinite;
+            transition: opacity 0.3s ease;
+            filter: blur(2px) brightness(1.2) saturate(1.3);
+        }
+        
+        .class-action-btn.add-btn:hover {
+            opacity: 1;
+        }
+        
+        /* Change button to golden colors when hovering over container */
+        .class-filter-option:hover .class-action-btn.add-btn {
+            background: linear-gradient(135deg, #FFD700, #FFC107) !important;
+            opacity: 1;
+            transform: translateY(-1px) scale(1.02);
+            transition: all 0.3s ease;
+        }
+        
+        /* Trigger golden glow when hovering over the entire container */
+        .class-filter-option:hover .class-action-btn.add-btn::before {
+            opacity: 0.8;
+        }
+        
+        /* Also trigger when hovering directly on the button */
+        .class-action-btn.add-btn:hover {
+            background: linear-gradient(135deg, #FFD700, #FFC107) !important;
+            opacity: 1;
+            transform: translateY(-1px) scale(1.02);
+        }
+        
+        .class-action-btn.add-btn:hover::before {
+            opacity: 0.8;
+        }
+
+        /* Change remove button to red colors when hovering over container */
+        .class-filter-option:hover .class-action-btn.remove-btn {
+            background: linear-gradient(135deg, #dc2626, #ef4444) !important;
+            color: white !important;
+            border: 2px solid rgba(239, 68, 68, 0.3) !important;
+            box-shadow: 
+                0 0 30px rgba(239, 68, 68, 0.6),
+                0 0 15px rgba(239, 68, 68, 0.4),
+                0 6px 20px rgba(220, 38, 38, 0.4) !important;
+            opacity: 1;
+            transform: translateY(-1px) scale(1.02);
+            filter: brightness(1.2) saturate(1.3) !important;
+            transition: all 0.3s ease;
+        }
+        
+        @keyframes golden-glow {
+            0%, 100% {
+                background-position: 0% 50%;
+                filter: blur(4px);
+            }
+            25% {
+                background-position: 100% 50%;
+                filter: blur(6px);
+            }
+            50% {
+                background-position: 0% 100%;
+                filter: blur(4px);
+            }
+            75% {
+                background-position: 100% 0%;
+                filter: blur(6px);
+            }
+        }
+        
+        .class-action-btn.remove-btn {
+            background: linear-gradient(135deg, 
+                var(--class-color-primary, #4F46E5), 
+                var(--class-color-secondary, #6366F1));
+            opacity: 1;
+            filter: brightness(1.1) saturate(1.2);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        }
+
+        .class-action-btn.remove-btn:hover {
+            background: linear-gradient(135deg, #dc2626, #ef4444) !important;
+            color: white !important;
+            border: 2px solid rgba(239, 68, 68, 0.3) !important;
+            box-shadow: 
+                0 0 30px rgba(239, 68, 68, 0.6),
+                0 0 15px rgba(239, 68, 68, 0.4),
+                0 6px 20px rgba(220, 38, 38, 0.4) !important;
+            transform: translateY(-2px) scale(1.05) !important;
+            filter: brightness(1.2) saturate(1.3) !important;
+        }
+
+        .class-action-btn.remove-btn:active {
+            background: linear-gradient(135deg, #b91c1c, #dc2626) !important;
+            transform: translateY(0) scale(1.02) !important;
+            box-shadow: 
+                0 0 25px rgba(239, 68, 68, 0.5),
+                0 2px 8px rgba(220, 38, 38, 0.3) !important;
+        }
+        
+        .modal-wrapper-container {
+            position: relative;
             max-width: 800px;
             width: 95%;
+            transform: scale(0.8) translateY(20px);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .modal-overlay.show .modal-wrapper-container {
+            transform: scale(1) translateY(0);
+        }
+
+        .modal-overlay.closing .modal-wrapper-container {
+            transform: scale(0.9) translateY(-10px);
+            transition: transform 0.2s ease-in;
+        }
+
+        .session-builder {
+            width: 100%;
         }
 
         .session-filters {
@@ -1740,6 +2219,50 @@
             margin: 0;
             color: var(--text-muted);
         }
+
+        /* Button animations and effects */
+        .class-filter-item .add-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .class-filter-item .remove-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 
+                0 0 20px rgba(239, 68, 68, 0.5),
+                0 4px 12px rgba(220, 38, 38, 0.3);
+            filter: brightness(1.2) saturate(1.1);
+            background: linear-gradient(135deg, #dc2626, #ef4444) !important;
+            color: white !important;
+        }
+
+        .class-filter-item .add-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .class-filter-item .remove-btn:active {
+            transform: translateY(0);
+            box-shadow: 
+                0 0 15px rgba(239, 68, 68, 0.4),
+                0 2px 4px rgba(220, 38, 38, 0.2);
+            background: linear-gradient(135deg, #b91c1c, #dc2626) !important;
+            color: white !important;
+        }
+
+        .class-filter-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .class-filter-item:hover .class-name {
+            color: var(--primary);
+        }
+
+        .class-filter-item:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -1856,14 +2379,16 @@
 
     <!-- Session Builder Modal -->
     <div id="session-modal" class="modal-overlay">
-        <div class="modal">
-            <div class="modal-header">
-                <h2 class="modal-title">Build Study Session</h2>
-                <button class="close-btn" onclick="closeSessionBuilder()">&times;</button>
-            </div>
-            <div class="modal-content">
-                <div id="session-builder-content">
-                    <!-- Session builder content will be populated here -->
+        <div class="modal-wrapper">
+            <div class="modal">
+                <div class="modal-header">
+                    <h2 class="modal-title">Build Study Session</h2>
+                    <button class="close-btn" onclick="closeSessionBuilder()">&times;</button>
+                </div>
+                <div class="modal-content">
+                    <div id="session-builder-content">
+                        <!-- Session builder content will be populated here -->
+                    </div>
                 </div>
             </div>
         </div>
@@ -1892,6 +2417,7 @@
             loadStudyData();
             setupKeyboardShortcuts();
             initializeAccessibility();
+            setupModalBackToTop();
             
             // Enhanced system configuration - set to true to enable class-based systems with additional features
             window.useEnhancedQuizSystem = true; // Enable enhanced quiz system with session statistics
@@ -2001,6 +2527,86 @@
             }
         }
 
+        // Setup back to top button for modal
+        function setupModalBackToTop() {
+            const modal = document.querySelector('#session-builder-modal .modal');
+            const backToTopBtn = document.getElementById('modal-back-to-top');
+            
+            console.log('Setting up back to top button:', { modal, backToTopBtn });
+            
+            if (!modal || !backToTopBtn) {
+                console.warn('Modal or back to top button not found, retrying in 500ms');
+                setTimeout(setupModalBackToTop, 500);
+                return;
+            }
+            
+            // Define named event handlers to avoid duplicates
+            function handleModalScroll() {
+                if (modal.scrollTop > 50) {
+                    backToTopBtn.classList.add('show');
+                } else {
+                    backToTopBtn.classList.remove('show');
+                }
+            }
+            
+            function handleBackToTopClick() {
+                console.log('Back to top button clicked');
+                modal.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Remove any existing event listeners to avoid duplicates
+            modal.removeEventListener('scroll', handleModalScroll);
+            backToTopBtn.removeEventListener('click', handleBackToTopClick);
+            
+            console.log('Successfully found elements, setting up event listeners');
+            
+            // Add event listeners
+            modal.addEventListener('scroll', handleModalScroll);
+            backToTopBtn.addEventListener('click', handleBackToTopClick);
+            
+            // Hide button when modal is closed
+            const modalOverlay = document.getElementById('session-builder-modal');
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+                        if (!modalOverlay.classList.contains('show')) {
+                            backToTopBtn.classList.remove('show');
+                        }
+                    }
+                });
+            });
+            observer.observe(modalOverlay, { attributes: true });
+        }
+        
+        // Setup click outside to close modal
+        function setupModalClickOutside() {
+            const modalOverlay = document.getElementById('session-builder-modal');
+            const modalContent = modalOverlay.querySelector('.modal-wrapper-container');
+            
+            if (!modalOverlay || !modalContent) {
+                console.warn('Modal overlay or content not found for click outside setup');
+                return;
+            }
+            
+            // Remove any existing click listener to avoid duplicates
+            modalOverlay.removeEventListener('click', handleModalOverlayClick);
+            
+            function handleModalOverlayClick(event) {
+                // Only close if clicking on the overlay itself, not the modal content
+                if (event.target === modalOverlay) {
+                    closeSessionBuilder();
+                }
+            }
+            
+            // Add click listener to the modal overlay
+            modalOverlay.addEventListener('click', handleModalOverlayClick);
+            
+            console.log('Modal click outside handler setup complete');
+        }
+        
         // Data persistence functions
         function loadUserData() {
             try {
@@ -5522,10 +6128,25 @@
             populateSavedSessions();
             document.getElementById('session-builder-modal').classList.add('show');
             refreshSessionContent();
+            
+            // Setup back to top button after modal is shown
+            setTimeout(() => {
+                setupModalBackToTop();
+                setupModalClickOutside();
+            }, 100);
         }
 
         function closeSessionBuilder() {
-            document.getElementById('session-builder-modal').classList.remove('show');
+            const modal = document.getElementById('session-builder-modal');
+            
+            // Add closing class for animation
+            modal.classList.add('closing');
+            modal.classList.remove('show');
+            
+            // Remove closing class after animation completes
+            setTimeout(() => {
+                modal.classList.remove('closing');
+            }, 300);
         }
 
         // Session Builder Data Management
@@ -5536,6 +6157,137 @@
             sessionMode: '' // Track current session mode
         };
 
+        function toggleClassSelection(className, event) {
+            event.stopPropagation(); // Prevent triggering the class click
+            
+            const checkbox = document.getElementById(`class-${className}`);
+            const button = document.getElementById(`btn-${className}`);
+            
+            if (checkbox.checked) {
+                // Remove class
+                checkbox.checked = false;
+                button.textContent = 'Add';
+                button.className = 'class-action-btn add-btn';
+            } else {
+                // Add class
+                checkbox.checked = true;
+                button.textContent = 'Remove';
+                button.className = 'class-action-btn remove-btn';
+            }
+            
+            handleClassSelection(className);
+        }
+        
+        function handleClassClick(className) {
+            const classSection = document.getElementById(`class-section-${className}`);
+            const checkbox = document.getElementById(`class-${className}`);
+            
+            if (checkbox.checked && classSection) {
+                // Class is already added, scroll to it
+                classSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                
+                // Add highlight effect
+                classSection.style.boxShadow = '0 0 20px rgba(var(--class-color-rgb, 79, 70, 229), 0.5)';
+                setTimeout(() => {
+                    classSection.style.boxShadow = '';
+                }, 2000);
+            } else if (!checkbox.checked) {
+                // Class is not added, add it first then scroll
+                const button = document.getElementById(`btn-${className}`);
+                checkbox.checked = true;
+                button.textContent = 'Remove';
+                button.className = 'class-action-btn remove-btn';
+                
+                handleClassSelection(className);
+                
+                // Wait for the class section to be created, then scroll
+                setTimeout(() => {
+                    const newClassSection = document.getElementById(`class-section-${className}`);
+                    if (newClassSection) {
+                        newClassSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                        
+                        // Add highlight effect
+                        newClassSection.style.boxShadow = '0 0 20px rgba(var(--class-color-rgb, 79, 70, 229), 0.5)';
+                        setTimeout(() => {
+                            newClassSection.style.boxShadow = '';
+                        }, 2000);
+                    }
+                }, 100);
+            }
+        }
+        
+        function handleClassSelection(className) {
+            const classCheckbox = document.getElementById(`class-${className}`);
+            const classSection = document.getElementById(`class-section-${className}`);
+            const topicCheckboxes = document.querySelectorAll(`input[data-class="${className}"]`);
+            
+            if (classCheckbox.checked) {
+                // Show entire class section with animation
+                if (classSection) {
+                    classSection.style.display = 'block';
+                    classSection.classList.remove('hide');
+                    classSection.classList.add('show');
+                }
+                // Enable all topic checkboxes for this class
+                topicCheckboxes.forEach(checkbox => {
+                    checkbox.disabled = false;
+                });
+            } else {
+                // Hide entire class section with animation
+                if (classSection) {
+                    classSection.classList.remove('show');
+                    classSection.classList.add('hide');
+                    
+                    // Hide after animation completes
+                    setTimeout(() => {
+                        if (!document.getElementById(`class-${className}`).checked) {
+                            classSection.style.display = 'none';
+                        }
+                    }, 300);
+                }
+                // Uncheck and disable all topic checkboxes for this class
+                topicCheckboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                    checkbox.disabled = true;
+                });
+            }
+            
+            // Refresh content
+            refreshSessionContent();
+        }
+
+        function toggleAllTopicsForClass(className, selectAll) {
+            const topicCheckboxes = document.querySelectorAll(`input[data-class="${className}"]:not(:disabled)`);
+            const selectAllBtn = document.getElementById(`select-all-${className}`);
+            
+            // Add animation to button
+            if (selectAllBtn) {
+                selectAllBtn.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    selectAllBtn.style.transform = 'translateY(0)';
+                }, 100);
+            }
+            
+            topicCheckboxes.forEach(checkbox => {
+                checkbox.checked = selectAll;
+            });
+            
+            // Update button text with icons
+            if (selectAllBtn) {
+                selectAllBtn.innerHTML = selectAll ? '✗ Deselect All' : '✓ Select All';
+                selectAllBtn.onclick = () => toggleAllTopicsForClass(className, !selectAll);
+            }
+            
+            // Refresh content
+            refreshSessionContent();
+        }
+
         function populateSessionFilters(preselectedMode = '') {
             const classFilters = document.getElementById('class-filters');
             const topicFilters = document.getElementById('topic-filters');
@@ -5544,32 +6296,122 @@
             classFilters.innerHTML = '';
             topicFilters.innerHTML = '';
             
-            // Populate class filters
-            Object.keys(studyData).forEach(className => {
+            // Populate class filters with matching color schemes
+            Object.keys(studyData).forEach((className, index) => {
+                // Use the same color schemes as topic sections
+                const colorSchemes = [
+                    { primary: '#4F46E5', secondary: '#6366F1', rgb: '79, 70, 229' }, // Indigo (analogous)
+                    { primary: '#059669', secondary: '#10B981', rgb: '5, 150, 105' }, // Emerald (analogous)
+                    { primary: '#DC2626', secondary: '#EF4444', rgb: '220, 38, 38' }, // Red (analogous)
+                    { primary: '#7C2D12', secondary: '#D97706', rgb: '124, 45, 18' }, // Orange/Brown (analogous)
+                    { primary: '#1E40AF', secondary: '#3B82F6', rgb: '30, 64, 175' }, // Blue (analogous)
+                    { primary: '#BE185D', secondary: '#EC4899', rgb: '190, 24, 93' }, // Pink (analogous)
+                    { primary: '#7C3AED', secondary: '#8B5CF6', rgb: '124, 58, 237' }, // Purple (analogous)
+                    { primary: '#0891B2', secondary: '#06B6D4', rgb: '8, 145, 178' }, // Cyan (analogous)
+                ];
+                const colorScheme = colorSchemes[index % colorSchemes.length];
+                
                 const filterOption = document.createElement('div');
-                filterOption.className = 'filter-option';
+                filterOption.className = 'filter-option class-filter-option';
+                filterOption.style.setProperty('--class-color-primary', colorScheme.primary);
+                filterOption.style.setProperty('--class-color-secondary', colorScheme.secondary);
+                filterOption.style.setProperty('--class-color-rgb', colorScheme.rgb);
+                
+                // Hidden checkbox for state tracking
+                const hiddenCheckbox = document.createElement('input');
+                hiddenCheckbox.type = 'checkbox';
+                hiddenCheckbox.id = `class-${className}`;
+                hiddenCheckbox.checked = false;
+                hiddenCheckbox.style.display = 'none';
+                
                 filterOption.innerHTML = `
-                    <input type="checkbox" id="class-${className}" checked onchange="refreshSessionContent()">
-                    <label for="class-${className}">${className.replace('-', ' ').toUpperCase()}</label>
+                    <button class="class-action-btn add-btn" id="btn-${className}" onclick="toggleClassSelection('${className}', event)">
+                        Add
+                    </button>
+                    <div class="class-item-content">
+                        <span class="class-name">${className.replace('-', ' ').toUpperCase()}</span>
+                    </div>
                 `;
+                
+                // Make entire container clickable
+                filterOption.onclick = (e) => {
+                    // Only handle click if it's not on the button
+                    if (!e.target.classList.contains('class-action-btn')) {
+                        handleClassClick(className);
+                    }
+                };
+                
+                filterOption.appendChild(hiddenCheckbox);
                 classFilters.appendChild(filterOption);
             });
             
-            // Populate topic filters
-            const addedTopics = new Set();
-            Object.values(studyData).forEach(classData => {
-                Object.keys(classData.topics).forEach(topicName => {
-                    if (!addedTopics.has(topicName)) {
-                        addedTopics.add(topicName);
+            // Populate topic filters grouped by class (but hide initially)
+            Object.keys(studyData).forEach(className => {
+                const classData = studyData[className];
+                const topicsByClass = Object.keys(classData.topics);
+                
+                if (topicsByClass.length > 0) {
+                    // Define color scheme for each class using color theory (complementary and analogous colors)
+                    const colorSchemes = [
+                        { primary: '#4F46E5', secondary: '#6366F1', rgb: '79, 70, 229' }, // Indigo (analogous)
+                        { primary: '#059669', secondary: '#10B981', rgb: '5, 150, 105' }, // Emerald (analogous)
+                        { primary: '#DC2626', secondary: '#EF4444', rgb: '220, 38, 38' }, // Red (analogous)
+                        { primary: '#7C2D12', secondary: '#D97706', rgb: '124, 45, 18' }, // Orange/Brown (analogous)
+                        { primary: '#1E40AF', secondary: '#3B82F6', rgb: '30, 64, 175' }, // Blue (analogous)
+                        { primary: '#BE185D', secondary: '#EC4899', rgb: '190, 24, 93' }, // Pink (analogous)
+                        { primary: '#7C3AED', secondary: '#8B5CF6', rgb: '124, 58, 237' }, // Purple (analogous)
+                        { primary: '#0891B2', secondary: '#06B6D4', rgb: '8, 145, 178' }, // Cyan (analogous)
+                    ];
+                    const classIndex = Object.keys(studyData).indexOf(className);
+                    const colorScheme = colorSchemes[classIndex % colorSchemes.length];
+                    
+                    // Create class section container
+                    const classSection = document.createElement('div');
+                    classSection.className = 'class-section';
+                    classSection.id = `class-section-${className}`;
+                    classSection.style.setProperty('--class-color-primary', colorScheme.primary);
+                    classSection.style.setProperty('--class-color-secondary', colorScheme.secondary);
+                    classSection.style.setProperty('--class-color-rgb', colorScheme.rgb);
+                    classSection.style.display = 'none'; // Hide initially since no classes are selected
+                    // Use the CSS custom property for consistent theming
+                    classSection.style.borderColor = `rgba(${colorScheme.rgb}, 0.2)`;
+                    
+                    // Add class header
+                    const classHeader = document.createElement('div');
+                    classHeader.className = 'topic-class-header';
+                    classHeader.innerHTML = `
+                        <h4>${className.replace('-', ' ').toUpperCase()}</h4>
+                    `;
+                    classSection.appendChild(classHeader);
+                    
+                    // Add select all button container
+                    const selectAllContainer = document.createElement('div');
+                    selectAllContainer.className = 'select-all-container';
+                    selectAllContainer.innerHTML = `
+                        <button id="select-all-${className}" class="select-all-btn" onclick="toggleAllTopicsForClass('${className}', false)">
+                            ✓ Deselect All
+                        </button>
+                    `;
+                    classSection.appendChild(selectAllContainer);
+                    
+                    // Add topics for this class
+                    const topicsContainer = document.createElement('div');
+                    topicsContainer.className = 'topics-for-class';
+                    topicsContainer.style.paddingLeft = '1rem';
+                    
+                    topicsByClass.forEach(topicName => {
                         const filterOption = document.createElement('div');
                         filterOption.className = 'filter-option';
                         filterOption.innerHTML = `
-                            <input type="checkbox" id="topic-${topicName}" checked onchange="refreshSessionContent()">
-                            <label for="topic-${topicName}">${topicName.replace('-', ' ').toUpperCase()}</label>
+                            <input type="checkbox" id="topic-${className}-${topicName}" class="topic-checkbox" data-class="${className}" checked onchange="refreshSessionContent()">
+                            <label for="topic-${className}-${topicName}">${topicName.replace('-', ' ').toUpperCase()}</label>
                         `;
-                        topicFilters.appendChild(filterOption);
-                    }
-                });
+                        topicsContainer.appendChild(filterOption);
+                    });
+                    
+                    classSection.appendChild(topicsContainer);
+                    topicFilters.appendChild(classSection);
+                }
             });
         }
 
@@ -5604,11 +6446,20 @@
         function refreshSessionContent() {
             const content = [];
             
-            // Get selected filters
-            const selectedClasses = Array.from(document.querySelectorAll('#class-filters input:checked'))
+            // Get selected filters (from hidden checkboxes)
+            const selectedClasses = Array.from(document.querySelectorAll('#class-filters input[type="checkbox"]:checked'))
                 .map(input => input.id.replace('class-', ''));
-            const selectedTopics = Array.from(document.querySelectorAll('#topic-filters input:checked'))
-                .map(input => input.id.replace('topic-', ''));
+            
+            // Get selected topics with their class information
+            const selectedTopicInputs = Array.from(document.querySelectorAll('#topic-filters input:checked:not(:disabled)'));
+            const selectedTopics = [];
+            selectedTopicInputs.forEach(input => {
+                if (input.dataset.class) {
+                    const className = input.dataset.class;
+                    const topicName = input.id.replace(`topic-${className}-`, '');
+                    selectedTopics.push({ className, topicName });
+                }
+            });
             
             // Determine what content to include based on session mode
             const sessionMode = sessionBuilderData.sessionMode;
@@ -5617,62 +6468,59 @@
             const includeGames = sessionMode === 'games';
             
             // Collect content based on filters
-            selectedClasses.forEach(className => {
-                if (!studyData[className]) return;
+            selectedTopics.forEach(({ className, topicName }) => {
+                if (!studyData[className] || !selectedClasses.includes(className)) return;
+                if (!studyData[className].topics[topicName]) return;
                 
-                Object.keys(studyData[className].topics).forEach(topicName => {
-                    if (!selectedTopics.includes(topicName)) return;
-                    
-                    const topicData = studyData[className].topics[topicName];
-                    
-                    // Add flashcards (filter to only actual flashcards)
-                    if (includeFlashcards && topicData.flashcards) {
-                        const actualFlashcards = topicData.flashcards.filter(item => 
-                            item && typeof item === 'object' && item.front && item.back
-                        );
-                        actualFlashcards.forEach((card, index) => {
-                            content.push({
-                                type: 'flashcard',
-                                class: className,
-                                topic: topicName,
-                                content: card,
-                                id: `${className}-${topicName}-flashcard-${index}`,
-                                title: card.front,
-                                difficulty: 'medium'
-                            });
+                const topicData = studyData[className].topics[topicName];
+                
+                // Add flashcards (filter to only actual flashcards)
+                if (includeFlashcards && topicData.flashcards) {
+                    const actualFlashcards = topicData.flashcards.filter(item => 
+                        item && typeof item === 'object' && item.front && item.back
+                    );
+                    actualFlashcards.forEach((card, index) => {
+                        content.push({
+                            type: 'flashcard',
+                            class: className,
+                            topic: topicName,
+                            content: card,
+                            id: `${className}-${topicName}-flashcard-${index}`,
+                            title: card.front,
+                            difficulty: 'medium'
                         });
-                    }
-                    
-                    // Add quiz questions
-                    if (includeQuiz && topicData.quiz) {
-                        topicData.quiz.forEach((question, index) => {
-                            content.push({
-                                type: 'quiz',
-                                class: className,
-                                topic: topicName,
-                                content: question,
-                                id: `${className}-${topicName}-quiz-${index}`,
-                                title: question.question,
-                                difficulty: 'medium'
-                            });
+                    });
+                }
+                
+                // Add quiz questions
+                if (includeQuiz && topicData.quiz) {
+                    topicData.quiz.forEach((question, index) => {
+                        content.push({
+                            type: 'quiz',
+                            class: className,
+                            topic: topicName,
+                            content: question,
+                            id: `${className}-${topicName}-quiz-${index}`,
+                            title: question.question,
+                            difficulty: 'medium'
                         });
-                    }
-                    
-                    // Add games
-                    if (includeGames && topicData.games) {
-                        topicData.games.forEach((game, index) => {
-                            content.push({
-                                type: 'game',
-                                class: className,
-                                topic: topicName,
-                                content: game,
-                                id: `${className}-${topicName}-game-${index}`,
-                                title: game.title || game.type,
-                                difficulty: 'medium'
-                            });
+                    });
+                }
+                
+                // Add games
+                if (includeGames && topicData.games) {
+                    topicData.games.forEach((game, index) => {
+                        content.push({
+                            type: 'game',
+                            class: className,
+                            topic: topicName,
+                            content: game,
+                            id: `${className}-${topicName}-game-${index}`,
+                            title: game.title || game.type,
+                            difficulty: 'medium'
                         });
-                    }
-                });
+                    });
+                }
             });
             
             sessionBuilderData.sessionContent = content;
@@ -5741,10 +6589,71 @@
 
         function loadSession(index) {
             const session = sessionBuilderData.savedSessions[index];
+            
+            // First, clear all current selections
+            clearAllSelections();
+            
+            // Load the session content
             sessionBuilderData.sessionContent = [...session.content];
+            
+            // Extract unique classes and topics from session content
+            const classesToSelect = new Set();
+            const topicsToSelect = [];
+            
+            session.content.forEach(item => {
+                if (item.class && item.topic) {
+                    classesToSelect.add(item.class);
+                    const topicKey = { className: item.class, topicName: item.topic };
+                    if (!topicsToSelect.some(t => t.className === item.class && t.topicName === item.topic)) {
+                        topicsToSelect.push(topicKey);
+                    }
+                }
+            });
+            
+            // Select the classes
+            classesToSelect.forEach(className => {
+                const checkbox = document.getElementById(`class-${className}`);
+                const button = document.getElementById(`btn-${className}`);
+                if (checkbox && button) {
+                    checkbox.checked = true;
+                    button.textContent = 'Remove';
+                    button.className = 'class-action-btn remove-btn';
+                }
+            });
+            
+            // Select the topics
+            topicsToSelect.forEach(({ className, topicName }) => {
+                const topicCheckbox = document.getElementById(`topic-${className}-${topicName}`);
+                if (topicCheckbox) {
+                    topicCheckbox.checked = true;
+                }
+            });
+            
+            // Update displays
             displaySessionContent();
             document.getElementById('session-name').value = session.name;
-            showToast(`Session "${session.name}" loaded`, 'success');
+            showToast(`Session "${session.name}" loaded with ${classesToSelect.size} classes and ${topicsToSelect.length} topics`, 'success');
+        }
+        
+        function clearAllSelections() {
+            // Clear all class selections
+            document.querySelectorAll('#class-filters input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            // Reset all class buttons to "Add" state
+            document.querySelectorAll('.class-action-btn').forEach(button => {
+                button.textContent = 'Add';
+                button.className = 'class-action-btn add-btn';
+            });
+            
+            // Clear all topic selections
+            document.querySelectorAll('#topic-filters input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            // Clear session content
+            sessionBuilderData.sessionContent = [];
         }
 
         function deleteSession(index) {
@@ -6752,54 +7661,60 @@
 
     <!-- Session Builder Modal -->
     <div class="modal-overlay" id="session-builder-modal">
-        <div class="modal session-builder">
-            <div class="modal-header">
-                <h2 class="modal-title">📚 Session Builder</h2>
-                <button class="close-btn" onclick="closeSessionBuilder()" aria-label="Close session builder">&times;</button>
-            </div>
-            
-            <div class="saved-sessions">
-                <h4>Saved Sessions</h4>
-                <div id="saved-sessions-list">
-                    <!-- Saved sessions will be populated here -->
-                </div>
-            </div>
-
-            <div class="session-filters">
-                <div class="filter-group">
-                    <h4>Classes</h4>
-                    <div class="filter-options" id="class-filters">
-                        <!-- Class filters will be populated here -->
-                    </div>
+        <div class="modal-wrapper-container">
+            <div class="modal session-builder">
+                <div class="modal-header">
+                    <h2 class="modal-title">📚 Session Builder</h2>
+                    <button class="close-btn" onclick="closeSessionBuilder()" aria-label="Close session builder">&times;</button>
                 </div>
                 
-                <div class="filter-group">
-                    <h4>Topics</h4>
-                    <div class="filter-options" id="topic-filters">
-                        <!-- Topic filters will be populated here -->
+                <div class="saved-sessions">
+                    <h4>Saved Sessions</h4>
+                    <div id="saved-sessions-list">
+                        <!-- Saved sessions will be populated here -->
                     </div>
                 </div>
-            </div>
 
-            <div class="session-content" id="session-content">
-                <p style="text-align: center; color: var(--muted); margin: 2rem 0;">
-                    Select classes and topics to populate your session
-                </p>
-            </div>
+                <div class="session-filters">
+                    <div class="filter-group">
+                        <h4>Classes</h4>
+                        <div class="filter-options" id="class-filters">
+                            <!-- Class filters will be populated here -->
+                        </div>
+                    </div>
+                    
+                    <div class="filter-group">
+                        <h4>Topics</h4>
+                        <div class="filter-options" id="topic-filters">
+                            <!-- Topic filters will be populated here -->
+                        </div>
+                    </div>
+                </div>
 
-            <input type="text" class="session-input" id="session-name" placeholder="Session name (optional)">
+                <div class="session-content" id="session-content">
+                    <p style="text-align: center; color: var(--muted); margin: 2rem 0;">
+                        Select classes and topics to populate your session
+                    </p>
+                </div>
 
-            <div class="session-actions">
-                <button class="control-btn" onclick="refreshSessionContent()">
-                    🔄 Refresh Content
-                </button>
-                <button class="control-btn" onclick="saveSession()">
-                    💾 Save Session
-                </button>
-                <button class="control-btn" onclick="startCustomSession()" style="background: var(--good);">
-                    🚀 Start Session
-                </button>
+                <input type="text" class="session-input" id="session-name" placeholder="Session name (optional)">
+
+                <div class="session-actions">
+                    <button class="control-btn" onclick="refreshSessionContent()">
+                        🔄 Refresh Content
+                    </button>
+                    <button class="control-btn" onclick="saveSession()">
+                        💾 Save Session
+                    </button>
+                    <button class="control-btn" onclick="startCustomSession()" style="background: var(--good);">
+                        🚀 Start Session
+                    </button>
+                </div>
             </div>
+            <!-- Back to top button for modal - positioned outside scrollable content -->
+            <button id="modal-back-to-top" class="modal-back-to-top" title="Back to top" aria-label="Scroll back to top">
+                ↑
+            </button>
         </div>
     </div>
 </body>

@@ -1,0 +1,61 @@
+{
+  "title": "REPLACE_WITH_TOPIC_TITLE",
+  
+  "notes": [
+    [
+      "EXAMPLE: Big-O notation provides an asymptotic upper bound for algorithm complexity.",
+      5,
+      "Algorithm_Analysis.pdf"
+    ],
+    [
+      "EXAMPLE: Merge sort has O(n log n) time complexity in all cases.",
+      12,
+      "Sorting_Algorithms.pdf"
+    ]
+  ],
+  
+  "flashcards": [
+    {
+      "front": "What is Big-O notation?",
+      "back": "Mathematical notation describing the upper bound of an algorithm's time or space complexity as input size approaches infinity."
+    },
+    {
+      "front": "Compare merge sort vs quicksort worst-case complexity.",
+      "back": "Merge sort: O(n log n) always. Quicksort: O(n²) worst case, O(n log n) average case."
+    }
+  ],
+  
+  "quiz": [
+    {
+      "question": "Which sorting algorithm has the best worst-case time complexity?",
+      "options": [
+        "Quick Sort",
+        "Merge Sort", 
+        "Bubble Sort",
+        "Selection Sort"
+      ],
+      "answer": 1,
+      "explanation": "Merge Sort maintains O(n log n) in worst case, while Quick Sort degrades to O(n²)."
+    },
+    {
+      "question": "What is the space complexity of merge sort?",
+      "options": [
+        "O(1)",
+        "O(log n)",
+        "O(n)",
+        "O(n log n)"
+      ],
+      "answer": 2,
+      "explanation": "Merge sort requires O(n) auxiliary space for the temporary arrays during merging."
+    }
+  ],
+  
+  "games": [],
+  "_games_note": "Lightning Round and Memory Match games are automatically generated from flashcards - no custom games needed",
+  
+  "sources": [
+    "Textbook_Chapter_5.pdf",
+    "Lecture_Notes_Algorithms.pdf",
+    "Algorithm_Examples.pdf"
+  ]
+}
