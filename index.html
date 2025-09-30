@@ -18,7 +18,17 @@
             --good: #22c55e;
             --bad: #ef4444;
             --warn: #f59e0b;
+            --error: #ef4444;
             --border: #334155;
+            
+            /* Background color variants for better UI */
+            --accent-bg: rgba(34, 211, 238, 0.1);
+            --good-bg: rgba(34, 197, 94, 0.1);
+            --warn-bg: rgba(245, 158, 11, 0.1);
+            --error-bg: rgba(239, 68, 68, 0.1);
+            --text-secondary: #64748b;
+            --background: #1a202c;
+            --card-bg: #2d3748;
             
             /* Motion tokens */
             --fast: 150ms;
@@ -577,6 +587,19 @@
 
         .topic-header {
             margin-bottom: 2rem;
+            display: block;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .topic-header h1.topic-title {
+            display: block;
+            width: 100%;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            line-height: 1.3;
+            margin: 0.5rem 0;
+            clear: both;
         }
 
         .topic-nav {
@@ -584,6 +607,8 @@
             gap: 1rem;
             margin-bottom: 2rem;
             border-bottom: 1px solid var(--border);
+            clear: both;
+            width: 100%;
         }
 
         .tab-btn {
@@ -608,6 +633,8 @@
 
         .tab-content.active {
             display: block;
+            width: 100%;
+            clear: both;
         }
 
         /* Flashcard Styles */
@@ -1212,7 +1239,7 @@
             border-radius: 1rem;
             padding: 2rem;
             width: 100%;
-            max-height: 80vh;
+            max-height: 90vh;
             overflow-y: auto;
             position: relative;
         }
@@ -1273,11 +1300,11 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
         }
 
         .modal-title {
-            font-size: 1.5rem;
+            font-size: 1.1rem;
             color: var(--text);
         }
 
@@ -1285,7 +1312,7 @@
             background: transparent;
             border: none;
             color: var(--muted);
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             cursor: pointer;
             transition: color var(--fast) var(--ease);
         }
@@ -1297,9 +1324,9 @@
         /* Session Builder Styles */
         .class-section {
             border: 2px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.25);
-            border-radius: 0.75rem;
+            border-radius: 0.5rem;
             overflow: hidden;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.4rem;
             box-shadow: 
                 0 4px 16px rgba(var(--class-color-rgb, 79, 70, 229), 0.15),
                 0 2px 4px rgba(0, 0, 0, 0.08),
@@ -1323,21 +1350,29 @@
         }
         
         .class-section.show {
-            animation: slideIn 0.4s ease-out;
+            animation: slideIn 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
         }
         
         .class-section.hide {
-            animation: slideOut 0.3s ease-in;
+            animation: slideOut 0.3s cubic-bezier(0.4, 0.0, 1, 0.5);
         }
-        
+
+        /* Enhanced keyframe animations */
         @keyframes slideIn {
-            from {
+            0% {
                 opacity: 0;
                 transform: translateY(-20px) scale(0.95);
+                filter: blur(4px);
             }
-            to {
+            50% {
+                opacity: 0.7;
+                transform: translateY(-5px) scale(0.98);
+                filter: blur(2px);
+            }
+            100% {
                 opacity: 1;
                 transform: translateY(0) scale(1);
+                filter: blur(0px);
             }
         }
         
@@ -1356,29 +1391,45 @@
             position: relative;
             background: linear-gradient(135deg, var(--class-color-primary, #4F46E5), var(--class-color-secondary, #7C3AED));
             color: white;
-            padding: 0.75rem;
+            padding: 0.4rem;
             margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
-        
+
         .topic-class-header h4 {
             margin: 0;
-            font-size: 1rem;
+            font-size: 0.75rem;
             font-weight: 700;
             text-shadow: 
                 0 1px 3px rgba(0, 0, 0, 0.3),
                 0 0 10px rgba(0, 0, 0, 0.1);
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
+            color: white;
+            flex: 1;
+        }
+        
+        .topic-class-header .select-all-btn {
+            padding: 0.25rem 0.6rem;
+            font-size: 0.7rem;
+            background: rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
             color: white;
         }
         
-        .select-all-container {
-            padding: 0.5rem 0.75rem;
-            background: linear-gradient(135deg, 
-                rgba(var(--class-color-rgb, 79, 70, 229), 0.12),
-                rgba(var(--class-color-rgb, 79, 70, 229), 0.18),
-                rgba(var(--class-color-rgb, 79, 70, 229), 0.10));
-            border-bottom: 2px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.25);
-            border-top: 1px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.15);
+        .topic-class-header .select-all-btn:hover:not(:disabled) {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-1px);
+        }
+        
+        .topic-class-header .select-all-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
         }
         
         .select-all-btn {
@@ -1416,21 +1467,109 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         
+        @keyframes slideOut {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+                filter: blur(0px);
+            }
+            50% {
+                opacity: 0.5;
+                transform: translateY(-10px) scale(0.98);
+                filter: blur(1px);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.95);
+                filter: blur(4px);
+            }
+        }
+
         .topics-for-class {
-            padding: 0.5rem 0.75rem 0.75rem 0.75rem;
+            padding: 0.3rem 0.5rem 0.4rem 0.5rem;
             background: linear-gradient(160deg, 
                 rgba(var(--class-color-rgb, 79, 70, 229), 0.08), 
                 rgba(var(--class-color-rgb, 79, 70, 229), 0.15),
                 rgba(var(--class-color-rgb, 79, 70, 229), 0.06));
             border-top: 1px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.18);
             backdrop-filter: blur(8px);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        /* Topic container animation states */
+        .topics-for-class.expanding {
+            animation: expandTopics 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        .topics-for-class.collapsing {
+            animation: collapseTopics 0.3s cubic-bezier(0.4, 0.0, 1, 0.5);
+        }
+        
+        /* Topic expansion animations */
+        @keyframes expandTopics {
+            0% {
+                max-height: 0;
+                opacity: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+                transform: scaleY(0.2) rotateX(-10deg);
+                filter: blur(2px);
+            }
+            30% {
+                opacity: 0.6;
+                transform: scaleY(0.6) rotateX(-5deg);
+                filter: blur(1px);
+            }
+            70% {
+                opacity: 0.9;
+                transform: scaleY(1.02) rotateX(2deg);
+                filter: blur(0px);
+            }
+            100% {
+                max-height: 500px;
+                opacity: 1;
+                padding-top: 0.3rem;
+                padding-bottom: 0.4rem;
+                transform: scaleY(1) rotateX(0deg);
+                filter: blur(0px);
+            }
+        }
+        
+        @keyframes collapseTopics {
+            0% {
+                max-height: 500px;
+                opacity: 1;
+                padding-top: 0.3rem;
+                padding-bottom: 0.4rem;
+                transform: scaleY(1) rotateX(0deg);
+                filter: blur(0px);
+            }
+            30% {
+                opacity: 0.8;
+                transform: scaleY(0.9) rotateX(-2deg);
+                filter: blur(0px);
+            }
+            70% {
+                opacity: 0.4;
+                transform: scaleY(0.5) rotateX(-8deg);
+                filter: blur(1px);
+            }
+            100% {
+                max-height: 0;
+                opacity: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+                transform: scaleY(0.1) rotateX(-15deg);
+                filter: blur(3px);
+            }
         }
         
         .filter-option {
             margin-bottom: 0.25rem;
             padding: 0.3rem 0.5rem;
             border-radius: 0.4rem;
-            transition: all 0.2s ease;
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
             display: flex;
             align-items: center;
             background: linear-gradient(135deg, 
@@ -1438,6 +1577,277 @@
                 rgba(var(--class-color-rgb, 79, 70, 229), 0.12));
             border: 1px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.2);
             backdrop-filter: blur(4px);
+            animation: fadeInUp 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) both;
+        }
+        
+        /* Stagger animation for topic items */
+        .filter-option:nth-child(1) { animation-delay: 0.05s; }
+        .filter-option:nth-child(2) { animation-delay: 0.1s; }
+        .filter-option:nth-child(3) { animation-delay: 0.15s; }
+        .filter-option:nth-child(4) { animation-delay: 0.2s; }
+        .filter-option:nth-child(5) { animation-delay: 0.25s; }
+        .filter-option:nth-child(6) { animation-delay: 0.3s; }
+        .filter-option:nth-child(7) { animation-delay: 0.35s; }
+        .filter-option:nth-child(8) { animation-delay: 0.4s; }
+        .filter-option:nth-child(n+9) { animation-delay: 0.45s; }
+        
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(10px) scale(0.95);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Flashcard and Session Item Removal Animations */
+        @keyframes popAndDissolve {
+            0% {
+                opacity: 1;
+                transform: scale(1);
+                filter: blur(0px) brightness(1);
+                max-height: 200px;
+                margin-bottom: 0.5rem;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+            25% {
+                opacity: 1;
+                transform: scale(1.2);
+                filter: blur(0px) brightness(1.3);
+                max-height: 200px;
+                margin-bottom: 0.5rem;
+                box-shadow: 0 8px 25px rgba(255, 100, 100, 0.4);
+            }
+            40% {
+                opacity: 1;
+                transform: scale(1.15);
+                filter: blur(0px) brightness(1.2);
+                max-height: 200px;
+                margin-bottom: 0.5rem;
+                box-shadow: 0 6px 20px rgba(255, 100, 100, 0.3);
+            }
+            60% {
+                opacity: 0.8;
+                transform: scale(0.95);
+                filter: blur(2px) brightness(1);
+                max-height: 150px;
+                margin-bottom: 0.3rem;
+                box-shadow: 0 4px 15px rgba(255, 100, 100, 0.2);
+            }
+            80% {
+                opacity: 0.4;
+                transform: scale(0.6);
+                filter: blur(6px) brightness(0.7);
+                max-height: 80px;
+                margin-bottom: 0.1rem;
+                box-shadow: 0 2px 10px rgba(255, 100, 100, 0.1);
+            }
+            95% {
+                opacity: 0.1;
+                transform: scale(0.2);
+                filter: blur(12px) brightness(0.4);
+                max-height: 20px;
+                margin-bottom: 0;
+                box-shadow: none;
+            }
+            100% {
+                opacity: 0;
+                transform: scale(0.1);
+                filter: blur(15px) brightness(0.2);
+                max-height: 0;
+                padding: 0;
+                margin: 0;
+                box-shadow: none;
+            }
+        }
+
+        @keyframes slideOutRight {
+            0% {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+                max-height: 200px;
+            }
+            50% {
+                opacity: 0.7;
+                transform: translateX(30px) scale(0.95);
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(100px) scale(0.8);
+                max-height: 0;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+        @keyframes fadeOutUp {
+            0% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-20px) scale(0.9);
+            }
+        }
+
+        @keyframes bounceInLeft {
+            0% {
+                opacity: 0;
+                transform: translateX(-100px) scale(0.8);
+            }
+            60% {
+                opacity: 1;
+                transform: translateX(10px) scale(1.05);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+            }
+        }
+
+        /* Enhanced Class dropdown animations */
+        @keyframes expandClass {
+            0% {
+                max-height: 0;
+                opacity: 0;
+                transform: scaleY(0.1) translateY(-10px);
+                filter: blur(3px);
+            }
+            40% {
+                opacity: 0.7;
+                transform: scaleY(0.8) translateY(-3px);
+                filter: blur(1px);
+            }
+            80% {
+                opacity: 0.95;
+                transform: scaleY(1.05) translateY(2px);
+                filter: blur(0px);
+            }
+            100% {
+                max-height: 1000px;
+                opacity: 1;
+                transform: scaleY(1) translateY(0);
+                filter: blur(0px);
+            }
+        }
+
+        @keyframes collapseClass {
+            0% {
+                max-height: 1000px;
+                opacity: 1;
+                transform: scaleY(1) translateY(0);
+                filter: blur(0px);
+            }
+            20% {
+                opacity: 0.9;
+                transform: scaleY(0.95) translateY(-2px);
+                filter: blur(0px);
+            }
+            60% {
+                opacity: 0.5;
+                transform: scaleY(0.6) translateY(-8px);
+                filter: blur(1px);
+            }
+            100% {
+                max-height: 0;
+                opacity: 0;
+                transform: scaleY(0.1) translateY(-15px);
+                filter: blur(4px);
+            }
+        }
+
+        /* Session item animation states */
+        .session-item.removing {
+            animation: popAndDissolve 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
+        }
+        
+        /* Ensure removing items can't have their animation overridden */
+        .session-item[data-animation-state="removing"] {
+            animation: popAndDissolve 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards !important;
+        }
+
+        /* Hover effect on remove button for preview */
+        .session-item-remove:hover {
+            transform: scale(1.1);
+            background: #ff4757 !important;
+            box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
+        }
+
+        .session-item:has(.session-item-remove:hover) {
+            transform: scale(1.02) rotate(0.5deg);
+            transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .session-item.adding {
+            animation: bounceInLeft 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Enhanced visibility transitions for collapsed/expanded states */
+        .session-class-content, .session-topic-content {
+            transition: max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1),
+                       opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1),
+                       transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        .session-class-content:not(.collapsed), .session-topic-content:not(.collapsed) {
+            max-height: 2000px;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .session-class-content.collapsed, .session-topic-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        /* Disable transitions when explicitly set */
+        .no-transition {
+            transition: none !important;
+        }
+
+        /* Pulse animation for content updates */
+        @keyframes contentPulse {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0.4);
+            }
+            50% {
+                transform: scale(1.02);
+                box-shadow: 0 0 0 10px rgba(79, 70, 229, 0.1);
+            }
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(79, 70, 229, 0);
+            }
+        }
+
+        .session-content-updating {
+            animation: contentPulse 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        /* Prevent default animations on session items */
+        .session-item {
+            animation: none !important;
+            transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Only animate when explicitly triggered */
+        .session-item.animate-entrance {
+            animation: bounceInLeft 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both !important;
+        }
+
+        /* Class section animation states */
+        .topics-for-class.expanding {
+            animation: expandClass 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+        
+        .topics-for-class.collapsing {
+            animation: collapseClass 0.4s cubic-bezier(0.4, 0.0, 1, 0.5);
         }
         
         .filter-option:hover {
@@ -1475,21 +1885,58 @@
             font-weight: 400;
         }
         
+        /* Enhanced topic container clickability */
+        .filter-option:not(.class-filter-option) {
+            transition: all 0.2s ease;
+            user-select: none;
+        }
+        
+        .filter-option.topic-enabled {
+            cursor: pointer !important;
+        }
+        
+        .filter-option.topic-enabled:hover {
+            background: rgba(var(--class-color-rgb, 79, 70, 229), 0.1);
+            border-color: rgba(var(--class-color-rgb, 79, 70, 229), 0.3);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(var(--class-color-rgb, 79, 70, 229), 0.15);
+            cursor: pointer !important;
+        }
+        
+        .filter-option.topic-enabled:active {
+            transform: translateY(0);
+            box-shadow: 0 1px 4px rgba(var(--class-color-rgb, 79, 70, 229), 0.2);
+            cursor: pointer !important;
+        }
+        
+        .filter-option.topic-enabled * {
+            cursor: pointer !important;
+        }
+        
+        .filter-option.topic-disabled {
+            opacity: 0.6;
+            cursor: not-allowed !important;
+        }
+        
+        .filter-option.topic-disabled * {
+            cursor: not-allowed !important;
+        }
+        
         /* Class filter specific styling with button layout */
         .class-filter-option {
             background: linear-gradient(135deg, 
                 rgba(var(--class-color-rgb, 79, 70, 229), 0.08),
                 rgba(var(--class-color-rgb, 79, 70, 229), 0.15)) !important;
             border: 2px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.25) !important;
-            margin-bottom: 0.5rem !important;
-            padding: 0.5rem !important;
-            border-radius: 0.5rem !important;
+            margin-bottom: 0.25rem !important;
+            padding: 0.3rem !important;
+            border-radius: 4px !important;
             display: flex !important;
             align-items: center !important;
-            gap: 0.75rem !important;
+            gap: 0.4rem !important;
             overflow: hidden !important;
             cursor: pointer !important;
-            transition: all 0.2s ease !important;
+            transition: all 0.15s ease !important;
         }
         
         .class-filter-option:hover {
@@ -1530,8 +1977,8 @@
         
         .class-name {
             font-weight: 600 !important;
-            font-size: 0.95rem !important;
-            letter-spacing: 0.5px !important;
+            font-size: 0.85rem !important;
+            letter-spacing: 0.3px !important;
             color: #F8FAFC !important;
             user-select: none;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
@@ -1551,26 +1998,24 @@
                 var(--class-color-secondary, #6366F1));
             color: white;
             border: none;
-            padding: 0.4rem 0.8rem;
-            font-size: 0.8rem;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.65rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.2s ease;
-            border-radius: 0.3rem;
+            transition: all 0.15s ease;
+            border-radius: 3px;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
-            box-shadow: 0 2px 4px rgba(var(--class-color-rgb, 79, 70, 229), 0.3);
+            box-shadow: 0 1px 2px rgba(var(--class-color-rgb, 79, 70, 229), 0.3);
             flex-shrink: 0;
             position: relative;
             z-index: 10;
         }
-        
+
         .class-action-btn:hover {
             filter: brightness(1.1);
-            transform: translateY(-1px);
-            box-shadow: 0 4px 8px rgba(var(--class-color-rgb, 79, 70, 229), 0.4);
-        }
-        
-        .class-action-btn.add-btn {
+            transform: translateY(-0.5px);
+            box-shadow: 0 2px 4px rgba(var(--class-color-rgb, 79, 70, 229), 0.4);
+        }        .class-action-btn.add-btn {
             background: linear-gradient(135deg, 
                 var(--class-color-primary, #4F46E5), 
                 var(--class-color-secondary, #6366F1));
@@ -1712,105 +2157,526 @@
 
         .session-filters {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 0.5rem;
+            margin-bottom: 1rem;
         }
 
         .filter-group {
             background: var(--bg);
-            border-radius: 8px;
-            padding: 1rem;
+            border-radius: 4px;
+            padding: 0.5rem;
         }
 
         .filter-group h4 {
-            margin: 0 0 0.5rem 0;
+            margin: 0 0 0.3rem 0;
             color: var(--text);
-            font-size: 0.9rem;
+            font-size: 0.75rem;
         }
 
         .filter-options {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.25rem;
         }
 
         .filter-option {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.25rem;
         }
 
         .filter-option input[type="checkbox"] {
             margin: 0;
+            transform: scale(0.8);
         }
 
         .filter-option label {
-            font-size: 0.85rem;
+            font-size: 0.7rem;
             color: var(--muted);
             cursor: pointer;
+            line-height: 1.1;
         }
 
         .session-content {
             background: var(--bg);
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 2rem;
-            max-height: 300px;
+            border-radius: 0;
+            padding: 0 0.5rem 0.5rem 0.5rem;
+            margin-bottom: 1rem;
+            max-height: 70vh;
             overflow-y: auto;
         }
+
+        /* Enhanced Session Content Organization - Ultra Compact Version */
+        .session-content-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.3rem 0.5rem;
+            background: var(--panel);
+            color: var(--text);
+            border-bottom: 2px solid var(--border);
+            margin: 0 -0.5rem 0.5rem -0.5rem;
+            font-weight: 600;
+            font-size: 0.75rem;
+            backdrop-filter: blur(8px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .session-content-stats {
+            display: flex;
+            gap: 0.5rem;
+            font-size: 0.7rem;
+        }
+
+        .session-content-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.15rem;
+        }
+        
+        .session-expand-collapse-btn {
+            background: linear-gradient(135deg, 
+                var(--class-color-primary, #4F46E5), 
+                var(--class-color-secondary, #7C3AED));
+            color: white;
+            border: 1px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.3);
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.6rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            transition: all 0.2s ease;
+            box-shadow: 
+                0 2px 8px rgba(var(--class-color-rgb, 79, 70, 229), 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .session-expand-collapse-btn:hover {
+            transform: translateY(-1px) scale(1.05);
+            box-shadow: 
+                0 4px 16px rgba(var(--class-color-rgb, 79, 70, 229), 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+            filter: brightness(1.15);
+        }
+        
+        .session-collapse-icon {
+            font-size: 0.7rem;
+            transition: transform 0.2s ease;
+            cursor: pointer;
+            margin-right: 0.2rem;
+        }
+        
+        .session-collapse-icon.collapsed {
+            transform: rotate(-90deg);
+        }
+        
+        .session-class-content {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .session-class-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+        }
+        
+        .session-class-content.no-transition {
+            transition: none !important;
+        }
+        
+        .session-topic-content {
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+        
+        .session-topic-content.collapsed {
+            max-height: 0;
+            opacity: 0;
+        }
+        
+        .session-topic-content.no-transition {
+            transition: none !important;
+        }
+
+        .session-class-group {
+            border: 2px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.25);
+            border-radius: 0.5rem;
+            overflow: hidden;
+            margin-bottom: 0.4rem;
+            box-shadow: 
+                0 4px 16px rgba(var(--class-color-rgb, 79, 70, 229), 0.15),
+                0 2px 4px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(var(--class-color-rgb, 79, 70, 229), 0.1);
+            transition: all 0.3s ease;
+            transform: translateY(0);
+            background: linear-gradient(145deg,
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.02),
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.08),
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.04));
+            backdrop-filter: blur(12px);
+        }
+
+        .session-class-header {
+            position: relative;
+            background: linear-gradient(135deg, var(--class-color-primary, #4F46E5), var(--class-color-secondary, #7C3AED));
+            color: white;
+            padding: 0.4rem;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+        }
+        
+        .session-class-header:hover {
+            background: linear-gradient(135deg, 
+                color-mix(in srgb, var(--class-color-primary, #4F46E5) 90%, white 10%), 
+                color-mix(in srgb, var(--class-color-secondary, #7C3AED) 90%, white 10%));
+        }
+
+        .session-class-title {
+            font-weight: 700;
+            color: white;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            text-shadow: 
+                0 1px 3px rgba(0, 0, 0, 0.3),
+                0 0 10px rgba(0, 0, 0, 0.1);
+            letter-spacing: 0.3px;
+        }
+
+        .session-class-controls {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .session-class-expand-collapse-btn {
+            background: rgba(255, 255, 255, 0.15);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.15rem 0.3rem;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.5rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 0.15rem;
+            transition: all 0.2s ease;
+            backdrop-filter: blur(4px);
+        }
+        
+        .session-class-expand-collapse-btn:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+        }
+        
+        .session-class-count {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.15rem 0.3rem;
+            border-radius: 8px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .session-topic-group {
+            border-bottom: 1px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.15);
+            background: rgba(var(--class-color-rgb, 79, 70, 229), 0.02);
+        }
+
+        .session-topic-group:last-child {
+            border-bottom: none;
+        }
+
+        .session-topic-header {
+            background: linear-gradient(135deg, 
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.7),
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.8),
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.6));
+            padding: 0.3rem 0.5rem;
+            border-bottom: 1px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.25);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.2s ease;
+        }
+        
+        .session-topic-header:hover {
+            background: linear-gradient(135deg, 
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.8),
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.9),
+                rgba(var(--class-color-rgb, 79, 70, 229), 0.7));
+            transform: translateX(2px);
+        }
+
+        .session-topic-title {
+            font-weight: 700;
+            color: white;
+            font-size: 0.7rem;
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        .session-topic-count {
+            background: var(--class-color-primary, #4F46E5);
+            color: white;
+            padding: 0.08rem 0.25rem;
+            border-radius: 4px;
+            font-size: 0.6rem;
+            font-weight: 600;
+            box-shadow: 0 1px 3px rgba(var(--class-color-rgb, 79, 70, 229), 0.3);
+        }
+
+        .session-items-grid {
+            display: block;
+        }
+        
+        .session-item:nth-child(even) {
+            background: rgba(var(--class-color-rgb, 79, 70, 229), 0.02);
+        }
+        
+        /* Stable color assignments with smooth transitions */
+        .session-item[data-stable-color="even"] { 
+            background: var(--card-bg) !important; 
+            transition: background-color 0.6s ease !important;
+        }
+        
+        .session-item[data-stable-color="odd"] { 
+            background: rgba(var(--class-color-rgb, 79, 70, 229), 0.02) !important; 
+            transition: background-color 0.6s ease !important;
+        }
+
+        /* Color flow animation for smooth transitions during removal */
+        .session-item.color-flowing {
+            transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+            z-index: 1;
+        }
+
+        /* Simple wave effect for color transitions */
 
         .session-item {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.75rem;
-            margin: 0.25rem 0;
-            background: var(--panel);
-            border-radius: 6px;
-            border: 1px solid var(--border);
+            padding: 0.15rem 0.4rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--card-bg);
+            transition: all 0.2s ease, background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            margin: 0;
+            min-height: 1.8rem;
+        }
+
+        .session-item:last-child {
+            border-bottom: none;
+        }
+
+        .session-item:hover {
+            background: rgba(var(--class-color-rgb, 79, 70, 229), 0.08);
+            transform: translateX(2px);
+            border-left: 3px solid var(--class-color-primary, #4F46E5);
         }
 
         .session-item-info {
             flex: 1;
+            min-width: 0;
+            padding: 0;
+            margin: 0;
         }
 
         .session-item-title {
-            font-weight: 500;
+            font-weight: 600;
             color: var(--text);
-            margin-bottom: 0.25rem;
+            margin: 0;
+            padding: 0;
+            font-size: 0.7rem;
+            line-height: 0.9rem;
+            height: 0.9rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .session-item-meta {
-            font-size: 0.8rem;
-            color: var(--muted);
+            display: flex;
+            align-items: baseline;
+            gap: 0.3rem;
+            font-size: 0.55rem;
+            color: var(--text-secondary);
+            margin: 0;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .session-item-type {
+            display: inline-block;
+            padding: 0.1rem 0.3rem;
+            border-radius: 4px;
+            font-size: 0.5rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            line-height: 1;
+            vertical-align: baseline;
+            letter-spacing: 0.5px;
+            box-sizing: border-box;
+        }
+
+        .session-item-type.flashcard {
+            background: var(--good-bg) !important;
+            color: var(--good) !important;
+            display: inline-block !important;
+            line-height: 1 !important;
+            vertical-align: baseline !important;
+            height: auto !important;
+            min-height: auto !important;
+            max-height: none !important;
+        }
+
+        .flashcard-front, .flashcard-back {
+            font-size: 0.7rem;
+            margin: 0.1rem 0;
+            line-height: 1.2;
+        }
+
+        .flashcard-front strong, .flashcard-back strong {
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* Allow flashcard session items to expand */
+        .session-item.flashcard-expanded {
+            min-height: auto;
+            align-items: flex-start;
+            padding: 0.3rem 0.4rem;
+        }
+
+        .session-item.flashcard-expanded .session-item-title {
+            height: auto;
+            white-space: normal;
+            line-height: 1.2;
+        }
+
+        .session-item-type.quiz {
+            background: var(--accent-bg) !important;
+            color: var(--accent) !important;
+            display: inline-block !important;
+            line-height: 1 !important;
+            vertical-align: baseline !important;
+            height: auto !important;
+            min-height: auto !important;
+            max-height: none !important;
+        }
+
+        .session-item-type.game {
+            background: var(--warn-bg) !important;
+            color: var(--warn) !important;
+            display: inline-block !important;
+            line-height: 1 !important;
+            vertical-align: baseline !important;
+            height: auto !important;
+            min-height: auto !important;
+            max-height: none !important;
+        }
+
+        .session-item-difficulty {
+            display: inline-block;
+            padding: 0.1rem 0.25rem;
+            border-radius: 4px;
+            font-size: 0.5rem;
+            font-weight: 500;
+            line-height: 1;
+            vertical-align: baseline;
+            text-transform: capitalize;
+            box-sizing: border-box;
+        }
+
+        .session-item-difficulty.easy {
+            background: var(--good-bg);
+            color: var(--good);
+        }
+
+        .session-item-difficulty.medium {
+            background: var(--warn-bg);
+            color: var(--warn);
+        }
+
+        .session-item-difficulty.hard {
+            background: var(--error-bg);
+            color: var(--error);
+        }
+
+        .session-item-actions {
+            display: flex;
+            gap: 0.05rem;
+            align-items: center;
+            padding: 0;
+            margin: 0;
         }
 
         .session-item-remove {
-            background: var(--bad);
+            background: var(--error);
             color: white;
             border: none;
-            padding: 0.25rem 0.5rem;
+            padding: 0.15rem 0.3rem;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 0.8rem;
+            font-size: 0.55rem;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 1.2rem;
+            line-height: 1;
+            min-width: 1.2rem;
+        }
+
+        .session-item-remove:hover {
+            background: var(--bad);
+            transform: scale(1.1);
+            box-shadow: 0 2px 8px rgba(var(--error-rgb, 220, 38, 127), 0.3);
         }
 
         .session-actions {
             display: flex;
-            gap: 1rem;
+            gap: 0.5rem;
             justify-content: flex-end;
-            margin-top: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .session-actions .control-btn {
+            padding: 0.4rem 0.8rem;
+            font-size: 0.75rem;
+            border-radius: 4px;
         }
 
         .session-input {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.5rem;
             background: var(--bg);
             border: 1px solid var(--border);
-            border-radius: 6px;
+            border-radius: 4px;
             color: var(--text);
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.8rem;
         }
 
         .session-input:focus {
@@ -1821,19 +2687,24 @@
 
         .saved-sessions {
             background: var(--bg);
-            border-radius: 8px;
-            padding: 1rem;
-            margin-bottom: 1rem;
+            border-radius: 4px;
+            padding: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .saved-sessions h4 {
+            font-size: 0.75rem;
+            margin-bottom: 0.3rem;
         }
 
         .saved-session {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 0.75rem;
-            margin: 0.5rem 0;
+            padding: 0.4rem;
+            margin: 0.25rem 0;
             background: var(--panel);
-            border-radius: 6px;
+            border-radius: 4px;
             border: 1px solid var(--border);
             cursor: pointer;
             transition: all var(--fast);
@@ -1845,26 +2716,27 @@
         }
 
         .saved-session-info h4 {
-            margin: 0 0 0.25rem 0;
+            margin: 0 0 0.15rem 0;
             color: var(--text);
+            font-size: 0.75rem;
         }
 
         .saved-session-meta {
-            font-size: 0.8rem;
+            font-size: 0.65rem;
             color: var(--muted);
         }
 
         .saved-session-actions {
             display: flex;
-            gap: 0.5rem;
+            gap: 0.25rem;
         }
 
         .saved-session-actions button {
-            padding: 0.25rem 0.5rem;
+            padding: 0.15rem 0.3rem;
             border: none;
-            border-radius: 4px;
+            border-radius: 3px;
             cursor: pointer;
-            font-size: 0.8rem;
+            font-size: 0.65rem;
         }
 
         /* Responsive Design */
@@ -2189,6 +3061,12 @@
             background: #16a34a;
         }
 
+        .games-container {
+            display: block;
+            width: 100%;
+            clear: both;
+        }
+
         .games-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -2493,6 +3371,24 @@
             document.body.appendChild(liveRegion);
         }
 
+        // Utility function to format names properly
+        function formatDisplayName(name) {
+            return name
+                .replace(/[-_&]/g, ' ')  // Replace hyphens, underscores, and & with spaces
+                .split(' ')
+                .map(word => {
+                    // Handle special cases
+                    if (word.toLowerCase() === 'i') return 'I';
+                    if (word.toLowerCase() === 'ii') return 'II';
+                    if (word.toLowerCase() === 'iii') return 'III';
+                    if (word.toLowerCase() === 'iv') return 'IV';
+                    if (word.toLowerCase() === 'v') return 'V';
+                    // Capitalize first letter of each word
+                    return word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+                })
+                .join(' ');
+        }
+
         function setupAriaAttributes() {
             // Add role and aria attributes to existing elements
             setTimeout(() => {
@@ -2532,7 +3428,7 @@
             const modal = document.querySelector('#session-builder-modal .modal');
             const backToTopBtn = document.getElementById('modal-back-to-top');
             
-            console.log('Setting up back to top button:', { modal, backToTopBtn });
+
             
             if (!modal || !backToTopBtn) {
                 console.warn('Modal or back to top button not found, retrying in 500ms');
@@ -2550,7 +3446,7 @@
             }
             
             function handleBackToTopClick() {
-                console.log('Back to top button clicked');
+
                 modal.scrollTo({
                     top: 0,
                     behavior: 'smooth'
@@ -2561,7 +3457,7 @@
             modal.removeEventListener('scroll', handleModalScroll);
             backToTopBtn.removeEventListener('click', handleBackToTopClick);
             
-            console.log('Successfully found elements, setting up event listeners');
+
             
             // Add event listeners
             modal.addEventListener('scroll', handleModalScroll);
@@ -2604,7 +3500,7 @@
             // Add click listener to the modal overlay
             modalOverlay.addEventListener('click', handleModalOverlayClick);
             
-            console.log('Modal click outside handler setup complete');
+
         }
         
         // Data persistence functions
@@ -2699,7 +3595,7 @@
             try {
                 studyData = {};
                 
-                console.log('📁 Loading study data from manifest...');
+
                 
                 // Load the dynamically generated manifest with cache busting
                 const manifestResponse = await fetch('./manifest.json?v=' + Date.now());
@@ -2708,12 +3604,12 @@
                 }
                 
                 const manifest = await manifestResponse.json();
-                console.log('📊 Manifest loaded:', manifest);
+
                 
                 // Use the manifest data directly
                 studyData = manifest.classes;
                 
-                console.log('📊 Loaded study data:', Object.keys(studyData).length, 'classes');
+
                 
                 renderSidebar();
                 renderHomepage();
@@ -3142,17 +4038,9 @@
                         const content = document.getElementById(`${pdfId}-content`);
                         
                         // Calculate header position BEFORE expanding, then expand and scroll
-                        console.log('Target PDF:', filename);
-                        console.log('Found header:', header);
-                        console.log('Header text:', header.querySelector('.pdf-name').textContent.trim());
-                        
                         const rect = header.getBoundingClientRect();
                         const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
                         const headerPosition = rect.top + scrollTop;
-                        
-                        console.log('Header rect:', rect);
-                        console.log('Current scroll:', scrollTop);
-                        console.log('Calculated header position:', headerPosition);
                         
                         // Expand the PDF if not already expanded
                         if (!content.classList.contains('expanded')) {
@@ -3161,7 +4049,7 @@
                         
                         // Wait for expansion animation, then scroll to the pre-calculated header position
                         setTimeout(() => {
-                            console.log('Scrolling to:', headerPosition - 80);
+
                             window.scrollTo({
                                 top: headerPosition - 80, // 80px from top to keep header well visible
                                 behavior: 'smooth'
@@ -3551,7 +4439,7 @@
                     // Handle spacebar for flipping
                     if (e.key === ' ') {
                         e.preventDefault();
-                        console.log('Spacebar pressed, flipping flashcard');
+
                         this.flip();
                         return;
                     }
@@ -3559,7 +4447,7 @@
                     // Handle arrow keys for navigation
                     if (e.key === 'ArrowRight') {
                         e.preventDefault();
-                        console.log('Right arrow pressed - isFlipped:', this.isFlipped, 'currentRating:', this.currentRating);
+
                         // Call next() which contains all the proper validation logic
                         this.next();
                         return;
@@ -3587,7 +4475,7 @@
                 
                 // Add the keyboard event listener
                 document.addEventListener('keydown', this.keyboardHandler);
-                console.log('Keyboard handling setup for:', this.systemId);
+
             }
 
             setupClickHandling() {
@@ -3597,9 +4485,7 @@
                     const contentEl = document.getElementById(`${this.systemId}-content`);
                     const flashcardEl = document.getElementById(`${this.systemId}-flashcard`);
                     
-                    console.log('Setting up click handling for:', this.systemId);
-                    console.log('Content element found:', !!contentEl);
-                    console.log('Flashcard element found:', !!flashcardEl);
+
                     
                     // Target the flashcard element for clicking
                     const targetEl = flashcardEl || contentEl;
@@ -3617,7 +4503,7 @@
                         this.clickHandler = (e) => {
                             e.preventDefault();
                             e.stopPropagation();
-                            console.log('Flashcard clicked, flipping...');
+
                             this.flip();
                         };
                         
@@ -3628,11 +4514,11 @@
                         targetEl.addEventListener('touchend', (e) => {
                             e.preventDefault();
                             e.stopPropagation();
-                            console.log('Flashcard touched, flipping...');
+
                             this.flip();
                         });
                         
-                        console.log('Click event attached to:', targetEl.id, targetEl.className);
+
                     } else {
                         console.error('Could not find flashcard elements for:', this.systemId);
                     }
@@ -3750,7 +4636,7 @@
             }
 
             flip() {
-                console.log('Flip method called, current state:', this.isFlipped);
+
                 
                 // Add flip animation
                 if (this.flashcardElement) {
@@ -3759,7 +4645,7 @@
                     // Change content at midpoint of animation (50% = 200ms for 400ms animation)
                     setTimeout(() => {
                         this.isFlipped = !this.isFlipped;
-                        console.log('New flipped state:', this.isFlipped);
+
                         this.showCurrentCard();
                     }, 200); // Midpoint of 400ms animation
                     
@@ -3770,7 +4656,7 @@
                 } else {
                     // Fallback if no animation element
                     this.isFlipped = !this.isFlipped;
-                    console.log('New flipped state:', this.isFlipped);
+
                     this.showCurrentCard();
                 }
             }
@@ -4069,15 +4955,15 @@
             }
 
             next() {
-                console.log('Next method called - isFlipped:', this.isFlipped, 'currentRating:', this.currentRating);
+
                 // Always require a rating to be selected before proceeding
                 if (!this.currentRating) {
-                    console.log('Validation failed - no rating selected');
+
                     showToast('Please rate this card before proceeding!', 'error');
                     return;
                 }
                 
-                console.log('Validation passed, proceeding with next card');
+
                 // Apply the rating if one was selected
                 if (this.currentRating) {
                     this.rateCard(this.currentRating);
@@ -6246,11 +7132,23 @@
             const topicCheckboxes = document.querySelectorAll(`input[data-class="${className}"]`);
             
             if (classCheckbox.checked) {
-                // Show entire class section with animation
+                // Show entire class section with enhanced animation
                 if (classSection) {
                     classSection.style.display = 'block';
                     classSection.classList.remove('hide');
                     classSection.classList.add('show');
+                    
+                    // Animate topics container with enhanced class expansion
+                    const topicsContainer = classSection.querySelector('.topics-for-class');
+                    if (topicsContainer) {
+                        topicsContainer.classList.remove('collapsing');
+                        topicsContainer.classList.add('expanding');
+                        
+                        // Remove animation class after animation completes
+                        setTimeout(() => {
+                            topicsContainer.classList.remove('expanding');
+                        }, 500); // Updated to match expandClass duration
+                    }
                 }
                 // Enable all topic checkboxes for this class
                 topicCheckboxes.forEach(checkbox => {
@@ -6262,8 +7160,15 @@
                     updateSelectAllButtonState(className);
                 }, 50);
             } else {
-                // Hide entire class section with animation
+                // Hide entire class section with enhanced animation
                 if (classSection) {
+                    // Animate topics container collapse first with enhanced class collapse
+                    const topicsContainer = classSection.querySelector('.topics-for-class');
+                    if (topicsContainer) {
+                        topicsContainer.classList.remove('expanding');
+                        topicsContainer.classList.add('collapsing');
+                    }
+                    
                     classSection.classList.remove('show');
                     classSection.classList.add('hide');
                     
@@ -6272,7 +7177,7 @@
                         if (!document.getElementById(`class-${className}`).checked) {
                             classSection.style.display = 'none';
                         }
-                    }, 300);
+                    }, 400); // Updated to match collapseClass duration
                 }
                 // Uncheck and disable all topic checkboxes for this class
                 topicCheckboxes.forEach(checkbox => {
@@ -6288,8 +7193,21 @@
         function updateSelectAllButtonState(className) {
             const topicCheckboxes = document.querySelectorAll(`input[data-class="${className}"]:not(:disabled)`);
             const selectAllBtn = document.getElementById(`select-all-${className}`);
+            const classCheckbox = document.getElementById(`class-${className}`);
             
             if (!selectAllBtn || topicCheckboxes.length === 0) return;
+            
+            // Enable/disable the select all button based on class selection
+            const isClassSelected = classCheckbox && classCheckbox.checked;
+            selectAllBtn.disabled = !isClassSelected;
+            if (isClassSelected) {
+                selectAllBtn.style.pointerEvents = '';
+            } else {
+                selectAllBtn.style.pointerEvents = 'none';
+            }
+            
+            // If class is not selected, don't update button text
+            if (!isClassSelected) return;
             
             // Check how many topics are currently selected
             const checkedTopics = Array.from(topicCheckboxes).filter(cb => cb.checked);
@@ -6340,8 +7258,7 @@
             const currentlySelectedClasses = new Set();
             const currentlySelectedTopics = new Set();
             
-            console.log('Session content length:', sessionBuilderData.sessionContent.length);
-            console.log('Session content:', sessionBuilderData.sessionContent);
+
             
             if (sessionBuilderData.sessionContent.length > 0) {
                 sessionBuilderData.sessionContent.forEach(item => {
@@ -6350,10 +7267,9 @@
                         currentlySelectedTopics.add(`${item.class}-${item.topic}`);
                     }
                 });
-                console.log('Currently selected classes:', Array.from(currentlySelectedClasses));
-                console.log('Currently selected topics:', Array.from(currentlySelectedTopics));
+
             } else {
-                console.log('No session content found - starting with empty selection');
+
             }
             
             // Populate class filters with matching color schemes
@@ -6384,7 +7300,7 @@
                 const isClassSelected = currentlySelectedClasses.has(className);
                 hiddenCheckbox.checked = isClassSelected;
                 hiddenCheckbox.style.display = 'none';
-                console.log(`Setting class ${className} checkbox to: ${isClassSelected}`);
+
                 
                 const buttonText = isClassSelected ? 'Remove' : 'Add';
                 const buttonClass = isClassSelected ? 'class-action-btn remove-btn' : 'class-action-btn add-btn';
@@ -6394,7 +7310,7 @@
                         ${buttonText}
                     </button>
                     <div class="class-item-content">
-                        <span class="class-name">${className.replace('-', ' ').toUpperCase()}</span>
+                        <span class="class-name">${formatDisplayName(className)}</span>
                     </div>
                 `;
                 
@@ -6440,41 +7356,40 @@
                     // Show section if class is currently selected, otherwise hide it
                     const isClassSelectedForSection = currentlySelectedClasses.has(className);
                     classSection.style.display = isClassSelectedForSection ? 'block' : 'none';
-                    console.log(`Setting class section ${className} display to: ${isClassSelectedForSection ? 'block' : 'none'}`);
+
                     // Use the CSS custom property for consistent theming
                     classSection.style.borderColor = `rgba(${colorScheme.rgb}, 0.2)`;
                     
-                    // Add class header
+                    // Add class header with select all button
                     const classHeader = document.createElement('div');
                     classHeader.className = 'topic-class-header';
-                    classHeader.innerHTML = `
-                        <h4>${className.replace('-', ' ').toUpperCase()}</h4>
-                    `;
-                    classSection.appendChild(classHeader);
                     
-                    // Add select all button container - initial state will be set after topics are created
-                    const selectAllContainer = document.createElement('div');
-                    selectAllContainer.className = 'select-all-container';
-                    selectAllContainer.innerHTML = `
-                        <button id="select-all-${className}" class="select-all-btn" onclick="toggleAllTopicsForClass('${className}', true)">
+                    // Check if class is currently selected
+                    const isClassSelected = currentlySelectedClasses.has(className);
+                    const buttonDisabled = isClassSelected ? '' : 'disabled';
+                    const buttonStyle = isClassSelected ? '' : 'style="pointer-events: none;"';
+                    
+                    classHeader.innerHTML = `
+                        <h4>${formatDisplayName(className)}</h4>
+                        <button id="select-all-${className}" class="select-all-btn" onclick="toggleAllTopicsForClass('${className}', true)" ${buttonDisabled} ${buttonStyle}>
                             ✓ Select All
                         </button>
                     `;
-                    classSection.appendChild(selectAllContainer);
+                    classSection.appendChild(classHeader);
                     
                     // Add topics for this class
                     const topicsContainer = document.createElement('div');
                     topicsContainer.className = 'topics-for-class';
                     topicsContainer.style.paddingLeft = '1rem';
                     
-                    console.log(`Creating topics for class: ${className}, topics:`, topicsByClass);
+
                     topicsByClass.forEach(topicName => {
                         const filterOption = document.createElement('div');
                         filterOption.className = 'filter-option';
                         const topicKey = `${className}-${topicName}`;
                         const isTopicSelected = currentlySelectedTopics.has(topicKey);
                         if (currentlySelectedTopics.size > 0) {
-                            console.log(`Checking topic key: "${topicKey}", selected: ${isTopicSelected}`);
+
                         }
                         // Determine if this class is currently selected to know if topic should be enabled
                         const isClassSelectedForTopic = currentlySelectedClasses.has(className);
@@ -6482,16 +7397,45 @@
                         
                         filterOption.innerHTML = `
                             <input type="checkbox" id="topic-${className}-${topicName}" class="topic-checkbox" data-class="${className}" ${isTopicSelected ? 'checked' : ''} ${disabledAttr} onchange="refreshSessionContent()">
-                            <label for="topic-${className}-${topicName}">${topicName.replace('-', ' ').toUpperCase()}</label>
+                            <label for="topic-${className}-${topicName}">${formatDisplayName(topicName)}</label>
                         `;
+                        
+                        // Make entire topic container clickable
+                        if (isClassSelectedForTopic) {
+                            filterOption.classList.add('topic-enabled');
+                            filterOption.classList.remove('topic-disabled');
+                        } else {
+                            filterOption.classList.add('topic-disabled');
+                            filterOption.classList.remove('topic-enabled');
+                        }
+                        
+                        filterOption.onclick = (e) => {
+                            // Don't trigger if clicking on the checkbox itself or if container is disabled
+                            if (e.target.matches('input[type="checkbox"]') || filterOption.classList.contains('topic-disabled')) {
+                                return;
+                            }
+                            
+                            const checkbox = filterOption.querySelector('input[type="checkbox"]');
+                            if (checkbox && !checkbox.disabled) {
+                                e.preventDefault();
+                                checkbox.checked = !checkbox.checked;
+                                checkbox.dispatchEvent(new Event('change'));
+                            }
+                        };
                         topicsContainer.appendChild(filterOption);
-                        console.log(`Created topic: ${topicName} for class: ${className}, enabled: ${isClassSelectedForTopic}, selected: ${isTopicSelected}`);
+
                     });
                     
                     classSection.appendChild(topicsContainer);
                     topicFilters.appendChild(classSection);
                 }
             });
+            
+            // Update topic container states after populating
+            setTimeout(() => updateTopicContainerStates(), 50);
+            
+            // Animate topics with stagger effect
+            setTimeout(() => animateTopicItems(), 100);
             
             // Note: UI initialization for loaded sessions is handled separately in initializeLoadedSessionUI()
         }
@@ -6510,8 +7454,7 @@
                 });
             }
             
-            console.log('Re-initializing UI with classes:', Array.from(currentlySelectedClasses));
-            console.log('Re-initializing UI with topics:', Array.from(currentlySelectedTopics));
+
             
             // Set class button states
             currentlySelectedClasses.forEach(className => {
@@ -6522,7 +7465,7 @@
                     checkbox.checked = true;
                     button.textContent = 'Remove';
                     button.className = 'class-action-btn remove-btn';
-                    console.log(`Set class ${className} to Remove state`);
+
                 }
             });
             
@@ -6531,7 +7474,7 @@
                 const classSection = document.getElementById(`class-section-${className}`);
                 const topicCheckboxes = document.querySelectorAll(`input[data-class="${className}"]`);
                 
-                console.log(`Initializing class section for: ${className}`, classSection);
+
                 
                 if (classSection) {
                     classSection.style.display = 'block';
@@ -6548,7 +7491,7 @@
                     
                     if (currentlySelectedTopics.has(topicKey)) {
                         checkbox.checked = true;
-                        console.log(`Checked topic: ${topicKey}`);
+
                     }
                 });
             });
@@ -6582,12 +7525,188 @@
             });
         }
 
+        function updateTopicContainerStates() {
+            // Update all topic containers to reflect current class selection states
+            document.querySelectorAll('.filter-option:not(.class-filter-option)').forEach(filterOption => {
+                const checkbox = filterOption.querySelector('input[type="checkbox"]');
+                if (checkbox) {
+                    const className = checkbox.dataset.class;
+                    const classCheckbox = document.getElementById(`class-${className}`);
+                    const isClassSelected = classCheckbox && classCheckbox.checked;
+                    
+                    // Update container state
+                    if (isClassSelected) {
+                        filterOption.classList.add('topic-enabled');
+                        filterOption.classList.remove('topic-disabled');
+                        checkbox.disabled = false;
+                    } else {
+                        filterOption.classList.add('topic-disabled');
+                        filterOption.classList.remove('topic-enabled');
+                        checkbox.disabled = true;
+                        checkbox.checked = false; // Uncheck topics when class is disabled
+                    }
+                }
+            });
+        }
+
+        function animateTopicItems() {
+            // Reset and replay animations for topic items
+            const topicContainers = document.querySelectorAll('.topics-for-class');
+            
+            topicContainers.forEach(container => {
+                const filterOptions = container.querySelectorAll('.filter-option:not(.class-filter-option)');
+                
+                // Reset animations
+                filterOptions.forEach(option => {
+                    option.style.animation = 'none';
+                    option.offsetHeight; // Trigger reflow
+                });
+                
+                // Replay animations with proper delays
+                filterOptions.forEach((option, index) => {
+                    const delay = (index * 0.05) + 0.05; // Stagger by 50ms
+                    option.style.animation = `fadeInUp 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) ${delay}s both`;
+                });
+            });
+        }
+
+        // Animation state management
+        let animationTimeouts = new Map();
+        let isAnimating = false;
+        let shouldAnimateOnExpand = true; // Only animate when user expands, not on content updates
+
+        function clearPendingAnimations(containerId, preserveRemoving = true) {
+            if (animationTimeouts.has(containerId)) {
+                clearTimeout(animationTimeouts.get(containerId));
+                animationTimeouts.delete(containerId);
+            }
+            
+            // If preserveRemoving is true, don't clear animations on items being removed
+            if (preserveRemoving) {
+                const removingItems = document.querySelectorAll('.session-item[data-animation-state="removing"]');
+                removingItems.forEach(item => {
+                    // Ensure removing animation continues
+                    if (!item.style.animation.includes('popAndDissolve')) {
+                        item.style.animation = 'popAndDissolve 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+                    }
+                });
+            }
+        }
+
+        // Helper function to escape CSS selectors
+        function escapeSelector(str) {
+            return str.replace(/[!"#$%&'()*+,./:;<=>?@[\\\]^`{|}~]/g, '\\$&');
+        }
+
+        function animateSessionItems(containerSelector = null) {
+            // Only animate if explicitly allowed (user interaction, not content updates)
+            if (!shouldAnimateOnExpand) return;
+            
+            // Debounce to prevent rapid re-animations
+            const containerId = containerSelector || 'global';
+            clearPendingAnimations(containerId);
+            
+            const timeout = setTimeout(() => {
+                let container;
+                try {
+                    container = containerSelector ? document.querySelector(containerSelector) : document;
+                } catch (e) {
+                    console.error('Invalid CSS selector:', containerSelector, e);
+                    return;
+                }
+                if (!container) return;
+                
+                const sessionItems = container.querySelectorAll('.session-item:not([data-animation-state="removing"])');
+                
+                sessionItems.forEach((item, index) => {
+                    // Skip items that are being removed - check both class and data attribute
+                    if (item.dataset.animationState === 'removing' || item.classList.contains('removing')) return;
+                    
+                    // Only animate visible items (not in collapsed containers)
+                    const isVisible = !item.closest('.collapsed');
+                    if (!isVisible) return;
+                    
+                    // Don't touch animation if it's a removal animation
+                    if (item.style.animation && item.style.animation.includes('popAndDissolve')) return;
+                    
+                    // Clear any existing animations cleanly
+                    item.classList.remove('adding');
+                    item.style.animation = '';
+                    // Force reflow
+                    void item.offsetHeight;
+                    
+                    // Add entrance animation with stagger
+                    const delay = index * 0.08; // 80ms stagger
+                    item.style.animation = `bounceInLeft 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}s both`;
+                });
+                
+                animationTimeouts.delete(containerId);
+                
+                // Reset the flag after animation is applied
+                setTimeout(() => {
+                    shouldAnimateOnExpand = false;
+                }, 100);
+            }, 50); // 50ms debounce
+            
+            animationTimeouts.set(containerId, timeout);
+        }
+
+        function animateVisibleSessionItems() {
+            // Only animate if explicitly allowed (user interaction, not content updates)
+            if (!shouldAnimateOnExpand) return;
+            
+            // Clear any pending global animations
+            clearPendingAnimations('visible');
+            
+            const timeout = setTimeout(() => {
+                const visibleSessionItems = document.querySelectorAll('.session-item:not([data-animation-state="removing"])');
+                let visibleIndex = 0;
+                
+                visibleSessionItems.forEach((item) => {
+                    // Skip items that are being removed - check both class and data attribute
+                    if (item.dataset.animationState === 'removing' || item.classList.contains('removing')) return;
+                    
+                    // Check if the item is in a visible (non-collapsed) container
+                    const isInCollapsedContainer = item.closest('.collapsed');
+                    if (isInCollapsedContainer) return;
+                    
+                    // Don't touch animation if it's a removal animation
+                    if (item.style.animation && item.style.animation.includes('popAndDissolve')) return;
+                    
+                    // Clear existing animations cleanly
+                    item.style.animation = '';
+                    // Force reflow
+                    void item.offsetHeight;
+                    
+                    // Apply staggered entrance animation
+                    const delay = visibleIndex * 0.06; // 60ms stagger for visible items only
+                    item.style.animation = `bounceInLeft 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}s both`;
+                    visibleIndex++;
+                });
+                
+                animationTimeouts.delete('visible');
+                
+                // Reset the flag after animation is applied
+                setTimeout(() => {
+                    shouldAnimateOnExpand = false;
+                }, 100);
+            }, 50); // 50ms debounce
+            
+            animationTimeouts.set('visible', timeout);
+        }
+
         function refreshSessionContent() {
             // If we're in the process of loading a session, don't recalculate content
             if (sessionBuilderData.isLoadingSession) {
-                console.log('Skipping content refresh during session loading');
+
                 return;
             }
+            
+            // Disable animations during content updates
+            shouldAnimateOnExpand = false;
+            
+            // Update topic container states first
+            updateTopicContainerStates();
             
             const content = [];
             
@@ -6668,7 +7787,27 @@
                 }
             });
             
+            // Check if content actually changed to prevent unnecessary animations
+            const contentChanged = JSON.stringify(sessionBuilderData.sessionContent) !== JSON.stringify(content);
+            
             sessionBuilderData.sessionContent = content;
+            
+            // Only add pulse animation if content actually changed and we're not in the middle of removal
+            const sessionContainer = document.getElementById('session-content');
+            const isRemoving = document.querySelector('.session-item.removing');
+            
+            if (sessionContainer && content.length > 0 && contentChanged && !isRemoving) {
+                // Clear any existing pulse animation
+                sessionContainer.classList.remove('session-content-updating');
+                // Force reflow then add the class
+                void sessionContainer.offsetHeight;
+                sessionContainer.classList.add('session-content-updating');
+                
+                setTimeout(() => {
+                    sessionContainer.classList.remove('session-content-updating');
+                }, 800);
+            }
+            
             displaySessionContent();
         }
 
@@ -6678,7 +7817,22 @@
             return 'hard';
         }
 
+        // Debounce mechanism to prevent multiple rapid calls
+        let displaySessionContentTimeout = null;
+        
         function displaySessionContent() {
+            // Clear any pending timeout
+            if (displaySessionContentTimeout) {
+                clearTimeout(displaySessionContentTimeout);
+            }
+            
+            // Debounce the actual function call
+            displaySessionContentTimeout = setTimeout(() => {
+                displaySessionContentActual();
+            }, 100);
+        }
+        
+        function displaySessionContentActual() {
             const container = document.getElementById('session-content');
             
             if (sessionBuilderData.sessionContent.length === 0) {
@@ -6689,26 +7843,780 @@
                     'games': 'games'
                 };
                 const contentType = contentTypeNames[sessionMode] || 'content';
-                container.innerHTML = `<p style="text-align: center; color: var(--muted); margin: 2rem 0;">No ${contentType} found in selected classes and topics</p>`;
+                container.innerHTML = `
+                    <div style="text-align: center; color: var(--text-secondary); margin: 1rem 0; padding: 1rem; background: var(--background); border-radius: 4px; border: 2px dashed var(--border);">
+                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">📚</div>
+                        <div style="font-weight: 500; margin-bottom: 0.3rem; font-size: 0.8rem;">No ${contentType} selected</div>
+                        <div style="font-size: 0.7rem;">Choose classes and topics above to build your session</div>
+                    </div>
+                `;
                 return;
             }
             
-            container.innerHTML = sessionBuilderData.sessionContent.map((item, index) => `
-                <div class="session-item">
-                    <div class="session-item-info">
-                        <div class="session-item-title">${item.title}</div>
-                        <div class="session-item-meta">
-                            ${item.type.toUpperCase()} • ${item.class} > ${item.topic} • ${item.difficulty}
+            // Remove duplicates by creating a Set based on unique identifiers
+            const uniqueItems = [];
+            const seenItems = new Set();
+            
+            sessionBuilderData.sessionContent.forEach((item, index) => {
+                // Create unique identifier for each item
+                const itemKey = `${item.class}-${item.topic}-${item.type}-${JSON.stringify(item.content)}`;
+                if (!seenItems.has(itemKey)) {
+                    seenItems.add(itemKey);
+                    uniqueItems.push({...item, originalIndex: uniqueItems.length});
+                }
+            });
+            
+
+            
+            // Organize content by class and topic using deduplicated items
+            const organizedContent = {};
+            uniqueItems.forEach((item, index) => {
+                if (!organizedContent[item.class]) {
+                    organizedContent[item.class] = {};
+                }
+                if (!organizedContent[item.class][item.topic]) {
+                    organizedContent[item.class][item.topic] = [];
+                }
+                organizedContent[item.class][item.topic].push(item);
+            });
+            
+            // Calculate stats using deduplicated items
+            const totalItems = uniqueItems.length;
+            const totalClasses = Object.keys(organizedContent).length;
+            const totalTopics = Object.values(organizedContent).reduce((sum, classData) => 
+                sum + Object.keys(classData).length, 0);
+            
+            const typeStats = {
+                flashcard: uniqueItems.filter(item => item.type === 'flashcard').length,
+                quiz: uniqueItems.filter(item => item.type === 'quiz').length,
+                game: uniqueItems.filter(item => item.type === 'game').length
+            };
+            
+            // Get type icons
+            const getTypeIcon = (type) => {
+                switch(type) {
+                    case 'flashcard': return '📚';
+                    case 'quiz': return '📝';
+                    case 'game': return '🎮';
+                    default: return '📄';
+                }
+            };
+            
+            // Get class icon
+            const getClassIcon = (className) => {
+                const icons = {
+                    'computer-lab-techniques': '💻',
+                    'design-&-analysis-of-algorithms': '🧮',
+                    'human-anatomy-&-physiology-I': '🧬',
+                    'uses-of-accounting-2': '💼'
+                };
+                return icons[className] || '📚';
+            };
+            
+            // Build the organized HTML
+            let html = `
+                <div class="session-content-header">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <span style="font-size: 1.2rem;">📊</span>
+                        <span>Session Content Overview</span>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <div class="session-content-stats">
+                            <div class="session-content-stat">
+                                <span>📚</span>
+                                <span>${totalItems} items</span>
+                            </div>
+                            <div class="session-content-stat">
+                                <span>🏛️</span>
+                                <span>${totalClasses} classes</span>
+                            </div>
+                            <div class="session-content-stat">
+                                <span>📂</span>
+                                <span>${totalTopics} topics</span>
+                            </div>
+                        </div>
+                        <button class="session-expand-collapse-btn" onclick="toggleAllSessionGroups()">
+                            <span id="expand-collapse-icon">▼</span>
+                            <span id="expand-collapse-text">Collapse All</span>
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            // Add content organized by class and topic
+            Object.entries(organizedContent).forEach(([className, classData]) => {
+                const classTitle = studyData[className]?.title || formatDisplayName(className);
+                const classItemCount = Object.values(classData).reduce((sum, topicItems) => sum + topicItems.length, 0);
+                
+                // Get class-specific colors using the same method as class selection
+                const allClassNames = Object.keys(studyData);
+                const classIndex = allClassNames.indexOf(className);
+                const colorSchemes = [
+                    { primary: '#4F46E5', secondary: '#6366F1', rgb: '79, 70, 229' }, // Indigo (analogous)
+                    { primary: '#059669', secondary: '#10B981', rgb: '5, 150, 105' }, // Emerald (analogous)
+                    { primary: '#DC2626', secondary: '#EF4444', rgb: '220, 38, 38' }, // Red (analogous)
+                    { primary: '#7C2D12', secondary: '#D97706', rgb: '124, 45, 18' }, // Orange/Brown (analogous)
+                    { primary: '#1E40AF', secondary: '#3B82F6', rgb: '30, 64, 175' }, // Blue (analogous)
+                    { primary: '#BE185D', secondary: '#EC4899', rgb: '190, 24, 93' }, // Pink (analogous)
+                    { primary: '#7C3AED', secondary: '#8B5CF6', rgb: '124, 58, 237' }, // Purple (analogous)
+                    { primary: '#0891B2', secondary: '#06B6D4', rgb: '8, 145, 178' }, // Cyan (analogous)
+                ];
+                const colorScheme = colorSchemes[classIndex % colorSchemes.length];
+                
+                const classGroupHtml = `
+                    <div class="session-class-group" style="
+                        --class-color-primary: ${colorScheme.primary};
+                        --class-color-secondary: ${colorScheme.secondary};
+                        --class-color-rgb: ${colorScheme.rgb};
+                    ">
+                        <div class="session-class-header" onclick="toggleSessionClass('${className}')">
+                            <div class="session-class-title">
+                                <span class="session-collapse-icon" id="class-icon-${className}">▼</span>
+                                <span>${getClassIcon(className)}</span>
+                                <span>${classTitle}</span>
+                            </div>
+                            <div class="session-class-controls">
+                                <button class="session-class-expand-collapse-btn" onclick="event.stopPropagation(); toggleAllTopicsInClass('${className}');" title="Expand/Collapse all topics in this class">
+                                    <span id="class-topics-icon-${className}">▼</span>
+                                    <span id="class-topics-text-${className}">Collapse Topics</span>
+                                </button>
+                                <div class="session-class-count">${classItemCount} items</div>
+                            </div>
+                        </div>
+                        <div class="session-class-content" id="class-content-${className}">
+                `;
+                html += classGroupHtml;
+                
+                Object.entries(classData).forEach(([topicName, topicItems]) => {
+                    const topicTitle = studyData[className]?.topics[topicName]?.title || formatDisplayName(topicName);
+                    
+                    html += `
+                        <div class="session-topic-group">
+                            <div class="session-topic-header" onclick="toggleSessionTopic('${className}', '${topicName}')">
+                                <div class="session-topic-title">
+                                    <span class="session-collapse-icon" id="topic-icon-${className}-${topicName}">▼</span>
+                                    <span>📂</span>
+                                    <span>${topicTitle}</span>
+                                </div>
+                                <div class="session-topic-count">${topicItems.length}</div>
+                            </div>
+                            <div class="session-topic-content" id="topic-content-${className}-${topicName}">
+                                <div class="session-items-grid">
+                    `;
+                    
+                    topicItems.forEach((item, topicIndex) => {
+                        let displayContent = '';
+                        
+                        if (item.type === 'flashcard') {
+                            // The flashcard content is stored in item.content for session items
+                            const flashcardData = item.content || item;
+                            let frontText = flashcardData.front || item.front || '';
+                            let backText = flashcardData.back || item.back || '';
+                            
+                            if (frontText && backText) {
+                                // For flashcards, show front and back
+                                const truncatedFront = frontText.length > 60 ? frontText.substring(0, 60) + '...' : frontText;
+                                const truncatedBack = backText.length > 60 ? backText.substring(0, 60) + '...' : backText;
+                                displayContent = `
+                                    <div class="session-item-title">
+                                        <div class="flashcard-front"><strong>Front:</strong> ${truncatedFront}</div>
+                                        <div class="flashcard-back"><strong>Back:</strong> ${truncatedBack}</div>
+                                    </div>
+                                `;
+                            } else {
+                                // Fallback to title if front/back not found
+                                const truncatedTitle = item.title.length > 80 ? item.title.substring(0, 80) + '...' : item.title;
+                                displayContent = `<div class="session-item-title">${truncatedTitle}</div>`;
+                            }
+                        } else {
+                            // For other items, show title
+                            const truncatedTitle = item.title.length > 80 ? item.title.substring(0, 80) + '...' : item.title;
+                            displayContent = `<div class="session-item-title">${truncatedTitle}</div>`;
+                        }
+                        
+                        // Add special class for flashcards with front/back content
+                        const flashcardClass = (item.type === 'flashcard' && displayContent.includes('flashcard-front')) ? ' flashcard-expanded' : '';
+                        
+                        // Assign stable color based on position within this topic (independent zebra striping)
+                        const stableColor = topicIndex % 2 === 0 ? 'even' : 'odd';
+                        
+                        html += `
+                            <div class="session-item${flashcardClass}" data-stable-color="${stableColor}">
+                                <div class="session-item-info">
+                                    ${displayContent}
+                                    <div class="session-item-meta">
+                                        <span class="session-item-type ${item.type}">
+                                            ${item.type}
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="session-item-actions">
+                                    <button class="session-item-remove" onclick="removeSessionItem(${item.originalIndex})" title="Remove item">
+                                        <span>×</span>
+                                    </button>
+                                </div>
+                            </div>
+                        `;
+                    });
+                    
+                    html += `
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                // Close class content and class group
+                const classCloseHtml = `
                         </div>
                     </div>
-                    <button class="session-item-remove" onclick="removeSessionItem(${index})">Remove</button>
-                </div>
-            `).join('');
+                `;
+                html += classCloseHtml;
+            });
+            
+            // Store current collapse states before updating HTML
+            const classStates = {};
+            const topicStates = {};
+            
+            // Get current states if elements exist
+            Object.keys(organizedContent).forEach(className => {
+                const classContent = document.getElementById(`class-content-${className}`);
+                if (classContent) {
+                    classStates[className] = classContent.classList.contains('collapsed');
+                }
+                
+                Object.keys(organizedContent[className]).forEach(topicName => {
+                    const topicContent = document.getElementById(`topic-content-${className}-${topicName}`);
+                    if (topicContent) {
+                        topicStates[`${className}-${topicName}`] = topicContent.classList.contains('collapsed');
+                    }
+                });
+            });
+            
+            // Clear container and set new content
+            
+            // Set HTML content using incremental approach to avoid nesting issues
+            container.innerHTML = '';
+            
+            // Extract header and class sections
+            const headerMatch = html.match(/<div class="session-content-header">.*?<\/div>\s*(?=<div class="session-class-group")/s);
+            const headerHTML = headerMatch ? headerMatch[0] : '';
+            
+            // Extract individual class sections
+            const classMatches = [...html.matchAll(/<div class="session-class-group"[^>]*>.*?(?=<div class="session-class-group"|$)/gs)];
+            
+            // Set header first
+            container.innerHTML = headerHTML;
+            
+            // Add each class section individually
+            classMatches.forEach((match) => {
+                const classHTML = match[0];
+                container.innerHTML += classHTML;
+            });
+            
+
+            
+            // Temporarily disable transitions for instant state restoration
+            const allClassContents = document.querySelectorAll('.session-class-content');
+            const allTopicContents = document.querySelectorAll('.session-topic-content');
+            
+            [...allClassContents, ...allTopicContents].forEach(element => {
+                element.classList.add('no-transition');
+            });
+            
+            // Apply collapse states immediately
+            Object.keys(organizedContent).forEach(className => {
+                const classContent = document.getElementById(`class-content-${className}`);
+                const classIcon = document.getElementById(`class-icon-${className}`);
+                
+                if (classContent && classIcon) {
+                    const wasCollapsed = classStates[className] !== undefined ? classStates[className] : true;
+                    if (wasCollapsed) {
+                        classContent.classList.add('collapsed');
+                        classIcon.classList.add('collapsed');
+                    }
+                }
+                
+                Object.keys(organizedContent[className]).forEach(topicName => {
+                    const topicContent = document.getElementById(`topic-content-${className}-${topicName}`);
+                    const topicIcon = document.getElementById(`topic-icon-${className}-${topicName}`);
+                    
+                    if (topicContent && topicIcon) {
+                        const wasCollapsed = topicStates[`${className}-${topicName}`] !== undefined ? 
+                            topicStates[`${className}-${topicName}`] : true;
+                        if (wasCollapsed) {
+                            topicContent.classList.add('collapsed');
+                            topicIcon.classList.add('collapsed');
+                        }
+                    }
+                });
+            });
+            
+            // Re-enable transitions after a brief moment
+            setTimeout(() => {
+                [...allClassContents, ...allTopicContents].forEach(element => {
+                    element.classList.remove('no-transition');
+                });
+                
+                // Only trigger animations if this is the initial load and we have expanded sections
+                // Don't animate during content updates
+                const hasExpandedSections = document.querySelector('.class-content:not(.collapsed), .topic-content:not(.collapsed)');
+                if (shouldAnimateOnExpand && hasExpandedSections) {
+                    animateVisibleSessionItems();
+                }
+            }, 10);
+            
+            // Update the expand/collapse button state
+            updateExpandCollapseButtonState();
+        }
+
+        function toggleSessionClass(className) {
+            const content = document.getElementById(`class-content-${className}`);
+            const icon = document.getElementById(`class-icon-${className}`);
+            const classHeader = document.querySelector(`[onclick="toggleSessionClass('${className}')"]`);
+            
+            if (content && icon) {
+                const wasCollapsed = content.classList.contains('collapsed');
+                content.classList.toggle('collapsed');
+                icon.classList.toggle('collapsed');
+                
+                // If we just expanded the class, trigger animations for the revealed items
+                if (wasCollapsed) {
+                    // Set flag to enable animations for this user action
+                    shouldAnimateOnExpand = true;
+                    // Use the debounced animation system
+                    animateSessionItems(`#${escapeSelector(`class-content-${className}`)}`);
+                    
+                    setTimeout(() => {
+                        // Scroll to show the expanded content
+                        if (classHeader) {
+                            setTimeout(() => {
+                                classHeader.scrollIntoView({ 
+                                    behavior: 'smooth', 
+                                    block: 'start',
+                                    inline: 'nearest'
+                                });
+                            }, 50);
+                        }
+                    }, 50); // Small delay to let the content expand
+                }
+            }
+        }
+
+        function toggleSessionTopic(className, topicName) {
+            const content = document.getElementById(`topic-content-${className}-${topicName}`);
+            const icon = document.getElementById(`topic-icon-${className}-${topicName}`);
+            const topicHeader = document.querySelector(`[onclick="toggleSessionTopic('${className}', '${topicName}')"]`);
+            
+            if (content && icon) {
+                const wasCollapsed = content.classList.contains('collapsed');
+                content.classList.toggle('collapsed');
+                icon.classList.toggle('collapsed');
+                
+                // If we just expanded the topic, trigger animations for the revealed items
+                if (wasCollapsed) {
+                    // Set flag to enable animations for this user action
+                    shouldAnimateOnExpand = true;
+                    // Use the debounced animation system
+                    animateSessionItems(`#${escapeSelector(`topic-content-${className}-${topicName}`)}`);
+                    
+                    setTimeout(() => {
+                        // Scroll to show the expanded content
+                        if (topicHeader) {
+                            setTimeout(() => {
+                                topicHeader.scrollIntoView({ 
+                                    behavior: 'smooth', 
+                                    block: 'start',
+                                    inline: 'nearest'
+                                });
+                            }, 50);
+                        }
+                    }, 50); // Small delay to let the content expand
+                }
+            }
+        }
+
+        function toggleAllSessionGroups() {
+            const expandCollapseIcon = document.getElementById('expand-collapse-icon');
+            const expandCollapseText = document.getElementById('expand-collapse-text');
+            const allClassContents = document.querySelectorAll('.session-class-content');
+            const allTopicContents = document.querySelectorAll('.session-topic-content');
+            const allIcons = document.querySelectorAll('.session-collapse-icon');
+            
+            const isCollapsed = expandCollapseText.textContent === 'Expand All';
+            
+            if (isCollapsed) {
+                // Expand all
+                allClassContents.forEach(content => content.classList.remove('collapsed'));
+                allTopicContents.forEach(content => content.classList.remove('collapsed'));
+                allIcons.forEach(icon => icon.classList.remove('collapsed'));
+                expandCollapseIcon.textContent = '▼';
+                expandCollapseText.textContent = 'Collapse All';
+                
+                // Enable animations for this user action
+                shouldAnimateOnExpand = true;
+                
+                // Animate all revealed session items with staggered timing
+                setTimeout(() => {
+                    const allSessionItems = document.querySelectorAll('.session-item:not([data-animation-state="removing"])');
+                    allSessionItems.forEach((item, index) => {
+                        // Reset any existing animations
+                        item.style.animation = '';
+                        void item.offsetHeight; // Trigger reflow
+                        
+                        // Apply staggered entrance animation
+                        const delay = index * 0.03; // Faster stagger for many items
+                        item.style.animation = `bounceInLeft 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) ${delay}s both`;
+                    });
+                    
+                    // Reset animation flag after completion
+                    setTimeout(() => {
+                        shouldAnimateOnExpand = false;
+                    }, 400 + (allSessionItems.length * 30));
+                    
+                    // Scroll to show the expanded content
+                    setTimeout(() => {
+                        const firstClassGroup = document.querySelector('.session-class-group');
+                        if (firstClassGroup) {
+                            firstClassGroup.scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'start',
+                                inline: 'nearest'
+                            });
+                        }
+                    }, 50);
+                }, 50);
+            } else {
+                // Collapse all
+                allClassContents.forEach(content => content.classList.add('collapsed'));
+                allTopicContents.forEach(content => content.classList.add('collapsed'));
+                allIcons.forEach(icon => icon.classList.add('collapsed'));
+                expandCollapseIcon.textContent = '▶';
+                expandCollapseText.textContent = 'Expand All';
+            }
+        }
+
+        function collapseAllSessionGroups() {
+            const expandCollapseIcon = document.getElementById('expand-collapse-icon');
+            const expandCollapseText = document.getElementById('expand-collapse-text');
+            const allClassContents = document.querySelectorAll('.session-class-content');
+            const allTopicContents = document.querySelectorAll('.session-topic-content');
+            const allIcons = document.querySelectorAll('.session-collapse-icon');
+            
+            // Collapse all by default
+            allClassContents.forEach(content => content.classList.add('collapsed'));
+            allTopicContents.forEach(content => content.classList.add('collapsed'));
+            allIcons.forEach(icon => icon.classList.add('collapsed'));
+            
+            if (expandCollapseIcon && expandCollapseText) {
+                expandCollapseIcon.textContent = '▶';
+                expandCollapseText.textContent = 'Expand All';
+            }
+        }
+
+        function toggleAllTopicsInClass(className) {
+            const classTopicsIcon = document.getElementById(`class-topics-icon-${className}`);
+            const classTopicsText = document.getElementById(`class-topics-text-${className}`);
+            const classContent = document.getElementById(`class-content-${className}`);
+            const classIcon = document.getElementById(`class-icon-${className}`);
+            const classHeader = document.querySelector(`[onclick="toggleSessionClass('${className}')"]`);
+            
+            if (!classContent || !classTopicsIcon || !classTopicsText || !classIcon) {
+                return;
+            }
+            
+            // Check if class is currently collapsed
+            const isClassCollapsed = classContent.classList.contains('collapsed');
+            
+            // Find all topic contents within this class
+            const topicContents = classContent.querySelectorAll('.session-topic-content');
+            const topicIcons = classContent.querySelectorAll('.session-collapse-icon[id^="topic-icon"]');
+            
+            // Determine the current state of topics
+            const isTopicsCollapsed = classTopicsText.textContent === 'Expand Topics';
+            
+            let shouldScroll = false;
+            
+            if (isClassCollapsed) {
+                // If class is collapsed, expand it first, then expand all topics
+                classContent.classList.remove('collapsed');
+                classIcon.classList.remove('collapsed');
+                
+                // Expand all topics
+                topicContents.forEach(content => content.classList.remove('collapsed'));
+                topicIcons.forEach(icon => icon.classList.remove('collapsed'));
+                classTopicsIcon.textContent = '▼';
+                classTopicsText.textContent = 'Collapse Topics';
+                shouldScroll = true;
+            } else if (isTopicsCollapsed) {
+                // Class is expanded but topics are collapsed - expand topics
+                topicContents.forEach(content => content.classList.remove('collapsed'));
+                topicIcons.forEach(icon => icon.classList.remove('collapsed'));
+                classTopicsIcon.textContent = '▼';
+                classTopicsText.textContent = 'Collapse Topics';
+                shouldScroll = true;
+            } else {
+                // Everything is expanded - collapse everything (topics first, then class)
+                topicContents.forEach(content => content.classList.add('collapsed'));
+                topicIcons.forEach(icon => icon.classList.add('collapsed'));
+                classTopicsIcon.textContent = '▶';
+                classTopicsText.textContent = 'Expand Topics';
+                
+                // Then collapse the class
+                classContent.classList.add('collapsed');
+                classIcon.classList.add('collapsed');
+            }
+            
+            // Scroll to show the expanded content if we expanded something
+            if (shouldScroll && classHeader) {
+                setTimeout(() => {
+                    classHeader.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'start',
+                        inline: 'nearest'
+                    });
+                }, 100);
+            }
+            
+            // Update the main expand/collapse button state
+            updateExpandCollapseButtonState();
+        }
+
+        function updateExpandCollapseButtonState() {
+            const expandCollapseIcon = document.getElementById('expand-collapse-icon');
+            const expandCollapseText = document.getElementById('expand-collapse-text');
+            const allClassContents = document.querySelectorAll('.session-class-content');
+            const allTopicContents = document.querySelectorAll('.session-topic-content');
+            
+            if (!expandCollapseIcon || !expandCollapseText) return;
+            
+            // Check if all items are collapsed
+            const allCollapsed = [...allClassContents, ...allTopicContents].every(content => 
+                content.classList.contains('collapsed'));
+            
+            if (allCollapsed) {
+                expandCollapseIcon.textContent = '▶';
+                expandCollapseText.textContent = 'Expand All';
+            } else {
+                expandCollapseIcon.textContent = '▼';
+                expandCollapseText.textContent = 'Collapse All';
+            }
+            
+            // Update individual class expand/collapse button states
+            document.querySelectorAll('[id^="class-topics-text-"]').forEach(textElement => {
+                const className = textElement.id.replace('class-topics-text-', '');
+                const classContent = document.getElementById(`class-content-${className}`);
+                const classTopicsIcon = document.getElementById(`class-topics-icon-${className}`);
+                
+                if (classContent && classTopicsIcon) {
+                    const topicContents = classContent.querySelectorAll('.session-topic-content');
+                    const allTopicsCollapsed = [...topicContents].every(content => 
+                        content.classList.contains('collapsed'));
+                    
+                    if (allTopicsCollapsed) {
+                        classTopicsIcon.textContent = '▶';
+                        textElement.textContent = 'Expand Topics';
+                    } else {
+                        classTopicsIcon.textContent = '▼';
+                        textElement.textContent = 'Collapse Topics';
+                    }
+                }
+            });
         }
 
         function removeSessionItem(index) {
-            sessionBuilderData.sessionContent.splice(index, 1);
-            displaySessionContent();
+            if (index >= 0 && index < sessionBuilderData.sessionContent.length) {
+                const removedItem = sessionBuilderData.sessionContent[index];
+                
+                // Find the session item element
+                const sessionItems = document.querySelectorAll('.session-item');
+                const targetItem = sessionItems[index];
+                
+                if (targetItem) {
+                    // Mark item as being removed FIRST to protect it
+                    targetItem.dataset.animationState = 'removing';
+                    
+                    // Store the original height for smooth collapse
+                    const originalHeight = targetItem.offsetHeight;
+                    targetItem.style.height = originalHeight + 'px';
+                    
+                    // Clear any pending animations to prevent conflicts (this will now skip removing items)
+                    clearPendingAnimations('global');
+                    clearPendingAnimations('visible');
+                    
+                    // Clear animations on OTHER items only
+                    const otherItems = document.querySelectorAll('.session-item');
+                    otherItems.forEach(item => {
+                        if (item !== targetItem) {
+                            item.style.animation = '';
+                        }
+                    });
+                    
+                    // Add smooth slide-up transition to all cards that will move
+                    const allCards = document.querySelectorAll('.session-item');
+                    allCards.forEach((card, cardIndex) => {
+                        if (cardIndex > index && !card.classList.contains('removing')) {
+                            card.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                        }
+                    });
+
+                    // Apply the removal animation directly via style (more reliable than CSS class)
+                    targetItem.classList.add('removing');
+                    // Force the animation with a slight delay to ensure it applies
+                    setTimeout(() => {
+                        targetItem.style.animation = 'popAndDissolve 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
+                        
+                        // Smoothly animate height to 0 during the dissolve phase for smooth slide-up
+                        setTimeout(() => {
+                            targetItem.style.transition = 'height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), margin 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                            targetItem.style.height = '0px';
+                            targetItem.style.marginTop = '0';
+                            targetItem.style.marginBottom = '0';
+                            targetItem.style.paddingTop = '0';
+                            targetItem.style.paddingBottom = '0';
+                            targetItem.style.borderWidth = '0';
+                            targetItem.style.overflow = 'hidden';
+                        }, 350); // Start height collapse during dissolve phase
+                    }, 10);
+                    
+                    // Smart color shift: animate visible cards, instant update hidden cards
+                    setTimeout(() => {
+                        // Prevent multiple simultaneous color animations
+                        if (window.colorShiftInProgress || targetItem.dataset.colorShiftTriggered) return;
+                        window.colorShiftInProgress = true;
+                        targetItem.dataset.colorShiftTriggered = 'true';
+                        
+                        // Find the topic/class container that holds this item
+                        const topicContainer = targetItem.closest('.session-topic-content, .session-class-content');
+                        
+                        if (!topicContainer) return;
+                        
+                        // Get session items ONLY within this topic/class container
+                        const containerItemsWithRemoving = Array.from(topicContainer.querySelectorAll('.session-item'));
+                        const containerItems = containerItemsWithRemoving.filter(item => !item.classList.contains('removing'));
+                        const removedItemIndex = containerItemsWithRemoving.indexOf(targetItem);
+                        
+                        // Separate visible and hidden items within this container
+                        const visibleItems = [];
+                        const hiddenItems = [];
+                        
+                        containerItems.forEach((item, listIndex) => {
+                            const itemIndexInContainer = containerItemsWithRemoving.indexOf(item);
+                            
+                            if (itemIndexInContainer >= removedItemIndex) {
+                                // Check if item is visible (not in collapsed container)
+                                const isVisible = item.offsetParent !== null && !item.closest('.collapsed');
+                                
+                                // Calculate new zebra position within this container only
+                                const newPositionInContainer = itemIndexInContainer - 1; // Shift up after removal
+                                const newColorType = newPositionInContainer % 2 === 0 ? 'even' : 'odd';
+                                
+                                if (isVisible) {
+                                    visibleItems.push({item, newColorType, containerIndex: itemIndexInContainer});
+                                } else {
+                                    hiddenItems.push({item, newColorType, containerIndex: itemIndexInContainer});
+                                }
+                            }
+                        });
+                        
+                        // Instantly update hidden items (no animation needed)
+                        hiddenItems.forEach(({item, newColorType}) => {
+                            item.setAttribute('data-stable-color', newColorType);
+                        });
+                        
+                        // ALL visible items in this topic get smooth animation (no 8-item limit)
+                        const waveItems = visibleItems;
+                        console.log(`🎭 Animating ${waveItems.length} items in container`);
+                        
+                        // Animate ALL visible items in this topic/class with wave effect
+                        waveItems.forEach(({item, newColorType, containerIndex}, visibleIndex) => {
+                            const delay = visibleIndex * 40; // Reduced stagger time for better performance
+                            console.log(`🎬 Setting up animation ${visibleIndex + 1}/${waveItems.length} with delay ${delay}ms`);
+                            
+                            setTimeout(() => {
+                                if (item.classList.contains('removing') || item.dataset.isAnimating) {
+                                    return;
+                                }
+                                
+                                // Mark item as animating
+                                item.dataset.isAnimating = 'true';
+                                
+                                // Use the calculated new color for this container
+                                const currentStableColor = item.getAttribute('data-stable-color');
+                                const newStableColor = newColorType;
+                                
+                                // Use a unique class to force CSS transition
+                                const uniqueClass = `color-transition-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+                                item.classList.add(uniqueClass);
+                                
+                                // Add CSS rule for this specific transition
+                                const style = document.createElement('style');
+                                style.textContent = `.${uniqueClass} { transition: transform 0.3s ease, background-color 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; }`;
+                                document.head.appendChild(style);
+                                
+                                // Wave effect
+                                item.style.transform = 'translateY(-1px)';
+                                
+                                setTimeout(() => {
+                                    // Update color and return to position
+                                    item.setAttribute('data-stable-color', newStableColor);
+                                    item.style.transform = 'translateY(0)';
+                                    console.log(`✅ Animation ${visibleIndex + 1} executed: ${currentStableColor} → ${newStableColor}`);
+                                    
+                                    setTimeout(() => {
+                                        // Clean up
+                                        item.style.transform = '';
+                                        item.classList.remove(uniqueClass);
+                                        if (document.head.contains(style)) {
+                                            document.head.removeChild(style);
+                                        }
+                                        // Clear animation flag
+                                        delete item.dataset.isAnimating;
+                                    }, 450); // Wait for full transition
+                                }, 150);
+                            }, delay);
+                        });
+                        
+                        // Clear the global animation lock after all animations complete
+                        const maxAnimationTime = (visibleItems.length * 40) + 600; // All visible items + transition time
+                        setTimeout(() => {
+                            window.colorShiftInProgress = false;
+                        }, maxAnimationTime);
+                    }, 200);
+                    
+                    // Wait for animation to complete before removing from data
+                    setTimeout(() => {
+                        sessionBuilderData.sessionContent.splice(index, 1);
+                        
+                        // Clean up transition styles from other cards
+                        const allCards = document.querySelectorAll('.session-item');
+                        allCards.forEach(card => {
+                            if (!card.classList.contains('removing')) {
+                                card.style.transition = '';
+                            }
+                        });
+                        
+                        // Update display without triggering animations in displaySessionContent
+                        const container = document.getElementById('session-content');
+                        if (container) {
+                            // Remove the session-content-updating class to prevent pulse animation
+                            container.classList.remove('session-content-updating');
+                        }
+                        
+                        displaySessionContent();
+                        
+                        // Show feedback
+                        const itemType = removedItem.type;
+                        const itemTitle = removedItem.title.length > 30 ? 
+                            removedItem.title.substring(0, 30) + '...' : removedItem.title;
+                        showToast(`Removed ${itemType}: "${itemTitle}"`, 'info');
+                    }, 850); // Match the popAndDissolve animation duration + delay
+                } else {
+                    // Fallback without animation
+                    sessionBuilderData.sessionContent.splice(index, 1);
+                    displaySessionContent();
+                }
+            }
         }
 
         function saveSession() {
@@ -6802,9 +8710,7 @@
         }
 
         function startCustomSession() {
-            console.log('🚀 startCustomSession called');
-            console.log('📊 Session content length:', sessionBuilderData.sessionContent.length);
-            console.log('🎯 Session mode:', sessionBuilderData.sessionMode);
+
             
             if (sessionBuilderData.sessionContent.length === 0) {
                 showToast('No content to start session with', 'warning');
@@ -6818,7 +8724,7 @@
                 games: sessionBuilderData.sessionContent.filter(item => item.type === 'game').map(item => item.content)
             };
             
-            console.log('📚 Organized content:', organizedContent);
+
             
             closeSessionBuilder();
             
@@ -6911,6 +8817,11 @@
                 customFlashcardSystem.destroy();
             }
             
+            // Clear global reference
+            if (window.customFlashcardSystem) {
+                window.customFlashcardSystem = null;
+            }
+            
             customFlashcardSystem = new FlashcardSystem({
                 flashcards: sessionData.flashcards,
                 containerElement: document.getElementById('custom-flashcard-container'),
@@ -6918,6 +8829,9 @@
                 systemId: 'custom-flashcard',
                 showStats: true // Built-in session stats are now part of the system
             });
+
+            // Make it globally accessible for settings
+            window.customFlashcardSystem = customFlashcardSystem;
 
             customFlashcardSystem.render();
         }
@@ -7031,7 +8945,7 @@
                 return;
             }
             
-            console.log('✅ Found main-content element, rendering session view');
+
             
             content.innerHTML = `
                 <div class="content-header">
@@ -7325,11 +9239,39 @@
         }
 
         function populateSettingsContent(settingsId) {
-            const topicData = studyData[currentClass].topics[currentTopic];
+            const topicData = studyData[currentClass] && studyData[currentClass].topics ? studyData[currentClass].topics[currentTopic] : null;
             const contentContainer = document.getElementById(settingsId.replace('-settings', '-settings-content'));
             
-            if (settingsId === 'flashcards-settings' || settingsId === 'topic-flashcard-settings') {
-                if (topicData.flashcards && topicData.flashcards.length > 0) {
+            if (settingsId === 'flashcards-settings' || settingsId === 'topic-flashcard-settings' || settingsId === 'custom-flashcard-settings') {
+                // Handle custom flashcard sessions
+                if (settingsId === 'custom-flashcard-settings' && window.customFlashcardSystem) {
+                    const flashcards = window.customFlashcardSystem.flashcards;
+                    const reviewCards = window.customFlashcardSystem.reviewCards;
+                    const currentCardIndex = window.customFlashcardSystem.currentIndex;
+                    
+                    if (flashcards && flashcards.length > 0) {
+                        contentContainer.innerHTML = reviewCards.map((cardIndex, displayIndex) => {
+                            const card = flashcards[cardIndex];
+                            if (!card) return ''; // Safety check
+                            return `
+                                <div class="settings-item">
+                                    <div class="settings-item-title">Flashcard ${displayIndex + 1}${currentCardIndex === displayIndex ? ' (Current)' : ''}</div>
+                                    <div class="settings-item-content">
+                                        <strong>Front:</strong> ${card.front}<br>
+                                        <strong>Back:</strong> ${card.back}
+                                    </div>
+                                </div>
+                            `;
+                        }).join('');
+                        return;
+                    } else {
+                        contentContainer.innerHTML = '<div class="settings-item">No flashcards available for this session.</div>';
+                        return;
+                    }
+                }
+                
+                // Handle topic flashcards (original logic)
+                if (topicData && topicData.flashcards && topicData.flashcards.length > 0) {
                     // Filter to only actual flashcards (objects with front and back properties)
                     const actualFlashcards = topicData.flashcards.filter(item => 
                         item && typeof item === 'object' && item.front && item.back
@@ -7672,7 +9614,7 @@
 
         // Go to note details - navigate to class page and open PDF (like sources link does)
         function goToNoteDetails(classKey, topicKey, noteIndex) {
-            console.log(`🔍 goToNoteDetails called: ${classKey}, ${topicKey}, note ${noteIndex}`);
+
             
             const topicData = studyData[classKey].topics[topicKey];
             const note = topicData.notes[noteIndex];
@@ -7775,10 +9717,10 @@
                                                 // Replace the old embed with the new one
                                                 pdfEmbed.parentNode.replaceChild(newEmbed, pdfEmbed);
                                                 
-                                                console.log(`📖 Navigating to page ${targetPage} in embedded viewer`);
+
                                                 showToast(`Opening ${targetPdf} to page ${targetPage} in embedded viewer`, 'info');
                                             } catch (error) {
-                                                console.log('Page navigation failed, PDF displayed normally:', error);
+
                                                 showToast(`Opened ${targetPdf} (page navigation may not be supported)`, 'info');
                                             }
                                         }, 1000);
@@ -7786,7 +9728,7 @@
                                         showToast(`Opened ${targetPdf} in embedded viewer`, 'info');
                                     }
                                     
-                                    console.log(`📖 Opening ${targetPdf} to page ${targetPage}`);
+
                                 }
                             }
                         });

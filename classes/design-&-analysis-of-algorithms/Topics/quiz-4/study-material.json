@@ -1,36 +1,81 @@
 {
-  "title": "Quiz 4 – Tail Recursion, Binary Search, and Runtime (log n vs n²)",
+  "title": "Week 4 – Decrease and Conquer: Insertion Sort, Binary Search, MergeSort, QuickSort",
   "notes": [
-  [
-    "Tail recursion: the recursive call is the final action; enables optimization equivalent to iteration in some languages/compilers.",
-    4,
-    "Week 1 - Introduction to DAA.pdf"
-  ],
-  [
-    "Converting tail recursion to iteration: carry accumulators as parameters.",
-    0,
-    "No Source"
-  ],
-  [
-    "Binary search on a sorted array halves the search space each step → Θ(log n) comparisons worst case.",
-    2,
-    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
-  ],
-  [
-    "Linear vs binary search: Θ(n) vs Θ(log n) on sorted input.",
-    41,
-    "Week 3 - Brute Force and Exhaustive Search.pdf"
-  ],
-  [
-    "Quadratic runtimes (Θ(n²)) arise from double-nested loops (e.g., naive pair comparisons, insertion sort worst case).",
-    32,
-    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
-  ],
-  [
-    "Recurrence for binary search: T(n)=T(n/2)+Θ(1) ⇒ Θ(log n).",
-    0,
-    "No Source"
-  ]
+    [
+      "Tail recursion: the recursive call is the final action; enables optimization equivalent to iteration in some languages/compilers.",
+      4,
+      "Week 1 - Introduction to DAA.pdf"
+    ],
+    [
+      "Converting tail recursion to iteration: carry accumulators as parameters.",
+      0,
+      "No Source"
+    ],
+    [
+      "Binary search on a sorted array halves the search space each step → Θ(log n) comparisons worst case.",
+      2,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+    ],
+    [
+      "Linear vs binary search: Θ(n) vs Θ(log n) on sorted input.",
+      41,
+      "Week 3 - Brute Force and Exhaustive Search.pdf"
+    ],
+    [
+      "Quadratic runtimes (Θ(n²)) arise from double-nested loops (e.g., naive pair comparisons, insertion sort worst case).",
+      32,
+      "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf"
+    ],
+    [
+      "Recurrence for binary search: T(n)=T(n/2)+Θ(1) ⇒ Θ(log n).",
+      0,
+      "No Source"
+    ],
+    [
+      "Insertion Sort builds a sorted array one element at a time; Θ(n²) worst case, Θ(n) best case.",
+      0,
+      "Week 4 - Decrease and Conquer.pdf"
+    ],
+    [
+      "Insertion Sort is an in-place algorithm and stable.",
+      0,
+      "Week 4 - Decrease and Conquer.pdf"
+    ],
+    [
+      "Binary Search requires sorted input and runs in O(log n) comparisons.",
+      0,
+      "Week 4 - Decrease and Conquer.pdf"
+    ],
+    [
+      "Binary Search Tree search reduces the problem size variably with each comparison.",
+      0,
+      "Week 4 - Decrease and Conquer.pdf"
+    ],
+    [
+      "MergeSort is Θ(n log n) in all cases; requires extra space for merging.",
+      0,
+      "MergeSort.pdf"
+    ],
+    [
+      "QuickSort is Θ(n log n) on average, but Θ(n²) in the worst case if poorly partitioned.",
+      0,
+      "QuickSort.pdf"
+    ],
+    [
+      "QuickSort is usually faster in practice due to cache performance and in-place partitioning.",
+      0,
+      "QuickSort.pdf"
+    ],
+    [
+      "MergeSort uses divide-and-conquer; QuickSort also uses divide-and-conquer but with partitioning.",
+      0,
+      "Week 4 - Decrease and Conquer.pdf"
+    ],
+    [
+      "Decrease-and-conquer reduces to a single smaller subproblem, unlike divide-and-conquer which splits into multiple.",
+      0,
+      "Week 4 - Decrease and Conquer.pdf"
+    ]
   ],
   "flashcards": [
     {
@@ -72,6 +117,38 @@
     {
       "front": "Tail-recursive vs non-tail-recursive example.",
       "back": "Tail-recursive factorial vs non-tail-recursive naive Fibonacci."
+    },
+    {
+      "front": "Insertion Sort runtime in worst vs best case?",
+      "back": "Worst: Θ(n²), Best: Θ(n)."
+    },
+    {
+      "front": "Is Insertion Sort stable and in-place?",
+      "back": "Yes, stable and in-place."
+    },
+    {
+      "front": "What is the runtime of MergeSort?",
+      "back": "Θ(n log n) in best, average, and worst cases."
+    },
+    {
+      "front": "What extra resource does MergeSort need?",
+      "back": "Θ(n) auxiliary space for merging."
+    },
+    {
+      "front": "QuickSort runtime average vs worst?",
+      "back": "Average: Θ(n log n), Worst: Θ(n²)."
+    },
+    {
+      "front": "When does QuickSort hit worst case?",
+      "back": "When partitions are extremely unbalanced (e.g., already sorted input with bad pivot choice)."
+    },
+    {
+      "front": "Which algorithm is generally faster in practice, MergeSort or QuickSort?",
+      "back": "QuickSort, due to in-place partitioning and better cache behavior."
+    },
+    {
+      "front": "Difference between decrease-and-conquer vs divide-and-conquer?",
+      "back": "Decrease-and-conquer reduces to one smaller problem; divide-and-conquer splits into multiple subproblems."
     }
   ],
   "quiz": [
@@ -174,6 +251,56 @@
       ],
       "answer": 2,
       "explanation": "Two recursive branches per level → Θ(φ^n)."
+    },
+    {
+      "question": "Insertion Sort has which time complexity in the worst case?",
+      "options": [
+        "Θ(n)",
+        "Θ(n log n)",
+        "Θ(n²)"
+      ],
+      "answer": 2,
+      "explanation": "Two nested loops make Insertion Sort quadratic in the worst case."
+    },
+    {
+      "question": "MergeSort requires extra space because:",
+      "options": [
+        "It partitions in-place",
+        "It merges subarrays using auxiliary arrays",
+        "It swaps elements directly"
+      ],
+      "answer": 1,
+      "explanation": "MergeSort copies into temporary arrays during merging."
+    },
+    {
+      "question": "QuickSort’s worst case occurs when:",
+      "options": [
+        "The pivot splits the array evenly",
+        "The pivot produces highly unbalanced partitions",
+        "The pivot is chosen randomly"
+      ],
+      "answer": 1,
+      "explanation": "Unbalanced partitions (like sorted input with poor pivot) lead to Θ(n²)."
+    },
+    {
+      "question": "Which algorithm is stable?",
+      "options": [
+        "QuickSort",
+        "MergeSort",
+        "HeapSort"
+      ],
+      "answer": 1,
+      "explanation": "MergeSort preserves order of equal keys; QuickSort and HeapSort typically do not."
+    },
+    {
+      "question": "Decrease-and-conquer differs from divide-and-conquer in that:",
+      "options": [
+        "It splits into multiple subproblems",
+        "It reduces to one smaller subproblem",
+        "It always uses recursion"
+      ],
+      "answer": 1,
+      "explanation": "Decrease-and-conquer reduces the problem to one smaller subproblem."
     }
   ],
   "games": [
@@ -192,6 +319,14 @@
         [
           "Linear search",
           "Θ(n)"
+        ],
+        [
+          "MergeSort",
+          "Θ(n log n)"
+        ],
+        [
+          "QuickSort average",
+          "Θ(n log n)"
         ]
       ]
     },
@@ -208,6 +343,14 @@
     }
   ],
   "sources": [
+    "Main-MergeSort.pdf",
+    "Main-QuickSort.pdf",
+    "MergeSort.pdf",
+    "QuickSort.pdf",
+    "Week 1 - Introduction to DAA.pdf",
+    "Week 2 - Fundamentals of the Analysis of Algorithm Efficiency.pdf",
+    "Week 3 - Brute Force and Exhaustive Search.pdf",
+    "Week 4 - Decrease and Conquer.pdf",
     "Week 4 - Recursion & Searching.pdf"
   ]
 }
