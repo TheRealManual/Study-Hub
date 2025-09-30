@@ -1396,10 +1396,12 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            height: 2rem;
         }
 
         .topic-class-header h4 {
-            margin: 0;
+            margin: 0 !important;
+            padding: 0 !important;
             font-size: 0.75rem;
             font-weight: 700;
             text-shadow: 
@@ -1408,15 +1410,23 @@
             letter-spacing: 0.3px;
             color: white;
             flex: 1;
+            line-height: 1.2;
+            display: inline-block;
+            vertical-align: middle;
         }
         
         .topic-class-header .select-all-btn {
-            padding: 0.25rem 0.6rem;
-            font-size: 0.7rem;
+            padding: 0.15rem 0.4rem;
+            font-size: 0.6rem;
             background: rgba(255, 255, 255, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.3);
             backdrop-filter: blur(10px);
             color: white;
+            border-radius: 3px;
+            font-weight: 600;
+            min-width: 3.5rem;
+            line-height: 1;
+            white-space: nowrap;
         }
         
         .topic-class-header .select-all-btn:hover:not(:disabled) {
@@ -1486,7 +1496,7 @@
         }
 
         .topics-for-class {
-            padding: 0.3rem 0.5rem 0.4rem 0.5rem;
+            padding: 0.4rem;
             background: linear-gradient(160deg, 
                 rgba(var(--class-color-rgb, 79, 70, 229), 0.08), 
                 rgba(var(--class-color-rgb, 79, 70, 229), 0.15),
@@ -1567,7 +1577,7 @@
         
         .filter-option {
             margin-bottom: 0.25rem;
-            padding: 0.3rem 0.5rem;
+            padding: 0.4rem;
             border-radius: 0.4rem;
             transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
             display: flex;
@@ -1610,7 +1620,10 @@
                 filter: blur(0px) brightness(1);
                 max-height: 200px;
                 margin-bottom: 0.5rem;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                box-shadow: 
+                    0 0 10px 2px rgba(255, 71, 87, 0.8),
+                    0 0 20px 4px rgba(255, 71, 87, 0.6),
+                    0 0 30px 6px rgba(255, 71, 87, 0.4);
             }
             25% {
                 opacity: 1;
@@ -1708,6 +1721,42 @@
             }
         }
 
+        @keyframes redGlowPulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.4), 0 0 10px rgba(255, 71, 87, 0.2);
+                transform: translateX(0) translateY(0);
+            }
+            50% {
+                box-shadow: 0 0 0 4px rgba(255, 71, 87, 0.2), 0 0 20px rgba(255, 71, 87, 0.4);
+                transform: translateX(1px) translateY(-1px);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 71, 87, 0.4), 0 0 10px rgba(255, 71, 87, 0.2);
+                transform: translateX(0) translateY(0);
+            }
+        }
+
+        @keyframes redGlowPulse {
+            0% {
+                box-shadow: 
+                    0 0 10px 2px rgba(255, 71, 87, 0.8),
+                    0 0 20px 4px rgba(255, 71, 87, 0.6),
+                    0 0 30px 6px rgba(255, 71, 87, 0.4) !important;
+            }
+            50% {
+                box-shadow: 
+                    0 0 15px 3px rgba(255, 71, 87, 1.0),
+                    0 0 30px 6px rgba(255, 71, 87, 0.8),
+                    0 0 45px 9px rgba(255, 71, 87, 0.6) !important;
+            }
+            100% {
+                box-shadow: 
+                    0 0 10px 2px rgba(255, 71, 87, 0.8),
+                    0 0 20px 4px rgba(255, 71, 87, 0.6),
+                    0 0 30px 6px rgba(255, 71, 87, 0.4) !important;
+            }
+        }
+
         /* Enhanced Class dropdown animations */
         @keyframes expandClass {
             0% {
@@ -1771,14 +1820,16 @@
 
         /* Hover effect on remove button for preview */
         .session-item-remove:hover {
-            transform: scale(1.1);
             background: #ff4757 !important;
             box-shadow: 0 4px 12px rgba(255, 71, 87, 0.3);
         }
 
-        .session-item:has(.session-item-remove:hover) {
-            transform: scale(1.02) rotate(0.5deg);
-            transition: transform 0.15s cubic-bezier(0.34, 1.56, 0.64, 1);
+        .session-item:has(.session-item-remove:hover):not(.removing):not([data-animation-state="removing"]) {
+            box-shadow: 
+                0 0 10px 2px rgba(255, 71, 87, 0.8),
+                0 0 20px 4px rgba(255, 71, 87, 0.6),
+                0 0 30px 6px rgba(255, 71, 87, 0.4) !important;
+            animation: redGlowPulse 1.5s ease-in-out infinite !important;
         }
 
         .session-item.adding {
@@ -1794,7 +1845,7 @@
         }
 
         .session-class-content:not(.collapsed), .session-topic-content:not(.collapsed) {
-            max-height: 2000px;
+            max-height: none;
             opacity: 1;
             transform: translateY(0);
         }
@@ -1929,14 +1980,15 @@
                 rgba(var(--class-color-rgb, 79, 70, 229), 0.15)) !important;
             border: 2px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.25) !important;
             margin-bottom: 0.25rem !important;
-            padding: 0.3rem !important;
-            border-radius: 4px !important;
+            padding: 0.4rem 0.5rem !important;
+            border-radius: 6px !important;
             display: flex !important;
             align-items: center !important;
-            gap: 0.4rem !important;
+            gap: 0.5rem !important;
             overflow: hidden !important;
             cursor: pointer !important;
             transition: all 0.15s ease !important;
+            min-height: 2.2rem !important;
         }
         
         .class-filter-option:hover {
@@ -1973,23 +2025,40 @@
         .class-item-content {
             flex: 1;
             padding: 0;
+            display: flex;
+            align-items: center;
+            min-width: 0; /* Allow text to shrink */
         }
         
-        .class-name {
+        /* Session Builder Class Names - Compact and Clean */
+        .session-builder-class-name {
             font-weight: 600 !important;
-            font-size: 0.85rem !important;
-            letter-spacing: 0.3px !important;
+            font-size: 0.75rem !important;
+            letter-spacing: 0.2px !important;
             color: #F8FAFC !important;
             user-select: none;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-            transition: none; /* Remove any color transitions */
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+            transition: none;
+            line-height: 1.2 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            flex-shrink: 1;
+            min-width: 0;
         }
         
-        /* Override general class-name hover for filter options - keep white always */
-        .class-filter-option .class-name,
-        .class-filter-option .class-name:hover {
-            background: none !important;
-            color: #F8FAFC !important;
+        /* Sidebar Class Names - Keep Original Styling */
+        .class-name {
+            display: block;
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            transition: all var(--fast) var(--ease);
+            font-weight: 500;
+            cursor: pointer;
         }
         
         .class-action-btn {
@@ -1998,17 +2067,19 @@
                 var(--class-color-secondary, #6366F1));
             color: white;
             border: none;
-            padding: 0.25rem 0.5rem;
-            font-size: 0.65rem;
+            padding: 0.3rem 0.6rem;
+            font-size: 0.7rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.15s ease;
-            border-radius: 3px;
+            border-radius: 4px;
             text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
             box-shadow: 0 1px 2px rgba(var(--class-color-rgb, 79, 70, 229), 0.3);
             flex-shrink: 0;
             position: relative;
             z-index: 10;
+            min-width: 4rem;
+            text-align: center;
         }
 
         .class-action-btn:hover {
@@ -2136,10 +2207,14 @@
         
         .modal-wrapper-container {
             position: relative;
-            max-width: 800px;
+            max-width: 900px;
             width: 95%;
+            height: 90vh;
+            max-height: 90vh;
             transform: scale(0.8) translateY(20px);
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+            display: flex;
+            flex-direction: column;
         }
 
         .modal-overlay.show .modal-wrapper-container {
@@ -2153,6 +2228,10 @@
 
         .session-builder {
             width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
         }
 
         .session-filters {
@@ -2160,6 +2239,9 @@
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 0.5rem;
             margin-bottom: 1rem;
+            flex-shrink: 0;
+            max-height: 40vh;
+            overflow-y: auto;
         }
 
         .filter-group {
@@ -2203,8 +2285,9 @@
             border-radius: 0;
             padding: 0 0.5rem 0.5rem 0.5rem;
             margin-bottom: 1rem;
-            max-height: 70vh;
+            flex: 1;
             overflow-y: auto;
+            min-height: 0;
         }
 
         /* Enhanced Session Content Organization - Ultra Compact Version */
@@ -2640,7 +2723,7 @@
             cursor: pointer;
             font-size: 0.55rem;
             font-weight: 600;
-            transition: all 0.2s ease;
+            transition: background-color 0.2s ease, box-shadow 0.2s ease;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -2651,15 +2734,24 @@
 
         .session-item-remove:hover {
             background: var(--bad);
-            transform: scale(1.1);
             box-shadow: 0 2px 8px rgba(var(--error-rgb, 220, 38, 127), 0.3);
+        }
+
+        .session-item-remove.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
+        body.removal-in-progress .session-item-remove:not(.removing) {
+            opacity: 0.5;
+            cursor: not-allowed;
         }
 
         .session-actions {
             display: flex;
             gap: 0.5rem;
             justify-content: flex-end;
-            margin-top: 0.75rem;
         }
 
         .session-actions .control-btn {
@@ -2668,14 +2760,23 @@
             border-radius: 4px;
         }
 
+        .session-footer {
+            border-top: 1px solid var(--border);
+            padding: 1rem;
+            background: var(--bg);
+            border-radius: 0 0 8px 8px;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
         .session-input {
-            width: 100%;
+            flex: 1;
             padding: 0.5rem;
             background: var(--bg);
             border: 1px solid var(--border);
             border-radius: 4px;
             color: var(--text);
-            margin-bottom: 0.75rem;
             font-size: 0.8rem;
         }
 
@@ -7310,7 +7411,7 @@
                         ${buttonText}
                     </button>
                     <div class="class-item-content">
-                        <span class="class-name">${formatDisplayName(className)}</span>
+                        <span class="session-builder-class-name">${formatDisplayName(className)}</span>
                     </div>
                 `;
                 
@@ -7380,7 +7481,6 @@
                     // Add topics for this class
                     const topicsContainer = document.createElement('div');
                     topicsContainer.className = 'topics-for-class';
-                    topicsContainer.style.paddingLeft = '1rem';
                     
 
                     topicsByClass.forEach(topicName => {
@@ -8425,7 +8525,28 @@
         }
 
         function removeSessionItem(index) {
+            // Prevent multiple simultaneous removals
+            if (window.removalInProgress) {
+                console.log('⏳ Removal already in progress, ignoring request');
+                showToast('Please wait for current removal to complete', 'warning');
+                return;
+            }
+            
             if (index >= 0 && index < sessionBuilderData.sessionContent.length) {
+                // Set global lock
+                window.removalInProgress = true;
+                document.body.classList.add('removal-in-progress');
+                console.log('🔒 Removal lock activated');
+                
+                // Safety timeout to clear lock if something goes wrong
+                setTimeout(() => {
+                    if (window.removalInProgress) {
+                        window.removalInProgress = false;
+                        document.body.classList.remove('removal-in-progress');
+                        console.log('⚠️ Safety timeout: Removal lock cleared after 2 seconds');
+                    }
+                }, 2000);
+                
                 const removedItem = sessionBuilderData.sessionContent[index];
                 
                 // Find the session item element
@@ -8452,23 +8573,25 @@
                         }
                     });
                     
-                    // Add smooth slide-up transition to all cards that will move
-                    const allCards = document.querySelectorAll('.session-item');
-                    allCards.forEach((card, cardIndex) => {
-                        if (cardIndex > index && !card.classList.contains('removing')) {
-                            card.style.transition = 'transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
-                        }
-                    });
+                    // Add smooth transition to session content container for natural flow
+                    const sessionContentContainer = document.getElementById('session-content');
+                    if (sessionContentContainer) {
+                        sessionContentContainer.style.transition = 'all 0.3s ease';
+                    }
 
                     // Apply the removal animation directly via style (more reliable than CSS class)
                     targetItem.classList.add('removing');
+                    // Clear any glow effect immediately before removal
+                    targetItem.style.boxShadow = '';
+                    targetItem.style.filter = '';
                     // Force the animation with a slight delay to ensure it applies
                     setTimeout(() => {
                         targetItem.style.animation = 'popAndDissolve 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards';
                         
                         // Smoothly animate height to 0 during the dissolve phase for smooth slide-up
                         setTimeout(() => {
-                            targetItem.style.transition = 'height 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), margin 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                            // Smooth height collapse - let natural document flow handle the sliding
+                            targetItem.style.transition = 'height 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), margin 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), padding 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), opacity 0.3s ease';
                             targetItem.style.height = '0px';
                             targetItem.style.marginTop = '0';
                             targetItem.style.marginBottom = '0';
@@ -8476,7 +8599,8 @@
                             targetItem.style.paddingBottom = '0';
                             targetItem.style.borderWidth = '0';
                             targetItem.style.overflow = 'hidden';
-                        }, 350); // Start height collapse during dissolve phase
+                            targetItem.style.opacity = '0';
+                        }, 400); // Start height collapse a bit later in dissolve phase
                     }, 10);
                     
                     // Smart color shift: animate visible cards, instant update hidden cards
@@ -8588,13 +8712,11 @@
                     setTimeout(() => {
                         sessionBuilderData.sessionContent.splice(index, 1);
                         
-                        // Clean up transition styles from other cards
-                        const allCards = document.querySelectorAll('.session-item');
-                        allCards.forEach(card => {
-                            if (!card.classList.contains('removing')) {
-                                card.style.transition = '';
-                            }
-                        });
+                        // Clean up container transition
+                        const sessionContentContainer = document.getElementById('session-content');
+                        if (sessionContentContainer) {
+                            sessionContentContainer.style.transition = '';
+                        }
                         
                         // Update display without triggering animations in displaySessionContent
                         const container = document.getElementById('session-content');
@@ -8610,11 +8732,19 @@
                         const itemTitle = removedItem.title.length > 30 ? 
                             removedItem.title.substring(0, 30) + '...' : removedItem.title;
                         showToast(`Removed ${itemType}: "${itemTitle}"`, 'info');
+                        
+                        // Clear global lock after animation completes
+                        window.removalInProgress = false;
+                        document.body.classList.remove('removal-in-progress');
+                        console.log('✅ Removal animation completed, lock cleared');
                     }, 850); // Match the popAndDissolve animation duration + delay
                 } else {
                     // Fallback without animation
                     sessionBuilderData.sessionContent.splice(index, 1);
                     displaySessionContent();
+                    // Clear lock in fallback case
+                    window.removalInProgress = false;
+                    document.body.classList.remove('removal-in-progress');
                 }
             }
         }
@@ -9774,18 +9904,19 @@
                     </p>
                 </div>
 
-                <input type="text" class="session-input" id="session-name" placeholder="Session name (optional)">
-
-                <div class="session-actions">
-                    <button class="control-btn" onclick="refreshSessionContent()">
-                        🔄 Refresh Content
-                    </button>
-                    <button class="control-btn" onclick="saveSession()">
-                        💾 Save Session
-                    </button>
-                    <button class="control-btn" onclick="startCustomSession()" style="background: var(--good);">
-                        🚀 Start Session
-                    </button>
+                <div class="session-footer">
+                    <input type="text" class="session-input" id="session-name" placeholder="Session name (optional)">
+                    <div class="session-actions">
+                        <button class="control-btn" onclick="refreshSessionContent()">
+                            🔄 Refresh Content
+                        </button>
+                        <button class="control-btn" onclick="saveSession()">
+                            💾 Save Session
+                        </button>
+                        <button class="control-btn" onclick="startCustomSession()" style="background: var(--good);">
+                            🚀 Start Session
+                        </button>
+                    </div>
                 </div>
             </div>
             <!-- Back to top button for modal - positioned outside scrollable content -->
