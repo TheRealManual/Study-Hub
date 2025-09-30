@@ -1,0 +1,146 @@
+{
+  "title": "Actual Quiz 1",
+  "notes": [
+    [
+      "Step counting counts primitive operations like assignments (=, +=) and comparisons (<).",
+      1,
+      "Week 1 Quiz.pdf"
+    ],
+    [
+      "The Sum function runs in Θ(n) steps, specifically 3n+3 when counting assignments and comparisons.",
+      1,
+      "Week 1 Quiz.pdf"
+    ],
+    [
+      "Assignments include initialization, increments, and updates.",
+      1,
+      "Week 1 Quiz.pdf"
+    ],
+    [
+      "Comparisons include loop bounds checks; in for-loops, comparisons occur n+1 times.",
+      1,
+      "Week 1 Quiz.pdf"
+    ],
+    [
+      "Algorithms must terminate in finite steps to be valid.",
+      1,
+      "Week 1 Quiz.pdf"
+    ],
+    [
+      "Computing π exactly is not possible with an algorithm since it is an irrational, non-computable number.",
+      1,
+      "Week 1 Quiz.pdf"
+    ],
+    [
+      "Approximating π is solvable using algorithms (Monte Carlo, infinite series).",
+      1,
+      "Week 1 Quiz.pdf"
+    ],
+    [
+      "Decimal to binary conversion is algorithmically solvable by repeated division by 2.",
+      1,
+      "Week 1 Quiz.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "What is counted in step counting?",
+      "back": "Assignments (=, +=) and comparisons (<)."
+    },
+    {
+      "front": "How many steps does the Sum function take?",
+      "back": "3n+3 steps (linear time)."
+    },
+    {
+      "front": "Why is π not computable exactly by an algorithm?",
+      "back": "It has infinitely many non-repeating digits."
+    },
+    {
+      "front": "Is approximating π solvable by an algorithm?",
+      "back": "Yes, many approximation algorithms exist."
+    },
+    {
+      "front": "Can decimal numbers be converted to binary algorithmically?",
+      "back": "Yes, via repeated division or bitwise methods."
+    },
+    {
+      "front": "Can an algorithm have infinite steps?",
+      "back": "No, an algorithm must terminate."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is the runtime of the Sum function counting assignments and comparisons?",
+      "options": [
+        "n steps",
+        "3n+3 steps",
+        "n² steps"
+      ],
+      "answer": 1,
+      "explanation": "Each iteration does one comparison, one update, one increment; plus 2 initial assignments and final comparison → 3n+3."
+    },
+    {
+      "question": "Computing π exactly is solvable by an algorithm.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "π cannot be computed exactly; only approximated."
+    },
+    {
+      "question": "Approximating π can be solved with an algorithm.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "Algorithms exist for approximating π to arbitrary precision."
+    },
+    {
+      "question": "Converting decimal to binary is solvable algorithmically.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 0,
+      "explanation": "This can be done using repeated division or bit manipulation."
+    },
+    {
+      "question": "An algorithm may have infinitely many steps.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": 1,
+      "explanation": "Algorithms must terminate to be valid."
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "prompt": "Match problem to algorithmic property",
+      "pairs": [
+        [
+          "Computing π exactly",
+          "Not solvable"
+        ],
+        [
+          "Approximating π",
+          "Solvable"
+        ],
+        [
+          "Decimal to binary",
+          "Solvable"
+        ],
+        [
+          "Algorithm definition",
+          "Must terminate"
+        ]
+      ]
+    }
+  ],
+  "sources": [
+    "Week 1 Quiz.pdf"
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "title": "Actual Quiz 3",
+  "notes": [
+    [
+      "The Traveling Salesman Problem (TSP) is NP-hard; no polynomial algorithm is known.",
+      1,
+      "Week 3 Quiz.pdf"
+    ],
+    [
+      "The 0/1 Knapsack Problem is NP-hard.",
+      1,
+      "Week 3 Quiz.pdf"
+    ],
+    [
+      "The Assignment Problem is polynomial-time solvable using the Hungarian Algorithm.",
+      1,
+      "Week 3 Quiz.pdf"
+    ],
+    [
+      "Polynomial evaluation p(x) can be done in linear time using Horner’s Rule.",
+      1,
+      "Week 3 Quiz.pdf"
+    ],
+    [
+      "Exhaustive search tries all possibilities to guarantee a solution.",
+      1,
+      "Week 3 Quiz.pdf"
+    ],
+    [
+      "Depth-First Search (DFS) explores as deep as possible before backtracking.",
+      1,
+      "Week 3 Quiz.pdf"
+    ],
+    [
+      "Breadth-First Search (BFS) explores level by level.",
+      1,
+      "Week 3 Quiz.pdf"
+    ],
+    [
+      "DFS uses a stack (explicit or call stack); BFS uses a queue.",
+      1,
+      "Week 3 Quiz.pdf"
+    ],
+    [
+      "DFS and BFS both operate on graphs and trees.",
+      1,
+      "Week 3 Quiz.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Is TSP NP-hard?",
+      "back": "Yes, NP-hard."
+    },
+    {
+      "front": "Is 0/1 Knapsack NP-hard?",
+      "back": "Yes, NP-hard."
+    },
+    {
+      "front": "Is the Assignment Problem NP-hard?",
+      "back": "No, polynomial-time solvable."
+    },
+    {
+      "front": "Is polynomial evaluation NP-hard?",
+      "back": "No, linear-time solvable via Horner’s Rule."
+    },
+    {
+      "front": "What does exhaustive search do?",
+      "back": "Tries all possibilities to guarantee a solution."
+    },
+    {
+      "front": "What data structure does DFS use?",
+      "back": "A stack."
+    },
+    {
+      "front": "What data structure does BFS use?",
+      "back": "A queue."
+    },
+    {
+      "front": "What does DFS explore first?",
+      "back": "As far as possible along a branch before backtracking."
+    },
+    {
+      "front": "What does BFS explore first?",
+      "back": "Nodes at the current depth before moving deeper."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which of the following is NP-hard?",
+      "options": [
+        "Traveling Salesman Problem",
+        "Assignment Problem",
+        "Polynomial evaluation"
+      ],
+      "answer": 0,
+      "explanation": "TSP is NP-hard; Assignment and polynomial evaluation are polynomial-time solvable."
+    },
+    {
+      "question": "Which problem is polynomial-time solvable?",
+      "options": [
+        "Knapsack",
+        "Assignment",
+        "TSP"
+      ],
+      "answer": 1,
+      "explanation": "Assignment Problem is solvable in polynomial time."
+    },
+    {
+      "question": "Exhaustive search strategy is:",
+      "options": [
+        "Greedy choice",
+        "Dynamic programming",
+        "Trying all possibilities"
+      ],
+      "answer": 2,
+      "explanation": "Exhaustive search tries all possibilities."
+    },
+    {
+      "question": "Depth-First Search (DFS) uses which structure?",
+      "options": [
+        "Stack",
+        "Queue",
+        "Priority queue"
+      ],
+      "answer": 0,
+      "explanation": "DFS is stack-based."
+    },
+    {
+      "question": "Breadth-First Search (BFS) uses which structure?",
+      "options": [
+        "Stack",
+        "Queue",
+        "Heap"
+      ],
+      "answer": 1,
+      "explanation": "BFS is queue-based."
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "prompt": "Match algorithm to data structure",
+      "pairs": [
+        [
+          "DFS",
+          "Stack"
+        ],
+        [
+          "BFS",
+          "Queue"
+        ],
+        [
+          "Exhaustive Search",
+          "Tries all possibilities"
+        ]
+      ]
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order by complexity (fastest→slowest for known algorithms)",
+      "items": [
+        "Polynomial-time",
+        "NP-hard",
+        "Exponential search"
+      ]
+    }
+  ],
+  "sources": [
+    "Week 3 Quiz.pdf"
+  ]
+}
