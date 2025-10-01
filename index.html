@@ -1213,6 +1213,8 @@
             opacity: 0;
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.3s ease;
+            overscroll-behavior: contain;
+            overflow: hidden;
         }
 
         .modal-overlay.show {
@@ -1338,6 +1340,8 @@
                 rgba(var(--class-color-rgb, 79, 70, 229), 0.08),
                 rgba(var(--class-color-rgb, 79, 70, 229), 0.04));
             backdrop-filter: blur(12px);
+            overscroll-behavior: contain;
+            touch-action: pan-y;
         }
         
         .class-section:hover {
@@ -1396,7 +1400,9 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
-            height: 2rem;
+            min-height: 2rem;
+            overscroll-behavior: contain;
+            touch-action: pan-y;
         }
 
         .topic-class-header h4 {
@@ -1411,8 +1417,10 @@
             color: white;
             flex: 1;
             line-height: 1.2;
-            display: inline-block;
-            vertical-align: middle;
+            word-wrap: break-word;
+            word-break: break-word;
+            white-space: normal;
+            margin-right: 0.5rem;
         }
         
         .topic-class-header .select-all-btn {
@@ -1531,6 +1539,9 @@
             backdrop-filter: blur(8px);
             overflow: hidden;
             transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+            overscroll-behavior: contain;
+            touch-action: pan-y;
+            isolation: isolate;
         }
         
         /* Topic container animation states */
@@ -2074,9 +2085,9 @@
             line-height: 1.2 !important;
             padding: 0 !important;
             margin: 0 !important;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            white-space: normal;
+            word-wrap: break-word;
+            word-break: break-word;
             flex-shrink: 1;
             min-width: 0;
         }
@@ -2314,22 +2325,26 @@
         
         .modal-wrapper-container {
             position: relative;
-            max-width: 1400px;
-            width: 95%;
+            width: min(95vw, 1200px);
+            min-width: clamp(320px, 95vw, 900px);
             height: 90vh;
             max-height: 90vh;
-            transform: scale(0.8) translateY(20px);
+            transform: translateY(20px);
             transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
             display: flex;
             flex-direction: column;
+            overflow: hidden;
+            box-sizing: border-box;
+            overscroll-behavior: contain;
+            isolation: isolate;
         }
 
         .modal-overlay.show .modal-wrapper-container {
-            transform: scale(1) translateY(0);
+            transform: translateY(0);
         }
 
         .modal-overlay.closing .modal-wrapper-container {
-            transform: scale(0.9) translateY(-10px);
+            transform: translateY(-10px);
             transition: transform 0.2s ease-in;
         }
 
@@ -2339,6 +2354,9 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            overscroll-behavior: contain;
+            touch-action: pan-y pan-x;
+            isolation: isolate;
         }
 
         .session-builder-content {
@@ -2346,31 +2364,59 @@
             flex: 1;
             gap: 1rem;
             overflow: hidden;
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            flex-wrap: nowrap;
+            align-items: flex-start;
+            overscroll-behavior: contain;
+            scroll-behavior: smooth;
+            touch-action: pan-x pan-y;
+            isolation: isolate;
         }
 
         .session-sidebar-left {
-            width: 250px;
+            flex: 0 0 24%;
             display: flex;
             flex-direction: column;
-            border-right: 1px solid var(--border);
-            padding-right: 1rem;
-            max-height: 75vh;
+            padding: 1rem;
+            height: 100%;
+            overflow: hidden;
+            min-width: 220px;
+            box-sizing: border-box;
+            overscroll-behavior: contain;
+            touch-action: pan-y;
+            background: var(--bg);
+            border-radius: 4px;
+            margin-right: 0.5rem;
         }
 
         .session-main-content {
-            width: 600px;
+            flex: 1 1 50%;
             display: flex;
             flex-direction: column;
-            min-width: 0;
+            height: 100%;
+            overflow: hidden;
+            min-width: 450px;
+            box-sizing: border-box;
+            overscroll-behavior: contain;
+            touch-action: pan-y;
         }
 
         .session-sidebar-right {
-            width: 300px;
+            flex: 0 0 26%;
             display: flex;
             flex-direction: column;
-            border-left: 1px solid var(--border);
-            padding-left: 1rem;
-            max-height: 75vh;
+            padding: 1rem;
+            height: 100%;
+            overflow: hidden;
+            min-width: 280px;
+            box-sizing: border-box;
+            overscroll-behavior: contain;
+            touch-action: pan-y;
+            background: var(--bg);
+            border-radius: 4px;
+            margin-left: 0.5rem;
         }
 
         .sidebar-section {
@@ -2378,6 +2424,9 @@
             display: flex;
             flex-direction: column;
             overflow: hidden;
+            overscroll-behavior: contain;
+            touch-action: pan-y;
+            isolation: isolate;
         }
 
         .sidebar-section h4 {
@@ -2394,6 +2443,11 @@
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+            min-height: 200px;
+            max-height: 400px;
+            overscroll-behavior: contain;
+            touch-action: pan-y;
+            isolation: isolate;
         }
 
         .session-content-preview {
@@ -2401,6 +2455,11 @@
             overflow-y: auto;
             font-size: 0.85rem;
             line-height: 1.4;
+            min-height: 0;
+            max-height: none;
+            overscroll-behavior: contain;
+            touch-action: pan-y;
+            isolation: isolate;
         }
 
         .session-content-preview .session-item {
@@ -2418,10 +2477,9 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 0.5rem;
-            margin-bottom: 1rem;
-            flex-shrink: 0;
-            height: 67vh;
+            flex: 1;
             overflow-y: auto;
+            min-height: 0;
         }
 
         .filter-group {
@@ -2440,6 +2498,12 @@
             display: flex;
             flex-direction: column;
             gap: 0.25rem;
+        }
+
+        /* Allow natural sizing for filter containers */
+        #class-filters,
+        #topic-filters {
+            min-height: 0;
         }
 
         .filter-option {
@@ -2461,45 +2525,135 @@
         }
 
         .session-content {
-            background: var(--bg);
+            background: transparent;
             border-radius: 0;
-            padding: 0 0.5rem 0.5rem 0.5rem;
-            margin-bottom: 1rem;
+            padding: 0;
+            margin-bottom: 0;
             flex: 1;
             overflow-y: auto;
-            min-height: 0;
+            min-height: 200px;
+            max-height: none;
+            overscroll-behavior: contain;
+            touch-action: pan-y;
+            isolation: isolate;
         }
 
-        /* Enhanced Session Content Organization - Ultra Compact Version */
+        /* Enhanced Session Content Organization - Centered Design */
         .session-content-header {
             position: sticky;
             top: 0;
             z-index: 100;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            padding: 0.3rem 0.5rem;
-            background: var(--panel);
+            justify-content: center;
+            padding: 1rem 0.5rem 0.75rem 0.5rem;
+            background: var(--bg);
             color: var(--text);
             border-bottom: 2px solid var(--border);
-            margin: 0 -0.5rem 0.5rem -0.5rem;
+            border-radius: 0;
+            margin-bottom: 0.75rem;
             font-weight: 600;
-            font-size: 0.75rem;
-            backdrop-filter: blur(8px);
+            font-size: 0.9rem;
+            text-align: center;
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .session-content-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--bg);
+            z-index: -1;
+        }
+
+        .session-content-header-title {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .session-content-header-title span:first-child {
+            font-size: 1.3rem;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
         }
 
         .session-content-stats {
             display: flex;
-            gap: 0.5rem;
-            font-size: 0.7rem;
+            gap: 1rem;
+            font-size: 0.75rem;
+            justify-content: center;
+            align-items: center;
         }
 
         .session-content-stat {
             display: flex;
             align-items: center;
-            gap: 0.15rem;
+            justify-content: center;
+            gap: 0.3rem;
+            padding: 0.3rem 0.6rem;
+            background: rgba(var(--accent-rgb, 79, 70, 229), 0.08);
+            border: 1px solid rgba(var(--accent-rgb, 79, 70, 229), 0.15);
+            border-radius: 12px;
+            font-weight: 600;
+            color: var(--text);
+            transition: all 0.2s ease;
+            min-width: 80px;
         }
+
+        .session-content-stat:hover {
+            background: rgba(var(--accent-rgb, 79, 70, 229), 0.12);
+            border-color: rgba(var(--accent-rgb, 79, 70, 229), 0.25);
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(var(--accent-rgb, 79, 70, 229), 0.15);
+        }
+
+        .session-content-stat span:first-child {
+            font-size: 1rem;
+            filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1));
+        }
+        
+        .session-preview-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            color: var(--muted);
+            font-style: italic;
+            text-align: center;
+            min-height: 200px;
+            background: rgba(var(--accent-rgb, 79, 70, 229), 0.02);
+            border-radius: 8px;
+            border: 2px dashed rgba(var(--accent-rgb, 79, 70, 229), 0.15);
+            margin-top: 0.5rem;
+        }
+
+        .session-preview-placeholder p {
+            margin: 0.5rem 0;
+            font-size: 0.85rem;
+            line-height: 1.4;
+            max-width: 280px;
+        }
+
+        .session-preview-placeholder .placeholder-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            opacity: 0.6;
+        }
+        
+
         
         .session-expand-collapse-btn {
             background: linear-gradient(135deg, 
@@ -2507,19 +2661,22 @@
                 var(--class-color-secondary, #7C3AED));
             color: white;
             border: 1px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.3);
-            padding: 0.2rem 0.4rem;
+            padding: 0.15rem 0.3rem;
             border-radius: 4px;
             cursor: pointer;
-            font-size: 0.6rem;
+            font-size: 0.55rem;
             font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 0.2rem;
+            gap: 0.15rem;
             transition: all 0.2s ease;
             box-shadow: 
                 0 2px 8px rgba(var(--class-color-rgb, 79, 70, 229), 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.1);
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            white-space: nowrap;
+            flex-shrink: 0;
+            margin-right: 0.2rem;
         }
         
         .session-expand-collapse-btn:hover {
@@ -2771,11 +2928,10 @@
             margin: 0;
             padding: 0;
             font-size: 0.7rem;
-            line-height: 0.9rem;
-            height: 0.9rem;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
+            line-height: 1.1;
+            white-space: normal;
+            word-wrap: break-word;
+            word-break: break-word;
         }
 
         .session-item-meta {
@@ -2948,6 +3104,7 @@
             display: flex;
             align-items: center;
             gap: 1rem;
+            margin-top: 1.5rem;
         }
 
         .session-input {
@@ -3015,12 +3172,204 @@
         .saved-session-actions button {
             padding: 0.15rem 0.3rem;
             border: none;
-            border-radius: 3px;
+            border-radius: 4px;
             cursor: pointer;
             font-size: 0.65rem;
         }
 
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .modal-wrapper-container {
+                width: min(98vw, 1100px);
+            }
+            
+            .modal {
+                padding: 1.5rem 1rem;
+            }
+            
+            .session-builder-content {
+                flex-wrap: nowrap;
+                gap: 0.75rem;
+                overflow: hidden;
+                overscroll-behavior: contain;
+                touch-action: pan-x pan-y;
+                isolation: isolate;
+            }
+            
+            .session-sidebar-left {
+                flex: 1 1 23%;
+                min-width: 220px;
+                max-width: 280px;
+                padding-right: 0.5rem;
+                height: 100%;
+            }
+            
+            .session-main-content {
+                flex: 2 1 48%;
+                min-width: 400px;
+                max-width: none;
+                height: 100%;
+            }
+            
+            .session-sidebar-right {
+                flex: 1 1 23%;
+                min-width: 220px;
+                max-width: 280px;
+                padding-left: 0.5rem;
+                height: 100%;
+            }
+            
+            .session-filters {
+                flex: 1;
+                overflow-y: auto;
+            }
+            
+            .saved-sessions-list,
+            .session-content-preview,
+            .session-content {
+                max-height: 350px;
+            }
+        }
+        
+        /* Elegant narrow screen handling */
+        @media (max-width: 1100px) {
+            .modal-wrapper-container {
+                width: 95vw;
+                min-width: unset;
+            }
+            
+            .session-builder-content {
+                flex-wrap: wrap;
+                gap: 1rem;
+                overflow-y: auto;
+                align-content: flex-start;
+            }
+            
+            .session-sidebar-left {
+                flex: 1 1 100%;
+                min-width: 100%;
+                margin-right: 0;
+                order: 1;
+                min-height: 250px;
+                max-height: 300px;
+            }
+            
+            .session-main-content {
+                flex: 1 1 60%;
+                min-width: 400px;
+                order: 2;
+            }
+            
+            .session-sidebar-right {
+                flex: 1 1 35%;
+                min-width: 300px;
+                margin-left: 0;
+                order: 3;
+                min-height: 400px;
+            }
+            
+            .session-filters {
+                flex: 1;
+                overflow-y: auto;
+            }
+        }
+
+        @media (max-width: 1000px) {
+            .session-main-content {
+                flex: 1 1 100%;
+                min-width: 100%;
+                order: 2;
+                min-height: 600px;
+            }
+            
+            .session-sidebar-right {
+                flex: 1 1 100%;
+                min-width: 100%;
+                order: 3;
+            }
+            
+            .session-filters {
+                flex: 1;
+                overflow-y: auto;
+            }
+            
+            .saved-sessions-list,
+            .session-content-preview,
+            .session-content {
+                max-height: 300px;
+            }
+        }
+        
+        @media (max-width: 700px) {
+            .modal-wrapper-container {
+                width: 95vw !important;
+                height: 95vh;
+                min-width: unset !important;
+                max-width: 95vw !important;
+            }
+            
+            .session-builder-content {
+                flex-direction: column;
+                flex-wrap: nowrap;
+                gap: 1rem;
+                overflow-y: auto;
+            }
+            
+            .session-sidebar-left,
+            .session-main-content, 
+            .session-sidebar-right {
+                flex: 0 0 100% !important;
+                min-width: unset !important;
+                max-width: 100% !important;
+                width: 100% !important;
+                height: auto;
+                border: none;
+                margin: 0 !important;
+                padding: 1rem;
+                order: initial;
+                background: var(--bg);
+                border-radius: 4px;
+            }
+            
+            .session-sidebar-left {
+                min-height: 200px;
+                max-height: 300px;
+                overflow-y: auto;
+                order: 1;
+            }
+            
+            .session-main-content {
+                overflow-y: auto;
+                order: 2;
+            }
+            
+            .session-filters {
+                display: flex;
+                flex-direction: column;
+                flex: 1;
+                overflow-y: auto;
+                gap: 1rem;
+            }
+            
+            .session-sidebar-right {
+                min-height: 300px;
+                max-height: 400px;
+                overflow-y: auto;
+                order: 3;
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .sidebar-section {
+                flex: 0 0 auto;
+                width: 100%;
+                min-height: 150px;
+                max-height: 200px;
+                overflow-y: auto;
+            }
+        }
+
         @media (max-width: 768px) {
             .app-container {
                 flex-direction: column;
@@ -7302,6 +7651,21 @@
             populateSavedSessions();
             document.getElementById('session-builder-modal').classList.add('show');
             
+            // Prevent scrolling on the background page
+            document.body.style.overflow = 'hidden';
+            
+            // Add intelligent scroll event handling to prevent homepage scrolling
+            const modal = document.getElementById('session-builder-modal');
+            if (modal) {
+                // Add global document-level intelligent scroll handling
+                document.addEventListener('wheel', handleModalScroll, { passive: false });
+                document.addEventListener('touchmove', handleModalScroll, { passive: false });
+                
+                // Also add to the modal itself as a backup
+                modal.addEventListener('wheel', handleModalScroll, { passive: false });
+                modal.addEventListener('touchmove', handleModalScroll, { passive: false });
+            }
+            
             // Only refresh content if we don't have a loaded session
             if (!hasLoadedSession) {
                 refreshSessionContent();
@@ -7320,7 +7684,60 @@
             }, 100);
         }
 
+        // Function to intelligently handle scroll events
+        function handleModalScroll(event) {
+            const target = event.target;
+            const modal = document.getElementById('session-builder-modal');
+            
+            // If the event is inside the modal
+            if (modal && modal.contains(target)) {
+                // Check if the target or any parent is scrollable
+                let currentElement = target;
+                let isScrollable = false;
+                
+                while (currentElement && currentElement !== modal) {
+                    const computedStyle = window.getComputedStyle(currentElement);
+                    const hasScrollableContent = currentElement.scrollHeight > currentElement.clientHeight || 
+                                               currentElement.scrollWidth > currentElement.clientWidth;
+                    const canScroll = (computedStyle.overflowY === 'auto' || computedStyle.overflowY === 'scroll' ||
+                                      computedStyle.overflowX === 'auto' || computedStyle.overflowX === 'scroll' ||
+                                      computedStyle.overflow === 'auto' || computedStyle.overflow === 'scroll');
+                    
+                    if (hasScrollableContent && canScroll) {
+                        isScrollable = true;
+                        break;
+                    }
+                    currentElement = currentElement.parentElement;
+                }
+                
+                // If we're not in a scrollable area, prevent the event
+                if (!isScrollable) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    event.stopImmediatePropagation();
+                    return false;
+                }
+                
+                // If we are in a scrollable area, just prevent propagation beyond the modal
+                event.stopPropagation();
+            }
+        }
+
         function closeSessionBuilder() {
+            // Restore scrolling on the background page
+            document.body.style.overflow = '';
+            
+            // Remove intelligent scroll event handlers
+            const sessionModal = document.getElementById('session-builder-modal');
+            if (sessionModal) {
+                // Remove global document-level intelligent scroll handling
+                document.removeEventListener('wheel', handleModalScroll);
+                document.removeEventListener('touchmove', handleModalScroll);
+                
+                // Remove from modal as well
+                sessionModal.removeEventListener('wheel', handleModalScroll);
+                sessionModal.removeEventListener('touchmove', handleModalScroll);
+            }
             const modal = document.getElementById('session-builder-modal');
             
             // Add closing class for animation
@@ -7341,6 +7758,9 @@
             sessionMode: '', // Track current session mode
             isLoadingSession: false // Flag to prevent content refresh during session loading
         };
+
+        // Animation control variable
+        let shouldAnimateOnExpand = true;
 
         function toggleClassSelection(className, event) {
             event.stopPropagation(); // Prevent triggering the class click
@@ -7423,14 +7843,45 @@
                     // Mark as animating to prevent conflicts
                     classSection.dataset.animating = 'true';
                     
-                    // Apply the slide-down animation
+                    // Get the header and topics container for coordinated animation
+                    const classHeader = classSection.querySelector('.topic-class-header');
+                    const topicsContainer = classSection.querySelector('.topics-for-class');
+                    
+                    // Prepare topics for delayed animation (but header shows immediately)
+                    if (topicsContainer) {
+                        topicsContainer.style.opacity = '0';
+                        topicsContainer.style.transform = 'translateY(10px)';
+                        topicsContainer.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+                    }
+                    
+                    // Show section immediately so header appears with container
                     classSection.style.display = 'block';
+                    
+                    // Force a reflow to ensure header is visible
+                    classSection.offsetHeight;
+                    
+                    // Apply the slide-down animation to container (header will be visible during this)
                     classSection.style.animation = 'slideDownExpand 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards';
+                    
+                    // Animate topics content after a brief delay
+                    setTimeout(() => {
+                        if (topicsContainer) {
+                            topicsContainer.style.opacity = '1';
+                            topicsContainer.style.transform = 'translateY(0)';
+                        }
+                    }, 150);
                     
                     // Clear animation after completion
                     setTimeout(() => {
                         classSection.style.animation = '';
                         classSection.dataset.animating = 'false';
+                        
+                        // Clean up topics styles
+                        if (topicsContainer) {
+                            topicsContainer.style.opacity = '';
+                            topicsContainer.style.transform = '';
+                            topicsContainer.style.transition = '';
+                        }
                     }, 500);
                 }
                 // Enable all topic checkboxes for this class
@@ -8092,21 +8543,39 @@
         function displaySessionContentActual() {
             const container = document.getElementById('session-content');
             
+            // Calculate unique classes count
+            const uniqueClasses = new Set(sessionBuilderData.sessionContent.map(item => item.class));
+            
+            // Always show the session content overview header
+            let headerHtml = `
+                <div class="session-content-header">
+                    <div class="session-content-header-title">
+                        <span>📊</span>
+                        <span>Session Content Overview</span>
+                    </div>
+                    <div class="session-content-stats">
+                        <div class="session-content-stat">
+                            <span>📚</span>
+                            <span>${sessionBuilderData.sessionContent.length} items</span>
+                        </div>
+                        <div class="session-content-stat">
+                            <span>🏛️</span>
+                            <span>${uniqueClasses.size} classes</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
             if (sessionBuilderData.sessionContent.length === 0) {
-                const sessionMode = sessionBuilderData.sessionMode;
-                const contentTypeNames = {
-                    'flashcards': 'flashcards',
-                    'quiz': 'quiz questions',
-                    'games': 'games'
-                };
-                const contentType = contentTypeNames[sessionMode] || 'content';
-                container.innerHTML = `
-                    <div style="text-align: center; color: var(--text-secondary); margin: 1rem 0; padding: 1rem; background: var(--background); border-radius: 4px; border: 2px dashed var(--border);">
-                        <div style="font-size: 1.5rem; margin-bottom: 0.3rem;">📚</div>
-                        <div style="font-weight: 500; margin-bottom: 0.3rem; font-size: 0.8rem;">No ${contentType} selected</div>
-                        <div style="font-size: 0.7rem;">Choose classes and topics above to build your session</div>
+                // Show placeholder when no content is selected
+                const placeholderHtml = `
+                    <div class="session-preview-placeholder">
+                        <div class="placeholder-icon">📝</div>
+                        <p>Select classes and topics to populate your session</p>
+                        <p style="font-size: 0.75rem; opacity: 0.8;">Choose from the available filters on the left to build your study session</p>
                     </div>
                 `;
+                container.innerHTML = headerHtml + placeholderHtml;
                 return;
             }
             
@@ -8170,35 +8639,8 @@
                 return icons[className] || '📚';
             };
             
-            // Build the organized HTML
-            let html = `
-                <div class="session-content-header">
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <span style="font-size: 1.2rem;">📊</span>
-                        <span>Session Content Overview</span>
-                    </div>
-                    <div style="display: flex; align-items: center; gap: 0.5rem;">
-                        <div class="session-content-stats">
-                            <div class="session-content-stat">
-                                <span>📚</span>
-                                <span>${totalItems} items</span>
-                            </div>
-                            <div class="session-content-stat">
-                                <span>🏛️</span>
-                                <span>${totalClasses} classes</span>
-                            </div>
-                            <div class="session-content-stat">
-                                <span>📂</span>
-                                <span>${totalTopics} topics</span>
-                            </div>
-                        </div>
-                        <button class="session-expand-collapse-btn" onclick="toggleAllSessionGroups()">
-                            <span id="expand-collapse-icon">▼</span>
-                            <span id="expand-collapse-text">Collapse All</span>
-                        </button>
-                    </div>
-                </div>
-            `;
+            // Build the organized HTML content (header is already added)
+            let contentHtml = '';
             
             // Add content organized by class and topic
             Object.entries(organizedContent).forEach(([className, classData]) => {
@@ -8242,12 +8684,12 @@
                         </div>
                         <div class="session-class-content" id="class-content-${className}">
                 `;
-                html += classGroupHtml;
+                contentHtml += classGroupHtml;
                 
                 Object.entries(classData).forEach(([topicName, topicItems]) => {
                     const topicTitle = studyData[className]?.topics[topicName]?.title || formatDisplayName(topicName);
                     
-                    html += `
+                    contentHtml += `
                         <div class="session-topic-group">
                             <div class="session-topic-header" onclick="toggleSessionTopic('${className}', '${topicName}')">
                                 <div class="session-topic-title">
@@ -8297,7 +8739,7 @@
                         // Assign stable color based on position within this topic (independent zebra striping)
                         const stableColor = topicIndex % 2 === 0 ? 'even' : 'odd';
                         
-                        html += `
+                        contentHtml += `
                             <div class="session-item${flashcardClass}" data-stable-color="${stableColor}">
                                 <div class="session-item-info">
                                     ${displayContent}
@@ -8316,7 +8758,7 @@
                         `;
                     });
                     
-                    html += `
+                    contentHtml += `
                                 </div>
                             </div>
                         </div>
@@ -8328,7 +8770,7 @@
                         </div>
                     </div>
                 `;
-                html += classCloseHtml;
+                contentHtml += classCloseHtml;
             });
             
             // Store current collapse states before updating HTML
@@ -8355,15 +8797,14 @@
             // Set HTML content using incremental approach to avoid nesting issues
             container.innerHTML = '';
             
-            // Extract header and class sections
-            const headerMatch = html.match(/<div class="session-content-header">.*?<\/div>\s*(?=<div class="session-class-group")/s);
-            const headerHTML = headerMatch ? headerMatch[0] : '';
+            // Combine header and content
+            const combinedHtml = headerHtml + contentHtml;
             
             // Extract individual class sections
-            const classMatches = [...html.matchAll(/<div class="session-class-group"[^>]*>.*?(?=<div class="session-class-group"|$)/gs)];
+            const classMatches = [...contentHtml.matchAll(/<div class="session-class-group"[^>]*>.*?(?=<div class="session-class-group"|$)/gs)];
             
             // Set header first
-            container.innerHTML = headerHTML;
+            container.innerHTML = headerHtml;
             
             // Add each class section individually
             classMatches.forEach((match) => {
@@ -8409,19 +8850,24 @@
                 });
             });
             
-            // Re-enable transitions after a brief moment
-            setTimeout(() => {
+            // Re-enable transitions after ensuring DOM is ready
+            requestAnimationFrame(() => {
+                // Force a reflow to ensure all styles are applied
+                container.offsetHeight;
+                
                 [...allClassContents, ...allTopicContents].forEach(element => {
                     element.classList.remove('no-transition');
                 });
                 
                 // Only trigger animations if this is the initial load and we have expanded sections
                 // Don't animate during content updates
-                const hasExpandedSections = document.querySelector('.class-content:not(.collapsed), .topic-content:not(.collapsed)');
+                const hasExpandedSections = document.querySelector('.session-class-content:not(.collapsed), .session-topic-content:not(.collapsed)');
                 if (shouldAnimateOnExpand && hasExpandedSections) {
-                    animateVisibleSessionItems();
+                    requestAnimationFrame(() => {
+                        animateVisibleSessionItems();
+                    });
                 }
-            }, 10);
+            });
             
             // Update the expand/collapse button state
             updateExpandCollapseButtonState();
@@ -8441,21 +8887,24 @@
                 if (wasCollapsed) {
                     // Set flag to enable animations for this user action
                     shouldAnimateOnExpand = true;
-                    // Use the debounced animation system
-                    animateSessionItems(`#${escapeSelector(`class-content-${className}`)}`);
                     
+                    // Wait for the container expansion animation to start, then animate items
+                    requestAnimationFrame(() => {
+                        setTimeout(() => {
+                            animateSessionItems(`#${escapeSelector(`class-content-${className}`)}`);
+                        }, 100); // Wait for container animation to begin
+                    });
+                    
+                    // Scroll to show the expanded content after animation
                     setTimeout(() => {
-                        // Scroll to show the expanded content
                         if (classHeader) {
-                            setTimeout(() => {
-                                classHeader.scrollIntoView({ 
-                                    behavior: 'smooth', 
-                                    block: 'start',
-                                    inline: 'nearest'
-                                });
-                            }, 50);
+                            classHeader.scrollIntoView({ 
+                                behavior: 'smooth', 
+                                block: 'start',
+                                inline: 'nearest'
+                            });
                         }
-                    }, 50); // Small delay to let the content expand
+                    }, 200); // Longer delay to let both animations complete
                 }
             }
         }
@@ -10065,11 +10514,28 @@
                     <!-- Right Sidebar: Session Content Overview -->
                     <div class="session-sidebar-right">
                         <div class="sidebar-section">
-                            <h4>📋 Session Preview</h4>
                             <div id="session-content" class="session-content-preview">
-                                <p style="text-align: center; color: var(--muted); margin: 2rem 0;">
-                                    Select classes and topics to populate your session
-                                </p>
+                                <div class="session-content-header">
+                                    <div class="session-content-header-title">
+                                        <span>📊</span>
+                                        <span>Session Content Overview</span>
+                                    </div>
+                                    <div class="session-content-stats">
+                                        <div class="session-content-stat">
+                                            <span>📚</span>
+                                            <span>0 items</span>
+                                        </div>
+                                        <div class="session-content-stat">
+                                            <span>🏛️</span>
+                                            <span>0 classes</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="session-preview-placeholder">
+                                    <div class="placeholder-icon">📝</div>
+                                    <p>Select classes and topics to populate your session</p>
+                                    <p style="font-size: 0.75rem; opacity: 0.8;">Choose from the available filters on the left to build your study session</p>
+                                </div>
                             </div>
                         </div>
                     </div>
