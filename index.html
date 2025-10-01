@@ -1460,6 +1460,7 @@
                 inset 0 -1px 0 rgba(0, 0, 0, 0.1);
             transform: translateY(0);
             text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+            outline: none !important; /* Remove blue outline on focus */
         }
         
         .select-all-btn:hover {
@@ -1470,6 +1471,31 @@
                 inset 0 -1px 0 rgba(0, 0, 0, 0.15);
             filter: brightness(1.15) saturate(1.2);
             border-color: rgba(var(--class-color-rgb, 79, 70, 229), 0.4);
+        }
+        
+        .select-all-btn:focus {
+            outline: none !important;
+            box-shadow: 
+                0 2px 8px rgba(var(--class-color-rgb, 79, 70, 229), 0.4),
+                0 0 0 2px rgba(var(--class-color-rgb, 79, 70, 229), 0.3),
+                inset 0 1px 0 rgba(var(--class-color-rgb, 79, 70, 229), 0.1),
+                inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+        }
+        
+        .select-all-btn:focus-visible {
+            outline: none !important;
+        }
+        
+        /* Comprehensive outline removal for select-all buttons */
+        .select-all-btn, 
+        .select-all-btn:focus,
+        .select-all-btn:focus-visible,
+        .select-all-btn:active,
+        .select-all-btn:hover {
+            outline: none !important;
+            outline-width: 0 !important;
+            outline-style: none !important;
+            outline-color: transparent !important;
         }
         
         .select-all-btn:active {
@@ -1523,17 +1549,17 @@
                 opacity: 0;
                 padding-top: 0;
                 padding-bottom: 0;
-                transform: scaleY(0.2) rotateX(-10deg);
+                transform: scaleY(0.3) rotateX(-8deg);
                 filter: blur(2px);
             }
-            30% {
-                opacity: 0.6;
-                transform: scaleY(0.6) rotateX(-5deg);
+            40% {
+                opacity: 0.7;
+                transform: scaleY(0.7) rotateX(-3deg);
                 filter: blur(1px);
             }
-            70% {
-                opacity: 0.9;
-                transform: scaleY(1.02) rotateX(2deg);
+            80% {
+                opacity: 0.95;
+                transform: scaleY(0.95) rotateX(-0.5deg);
                 filter: blur(0px);
             }
             100% {
@@ -1587,28 +1613,34 @@
                 rgba(var(--class-color-rgb, 79, 70, 229), 0.12));
             border: 1px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.2);
             backdrop-filter: blur(4px);
-            animation: fadeInUp 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) both;
         }
         
-        /* Stagger animation for topic items */
-        .filter-option:nth-child(1) { animation-delay: 0.05s; }
-        .filter-option:nth-child(2) { animation-delay: 0.1s; }
-        .filter-option:nth-child(3) { animation-delay: 0.15s; }
-        .filter-option:nth-child(4) { animation-delay: 0.2s; }
-        .filter-option:nth-child(5) { animation-delay: 0.25s; }
-        .filter-option:nth-child(6) { animation-delay: 0.3s; }
-        .filter-option:nth-child(7) { animation-delay: 0.35s; }
-        .filter-option:nth-child(8) { animation-delay: 0.4s; }
-        .filter-option:nth-child(n+9) { animation-delay: 0.45s; }
+        /* Simple class section expansion animation */
+        .class-section {
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
         
-        @keyframes fadeInUp {
+        .topics-for-class {
+            transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+            transform-origin: top;
+        }
+        
+        /* Clean slide-down animation for new class sections */
+        @keyframes slideDownExpand {
             0% {
                 opacity: 0;
-                transform: translateY(10px) scale(0.95);
+                transform: scaleY(0.4) translateY(-10px);
+                max-height: 0;
+            }
+            60% {
+                opacity: 0.8;
+                transform: scaleY(0.95) translateY(-2px);
             }
             100% {
                 opacity: 1;
-                transform: translateY(0) scale(1);
+                transform: scaleY(1) translateY(0);
+                max-height: 2000px;
             }
         }
 
@@ -2080,12 +2112,31 @@
             z-index: 10;
             min-width: 4rem;
             text-align: center;
+            outline: none !important; /* Remove blue outline on focus */
         }
 
         .class-action-btn:hover {
             filter: brightness(1.1);
             transform: translateY(-0.5px);
             box-shadow: 0 2px 4px rgba(var(--class-color-rgb, 79, 70, 229), 0.4);
+        }
+        
+        /* Comprehensive outline removal for class action buttons */
+        .class-action-btn, 
+        .class-action-btn:focus,
+        .class-action-btn:focus-visible,
+        .class-action-btn:active,
+        .class-action-btn:hover,
+        .class-action-btn.add-btn,
+        .class-action-btn.add-btn:focus,
+        .class-action-btn.add-btn:hover,
+        .class-action-btn.remove-btn,
+        .class-action-btn.remove-btn:focus,
+        .class-action-btn.remove-btn:hover {
+            outline: none !important;
+            outline-width: 0 !important;
+            outline-style: none !important;
+            outline-color: transparent !important;
         }        .class-action-btn.add-btn {
             background: linear-gradient(135deg, 
                 var(--class-color-primary, #4F46E5), 
@@ -2093,6 +2144,7 @@
             opacity: 0.8;
             position: relative;
             overflow: visible;
+            border: 2px solid transparent !important; /* Match remove button size */
         }
         
         .class-action-btn.add-btn::before {
@@ -2118,11 +2170,16 @@
             opacity: 1;
         }
         
+        .class-action-btn.add-btn:active {
+            transform: translateY(1px) !important;
+            filter: brightness(0.95);
+        }
+        
         /* Change button to golden colors when hovering over container */
         .class-filter-option:hover .class-action-btn.add-btn {
             background: linear-gradient(135deg, #FFD700, #FFC107) !important;
             opacity: 1;
-            transform: translateY(-1px) scale(1.02);
+            transform: translateY(-2px);
             transition: all 0.3s ease;
         }
         
@@ -2135,7 +2192,7 @@
         .class-action-btn.add-btn:hover {
             background: linear-gradient(135deg, #FFD700, #FFC107) !important;
             opacity: 1;
-            transform: translateY(-1px) scale(1.02);
+            transform: translateY(-2px);
         }
         
         .class-action-btn.add-btn:hover::before {
@@ -2152,12 +2209,36 @@
                 0 0 15px rgba(239, 68, 68, 0.4),
                 0 6px 20px rgba(220, 38, 38, 0.4) !important;
             opacity: 1;
-            transform: translateY(-1px) scale(1.02);
+            transform: translateY(-2px);
             filter: brightness(1.2) saturate(1.3) !important;
             transition: all 0.3s ease;
         }
         
+        /* Trigger red glow when hovering over the entire container */
+        .class-filter-option:hover .class-action-btn.remove-btn::before {
+            opacity: 0.8;
+        }
+        
         @keyframes golden-glow {
+            0%, 100% {
+                background-position: 0% 50%;
+                filter: blur(4px);
+            }
+            25% {
+                background-position: 100% 50%;
+                filter: blur(6px);
+            }
+            50% {
+                background-position: 0% 100%;
+                filter: blur(4px);
+            }
+            75% {
+                background-position: 100% 0%;
+                filter: blur(6px);
+            }
+        }
+        
+        @keyframes red-glow {
             0%, 100% {
                 background-position: 0% 50%;
                 filter: blur(4px);
@@ -2183,6 +2264,28 @@
             opacity: 1;
             filter: brightness(1.1) saturate(1.2);
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+            border: 2px solid transparent !important; /* Maintain consistent size */
+            position: relative;
+            overflow: visible;
+        }
+        
+        .class-action-btn.remove-btn::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, 
+                #FF4757, #FF3838, #DC2626, #B91C1C, 
+                #FF4757, #FF3838, #DC2626, #B91C1C);
+            background-size: 400% 400%;
+            border-radius: 0.6rem;
+            z-index: -1;
+            opacity: 0;
+            animation: red-glow 3s ease-in-out infinite;
+            transition: opacity 0.3s ease;
+            filter: blur(2px) brightness(1.2) saturate(1.3);
         }
 
         .class-action-btn.remove-btn:hover {
@@ -2193,13 +2296,17 @@
                 0 0 30px rgba(239, 68, 68, 0.6),
                 0 0 15px rgba(239, 68, 68, 0.4),
                 0 6px 20px rgba(220, 38, 38, 0.4) !important;
-            transform: translateY(-2px) scale(1.05) !important;
+            transform: translateY(-2px) !important;
             filter: brightness(1.2) saturate(1.3) !important;
+        }
+        
+        .class-action-btn.remove-btn:hover::before {
+            opacity: 0.8;
         }
 
         .class-action-btn.remove-btn:active {
             background: linear-gradient(135deg, #b91c1c, #dc2626) !important;
-            transform: translateY(0) scale(1.02) !important;
+            transform: translateY(1px) !important;
             box-shadow: 
                 0 0 25px rgba(239, 68, 68, 0.5),
                 0 2px 8px rgba(220, 38, 38, 0.3) !important;
@@ -2207,7 +2314,7 @@
         
         .modal-wrapper-container {
             position: relative;
-            max-width: 900px;
+            max-width: 1400px;
             width: 95%;
             height: 90vh;
             max-height: 90vh;
@@ -2234,13 +2341,86 @@
             overflow: hidden;
         }
 
+        .session-builder-content {
+            display: flex;
+            flex: 1;
+            gap: 1rem;
+            overflow: hidden;
+        }
+
+        .session-sidebar-left {
+            width: 250px;
+            display: flex;
+            flex-direction: column;
+            border-right: 1px solid var(--border);
+            padding-right: 1rem;
+            max-height: 75vh;
+        }
+
+        .session-main-content {
+            width: 600px;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .session-sidebar-right {
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            border-left: 1px solid var(--border);
+            padding-left: 1rem;
+            max-height: 75vh;
+        }
+
+        .sidebar-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .sidebar-section h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--text);
+            font-size: 0.9rem;
+            font-weight: 600;
+            flex-shrink: 0;
+        }
+
+        .saved-sessions-list {
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .session-content-preview {
+            flex: 1;
+            overflow-y: auto;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .session-content-preview .session-item {
+            padding: 0.4rem 0.6rem;
+            margin-bottom: 0.3rem;
+            font-size: 0.8rem;
+        }
+
+        .session-content-preview .session-item-title {
+            font-size: 0.75rem;
+            line-height: 1.3;
+        }
+
         .session-filters {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 0.5rem;
             margin-bottom: 1rem;
             flex-shrink: 0;
-            max-height: 40vh;
+            height: 67vh;
             overflow-y: auto;
         }
 
@@ -7232,24 +7412,26 @@
             const classSection = document.getElementById(`class-section-${className}`);
             const topicCheckboxes = document.querySelectorAll(`input[data-class="${className}"]`);
             
+            // Prevent animation glitches by checking if section is already animating
+            if (classSection && classSection.dataset.animating === 'true') {
+                return;
+            }
+            
             if (classCheckbox.checked) {
-                // Show entire class section with enhanced animation
+                // Show class section with clean slide-down animation
                 if (classSection) {
-                    classSection.style.display = 'block';
-                    classSection.classList.remove('hide');
-                    classSection.classList.add('show');
+                    // Mark as animating to prevent conflicts
+                    classSection.dataset.animating = 'true';
                     
-                    // Animate topics container with enhanced class expansion
-                    const topicsContainer = classSection.querySelector('.topics-for-class');
-                    if (topicsContainer) {
-                        topicsContainer.classList.remove('collapsing');
-                        topicsContainer.classList.add('expanding');
-                        
-                        // Remove animation class after animation completes
-                        setTimeout(() => {
-                            topicsContainer.classList.remove('expanding');
-                        }, 500); // Updated to match expandClass duration
-                    }
+                    // Apply the slide-down animation
+                    classSection.style.display = 'block';
+                    classSection.style.animation = 'slideDownExpand 0.5s cubic-bezier(0.4, 0.0, 0.2, 1) forwards';
+                    
+                    // Clear animation after completion
+                    setTimeout(() => {
+                        classSection.style.animation = '';
+                        classSection.dataset.animating = 'false';
+                    }, 500);
                 }
                 // Enable all topic checkboxes for this class
                 topicCheckboxes.forEach(checkbox => {
@@ -7261,24 +7443,20 @@
                     updateSelectAllButtonState(className);
                 }, 50);
             } else {
-                // Hide entire class section with enhanced animation
+                // Hide class section with simple fade-out
                 if (classSection) {
-                    // Animate topics container collapse first with enhanced class collapse
-                    const topicsContainer = classSection.querySelector('.topics-for-class');
-                    if (topicsContainer) {
-                        topicsContainer.classList.remove('expanding');
-                        topicsContainer.classList.add('collapsing');
-                    }
+                    // Mark as animating
+                    classSection.dataset.animating = 'true';
                     
-                    classSection.classList.remove('show');
-                    classSection.classList.add('hide');
+                    // Simple fade out
+                    classSection.style.animation = 'slideDownExpand 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) reverse';
                     
                     // Hide after animation completes
                     setTimeout(() => {
-                        if (!document.getElementById(`class-${className}`).checked) {
-                            classSection.style.display = 'none';
-                        }
-                    }, 400); // Updated to match collapseClass duration
+                        classSection.style.display = 'none';
+                        classSection.style.animation = '';
+                        classSection.dataset.animating = 'false';
+                    }, 300);
                 }
                 // Uncheck and disable all topic checkboxes for this class
                 topicCheckboxes.forEach(checkbox => {
@@ -7287,8 +7465,10 @@
                 });
             }
             
-            // Refresh content
-            refreshSessionContent();
+            // Refresh content after animation completes to prevent glitching
+            setTimeout(() => {
+                refreshSessionContent();
+            }, classCheckbox.checked ? 500 : 300); // Match animation durations
         }
 
         function updateSelectAllButtonState(className) {
@@ -7328,11 +7508,13 @@
             const topicCheckboxes = document.querySelectorAll(`input[data-class="${className}"]:not(:disabled)`);
             const selectAllBtn = document.getElementById(`select-all-${className}`);
             
-            // Add animation to button
+            // Add animation to button (matches hover behavior)
             if (selectAllBtn) {
-                selectAllBtn.style.transform = 'scale(0.95)';
+                selectAllBtn.style.transform = 'translateY(2px)';
+                selectAllBtn.style.boxShadow = '0 1px 4px rgba(var(--class-color-rgb, 79, 70, 229), 0.2)';
                 setTimeout(() => {
                     selectAllBtn.style.transform = 'translateY(0)';
+                    selectAllBtn.style.boxShadow = '';
                 }, 100);
             }
             
@@ -7534,8 +7716,7 @@
             // Update topic container states after populating
             setTimeout(() => updateTopicContainerStates(), 50);
             
-            // Animate topics with stagger effect
-            setTimeout(() => animateTopicItems(), 100);
+            // Topics are now animated via CSS during class expansion
             
             // Note: UI initialization for loaded sessions is handled separately in initializeLoadedSessionUI()
         }
@@ -7649,31 +7830,10 @@
             });
         }
 
-        function animateTopicItems() {
-            // Reset and replay animations for topic items
-            const topicContainers = document.querySelectorAll('.topics-for-class');
-            
-            topicContainers.forEach(container => {
-                const filterOptions = container.querySelectorAll('.filter-option:not(.class-filter-option)');
-                
-                // Reset animations
-                filterOptions.forEach(option => {
-                    option.style.animation = 'none';
-                    option.offsetHeight; // Trigger reflow
-                });
-                
-                // Replay animations with proper delays
-                filterOptions.forEach((option, index) => {
-                    const delay = (index * 0.05) + 0.05; // Stagger by 50ms
-                    option.style.animation = `fadeInUp 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) ${delay}s both`;
-                });
-            });
-        }
 
-        // Animation state management
+
+        // Simplified animation state management
         let animationTimeouts = new Map();
-        let isAnimating = false;
-        let shouldAnimateOnExpand = true; // Only animate when user expands, not on content updates
 
         function clearPendingAnimations(containerId, preserveRemoving = true) {
             if (animationTimeouts.has(containerId)) {
@@ -7801,9 +7961,6 @@
 
                 return;
             }
-            
-            // Disable animations during content updates
-            shouldAnimateOnExpand = false;
             
             // Update topic container states first
             updateTopicContainerStates();
@@ -9875,33 +10032,47 @@
                     <button class="close-btn" onclick="closeSessionBuilder()" aria-label="Close session builder">&times;</button>
                 </div>
                 
-                <div class="saved-sessions">
-                    <h4>Saved Sessions</h4>
-                    <div id="saved-sessions-list">
-                        <!-- Saved sessions will be populated here -->
-                    </div>
-                </div>
-
-                <div class="session-filters">
-                    <div class="filter-group">
-                        <h4>Classes</h4>
-                        <div class="filter-options" id="class-filters">
-                            <!-- Class filters will be populated here -->
+                <div class="session-builder-content">
+                    <!-- Left Sidebar: Saved Sessions -->
+                    <div class="session-sidebar-left">
+                        <div class="sidebar-section">
+                            <h4>💾 Saved Sessions</h4>
+                            <div id="saved-sessions-list" class="saved-sessions-list">
+                                <!-- Saved sessions will be populated here -->
+                            </div>
                         </div>
                     </div>
-                    
-                    <div class="filter-group">
-                        <h4>Topics</h4>
-                        <div class="filter-options" id="topic-filters">
-                            <!-- Topic filters will be populated here -->
+
+                    <!-- Middle Column: Class & Topic Selection -->
+                    <div class="session-main-content">
+                        <div class="session-filters">
+                            <div class="filter-group">
+                                <h4>📚 Classes</h4>
+                                <div class="filter-options" id="class-filters">
+                                    <!-- Class filters will be populated here -->
+                                </div>
+                            </div>
+                            
+                            <div class="filter-group">
+                                <h4>📂 Topics</h4>
+                                <div class="filter-options" id="topic-filters">
+                                    <!-- Topic filters will be populated here -->
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="session-content" id="session-content">
-                    <p style="text-align: center; color: var(--muted); margin: 2rem 0;">
-                        Select classes and topics to populate your session
-                    </p>
+                    <!-- Right Sidebar: Session Content Overview -->
+                    <div class="session-sidebar-right">
+                        <div class="sidebar-section">
+                            <h4>📋 Session Preview</h4>
+                            <div id="session-content" class="session-content-preview">
+                                <p style="text-align: center; color: var(--muted); margin: 2rem 0;">
+                                    Select classes and topics to populate your session
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="session-footer">
