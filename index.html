@@ -1654,6 +1654,53 @@
                 max-height: 2000px;
             }
         }
+        
+        /* Animation for highlighting selected topics when loading saved sessions */
+        @keyframes highlightTopic {
+            0% { background-color: transparent; }
+            30% { background-color: rgba(var(--accent-rgb), 0.15); }
+            100% { background-color: transparent; }
+        }
+        
+
+
+        /* Coordinated Reset Animations */
+        @keyframes resetFadeOut {
+            0% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+        }
+        
+        @keyframes resetCollapseHeight {
+            0% {
+                max-height: 1000px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+            100% {
+                max-height: 0;
+                margin-top: 0;
+                margin-bottom: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+                overflow: hidden;
+            }
+        }
+        
+        .reset-fade-out {
+            animation: resetFadeOut 0.4s ease-out forwards !important;
+        }
+        
+        .reset-collapse {
+            animation: resetCollapseHeight 0.3s ease-in forwards !important;
+        }
 
         /* Flashcard and Session Item Removal Animations */
         @keyframes popAndDissolve {
@@ -3891,7 +3938,7 @@
             <div class="modal">
                 <div class="modal-header">
                     <h2 class="modal-title">Build Study Session</h2>
-                    <button class="close-btn" onclick="closeSessionBuilder()">&times;</button>
+                    <button class="close-btn" onclick="closeSessionBuilderWithReset()">&times;</button>
                 </div>
                 <div class="modal-content">
                     <div id="session-builder-content">
@@ -3918,6 +3965,11 @@
         let spacedRepetitionData = {};
         let userProgress = {};
         let savedSessions = {};
+        
+        // Global session tracking for study progress system
+        let currentSession = null;
+        let currentIndex = 0;
+        let originalSessionBuilderData = null; // Store original session builder data for saving
 
         // Initialize app
         document.addEventListener('DOMContentLoaded', function() {
@@ -4355,6 +4407,13 @@
             document.getElementById('homepage').style.display = 'block';
             currentClass = null;
             currentTopic = null;
+            
+            // Clear session variables to prevent interference with new sessions
+            currentSession = null;
+            currentIndex = 0;
+            window.isResumeSession = false;
+            window.customSessionData = null;
+            originalSessionBuilderData = null;
             
             // Re-populate the class grid
             renderHomepage();
@@ -4877,7 +4936,7 @@
             constructor(config) {
                 this.flashcards = config.flashcards || [];
                 this.containerElement = config.containerElement; // The parent container where we'll build the UI
-                this.currentIndex = 0;
+                this.currentIndex = config.resumeIndex || 0;
                 this.isFlipped = false;
                 this.reviewCards = config.reviewCards || Array.from({length: this.flashcards.length}, (_, i) => i);
                 this.enableSpacedRepetition = config.enableSpacedRepetition || false;
@@ -4889,6 +4948,7 @@
                 this.showStats = config.showStats || false; // New option to show session stats
                 this.isCustomSession = config.isCustomSession || false;
                 this.systemId = config.systemId || 'flashcard-system'; // Unique ID for this system
+                this.isResumeSession = config.isResumeSession || false; // New property for resumed sessions
                 
                 // Study tracking properties
                 this.studiedCards = new Set(); // Cards marked as "Studied"
@@ -4903,7 +4963,11 @@
                 
                 // Initialize review cards array, but don't shuffle yet (will shuffle after render)
                 this.reviewCards = Array.from({length: this.flashcards.length}, (_, i) => i);
-                this.currentIndex = 0;
+                
+                // Don't reset currentIndex if resuming
+                if (!this.isResumeSession) {
+                    this.currentIndex = 0;
+                }
             }
 
             render() {
@@ -4930,6 +4994,7 @@
                                     <button class="control-btn" onclick="window['${this.systemId}Instance'].reset(); showToast('Cards reset!', 'success')">🔄 Reset</button>
                                     <button class="control-btn" onclick="window['${this.systemId}Instance'].flip()">Flip (Space)</button>
                                     <button id="${this.systemId}-next-btn" class="control-btn" onclick="window['${this.systemId}Instance'].next()" disabled style="opacity: 0.5; cursor: not-allowed;">Next →</button>
+                                    <button class="control-btn" onclick="window['${this.systemId}Instance'].saveSessionPrompt()" style="background: var(--accent);">💾 Save Session</button>
                                 </div>
                                 ${this.showControls ? `
                                 <div class="flashcard-controls">
@@ -5007,6 +5072,7 @@
                                 </div>
                             </div>
                             <div class="session-complete-actions">
+                                <button class="control-btn" onclick="window['${this.systemId}Instance'].saveSessionPrompt()" style="padding: 0.75rem 1.5rem; background: var(--accent);">💾 Save Session</button>
                                 <button class="control-btn" onclick="window['${this.systemId}Instance'].restartSession()" style="padding: 0.75rem 1.5rem;">🔄 Restart</button>
                                 <button id="${this.systemId}-study-missed-btn" class="control-btn" onclick="window['${this.systemId}Instance'].studyMissedCards()" style="padding: 0.75rem 1.5rem;">📖 Study Missed Cards</button>
                             </div>
@@ -5043,8 +5109,10 @@
                 
                 this.showCurrentCard();
                 
-                // Auto-shuffle cards after DOM elements are created
-                this.shuffle();
+                // Auto-shuffle cards after DOM elements are created (unless resuming session)
+                if (!this.isResumeSession) {
+                    this.shuffle();
+                }
             }
 
             setupKeyboardHandling() {
@@ -5684,6 +5752,53 @@
                 this.showCurrentCard();
                 
                 showToast(`Studying ${this.reviewCards.length} missed cards! 📚`, 'success');
+            }
+
+            saveSessionPrompt() {
+                const sessionName = prompt('Enter a name for this session:', `Study Session ${new Date().toLocaleDateString()}`);
+                if (sessionName && sessionName.trim()) {
+                    // Set currentSession to this flashcard system's data with preserved order
+                    currentSession = {
+                        flashcards: this.flashcards.map((card, index) => ({
+                            ...card,
+                            studyStatus: this.studiedCards.has(index) ? 'studied' : 
+                                       this.studyAgainCards.has(index) ? 'study-again' : 'not-reviewed',
+                            reviewCount: (this.studiedCards.has(index) || this.studyAgainCards.has(index)) ? 1 : 0,
+                            lastReviewed: (this.studiedCards.has(index) || this.studyAgainCards.has(index)) ? new Date().toISOString() : null
+                        })),
+                        reviewOrder: [...this.reviewCards] // Save the current shuffled order
+                    };
+                    currentIndex = this.currentIndex;
+                    
+                    saveStudyProgress(sessionName.trim());
+                } else if (sessionName !== null) {
+                    showToast('Session name cannot be empty', 'warning');
+                }
+            }
+
+            restoreStudyStatuses(cardsWithStatuses, resumeIndex, savedReviewOrder = null) {
+                // Restore study statuses from saved session
+                cardsWithStatuses.forEach((card, index) => {
+                    if (card.studyStatus === 'studied') {
+                        this.studiedCards.add(index);
+                    } else if (card.studyStatus === 'study-again') {
+                        this.studyAgainCards.add(index);
+                    }
+                });
+
+                // Restore the original review order if provided
+                if (savedReviewOrder && Array.isArray(savedReviewOrder)) {
+                    this.reviewCards = [...savedReviewOrder];
+                }
+
+                // Set current position
+                this.currentIndex = resumeIndex;
+                
+                // Update the display
+                this.updateStudyStats();
+                this.showCurrentCard();
+                
+                showToast(`Resumed at card ${resumeIndex + 1}/${this.flashcards.length}`, 'info');
             }
 
             getCurrentCard() {
@@ -7628,13 +7743,30 @@
 
         // Session builder
         function openSessionBuilder(preselectedMode = '') {
+            // Check if we're opening fresh or have loaded session content  
+            const hasLoadedSession = sessionBuilderData.sessionContent.length > 0;
+            
+            // If opening fresh (no loaded session), do a silent reset without animations
+            if (!hasLoadedSession) {
+                console.log('🔄 Opening fresh session builder - silent reset');
+                // Silent reset - just clear data, no animations
+                sessionBuilderData.sessionContent = [];
+                sessionBuilderData.isLoadingSession = false;
+                sessionBuilderData.hasManuallyModifiedContent = false;
+                currentSession = null;
+                currentIndex = 0;
+                originalSessionBuilderData = null;
+                window.isResumeSession = false;
+                console.log('✅ Silent reset complete');
+            }
+            
             // Store the preselected mode
             sessionBuilderData.sessionMode = preselectedMode;
             
             // Set loading flag if we have existing session content
-            const hasLoadedSession = sessionBuilderData.sessionContent.length > 0;
             if (hasLoadedSession) {
                 sessionBuilderData.isLoadingSession = true;
+                console.log('📂 Opening session builder with loaded content');
             }
             
             // Update modal title based on session mode
@@ -7723,6 +7855,12 @@
             }
         }
 
+        function closeSessionBuilderWithReset() {
+            // Reset session builder when manually closing
+            resetSessionBuilder(false);
+            closeSessionBuilder();
+        }
+
         function closeSessionBuilder() {
             // Restore scrolling on the background page
             document.body.style.overflow = '';
@@ -7756,11 +7894,207 @@
             sessionContent: [],
             savedSessions: JSON.parse(localStorage.getItem('studyHubSavedSessions') || '[]'),
             sessionMode: '', // Track current session mode
-            isLoadingSession: false // Flag to prevent content refresh during session loading
+            isLoadingSession: false, // Flag to prevent content refresh during session loading
+            hasManuallyModifiedContent: false // Flag to prevent refresh from overriding manually removed cards
         };
 
         // Animation control variable
         let shouldAnimateOnExpand = true;
+
+        // Reset all session builder states
+        function resetSessionBuilder(showToastMessage = true) {
+            // Clear session content but preserve the session mode
+            sessionBuilderData.sessionContent = [];
+            // Don't clear sessionMode - it should be preserved from when the session builder was opened
+            sessionBuilderData.isLoadingSession = false;
+            sessionBuilderData.hasManuallyModifiedContent = false;
+            
+            // Clear any loaded session data to ensure fresh start
+            currentSession = null;
+            currentIndex = 0;
+            originalSessionBuilderData = null;
+            window.isResumeSession = false;
+            
+            // Get all currently selected classes before resetting
+            const selectedClasses = [];
+            document.querySelectorAll('input[id^="class-"]:checked').forEach(checkbox => {
+                selectedClasses.push(checkbox.id.replace('class-', ''));
+            });
+            
+            // Reset session mode radio buttons
+            document.querySelectorAll('input[name="session-mode"]').forEach(radio => {
+                radio.checked = false;
+            });
+            
+            // Nuclear option: Instant cleanup followed by coordinated animation
+            console.log('🎬 Nuclear reset with perfect sync');
+            
+            // STEP 1: Instantly stop ALL animations and reset ALL states globally
+            document.querySelectorAll('*').forEach(el => {
+                if (el.style) {
+                    el.style.animation = 'none';
+                    el.style.transition = 'none';
+                }
+            });
+            
+            // STEP 2: Instantly reset all checkboxes and buttons (no animations)
+            selectedClasses.forEach(className => {
+                const checkbox = document.getElementById(`class-${className}`);
+                const button = document.getElementById(`btn-${className}`);
+                
+                if (checkbox) checkbox.checked = false;
+                if (button) {
+                    button.textContent = 'Add';
+                    button.className = 'class-action-btn add-btn';
+                }
+                
+                // Disable all topic checkboxes instantly
+                const topicCheckboxes = document.querySelectorAll(`input[data-class="${className}"]`);
+                topicCheckboxes.forEach(checkbox => {
+                    checkbox.checked = false;
+                    checkbox.disabled = true;
+                });
+            });
+            
+            // STEP 3: Collect ALL elements for animation (classes AND session content together)
+            const elementsToAnimate = [];
+            
+            // Add class sections
+            selectedClasses.forEach(className => {
+                const classSection = document.getElementById(`class-section-${className}`);
+                if (classSection && classSection.style.display !== 'none') {
+                    elementsToAnimate.push(classSection);
+                }
+            });
+            
+            // Add session content to the SAME array (not separate if statement)
+            const sessionContent = document.getElementById('session-content');
+            console.log('🔍 Session content check:', {
+                sessionContentExists: !!sessionContent,
+                sessionContentLength: sessionBuilderData.sessionContent.length,
+                sessionContentVisible: sessionContent ? (sessionContent.offsetParent !== null) : false,
+                sessionContentChildren: sessionContent ? sessionContent.children.length : 0,
+                sessionContentInnerHTML: sessionContent ? sessionContent.innerHTML.substring(0, 100) : 'null'
+            });
+            
+            // Find session items (not the header) for animation
+            if (sessionContent && sessionContent.offsetParent !== null) {
+                // Find all session content (actual content, not the header)
+                const sessionItems = sessionContent.querySelectorAll('.session-class-group, .session-topic-group, .session-item');
+                if (sessionItems.length > 0) {
+                    console.log(`✅ Adding ${sessionItems.length} session items to animation (preserving header)`);
+                    sessionItems.forEach(item => elementsToAnimate.push(item));
+                } else {
+                    console.log('❌ No session items found to animate');
+                    console.log('Session content HTML:', sessionContent.innerHTML.substring(0, 200) + '...');
+                }
+            } else {
+                console.log('❌ Session content container not visible');
+            }
+            
+            console.log(`🎭 Perfect sync animation for ${elementsToAnimate.length} elements (classes + session content together)`);
+            
+            // STEP 4: Only proceed if we have elements to animate
+            if (elementsToAnimate.length > 0) {
+                // Set initial state for ALL elements in single loop
+                console.log(`🎬 Preparing ${elementsToAnimate.length} elements for animation`);
+                elementsToAnimate.forEach((element, index) => {
+                    console.log(`Preparing element ${index + 1}:`, element.id || element.className || element.tagName);
+                    // Clear any existing styles first
+                    element.style.animation = 'none';
+                    element.style.transition = 'none';
+                    // Set known initial state
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0) scale(1)';
+                    // Apply transition for animation
+                    element.style.transition = 'all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+                });
+                
+                // Force reflow once for all elements
+                document.body.offsetHeight;
+                
+                // Small delay to ensure transitions are applied
+                setTimeout(() => {
+                    // Trigger animation on ALL elements in single loop - with timing debug
+                    console.log('🎬 Starting animation at:', Date.now());
+                    elementsToAnimate.forEach((element, index) => {
+                        console.log(`Animating element ${index + 1}:`, element.id || element.className || element.tagName);
+                        element.style.opacity = '0';
+                        element.style.transform = 'translateY(-25px) scale(0.85)';
+                    });
+                    console.log('🎬 All animations triggered at:', Date.now());
+                }, 10); // Small delay to ensure DOM is ready
+                
+                // Clean up after animation completes (increased timeout for longer animation)
+                setTimeout(() => {
+                    // Clean up all animated elements
+                    elementsToAnimate.forEach(element => {
+                        element.style.opacity = '';
+                        element.style.transform = '';
+                        element.style.transition = '';
+                        
+                        // Hide class sections specifically
+                        if (element.id && element.id.startsWith('class-section-')) {
+                            element.style.display = 'none';
+                        }
+                    });
+                    
+                    console.log('✅ All animated elements cleaned up');
+                    
+                    // Create placeholder content with initial hidden state for fade-in animation
+                    const sessionContainer = document.getElementById('session-content');
+                    if (sessionContainer) {
+                        sessionContainer.innerHTML = `
+                            <div class="session-content-header">
+                                <div class="session-content-header-title">
+                                    <span>📊</span>
+                                    <span>Session Content Overview</span>
+                                </div>
+                                <div class="session-content-stats">
+                                    <div class="session-content-stat">
+                                        <span>📚</span>
+                                        <span>0 items</span>
+                                    </div>
+                                    <div class="session-content-stat">
+                                        <span>🏛️</span>
+                                        <span>0 classes</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="session-preview-placeholder" style="opacity: 0; transform: translateY(20px); transition: all 0.4s ease;">
+                                <div class="placeholder-icon">📝</div>
+                                <p>Select classes and topics to populate your session</p>
+                                <p style="font-size: 0.75rem; opacity: 0.8;">Choose from the available filters on the left to build your study session</p>
+                            </div>
+                        `;
+                        
+                        // Animate placeholder in after a brief delay
+                        setTimeout(() => {
+                            const placeholder = sessionContainer.querySelector('.session-preview-placeholder');
+                            if (placeholder) {
+                                placeholder.style.opacity = '1';
+                                placeholder.style.transform = 'translateY(0)';
+                                console.log('✨ Placeholder animated in');
+                            }
+                        }, 50); // Small delay to ensure DOM is ready
+                    }
+                    
+                    console.log('🔄 Reset complete - session content cleared with animated placeholder');
+                    
+                    if (showToastMessage) {
+                        showToast('Session builder reset successfully', 'info');
+                    }
+                }, 600); // Increased from 500ms to allow for full animation completion
+            } else {
+                // No elements to animate, just refresh content immediately
+                console.log('🔄 Reset complete - no elements to animate, forcing content refresh');
+                refreshSessionContent();
+                
+                if (showToastMessage) {
+                    showToast('Session builder reset successfully', 'info');
+                }
+            }
+        }
 
         function toggleClassSelection(className, event) {
             event.stopPropagation(); // Prevent triggering the class click
@@ -8078,7 +8412,9 @@
                         { primary: '#0891B2', secondary: '#06B6D4', rgb: '8, 145, 178' }, // Cyan (analogous)
                     ];
                     const classIndex = Object.keys(studyData).indexOf(className);
-                    const colorScheme = colorSchemes[classIndex % colorSchemes.length];
+                    // Handle case where className is not found in studyData (e.g., loaded sessions)
+                    const safeClassIndex = classIndex >= 0 ? classIndex : Math.abs(className.length) % colorSchemes.length;
+                    const colorScheme = colorSchemes[safeClassIndex % colorSchemes.length];
                     
                     // Create class section container
                     const classSection = document.createElement('div');
@@ -8088,8 +8424,30 @@
                     classSection.style.setProperty('--class-color-secondary', colorScheme.secondary);
                     classSection.style.setProperty('--class-color-rgb', colorScheme.rgb);
                     // Show section if class is currently selected, otherwise hide it
+                    // But don't set inline display style when loading a saved session (allows animation control)
                     const isClassSelectedForSection = currentlySelectedClasses.has(className);
-                    classSection.style.display = isClassSelectedForSection ? 'block' : 'none';
+                    const isLoadingSession = sessionBuilderData.isLoadingSession;
+                    
+                    if (isLoadingSession) {
+                        // During loading, check if this class is in the loaded session content
+                        const sessionClasses = new Set(sessionBuilderData.sessionContent.map(item => item.class));
+                        const isInLoadedSession = sessionClasses.has(className);
+                        
+                        if (isInLoadedSession) {
+                            // This class will be animated in - start hidden for animation
+                            classSection.style.setProperty('display', 'none', 'important');
+                            classSection.style.setProperty('opacity', '0', 'important');
+                            classSection.style.setProperty('transform', 'translateY(-60px) scaleY(0.1)', 'important');
+                            console.log(`🎯 Loading mode: Starting ${className} hidden for animation (found in session)`);
+                        } else {
+                            // This class is not in the loaded session - hide it
+                            classSection.style.display = 'none';
+                            console.log(`🚫 Loading mode: Hiding ${className} (not in session)`);
+                        }
+                    } else {
+                        // Normal mode - show/hide based on selection using inline style
+                        classSection.style.display = isClassSelectedForSection ? 'block' : 'none';
+                    }
 
                     // Use the CSS custom property for consistent theming
                     classSection.style.borderColor = `rgba(${colorScheme.rgb}, 0.2)`;
@@ -8188,44 +8546,67 @@
             
 
             
-            // Set class button states
-            currentlySelectedClasses.forEach(className => {
-                const checkbox = document.getElementById(`class-${className}`);
-                const button = document.getElementById(`btn-${className}`);
-                
-                if (checkbox && button) {
-                    checkbox.checked = true;
-                    button.textContent = 'Remove';
-                    button.className = 'class-action-btn remove-btn';
-
-                }
+            // Set class button states with animation
+            const classArray = Array.from(currentlySelectedClasses);
+            classArray.forEach((className, index) => {
+                setTimeout(() => {
+                    const checkbox = document.getElementById(`class-${className}`);
+                    const button = document.getElementById(`btn-${className}`);
+                    
+                    if (checkbox && button) {
+                        checkbox.checked = true;
+                        button.textContent = 'Remove';
+                        button.className = 'class-action-btn remove-btn';
+                    }
+                }, index * 100); // Stagger class button updates
             });
             
-            // Set topic checkbox states and enable sections
-            currentlySelectedClasses.forEach(className => {
-                const classSection = document.getElementById(`class-section-${className}`);
-                const topicCheckboxes = document.querySelectorAll(`input[data-class="${className}"]`);
-                
-
-                
-                if (classSection) {
-                    classSection.style.display = 'block';
-                    classSection.classList.add('show');
-                    classSection.classList.remove('hide');
-                }
-                
-                // Enable and check appropriate topic checkboxes
-                topicCheckboxes.forEach(checkbox => {
-                    checkbox.disabled = false;
-                    const topicId = checkbox.id;
-                    const topicName = topicId.replace(`topic-${className}-`, '');
-                    const topicKey = `${className}-${topicName}`;
+            // Set topic checkbox states and enable sections with staggered animation
+            classArray.forEach((className, classIndex) => {
+                setTimeout(() => {
+                    const classSection = document.getElementById(`class-section-${className}`);
+                    const topicCheckboxes = document.querySelectorAll(`input[data-class="${className}"]`);
                     
-                    if (currentlySelectedTopics.has(topicKey)) {
-                        checkbox.checked = true;
-
+                    if (classSection) {
+                        // Start with hidden state for animation
+                        classSection.style.display = 'block';
+                        classSection.style.opacity = '0';
+                        classSection.style.transform = 'translateY(-20px)';
+                        classSection.style.transition = 'all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1)';
+                        
+                        // Trigger animation
+                        setTimeout(() => {
+                            classSection.style.opacity = '1';
+                            classSection.style.transform = 'translateY(0)';
+                            classSection.classList.add('show');
+                            classSection.classList.remove('hide');
+                        }, 50);
                     }
-                });
+                    
+                    // Enable and check appropriate topic checkboxes with animation delay
+                    setTimeout(() => {
+                        topicCheckboxes.forEach((checkbox, topicIndex) => {
+                            setTimeout(() => {
+                                checkbox.disabled = false;
+                                const topicId = checkbox.id;
+                                const topicName = topicId.replace(`topic-${className}-`, '');
+                                const topicKey = `${className}-${topicName}`;
+                                
+                                if (currentlySelectedTopics.has(topicKey)) {
+                                    checkbox.checked = true;
+                                    // Add subtle highlight animation for selected topics
+                                    const topicLabel = checkbox.closest('.topic-checkbox-container');
+                                    if (topicLabel) {
+                                        topicLabel.style.animation = 'highlightTopic 0.6s ease';
+                                        setTimeout(() => {
+                                            topicLabel.style.animation = '';
+                                        }, 600);
+                                    }
+                                }
+                            }, topicIndex * 50); // Stagger topic selection
+                        });
+                    }, 300); // Wait for class section animation
+                }, classIndex * 150); // Stagger class sections
             });
         }
 
@@ -8233,24 +8614,36 @@
             const savedSessionsList = document.getElementById('saved-sessions-list');
             savedSessionsList.innerHTML = '';
             
-            if (sessionBuilderData.savedSessions.length === 0) {
-                savedSessionsList.innerHTML = '<p style="color: var(--muted); text-align: center; margin: 1rem 0;">No saved sessions</p>';
+            // Load study progress sessions from new storage
+            studyProgressSessions.sessions = JSON.parse(localStorage.getItem('studyHubProgressSessions') || '[]');
+            
+            if (studyProgressSessions.sessions.length === 0) {
+                savedSessionsList.innerHTML = '<p style="color: var(--muted); text-align: center; margin: 1rem 0;">No saved study sessions<br><small>Sessions are saved during flashcard study</small></p>';
                 return;
             }
             
-            sessionBuilderData.savedSessions.forEach((session, index) => {
+            studyProgressSessions.sessions.forEach((session, index) => {
+                const progressPercentage = Math.round((session.completedCount / session.totalCards) * 100);
+                const progressText = `${session.completedCount}/${session.totalCards} cards`;
+                
                 const sessionElement = document.createElement('div');
                 sessionElement.className = 'saved-session';
                 sessionElement.innerHTML = `
                     <div class="saved-session-info">
-                        <h4>${session.name || `Session ${index + 1}`}</h4>
+                        <h4>${session.name}</h4>
                         <div class="saved-session-meta">
-                            ${session.content.length} items • Created ${new Date(session.created).toLocaleDateString()}
+                            📊 ${progressText} (${progressPercentage}%) • 
+                            ✅ ${session.studiedCount} studied • 
+                            🔄 ${session.studyAgainCount} review
+                        </div>
+                        <div style="font-size: 0.65rem; color: var(--muted); margin-top: 0.2rem;">
+                            Last studied: ${new Date(session.lastStudied).toLocaleDateString()} • 
+                            Position: ${session.currentCardIndex + 1}/${session.totalCards}
                         </div>
                     </div>
                     <div class="saved-session-actions">
-                        <button onclick="loadSession(${index})" style="background: var(--accent); color: white;">Load</button>
-                        <button onclick="deleteSession(${index})" style="background: var(--bad); color: white;">Delete</button>
+                        <button onclick="loadStudyProgressSession(${index})" style="background: var(--accent); color: white;">Continue</button>
+                        <button onclick="deleteStudyProgressSession(${index})" style="background: var(--bad); color: white;">Delete</button>
                     </div>
                 `;
                 savedSessionsList.appendChild(sessionElement);
@@ -8407,11 +8800,26 @@
         }
 
         function refreshSessionContent() {
+            console.log('📞 refreshSessionContent() called', {
+                isLoadingSession: sessionBuilderData.isLoadingSession,
+                hasManuallyModifiedContent: sessionBuilderData.hasManuallyModifiedContent,
+                currentContentLength: sessionBuilderData.sessionContent.length
+            });
+            
             // If we're in the process of loading a session, don't recalculate content
             if (sessionBuilderData.isLoadingSession) {
-
+                console.log('⏸️ Skipping refresh - session is loading');
                 return;
             }
+            
+            // If content has been manually modified (cards removed), don't rebuild from original data
+            if (sessionBuilderData.hasManuallyModifiedContent) {
+                console.log('🛡️ Skipping content refresh - content has been manually modified');
+                displaySessionContent();
+                return;
+            }
+            
+            console.log('🔄 Refreshing session content from current class/topic selections');
             
             // Update topic container states first
             updateTopicContainerStates();
@@ -8438,6 +8846,12 @@
             const includeFlashcards = sessionMode === 'flashcards';
             const includeQuiz = sessionMode === 'quiz';
             const includeGames = sessionMode === 'games';
+            
+            console.log('📊 Selection detection:');
+            console.log('  - Selected classes:', selectedClasses);
+            console.log('  - Selected topics:', selectedTopics);
+            console.log('  - Session mode:', sessionMode);
+            console.log('  - Include flags:', { includeFlashcards, includeQuiz, includeGames });
             
             // Collect content based on filters
             selectedTopics.forEach(({ className, topicName }) => {
@@ -8497,6 +8911,13 @@
             
             // Check if content actually changed to prevent unnecessary animations
             const contentChanged = JSON.stringify(sessionBuilderData.sessionContent) !== JSON.stringify(content);
+            
+            console.log('📝 Content generation complete:', {
+                previousContentLength: sessionBuilderData.sessionContent.length,
+                newContentLength: content.length,
+                contentChanged: contentChanged,
+                firstFewItems: content.slice(0, 3).map(item => ({ type: item.type, title: item.title }))
+            });
             
             sessionBuilderData.sessionContent = content;
             
@@ -8660,7 +9081,9 @@
                     { primary: '#7C3AED', secondary: '#8B5CF6', rgb: '124, 58, 237' }, // Purple (analogous)
                     { primary: '#0891B2', secondary: '#06B6D4', rgb: '8, 145, 178' }, // Cyan (analogous)
                 ];
-                const colorScheme = colorSchemes[classIndex % colorSchemes.length];
+                // Handle case where className is not found in studyData (e.g., loaded sessions)
+                const safeClassIndex = classIndex >= 0 ? classIndex : Math.abs(className.length) % colorSchemes.length;
+                const colorScheme = colorSchemes[safeClassIndex % colorSchemes.length];
                 
                 const classGroupHtml = `
                     <div class="session-class-group" style="
@@ -8724,12 +9147,14 @@
                                 `;
                             } else {
                                 // Fallback to title if front/back not found
-                                const truncatedTitle = item.title.length > 80 ? item.title.substring(0, 80) + '...' : item.title;
+                                const itemTitle = item.title || item.content?.title || 'Flashcard';
+                                const truncatedTitle = itemTitle.length > 80 ? itemTitle.substring(0, 80) + '...' : itemTitle;
                                 displayContent = `<div class="session-item-title">${truncatedTitle}</div>`;
                             }
                         } else {
                             // For other items, show title
-                            const truncatedTitle = item.title.length > 80 ? item.title.substring(0, 80) + '...' : item.title;
+                            const itemTitle = item.title || item.content?.title || `${item.type || 'Item'}`;
+                            const truncatedTitle = itemTitle.length > 80 ? itemTitle.substring(0, 80) + '...' : itemTitle;
                             displayContent = `<div class="session-item-title">${truncatedTitle}</div>`;
                         }
                         
@@ -8806,10 +9231,36 @@
             // Set header first
             container.innerHTML = headerHtml;
             
-            // Add each class section individually
-            classMatches.forEach((match) => {
+            // Check if we're loading a session to add animations
+            const isLoadingSession = sessionBuilderData.isLoadingSession;
+            
+            // Add each class section individually with animation if loading session
+            classMatches.forEach((match, index) => {
                 const classHTML = match[0];
-                container.innerHTML += classHTML;
+                
+                if (isLoadingSession) {
+                    // Add with initial hidden state for animation
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = classHTML;
+                    const classSection = tempDiv.firstElementChild;
+                    
+                    if (classSection) {
+                        classSection.style.opacity = '0';
+                        classSection.style.transform = 'translateY(20px)';
+                        classSection.style.transition = 'all 0.5s cubic-bezier(0.4, 0.0, 0.2, 1)';
+                        
+                        container.appendChild(classSection);
+                        
+                        // Animate in with staggered delay
+                        setTimeout(() => {
+                            classSection.style.opacity = '1';
+                            classSection.style.transform = 'translateY(0)';
+                        }, 200 + (index * 150));
+                    }
+                } else {
+                    // Add instantly for non-loading scenarios
+                    container.innerHTML += classHTML;
+                }
             });
             
 
@@ -9316,7 +9767,62 @@
                     
                     // Wait for animation to complete before removing from data
                     setTimeout(() => {
+                        // Check if we're working with a loaded session
+                        const isLoadedSession = currentSession && currentSession.flashcards && currentIndex !== undefined;
+                        
+                        // Store the removed item info for position adjustment
+                        const removedItem = sessionBuilderData.sessionContent[index];
+                        
+                        // Remove from session builder content
                         sessionBuilderData.sessionContent.splice(index, 1);
+                        // Mark content as manually modified to prevent refreshSessionContent from rebuilding
+                        sessionBuilderData.hasManuallyModifiedContent = true;
+                        
+                        // If this is a loaded session, also update the currentSession data
+                        if (isLoadedSession) {
+                            console.log(`🔄 Loaded session detected - updating currentSession.flashcards and adjusting position`);
+                            
+                            // Remove the corresponding card from currentSession.flashcards
+                            // Find the matching card by comparing content
+                            const flashcardIndex = currentSession.flashcards.findIndex(card => {
+                                return card.front === removedItem.content.front && 
+                                       card.back === removedItem.content.back;
+                            });
+                            
+                            if (flashcardIndex !== -1) {
+                                console.log(`🗑️ Removing flashcard at index ${flashcardIndex}, current position: ${currentIndex}`);
+                                currentSession.flashcards.splice(flashcardIndex, 1);
+                                
+                                // Adjust currentIndex based on removal position
+                                if (flashcardIndex <= currentIndex && currentIndex > 0) {
+                                    // If we removed a card at or before current position, move back one
+                                    currentIndex = Math.max(0, currentIndex - 1);
+                                    console.log(`📍 Adjusted position to ${currentIndex} (moved back due to removal)`);
+                                } else if (flashcardIndex < currentIndex) {
+                                    // Card was before current position, just adjust index
+                                    currentIndex = Math.max(0, currentIndex - 1);
+                                    console.log(`📍 Adjusted position to ${currentIndex} (index shift)`);
+                                }
+                                // If flashcardIndex > currentIndex, no position adjustment needed
+                                
+                                // Update the saved session in localStorage to preserve changes
+                                const sessions = JSON.parse(localStorage.getItem('studyHubProgressSessions') || '[]');
+                                const sessionIndex = sessions.findIndex(s => s.id === currentSession.id);
+                                if (sessionIndex !== -1) {
+                                    // Update the session with current state
+                                    sessions[sessionIndex] = {
+                                        ...currentSession,
+                                        flashcards: currentSession.flashcards,
+                                        currentIndex: currentIndex,
+                                        originalContent: sessionBuilderData.sessionContent // This should reflect removals
+                                    };
+                                    localStorage.setItem('studyHubProgressSessions', JSON.stringify(sessions));
+                                    console.log(`💾 Updated saved session with ${currentSession.flashcards.length} remaining cards`);
+                                }
+                            } else {
+                                console.warn('⚠️ Could not find matching flashcard to remove from currentSession');
+                            }
+                        }
                         
                         // Clean up container transition
                         const sessionContentContainer = document.getElementById('session-content');
@@ -9355,46 +9861,423 @@
             }
         }
 
-        function saveSession() {
-            if (sessionBuilderData.sessionContent.length === 0) {
-                showToast('No content to save', 'warning');
+        // New Study Progress Data Structure
+        let studyProgressSessions = {
+            sessions: JSON.parse(localStorage.getItem('studyHubProgressSessions') || '[]')
+        };
+
+        function saveStudyProgress(sessionName) {
+            // Validate we have an active study session
+            if (!currentSession || !currentSession.flashcards || currentSession.flashcards.length === 0) {
+                showToast('No active study session to save', 'warning');
                 return;
             }
             
-            const sessionName = document.getElementById('session-name').value.trim();
-            const session = {
-                name: sessionName || `Session ${sessionBuilderData.savedSessions.length + 1}`,
-                content: [...sessionBuilderData.sessionContent],
-                created: new Date().toISOString()
+
+
+            const progressSession = {
+                id: Date.now().toString(),
+                name: sessionName,
+                created: new Date().toISOString(),
+                lastStudied: new Date().toISOString(),
+                
+                // Study Progress
+                currentCardIndex: currentIndex,
+                totalCards: currentSession.flashcards.length,
+                
+                // Card Status Tracking
+                cardStatuses: currentSession.flashcards.map((card, index) => ({
+                    cardId: `${card.class}-${card.topic}-${index}`,
+                    status: card.studyStatus || 'not-reviewed', // 'studied', 'study-again', 'not-reviewed'
+                    reviewCount: card.reviewCount || 0,
+                    lastReviewed: card.lastReviewed || null
+                })),
+                
+                // Original Session Data - use current flashcard state to reflect any removed cards
+                originalContent: [...currentSession.flashcards],
+                cardOrder: currentSession.flashcards.map((card, index) => index), // Track original order
+                reviewOrder: currentSession.reviewOrder || currentSession.flashcards.map((card, index) => index), // Save review order
+                
+                // Session Statistics
+                studiedCount: currentSession.flashcards.filter(card => card.studyStatus === 'studied').length,
+                studyAgainCount: currentSession.flashcards.filter(card => card.studyStatus === 'study-again').length,
+                completedCount: currentSession.flashcards.filter(card => card.studyStatus && card.studyStatus !== 'not-reviewed').length
             };
+
+            // Add or update session
+            const existingIndex = studyProgressSessions.sessions.findIndex(s => s.name === sessionName);
+            if (existingIndex >= 0) {
+                studyProgressSessions.sessions[existingIndex] = progressSession;
+            } else {
+                studyProgressSessions.sessions.push(progressSession);
+            }
+
+            // Save to localStorage
+            localStorage.setItem('studyHubProgressSessions', JSON.stringify(studyProgressSessions.sessions));
             
-            sessionBuilderData.savedSessions.push(session);
-            localStorage.setItem('studyHubSavedSessions', JSON.stringify(sessionBuilderData.savedSessions));
+            showToast(`Study progress saved as "${sessionName}"!`, 'success');
             
-            populateSavedSessions();
-            document.getElementById('session-name').value = '';
-            showToast(`Session "${session.name}" saved successfully!`, 'success');
+            // Refresh saved sessions if session builder is open
+            const modal = document.getElementById('session-builder-modal');
+            if (modal && modal.classList.contains('show')) {
+                populateSavedSessions();
+            }
         }
 
-        function loadSession(index) {
-            const session = sessionBuilderData.savedSessions[index];
+        // Remove old saveSession function - no longer needed
+
+        function selectClassesAndTopicsFromSession() {
+            // Extract unique classes and topics from the loaded session content
+            const classesToSelect = new Set();
+            const topicsToSelect = new Set();
             
-            // Load the session content - this will be used by populateSessionFilters to restore UI state
-            sessionBuilderData.sessionContent = [...session.content];
+            sessionBuilderData.sessionContent.forEach((item, index) => {
+                
+                // Try different ways to extract class and topic information
+                let itemClass = item.class || item.content?.class;
+                let itemTopic = item.topic || item.content?.topic;
+                
+                // If still not found, try to extract from nested structure or other properties
+                if (!itemClass && item.content) {
+                    // Check if content has the class/topic structure
+                    itemClass = item.content.class;
+                    itemTopic = item.content.topic;
+                }
+                
+
+                
+                if (itemClass && itemTopic) {
+                    classesToSelect.add(itemClass);
+                    topicsToSelect.add(`${itemClass}-${itemTopic}`);
+                }
+            });
+            
+            // Set loading flag to prevent interference and add debug info
+            sessionBuilderData.isLoadingSession = true;
+            console.log(`🚀 Starting session loading animation for ${classesToSelect.size} classes`);
+            
+            // Sections are already properly managed by populateSessionFilters
+            const classArray = Array.from(classesToSelect);
+            console.log(`🎯 Classes ready for animation: ${classArray.join(', ')}`);
+            
+            // Small delay to ensure DOM is stable before starting animations
+            setTimeout(() => {
+                console.log(`🎬 Starting staggered class animations for:`, classArray);
+                
+                // Then select all required classes with staggered animation
+                classArray.forEach((className, index) => {
+                    console.log(`🔄 Processing class ${index}: ${className}`);
+                    setTimeout(() => {
+                        console.log(`⏰ Timeout fired for class: ${className}`);
+                        const classCheckbox = document.getElementById(`class-${className}`);
+                        const classButton = document.getElementById(`btn-${className}`);
+                        const classSection = document.getElementById(`class-section-${className}`);
+                        const topicCheckboxes = document.querySelectorAll(`input[data-class="${className}"]`);
+                        
+                        console.log(`🔍 Element search results for ${className}:`, {
+                            checkbox: classCheckbox ? 'FOUND' : 'NOT FOUND',
+                            checkboxChecked: classCheckbox ? classCheckbox.checked : 'N/A',
+                            button: classButton ? 'FOUND' : 'NOT FOUND', 
+                            section: classSection ? 'FOUND' : 'NOT FOUND',
+                            topicCount: topicCheckboxes.length
+                        });
+                        
+                        console.log(`🔍 Checkbox condition: classCheckbox=${!!classCheckbox}, checked=${classCheckbox?.checked}, condition=${classCheckbox && !classCheckbox.checked}`);
+                    
+                        // Update checkbox and button states
+                        console.log(`🎯 Checking checkbox condition for ${className}`);
+                        // For loaded sessions, we want to animate regardless of checkbox state
+                        const shouldAnimate = sessionBuilderData.isLoadingSession ? true : (classCheckbox && !classCheckbox.checked);
+                        console.log(`🎯 Animation decision: isLoadingSession=${sessionBuilderData.isLoadingSession}, shouldAnimate=${shouldAnimate}`);
+                        
+                        if (classCheckbox && shouldAnimate) {
+                            console.log(`✅ Animation condition met - proceeding with ${className}`);
+                            // Ensure checkbox is checked (might already be checked during loading)
+                            if (!classCheckbox.checked) {
+                                classCheckbox.checked = true;
+                            }
+                            if (classButton) {
+                                classButton.textContent = 'Remove';
+                                classButton.className = 'class-action-btn remove-btn';
+                            }                        // Enable all topic checkboxes for this class
+                        topicCheckboxes.forEach(checkbox => {
+                            checkbox.disabled = false;
+                        });
+                        
+                        // TEST: Just show the section without animation to debug
+                        if (classSection) {
+                            console.log(`🎬 Animating class section: ${className}`);
+                            console.log(`🔍 Found classSection element:`, classSection);
+                            console.log(`🔍 Element ID:`, classSection.id);
+                            console.log(`🔍 Element classes:`, classSection.className);
+                            
+                            // Clear any conflicting styles and set up for smooth animation
+                            classSection.classList.remove('hide', 'show');
+                            classSection.dataset.animating = 'true';
+                            
+                            // FORCE dramatic initial state for visible animation
+                            console.log(`📍 Section ${className} current state:`, {
+                                display: classSection.style.display,
+                                computedDisplay: window.getComputedStyle(classSection).display,
+                                visibility: window.getComputedStyle(classSection).visibility,
+                                opacity: window.getComputedStyle(classSection).opacity,
+                                transform: window.getComputedStyle(classSection).transform
+                            });
+                            
+                                // Set up animation - the element should already be hidden from populateSessionFilters
+                                classSection.style.setProperty('display', 'block', 'important');
+                                classSection.style.setProperty('opacity', '0', 'important');
+                                classSection.style.setProperty('transform', 'translateY(-60px) scaleY(0.1)', 'important'); // Even more dramatic
+                                classSection.style.setProperty('transition', 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)', 'important'); // Match session content animations
+                                classSection.style.setProperty('max-height', '0px', 'important');
+                                classSection.style.setProperty('overflow', 'hidden', 'important');
+                                classSection.style.setProperty('visibility', 'visible', 'important');                            console.log(`🎬 Section ${className} forced to ULTRA dramatic hidden state with !important`);
+                            
+                            console.log(`�️ Section ${className} should now be visible`);
+                            
+                            // Get the topics container
+                            const topicsContainer = classSection.querySelector('.topics-for-class');
+                            if (topicsContainer) {
+                                topicsContainer.style.opacity = '0';
+                                topicsContainer.style.transform = 'translateY(10px)';
+                                topicsContainer.style.transition = 'all 0.3s ease 0.2s';
+                            }
+                            
+                            // Prepare topics container for delayed animation
+                            if (topicsContainer) {
+                                topicsContainer.style.opacity = '0';
+                                topicsContainer.style.transform = 'translateY(10px)';
+                                topicsContainer.style.transition = 'opacity 0.3s ease 0.3s, transform 0.3s ease 0.3s';
+                            }
+                            
+                            // Force reflow and trigger dramatic slide-down animation
+                            classSection.offsetHeight;
+                            setTimeout(() => {
+                                console.log(`🎭 TRIGGERING ULTRA dramatic animation for ${className}`);
+                                
+                                // Use !important to ensure animation happens
+                                classSection.style.setProperty('opacity', '1', 'important');
+                                classSection.style.setProperty('transform', 'translateY(0) scaleY(1)', 'important');
+                                classSection.style.setProperty('max-height', '3000px', 'important'); // Even larger for expansion
+                                
+                                console.log(`🎭 Section ${className} ULTRA animation values set with !important - should be animating now!`);
+                                console.log(`🔍 After setting animation values:`, {
+                                    opacity: window.getComputedStyle(classSection).opacity,
+                                    transform: window.getComputedStyle(classSection).transform,
+                                    maxHeight: window.getComputedStyle(classSection).maxHeight,
+                                    transition: window.getComputedStyle(classSection).transition
+                                });
+                                    }, 30); // Match session content timing                            // Animate topics container after section expands
+                            setTimeout(() => {
+                                if (topicsContainer) {
+                                    topicsContainer.style.opacity = '1';
+                                    topicsContainer.style.transform = 'translateY(0)';
+                                }
+                            }, 150);
+                            
+
+                            
+                            // Clean up animation styles after completion (longer timeout for slower animation)
+                            setTimeout(() => {
+                                // Clear the !important styles by removing the property entirely
+                                classSection.style.removeProperty('transition');
+                                classSection.style.removeProperty('max-height');
+                                classSection.style.removeProperty('overflow');
+                                classSection.style.removeProperty('visibility');
+                                classSection.dataset.animating = 'false';
+                                
+                                if (topicsContainer) {
+                                    topicsContainer.style.transition = '';
+                                }
+                                
+                                console.log(`✅ Section ${className} animation complete and cleaned up`);
+                            }, 500); // Timeout for 0.4s animation + buffer
+                        } else {
+                            console.error(`❌ Class section not found for: ${className}`);
+                            console.log(`🔍 Looking for element with ID: class-section-${className}`);
+                            const allSections = document.querySelectorAll('[id*="class-section"]');
+                            console.log(`🔍 Available class sections:`, Array.from(allSections).map(s => s.id));
+                        }
+                    } else {
+                        console.warn(`❌ Animation condition failed for ${className}:`, {
+                            checkboxExists: !!classCheckbox,
+                            checkboxChecked: classCheckbox?.checked,
+                            isLoadingSession: sessionBuilderData.isLoadingSession,
+                            shouldAnimate: shouldAnimate,
+                            reason: !classCheckbox ? 'Checkbox not found' : 'Animation condition not met'
+                        });
+                    }
+                }, index * 60); // Match session content stagger timing
+            });
+            
+            // Wait for class sections to be created, then select topics with animation
+            const maxClassDelay = (classArray.length - 1) * 60;
+            setTimeout(() => {
+                const topicArray = Array.from(topicsToSelect);
+                topicArray.forEach((topicKey, topicIndex) => {
+                    setTimeout(() => {
+                        // Split only on the first dash to handle topic names with dashes
+                        const dashIndex = topicKey.indexOf('-');
+                        if (dashIndex === -1) return;
+                        
+                        const className = topicKey.substring(0, dashIndex);
+                        const topicName = topicKey.substring(dashIndex + 1);
+                        const topicCheckbox = document.getElementById(`topic-${className}-${topicName}`);
+                        
+                        if (topicCheckbox && !topicCheckbox.checked) {
+                            topicCheckbox.checked = true;
+                            console.log(`Selected topic: ${className} - ${topicName}`);
+                            
+                            // Add highlight animation for selected topics
+                            const topicLabel = topicCheckbox.closest('.topic-checkbox-container');
+                            if (topicLabel) {
+                                topicLabel.style.animation = 'highlightTopic 0.6s ease';
+                                setTimeout(() => {
+                                    topicLabel.style.animation = '';
+                                }, 600);
+                            }
+                        } else if (!topicCheckbox) {
+                            console.warn(`Topic checkbox not found: topic-${className}-${topicName}`);
+                        }
+                    }, topicIndex * 50); // Stagger topic selection
+                });
+                
+                // Update all select all button states after all topics are selected
+                setTimeout(() => {
+                    classesToSelect.forEach(className => {
+                        updateSelectAllButtonState(className);
+                    });
+                    
+                    // Clear loading flag and refresh content once at the end
+                    sessionBuilderData.isLoadingSession = false;
+                    
+                    // DON'T call refreshSessionContent() here because it would overwrite our loaded session content
+                    // with fresh content from studyData, losing any removed cards
+                    console.log('Session loading complete - skipping content refresh to preserve loaded session content');
+                    
+                    // Instead, just trigger the display update
+                    displaySessionContent();
+                    
+                    console.log(`Loaded session with ${classesToSelect.size} classes and ${topicsToSelect.size} topics`);
+                }, (topicArray.length * 50) + 100); // Wait for all topic animations to complete
+            }, maxClassDelay + 500); // Wait for class section animations to complete
+            }, 100); // DOM stability delay
+        }
+
+        function loadStudyProgressSession(index) {
+            const session = studyProgressSessions.sessions[index];
+            
+            if (!session) {
+                showToast('Session not found', 'error');
+                return;
+            }
+
+            // Restore the original session content to session builder
+
+            
+            // Check if the original content has the session builder structure or if it needs to be reconstructed
+            // NOTE: After our fix, session.originalContent should contain the current flashcard state (post-removal)
+            if (session.originalContent && session.originalContent.length > 0) {
+                const firstItem = session.originalContent[0];
+
+                
+                // If the content already has session builder structure (type, class, topic), use it directly
+                if (firstItem.type && firstItem.class && firstItem.topic) {
+                    console.log(`Loading ${session.originalContent.length} cards from saved session (should reflect removals)`);
+                    sessionBuilderData.sessionContent = [...session.originalContent];
+                } else {
+                    
+                    // Try to extract class/topic information from various sources
+                    sessionBuilderData.sessionContent = session.originalContent.map((card, index) => {
+                        // Try multiple ways to get class and topic
+                        let cardClass = card.class || card.content?.class || card.className;
+                        let cardTopic = card.topic || card.content?.topic || card.topicName;
+                        
+                        // If we still don't have class/topic, try to extract from other session data
+                        if (!cardClass || !cardTopic) {
+                            // Try to get from session name or other metadata
+                            if (session.name) {
+                                // Maybe extract from session name pattern
+                                const sessionNameParts = session.name.split(' - ');
+                                if (sessionNameParts.length >= 2) {
+                                    cardClass = cardClass || sessionNameParts[0];
+                                    cardTopic = cardTopic || sessionNameParts[1];
+                                }
+                            }
+                        }
+                        
+                        // Special handling for old sessions - if we still don't have class/topic,
+                        // try to infer from card content or use a more generic approach
+                        if (!cardClass || !cardTopic) {
+                            if (card.front && card.front.includes('pwd')) {
+                                cardClass = 'Linux Commands';
+                                cardTopic = 'Basic Commands';
+                            } else if (card.front && card.front.toLowerCase().includes('directory')) {
+                                cardClass = 'File System';
+                                cardTopic = 'Navigation';
+                            }
+                            // Add more content-based inference as needed
+                        }
+                        
+
+                        
+                        return {
+                            type: 'flashcard',
+                            class: cardClass || 'Saved Session',
+                            topic: cardTopic || 'Flashcards', 
+                            content: {
+                                front: card.front,
+                                back: card.back
+                            },
+                            id: `${cardClass || 'saved'}-${cardTopic || 'flashcards'}-flashcard-${index}`,
+                            title: card.front || card.title || 'Flashcard',
+                            difficulty: card.difficulty || 'medium'
+                        };
+                    });
+                }
+            } else {
+                sessionBuilderData.sessionContent = [];
+            }
+            
+            // Set up currentSession and currentIndex for resuming
+            currentSession = {
+                flashcards: session.originalContent.map((card, cardIndex) => {
+                    const cardStatus = session.cardStatuses[cardIndex];
+                    
+                    // Ensure proper card structure - handle both direct flashcard format and session builder format
+                    let cardData = card;
+                    if (card.type === 'flashcard' && card.content) {
+                        // Session builder format - extract the actual flashcard data
+                        cardData = {
+                            front: card.content.front,
+                            back: card.content.back,
+                            class: card.class,
+                            topic: card.topic,
+                            ...card.content
+                        };
+                    }
+                    
+                    return {
+                        ...cardData,
+                        studyStatus: cardStatus ? cardStatus.status : 'not-reviewed',
+                        reviewCount: cardStatus ? cardStatus.reviewCount : 0,
+                        lastReviewed: cardStatus ? cardStatus.lastReviewed : null
+                    };
+                }),
+                reviewOrder: session.reviewOrder || session.cardOrder || []
+            };
+            currentIndex = session.currentCardIndex;
             
             // Count unique classes and topics for the toast message
             const uniqueClasses = new Set();
             const uniqueTopics = new Set();
             
-            session.content.forEach(item => {
+            session.originalContent.forEach(item => {
                 if (item.class && item.topic) {
                     uniqueClasses.add(item.class);
                     uniqueTopics.add(`${item.class}-${item.topic}`);
                 }
             });
-            
-            // Set session name
-            document.getElementById('session-name').value = session.name;
             
             // If the session builder is currently open, refresh the filters to reflect the loaded session
             const modal = document.getElementById('session-builder-modal');
@@ -9402,16 +10285,34 @@
                 // Set loading flag to prevent content refresh during UI update
                 sessionBuilderData.isLoadingSession = true;
                 populateSessionFilters();
+                
+                // Wait for filters to be populated, then select appropriate classes and topics
                 setTimeout(() => {
-                    sessionBuilderData.isLoadingSession = false;
+                    // Don't clear loading flag here - let selectClassesAndTopicsFromSession handle it
+                    selectClassesAndTopicsFromSession();
                     displaySessionContent();
-                }, 100);
+                }, 200);
             } else {
                 // If modal is not open, just display the session content
                 displaySessionContent();
             }
             
-            showToast(`Session "${session.name}" loaded with ${uniqueClasses.size} classes and ${uniqueTopics.size} topics`, 'success');
+            showToast(`Study session "${session.name}" loaded! Resume from card ${session.currentCardIndex + 1}/${session.totalCards}`, 'success');
+        }
+
+        function deleteStudyProgressSession(index) {
+            const session = studyProgressSessions.sessions[index];
+            if (!session) {
+                showToast('Session not found', 'error');
+                return;
+            }
+
+            if (confirm(`Delete study session "${session.name}"? This cannot be undone.`)) {
+                studyProgressSessions.sessions.splice(index, 1);
+                localStorage.setItem('studyHubProgressSessions', JSON.stringify(studyProgressSessions.sessions));
+                populateSavedSessions();
+                showToast(`Session "${session.name}" deleted`, 'success');
+            }
         }
         
         function clearAllSelections() {
@@ -9441,50 +10342,96 @@
                 sessionBuilderData.savedSessions.splice(index, 1);
                 localStorage.setItem('studyHubSavedSessions', JSON.stringify(sessionBuilderData.savedSessions));
                 populateSavedSessions();
+                
+                // If we deleted a loaded session, clear the session builder state and allow normal content refresh
+                console.log('🗑️ Session deleted - clearing loaded session state');
+                sessionBuilderData.sessionContent = [];
+                sessionBuilderData.hasManuallyModifiedContent = false;
+                sessionBuilderData.isLoadingSession = false;
+                
+                // Force refresh content to show current selections
+                refreshSessionContent();
+                
                 showToast(`Session "${session.name}" deleted`, 'info');
             }
         }
 
         function startCustomSession() {
-
-            
             if (sessionBuilderData.sessionContent.length === 0) {
                 showToast('No content to start session with', 'warning');
                 return;
             }
             
-            // Create content organized by type
-            const organizedContent = {
-                flashcards: sessionBuilderData.sessionContent.filter(item => item.type === 'flashcard').map(item => item.content),
-                quiz: sessionBuilderData.sessionContent.filter(item => item.type === 'quiz').map(item => item.content),
-                games: sessionBuilderData.sessionContent.filter(item => item.type === 'game').map(item => item.content)
-            };
+            // Check if we're resuming a saved session
+            const isResumeSession = currentSession && currentSession.flashcards && currentIndex !== undefined;
             
-
+            // If this is NOT a resume session, clear all session variables
+            if (!isResumeSession) {
+                currentSession = null;
+                currentIndex = 0;
+                window.isResumeSession = false;
+                window.customSessionData = null;
+                originalSessionBuilderData = null;
+            }
+            
+            let organizedContent;
+            if (isResumeSession) {
+                // Use the restored session data with study statuses
+                organizedContent = {
+                    flashcards: currentSession.flashcards,
+                    quiz: sessionBuilderData.sessionContent.filter(item => item.type === 'quiz').map(item => item.content),
+                    games: sessionBuilderData.sessionContent.filter(item => item.type === 'game').map(item => item.content)
+                };
+            } else {
+                // Create content organized by type for new session
+                organizedContent = {
+                    flashcards: sessionBuilderData.sessionContent.filter(item => item.type === 'flashcard').map(item => item.content),
+                    quiz: sessionBuilderData.sessionContent.filter(item => item.type === 'quiz').map(item => item.content),
+                    games: sessionBuilderData.sessionContent.filter(item => item.type === 'game').map(item => item.content)
+                };
+            }
+            
+            // Store session data before clearing for the session start functions  
+            const sessionMode = sessionBuilderData.sessionMode;
+            const sessionContent = [...sessionBuilderData.sessionContent]; // Copy the content
             
             closeSessionBuilder();
             
+            // Clear session builder data immediately after starting to prevent lingering selections
+            // This ensures that when user goes back and opens a fresh session, it's truly fresh
+            console.log('🧹 Clearing session builder data after starting session');
+            sessionBuilderData.sessionContent = [];
+            sessionBuilderData.sessionMode = '';
+            sessionBuilderData.hasManuallyModifiedContent = false;
+            
             // Start session based on mode
-            const sessionMode = sessionBuilderData.sessionMode;
             
             if (sessionMode === 'flashcards' && organizedContent.flashcards.length > 0) {
-                startFlashcardsOnlySession(organizedContent, sessionBuilderData.sessionContent);
+                startFlashcardsOnlySession(organizedContent, sessionContent, isResumeSession);
             } else if (sessionMode === 'quiz' && organizedContent.quiz.length > 0) {
-                startQuizOnlySession(organizedContent, sessionBuilderData.sessionContent);
+                startQuizOnlySession(organizedContent, sessionContent);
             } else if (sessionMode === 'games' && organizedContent.games.length > 0) {
-                startGamesOnlySession(organizedContent, sessionBuilderData.sessionContent);
+                startGamesOnlySession(organizedContent, sessionContent);
             } else {
                 // Fallback to mixed session for backward compatibility
-                startCustomFlashcardSession(organizedContent);
+                startCustomFlashcardSession(organizedContent, isResumeSession);
             }
             
-            showToast(`${sessionMode.charAt(0).toUpperCase() + sessionMode.slice(1)} session started with ${sessionBuilderData.sessionContent.length} items!`, 'success');
+            const sessionTypeText = isResumeSession ? 'resumed' : 'started';
+            showToast(`${sessionMode.charAt(0).toUpperCase() + sessionMode.slice(1)} session ${sessionTypeText} with ${sessionContent.length} items!`, 'success');
         }
 
-        function startFlashcardsOnlySession(organizedContent, rawContent) {
+        function startFlashcardsOnlySession(organizedContent, rawContent, isResumeSession = false) {
             // Store the content
             window.customSessionData = organizedContent;
             window.customSessionRawData = rawContent;
+            window.isResumeSession = isResumeSession;
+            
+            // Capture original session builder data for proper saving
+            if (!isResumeSession) {
+                originalSessionBuilderData = rawContent ? [...rawContent] : null;
+                console.log('Captured original session builder data:', originalSessionBuilderData);
+            }
             
             renderFlashcardsOnlyView();
         }
@@ -9558,18 +10505,55 @@
                 window.customFlashcardSystem = null;
             }
             
+            // Enhance flashcards with original session builder metadata if available
+            let enhancedFlashcards = sessionData.flashcards;
+            if (originalSessionBuilderData && !window.isResumeSession) {
+                console.log('Enhancing flashcards with original session builder data');
+                enhancedFlashcards = sessionData.flashcards.map((flashcard, index) => {
+                    // Try to find matching original session builder item
+                    const originalItem = originalSessionBuilderData.find(item => 
+                        item.type === 'flashcard' && 
+                        item.content && 
+                        item.content.front === flashcard.front && 
+                        item.content.back === flashcard.back
+                    );
+                    
+                    if (originalItem) {
+                        console.log(`Enhanced flashcard ${index} with class: ${originalItem.class}, topic: ${originalItem.topic}`);
+                        return {
+                            ...flashcard,
+                            class: originalItem.class,
+                            topic: originalItem.topic,
+                            originalSessionBuilderItem: originalItem
+                        };
+                    }
+                    return flashcard;
+                });
+            }
+
             customFlashcardSystem = new FlashcardSystem({
-                flashcards: sessionData.flashcards,
+                flashcards: enhancedFlashcards,
                 containerElement: document.getElementById('custom-flashcard-container'),
                 isCustomSession: true,
                 systemId: 'custom-flashcard',
-                showStats: true // Built-in session stats are now part of the system
+                showStats: true, // Built-in session stats are now part of the system
+                isResumeSession: window.isResumeSession || false,
+                resumeIndex: window.isResumeSession ? currentIndex : 0
             });
 
             // Make it globally accessible for settings
             window.customFlashcardSystem = customFlashcardSystem;
 
             customFlashcardSystem.render();
+            
+            // If resuming, restore study statuses and card order
+            if (window.isResumeSession && currentSession && currentSession.flashcards) {
+                customFlashcardSystem.restoreStudyStatuses(
+                    currentSession.flashcards, 
+                    currentIndex, 
+                    currentSession.reviewOrder
+                );
+            }
         }
 
         function renderQuizOnlyView() {
@@ -10478,7 +11462,7 @@
             <div class="modal session-builder">
                 <div class="modal-header">
                     <h2 class="modal-title">📚 Session Builder</h2>
-                    <button class="close-btn" onclick="closeSessionBuilder()" aria-label="Close session builder">&times;</button>
+                    <button class="close-btn" onclick="closeSessionBuilderWithReset()" aria-label="Close session builder">&times;</button>
                 </div>
                 
                 <div class="session-builder-content">
@@ -10542,13 +11526,15 @@
                 </div>
 
                 <div class="session-footer">
-                    <input type="text" class="session-input" id="session-name" placeholder="Session name (optional)">
+                    <p style="text-align: center; color: var(--muted); font-size: 0.8rem; margin: 0 0 1rem 0;">
+                        💡 Sessions are automatically saved during study progress
+                    </p>
                     <div class="session-actions">
-                        <button class="control-btn" onclick="refreshSessionContent()">
-                            🔄 Refresh Content
+                        <button class="control-btn" onclick="resetSessionBuilder()" style="background: var(--warning);">
+                            🔄 Reset All
                         </button>
-                        <button class="control-btn" onclick="saveSession()">
-                            💾 Save Session
+                        <button class="control-btn" onclick="refreshSessionContent()">
+                            � Refresh Content
                         </button>
                         <button class="control-btn" onclick="startCustomSession()" style="background: var(--good);">
                             🚀 Start Session
