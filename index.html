@@ -1334,7 +1334,7 @@
                 0 2px 4px rgba(0, 0, 0, 0.08),
                 inset 0 1px 0 rgba(var(--class-color-rgb, 79, 70, 229), 0.1);
             transition: all 0.3s ease;
-            transform: translateY(0);
+            /* Remove transform to prevent positioning conflicts */
             background: linear-gradient(145deg,
                 rgba(var(--class-color-rgb, 79, 70, 229), 0.02),
                 rgba(var(--class-color-rgb, 79, 70, 229), 0.08),
@@ -1342,15 +1342,19 @@
             backdrop-filter: blur(12px);
             overscroll-behavior: contain;
             touch-action: pan-y;
+            position: relative;
+            z-index: 1;
         }
         
         .class-section:hover {
-            transform: translateY(-2px);
+            /* Use subtle transform to avoid overlapping */
+            transform: translateY(-1px);
             box-shadow: 
-                0 8px 28px rgba(var(--class-color-rgb, 79, 70, 229), 0.2),
-                0 4px 12px rgba(0, 0, 0, 0.1),
+                0 6px 20px rgba(var(--class-color-rgb, 79, 70, 229), 0.18),
+                0 3px 8px rgba(0, 0, 0, 0.1),
                 inset 0 1px 0 rgba(var(--class-color-rgb, 79, 70, 229), 0.15);
             border-color: rgba(var(--class-color-rgb, 79, 70, 229), 0.35);
+            z-index: 2;
         }
         
         .class-section.show {
@@ -1365,13 +1369,13 @@
         @keyframes slideIn {
             0% {
                 opacity: 0;
-                transform: translateY(-20px) scale(0.95);
-                filter: blur(4px);
+                transform: translateY(-5px) scale(0.98);
+                filter: blur(2px);
             }
             50% {
                 opacity: 0.7;
-                transform: translateY(-5px) scale(0.98);
-                filter: blur(2px);
+                transform: translateY(-2px) scale(0.99);
+                filter: blur(1px);
             }
             100% {
                 opacity: 1;
@@ -1387,7 +1391,7 @@
             }
             to {
                 opacity: 0;
-                transform: translateY(-20px) scale(0.95);
+                transform: translateY(-5px) scale(0.98);
             }
         }
         
@@ -1537,7 +1541,7 @@
                 rgba(var(--class-color-rgb, 79, 70, 229), 0.06));
             border-top: 1px solid rgba(var(--class-color-rgb, 79, 70, 229), 0.18);
             backdrop-filter: blur(8px);
-            overflow: hidden;
+            overflow: hidden; /* Keep for animation purposes */
             transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
             overscroll-behavior: contain;
             touch-action: pan-y;
@@ -1634,23 +1638,23 @@
         
         .topics-for-class {
             transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
-            transform-origin: top;
+            /* Remove transform-origin to prevent positioning issues */
         }
         
         /* Clean slide-down animation for new class sections */
         @keyframes slideDownExpand {
             0% {
                 opacity: 0;
-                transform: scaleY(0.4) translateY(-10px);
+                transform: scaleY(0.8);
                 max-height: 0;
             }
             60% {
                 opacity: 0.8;
-                transform: scaleY(0.95) translateY(-2px);
+                transform: scaleY(0.95);
             }
             100% {
                 opacity: 1;
-                transform: scaleY(1) translateY(0);
+                transform: scaleY(1);
                 max-height: 2000px;
             }
         }
@@ -2520,29 +2524,60 @@
 
         .session-filters {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: 1fr 1fr; /* Fixed two-column layout */
             gap: 0.5rem;
-            flex: 1;
-            overflow-y: auto;
-            min-height: 0;
+            height: 100%; /* Match parent height like other columns */
+            overflow: hidden; /* Container doesn't scroll, individual groups do */
+            align-items: stretch; /* Make filter groups take full height */
         }
 
         .filter-group {
             background: var(--bg);
             border-radius: 4px;
             padding: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Take full height from grid */
+            /* Grid cell height = parent container height */
         }
 
         .filter-group h4 {
             margin: 0 0 0.3rem 0;
             color: var(--text);
             font-size: 0.75rem;
+            flex-shrink: 0;
         }
 
         .filter-options {
             display: flex;
             flex-direction: column;
             gap: 0.25rem;
+            flex: 1; /* Take remaining space after header */
+            min-height: 0; /* Allow shrinking */
+            overflow-y: auto; /* Scroll when content exceeds allocated space */
+            overscroll-behavior: contain;
+            touch-action: pan-y;
+            isolation: isolate;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border) transparent;
+        }
+
+        /* Webkit scrollbar styling for filter-options */
+        .filter-options::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .filter-options::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .filter-options::-webkit-scrollbar-thumb {
+            background: var(--border);
+            border-radius: 3px;
+        }
+
+        .filter-options::-webkit-scrollbar-thumb:hover {
+            background: var(--muted);
         }
 
         /* Allow natural sizing for filter containers */
@@ -2550,6 +2585,10 @@
         #topic-filters {
             min-height: 0;
         }
+
+        /* Topic filters now expand naturally - filter-options handles scrolling */
+
+        /* Class sections should not be individually scrollable - let parent container handle scrolling */
 
         .filter-option {
             display: flex;
@@ -3582,7 +3621,6 @@
                 margin-right: 0;
                 order: 1;
                 min-height: 250px;
-                max-height: 300px;
             }
             
             .session-main-content {
@@ -3627,7 +3665,7 @@
             .saved-sessions-list,
             .session-content-preview,
             .session-content {
-                max-height: 300px;
+                overflow-y: auto;
             }
         }
         
@@ -3682,16 +3720,17 @@
             }
             
             .session-filters {
-                display: flex;
-                flex-direction: column;
+                display: grid;
+                grid-template-columns: 1fr; /* Single column on mobile */
+                gap: 0.5rem;
                 flex: 1;
                 overflow-y: auto;
+                align-items: start;
                 gap: 1rem;
             }
             
             .session-sidebar-right {
                 min-height: 300px;
-                max-height: 400px;
                 overflow-y: auto;
                 order: 3;
                 display: flex;
@@ -10315,6 +10354,9 @@
             sessionBuilderData.isLoadingSession = true;
             console.log(`🚀 Starting session loading animation for ${classesToSelect.size} classes`);
             
+            // Enable animations for the loading process
+            shouldAnimateOnExpand = true;
+            
             // Sections are already properly managed by populateSessionFilters
             const classArray = Array.from(classesToSelect);
             console.log(`🎯 Classes ready for animation: ${classArray.join(', ')}`);
@@ -10557,6 +10599,29 @@
                 return;
             }
 
+            // Check if we have existing selections that need to be cleared first
+            const modal = document.getElementById('session-builder-modal');
+            const hasExistingSelections = modal && modal.classList.contains('show') && 
+                document.querySelectorAll('#class-filters input[type="checkbox"]:checked').length > 0;
+
+            if (hasExistingSelections) {
+                console.log('🔄 Existing selections detected - playing reset animation first');
+                // Play reset animation first, then load the session
+                resetSessionBuilder(false); // Don't show toast
+                
+                // Wait for reset animation to complete, then load the session
+                setTimeout(() => {
+                    loadSessionContent(session);
+                }, 700); // Wait for reset animation to complete
+            } else {
+                // No existing selections, load directly
+                loadSessionContent(session);
+            }
+        }
+
+        function loadSessionContent(session) {
+            console.log('📥 Loading session content:', session.name);
+
             // Restore the original session content to session builder
 
             
@@ -10671,7 +10736,11 @@
                 sessionBuilderData.isLoadingSession = true;
                 populateSessionFilters();
                 
-                // Wait for filters to be populated, then select appropriate classes and topics
+                // Enable animations for the session load
+                shouldAnimateOnExpand = true;
+                console.log('🎬 Enabling animations for session loading');
+                
+                // Wait for filters to be populated, then select appropriate classes and topics with animation
                 setTimeout(() => {
                     // Don't clear loading flag here - let selectClassesAndTopicsFromSession handle it
                     selectClassesAndTopicsFromSession();
