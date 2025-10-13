@@ -155,6 +155,29 @@
         .header-right {
             display: flex;
             gap: 1rem;
+            align-items: center;
+        }
+
+        .hamburger-btn {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.5rem;
+            border-radius: 0.375rem;
+            cursor: pointer;
+            transition: all var(--fast) var(--ease);
+            font-size: 1.25rem;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hamburger-btn:hover {
+            background: var(--accent);
+            color: var(--bg);
+            border-color: var(--accent);
         }
 
         .session-btn {
@@ -172,6 +195,97 @@
         .session-btn:hover {
             background: var(--accent);
             transform: translateY(-1px);
+        }
+
+        /* Slim Sidebar Toggle Button */
+        .sidebar-toggle-btn {
+            position: fixed;
+            left: 0;
+            top: 35%;
+            transform: translateY(-50%);
+            width: 24px;
+            height: 60px;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-left: none;
+            border-radius: 0 8px 8px 0;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 45;
+            transition: all 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar-toggle-btn:hover {
+            background: var(--accent);
+            color: var(--bg);
+            width: 30px;
+            box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .sidebar-toggle-btn.visible {
+            display: flex;
+        }
+
+        .sidebar-toggle-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* Sidebar overlay mode when toggled from button */
+        .sidebar.overlay-mode {
+            position: fixed;
+            left: 0;
+            top: 73px;
+            z-index: 50;
+            width: 280px;
+            height: calc(100vh - 73px);
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        /* Sidebar when hidden (on class/topic pages) */
+        .sidebar.sidebar-hidden {
+            position: fixed;
+            left: -280px; /* Hide completely off-screen */
+            top: 73px;
+            z-index: 50;
+            width: 280px;
+            height: calc(100vh - 73px);
+            transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            box-shadow: none; /* No shadow while hidden */
+            border-right: none; /* No border while hidden */
+            overflow: hidden; /* Hide content overflow during animation */
+        }
+
+        /* Sidebar transitioning from hidden to overlay - both classes present initially */
+        .sidebar.sidebar-hidden.overlay-mode {
+            left: -280px; /* Start at hidden position */
+        }
+
+        .sidebar.overlay-mode .class-expand-btn {
+            display: flex;
+        }
+
+        /* Topics sidebar when main sidebar is in overlay mode */
+        .sidebar.overlay-mode ~ .topics-sidebar {
+            left: 280px;
+            z-index: 55;
+        }
+
+        .sidebar.overlay-mode ~ .topics-sidebar.open {
+            left: 280px;
+        }
+
+        /* Topics sidebar when hidden */
+        .sidebar.sidebar-hidden ~ .topics-sidebar {
+            position: fixed;
+            left: -320px; /* Hide completely off-screen */
+            box-shadow: none;
+            border-right: none;
         }
 
         /* Main Layout */
@@ -204,6 +318,9 @@
         .class-item {
             margin-bottom: 1rem;
             position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .class-name {
@@ -215,50 +332,40 @@
             transition: all var(--fast) var(--ease);
             font-weight: 500;
             cursor: pointer;
+            flex: 1;
+        }
+
+        .class-expand-btn {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text);
+            width: 32px;
+            height: 32px;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all var(--fast) var(--ease);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .class-expand-btn:hover {
+            background: var(--accent);
+            color: var(--bg);
+            border-color: var(--accent);
+        }
+
+        .class-expand-btn svg {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
         }
 
         .class-name:hover {
             background: rgba(34, 211, 238, 0.1);
             color: var(--accent);
-        }
-
-        .topics-dropdown {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 0.5rem;
-            padding: 0;
-            margin-top: 0.25rem;
-            position: relative;
-            z-index: 50;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            max-height: 0;
-            overflow: hidden;
-            transition: all var(--norm) var(--ease);
-            opacity: 0;
-        }
-
-        .class-item:hover .topics-dropdown,
-        .topics-dropdown:hover {
-            max-height: 350px; /* Increased from 200px */
-            padding: 0.5rem;
-            opacity: 1;
-            overflow-y: auto; /* Enable vertical scrolling */
-            overflow-x: hidden; /* Hide horizontal scrollbar */
-        }
-
-        /* Extend hover area to bridge the gap */
-        .class-item::after {
-            content: '';
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            height: 0.25rem;
-            z-index: 49;
-        }
-
-        .class-item:hover::after {
-            background: transparent;
         }
 
         .topic-chip {
@@ -276,6 +383,104 @@
         .topic-chip:hover {
             background: var(--accent2);
             transform: translateY(-1px);
+        }
+
+        /* Sliding Topics Sidebar */
+        .topics-sidebar {
+            position: fixed;
+            top: 73px;
+            left: 280px;
+            width: 0;
+            height: calc(100vh - 73px);
+            background: var(--panel);
+            border-right: 1px solid var(--border);
+            overflow: hidden;
+            transition: width 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            z-index: 40;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .topics-sidebar.open {
+            width: 320px;
+        }
+
+        .topics-sidebar-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--border);
+            background: var(--bg);
+            min-width: 320px;
+            flex-shrink: 0;
+            gap: 1rem;
+        }
+
+        .topics-sidebar-header h3 {
+            margin: 0;
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            flex: 1;
+        }
+
+        .topics-sidebar-close {
+            background: none;
+            border: none;
+            color: var(--muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 0.25rem;
+            transition: all var(--fast) var(--ease);
+            flex-shrink: 0;
+            display: none;
+        }
+
+        .topics-sidebar-close:hover {
+            background: rgba(239, 68, 68, 0.1);
+            color: var(--bad);
+        }
+
+        .topics-sidebar-content {
+            flex: 1;
+            padding: 1rem;
+            overflow-y: auto;
+            min-width: 320px;
+        }
+
+        .topics-sidebar .topic-item {
+            display: block;
+            color: var(--text);
+            text-decoration: none;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            transition: all var(--fast) var(--ease);
+            font-weight: 500;
+            cursor: pointer;
+            border: 1px solid transparent;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-wrap: break-word;
+        }
+
+        .topics-sidebar .topic-item:hover {
+            background: rgba(34, 211, 238, 0.1);
+            color: var(--accent);
+            border-color: rgba(34, 211, 238, 0.2);
+        }
+
+        .topics-sidebar .topic-item.active {
+            background: rgba(34, 211, 238, 0.1);
+            color: var(--accent);
+            border-color: var(--accent);
         }
 
         /* Main Content Area */
@@ -3759,11 +3964,34 @@
             }
 
             .header {
-                padding: 1rem;
+                padding: 0.75rem 1rem;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+
+            .header-left,
+            .header-center,
+            .header-right {
+                flex: 1 1 auto;
             }
 
             .header-center {
-                display: none;
+                display: flex;
+                gap: 0.5rem;
+                order: 3;
+                flex-basis: 100%;
+                justify-content: center;
+            }
+
+            .mode-btn {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.8rem;
+                flex: 1;
+            }
+
+            .home-btn {
+                padding: 0.4rem 0.75rem;
+                font-size: 0.8rem;
             }
 
             .main-content {
@@ -4011,8 +4239,99 @@
             padding: 1.5rem;
         }
 
+        /* Mobile overlay for both mobile and desktop overlay mode */
+        .mobile-overlay {
+            display: none;
+            position: fixed;
+            top: 73px;
+            left: 0;
+            width: 100%;
+            height: calc(100vh - 73px);
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 45;
+        }
+
+        .mobile-overlay.active {
+            display: block;
+        }
+
         /* Responsive stats layout */
         @media (max-width: 768px) {
+            .hamburger-btn {
+                display: flex;
+            }
+
+            .sidebar-toggle-btn {
+                display: none !important;
+            }
+
+            .class-expand-btn {
+                display: flex;
+            }
+
+            .sidebar {
+                position: fixed;
+                left: -100%;
+                top: 95px; /* Approximate wrapped header height */
+                z-index: 50;
+                width: 280px;
+                transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+                box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+                height: calc(100vh - 95px);
+            }
+
+            .sidebar.mobile-open {
+                left: 0;
+            }
+
+            /* Topics sidebar on mobile - overlays the main sidebar */
+            .topics-sidebar {
+                left: -100%;
+                width: 280px;
+                top: 95px; /* Approximate wrapped header height */
+                z-index: 55;
+                height: calc(100vh - 95px);
+                transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            }
+
+            .topics-sidebar.open {
+                left: 0;
+                width: 280px;
+            }
+
+            .topics-sidebar-content,
+            .topics-sidebar-header {
+                min-width: 280px;
+            }
+
+            .topics-sidebar-close {
+                display: flex;
+            }
+
+            .main-content {
+                margin-left: 0;
+                width: 100%;
+            }
+
+            .app-container {
+                position: relative;
+            }
+
+            .mobile-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.5);
+                z-index: 45;
+            }
+
+            .mobile-overlay.active {
+                display: block;
+            }
+
             .with-stats-sidebar {
                 grid-template-columns: 1fr;
                 gap: 1rem;
@@ -4151,6 +4470,7 @@
     <!-- Global Header -->
     <header class="header" role="banner">
         <div class="header-left">
+            <button class="hamburger-btn" onclick="toggleMobileSidebar()" aria-label="Toggle navigation menu">☰</button>
             <a href="#" class="logo" onclick="showHomepage()" tabindex="0" role="button" aria-label="Return to Study Hub homepage">Study Hub</a>
             <button class="home-btn" onclick="showHomepage()" title="Go to homepage (H)" aria-label="Go to homepage" accesskey="h">Home</button>
         </div>
@@ -4165,6 +4485,16 @@
 
     <!-- Main App Container -->
     <div class="app-container">
+        <!-- Slim Sidebar Toggle Button -->
+        <button class="sidebar-toggle-btn" id="sidebar-toggle-btn" onclick="toggleSidebarOverlay()" aria-label="Toggle sidebar">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 6L16 12L10 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+        </button>
+
+        <!-- Mobile Overlay -->
+        <div class="mobile-overlay" id="mobile-overlay" onclick="closeMobileSidebar()"></div>
+
         <!-- Sidebar -->
         <nav class="sidebar" role="navigation" aria-label="Classes navigation">
             <h3 id="classes-heading">Classes</h3>
@@ -4172,6 +4502,17 @@
                 <!-- Classes will be populated here -->
             </div>
         </nav>
+
+        <!-- Sliding Topics Sidebar -->
+        <div class="topics-sidebar" id="topics-sidebar">
+            <div class="topics-sidebar-header">
+                <h3 id="topics-sidebar-title">Topics</h3>
+                <button class="topics-sidebar-close" onclick="closeTopicsSidebar()" aria-label="Close topics sidebar">×</button>
+            </div>
+            <div class="topics-sidebar-content" id="topics-sidebar-content">
+                <!-- Topics will be populated here -->
+            </div>
+        </div>
 
         <!-- Main Content Area -->
         <main class="main-content" role="main" aria-label="Main content area">
@@ -4284,6 +4625,7 @@
         let studyData = {};
         let currentClass = null;
         let currentTopic = null;
+        let currentTopicsSidebarClass = null; // Track which class's topics are displayed
         let currentTab = 'notes';
         let currentQuiz = [];
         let currentQuizIndex = 0;
@@ -4305,6 +4647,9 @@
             setupKeyboardShortcuts();
             initializeAccessibility();
             setupModalBackToTop();
+            
+            // Close topics sidebar initially
+            closeTopicsSidebar();
             
             // Enhanced system configuration - set to true to enable class-based systems with additional features
             window.useEnhancedQuizSystem = true; // Enable enhanced quiz system with session statistics
@@ -4659,7 +5004,11 @@
         // Render sidebar with classes
         function renderSidebar() {
             const container = document.getElementById('sidebar-classes');
+            const sidebar = document.getElementById('topics-sidebar');
             container.innerHTML = '';
+
+            let hoverTimeout;
+            let currentHoveredClass = null;
 
             Object.keys(studyData).forEach(classKey => {
                 const classData = studyData[classKey];
@@ -4670,28 +5019,302 @@
                 className.className = 'class-name';
                 className.href = '#';
                 className.textContent = classData.title;
+                
+                // Click handler - different behavior for mobile vs desktop
                 className.onclick = (e) => {
                     e.preventDefault();
-                    showClassHomepage(classKey);
+                    e.stopPropagation(); // Prevent overlay click from interfering
+                    const isMobile = window.innerWidth <= 768;
+                    const mainSidebar = document.querySelector('.sidebar');
+                    const isOverlay = mainSidebar && mainSidebar.classList.contains('overlay-mode');
+                    
+                    if (isMobile || isOverlay) {
+                        // Mobile or overlay: click navigates to class homepage
+                        showClassHomepage(classKey);
+                    } else {
+                        // Desktop: click navigates to class homepage
+                        showClassHomepage(classKey);
+                    }
                 };
 
-                const topicsDropdown = document.createElement('div');
-                topicsDropdown.className = 'topics-dropdown';
+                // Create expand button for mobile/overlay mode
+                const expandBtn = document.createElement('button');
+                expandBtn.className = 'class-expand-btn';
+                expandBtn.innerHTML = `
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M6 4L10 8L6 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                `;
+                expandBtn.onclick = (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    const topicsSidebar = document.getElementById('topics-sidebar');
+                    
+                    // Toggle: if already open for THIS class, close it; otherwise open it
+                    if (topicsSidebar.classList.contains('open') && currentTopicsSidebarClass === classKey) {
+                        closeTopicsSidebar();
+                    } else {
+                        openTopicsSidebar(classKey);
+                    }
+                };
 
-                Object.keys(classData.topics).forEach(topicKey => {
-                    const topic = classData.topics[topicKey];
-                    const topicChip = document.createElement('span');
-                    topicChip.className = 'topic-chip';
-                    topicChip.textContent = topic.title;
-                    topicChip.onclick = () => showTopicView(classKey, topicKey);
-                    topicsDropdown.appendChild(topicChip);
-                });
+                // Desktop hover behavior - dynamically check on each hover
+                const handleMouseEnter = () => {
+                    const isMobile = window.innerWidth <= 768;
+                    const mainSidebar = document.querySelector('.sidebar');
+                    const isOverlay = mainSidebar && mainSidebar.classList.contains('overlay-mode');
+                    
+                    // Only hover open on desktop when NOT in overlay mode
+                    if (!isMobile && !isOverlay) {
+                        clearTimeout(hoverTimeout);
+                        currentHoveredClass = classKey;
+                        openTopicsSidebar(classKey);
+                    }
+                };
+
+                const handleMouseLeave = () => {
+                    const isMobile = window.innerWidth <= 768;
+                    const mainSidebar = document.querySelector('.sidebar');
+                    const isOverlay = mainSidebar && mainSidebar.classList.contains('overlay-mode');
+                    
+                    // Only hover close on desktop when NOT in overlay mode
+                    if (!isMobile && !isOverlay) {
+                        currentHoveredClass = null;
+                        hoverTimeout = setTimeout(() => {
+                            if (!sidebar.matches(':hover')) {
+                                closeTopicsSidebar();
+                            }
+                        }, 200);
+                    }
+                };
+                
+                classItem.addEventListener('mouseenter', handleMouseEnter);
+                classItem.addEventListener('mouseleave', handleMouseLeave);
 
                 classItem.appendChild(className);
-                classItem.appendChild(topicsDropdown);
+                classItem.appendChild(expandBtn);
                 container.appendChild(classItem);
             });
+
+            // Set up sidebar hover handlers - dynamically check viewport
+            const handleSidebarEnter = () => {
+                const isMobile = window.innerWidth <= 768;
+                const mainSidebar = document.querySelector('.sidebar');
+                const isOverlay = mainSidebar && mainSidebar.classList.contains('overlay-mode');
+                
+                // Only handle hover on desktop when NOT in overlay mode
+                if (!isMobile && !isOverlay) {
+                    clearTimeout(hoverTimeout);
+                }
+            };
+            
+            const handleSidebarLeave = () => {
+                const isMobile = window.innerWidth <= 768;
+                const mainSidebar = document.querySelector('.sidebar');
+                const isOverlay = mainSidebar && mainSidebar.classList.contains('overlay-mode');
+                
+                // Only handle hover on desktop when NOT in overlay mode
+                if (!isMobile && !isOverlay) {
+                    hoverTimeout = setTimeout(() => {
+                        if (!currentHoveredClass) {
+                            closeTopicsSidebar();
+                        }
+                    }, 200);
+                }
+            };
+            
+            sidebar.removeEventListener('mouseenter', handleSidebarEnter);
+            sidebar.removeEventListener('mouseleave', handleSidebarLeave);
+            sidebar.addEventListener('mouseenter', handleSidebarEnter);
+            sidebar.addEventListener('mouseleave', handleSidebarLeave);
         }
+
+        // Open topics sidebar for a specific class
+        function openTopicsSidebar(classKey) {
+            const sidebar = document.getElementById('topics-sidebar');
+            const sidebarTitle = document.getElementById('topics-sidebar-title');
+            const sidebarContent = document.getElementById('topics-sidebar-content');
+            const classData = studyData[classKey];
+
+            // Track which class's topics are displayed
+            currentTopicsSidebarClass = classKey;
+
+            // Make sure topics sidebar is visible (in case it was hidden)
+            sidebar.style.display = '';
+            
+            // Ensure transition is enabled for animation
+            sidebar.style.transition = '';
+            
+            // Force a reflow to ensure display change is processed before animation
+            void sidebar.offsetHeight;
+
+            // Update sidebar title
+            sidebarTitle.textContent = classData.title;
+
+            // Clear existing content
+            sidebarContent.innerHTML = '';
+
+            // Add topics
+            Object.keys(classData.topics).forEach(topicKey => {
+                const topic = classData.topics[topicKey];
+                const topicItem = document.createElement('a');
+                topicItem.className = 'topic-item';
+                topicItem.textContent = topic.title;
+                topicItem.onclick = () => {
+                    showTopicView(classKey, topicKey);
+                    // Close both sidebars on mobile
+                    if (window.innerWidth <= 768) {
+                        closeMobileSidebar();
+                    } else {
+                        closeTopicsSidebar();
+                    }
+                };
+                sidebarContent.appendChild(topicItem);
+            });
+
+            // Open the sidebar with a small delay to ensure animation plays
+            requestAnimationFrame(() => {
+                sidebar.classList.add('open');
+            });
+        }
+
+        // Close topics sidebar
+        function closeTopicsSidebar() {
+            const sidebar = document.getElementById('topics-sidebar');
+            sidebar.classList.remove('open');
+            
+            // Clear the tracking variable
+            currentTopicsSidebarClass = null;
+            
+            // For mobile/overlay mode, hide after animation completes
+            const mainSidebar = document.querySelector('.sidebar');
+            if (mainSidebar && (mainSidebar.classList.contains('overlay-mode') || window.innerWidth <= 768)) {
+                // Wait for animation to complete (300ms) before hiding
+                setTimeout(() => {
+                    // Only hide if still closed (user didn't reopen)
+                    if (!sidebar.classList.contains('open')) {
+                        sidebar.style.display = 'none';
+                    }
+                }, 300);
+            }
+        }
+
+        // Toggle mobile sidebar
+        function toggleMobileSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const topicsSidebar = document.getElementById('topics-sidebar');
+            const overlay = document.getElementById('mobile-overlay');
+            
+            // Make sure sidebars are visible (remove sidebar-hidden class)
+            sidebar.classList.remove('sidebar-hidden');
+            
+            // Make sure display is reset for topics sidebar
+            if (topicsSidebar.style.display === 'none') {
+                topicsSidebar.style.display = '';
+            }
+            
+            // Clear any inline transition styles that might interfere
+            sidebar.style.transition = '';
+            topicsSidebar.style.transition = '';
+            
+            sidebar.classList.toggle('mobile-open');
+            overlay.classList.toggle('active');
+        }
+
+        // Hide sidebar completely
+        function hideSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const topicsSidebar = document.getElementById('topics-sidebar');
+            const toggleBtn = document.getElementById('sidebar-toggle-btn');
+            
+            sidebar.classList.add('sidebar-hidden');
+            sidebar.classList.remove('overlay-mode');
+            topicsSidebar.classList.remove('open');
+            toggleBtn.classList.add('visible');
+            
+            closeMobileSidebar();
+        }
+
+        // Show sidebar
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const topicsSidebar = document.getElementById('topics-sidebar');
+            const toggleBtn = document.getElementById('sidebar-toggle-btn');
+            
+            sidebar.classList.remove('sidebar-hidden');
+            sidebar.classList.remove('overlay-mode');
+            toggleBtn.classList.remove('visible');
+        }
+
+        // Toggle sidebar overlay (from slim button)
+        function toggleSidebarOverlay() {
+            const sidebar = document.querySelector('.sidebar');
+            const overlay = document.getElementById('mobile-overlay');
+            const toggleBtn = document.getElementById('sidebar-toggle-btn');
+            
+            if (sidebar.classList.contains('sidebar-hidden')) {
+                // Show sidebar as overlay with animation
+                // Don't remove sidebar-hidden yet, just add overlay-mode
+                // The overlay-mode left: 0 will override sidebar-hidden left: -280px
+                sidebar.classList.add('overlay-mode');
+                
+                // Remove sidebar-hidden after a brief moment to trigger animation
+                requestAnimationFrame(() => {
+                    sidebar.classList.remove('sidebar-hidden');
+                    overlay.classList.add('active');
+                    toggleBtn.classList.remove('visible');
+                });
+            } else if (sidebar.classList.contains('overlay-mode')) {
+                // Hide sidebar and show toggle button with animation
+                sidebar.classList.remove('overlay-mode');
+                sidebar.classList.add('sidebar-hidden');
+                overlay.classList.remove('active');
+                toggleBtn.classList.add('visible');
+                closeTopicsSidebar(); // Close topics when closing main sidebar
+            }
+        }
+
+        // Update closeMobileSidebar to handle overlay mode
+        function closeMobileSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            const topicsSidebar = document.getElementById('topics-sidebar');
+            const overlay = document.getElementById('mobile-overlay');
+            const toggleBtn = document.getElementById('sidebar-toggle-btn');
+            
+            // If sidebar is in overlay mode, hide it and show toggle button
+            if (sidebar.classList.contains('overlay-mode')) {
+                sidebar.classList.remove('overlay-mode');
+                sidebar.classList.add('sidebar-hidden');
+                topicsSidebar.classList.remove('open');
+                overlay.classList.remove('active');
+                toggleBtn.classList.add('visible');
+                
+                // Hide topics sidebar after animation
+                setTimeout(() => {
+                    if (!topicsSidebar.classList.contains('open')) {
+                        topicsSidebar.style.display = 'none';
+                    }
+                }, 300);
+            } else {
+                // Normal mobile sidebar close
+                sidebar.classList.remove('mobile-open');
+                overlay.classList.remove('active');
+                closeTopicsSidebar();
+            }
+        }
+
+        // Close topics sidebar when clicking outside (only for mobile/touch)
+        document.addEventListener('click', (e) => {
+            const sidebar = document.getElementById('topics-sidebar');
+            const sidebarClasses = document.getElementById('sidebar-classes');
+
+            // Only close on click outside if on mobile/touch device
+            if (window.innerWidth <= 768 && sidebar.classList.contains('open') &&
+                !sidebar.contains(e.target) &&
+                !sidebarClasses.contains(e.target)) {
+                closeTopicsSidebar();
+            }
+        });
 
         // Render homepage with class grid
         function renderHomepage() {
@@ -4735,6 +5358,12 @@
             currentClass = null;
             currentTopic = null;
             
+            // Show sidebar on homepage
+            showSidebar();
+            
+            // Close topics sidebar
+            closeTopicsSidebar();
+            
             // Clear session variables to prevent interference with new sessions
             currentSession = null;
             currentIndex = 0;
@@ -4759,6 +5388,9 @@
             hideAllViews();
             currentClass = classKey;
             currentTopic = null;
+
+            // Hide sidebar when viewing a class
+            hideSidebar();
 
             const classData = studyData[classKey];
             const className = classData.title;
@@ -4794,6 +5426,9 @@
             hideAllViews();
             currentClass = classKey;
             currentTopic = topicKey;
+
+            // Hide sidebar when viewing a topic
+            hideSidebar();
 
             const classData = studyData[classKey];
             const topicData = classData.topics[topicKey];
@@ -8070,6 +8705,9 @@
 
         // Session builder
         function openSessionBuilder(preselectedMode = '') {
+            // Hide sidebar when opening session builder
+            hideSidebar();
+            
             // Check if we're opening fresh or have loaded session content  
             const hasLoadedSession = sessionBuilderData.sessionContent.length > 0;
             

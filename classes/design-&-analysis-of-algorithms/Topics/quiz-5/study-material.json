@@ -1,0 +1,87 @@
+{
+  "title": "Quiz 5 Review - Divide and Conquer Algorithms",
+
+  "notes": [
+    ["Divide and conquer algorithms solve problems by recursively dividing them into smaller subproblems of the same type.", 2, "Week 5 - Divide and Conquer.pdf"],
+    ["Each divide-and-conquer algorithm has three steps: divide, conquer, and combine.", 2, "Week 5 - Divide and Conquer.pdf"],
+    ["The efficiency of divide-and-conquer algorithms can be analyzed using recurrence relations.", 3, "Week 5 - Divide and Conquer.pdf"],
+    ["The Master Theorem provides a general solution for divide-and-conquer recurrence relations of the form T(n) = aT(n/b) + f(n).", 4, "Week 5 - Divide and Conquer.pdf"],
+    ["In the Master Theorem, 'a' is the number of subproblems, 'b' is the division factor, and 'f(n)' is the cost of dividing and combining.", 4, "Week 5 - Divide and Conquer.pdf"],
+    ["If f(n) = O(n^c) and a < b^c, then T(n) = Θ(n^c) (Case 1 of the Master Theorem).", 5, "Week 5 - Divide and Conquer.pdf"],
+    ["If f(n) = Θ(n^{log_b a}), then T(n) = Θ(n^{log_b a} log n) (Case 2 of the Master Theorem).", 5, "Week 5 - Divide and Conquer.pdf"],
+    ["If f(n) = Ω(n^c) and a > b^c, then T(n) = Θ(n^{log_b a}) (Case 3 of the Master Theorem).", 5, "Week 5 - Divide and Conquer.pdf"],
+    ["MergeSort splits an array into halves, recursively sorts them, and merges the results.", 7, "Week 5 - Divide and Conquer.pdf"],
+    ["MergeSort has a time complexity of Θ(n log n) and requires O(n) extra space.", 8, "Week 5 - Divide and Conquer.pdf"],
+    ["QuickSort selects a pivot, partitions the array, and recursively sorts the partitions.", 9, "Week 5 - Divide and Conquer.pdf"],
+    ["The average time complexity of QuickSort is O(n log n), but the worst case is O(n²) if pivots are unbalanced.", 10, "Week 5 - Divide and Conquer.pdf"],
+    ["The partition step in QuickSort ensures that all elements less than the pivot are on its left and greater ones on the right.", 10, "Week 5 - Divide and Conquer.pdf"],
+    ["Choosing a good pivot is essential to avoid worst-case performance in QuickSort.", 11, "Week 5 - Divide and Conquer.pdf"],
+    ["A tree is a connected acyclic graph with one root node.", 12, "Week 5 - Divide and Conquer.pdf"],
+    ["In a binary search tree (BST), all left child keys are smaller and all right child keys are larger than the parent key.", 13, "Week 5 - Divide and Conquer.pdf"],
+    ["BST operations include insert, delete, and search, each having O(h) complexity where h is the tree height.", 13, "Week 5 - Divide and Conquer.pdf"],
+    ["BST traversals can be in-order, pre-order, or post-order.", 14, "Week 5 - Divide and Conquer.pdf"],
+    ["In-order traversal of a BST visits nodes in sorted order.", 14, "Week 5 - Divide and Conquer.pdf"],
+    ["Karatsuba's algorithm improves integer multiplication to O(n^{log2(3)}) ≈ O(n^{1.585}) using divide-and-conquer.", 15, "Week 5 - Divide and Conquer.pdf"]
+  ],
+
+  "flashcards": [
+    {"front": "What are the three steps of a divide-and-conquer algorithm?", "back": "Divide, Conquer, and Combine."},
+    {"front": "What is the general recurrence relation for divide-and-conquer algorithms?", "back": "T(n) = aT(n/b) + f(n)."},
+    {"front": "What does 'a' represent in the Master Theorem?", "back": "The number of subproblems the problem is divided into."},
+    {"front": "What does 'b' represent in the Master Theorem?", "back": "The factor by which the problem size is reduced in each subproblem."},
+    {"front": "What does 'f(n)' represent in the Master Theorem?", "back": "The non-recursive cost (divide and combine work)."},
+    {"front": "What is the base case of MergeSort?", "back": "When the list contains only one element."},
+    {"front": "What is MergeSort’s time complexity?", "back": "Θ(n log n)."},
+    {"front": "What is QuickSort’s average time complexity?", "back": "O(n log n)."},
+    {"front": "What is QuickSort’s worst-case time complexity?", "back": "O(n²), occurring when partitions are unbalanced."},
+    {"front": "Why is MergeSort not in-place?", "back": "It requires O(n) extra space to store temporary arrays during merging."},
+    {"front": "What is the advantage of QuickSort over MergeSort?", "back": "QuickSort is in-place and often faster on average due to cache efficiency."},
+    {"front": "What determines QuickSort’s efficiency?", "back": "The choice of the pivot element."},
+    {"front": "What is the key property of a binary search tree?", "back": "All keys in the left subtree are smaller, and those in the right are larger."},
+    {"front": "What is the time complexity of search in a balanced BST?", "back": "O(log n)."},
+    {"front": "What are the three depth-first traversals of a BST?", "back": "In-order, Pre-order, and Post-order."},
+    {"front": "What traversal outputs BST nodes in sorted order?", "back": "In-order traversal."},
+    {"front": "What is Karatsuba’s multiplication algorithm used for?", "back": "Multiplying large integers faster than the traditional O(n²) approach."},
+    {"front": "What is Karatsuba’s time complexity?", "back": "O(n^{log₂3}) ≈ O(n^{1.585})."},
+    {"front": "What does the Master Theorem help determine?", "back": "The asymptotic runtime of divide-and-conquer algorithms."},
+    {"front": "What type of data structure is used for tree traversal?", "back": "A recursive call stack or explicit stack data structure."}
+  ],
+
+  "quiz": [
+    {"question": "What are the three main steps of a divide-and-conquer algorithm?", "options": ["Divide, Conquer, Combine", "Split, Sort, Merge", "Iterate, Compare, Merge", "Initialize, Recursively, Return"], "answer": 0, "explanation": "Divide-and-conquer algorithms divide the problem, solve subproblems, and combine results."},
+    {"question": "What is the general form of a divide-and-conquer recurrence?", "options": ["T(n) = T(n/2) + 1", "T(n) = aT(n/b) + f(n)", "T(n) = nT(n-1) + c", "T(n) = T(n) + f(n)"], "answer": 1, "explanation": "The Master Theorem applies to recurrences of the form T(n) = aT(n/b) + f(n)."},
+    {"question": "In the Master Theorem, what does 'a' represent?", "options": ["Division factor", "Subproblem size", "Number of subproblems", "Overhead cost"], "answer": 2, "explanation": "'a' is the number of subproblems created at each step."},
+    {"question": "What is MergeSort’s worst-case time complexity?", "options": ["O(n²)", "O(n log n)", "O(n)", "O(log n)"], "answer": 1, "explanation": "MergeSort always runs in Θ(n log n) time regardless of input order."},
+    {"question": "What is QuickSort’s worst-case time complexity?", "options": ["O(n log n)", "O(n²)", "O(log n)", "O(n)"], "answer": 1, "explanation": "QuickSort degrades to O(n²) when pivots cause highly unbalanced partitions."},
+    {"question": "What is QuickSort’s average-case complexity?", "options": ["O(n)", "O(n²)", "O(n log n)", "O(log n)"], "answer": 2, "explanation": "With balanced partitions, QuickSort averages O(n log n)."},
+    {"question": "What is the base case for MergeSort recursion?", "options": ["Empty array", "Array of size one", "Array of size two", "Array of prime size"], "answer": 1, "explanation": "When the array size is 1, it is already sorted."},
+    {"question": "What is the main difference between MergeSort and QuickSort?", "options": ["MergeSort is in-place; QuickSort is not", "QuickSort is in-place; MergeSort is not", "Both are in-place", "Both require O(n²) space"], "answer": 1, "explanation": "QuickSort sorts in place; MergeSort requires extra space."},
+    {"question": "What traversal of a BST visits nodes in sorted order?", "options": ["Pre-order", "Post-order", "In-order", "Level-order"], "answer": 2, "explanation": "In-order traversal visits nodes from smallest to largest."},
+    {"question": "What property defines a binary search tree?", "options": ["All nodes are sorted by insertion order", "Left < Root < Right", "Balanced height", "Root has maximum key"], "answer": 1, "explanation": "BST property ensures left subtree keys < root < right subtree keys."},
+    {"question": "What is the time complexity of searching in a balanced BST?", "options": ["O(n)", "O(n²)", "O(log n)", "O(1)"], "answer": 2, "explanation": "A balanced BST has height log n, leading to O(log n) search time."},
+    {"question": "What is the key idea behind Karatsuba’s algorithm?", "options": ["Using divide-and-conquer to reduce multiplication count", "Using lookup tables for faster addition", "Sorting digits before multiplication", "Applying matrix methods"], "answer": 0, "explanation": "Karatsuba uses divide-and-conquer to perform fewer multiplications than the traditional method."}
+  ],
+
+  "games": [
+    {
+      "type": "matching",
+      "prompt": "Match algorithm or concept to its property",
+      "pairs": [
+        ["MergeSort", "Always Θ(n log n) runtime"],
+        ["QuickSort", "Average O(n log n), worst O(n²)"],
+        ["Master Theorem", "Analyzes divide-and-conquer recurrences"],
+        ["Binary Search Tree", "Left < Root < Right property"],
+        ["Karatsuba Multiplication", "Improves multiplication to O(n^{1.585})"]
+      ]
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order algorithms by average runtime (fastest → slowest)",
+      "items": ["Binary Search", "MergeSort", "QuickSort", "Selection Sort", "Bubble Sort"]
+    }
+  ],
+
+  "sources": [
+    "Week 5 - Divide and Conquer.pdf"
+  ]
+}

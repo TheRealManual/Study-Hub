@@ -1,5 +1,5 @@
 {
-  "title": "Quiz 2 Review",
+  "title": "Quiz 2 Review - Step Counting, Asymptotics, Big-O",
   "notes": [
     [
       "Week 2 frames efficiency in steps rather than seconds; count primitive operations as a function of n.",

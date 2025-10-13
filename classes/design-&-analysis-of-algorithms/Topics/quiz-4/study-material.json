@@ -1,5 +1,5 @@
 {
-  "title": "Week 4 – Decrease and Conquer: Insertion Sort, Binary Search, MergeSort, QuickSort",
+  "title": "Quiz 4 Review – Decrease and Conquer",
   "notes": [
     [
       "Tail recursion: the recursive call is the final action; enables optimization equivalent to iteration in some languages/compilers.",
