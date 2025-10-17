@@ -1,0 +1,89 @@
+{
+  "title": "Quiz 6 Review - Transform and Conquer",
+
+  "notes": [
+    ["Transform and Conquer algorithms transform a problem into a simpler or more convenient form before solving it.", 2, "Week 6 - Transform and Conquer.pdf"],
+    ["After solving the transformed version, results are converted back to the original representation.", 2, "Week 6 - Transform and Conquer.pdf"],
+    ["There are three main types of Transform and Conquer strategies: Instance Simplification, Change of Representation, and Problem Reduction.", 3, "Week 6 - Transform and Conquer.pdf"],
+    ["Instance Simplification simplifies a given instance of the same problem for easier solving.", 3, "Week 6 - Transform and Conquer.pdf"],
+    ["Change of Representation reformulates data or problems in a new structure for faster processing.", 3, "Week 6 - Transform and Conquer.pdf"],
+    ["Problem Reduction transforms a problem into another problem that is easier or already solved.", 3, "Week 6 - Transform and Conquer.pdf"],
+    ["Presorting is a common instance simplification method that sorts data before applying another algorithm.", 4, "Week 6 - Transform and Conquer.pdf"],
+    ["Sorting algorithms like MergeSort and HeapSort run in Θ(n log n) time.", 4, "Week 6 - Transform and Conquer.pdf"],
+    ["Comparison-based sorting has a lower bound of Ω(n log n), making MergeSort asymptotically optimal.", 4, "Week 6 - Transform and Conquer.pdf"],
+    ["Presorting helps in solving problems like element uniqueness and collision detection efficiently.", 5, "Week 6 - Transform and Conquer.pdf"],
+    ["A balanced search tree automatically maintains a small height to ensure efficient operations.", 6, "Week 6 - Transform and Conquer.pdf"],
+    ["Common balanced trees include AVL, Red-Black, Scapegoat, 2-3, and B-Trees.", 6, "Week 6 - Transform and Conquer.pdf"],
+    ["An AVL tree is a height-balanced binary search tree where the height of subtrees differs by at most 1.", 7, "Week 6 - Transform and Conquer.pdf"],
+    ["The height of an AVL tree storing n elements is O(log n), ensuring efficient operations.", 8, "Week 6 - Transform and Conquer.pdf"],
+    ["AVL rebalancing uses rotations (left, right, double) to restore balance after insertions or deletions.", 9, "Week 6 - Transform and Conquer.pdf"],
+    ["Each rotation in an AVL tree takes O(1) time, keeping insertion and deletion in O(log n).", 10, "Week 6 - Transform and Conquer.pdf"],
+    ["2-3 trees maintain perfect balance by allowing nodes with two or three children.", 11, "Week 6 - Transform and Conquer.pdf"],
+    ["A 2-node holds one key and two links; a 3-node holds two keys and three links.", 11, "Week 6 - Transform and Conquer.pdf"],
+    ["All leaves of a 2-3 tree appear at the same level, ensuring logarithmic height.", 12, "Week 6 - Transform and Conquer.pdf"],
+    ["2-3 trees grow from the bottom using split and merge operations instead of rotations.", 12, "Week 6 - Transform and Conquer.pdf"],
+    ["In a 2-3 tree, insertion, deletion, and search all take O(log n) time.", 13, "Week 6 - Transform and Conquer.pdf"],
+    ["2-3 trees inspired more practical data structures like red-black trees used in modern libraries.", 13, "Week 6 - Transform and Conquer.pdf"]
+  ],
+
+  "flashcards": [
+    {"front": "What is the main idea of Transform and Conquer?", "back": "Transform the problem into a simpler or equivalent form that is easier to solve."},
+    {"front": "Name the three Transform and Conquer variations.", "back": "Instance Simplification, Change of Representation, and Problem Reduction."},
+    {"front": "What is presorting?", "back": "Sorting data before performing another algorithm to make operations faster."},
+    {"front": "What is the lower bound for comparison-based sorting?", "back": "Ω(n log n)."},
+    {"front": "Which sorting algorithms achieve Θ(n log n)?", "back": "MergeSort and HeapSort."},
+    {"front": "What is a balanced search tree?", "back": "A tree that maintains logarithmic height for efficient operations."},
+    {"front": "What is an AVL tree?", "back": "A height-balanced binary search tree with a balance factor of −1, 0, or +1."},
+    {"front": "What is the height of an AVL tree?", "back": "O(log n)."},
+    {"front": "How is balance restored in AVL trees?", "back": "By performing rotations (left, right, or double)."},
+    {"front": "What is the time complexity of AVL insertion?", "back": "O(log n)."},
+    {"front": "What are 2-3 trees?", "back": "Balanced search trees with nodes containing 2 or 3 children to maintain perfect height balance."},
+    {"front": "What are the types of nodes in a 2-3 tree?", "back": "2-nodes (1 key, 2 links) and 3-nodes (2 keys, 3 links)."},
+    {"front": "How do 2-3 trees maintain balance?", "back": "By splitting and merging nodes during insertions and deletions."},
+    {"front": "What is the height complexity of a 2-3 tree?", "back": "O(log n)."},
+    {"front": "Do 2-3 trees use rotations?", "back": "No, they maintain balance through splits and merges."},
+    {"front": "How does an AVL tree differ from a 2-3 tree?", "back": "AVL trees use single-key nodes with rotations; 2-3 trees allow multiple keys with splits/merges."},
+    {"front": "What operation is common between AVL and 2-3 trees?", "back": "Both achieve O(log n) search, insertion, and deletion."},
+    {"front": "Why are 2-3 trees important?", "back": "They are conceptually the basis for Red-Black Trees used in real systems."},
+    {"front": "What is instance simplification?", "back": "Simplifying the problem instance before solving it directly."},
+    {"front": "What is problem reduction?", "back": "Transforming a problem into another easier one with a known algorithm."}
+  ],
+
+  "quiz": [
+    {"question": "What are the three main types of Transform and Conquer methods?", "options": ["Instance Simplification, Divide and Conquer, Dynamic Programming", "Instance Simplification, Change of Representation, Problem Reduction", "Change of Variables, Dynamic Programming, Recursion", "Reduction, Enumeration, Simplification"], "answer": 1, "explanation": "Transform and Conquer consists of these three variations for simplifying or reformulating problems."},
+    {"question": "What is presorting used for?", "options": ["Reducing input size", "Simplifying subsequent operations", "Preventing duplicates", "Balancing trees"], "answer": 1, "explanation": "Presorting sorts data first to make future processing faster."},
+    {"question": "What is the lower bound of comparison-based sorting?", "options": ["O(n)", "O(n log n)", "O(n²)", "O(log n)"], "answer": 1, "explanation": "Any comparison-based sorting must take at least Ω(n log n) time."},
+    {"question": "What is the time complexity of MergeSort?", "options": ["O(n)", "O(n log n)", "O(n²)", "O(log n)"], "answer": 1, "explanation": "MergeSort divides and merges recursively, achieving Θ(n log n)."},
+    {"question": "Which data structure keeps height differences of at most one between subtrees?", "options": ["Red-Black Tree", "AVL Tree", "B-Tree", "2-3 Tree"], "answer": 1, "explanation": "AVL trees maintain a balance factor between −1 and +1."},
+    {"question": "What is the time complexity of AVL operations (search, insert, delete)?", "options": ["O(n)", "O(log n)", "O(n log n)", "O(1)"], "answer": 1, "explanation": "All major AVL operations take logarithmic time due to height balance."},
+    {"question": "How do AVL trees restore balance after insertion?", "options": ["By splitting nodes", "By rotating nodes", "By merging nodes", "By swapping keys"], "answer": 1, "explanation": "Rotations fix unbalanced subtrees in O(1) time."},
+    {"question": "How do 2-3 trees maintain balance?", "options": ["Rotations", "Splits and merges", "Key swapping", "Pivot balancing"], "answer": 1, "explanation": "2-3 trees adjust structure through node splitting and merging."},
+    {"question": "What is the height of a 2-3 tree with n elements?", "options": ["O(n)", "O(log n)", "O(1)", "O(n²)"], "answer": 1, "explanation": "All 2-3 tree leaves are at the same level, giving logarithmic height."},
+    {"question": "What operation is NOT used in 2-3 trees?", "options": ["Splitting", "Rotating", "Merging", "Borrowing keys"], "answer": 1, "explanation": "2-3 trees use splits and merges, not rotations."},
+    {"question": "Which of the following inspired Red-Black trees?", "options": ["AVL Trees", "2-3 Trees", "Heap Trees", "Segment Trees"], "answer": 1, "explanation": "Red-Black trees simulate 2-3 tree balance using color properties."},
+    {"question": "What is the benefit of using balanced search trees?", "options": ["Simplifies recursion", "Ensures O(log n) performance for major operations", "Reduces space complexity", "Eliminates the need for sorting"], "answer": 1, "explanation": "Balanced search trees guarantee logarithmic efficiency."}
+  ],
+
+  "games": [
+    {
+      "type": "matching",
+      "prompt": "Match the algorithm or concept to its description",
+      "pairs": [
+        ["Transform and Conquer", "Transforms a problem into an easier equivalent version"],
+        ["Presorting", "Sorting data before solving the main problem"],
+        ["AVL Tree", "Balances using rotations"],
+        ["2-3 Tree", "Balances using splits and merges"],
+        ["Balanced Search Tree", "Maintains logarithmic height for fast operations"]
+      ]
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order operations or algorithms by typical runtime (fastest → slowest)",
+      "items": ["Binary Search", "AVL Tree Search", "MergeSort", "QuickSort (average)", "Selection Sort"]
+    }
+  ],
+
+  "sources": [
+    "Week 6 - Transform and Conquer.pdf"
+  ]
+}

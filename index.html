@@ -80,6 +80,7 @@
             color: var(--text);
             line-height: 1.6;
             overflow-x: hidden;
+            padding-top: 73px; /* Account for fixed header */
         }
 
         /* Global Header */
@@ -90,8 +91,11 @@
             padding: 1rem 2rem;
             background: var(--panel);
             border-bottom: 1px solid var(--border);
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
             z-index: 100;
         }
 
@@ -239,26 +243,33 @@
         .sidebar.overlay-mode {
             position: fixed;
             left: 0;
-            top: 73px;
+            top: 0; /* Align with top of viewport */
             z-index: 50;
             width: 280px;
-            height: calc(100vh - 73px);
+            height: 100vh; /* Full viewport height */
+            padding: 1.5rem; /* Reset base padding */
+            padding-top: calc(73px + 1.5rem); /* Header height + normal padding */
+            margin-top: 0; /* Reset margin for fixed positioning */
             box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
             transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            overflow-y: auto; /* Allow scrolling */
         }
 
         /* Sidebar when hidden (on class/topic pages) */
         .sidebar.sidebar-hidden {
             position: fixed;
             left: -280px; /* Hide completely off-screen */
-            top: 73px;
+            top: 0; /* Align with top of viewport */
             z-index: 50;
             width: 280px;
-            height: calc(100vh - 73px);
+            height: 100vh; /* Full viewport height */
+            padding: 1.5rem; /* Reset base padding */
+            padding-top: calc(73px + 1.5rem); /* Header height + normal padding */
+            margin-top: 0; /* Reset margin for fixed positioning */
             transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
             box-shadow: none; /* No shadow while hidden */
             border-right: none; /* No border while hidden */
-            overflow: hidden; /* Hide content overflow during animation */
+            overflow-y: auto; /* Allow scrolling */
         }
 
         /* Sidebar transitioning from hidden to overlay - both classes present initially */
@@ -292,6 +303,8 @@
         .app-container {
             display: flex;
             min-height: calc(100vh - 73px); /* Subtract header height */
+            margin-top: -73px; /* Offset body padding to align with header */
+            padding-top: 73px; /* Add padding back for content */
         }
 
         /* Sidebar */
@@ -300,10 +313,12 @@
             background: var(--panel);
             border-right: 1px solid var(--border);
             padding: 1.5rem;
+            padding-top: calc(73px + 1.5rem); /* Header height + normal padding */
+            margin-top: -73px; /* Pull up to align with header */
             overflow-y: auto;
             position: sticky;
-            top: 73px;
-            height: calc(100vh - 73px);
+            top: 0; /* Stick to top of viewport */
+            height: 100vh; /* Full viewport height */
         }
 
         .sidebar h3 {
@@ -388,14 +403,15 @@
         /* Sliding Topics Sidebar */
         .topics-sidebar {
             position: fixed;
-            top: 73px;
+            top: 0; /* Align with top of viewport */
             left: 280px;
             width: 0;
-            height: calc(100vh - 73px);
+            height: 100vh; /* Full viewport height */
+            padding-top: 73px; /* Extra padding to push content below header */
             background: var(--panel);
-            border-right: 1px solid var(--border);
+            border-right: 0px solid var(--border); /* No border when closed */
             overflow: hidden;
-            transition: width 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
+            transition: width 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), border-width 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
             z-index: 40;
             display: flex;
             flex-direction: column;
@@ -404,6 +420,7 @@
 
         .topics-sidebar.open {
             width: 320px;
+            border-right-width: 1px; /* Show border when open */
         }
 
         .topics-sidebar-header {
@@ -4243,10 +4260,10 @@
         .mobile-overlay {
             display: none;
             position: fixed;
-            top: 73px;
+            top: 0; /* Align with top of viewport */
             left: 0;
             width: 100%;
-            height: calc(100vh - 73px);
+            height: 100vh; /* Full viewport height to cover entire screen */
             background: rgba(0, 0, 0, 0.5);
             z-index: 45;
         }
@@ -4272,12 +4289,15 @@
             .sidebar {
                 position: fixed;
                 left: -100%;
-                top: 95px; /* Approximate wrapped header height */
+                top: 0; /* Align with top of viewport */
                 z-index: 50;
                 width: 280px;
+                padding: 1.5rem; /* Reset base padding */
+                padding-top: calc(1.5rem + 95px); /* Extra padding for wrapped header */
+                margin-top: 0; /* Reset margin for fixed positioning */
                 transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
                 box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-                height: calc(100vh - 95px);
+                height: 100vh; /* Full viewport height */
             }
 
             .sidebar.mobile-open {
@@ -4288,9 +4308,10 @@
             .topics-sidebar {
                 left: -100%;
                 width: 280px;
-                top: 95px; /* Approximate wrapped header height */
+                top: 0; /* Align with top of viewport */
+                padding-top: 95px; /* Extra padding for wrapped header */
                 z-index: 55;
-                height: calc(100vh - 95px);
+                height: 100vh; /* Full viewport height */
                 transition: left 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
             }
 
@@ -4504,7 +4525,7 @@
         </nav>
 
         <!-- Sliding Topics Sidebar -->
-        <div class="topics-sidebar" id="topics-sidebar">
+        <div class="topics-sidebar" id="topics-sidebar" style="display: none;">
             <div class="topics-sidebar-header">
                 <h3 id="topics-sidebar-title">Topics</h3>
                 <button class="topics-sidebar-close" onclick="closeTopicsSidebar()" aria-label="Close topics sidebar">×</button>
@@ -5363,6 +5384,9 @@
             
             // Close topics sidebar
             closeTopicsSidebar();
+            
+            // Close mobile overlay if open
+            closeMobileSidebar();
             
             // Clear session variables to prevent interference with new sessions
             currentSession = null;
