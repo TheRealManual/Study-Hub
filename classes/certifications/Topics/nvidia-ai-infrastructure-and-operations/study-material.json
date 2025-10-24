@@ -1,0 +1,708 @@
+{
+  "title": "NVIDIA AI Infrastructure and Operations – Expanded Study Guide (Plain Notes)",
+  "notes": [
+    "CERT SCOPE → Entry-level ops + infra for AI: concepts, HW/SW stack, networking, storage, orchestration, monitoring, virtualization, reference architectures.",
+    "AI vs. ML vs. DL → AI: broad goal of intelligent behavior. ML: learns patterns from data. DL: multi-layer neural nets that learn hierarchies of features.",
+    "Training vs. Inference → Training = compute + data heavy, long jobs, distributed; Inference = latency-sensitive, throughput-focused, often smaller footprints.",
+    "Why GPUs for DL → Massive parallelism (thousands of CUDA cores), high memory bandwidth, tensor cores for matrix ops.",
+    "Recent AI surge drivers → Larger datasets, better algorithms (transformers), powerful GPUs (Volta→Ampere→Hopper), cloud elasticity, open-source frameworks.",
+    "GPU vs CPU → CPU: few complex cores, low latency, control-heavy tasks. GPU: many simple cores, high throughput, data-parallel tasks.",
+    "DPU (Data Processing Unit) → Offloads/accelerates networking, storage, security (e.g., BlueField); frees CPU, isolates noisy neighbors, enables zero-trust.",
+    "Common AI use cases → Healthcare (med imaging), Finance (fraud), Retail (recSys), Manufacturing (vision/QC), Automotive (perception/AV), GenAI (LLMs).",
+    "NVIDIA software stack (overview) → CUDA, cuDNN (DL primitives), TensorRT (inference optimize), Triton (inference server), NGC containers, GPU Operator (K8s mgmt), DCGM (GPU monitoring), Base Command (fleet mgmt), NVML (telemetry).",
+    "NVIDIA training/inference toolchain → Frameworks (PyTorch/TensorFlow) on CUDA/cuDNN; multi-GPU via NCCL; inference via TensorRT + Triton.",
+    "Lifecycle (MLOps) high-level → Data ingest/label → Train → Validate → Package (container) → Deploy → Monitor → Retrain (feedback).",
+    "Scaling dimensions → Vertical: more GPUs per node (multi-GPU). Horizontal: more nodes (multi-node). Pipelines for data and model parallelism.",
+    "Multi-GPU scaling (single node) → Add GPUs to one host; use NVLink/NVSwitch for fast intra-node communication; typical for data/model parallel within a chassis.",
+    "Multi-node scaling → Add more GPU nodes; need high-perf fabric (InfiniBand or RoCE), use NCCL/collectives; requires fast storage + scheduler.",
+    "Model parallel vs. Data parallel → Data parallel: replicas process different batches then all-reduce. Model parallel: split layers/tensors across devices for very large models.",
+    "NVLink → High-bandwidth, low-latency GPU↔GPU interconnect within a node; faster than PCIe.",
+    "NVSwitch → Switch fabric for many GPUs all-to-all at NVLink speeds; backbone of DGX platforms.",
+    "PCIe vs. NVLink → PCIe: general bus, slower latency/bandwidth; NVLink: specialized high-speed GPU fabric; affects gradient sync and batch sizes.",
+    "InfiniBand (IB) → End-to-end low latency, high throughput, RDMA, adaptive routing, in-network computing (SHARP); ideal for AI training clusters.",
+    "Ethernet for AI → Ubiquitous, cost-effective; requires tuning (RDMA over Converged Ethernet/RoCE, congestion control, QoS) to near-IB performance.",
+    "Network design focus for AI → Bisection bandwidth, non-blocking/low oversubscription fabrics, low latency, uniform jitter, ECN/RED/PFC tuning (if RoCE).",
+    "Storage performance (training) → Priorities: fast sequential/random READ, high aggregate throughput, low metadata overhead, cache hot datasets.",
+    "Storage types → Local NVMe (fast, limited capacity), NAS (NFS), parallel filesystems (Lustre, GPFS), object storage (S3) for capacity (stage/cache to fast tier).",
+    "Best overall storage for AI workloads → Fast read I/O with caching (e.g., local NVMe cache + networked backing store).",
+    "Data caching layers → FS-level caching, NVMe cache on nodes, dataset prefetch (e.g., DALI), Triton model repository cache for inference.",
+    "I/O bottlenecks symptom → Low GPU utilization despite idle CPU; slow data loader; fix with caching, parallel dataloaders, larger I/O pipeline depth.",
+    "Cooling basics → GPUs produce high heat density; design for sustained TDP; manage inlet temps, airflow direction, and pressure zones.",
+    "Air cooling → Cost-effective, simple ops; typically efficient up to ~≤30 kW per rack; above this, air becomes inefficient.",
+    "Liquid/water cooling → Efficient heat rejection at high density; higher CapEx/complexity; supports >30–50+ kW/rack with better PUE.",
+    "Hot aisle/cold aisle containment → Prevents mixing, improves ΔT, lowers fan power, stabilizes inlet temperatures.",
+    "Power delivery → Right-size PSUs/PDUs; consider peak draw, redundancy (N+1), phase balance, UPS impacts, and selective rack densities.",
+    "Energy-efficient computing → Higher utilization = better efficiency; schedule jobs to align with power/cooling capacity; monitor PUE/WUE.",
+    "Reference architectures (DGX BasePOD/SuperPOD) → Validated compute + networking + storage + software blueprints; faster time-to-value; predictable scaling.",
+    "DGX systems (e.g., H100) basics → Dense GPUs, NVSwitch fabric, robust cooling, optimized firmware; integrated with IB spine/leaf for cluster buildouts.",
+    "Hybrid strategy → Develop/iterate on-prem for control and cost; burst/scale inference or large experiments to cloud; balance cost, latency, compliance.",
+    "Containers (NGC) → Pre-tuned GPU-accelerated containers (frameworks, SDKs) for portability and performance; reduces env drift and setup time.",
+    "Kubernetes role → Orchestrates containerized apps/services; scheduling, scaling, rolling updates, service discovery; needs GPU Operator for GPUs.",
+    "GPU Operator → Automates NVIDIA driver, CUDA runtime, DCGM, device plugin, MIG config on K8s nodes; reduces manual setup.",
+    "SLURM role → HPC batch scheduler; partitions/queues, constraints (GRES/GPU), time limits, job arrays; great for controlled resource scheduling.",
+    "When to use K8s vs. SLURM → K8s for microservices/inference/DevOps workflows; SLURM for batch training, HPC-style multi-node MPI/NCCL jobs.",
+    "MIG (Multi-Instance GPU) → Partition one physical GPU into multiple isolated GPU instances with dedicated SMs/memory/cache; predictable QoS.",
+    "vGPU → Share a physical GPU across multiple VMs; flexible tenancy; near bare-metal for many compute profiles when properly configured.",
+    "DCGM → NVIDIA Data Center GPU Manager for telemetry (utilization, clocks, temps, power), health checks, policies, diagnostics.",
+    "BMC → Out-of-band hardware management controller for server monitoring (power, fans, thermals) independent of OS.",
+    "Base Command → Fleet-level management for DGX environments (user/project mgmt, job submission, monitoring, data access, collaboration).",
+    "Job scheduling essentials → Fairness, priority, quotas, preemption, backfilling; target high GPU utilization with correct job shapes and runtime limits.",
+    "Low GPU utilization common causes → Data loader bottleneck, slow storage, network congestion, CPU contention, small batch size, kernel mix inefficiencies.",
+    "Fixing low utilization → Profile I/O, raise dataloader workers, use asynchronous prefetch, pin memory, use mixed precision, tune batch sizes, enable caching.",
+    "Security & isolation → Use DPUs for offload and micro-segmentation; use MIG for predictable multi-tenant GPU performance; encrypt data in-flight/at-rest.",
+    "Observability → Export DCGM metrics (Prometheus/Grafana), track per-namespace/job GPU hours, alert on temps/power/throttling/error counters (Xid).",
+    "Networking offloads → In-network reduction (IB SHARP), RDMA, GDR (GPU Direct RDMA) for direct GPU↔NIC reads to cut CPU involvement and latency.",
+    "AI in cloud – cost levers → Right-size GPU types, spot instances for non-critical jobs, data locality (avoid egress), autoscaling, reserved capacity.",
+    "Cooling vs. density planning → Map heat per rack by GPU count/TDP; use CFD or vendor tools; consider future growth and hot-spare space.",
+    "Airflow hygiene → Keep filters clean, blanking panels installed, cable management to prevent airflow impairment, consistent rack face pressures.",
+    "Node design considerations → PCIe lanes for NICs/storage, NVLink topologies, CPU core counts for feeding GPUs, memory bandwidth per GPU.",
+    "Data pipelines → Use accelerated data loading (e.g., DALI), TFRecord/WebDataset, shard datasets across workers, deterministic seeds for reproducibility.",
+    "Checkpointing → Frequent checkpoints to resilient storage; ensures recoverability for long jobs and supports preemption/fault tolerance.",
+    "Fault tolerance (multi-node) → Elastic training frameworks, retry logic, job requeue on node failures, health checks, NCCL timeout tuning.",
+    "Inference serving basics → Triton supports multiple backends (TensorRT, PyTorch, ONNX); model ensembles; dynamic batching; versioned model repos.",
+    "Latency vs. throughput tradeoff → Larger batches improve throughput but increase latency; tune per-SLO; pin CPU/GPU affinity for consistent jitter.",
+    "Resource quotas → Prevent noisy tenants; per-namespace GPU pod limits (K8s), SLURM QOS limits; enforce fair-share and budgets.",
+    "Data governance → Track datasets, lineage, versions; control PII; ensure compliance and reproducibility.",
+    "Cooling exam pattern → Cold air efficient/cost-effective at low densities; becomes inefficient beyond ~30 kW/rack; water-cooled efficient but higher cost.",
+    "NGC containers benefit (exam) → Faster, portable development/deployment of GPU-accelerated AI apps; not a scheduler or a simulation platform.",
+    "Managed Kubernetes model → PaaS (Platform as a Service).",
+    "Thermals (exam) → GPUs have high heat output compared to other components; plan cooling accordingly.",
+    "Storage (exam nuance) → For training: best read & re-read performance; overall: fast read I/O + caching. Object storage for capacity, not peak perf.",
+    "Financial services anti-fraud (exam) → Early warnings on counterparties, faster retrieval and anomaly detection.",
+    "Workload mgmt & monitoring (exam) → Ensure efficient resource allocation, job scheduling, and usage checks (utilization, bottlenecks).",
+    "SLURM (exam) → Tool to schedule AI workloads on a subset of resources; partitions/constraints select GPUs/nodes.",
+    "Multi-GPU (exam) → Add GPUs to a node; distribute data across GPUs; improves compute without network hops.",
+    "NVLink purpose (exam) → High-speed GPU-to-GPU data transfer; significantly faster than PCIe.",
+    "NVSwitch purpose (exam) → Scales all-to-all GPU comms at NVLink speeds inside a chassis.",
+    "DGX BasePOD (exam) → Provides infrastructure + networking + software to accelerate AI workload deployment (validated reference arch).",
+    "Kubernetes purpose (exam) → Managing and automating containerized applications (orchestration).",
+    "vGPU benefits (exam) → Share one physical GPU across VMs; near bare-metal performance profiles for compute.",
+    "MIG benefits → Deterministic performance isolation; good for multi-tenant inference or small training jobs.",
+    "Hybrid approach (exam) → Develop/iterate on-prem; deploy/scale in cloud; balances cost/performance.",
+    "Ethernet considerations (exam) → Bandwidth, latency, congestion must be engineered; not “unaffected by latency.”",
+    "InfiniBand benefits (exam) → Low latency, high throughput, intelligent offloads; boosts distributed training performance.",
+    "Operator runbook basics → Node readiness (drivers/firmware), fabric health, job queue health, DCGM alerts, storage headroom, cooling/power capacity.",
+    "SRE/ops KPIs → GPU util %, job wait times, job success/fail rate, MTTR on failed nodes, PUE/WUE, cost/GPU-hour.",
+    "Change mgmt → Use canary nodes for driver/firmware upgrades; drain/cordon; validate NCCL/RDMA regression tests before fleet rollout.",
+    "Capacity planning → Track demand by GPU class, profile by job type (training vs. inference), plan racks/power/cooling/network leaves ahead.",
+    "Security ops → Signed containers (NGC), image scanning, runtime seccomp/AppArmor, network policies, DPU microsegmentation, RBAC, audit trails.",
+    "Backup/DR → Snapshot model repos, checkpoint stores, cluster configs; test restores; multi-AZ replication for critical inference.",
+    "Documentation → Keep reference-arch topology, IP schema, cabling maps, firmware matrix, and recovery SOPs current."
+  ],
+  "flashcards": [
+    {
+      "front": "AI vs ML vs DL?",
+      "back": "AI = intelligent behavior; ML = learns from data; DL = multi-layer neural nets."
+    },
+    {
+      "front": "Training vs Inference (one-liner)?",
+      "back": "Training is compute/data heavy; inference is latency/throughput focused."
+    },
+    {
+      "front": "Why GPUs for DL?",
+      "back": "Parallelism, high bandwidth, tensor cores accelerate matrix ops."
+    },
+    {
+      "front": "What does a DPU do?",
+      "back": "Offloads networking, storage, and security from CPU; isolates workloads."
+    },
+    {
+      "front": "Two drivers of AI’s rapid growth?",
+      "back": "Bigger datasets + more powerful GPUs/algorithms."
+    },
+    {
+      "front": "Key NVIDIA inference optimizer?",
+      "back": "TensorRT."
+    },
+    {
+      "front": "NVIDIA inference server?",
+      "back": "Triton Inference Server."
+    },
+    {
+      "front": "Purpose of NGC containers?",
+      "back": "Portable, faster deployment of GPU-accelerated apps."
+    },
+    {
+      "front": "GPU Operator role?",
+      "back": "Automates NVIDIA stack on Kubernetes nodes."
+    },
+    {
+      "front": "DCGM stands for?",
+      "back": "Data Center GPU Manager."
+    },
+    {
+      "front": "Base Command purpose?",
+      "back": "Manage DGX fleets, jobs, users, data access."
+    },
+    {
+      "front": "NVLink vs PCIe?",
+      "back": "NVLink offers much higher GPU↔GPU bandwidth and lower latency than PCIe."
+    },
+    {
+      "front": "NVSwitch function?",
+      "back": "All-to-all NVLink connectivity among many GPUs."
+    },
+    {
+      "front": "InfiniBand advantage?",
+      "back": "Low latency, high throughput, RDMA; ideal for distributed training."
+    },
+    {
+      "front": "Ethernet for AI key caution?",
+      "back": "Engineer bandwidth/latency/congestion control (RoCE/ECN/PFC)."
+    },
+    {
+      "front": "Best storage trait for training?",
+      "back": "Fast read + re-read throughput; good caching."
+    },
+    {
+      "front": "Object storage best at?",
+      "back": "Capacity and durability; stage to faster tiers for training."
+    },
+    {
+      "front": "Air cooling limit rule of thumb?",
+      "back": "Cost-effective but often inefficient beyond ~30 kW/rack."
+    },
+    {
+      "front": "Water cooling benefit?",
+      "back": "Efficient heat removal at high density (higher CapEx)."
+    },
+    {
+      "front": "Hot aisle/cold aisle?",
+      "back": "Containment strategy to prevent thermal mixing and improve cooling."
+    },
+    {
+      "front": "Kubernetes primary role?",
+      "back": "Manage and automate containerized apps (orchestration)."
+    },
+    {
+      "front": "SLURM primary role?",
+      "back": "Batch scheduling across HPC/AI clusters."
+    },
+    {
+      "front": "When multi-GPU?",
+      "back": "Need more compute within one node; strong intra-node comms."
+    },
+    {
+      "front": "When multi-node?",
+      "back": "Need to scale beyond single chassis; requires fast fabric and storage."
+    },
+    {
+      "front": "MIG vs vGPU?",
+      "back": "MIG partitions one GPU into isolated instances; vGPU shares a GPU among VMs."
+    },
+    {
+      "front": "Low GPU util common cause?",
+      "back": "I/O bottlenecks (storage/dataloader) or too-small batch sizes."
+    },
+    {
+      "front": "Fix low util quickly?",
+      "back": "Increase dataloader workers, caching, mixed precision, adjust batch size."
+    },
+    {
+      "front": "DGX BasePOD is?",
+      "back": "Validated reference architecture (compute + networking + storage + software)."
+    },
+    {
+      "front": "Hybrid strategy core idea?",
+      "back": "Develop on-prem; scale/burst deploy in cloud."
+    },
+    {
+      "front": "K8s vs SLURM simple rule?",
+      "back": "Services/inference → K8s; batch/distributed training → SLURM."
+    },
+    {
+      "front": "DALI is for?",
+      "back": "Accelerated data loading/augmentation pipeline on GPU."
+    },
+    {
+      "front": "What is NCCL?",
+      "back": "Collective communications library optimized for NVIDIA GPUs."
+    },
+    {
+      "front": "GDR stands for?",
+      "back": "GPUDirect RDMA (NIC↔GPU memory paths)."
+    },
+    {
+      "front": "IB SHARP benefit?",
+      "back": "In-network reduction to accelerate collectives (e.g., all-reduce)."
+    },
+    {
+      "front": "Why checkpoint often?",
+      "back": "Recover long jobs; tolerate preemption/failures."
+    },
+    {
+      "front": "Latency vs throughput tradeoff?",
+      "back": "Bigger batch → higher throughput but higher latency."
+    },
+    {
+      "front": "Primary GPU thermal fact?",
+      "back": "GPUs have high heat output; plan adequate cooling."
+    },
+    {
+      "front": "PaaS example in exam?",
+      "back": "Managed Kubernetes is PaaS."
+    },
+    {
+      "front": "Fraud detection AI benefit?",
+      "back": "Early warnings on counterparties + faster data retrieval."
+    },
+    {
+      "front": "What is Triton dynamic batching?",
+      "back": "Combines requests to improve GPU utilization with latency controls."
+    },
+    {
+      "front": "Prometheus/Grafana use?",
+      "back": "Collect and visualize DCGM + cluster metrics."
+    },
+    {
+      "front": "RBAC stands for?",
+      "back": "Role-Based Access Control (K8s security)."
+    },
+    {
+      "front": "NGC advantage in ops?",
+      "back": "Versioned, maintained GPU containers reduce env drift."
+    },
+    {
+      "front": "What is RoCE?",
+      "back": "RDMA over Converged Ethernet (low-latency networking)."
+    },
+    {
+      "front": "Why Base Command?",
+      "back": "Centralize users, projects, job submission, and monitoring on DGX fleets."
+    },
+    {
+      "front": "What causes NCCL timeouts?",
+      "back": "Fabric congestion, misconfig (PFC/ECN), link flaps, clock skew."
+    },
+    {
+      "front": "What is fair-share?",
+      "back": "Scheduler alloc credit so frequent users get proportionally fewer resources."
+    },
+    {
+      "front": "Backfilling?",
+      "back": "Run short jobs while waiting for big job slots to improve utilization."
+    },
+    {
+      "front": "Why blanking panels?",
+      "back": "Prevent hot air recirculation; maintain front-to-back flow."
+    },
+    {
+      "front": "PUE stands for?",
+      "back": "Power Usage Effectiveness (total facility / IT power)."
+    },
+    {
+      "front": "IB vs Ethernet quick?",
+      "back": "IB: built for HPC AI; Ethernet: cheaper/ubiquitous but needs careful tuning."
+    },
+    {
+      "front": "Object vs block storage quick?",
+      "back": "Object = scalable capacity; Block = high-performance I/O."
+    },
+    {
+      "front": "What’s MIG good for?",
+      "back": "Predictable multi-tenant inference, isolation, SLAs."
+    },
+    {
+      "front": "Select-two exam trap (tip)?",
+      "back": "Read carefully; look for pairs like 'multi-GPU + data distribution'."
+    },
+    {
+      "front": "Cold aisle temp guideline?",
+      "back": "Follow ASHRAE ranges; keep consistent inlet temps to GPU servers."
+    },
+    {
+      "front": "Job arrays?",
+      "back": "Submit many similar jobs with param changes efficiently in SLURM."
+    },
+    {
+      "front": "Container image scanning?",
+      "back": "Scan for CVEs; require signed images; restrict registries."
+    },
+    {
+      "front": "Why use reference arch?",
+      "back": "Minimize unknowns; proven scale/perf; faster deployment."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is the primary reason GPUs accelerate deep learning training?",
+      "options": [
+        "Large CPU caches",
+        "Massively parallel architecture",
+        "Higher clock speeds",
+        "Integrated storage"
+      ],
+      "answer": "Massively parallel architecture"
+    },
+    {
+      "question": "Which statement about training vs inference is most accurate?",
+      "options": [
+        "Inference uses more GPUs than training",
+        "Training is latency sensitive",
+        "Training is compute/data intensive; inference is latency/throughput focused",
+        "They have identical resource patterns"
+      ],
+      "answer": "Training is compute/data intensive; inference is latency/throughput focused"
+    },
+    {
+      "question": "Which role best fits a DPU?",
+      "options": [
+        "GPU virtualization",
+        "Accelerate networking/storage/security offloads",
+        "CPU frequency scaling",
+        "Model quantization"
+      ],
+      "answer": "Accelerate networking/storage/security offloads"
+    },
+    {
+      "question": "What is the main benefit of NVLink over PCIe for AI training?",
+      "options": [
+        "Cheaper cables",
+        "Lower CPU usage",
+        "Higher GPU↔GPU bandwidth and lower latency",
+        "Supports more SSDs"
+      ],
+      "answer": "Higher GPU↔GPU bandwidth and lower latency"
+    },
+    {
+      "question": "Which fabric is typically preferred for multi-node distributed training?",
+      "options": [
+        "1GbE",
+        "10GbE without tuning",
+        "InfiniBand",
+        "USB-C"
+      ],
+      "answer": "InfiniBand"
+    },
+    {
+      "question": "Best storage trait for repeated epoch reads during training?",
+      "options": [
+        "Low write latency",
+        "Fast read and re-read performance",
+        "Object metadata search",
+        "Tape-based archiving"
+      ],
+      "answer": "Fast read and re-read performance"
+    },
+    {
+      "question": "Air vs water cooling: which is true?",
+      "options": [
+        "Air is efficient beyond 50 kW/rack",
+        "Water is low cost",
+        "Air cost-effective but inefficient beyond ~30 kW/rack",
+        "Both identical in efficiency"
+      ],
+      "answer": "Air cost-effective but inefficient beyond ~30 kW/rack"
+    },
+    {
+      "question": "NGC containers primarily help you…",
+      "options": [
+        "Schedule jobs",
+        "Simulate photorealistic graphics",
+        "Deploy GPU apps faster and portably",
+        "Replace Kubernetes"
+      ],
+      "answer": "Deploy GPU apps faster and portably"
+    },
+    {
+      "question": "Managed Kubernetes belongs to which cloud model?",
+      "options": [
+        "IaaS",
+        "PaaS",
+        "SaaS",
+        "AIaaS"
+      ],
+      "answer": "PaaS"
+    },
+    {
+      "question": "Which statement about GPUs and heat is correct?",
+      "options": [
+        "GPUs generate minimal heat",
+        "GPUs have high heat output",
+        "CPUs generate more heat",
+        "Cooling is optional"
+      ],
+      "answer": "GPUs have high heat output"
+    },
+    {
+      "question": "Primary purpose of Kubernetes in AI infra?",
+      "options": [
+        "Job scheduling across bare metal only",
+        "Manage containerized applications",
+        "Train models automatically",
+        "Replace storage"
+      ],
+      "answer": "Manage containerized applications"
+    },
+    {
+      "question": "Which tool would you use to schedule subsets of cluster resources for batch AI jobs?",
+      "options": [
+        "Docker",
+        "SLURM",
+        "Triton",
+        "TensorRT"
+      ],
+      "answer": "SLURM"
+    },
+    {
+      "question": "Multi-GPU scaling refers to…",
+      "options": [
+        "Adding nodes",
+        "Adding GPUs to a single node",
+        "Replacing CPUs with DPUs",
+        "Using CPU-only training"
+      ],
+      "answer": "Adding GPUs to a single node"
+    },
+    {
+      "question": "Which best describes NVSwitch?",
+      "options": [
+        "CPU overclocking",
+        "GPU all-to-all interconnect at NVLink speeds",
+        "Storage cache",
+        "Network switch for 1GbE"
+      ],
+      "answer": "GPU all-to-all interconnect at NVLink speeds"
+    },
+    {
+      "question": "Which statement about Ethernet and AI workloads is correct?",
+      "options": [
+        "Latency is irrelevant",
+        "No congestion concerns",
+        "Requires careful design for bandwidth/latency/congestion",
+        "Incompatible with AI"
+      ],
+      "answer": "Requires careful design for bandwidth/latency/congestion"
+    },
+    {
+      "question": "What does DCGM provide?",
+      "options": [
+        "Model compression",
+        "GPU health/telemetry and policy controls",
+        "Container orchestration",
+        "Storage snapshots"
+      ],
+      "answer": "GPU health/telemetry and policy controls"
+    },
+    {
+      "question": "Which is a benefit of vGPU?",
+      "options": [
+        "All-to-all GPU fabric",
+        "Share one GPU among multiple VMs",
+        "Split GPU into MIG instances only",
+        "Eliminate drivers"
+      ],
+      "answer": "Share one GPU among multiple VMs"
+    },
+    {
+      "question": "MIG’s primary benefit is…",
+      "options": [
+        "Cheaper NICs",
+        "Deterministic performance isolation on one GPU",
+        "Higher CPU clocks",
+        "Faster disks"
+      ],
+      "answer": "Deterministic performance isolation on one GPU"
+    },
+    {
+      "question": "DGX BasePOD best description?",
+      "options": [
+        "Software-only product",
+        "Validated design including compute/networking/storage/software",
+        "Single-node workstation",
+        "Hypervisor replacement"
+      ],
+      "answer": "Validated design including compute/networking/storage/software"
+    },
+    {
+      "question": "Which symptom suggests an I/O bottleneck in training?",
+      "options": [
+        "100% GPU util",
+        "Short queue times",
+        "Low GPU util with CPUs idle",
+        "High NIC errors only"
+      ],
+      "answer": "Low GPU util with CPUs idle"
+    },
+    {
+      "question": "Quickest mitigation for dataloader bottlenecks?",
+      "options": [
+        "Reduce batch size",
+        "Disable caching",
+        "Increase workers + enable caching",
+        "Use CPU-only"
+      ],
+      "answer": "Increase workers + enable caching"
+    },
+    {
+      "question": "K8s vs SLURM: place inference microservices?",
+      "options": [
+        "SLURM",
+        "Bare metal only",
+        "Kubernetes",
+        "vSphere only"
+      ],
+      "answer": "Kubernetes"
+    },
+    {
+      "question": "Hybrid strategy benefit?",
+      "options": [
+        "Infinite free GPUs",
+        "Zero latency",
+        "Balances cost/perf by dev on-prem, scale in cloud",
+        "Eliminates storage needs"
+      ],
+      "answer": "Balances cost/perf by dev on-prem, scale in cloud"
+    },
+    {
+      "question": "Primary gain from IB SHARP?",
+      "options": [
+        "Cheaper optics",
+        "In-network reduction speeds collectives",
+        "Bigger SSDs",
+        "Better CPU IPC"
+      ],
+      "answer": "In-network reduction speeds collectives"
+    },
+    {
+      "question": "RoCE enables…",
+      "options": [
+        "GPU virtualization",
+        "RDMA over Ethernet for low-latency data movement",
+        "Disk compression",
+        "Model ensembling"
+      ],
+      "answer": "RDMA over Ethernet for low-latency data movement"
+    },
+    {
+      "question": "Which is a core role of Triton?",
+      "options": [
+        "Cluster scheduler",
+        "Inference serving w/ dynamic batching and multi-backend",
+        "Fabric monitoring",
+        "Filesystem"
+      ],
+      "answer": "Inference serving w/ dynamic batching and multi-backend"
+    },
+    {
+      "question": "Best overall storage approach for AI clusters?",
+      "options": [
+        "Object-only",
+        "Local SSDs only",
+        "Fast read I/O with caching layered over scalable storage",
+        "Tape-only"
+      ],
+      "answer": "Fast read I/O with caching layered over scalable storage"
+    },
+    {
+      "question": "Which monitoring combo is common in AI ops?",
+      "options": [
+        "Photoshop + SSH",
+        "Prometheus + Grafana + DCGM exporter",
+        "Nmap + Nslookup",
+        "Excel + Email"
+      ],
+      "answer": "Prometheus + Grafana + DCGM exporter"
+    },
+    {
+      "question": "Which action helps prevent hot recirculation?",
+      "options": [
+        "Remove blanking panels",
+        "Random cable runs",
+        "Install blanking panels and manage airflow",
+        "Increase CPU cores"
+      ],
+      "answer": "Install blanking panels and manage airflow"
+    },
+    {
+      "question": "Which statement about object storage is true?",
+      "options": [
+        "Fastest small I/O",
+        "Great for peak training performance",
+        "Excellent scalability and durability; stage to faster tiers for training",
+        "Requires Fibre Channel"
+      ],
+      "answer": "Excellent scalability and durability; stage to faster tiers for training"
+    },
+    {
+      "question": "When would you choose multi-node over multi-GPU?",
+      "options": [
+        "Model fits one GPU",
+        "Need to scale beyond one chassis",
+        "To reduce network needs",
+        "When cooling is unlimited"
+      ],
+      "answer": "Need to scale beyond one chassis"
+    },
+    {
+      "question": "What does Base Command help centralize?",
+      "options": [
+        "Rack power only",
+        "Cable maps",
+        "DGX users, projects, jobs, monitoring",
+        "CPU virtualization"
+      ],
+      "answer": "DGX users, projects, jobs, monitoring"
+    },
+    {
+      "question": "What is a common cause of NCCL job hangs?",
+      "options": [
+        "Too many GPUs",
+        "Network congestion/misconfig",
+        "Too much RAM",
+        "Large model"
+      ],
+      "answer": "Network congestion/misconfig"
+    },
+    {
+      "question": "Which statement about water cooling is accurate?",
+      "options": [
+        "Always cheaper than air",
+        "Unnecessary for high density",
+        "Efficient heat removal at high density with added complexity/cost",
+        "Only for CPUs"
+      ],
+      "answer": "Efficient heat removal at high density with added complexity/cost"
+    },
+    {
+      "question": "Primary purpose of MIG?",
+      "options": [
+        "GPU overclocking",
+        "Security scanning",
+        "Partition GPU into isolated instances for QoS",
+        "Faster PCIe"
+      ],
+      "answer": "Partition GPU into isolated instances for QoS"
+    },
+    {
+      "question": "Best practice during driver upgrades?",
+      "options": [
+        "Upgrade all nodes at once",
+        "Skip testing",
+        "Canary nodes + drain/cordon + validation",
+        "Ignore NCCL"
+      ],
+      "answer": "Canary nodes + drain/cordon + validation"
+    },
+    {
+      "question": "Which metric best indicates good GPU utilization?",
+      "options": [
+        "High CPU idle",
+        "High GPU SM occupancy and memory BW usage",
+        "Low NIC speed",
+        "High disk writes"
+      ],
+      "answer": "High GPU SM occupancy and memory BW usage"
+    },
+    {
+      "question": "Which is MOST aligned with DGX BasePOD value?",
+      "options": [
+        "Custom from scratch",
+        "Validated design reduces risk and accelerates time-to-value",
+        "Cheapest possible",
+        "Software-only"
+      ],
+      "answer": "Validated design reduces risk and accelerates time-to-value"
+    }
+  ]
+}
