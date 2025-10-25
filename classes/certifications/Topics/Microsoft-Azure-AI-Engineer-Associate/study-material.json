@@ -1,0 +1,707 @@
+{
+  "title": "Microsoft Azure AI Engineer Associate",
+  "notes": [
+    "Azure AI Engineers build, manage, and deploy AI solutions across the full lifecycle: requirements, design, development, deployment, integration, maintenance, performance tuning, and monitoring, collaborating with architects, data scientists/engineers, IoT, infra, and software devs.",
+    "Azure AI Foundry provides hubs and projects to organize resources, models, data connections, prompt flows, evaluations, and deployments; use it as the control plane for generative AI, language, vision, speech, search, and information extraction.",
+    "Choose services by scenario: Generative (Azure OpenAI in Foundry Models), NLP/Text analytics (Azure AI Language), Speech (Azure AI Speech), Computer Vision (Azure AI Vision, Custom Vision), Knowledge Mining (Azure AI Search), Information Extraction (Document Intelligence).",
+    "Responsible AI principles: fairness, reliability/safety, privacy/security, inclusiveness, transparency, accountability; apply via Content Safety, filters/blocklists, prompt shields, RBAC, audit trails, and governance policies.",
+    "Authentication options: API (subscription) keys or Microsoft Entra ID; prefer managed identity for least-privilege, secretless auth; assign RBAC at resource scope.",
+    "Network security: use private endpoints and firewall rules to restrict to VNets or IP ranges; for internet-hosted apps, add specific public IPs to ‘Selected networks’ allowlist.",
+    "Key rotation and secret hygiene: avoid embedding secrets in code; prefer managed identity; if keys are used, store in Azure Key Vault and rotate regularly.",
+    "Monitoring and logging: enable metrics and diagnostics; use Application Insights, Azure Monitor, and model-level telemetry (latency, token usage, cost, throughput, error rates); set alerts and budgets.",
+    "Cost management: select right SKU, region, and quota; monitor usage; scale appropriately; power down unused resources; favor multi-service accounts where appropriate; cache and batch to reduce calls.",
+    "CI/CD: deploy AI resources and configurations via IaC (Bicep/ARM/Terraform) and pipelines (Azure DevOps/GitHub Actions); include tests, policy checks, and staged rollouts; version models and prompt flows.",
+    "Containerization: some services support containers (Vision, Language, DI); use for edge/local/offline scenarios; plan license/egress/telemetry; keep models updated.",
+    "Data storage patterns: Blob Storage for documents/images/audio/video; Azure Files for shared mounts; Cosmos DB/SQL for metadata; Data Lake for analytics; align with security, cost, and latency.",
+    "Multi-region and HA: plan for regional quotas and failover; replicate indexes and storage when required; confirm model availability per region.",
+    "RBAC roles to know: Cognitive Services User (invoke APIs), Contributor/Owner (manage), Reader (observe); Storage Blob Data Reader/Contributor for DI/Vision pipelines against Blob.",
+    "Content Safety integration best practices: set severity thresholds conservatively at first; log blocked cases; review false positives/negatives; fine-tune filters and blocklists; support appeal paths.",
+    "Governance framework: define risk taxonomy, review board, human-in-the-loop checkpoints for high-risk outputs, incident response, model inventory (owner, data lineage, eval results).",
+    "Azure OpenAI models: GPT-4-family (text, reasoning, multi‑modal variants), GPT‑3.5‑turbo, embeddings models, and DALL‑E for images; select based on capability, latency, cost, and context window.",
+    "Prompt message roles: system (persona, rules, formatting), user (request), assistant (history), tool/function messages; keep system message authoritative and concise; include guardrails and examples.",
+    "Generation controls: temperature (randomness), top_p (nucleus sampling), presence/frequency penalties (topic/duplication control), max_tokens (budget); tune per use case and track cost/quality.",
+    "Prompt patterns: few-shot exemplars, chain-of-thought (internal reasoning hidden), retrieval-augmented prompts with citations, output schema enforcement with JSON-mode/functions/tools.",
+    "Prompt Flow in Foundry: author multi-node flows (retrieval, grounding, LLM, post‑processors), evaluate runs with datasets, compare variants (A/B), capture traces, register best flow for deployment.",
+    "RAG architecture: ingest → chunk → embed → index → retrieve (k, hybrid, filters) → rerank → generate; log citations; cache retrievals; re-embed when data drifts or model upgrades.",
+    "Strictness parameter (On‑your‑data): increases relevance threshold so fewer low‑relevance docs are considered; balance precision vs recall with K (retrieved documents) and filters.",
+    "Vector search: store embeddings in Azure AI Search vector fields; choose cosine or dot‑product; combine with keyword/semantic (hybrid) for robust retrieval; consider vector sizes & storage costs.",
+    "Chunking strategy: choose chunk size and overlap based on genre (short FAQs vs long PDFs); smaller chunks improve precision but increase index size; store metadata (title, section, page).",
+    "Grounding data governance: keep sensitive data in secure stores; enforce per‑user filter contexts (e.g., ACL filters) so retrieval respects authorization; log queries and access.",
+    "Evaluation of genAI: automatic metrics (BLEU/ROUGE for summarization proxies), human‑in‑the‑loop ratings, guardrail tests (jailbreak, toxicity); regression tests in CI.",
+    "Image generation (DALL‑E): body must include ‘prompt’; for quality use ‘quality=hd’; control size (e.g., 1024x1792); n controls count; output format independent from quality.",
+    "Assistants: use tool-use and retrieval; constrain capabilities; set timeouts; stream tokens for UX; capture feedback for reinforcement; limit function/tool hallucinations via schema.",
+    "Agentic solutions: combine planning, tool-use, and memory to autonomously solve tasks; useful for workflows spanning retrieval, calls to APIs, and iterative reasoning.",
+    "Azure AI Foundry Agent Service: create agents tied to specific model deployments; configure tools (function calling, search connectors), memory, and security; monitor runs.",
+    "Semantic Kernel: orchestrate plugins (skills), planners, memories; compose workflows; supports C#/Python; good for multi-agent and tool integration patterns.",
+    "Autogen: agent-to-agent collaboration library; define roles (planner, coder, critic), safety boundaries, and termination conditions; record dialogues for audit.",
+    "Testing agents: seed with eval tasks, limit actions per run, set budget/time constraints, capture telemetry; add human approvals for high‑risk actions.",
+    "Azure AI Vision Image Analysis features: captioning/description, tagging, object detection, optical character recognition (OCR), face attributes (if enabled), adult/racy/gore flags, dominant colors.",
+    "Dominant background color outputs limited to a fixed set (e.g., black, blue, brown, gray, green, orange, pink, purple, red, teal, white, yellow).",
+    "Spatial Analysis: detect presence and movement of people in video streams; requires specific camera placement and supported regions/SKUs; consider privacy signage and consent.",
+    "Azure AI Video Indexer: upload → index → query; extract transcripts (customizable language model), scenes, topics, faces, and keyframes; to fetch keyframe thumbnails call: get index → get thumbnail by timestamp/keyframe id.",
+    "Custom Vision: choose classification vs object detection; tag consistently; split train/validation; evaluate precision/recall/mAP; publish best iteration; retrieve Prediction URL/key for production.",
+    "Custom Vision Compact domains: required for export to ONNX/CoreML/TensorFlow for mobile/edge; trade some accuracy for size/latency; design for offline operation.",
+    "Edge considerations: quantization, CPU/GPU/NPU support, batching, and thermal limits; schedule updates when connectivity returns; log predictions locally.",
+    "Azure AI Language Text Analytics: key phrase extraction (identify main topics), named entity recognition (people/locations/orgs), PII detection (names, addresses, SSNs), sentiment and opinion mining.",
+    "Question Answering: best for static knowledge with predictable answers; imports formatted text/URLs/lists; returns same answer for same question; multi-turn and chit‑chat supported.",
+    "Conversational Language Understanding (CLU): intents + entities; List entities (Strict) match only catalog phrases; Regex entities capture flexible patterns; retrain after labeling changes.",
+    "Evaluation metrics: Precision = TP/(TP+FP); Recall = TP/(TP+FN); F1 = harmonic mean(precision, recall); choose metric by business risk (false positives vs false negatives).",
+    "Azure AI Speech: batch and real-time STT; TTS with neural voices and SSML prosody; speaker identification (who in a group), text‑dependent/independent verification for auth use‑cases.",
+    "Batch transcription storage: Azure Storage is the default supported source; ensure SAS or managed identity access; specify container and output location.",
+    "Azure AI Translator: document and text translation; custom translator with parallel corpora; BLEU score 40–59 indicates high‑quality translation; evaluate per domain.",
+    "Azure AI Search index design: define key (unique id), searchable fields (full‑text), filterable/sortable/facetable flags per field; keep analyzers consistent with languages; store vectors for embeddings.",
+    "queryType: ‘full’ enables wildcards, regex, and fuzzy; ‘simple’ is limited; semantic search improves summaries/reranking; hybrid search combines keyword + vector signals.",
+    "Skillsets and indexers: define data sources (Blob, SQL, etc.), attach built‑in skills (OCR, entity recognition, language detection, key phrases, entity linking) or custom skills (Azure Functions).",
+    "Knowledge store projections: file/object/table projections capture enriched outputs for downstream analytics and validation.",
+    "Vector store operations: choose embedding model; track embedding dimension and version; schedule re-embedding on schema/model/data changes; consider HNSW parameters and memory footprint.",
+    "Facets and filters: use ‘facetable’ for category counts; combine with $filter to narrow; precompute common facets for speed; avoid excessive cardinality facets.",
+    "Document Intelligence models: Read (text), Layout (structure with tables/checkboxes/selection marks), Prebuilt (Invoice/Receipt/ID) for structured fields, and Custom models for bespoke forms.",
+    "Model selection guidance: Layout for structure‑preserving extraction across PDFs with tables/marks; Invoice for vendor invoices with totals/dates; Read for pure text extraction including handwriting.",
+    "Custom model training: label fields and tables; provide representative samples; split training/validation sets; compose models to route multiple form types through a single endpoint.",
+    "Input quality: prefer text‑based PDFs and high‑resolution images; ensure orientation/cropping; low‑resolution scans hurt OCR accuracy; normalize templates if possible.",
+    "Post‑processing: validate and normalize dates/currency; confidence thresholds and human review; push extracted data to databases/ERPs and index to Azure AI Search for retrieval.",
+    "Content Understanding: end‑to‑end ingestion for documents/images/audio/video with summarization, classification, and attribute extraction; chain with Search for RAG.",
+    "Threats to genAI apps: prompt injection, jailbreaks (role‑play, system‑rule overriding, encoded attacks), data exfiltration via tool use, sensitive info leakage; mitigate with Content Safety and robust system prompts.",
+    "Content Safety for images/text: classify at severity levels; tune block/allow lists; add pre‑ and post‑generation checks; label and log for audits; evaluate impact on false positives.",
+    "UPIA/Jailbreak risk detection: detect attempts to subvert rules; combine with input/output filtering; add refusal patterns and safe‑completion fallbacks; secure tool functions with parameter validation.",
+    "Performance tuning levers: cache RAG retrievals, reduce retrieved K with higher strictness, compress prompts, reuse conversation state, stream tokens, batch non‑interactive work, and select lower‑latency models where acceptable.",
+    "Diagnostics: collect traces (Prompt Flow), correlate user/session IDs, capture retrieval set and chosen citations; store anonymized datasets for offline evaluation.",
+    "Versioning: track model deployment name/version, prompt templates, embeddings model version, index schema; use semantic versioning and changelogs; rollback strategies ready.",
+    "Edge/container deployments: pin compatible model versions and dependencies; validate on target hardware; monitor telemetry locally and sync on reconnect.",
+    "Use Azure AI Vision Image Analysis to detect adult/racy content with minimal effort; use Custom Vision when you must train domain‑specific classifiers; use Spatial Analysis for real‑time people presence/movement.",
+    "Use Azure AI Video Indexer to extract insights from videos and customize speech models; fetch keyframes by first requesting the video index to learn IDs/timestamps.",
+    "Use Azure AI Language: key phrase extraction to identify concepts; PII detection to redact names/addresses; sentiment to gauge opinion; CLU for intents/entities; Question Answering for static FAQs.",
+    "Use Azure AI Search with ‘facetable’ fields for category counts, ‘queryType=full’ for wildcards; use semantic + vector hybrid for best relevance; enrich with built‑in Entity Linking to Wikipedia.",
+    "Use Document Intelligence Layout for structured extraction (text/tables/marks), Invoice for invoice fields, Read for text; train Custom models for bespoke forms; prefer text‑based PDFs for accuracy.",
+    "For generative apps on enterprise data, prefer RAG with Azure AI Search over fine‑tuning for lower cost and freshness; increase Strictness to filter noise; log citations for trust.",
+    "For authentication, enable managed identity on App Service and grant RBAC to AI resources for least privilege; restrict resources with private endpoints/firewalls to subscription networks only."
+  ],
+  "flashcards": [
+    {
+      "front": "Two primary authentication methods for Azure AI services?",
+      "back": "Subscription keys and Microsoft Entra ID (managed identity/service principal)."
+    },
+    {
+      "front": "Best practice to auth an App Service to AI services with least effort?",
+      "back": "Enable system-assigned managed identity and assign RBAC to the AI resource."
+    },
+    {
+      "front": "Network setting to restrict Azure OpenAI access to subscription-only apps?",
+      "back": "Disable public network and use Private Endpoint connections."
+    },
+    {
+      "front": "Purpose of system message in prompts?",
+      "back": "Sets assistant persona, scope, and rules; highest-priority guidance."
+    },
+    {
+      "front": "Temperature vs top_p?",
+      "back": "Both control randomness; temperature scales logits; top_p samples from nucleus probability mass."
+    },
+    {
+      "front": "Strictness (On-your-data) controls what?",
+      "back": "Relevance threshold for retrieved documents; higher strictness filters out low-relevance docs."
+    },
+    {
+      "front": "Vector search benefit in RAG?",
+      "back": "Semantic similarity retrieval beyond keyword matching for better relevance."
+    },
+    {
+      "front": "Hybrid search means…",
+      "back": "Combine keyword/semantic with vector similarity for robust retrieval."
+    },
+    {
+      "front": "Key fields in Azure AI Search index design?",
+      "back": "Key, searchable, filterable, sortable, facetable, retrievable, vector fields."
+    },
+    {
+      "front": "Which field attribute enables category hit counts?",
+      "back": "facetable."
+    },
+    {
+      "front": "queryType for wildcard support?",
+      "back": "queryType = full."
+    },
+    {
+      "front": "Why use Prompt Flow?",
+      "back": "Design, evaluate, and trace multi-step genAI pipelines; register best variant."
+    },
+    {
+      "front": "BLEU score range for high-quality translation?",
+      "back": "40–59 indicates high-quality."
+    },
+    {
+      "front": "Precision vs Recall definition?",
+      "back": "Precision=TP/(TP+FP); Recall=TP/(TP+FN)."
+    },
+    {
+      "front": "When to use Layout vs Read model?",
+      "back": "Layout preserves structure (tables/marks); Read extracts text only."
+    },
+    {
+      "front": "Service for extracting invoice number/total/due date?",
+      "back": "Document Intelligence prebuilt Invoice model."
+    },
+    {
+      "front": "Custom Vision ‘Compact’ domains are for…",
+      "back": "Export to mobile/edge for offline, smaller models with faster inference."
+    },
+    {
+      "front": "Detect people presence/movement in live video?",
+      "back": "Azure AI Vision Spatial Analysis."
+    },
+    {
+      "front": "Moderate user-uploaded images with minimal dev effort?",
+      "back": "Azure AI Vision Image Analysis (adult/racy/gore flags)."
+    },
+    {
+      "front": "Content Safety defenses for jailbreak?",
+      "back": "Prompt shields, input/output filtering, severity tuning, blocklists."
+    },
+    {
+      "front": "Key phrase extraction does what?",
+      "back": "Returns main concepts from text to summarize topics quickly."
+    },
+    {
+      "front": "PII categories to remove names and addresses?",
+      "back": "Person and Address categories."
+    },
+    {
+      "front": "CLU entity for whitelist-only matching?",
+      "back": "List entity in Strict mode."
+    },
+    {
+      "front": "Batch transcription default storage requirement?",
+      "back": "Azure Storage containers; grant access via SAS or managed identity."
+    },
+    {
+      "front": "Azure Video Indexer keyframe extraction steps?",
+      "back": "Upload → get index → request thumbnails per keyframe/time."
+    },
+    {
+      "front": "Dominant background color possible outputs?",
+      "back": "Fixed set (e.g., teal, red, blue, etc.)."
+    },
+    {
+      "front": "Publishing Custom Vision model to production requires…",
+      "back": "Publish iteration and use Prediction URL/key."
+    },
+    {
+      "front": "CI/CD for AI resources uses…",
+      "back": "Bicep/ARM/Terraform + Azure DevOps/GitHub Actions pipelines."
+    },
+    {
+      "front": "Why private endpoints?",
+      "back": "Keep traffic on private network; block public access."
+    },
+    {
+      "front": "How to reduce genAI cost?",
+      "back": "Cache, adjust K/strictness, compress prompts, choose cheaper models, batch jobs."
+    },
+    {
+      "front": "DALL‑E request body must include what?",
+      "back": "The ‘prompt’ field; quality/size optional for fidelity."
+    },
+    {
+      "front": "Assistants tool-use safety?",
+      "back": "Whitelist functions, validate inputs, timeouts/budgets, human approval for risky actions."
+    },
+    {
+      "front": "Evaluation for genAI quality?",
+      "back": "Human ratings, regression test sets, toxicity/jailbreak tests."
+    },
+    {
+      "front": "Storage role to let Content Safety read Blob images?",
+      "back": "Assign Storage Blob Data Reader/Contributor to the service’s managed identity."
+    },
+    {
+      "front": "When to fine‑tune vs RAG?",
+      "back": "Fine‑tune for style/task adaptation on clean data; RAG for grounding and freshness."
+    },
+    {
+      "front": "Embedding model/version tracking matters because…",
+      "back": "Dimension and distribution shifts break vector comparability; re-embed on upgrades."
+    },
+    {
+      "front": "Entity Linking skill adds what?",
+      "back": "Links entities to Wikipedia articles; enriches knowledge mining."
+    },
+    {
+      "front": "What does ‘facetable’ enable in results UI?",
+      "back": "Faceted navigation with counts per category."
+    },
+    {
+      "front": "Best practice for keys?",
+      "back": "Avoid in code; use managed identity; if needed, keep in Key Vault and rotate."
+    },
+    {
+      "front": "Strictness trade-off?",
+      "back": "Higher strictness raises precision but may lower recall; tune with K and filters."
+    },
+    {
+      "front": "CLU vs Question Answering?",
+      "back": "CLU infers intent/entities; QA returns static answers from a knowledge base."
+    },
+    {
+      "front": "Agent orchestration libraries?",
+      "back": "Semantic Kernel and Autogen; both support multi-agent workflows."
+    },
+    {
+      "front": "Model monitoring signals to log?",
+      "back": "Latency, tokens, cost, error codes, guardrail hits, retrieval sets."
+    },
+    {
+      "front": "Why use composed DI models?",
+      "back": "Route multiple templates through one endpoint; better maintainability."
+    },
+    {
+      "front": "Hybrid search benefit?",
+      "back": "Combines lexical and semantic/vector signals; more robust ranking."
+    },
+    {
+      "front": "Document input best practice?",
+      "back": "Prefer text-based PDFs; ensure high DPI for scans; correct orientation."
+    },
+    {
+      "front": "Minimal-effort adult content filter?",
+      "back": "Vision Image Analysis ‘adult/racy/gore’ flags."
+    },
+    {
+      "front": "Which service customizes video transcripts?",
+      "back": "Azure AI Video Indexer (custom language models)."
+    },
+    {
+      "front": "Speech profile for 'who is speaking'?",
+      "back": "Speaker identification (not verification)."
+    },
+    {
+      "front": "OpenAI image quality setting name?",
+      "back": "quality=hd; size like 1024x1792 for higher resolution."
+    },
+    {
+      "front": "Primary reason to use managed identity?",
+      "back": "Secretless, auto-rotated credentials; least privilege via RBAC."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which service minimizes dev effort to filter adult content in uploads?",
+      "options": [
+        "Azure AI Vision Image Analysis",
+        "Azure AI Custom Vision",
+        "Azure AI Video Indexer",
+        "Azure AI Face"
+      ],
+      "answer": "Azure AI Vision Image Analysis"
+    },
+    {
+      "question": "Which service extracts invoice fields like invoice number/total due?",
+      "options": [
+        "Azure AI Language",
+        "Azure AI Document Intelligence (Invoice)",
+        "Azure AI Search",
+        "Azure AI Vision"
+      ],
+      "answer": "Azure AI Document Intelligence (Invoice)"
+    },
+    {
+      "question": "For insights from video with customizable speech language models, use:",
+      "options": [
+        "Azure AI Video Indexer",
+        "Azure AI Speech only",
+        "Azure AI Vision OCR",
+        "Azure AI Translator"
+      ],
+      "answer": "Azure AI Video Indexer"
+    },
+    {
+      "question": "Platform to connect proprietary data and operationalize a genAI model:",
+      "options": [
+        "Azure AI Vision",
+        "Azure AI Foundry",
+        "Azure AI Content Understanding",
+        "Azure AI Speech"
+      ],
+      "answer": "Azure AI Foundry"
+    },
+    {
+      "question": "Endpoint to identify core concepts in text:",
+      "options": [
+        "Key phrase extraction",
+        "Custom NER",
+        "Azure AI Vision",
+        "Search suggest"
+      ],
+      "answer": "Key phrase extraction"
+    },
+    {
+      "question": "Two supported auth methods to Azure AI services are:",
+      "options": [
+        "SAML and Kerberos",
+        "Subscription key and Microsoft Entra ID",
+        "SSH keys and TLS client certs",
+        "NTLM and OAuth1"
+      ],
+      "answer": "Subscription key and Microsoft Entra ID"
+    },
+    {
+      "question": "Least-effort, least-privilege auth for App Service to AI services:",
+      "options": [
+        "Managed identity with RBAC",
+        "Shared key in config",
+        "Secret in code",
+        "Anonymous access"
+      ],
+      "answer": "Managed identity with RBAC"
+    },
+    {
+      "question": "Firewall enabled, app on the public internet must be allowed by:",
+      "options": [
+        "Grant VNet only",
+        "Grant specific public IP range",
+        "Disable firewall",
+        "Use service endpoints"
+      ],
+      "answer": "Grant specific public IP range"
+    },
+    {
+      "question": "Content Safety flags too aggressive; some images fail to show. Action?",
+      "options": [
+        "Adjust severity thresholds",
+        "Change to TIFF",
+        "Disable Content Safety",
+        "Increase compression"
+      ],
+      "answer": "Adjust severity thresholds"
+    },
+    {
+      "question": "Protection against jailbreak in copilots uses:",
+      "options": [
+        "Azure AI Content Safety",
+        "Azure AI Language",
+        "Azure AI Vision",
+        "Azure AI Search"
+      ],
+      "answer": "Azure AI Content Safety"
+    },
+    {
+      "question": "On-your-data responses not accurate enough. Tune:",
+      "options": [
+        "Strictness",
+        "Output format",
+        "Embedding dimension only",
+        "Stop word list"
+      ],
+      "answer": "Strictness"
+    },
+    {
+      "question": "Optimize DALL‑E image quality/resolution:",
+      "options": [
+        "quality=hd and size=1024x1792",
+        "n=4 and format=png",
+        "quality=standard and size=256x256",
+        "use JPEG input"
+      ],
+      "answer": "quality=hd and size=1024x1792"
+    },
+    {
+      "question": "Batch transcription default storage provider:",
+      "options": [
+        "Azure Storage",
+        "Azure SQL",
+        "Cosmos DB",
+        "Data Lake Gen2 only"
+      ],
+      "answer": "Azure Storage"
+    },
+    {
+      "question": "Precision definition:",
+      "options": [
+        "TP/(TP+FP)",
+        "TP/(TP+FN)",
+        "2PR/(P+R)",
+        "BLEU"
+      ],
+      "answer": "TP/(TP+FP)"
+    },
+    {
+      "question": "Wildcard search requires which queryType?",
+      "options": [
+        "full",
+        "simple",
+        "semantic",
+        "vector"
+      ],
+      "answer": "full"
+    },
+    {
+      "question": "Index field for category counts is:",
+      "options": [
+        "facetable",
+        "filterable",
+        "sortable",
+        "retrievable"
+      ],
+      "answer": "facetable"
+    },
+    {
+      "question": "Which model preserves document structure incl. tables and selection marks?",
+      "options": [
+        "Layout",
+        "Read",
+        "Invoice",
+        "General"
+      ],
+      "answer": "Layout"
+    },
+    {
+      "question": "For offline mobile inference of custom image classifier:",
+      "options": [
+        "Custom Vision Compact domain",
+        "Standard domain",
+        "Video Indexer",
+        "Face API"
+      ],
+      "answer": "Custom Vision Compact domain"
+    },
+    {
+      "question": "Detect presence/movement of people in live video:",
+      "options": [
+        "Spatial Analysis",
+        "Image Analysis",
+        "Face Recognition",
+        "OCR"
+      ],
+      "answer": "Spatial Analysis"
+    },
+    {
+      "question": "Speaker identity over time is best with:",
+      "options": [
+        "Speaker identification",
+        "Text-dependent verification",
+        "Text-independent verification",
+        "Keyword spotting"
+      ],
+      "answer": "Speaker identification"
+    },
+    {
+      "question": "PII categories to remove names and addresses:",
+      "options": [
+        "Person and Address",
+        "IP and SSN",
+        "PersonType only",
+        "Organization only"
+      ],
+      "answer": "Person and Address"
+    },
+    {
+      "question": "CLU entity to match only phrases in a catalog:",
+      "options": [
+        "List (Strict)",
+        "Regex (Fuzzy)",
+        "ML Entity",
+        "Pattern.any"
+      ],
+      "answer": "List (Strict)"
+    },
+    {
+      "question": "RAG strictness trade-off:",
+      "options": [
+        "Higher strictness = higher precision, lower recall",
+        "Higher strictness = higher recall, lower precision",
+        "No effect on retrieval",
+        "Only affects embeddings"
+      ],
+      "answer": "Higher strictness = higher precision, lower recall"
+    },
+    {
+      "question": "System message controls:",
+      "options": [
+        "Assistant persona, rules, and format guidance",
+        "Token limits only",
+        "Top_p only",
+        "User authentication"
+      ],
+      "answer": "Assistant persona, rules, and format guidance"
+    },
+    {
+      "question": "Semantic Kernel and Autogen are used for:",
+      "options": [
+        "Agent orchestration",
+        "OCR only",
+        "Audio codecs",
+        "Index compaction"
+      ],
+      "answer": "Agent orchestration"
+    },
+    {
+      "question": "Vector search key benefit:",
+      "options": [
+        "Semantic similarity beyond keywords",
+        "Lower storage usage",
+        "Eliminates the need for chunking",
+        "Faster than all keyword searches"
+      ],
+      "answer": "Semantic similarity beyond keywords"
+    },
+    {
+      "question": "Video keyframe extraction steps include:",
+      "options": [
+        "Upload → get index → get thumbnails",
+        "Upload → list blobs → guess frames",
+        "Download ZIP only",
+        "Use OCR pipeline"
+      ],
+      "answer": "Upload → get index → get thumbnails"
+    },
+    {
+      "question": "High-quality translation BLEU score range:",
+      "options": [
+        "40–59",
+        "20–39",
+        "60–80",
+        "10–19"
+      ],
+      "answer": "40–59"
+    },
+    {
+      "question": "Publishing Custom Vision to production requires:",
+      "options": [
+        "Publish iteration and use Prediction URL/key",
+        "Export ONNX only",
+        "Retrain from scratch",
+        "Recreate resource"
+      ],
+      "answer": "Publish iteration and use Prediction URL/key"
+    },
+    {
+      "question": "Minimize cost in genAI workloads:",
+      "options": [
+        "Cache retrievals and tune K/strictness",
+        "Always use GPT-4 with high temperature",
+        "Disable logs",
+        "Max tokens always"
+      ],
+      "answer": "Cache retrievals and tune K/strictness"
+    },
+    {
+      "question": "Knowledge base suited for static FAQs is:",
+      "options": [
+        "Azure AI Language Question Answering",
+        "CLU",
+        "Search only",
+        "Video Indexer"
+      ],
+      "answer": "Azure AI Language Question Answering"
+    },
+    {
+      "question": "Which attribute combination enables a search field to be grouped and filtered?",
+      "options": [
+        "facetable + filterable",
+        "searchable + retrievable",
+        "sortable + retrievable",
+        "key + retrievable"
+      ],
+      "answer": "facetable + filterable"
+    },
+    {
+      "question": "Main risk Content Safety mitigates in genAI apps:",
+      "options": [
+        "Toxic or harmful content",
+        "Network egress costs",
+        "Index fragmentation",
+        "GPU overheating"
+      ],
+      "answer": "Toxic or harmful content"
+    },
+    {
+      "question": "Reason to use private endpoints for AI services:",
+      "options": [
+        "Restrict access to private networks only",
+        "Increase BLEU score",
+        "Improve OCR accuracy",
+        "Reduce vector size"
+      ],
+      "answer": "Restrict access to private networks only"
+    },
+    {
+      "question": "When to use Custom DI model over prebuilt?",
+      "options": [
+        "For bespoke templates not covered by prebuilt",
+        "Always; prebuilt is deprecated",
+        "Never—prebuilt covers all",
+        "Only for receipts"
+      ],
+      "answer": "For bespoke templates not covered by prebuilt"
+    },
+    {
+      "question": "Best way to pass keys if you must use them:",
+      "options": [
+        "Key Vault reference and rotation",
+        "Hard-code in code",
+        "Environment variable plain text",
+        "Query string"
+      ],
+      "answer": "Key Vault reference and rotation"
+    },
+    {
+      "question": "Primary advantage of hybrid search:",
+      "options": [
+        "Combines lexical with vector signals for better ranking",
+        "Lowers index size",
+        "Eliminates analyzers",
+        "Removes need for embeddings"
+      ],
+      "answer": "Combines lexical with vector signals for better ranking"
+    },
+    {
+      "question": "Effect of smaller chunk size in RAG:",
+      "options": [
+        "Higher precision, larger index, more requests",
+        "Lower precision, smaller index",
+        "No impact",
+        "Eliminates overlap need"
+      ],
+      "answer": "Higher precision, larger index, more requests"
+    },
+    {
+      "question": "Tuning generation to be more deterministic:",
+      "options": [
+        "Lower temperature and top_p",
+        "Increase temperature",
+        "Increase presence penalty",
+        "Shorten system prompt"
+      ],
+      "answer": "Lower temperature and top_p"
+    },
+    {
+      "question": "Foundry Prompt Flow advantage:",
+      "options": [
+        "Trace and compare multi-step pipelines",
+        "Cheaper GPU hours",
+        "Index compaction",
+        "Automatic VNet creation"
+      ],
+      "answer": "Trace and compare multi-step pipelines"
+    },
+    {
+      "question": "Assigning Storage Blob Data Reader to a service MI enables:",
+      "options": [
+        "Service reads blobs in storage securely",
+        "Automatic invoice extraction",
+        "Free storage",
+        "Vector search"
+      ],
+      "answer": "Service reads blobs in storage securely"
+    },
+    {
+      "question": "Why store citations in RAG output?",
+      "options": [
+        "Trust, verifiability, and debugging retrieval quality",
+        "Reduce tokens",
+        "Improve vector size",
+        "Enable OCR"
+      ],
+      "answer": "Trust, verifiability, and debugging retrieval quality"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "title": "NVIDIA AI Infrastructure and Operations – Expanded Study Guide (Plain Notes)",
+  "title": "NVIDIA AI Infrastructure and Operations",
   "notes": [
     "CERT SCOPE → Entry-level ops + infra for AI: concepts, HW/SW stack, networking, storage, orchestration, monitoring, virtualization, reference architectures.",
     "AI vs. ML vs. DL → AI: broad goal of intelligent behavior. ML: learns patterns from data. DL: multi-layer neural nets that learn hierarchies of features.",
