@@ -1,0 +1,1234 @@
+{
+  "title": "GRE & Quants",
+  "notes": [
+    "VERBAL STRATEGY: Read the entire passage/sentence BEFORE looking at answer choices",
+    "TEXT COMPLETION: Look for signal words (although, moreover, however, but) to understand sentence logic",
+    "TEXT COMPLETION: Predict your own word for the blank, then find similar choices",
+    "SENTENCE EQUIVALENCE: Two correct words must make sentences with THE SAME MEANING, not just be synonyms",
+    "READING COMP: Focus on main idea, author's tone, and passage structure",
+    "READING COMP: Eliminate choices that are only partially true or go beyond passage scope",
+    "READING COMP: All answers must be based ONLY on information in the passage",
+    "VOCAB: GRE tests secondary/less common meanings of familiar words in context",
+    "VOCAB: Learn word roots (ben-=good, mal-=bad, dict-=say, anthrop-=human, ambi-=both)",
+    "QUANT: Figures are NOT drawn to scale - rely on given information only",
+    "QUANT: Coordinate graphs, number lines, and data charts ARE drawn to scale",
+    "QUANT: All numbers are real numbers unless stated otherwise",
+    "QUANT: Round only the final answer to avoid cumulative rounding errors",
+    "QUANT COMPARISON: Plug in numbers (0, 1, -1, fractions) to test relationships",
+    "QUANT COMPARISON: If relationship changes with different values, answer is always 'cannot be determined'",
+    "QUANT COMPARISON: Simplify by subtracting same quantity from both sides",
+    "QUANT: Use calculator for tedious arithmetic, but mental math is often faster",
+    "QUANT: Backsolve by plugging answer choices into the problem",
+    "QUANT: For 'select all that apply', evaluate each choice independently",
+    "GEOMETRY: Pythagorean theorem a²+b²=c² for right triangles",
+    "GEOMETRY: Circle area = πr², circumference = 2πr",
+    "GEOMETRY: Triangle area = ½×base×height",
+    "GEOMETRY: Rectangle area = length×width, perimeter = 2(l+w)",
+    "GEOMETRY: Volume of rectangular solid = length×width×height",
+    "GEOMETRY: Cylinder volume = πr²h, surface area = 2πr² + 2πrh",
+    "GEOMETRY: Sphere volume = (4/3)πr³, surface area = 4πr²",
+    "GEOMETRY: Sum of angles in triangle = 180°",
+    "GEOMETRY: Sum of angles in quadrilateral = 360°",
+    "GEOMETRY: Special right triangles: 30-60-90 (sides: x, x√3, 2x) and 45-45-90 (sides: x, x, x√2)",
+    "ALGEBRA: Solve equations by isolating variable",
+    "ALGEBRA: Factor quadratics: x²+bx+c = (x+m)(x+n) where m+n=b and m×n=c",
+    "ALGEBRA: FOIL method: (a+b)(c+d) = ac+ad+bc+bd",
+    "ALGEBRA: Difference of squares: a²-b² = (a+b)(a-b)",
+    "ALGEBRA: Exponent rules: x^a × x^b = x^(a+b), x^a / x^b = x^(a-b), (x^a)^b = x^(ab)",
+    "ALGEBRA: x^0 = 1 for any x≠0, x^(-a) = 1/x^a",
+    "ALGEBRA: Slope = (y₂-y₁)/(x₂-x₁), slope-intercept form: y=mx+b",
+    "ALGEBRA: Distance between points: d = √[(x₂-x₁)²+(y₂-y₁)²]",
+    "ARITHMETIC: Prime numbers are divisible only by 1 and themselves (2,3,5,7,11,13...)",
+    "ARITHMETIC: Even×Even=Even, Odd×Odd=Odd, Even×Odd=Even",
+    "ARITHMETIC: Even+Even=Even, Odd+Odd=Even, Even+Odd=Odd",
+    "ARITHMETIC: Percent change = (New-Old)/Old × 100%",
+    "ARITHMETIC: Fraction operations: a/b × c/d = ac/bd, a/b ÷ c/d = a/b × d/c",
+    "ARITHMETIC: To compare fractions, cross-multiply: a/b vs c/d → compare ad vs bc",
+    "STATISTICS: Mean = sum of values / number of values",
+    "STATISTICS: Median = middle value when ordered (or average of two middle values)",
+    "STATISTICS: Mode = most frequently occurring value",
+    "STATISTICS: Range = maximum - minimum",
+    "STATISTICS: Standard deviation measures spread from the mean (larger = more spread)",
+    "PROBABILITY: P(event) = number of favorable outcomes / total number of outcomes",
+    "PROBABILITY: P(A and B) = P(A) × P(B) for independent events",
+    "PROBABILITY: P(A or B) = P(A) + P(B) - P(A and B)",
+    "PROBABILITY: P(not A) = 1 - P(A)",
+    "COMBINATIONS: nCr = n! / (r!(n-r)!) - order doesn't matter",
+    "PERMUTATIONS: nPr = n! / (n-r)! - order matters",
+    "DATA INTERPRETATION: Read titles, axes, legends, units, and scales carefully",
+    "DATA INTERPRETATION: Watch for units in thousands, millions, or percents",
+    "WRITING: Issue essay structure: Intro (thesis) → Body paragraphs (reasons+examples) → Conclusion",
+    "WRITING: Use specific examples from history, literature, current events, or hypotheticals",
+    "WRITING: Address counterarguments to show nuanced thinking",
+    "WRITING: Use transition words (furthermore, however, therefore, in contrast)",
+    "WRITING: Vary sentence structure and use precise vocabulary",
+    "WRITING: Spend ~5 min planning, ~20 min writing, ~5 min proofreading",
+    "COMMON TRAP: Don't assume 10% increase then 10% decrease returns to original (different bases)",
+    "COMMON TRAP: In Sentence Equivalence, two synonyms might not both fit the sentence context",
+    "COMMON TRAP: Answer choices may include true statements that don't answer the question"
+  ],
+  "flashcards": [
+    {
+      "front": "What does 'ambivalent' mean?",
+      "back": "Having mixed or contradictory feelings about something"
+    },
+    {
+      "front": "What does 'capricious' mean?",
+      "back": "Unpredictable, prone to sudden changes of mood or behavior"
+    },
+    {
+      "front": "What does 'erudite' mean?",
+      "back": "Scholarly, learned, having extensive knowledge"
+    },
+    {
+      "front": "What does 'loquacious' mean?",
+      "back": "Very talkative, garrulous"
+    },
+    {
+      "front": "What does 'ephemeral' mean?",
+      "back": "Short-lived, lasting a very short time, transitory"
+    },
+    {
+      "front": "What does 'soporific' mean?",
+      "back": "Causing sleep; extremely boring"
+    },
+    {
+      "front": "What does 'audacious' mean?",
+      "back": "Very bold or daring, often recklessly so"
+    },
+    {
+      "front": "What does 'equivocal' mean?",
+      "back": "Ambiguous, open to multiple interpretations, often deliberately misleading"
+    },
+    {
+      "front": "What does 'mitigate' mean?",
+      "back": "To make less severe, harsh, or painful; to alleviate"
+    },
+    {
+      "front": "What does 'fastidious' mean?",
+      "back": "Very attentive to detail; excessively particular or demanding"
+    },
+    {
+      "front": "What does 'pellucid' mean?",
+      "back": "Transparently clear; easy to understand"
+    },
+    {
+      "front": "What does 'belie' mean?",
+      "back": "To give a false impression of; to contradict"
+    },
+    {
+      "front": "What does 'laconic' mean?",
+      "back": "Using very few words; brief and concise in speech"
+    },
+    {
+      "front": "What does 'prolific' mean?",
+      "back": "Extremely productive; producing abundant works or results"
+    },
+    {
+      "front": "What does 'orthodox' mean?",
+      "back": "Conventional, traditional, conforming to established doctrine"
+    },
+    {
+      "front": "What does 'eccentric' mean?",
+      "back": "Unconventional, peculiar, deviating from normal behavior"
+    },
+    {
+      "front": "What does 'ameliorate' mean?",
+      "back": "To make better; to improve"
+    },
+    {
+      "front": "What does 'exacerbate' mean?",
+      "back": "To make worse; to aggravate"
+    },
+    {
+      "front": "What does 'ascertain' mean?",
+      "back": "To find out definitely; to determine with certainty"
+    },
+    {
+      "front": "What does 'extant' mean?",
+      "back": "Still in existence; surviving"
+    },
+    {
+      "front": "Root: ben- or bene-",
+      "back": "Means 'good' (examples: beneficial, benevolent, benediction)"
+    },
+    {
+      "front": "Root: mal-",
+      "back": "Means 'bad' (examples: malicious, malady, malevolent)"
+    },
+    {
+      "front": "Root: -dict-",
+      "back": "Means 'to say' (examples: dictate, contradict, predict, dictatorial)"
+    },
+    {
+      "front": "Root: anthrop-",
+      "back": "Means 'human' (examples: anthropology, misanthrope, philanthropist)"
+    },
+    {
+      "front": "Root: ambi-",
+      "back": "Means 'both' or 'around' (examples: ambivalent, ambidextrous, ambiguous)"
+    },
+    {
+      "front": "Prefix: a- or an-",
+      "back": "Means 'not' or 'without' (examples: amoral, atypical, anomaly, anarchy)"
+    },
+    {
+      "front": "Root: luc- or lus-",
+      "back": "Means 'light' (examples: lucid, translucent, elucidate)"
+    },
+    {
+      "front": "Root: loq- or loc-",
+      "back": "Means 'speech' (examples: loquacious, eloquent, elocution)"
+    },
+    {
+      "front": "Prefix: e- or ex-",
+      "back": "Means 'out' (examples: exit, extract, extant, evoke)"
+    },
+    {
+      "front": "Root: -fer-",
+      "back": "Means 'to carry or bring' (examples: transfer, confer, refer, defer)"
+    },
+    {
+      "front": "Text Completion strategy: What should you do FIRST?",
+      "back": "Read the entire passage to get overall meaning BEFORE looking at answer choices"
+    },
+    {
+      "front": "Text Completion: What are signal words and why are they important?",
+      "back": "Words like 'although', 'however', 'moreover' that indicate contrast or continuation; they reveal the logic of the sentence"
+    },
+    {
+      "front": "Text Completion: What's the best approach to filling blanks?",
+      "back": "Predict your own word for each blank based on context, then find the choice that matches your prediction"
+    },
+    {
+      "front": "Sentence Equivalence: What must the two correct answers create?",
+      "back": "Sentences that mean THE SAME THING (not just two words that are synonyms)"
+    },
+    {
+      "front": "Reading Comprehension: What are you NOT allowed to use?",
+      "back": "Outside knowledge or specialized information - answers must be based ONLY on the passage"
+    },
+    {
+      "front": "Reading Comprehension: What should you focus on when reading?",
+      "back": "Main idea, author's tone/purpose, and how parts of the passage relate to each other"
+    },
+    {
+      "front": "Reading Comprehension: How do you eliminate wrong answers?",
+      "back": "Eliminate choices that are only partially true, go beyond the passage scope, or misrepresent what the passage says"
+    },
+    {
+      "front": "Pythagorean theorem",
+      "back": "a² + b² = c² for right triangles, where c is the hypotenuse"
+    },
+    {
+      "front": "Circle: Area formula",
+      "back": "A = πr² where r is the radius"
+    },
+    {
+      "front": "Circle: Circumference formula",
+      "back": "C = 2πr or C = πd where r is radius and d is diameter"
+    },
+    {
+      "front": "Triangle: Area formula",
+      "back": "A = ½ × base × height"
+    },
+    {
+      "front": "Triangle: Sum of interior angles",
+      "back": "180 degrees"
+    },
+    {
+      "front": "Quadrilateral: Sum of interior angles",
+      "back": "360 degrees"
+    },
+    {
+      "front": "30-60-90 triangle: Side ratios",
+      "back": "If shortest side is x, sides are x : x√3 : 2x"
+    },
+    {
+      "front": "45-45-90 triangle: Side ratios",
+      "back": "If legs are x, sides are x : x : x√2"
+    },
+    {
+      "front": "Rectangle: Area and perimeter",
+      "back": "Area = length × width, Perimeter = 2(length + width)"
+    },
+    {
+      "front": "Rectangular solid: Volume",
+      "back": "V = length × width × height"
+    },
+    {
+      "front": "Cylinder: Volume",
+      "back": "V = πr²h where r is radius and h is height"
+    },
+    {
+      "front": "Sphere: Volume",
+      "back": "V = (4/3)πr³ where r is radius"
+    },
+    {
+      "front": "Sphere: Surface area",
+      "back": "SA = 4πr² where r is radius"
+    },
+    {
+      "front": "Slope formula",
+      "back": "m = (y₂ - y₁)/(x₂ - x₁) = rise/run"
+    },
+    {
+      "front": "Slope-intercept form",
+      "back": "y = mx + b where m is slope and b is y-intercept"
+    },
+    {
+      "front": "Distance between two points formula",
+      "back": "d = √[(x₂-x₁)² + (y₂-y₁)²]"
+    },
+    {
+      "front": "FOIL method",
+      "back": "(a+b)(c+d) = ac + ad + bc + bd (First, Outer, Inner, Last)"
+    },
+    {
+      "front": "Difference of squares factoring",
+      "back": "a² - b² = (a+b)(a-b)"
+    },
+    {
+      "front": "Exponent rule: Multiplication",
+      "back": "x^a × x^b = x^(a+b)"
+    },
+    {
+      "front": "Exponent rule: Division",
+      "back": "x^a ÷ x^b = x^(a-b)"
+    },
+    {
+      "front": "Exponent rule: Power of a power",
+      "back": "(x^a)^b = x^(ab)"
+    },
+    {
+      "front": "Exponent rule: Zero exponent",
+      "back": "x^0 = 1 (for any x ≠ 0)"
+    },
+    {
+      "front": "Exponent rule: Negative exponent",
+      "back": "x^(-a) = 1/x^a"
+    },
+    {
+      "front": "What are prime numbers?",
+      "back": "Numbers greater than 1 divisible only by 1 and themselves (2, 3, 5, 7, 11, 13, 17...)"
+    },
+    {
+      "front": "Even × Even = ?",
+      "back": "Even"
+    },
+    {
+      "front": "Odd × Odd = ?",
+      "back": "Odd"
+    },
+    {
+      "front": "Even × Odd = ?",
+      "back": "Even"
+    },
+    {
+      "front": "Even + Even = ?",
+      "back": "Even"
+    },
+    {
+      "front": "Odd + Odd = ?",
+      "back": "Even"
+    },
+    {
+      "front": "Even + Odd = ?",
+      "back": "Odd"
+    },
+    {
+      "front": "Percent change formula",
+      "back": "(New - Old)/Old × 100%"
+    },
+    {
+      "front": "Multiplying fractions",
+      "back": "a/b × c/d = (a×c)/(b×d)"
+    },
+    {
+      "front": "Dividing fractions",
+      "back": "a/b ÷ c/d = a/b × d/c (multiply by reciprocal)"
+    },
+    {
+      "front": "Mean (average)",
+      "back": "Sum of all values divided by the number of values"
+    },
+    {
+      "front": "Median",
+      "back": "The middle value when data is arranged in order (or average of two middle values if even number of data points)"
+    },
+    {
+      "front": "Mode",
+      "back": "The value that appears most frequently in a dataset"
+    },
+    {
+      "front": "Range",
+      "back": "Maximum value minus minimum value"
+    },
+    {
+      "front": "Standard deviation measures what?",
+      "back": "The spread or dispersion of data from the mean (larger value = more spread out)"
+    },
+    {
+      "front": "Basic probability formula",
+      "back": "P(event) = (number of favorable outcomes)/(total number of possible outcomes)"
+    },
+    {
+      "front": "Probability of independent events both occurring",
+      "back": "P(A and B) = P(A) × P(B)"
+    },
+    {
+      "front": "Probability of either event occurring",
+      "back": "P(A or B) = P(A) + P(B) - P(A and B)"
+    },
+    {
+      "front": "Probability of an event NOT occurring",
+      "back": "P(not A) = 1 - P(A)"
+    },
+    {
+      "front": "Combinations formula (order doesn't matter)",
+      "back": "nCr = n!/(r!(n-r)!)"
+    },
+    {
+      "front": "Permutations formula (order matters)",
+      "back": "nPr = n!/(n-r)!"
+    },
+    {
+      "front": "Quantitative Comparison: What should you do with variables?",
+      "back": "Plug in multiple values (0, 1, -1, 2, fractions) to test if relationship changes"
+    },
+    {
+      "front": "Quantitative Comparison: When is the answer 'cannot be determined'?",
+      "back": "When the relationship between quantities changes depending on which values you plug in"
+    },
+    {
+      "front": "Quantitative Comparison: How can you simplify?",
+      "back": "Add, subtract, multiply, or divide both sides by the same amount (watch out when multiplying/dividing by negatives)"
+    },
+    {
+      "front": "Are geometric figures drawn to scale on the GRE?",
+      "back": "NO - never trust visual appearance. Use given information and geometric principles only"
+    },
+    {
+      "front": "What IS drawn to scale on the GRE?",
+      "back": "Coordinate graphs, number lines, bar graphs, line graphs, pie charts, and other data displays"
+    },
+    {
+      "front": "Rounding strategy on GRE Quant",
+      "back": "Do all calculations exactly, then round only the FINAL answer to avoid cumulative rounding errors"
+    },
+    {
+      "front": "When should you use the GRE calculator?",
+      "back": "For tedious arithmetic (long division, multiplying large numbers), but mental math/estimation is often faster"
+    },
+    {
+      "front": "What is backsolving?",
+      "back": "Plugging answer choices into the problem to see which one works - useful for word problems"
+    },
+    {
+      "front": "Data Interpretation: What should you check first?",
+      "back": "Titles, axes labels, units (thousands? millions?), legends, and scales"
+    },
+    {
+      "front": "Issue Essay: Recommended structure",
+      "back": "Introduction with thesis → Body paragraphs with reasons and examples → Conclusion"
+    },
+    {
+      "front": "Issue Essay: What makes a strong example?",
+      "back": "Specific examples from history, literature, current events, personal experience, or logical hypotheticals"
+    },
+    {
+      "front": "Issue Essay: Why address counterarguments?",
+      "back": "Shows sophisticated, nuanced thinking and strengthens your position by refuting opposing views"
+    },
+    {
+      "front": "Issue Essay: Time management",
+      "back": "~5 minutes planning/outlining, ~20 minutes writing, ~5 minutes proofreading"
+    },
+    {
+      "front": "Common trap: 10% increase then 10% decrease",
+      "back": "Does NOT return to original value because the base changes (e.g., 100→110→99, not 100)"
+    },
+    {
+      "front": "Sentence Equivalence trap",
+      "back": "Two words might be synonyms but not both fit the sentence context - always test both in the sentence"
+    },
+    {
+      "front": "Reading Comp trap",
+      "back": "Answer choices may contain TRUE statements that don't actually answer the question asked"
+    },
+    {
+      "front": "What does 'pragmatic' mean?",
+      "back": "Practical, dealing with things sensibly and realistically"
+    },
+    {
+      "front": "What does 'dogmatic' mean?",
+      "back": "Inclined to lay down principles as incontrovertibly true; rigidly assertive"
+    },
+    {
+      "front": "What does 'taciturn' mean?",
+      "back": "Reserved in speech; saying little; uncommunicative"
+    },
+    {
+      "front": "What does 'verbose' mean?",
+      "back": "Using more words than necessary; wordy"
+    },
+    {
+      "front": "What does 'aberrant' mean?",
+      "back": "Departing from the normal or usual course; deviant"
+    },
+    {
+      "front": "What does 'nascent' mean?",
+      "back": "Just beginning to exist or develop; emerging"
+    },
+    {
+      "front": "What does 'archaic' mean?",
+      "back": "Very old or old-fashioned; antiquated"
+    },
+    {
+      "front": "What does 'novel' mean (as adjective)?",
+      "back": "New and original; different from anything seen before"
+    }
+  ],
+  "quiz": [
+    {
+      "question": "In a right triangle, if one leg is 6 and the other leg is 8, what is the hypotenuse?",
+      "options": [
+        "10",
+        "12",
+        "14",
+        "100"
+      ],
+      "answer": "10"
+    },
+    {
+      "question": "What is the area of a circle with radius 5?",
+      "options": [
+        "10π",
+        "25π",
+        "5π",
+        "50π"
+      ],
+      "answer": "25π"
+    },
+    {
+      "question": "In a 30-60-90 triangle, if the shortest side is 3, what is the hypotenuse?",
+      "options": [
+        "3",
+        "3√3",
+        "6",
+        "9"
+      ],
+      "answer": "6"
+    },
+    {
+      "question": "What is the sum of the interior angles of a triangle?",
+      "options": [
+        "90°",
+        "180°",
+        "270°",
+        "360°"
+      ],
+      "answer": "180°"
+    },
+    {
+      "question": "What is x^5 ÷ x^2?",
+      "options": [
+        "x^3",
+        "x^7",
+        "x^10",
+        "x^2.5"
+      ],
+      "answer": "x^3"
+    },
+    {
+      "question": "What is (x^3)^2?",
+      "options": [
+        "x^5",
+        "x^6",
+        "x^9",
+        "x^1.5"
+      ],
+      "answer": "x^6"
+    },
+    {
+      "question": "What is 5^0?",
+      "options": [
+        "0",
+        "1",
+        "5",
+        "undefined"
+      ],
+      "answer": "1"
+    },
+    {
+      "question": "Is 2 a prime number?",
+      "options": [
+        "Yes",
+        "No",
+        "Only if it's positive",
+        "Only in certain contexts"
+      ],
+      "answer": "Yes"
+    },
+    {
+      "question": "What is Even + Odd?",
+      "options": [
+        "Even",
+        "Odd",
+        "Could be either",
+        "Always prime"
+      ],
+      "answer": "Odd"
+    },
+    {
+      "question": "What is Odd × Odd?",
+      "options": [
+        "Even",
+        "Odd",
+        "Could be either",
+        "Always prime"
+      ],
+      "answer": "Odd"
+    },
+    {
+      "question": "If a quantity increases from 50 to 75, what is the percent increase?",
+      "options": [
+        "25%",
+        "33%",
+        "50%",
+        "150%"
+      ],
+      "answer": "50%"
+    },
+    {
+      "question": "What is the median of {3, 7, 2, 10, 5}?",
+      "options": [
+        "3",
+        "5",
+        "7",
+        "5.4"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "A coin is flipped twice. What is the probability of getting heads both times?",
+      "options": [
+        "1/2",
+        "1/4",
+        "1/8",
+        "3/4"
+      ],
+      "answer": "1/4"
+    },
+    {
+      "question": "If P(A) = 0.6, what is P(not A)?",
+      "options": [
+        "0.4",
+        "0.6",
+        "1.6",
+        "-0.6"
+      ],
+      "answer": "0.4"
+    },
+    {
+      "question": "What does the root 'mal-' mean?",
+      "options": [
+        "Good",
+        "Bad",
+        "Say",
+        "Human"
+      ],
+      "answer": "Bad"
+    },
+    {
+      "question": "What does 'loquacious' mean?",
+      "options": [
+        "Quiet",
+        "Very talkative",
+        "Scholarly",
+        "Short-lived"
+      ],
+      "answer": "Very talkative"
+    },
+    {
+      "question": "What does 'mitigate' mean?",
+      "options": [
+        "To make worse",
+        "To make less severe",
+        "To determine",
+        "To contradict"
+      ],
+      "answer": "To make less severe"
+    },
+    {
+      "question": "What does 'ephemeral' mean?",
+      "options": [
+        "Permanent",
+        "Short-lived",
+        "Scholarly",
+        "Talkative"
+      ],
+      "answer": "Short-lived"
+    },
+    {
+      "question": "In Text Completion, what should you do FIRST?",
+      "options": [
+        "Look at all answer choices",
+        "Pick the longest word",
+        "Read the entire passage before looking at choices",
+        "Fill in the first blank immediately"
+      ],
+      "answer": "Read the entire passage before looking at choices"
+    },
+    {
+      "question": "In Sentence Equivalence, what must the two correct answers do?",
+      "options": [
+        "Be exact synonyms",
+        "Create sentences with the same meaning",
+        "Be the longest words",
+        "Both be adjectives"
+      ],
+      "answer": "Create sentences with the same meaning"
+    },
+    {
+      "question": "In Reading Comprehension, what can you use to answer questions?",
+      "options": [
+        "Outside specialized knowledge",
+        "Only information in the passage",
+        "Your personal opinions",
+        "Information from other passages"
+      ],
+      "answer": "Only information in the passage"
+    },
+    {
+      "question": "Are geometric figures drawn to scale on the GRE?",
+      "options": [
+        "Yes, always",
+        "No, never assume they are",
+        "Only triangles",
+        "Only circles"
+      ],
+      "answer": "No, never assume they are"
+    },
+    {
+      "question": "What IS drawn to scale on the GRE?",
+      "options": [
+        "All geometric figures",
+        "Only triangles",
+        "Coordinate graphs and data displays",
+        "Nothing is to scale"
+      ],
+      "answer": "Coordinate graphs and data displays"
+    },
+    {
+      "question": "In Quantitative Comparison, when should you answer 'cannot be determined'?",
+      "options": [
+        "When you don't know how to solve it",
+        "When the relationship changes with different test values",
+        "When both quantities look equal",
+        "Never - always compute exactly"
+      ],
+      "answer": "When the relationship changes with different test values"
+    },
+    {
+      "question": "If something increases by 10% then decreases by 10%, does it return to the original value?",
+      "options": [
+        "Yes, always",
+        "No, it ends up less than original",
+        "No, it ends up more than original",
+        "Yes, but only for whole numbers"
+      ],
+      "answer": "No, it ends up less than original"
+    },
+    {
+      "question": "What is the volume of a cylinder with radius 3 and height 4?",
+      "options": [
+        "12π",
+        "36π",
+        "24π",
+        "48π"
+      ],
+      "answer": "36π"
+    },
+    {
+      "question": "What is the slope of a line passing through (2, 3) and (5, 11)?",
+      "options": [
+        "2",
+        "8/3",
+        "3",
+        "8"
+      ],
+      "answer": "8/3"
+    },
+    {
+      "question": "Factor: x² - 9",
+      "options": [
+        "(x - 3)(x - 3)",
+        "(x + 3)(x + 3)",
+        "(x - 3)(x + 3)",
+        "Cannot be factored"
+      ],
+      "answer": "(x - 3)(x + 3)"
+    },
+    {
+      "question": "What is 2⁻³?",
+      "options": [
+        "-8",
+        "1/8",
+        "-6",
+        "1/6"
+      ],
+      "answer": "1/8"
+    },
+    {
+      "question": "What does 'exacerbate' mean?",
+      "options": [
+        "To improve",
+        "To make worse",
+        "To determine",
+        "To say"
+      ],
+      "answer": "To make worse"
+    },
+    {
+      "question": "The root 'anthrop-' means:",
+      "options": [
+        "Light",
+        "Human",
+        "Say",
+        "Bad"
+      ],
+      "answer": "Human"
+    },
+    {
+      "question": "What signal word indicates CONTRAST in a sentence?",
+      "options": [
+        "Moreover",
+        "Furthermore",
+        "Although",
+        "Additionally"
+      ],
+      "answer": "Although"
+    },
+    {
+      "question": "In a 45-45-90 triangle, if each leg is 5, what is the hypotenuse?",
+      "options": [
+        "5",
+        "5√2",
+        "10",
+        "25"
+      ],
+      "answer": "5√2"
+    },
+    {
+      "question": "What is the area of a triangle with base 10 and height 6?",
+      "options": [
+        "60",
+        "30",
+        "16",
+        "20"
+      ],
+      "answer": "30"
+    },
+    {
+      "question": "How many degrees in a quadrilateral?",
+      "options": [
+        "180°",
+        "270°",
+        "360°",
+        "540°"
+      ],
+      "answer": "360°"
+    },
+    {
+      "question": "If the mean of 5 numbers is 20, what is their sum?",
+      "options": [
+        "4",
+        "25",
+        "100",
+        "Cannot determine"
+      ],
+      "answer": "100"
+    },
+    {
+      "question": "A bag has 3 red balls and 7 blue balls. What is the probability of randomly selecting a red ball?",
+      "options": [
+        "3/7",
+        "3/10",
+        "7/10",
+        "1/3"
+      ],
+      "answer": "3/10"
+    },
+    {
+      "question": "When rounding on GRE numeric entry questions, when should you round?",
+      "options": [
+        "After every calculation",
+        "Only the final answer",
+        "Never round",
+        "Round to nearest integer always"
+      ],
+      "answer": "Only the final answer"
+    },
+    {
+      "question": "What does 'pragmatic' mean?",
+      "options": [
+        "Theoretical and abstract",
+        "Practical and realistic",
+        "Talkative",
+        "Quiet"
+      ],
+      "answer": "Practical and realistic"
+    },
+    {
+      "question": "What does 'taciturn' mean?",
+      "options": [
+        "Very talkative",
+        "Reserved in speech",
+        "Scholarly",
+        "Practical"
+      ],
+      "answer": "Reserved in speech"
+    },
+    {
+      "question": "What is the perimeter of a rectangle with length 8 and width 3?",
+      "options": [
+        "11",
+        "22",
+        "24",
+        "48"
+      ],
+      "answer": "22"
+    },
+    {
+      "question": "Which of the following is a prime number?",
+      "options": [
+        "15",
+        "21",
+        "23",
+        "27"
+      ],
+      "answer": "23"
+    },
+    {
+      "question": "Expand: (x + 3)(x + 5)",
+      "options": [
+        "x² + 8x + 15",
+        "x² + 15x + 8",
+        "x² + 8x + 8",
+        "x² + 15"
+      ],
+      "answer": "x² + 8x + 15"
+    },
+    {
+      "question": "What is the circumference of a circle with diameter 10?",
+      "options": [
+        "10π",
+        "20π",
+        "25π",
+        "100π"
+      ],
+      "answer": "10π"
+    },
+    {
+      "question": "If a die is rolled, what is the probability of getting a number greater than 4?",
+      "options": [
+        "1/6",
+        "1/3",
+        "1/2",
+        "2/3"
+      ],
+      "answer": "1/3"
+    },
+    {
+      "question": "What does 'aberrant' mean?",
+      "options": [
+        "Normal",
+        "Deviant from the usual",
+        "Beginning to develop",
+        "Very old"
+      ],
+      "answer": "Deviant from the usual"
+    },
+    {
+      "question": "What does 'nascent' mean?",
+      "options": [
+        "Very old",
+        "Just beginning to develop",
+        "Fully mature",
+        "Dying out"
+      ],
+      "answer": "Just beginning to develop"
+    },
+    {
+      "question": "The root 'ben-' means:",
+      "options": [
+        "Bad",
+        "Good",
+        "Say",
+        "Human"
+      ],
+      "answer": "Good"
+    },
+    {
+      "question": "In an Issue essay, what strengthens your argument?",
+      "options": [
+        "Only stating your opinion",
+        "Using vague generalizations",
+        "Addressing counterarguments",
+        "Avoiding examples"
+      ],
+      "answer": "Addressing counterarguments"
+    },
+    {
+      "question": "What is the range of the data set {5, 12, 3, 8, 20}?",
+      "options": [
+        "8",
+        "15",
+        "17",
+        "20"
+      ],
+      "answer": "17"
+    },
+    {
+      "question": "If P(A) = 0.3 and P(B) = 0.4, and A and B are independent, what is P(A and B)?",
+      "options": [
+        "0.7",
+        "0.12",
+        "0.1",
+        "0.24"
+      ],
+      "answer": "0.12"
+    },
+    {
+      "question": "What is 3/4 ÷ 2/3?",
+      "options": [
+        "1/2",
+        "9/8",
+        "6/12",
+        "2"
+      ],
+      "answer": "9/8"
+    },
+    {
+      "question": "Distance formula between two points (x₁,y₁) and (x₂,y₂):",
+      "options": [
+        "√[(x₂-x₁) + (y₂-y₁)]",
+        "√[(x₂-x₁)² + (y₂-y₁)²]",
+        "(x₂-x₁)² + (y₂-y₁)²",
+        "(x₂-x₁) + (y₂-y₁)"
+      ],
+      "answer": "√[(x₂-x₁)² + (y₂-y₁)²]"
+    },
+    {
+      "question": "What does 'erudite' mean?",
+      "options": [
+        "Ignorant",
+        "Scholarly and learned",
+        "Talkative",
+        "Brief"
+      ],
+      "answer": "Scholarly and learned"
+    },
+    {
+      "question": "What does 'laconic' mean?",
+      "options": [
+        "Very wordy",
+        "Using very few words",
+        "Scholarly",
+        "Contradictory"
+      ],
+      "answer": "Using very few words"
+    },
+    {
+      "question": "What is the volume of a cube with side length 4?",
+      "options": [
+        "16",
+        "48",
+        "64",
+        "256"
+      ],
+      "answer": "64"
+    },
+    {
+      "question": "In slope-intercept form y = mx + b, what does b represent?",
+      "options": [
+        "Slope",
+        "x-intercept",
+        "y-intercept",
+        "Origin"
+      ],
+      "answer": "y-intercept"
+    },
+    {
+      "question": "What does 'verbose' mean?",
+      "options": [
+        "Concise",
+        "Using more words than necessary",
+        "Scholarly",
+        "Quiet"
+      ],
+      "answer": "Using more words than necessary"
+    },
+    {
+      "question": "What does 'archaic' mean?",
+      "options": [
+        "Modern",
+        "Very old or old-fashioned",
+        "Just beginning",
+        "Normal"
+      ],
+      "answer": "Very old or old-fashioned"
+    },
+    {
+      "question": "Surface area of a sphere with radius r:",
+      "options": [
+        "πr²",
+        "2πr²",
+        "4πr²",
+        "(4/3)πr³"
+      ],
+      "answer": "4πr²"
+    },
+    {
+      "question": "What is the mode of {2, 5, 5, 7, 9, 5, 3}?",
+      "options": [
+        "2",
+        "5",
+        "7",
+        "5.14"
+      ],
+      "answer": "5"
+    },
+    {
+      "question": "Combinations vs Permutations: Which one does order matter?",
+      "options": [
+        "Combinations",
+        "Permutations",
+        "Both",
+        "Neither"
+      ],
+      "answer": "Permutations"
+    },
+    {
+      "question": "What does 'belie' mean?",
+      "options": [
+        "To confirm",
+        "To contradict or give false impression",
+        "To believe",
+        "To say"
+      ],
+      "answer": "To contradict or give false impression"
+    },
+    {
+      "question": "What does 'ameliorate' mean?",
+      "options": [
+        "To make worse",
+        "To make better",
+        "To determine",
+        "To contradict"
+      ],
+      "answer": "To make better"
+    },
+    {
+      "question": "In Data Interpretation, what should you check for in the labels?",
+      "options": [
+        "Only the title",
+        "Units like thousands or millions",
+        "Just the colors",
+        "Nothing specific"
+      ],
+      "answer": "Units like thousands or millions"
+    },
+    {
+      "question": "What strategy works for Quantitative Comparison with variables?",
+      "options": [
+        "Only use positive numbers",
+        "Plug in multiple different values to test",
+        "Never use fractions",
+        "Always pick Choice A"
+      ],
+      "answer": "Plug in multiple different values to test"
+    },
+    {
+      "question": "What is Even × Even?",
+      "options": [
+        "Even",
+        "Odd",
+        "Could be either",
+        "Always prime"
+      ],
+      "answer": "Even"
+    },
+    {
+      "question": "What does the prefix 'e-' or 'ex-' mean?",
+      "options": [
+        "In",
+        "Out",
+        "Above",
+        "Below"
+      ],
+      "answer": "Out"
+    },
+    {
+      "question": "In Reading Comprehension, how should you eliminate wrong answers?",
+      "options": [
+        "Pick the longest answer",
+        "Eliminate only partially true or out-of-scope choices",
+        "Pick answers with big words",
+        "Never eliminate, always guess randomly"
+      ],
+      "answer": "Eliminate only partially true or out-of-scope choices"
+    },
+    {
+      "question": "What does 'fastidious' mean?",
+      "options": [
+        "Careless",
+        "Very attentive to detail",
+        "Quick",
+        "Lazy"
+      ],
+      "answer": "Very attentive to detail"
+    },
+    {
+      "question": "What does 'prolific' mean?",
+      "options": [
+        "Producing very little",
+        "Extremely productive",
+        "Slow",
+        "Quiet"
+      ],
+      "answer": "Extremely productive"
+    },
+    {
+      "question": "If 20% of a number is 40, what is the number?",
+      "options": [
+        "8",
+        "50",
+        "200",
+        "800"
+      ],
+      "answer": "200"
+    },
+    {
+      "question": "What does 'capricious' mean?",
+      "options": [
+        "Predictable and steady",
+        "Unpredictable and changing suddenly",
+        "Scholarly",
+        "Talkative"
+      ],
+      "answer": "Unpredictable and changing suddenly"
+    },
+    {
+      "question": "What does 'equivocal' mean?",
+      "options": [
+        "Clear and definite",
+        "Ambiguous and open to interpretation",
+        "Equal",
+        "Loud"
+      ],
+      "answer": "Ambiguous and open to interpretation"
+    }
+  ]
+}
