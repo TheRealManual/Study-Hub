@@ -291,7 +291,8 @@
         "Azure AI Video Indexer",
         "Azure AI Face"
       ],
-      "answer": "Azure AI Vision Image Analysis"
+      "answer": 0,
+      "explanation": "The correct answer is 'Azure AI Vision Image Analysis'."
     },
     {
       "question": "Which service extracts invoice fields like invoice number/total due?",
@@ -301,7 +302,8 @@
         "Azure AI Search",
         "Azure AI Vision"
       ],
-      "answer": "Azure AI Document Intelligence (Invoice)"
+      "answer": 1,
+      "explanation": "The correct answer is 'Azure AI Document Intelligence (Invoice)'."
     },
     {
       "question": "For insights from video with customizable speech language models, use:",
@@ -311,7 +313,8 @@
         "Azure AI Vision OCR",
         "Azure AI Translator"
       ],
-      "answer": "Azure AI Video Indexer"
+      "answer": 0,
+      "explanation": "The correct answer is 'Azure AI Video Indexer'."
     },
     {
       "question": "Platform to connect proprietary data and operationalize a genAI model:",
@@ -321,7 +324,8 @@
         "Azure AI Content Understanding",
         "Azure AI Speech"
       ],
-      "answer": "Azure AI Foundry"
+      "answer": 1,
+      "explanation": "The correct answer is 'Azure AI Foundry'."
     },
     {
       "question": "Endpoint to identify core concepts in text:",
@@ -331,7 +335,8 @@
         "Azure AI Vision",
         "Search suggest"
       ],
-      "answer": "Key phrase extraction"
+      "answer": 0,
+      "explanation": "The correct answer is 'Key phrase extraction'."
     },
     {
       "question": "Two supported auth methods to Azure AI services are:",
@@ -341,7 +346,8 @@
         "SSH keys and TLS client certs",
         "NTLM and OAuth1"
       ],
-      "answer": "Subscription key and Microsoft Entra ID"
+      "answer": 1,
+      "explanation": "The correct answer is 'Subscription key and Microsoft Entra ID'."
     },
     {
       "question": "Least-effort, least-privilege auth for App Service to AI services:",
@@ -351,7 +357,8 @@
         "Secret in code",
         "Anonymous access"
       ],
-      "answer": "Managed identity with RBAC"
+      "answer": 0,
+      "explanation": "The correct answer is 'Managed identity with RBAC'."
     },
     {
       "question": "Firewall enabled, app on the public internet must be allowed by:",
@@ -361,7 +368,8 @@
         "Disable firewall",
         "Use service endpoints"
       ],
-      "answer": "Grant specific public IP range"
+      "answer": 1,
+      "explanation": "The correct answer is 'Grant specific public IP range'."
     },
     {
       "question": "Content Safety flags too aggressive; some images fail to show. Action?",
@@ -371,7 +379,8 @@
         "Disable Content Safety",
         "Increase compression"
       ],
-      "answer": "Adjust severity thresholds"
+      "answer": 0,
+      "explanation": "The correct answer is 'Adjust severity thresholds'."
     },
     {
       "question": "Protection against jailbreak in copilots uses:",
@@ -381,7 +390,8 @@
         "Azure AI Vision",
         "Azure AI Search"
       ],
-      "answer": "Azure AI Content Safety"
+      "answer": 0,
+      "explanation": "The correct answer is 'Azure AI Content Safety'."
     },
     {
       "question": "On-your-data responses not accurate enough. Tune:",
@@ -391,7 +401,8 @@
         "Embedding dimension only",
         "Stop word list"
       ],
-      "answer": "Strictness"
+      "answer": 0,
+      "explanation": "The correct answer is 'Strictness'."
     },
     {
       "question": "Optimize DALL‑E image quality/resolution:",
@@ -401,7 +412,8 @@
         "quality=standard and size=256x256",
         "use JPEG input"
       ],
-      "answer": "quality=hd and size=1024x1792"
+      "answer": 0,
+      "explanation": "The correct answer is 'quality=hd and size=1024x1792'."
     },
     {
       "question": "Batch transcription default storage provider:",
@@ -411,7 +423,8 @@
         "Cosmos DB",
         "Data Lake Gen2 only"
       ],
-      "answer": "Azure Storage"
+      "answer": 0,
+      "explanation": "The correct answer is 'Azure Storage'."
     },
     {
       "question": "Precision definition:",
@@ -421,7 +434,8 @@
         "2PR/(P+R)",
         "BLEU"
       ],
-      "answer": "TP/(TP+FP)"
+      "answer": 0,
+      "explanation": "The correct answer is 'TP/(TP+FP)'."
     },
     {
       "question": "Wildcard search requires which queryType?",
@@ -431,7 +445,8 @@
         "semantic",
         "vector"
       ],
-      "answer": "full"
+      "answer": 0,
+      "explanation": "The correct answer is 'full'."
     },
     {
       "question": "Index field for category counts is:",
@@ -441,7 +456,8 @@
         "sortable",
         "retrievable"
       ],
-      "answer": "facetable"
+      "answer": 0,
+      "explanation": "The correct answer is 'facetable'."
     },
     {
       "question": "Which model preserves document structure incl. tables and selection marks?",
@@ -451,7 +467,8 @@
         "Invoice",
         "General"
       ],
-      "answer": "Layout"
+      "answer": 0,
+      "explanation": "The correct answer is 'Layout'."
     },
     {
       "question": "For offline mobile inference of custom image classifier:",
@@ -461,7 +478,8 @@
         "Video Indexer",
         "Face API"
       ],
-      "answer": "Custom Vision Compact domain"
+      "answer": 0,
+      "explanation": "The correct answer is 'Custom Vision Compact domain'."
     },
     {
       "question": "Detect presence/movement of people in live video:",
@@ -471,7 +489,8 @@
         "Face Recognition",
         "OCR"
       ],
-      "answer": "Spatial Analysis"
+      "answer": 0,
+      "explanation": "The correct answer is 'Spatial Analysis'."
     },
     {
       "question": "Speaker identity over time is best with:",
@@ -481,7 +500,8 @@
         "Text-independent verification",
         "Keyword spotting"
       ],
-      "answer": "Speaker identification"
+      "answer": 0,
+      "explanation": "The correct answer is 'Speaker identification'."
     },
     {
       "question": "PII categories to remove names and addresses:",
@@ -491,7 +511,8 @@
         "PersonType only",
         "Organization only"
       ],
-      "answer": "Person and Address"
+      "answer": 0,
+      "explanation": "The correct answer is 'Person and Address'."
     },
     {
       "question": "CLU entity to match only phrases in a catalog:",
@@ -501,7 +522,8 @@
         "ML Entity",
         "Pattern.any"
       ],
-      "answer": "List (Strict)"
+      "answer": 0,
+      "explanation": "The correct answer is 'List (Strict)'."
     },
     {
       "question": "RAG strictness trade-off:",
@@ -511,7 +533,8 @@
         "No effect on retrieval",
         "Only affects embeddings"
       ],
-      "answer": "Higher strictness = higher precision, lower recall"
+      "answer": 0,
+      "explanation": "The correct answer is 'Higher strictness = higher precision, lower recall'."
     },
     {
       "question": "System message controls:",
@@ -521,7 +544,8 @@
         "Top_p only",
         "User authentication"
       ],
-      "answer": "Assistant persona, rules, and format guidance"
+      "answer": 0,
+      "explanation": "The correct answer is 'Assistant persona, rules, and format guidance'."
     },
     {
       "question": "Semantic Kernel and Autogen are used for:",
@@ -531,7 +555,8 @@
         "Audio codecs",
         "Index compaction"
       ],
-      "answer": "Agent orchestration"
+      "answer": 0,
+      "explanation": "The correct answer is 'Agent orchestration'."
     },
     {
       "question": "Vector search key benefit:",
@@ -541,7 +566,8 @@
         "Eliminates the need for chunking",
         "Faster than all keyword searches"
       ],
-      "answer": "Semantic similarity beyond keywords"
+      "answer": 0,
+      "explanation": "The correct answer is 'Semantic similarity beyond keywords'."
     },
     {
       "question": "Video keyframe extraction steps include:",
@@ -551,7 +577,8 @@
         "Download ZIP only",
         "Use OCR pipeline"
       ],
-      "answer": "Upload → get index → get thumbnails"
+      "answer": 0,
+      "explanation": "The correct answer is 'Upload → get index → get thumbnails'."
     },
     {
       "question": "High-quality translation BLEU score range:",
@@ -561,7 +588,8 @@
         "60–80",
         "10–19"
       ],
-      "answer": "40–59"
+      "answer": 0,
+      "explanation": "The correct answer is '40–59'."
     },
     {
       "question": "Publishing Custom Vision to production requires:",
@@ -571,7 +599,8 @@
         "Retrain from scratch",
         "Recreate resource"
       ],
-      "answer": "Publish iteration and use Prediction URL/key"
+      "answer": 0,
+      "explanation": "The correct answer is 'Publish iteration and use Prediction URL/key'."
     },
     {
       "question": "Minimize cost in genAI workloads:",
@@ -581,7 +610,8 @@
         "Disable logs",
         "Max tokens always"
       ],
-      "answer": "Cache retrievals and tune K/strictness"
+      "answer": 0,
+      "explanation": "The correct answer is 'Cache retrievals and tune K/strictness'."
     },
     {
       "question": "Knowledge base suited for static FAQs is:",
@@ -591,7 +621,8 @@
         "Search only",
         "Video Indexer"
       ],
-      "answer": "Azure AI Language Question Answering"
+      "answer": 0,
+      "explanation": "The correct answer is 'Azure AI Language Question Answering'."
     },
     {
       "question": "Which attribute combination enables a search field to be grouped and filtered?",
@@ -601,7 +632,8 @@
         "sortable + retrievable",
         "key + retrievable"
       ],
-      "answer": "facetable + filterable"
+      "answer": 0,
+      "explanation": "The correct answer is 'facetable + filterable'."
     },
     {
       "question": "Main risk Content Safety mitigates in genAI apps:",
@@ -611,7 +643,8 @@
         "Index fragmentation",
         "GPU overheating"
       ],
-      "answer": "Toxic or harmful content"
+      "answer": 0,
+      "explanation": "The correct answer is 'Toxic or harmful content'."
     },
     {
       "question": "Reason to use private endpoints for AI services:",
@@ -621,7 +654,8 @@
         "Improve OCR accuracy",
         "Reduce vector size"
       ],
-      "answer": "Restrict access to private networks only"
+      "answer": 0,
+      "explanation": "The correct answer is 'Restrict access to private networks only'."
     },
     {
       "question": "When to use Custom DI model over prebuilt?",
@@ -631,7 +665,8 @@
         "Never—prebuilt covers all",
         "Only for receipts"
       ],
-      "answer": "For bespoke templates not covered by prebuilt"
+      "answer": 0,
+      "explanation": "The correct answer is 'For bespoke templates not covered by prebuilt'."
     },
     {
       "question": "Best way to pass keys if you must use them:",
@@ -641,7 +676,8 @@
         "Environment variable plain text",
         "Query string"
       ],
-      "answer": "Key Vault reference and rotation"
+      "answer": 0,
+      "explanation": "The correct answer is 'Key Vault reference and rotation'."
     },
     {
       "question": "Primary advantage of hybrid search:",
@@ -651,7 +687,8 @@
         "Eliminates analyzers",
         "Removes need for embeddings"
       ],
-      "answer": "Combines lexical with vector signals for better ranking"
+      "answer": 0,
+      "explanation": "The correct answer is 'Combines lexical with vector signals for better ranking'."
     },
     {
       "question": "Effect of smaller chunk size in RAG:",
@@ -661,7 +698,8 @@
         "No impact",
         "Eliminates overlap need"
       ],
-      "answer": "Higher precision, larger index, more requests"
+      "answer": 0,
+      "explanation": "The correct answer is 'Higher precision, larger index, more requests'."
     },
     {
       "question": "Tuning generation to be more deterministic:",
@@ -671,7 +709,8 @@
         "Increase presence penalty",
         "Shorten system prompt"
       ],
-      "answer": "Lower temperature and top_p"
+      "answer": 0,
+      "explanation": "The correct answer is 'Lower temperature and top_p'."
     },
     {
       "question": "Foundry Prompt Flow advantage:",
@@ -681,7 +720,8 @@
         "Index compaction",
         "Automatic VNet creation"
       ],
-      "answer": "Trace and compare multi-step pipelines"
+      "answer": 0,
+      "explanation": "The correct answer is 'Trace and compare multi-step pipelines'."
     },
     {
       "question": "Assigning Storage Blob Data Reader to a service MI enables:",
@@ -691,7 +731,8 @@
         "Free storage",
         "Vector search"
       ],
-      "answer": "Service reads blobs in storage securely"
+      "answer": 0,
+      "explanation": "The correct answer is 'Service reads blobs in storage securely'."
     },
     {
       "question": "Why store citations in RAG output?",
@@ -701,7 +742,8 @@
         "Improve vector size",
         "Enable OCR"
       ],
-      "answer": "Trust, verifiability, and debugging retrieval quality"
+      "answer": 0,
+      "explanation": "The correct answer is 'Trust, verifiability, and debugging retrieval quality'."
     }
   ]
 }

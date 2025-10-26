@@ -332,7 +332,8 @@
         "Higher clock speeds",
         "Integrated storage"
       ],
-      "answer": "Massively parallel architecture"
+      "answer": 1,
+      "explanation": "The correct answer is 'Massively parallel architecture'."
     },
     {
       "question": "Which statement about training vs inference is most accurate?",
@@ -342,7 +343,8 @@
         "Training is compute/data intensive; inference is latency/throughput focused",
         "They have identical resource patterns"
       ],
-      "answer": "Training is compute/data intensive; inference is latency/throughput focused"
+      "answer": 2,
+      "explanation": "The correct answer is 'Training is compute/data intensive; inference is latency/throughput focused'."
     },
     {
       "question": "Which role best fits a DPU?",
@@ -352,7 +354,8 @@
         "CPU frequency scaling",
         "Model quantization"
       ],
-      "answer": "Accelerate networking/storage/security offloads"
+      "answer": 1,
+      "explanation": "The correct answer is 'Accelerate networking/storage/security offloads'."
     },
     {
       "question": "What is the main benefit of NVLink over PCIe for AI training?",
@@ -362,7 +365,8 @@
         "Higher GPU↔GPU bandwidth and lower latency",
         "Supports more SSDs"
       ],
-      "answer": "Higher GPU↔GPU bandwidth and lower latency"
+      "answer": 2,
+      "explanation": "The correct answer is 'Higher GPU↔GPU bandwidth and lower latency'."
     },
     {
       "question": "Which fabric is typically preferred for multi-node distributed training?",
@@ -372,7 +376,8 @@
         "InfiniBand",
         "USB-C"
       ],
-      "answer": "InfiniBand"
+      "answer": 2,
+      "explanation": "The correct answer is 'InfiniBand'."
     },
     {
       "question": "Best storage trait for repeated epoch reads during training?",
@@ -382,7 +387,8 @@
         "Object metadata search",
         "Tape-based archiving"
       ],
-      "answer": "Fast read and re-read performance"
+      "answer": 1,
+      "explanation": "The correct answer is 'Fast read and re-read performance'."
     },
     {
       "question": "Air vs water cooling: which is true?",
@@ -392,7 +398,8 @@
         "Air cost-effective but inefficient beyond ~30 kW/rack",
         "Both identical in efficiency"
       ],
-      "answer": "Air cost-effective but inefficient beyond ~30 kW/rack"
+      "answer": 2,
+      "explanation": "The correct answer is 'Air cost-effective but inefficient beyond ~30 kW/rack'."
     },
     {
       "question": "NGC containers primarily help you…",
@@ -402,7 +409,8 @@
         "Deploy GPU apps faster and portably",
         "Replace Kubernetes"
       ],
-      "answer": "Deploy GPU apps faster and portably"
+      "answer": 2,
+      "explanation": "The correct answer is 'Deploy GPU apps faster and portably'."
     },
     {
       "question": "Managed Kubernetes belongs to which cloud model?",
@@ -412,7 +420,8 @@
         "SaaS",
         "AIaaS"
       ],
-      "answer": "PaaS"
+      "answer": 1,
+      "explanation": "The correct answer is 'PaaS'."
     },
     {
       "question": "Which statement about GPUs and heat is correct?",
@@ -422,7 +431,8 @@
         "CPUs generate more heat",
         "Cooling is optional"
       ],
-      "answer": "GPUs have high heat output"
+      "answer": 1,
+      "explanation": "The correct answer is 'GPUs have high heat output'."
     },
     {
       "question": "Primary purpose of Kubernetes in AI infra?",
@@ -432,7 +442,8 @@
         "Train models automatically",
         "Replace storage"
       ],
-      "answer": "Manage containerized applications"
+      "answer": 1,
+      "explanation": "The correct answer is 'Manage containerized applications'."
     },
     {
       "question": "Which tool would you use to schedule subsets of cluster resources for batch AI jobs?",
@@ -442,7 +453,8 @@
         "Triton",
         "TensorRT"
       ],
-      "answer": "SLURM"
+      "answer": 1,
+      "explanation": "The correct answer is 'SLURM'."
     },
     {
       "question": "Multi-GPU scaling refers to…",
@@ -452,7 +464,8 @@
         "Replacing CPUs with DPUs",
         "Using CPU-only training"
       ],
-      "answer": "Adding GPUs to a single node"
+      "answer": 1,
+      "explanation": "The correct answer is 'Adding GPUs to a single node'."
     },
     {
       "question": "Which best describes NVSwitch?",
@@ -462,7 +475,8 @@
         "Storage cache",
         "Network switch for 1GbE"
       ],
-      "answer": "GPU all-to-all interconnect at NVLink speeds"
+      "answer": 1,
+      "explanation": "The correct answer is 'GPU all-to-all interconnect at NVLink speeds'."
     },
     {
       "question": "Which statement about Ethernet and AI workloads is correct?",
@@ -472,7 +486,8 @@
         "Requires careful design for bandwidth/latency/congestion",
         "Incompatible with AI"
       ],
-      "answer": "Requires careful design for bandwidth/latency/congestion"
+      "answer": 2,
+      "explanation": "The correct answer is 'Requires careful design for bandwidth/latency/congestion'."
     },
     {
       "question": "What does DCGM provide?",
@@ -482,7 +497,8 @@
         "Container orchestration",
         "Storage snapshots"
       ],
-      "answer": "GPU health/telemetry and policy controls"
+      "answer": 1,
+      "explanation": "The correct answer is 'GPU health/telemetry and policy controls'."
     },
     {
       "question": "Which is a benefit of vGPU?",
@@ -492,7 +508,8 @@
         "Split GPU into MIG instances only",
         "Eliminate drivers"
       ],
-      "answer": "Share one GPU among multiple VMs"
+      "answer": 1,
+      "explanation": "The correct answer is 'Share one GPU among multiple VMs'."
     },
     {
       "question": "MIG’s primary benefit is…",
@@ -502,7 +519,8 @@
         "Higher CPU clocks",
         "Faster disks"
       ],
-      "answer": "Deterministic performance isolation on one GPU"
+      "answer": 1,
+      "explanation": "The correct answer is 'Deterministic performance isolation on one GPU'."
     },
     {
       "question": "DGX BasePOD best description?",
@@ -512,7 +530,8 @@
         "Single-node workstation",
         "Hypervisor replacement"
       ],
-      "answer": "Validated design including compute/networking/storage/software"
+      "answer": 1,
+      "explanation": "The correct answer is 'Validated design including compute/networking/storage/software'."
     },
     {
       "question": "Which symptom suggests an I/O bottleneck in training?",
@@ -522,7 +541,8 @@
         "Low GPU util with CPUs idle",
         "High NIC errors only"
       ],
-      "answer": "Low GPU util with CPUs idle"
+      "answer": 2,
+      "explanation": "The correct answer is 'Low GPU util with CPUs idle'."
     },
     {
       "question": "Quickest mitigation for dataloader bottlenecks?",
@@ -532,7 +552,8 @@
         "Increase workers + enable caching",
         "Use CPU-only"
       ],
-      "answer": "Increase workers + enable caching"
+      "answer": 2,
+      "explanation": "The correct answer is 'Increase workers + enable caching'."
     },
     {
       "question": "K8s vs SLURM: place inference microservices?",
@@ -542,7 +563,8 @@
         "Kubernetes",
         "vSphere only"
       ],
-      "answer": "Kubernetes"
+      "answer": 2,
+      "explanation": "The correct answer is 'Kubernetes'."
     },
     {
       "question": "Hybrid strategy benefit?",
@@ -552,7 +574,8 @@
         "Balances cost/perf by dev on-prem, scale in cloud",
         "Eliminates storage needs"
       ],
-      "answer": "Balances cost/perf by dev on-prem, scale in cloud"
+      "answer": 2,
+      "explanation": "The correct answer is 'Balances cost/perf by dev on-prem, scale in cloud'."
     },
     {
       "question": "Primary gain from IB SHARP?",
@@ -562,7 +585,8 @@
         "Bigger SSDs",
         "Better CPU IPC"
       ],
-      "answer": "In-network reduction speeds collectives"
+      "answer": 1,
+      "explanation": "The correct answer is 'In-network reduction speeds collectives'."
     },
     {
       "question": "RoCE enables…",
@@ -572,7 +596,8 @@
         "Disk compression",
         "Model ensembling"
       ],
-      "answer": "RDMA over Ethernet for low-latency data movement"
+      "answer": 1,
+      "explanation": "The correct answer is 'RDMA over Ethernet for low-latency data movement'."
     },
     {
       "question": "Which is a core role of Triton?",
@@ -582,7 +607,8 @@
         "Fabric monitoring",
         "Filesystem"
       ],
-      "answer": "Inference serving w/ dynamic batching and multi-backend"
+      "answer": 1,
+      "explanation": "The correct answer is 'Inference serving w/ dynamic batching and multi-backend'."
     },
     {
       "question": "Best overall storage approach for AI clusters?",
@@ -592,7 +618,8 @@
         "Fast read I/O with caching layered over scalable storage",
         "Tape-only"
       ],
-      "answer": "Fast read I/O with caching layered over scalable storage"
+      "answer": 2,
+      "explanation": "The correct answer is 'Fast read I/O with caching layered over scalable storage'."
     },
     {
       "question": "Which monitoring combo is common in AI ops?",
@@ -602,7 +629,8 @@
         "Nmap + Nslookup",
         "Excel + Email"
       ],
-      "answer": "Prometheus + Grafana + DCGM exporter"
+      "answer": 1,
+      "explanation": "The correct answer is 'Prometheus + Grafana + DCGM exporter'."
     },
     {
       "question": "Which action helps prevent hot recirculation?",
@@ -612,7 +640,8 @@
         "Install blanking panels and manage airflow",
         "Increase CPU cores"
       ],
-      "answer": "Install blanking panels and manage airflow"
+      "answer": 2,
+      "explanation": "The correct answer is 'Install blanking panels and manage airflow'."
     },
     {
       "question": "Which statement about object storage is true?",
@@ -622,7 +651,8 @@
         "Excellent scalability and durability; stage to faster tiers for training",
         "Requires Fibre Channel"
       ],
-      "answer": "Excellent scalability and durability; stage to faster tiers for training"
+      "answer": 2,
+      "explanation": "The correct answer is 'Excellent scalability and durability; stage to faster tiers for training'."
     },
     {
       "question": "When would you choose multi-node over multi-GPU?",
@@ -632,7 +662,8 @@
         "To reduce network needs",
         "When cooling is unlimited"
       ],
-      "answer": "Need to scale beyond one chassis"
+      "answer": 1,
+      "explanation": "The correct answer is 'Need to scale beyond one chassis'."
     },
     {
       "question": "What does Base Command help centralize?",
@@ -642,7 +673,8 @@
         "DGX users, projects, jobs, monitoring",
         "CPU virtualization"
       ],
-      "answer": "DGX users, projects, jobs, monitoring"
+      "answer": 2,
+      "explanation": "The correct answer is 'DGX users, projects, jobs, monitoring'."
     },
     {
       "question": "What is a common cause of NCCL job hangs?",
@@ -652,7 +684,8 @@
         "Too much RAM",
         "Large model"
       ],
-      "answer": "Network congestion/misconfig"
+      "answer": 1,
+      "explanation": "The correct answer is 'Network congestion/misconfig'."
     },
     {
       "question": "Which statement about water cooling is accurate?",
@@ -662,7 +695,8 @@
         "Efficient heat removal at high density with added complexity/cost",
         "Only for CPUs"
       ],
-      "answer": "Efficient heat removal at high density with added complexity/cost"
+      "answer": 2,
+      "explanation": "The correct answer is 'Efficient heat removal at high density with added complexity/cost'."
     },
     {
       "question": "Primary purpose of MIG?",
@@ -672,7 +706,8 @@
         "Partition GPU into isolated instances for QoS",
         "Faster PCIe"
       ],
-      "answer": "Partition GPU into isolated instances for QoS"
+      "answer": 2,
+      "explanation": "The correct answer is 'Partition GPU into isolated instances for QoS'."
     },
     {
       "question": "Best practice during driver upgrades?",
@@ -682,7 +717,8 @@
         "Canary nodes + drain/cordon + validation",
         "Ignore NCCL"
       ],
-      "answer": "Canary nodes + drain/cordon + validation"
+      "answer": 2,
+      "explanation": "The correct answer is 'Canary nodes + drain/cordon + validation'."
     },
     {
       "question": "Which metric best indicates good GPU utilization?",
@@ -692,7 +728,8 @@
         "Low NIC speed",
         "High disk writes"
       ],
-      "answer": "High GPU SM occupancy and memory BW usage"
+      "answer": 1,
+      "explanation": "The correct answer is 'High GPU SM occupancy and memory BW usage'."
     },
     {
       "question": "Which is MOST aligned with DGX BasePOD value?",
@@ -702,7 +739,8 @@
         "Cheapest possible",
         "Software-only"
       ],
-      "answer": "Validated design reduces risk and accelerates time-to-value"
+      "answer": 1,
+      "explanation": "The correct answer is 'Validated design reduces risk and accelerates time-to-value'."
     }
   ]
 }

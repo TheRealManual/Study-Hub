@@ -498,7 +498,8 @@
         "14",
         "100"
       ],
-      "answer": "10"
+      "answer": 0,
+      "explanation": "Using the Pythagorean theorem: a² + b² = c². Here, 6² + 8² = 36 + 64 = 100, so c = √100 = 10."
     },
     {
       "question": "What is the area of a circle with radius 5?",
@@ -508,7 +509,8 @@
         "5π",
         "50π"
       ],
-      "answer": "25π"
+      "answer": 1,
+      "explanation": "Circle area = πr². With radius 5: A = π(5)² = 25π."
     },
     {
       "question": "In a 30-60-90 triangle, if the shortest side is 3, what is the hypotenuse?",
@@ -518,7 +520,8 @@
         "6",
         "9"
       ],
-      "answer": "6"
+      "answer": 2,
+      "explanation": "In a 30-60-90 triangle, sides are in ratio x : x√3 : 2x. If shortest side (x) = 3, hypotenuse = 2(3) = 6."
     },
     {
       "question": "What is the sum of the interior angles of a triangle?",
@@ -528,7 +531,8 @@
         "270°",
         "360°"
       ],
-      "answer": "180°"
+      "answer": 1,
+      "explanation": "The sum of interior angles in any triangle is always 180°."
     },
     {
       "question": "What is x^5 ÷ x^2?",
@@ -538,7 +542,8 @@
         "x^10",
         "x^2.5"
       ],
-      "answer": "x^3"
+      "answer": 0,
+      "explanation": "Using exponent rules: x^a ÷ x^b = x^(a-b). So x⁵ ÷ x² = x^(5-2) = x³."
     },
     {
       "question": "What is (x^3)^2?",
@@ -548,7 +553,8 @@
         "x^9",
         "x^1.5"
       ],
-      "answer": "x^6"
+      "answer": 1,
+      "explanation": "Using exponent rules: (x^a)^b = x^(ab). So (x³)² = x^(3×2) = x⁶."
     },
     {
       "question": "What is 5^0?",
@@ -558,7 +564,8 @@
         "5",
         "undefined"
       ],
-      "answer": "1"
+      "answer": 1,
+      "explanation": "Any non-zero number raised to the power of 0 equals 1. So 5⁰ = 1."
     },
     {
       "question": "Is 2 a prime number?",
@@ -568,7 +575,8 @@
         "Only if it's positive",
         "Only in certain contexts"
       ],
-      "answer": "Yes"
+      "answer": 0,
+      "explanation": "Yes, 2 is prime. It's the only even prime number, divisible only by 1 and itself."
     },
     {
       "question": "What is Even + Odd?",
@@ -578,7 +586,8 @@
         "Could be either",
         "Always prime"
       ],
-      "answer": "Odd"
+      "answer": 1,
+      "explanation": "Even + Odd always equals Odd. Example: 4 + 3 = 7 (odd)."
     },
     {
       "question": "What is Odd × Odd?",
@@ -588,7 +597,8 @@
         "Could be either",
         "Always prime"
       ],
-      "answer": "Odd"
+      "answer": 1,
+      "explanation": "Odd × Odd always equals Odd. Example: 3 × 5 = 15 (odd)."
     },
     {
       "question": "If a quantity increases from 50 to 75, what is the percent increase?",
@@ -598,7 +608,8 @@
         "50%",
         "150%"
       ],
-      "answer": "50%"
+      "answer": 2,
+      "explanation": "Percent change = (New - Old)/Old × 100%. Here: (75 - 50)/50 × 100% = 25/50 × 100% = 50%."
     },
     {
       "question": "What is the median of {3, 7, 2, 10, 5}?",
@@ -608,7 +619,8 @@
         "7",
         "5.4"
       ],
-      "answer": "5"
+      "answer": 1,
+      "explanation": "First sort the numbers: {2, 3, 5, 7, 10}. The median is the middle value = 5."
     },
     {
       "question": "A coin is flipped twice. What is the probability of getting heads both times?",
@@ -618,7 +630,8 @@
         "1/8",
         "3/4"
       ],
-      "answer": "1/4"
+      "answer": 1,
+      "explanation": "For independent events: P(A and B) = P(A) × P(B). P(heads) = 1/2, so P(HH) = 1/2 × 1/2 = 1/4."
     },
     {
       "question": "If P(A) = 0.6, what is P(not A)?",
@@ -628,7 +641,8 @@
         "1.6",
         "-0.6"
       ],
-      "answer": "0.4"
+      "answer": 0,
+      "explanation": "P(not A) = 1 - P(A). So P(not A) = 1 - 0.6 = 0.4."
     },
     {
       "question": "What does the root 'mal-' mean?",
@@ -638,7 +652,8 @@
         "Say",
         "Human"
       ],
-      "answer": "Bad"
+      "answer": 1,
+      "explanation": "The root 'mal-' means 'bad' (e.g., malicious, malady, malevolent)."
     },
     {
       "question": "What does 'loquacious' mean?",
@@ -648,7 +663,8 @@
         "Scholarly",
         "Short-lived"
       ],
-      "answer": "Very talkative"
+      "answer": 1,
+      "explanation": "'loquacious' means: Very talkative."
     },
     {
       "question": "What does 'mitigate' mean?",
@@ -658,7 +674,8 @@
         "To determine",
         "To contradict"
       ],
-      "answer": "To make less severe"
+      "answer": 1,
+      "explanation": "'mitigate' means: To make less severe."
     },
     {
       "question": "What does 'ephemeral' mean?",
@@ -668,7 +685,8 @@
         "Scholarly",
         "Talkative"
       ],
-      "answer": "Short-lived"
+      "answer": 1,
+      "explanation": "'ephemeral' means: Short-lived."
     },
     {
       "question": "In Text Completion, what should you do FIRST?",
@@ -678,7 +696,8 @@
         "Read the entire passage before looking at choices",
         "Fill in the first blank immediately"
       ],
-      "answer": "Read the entire passage before looking at choices"
+      "answer": 2,
+      "explanation": "Reading the full passage first provides context before looking at choices, preventing premature decisions."
     },
     {
       "question": "In Sentence Equivalence, what must the two correct answers do?",
@@ -688,7 +707,8 @@
         "Be the longest words",
         "Both be adjectives"
       ],
-      "answer": "Create sentences with the same meaning"
+      "answer": 1,
+      "explanation": "The two words must create sentences with identical meanings, not just be synonyms out of context."
     },
     {
       "question": "In Reading Comprehension, what can you use to answer questions?",
@@ -698,7 +718,8 @@
         "Your personal opinions",
         "Information from other passages"
       ],
-      "answer": "Only information in the passage"
+      "answer": 1,
+      "explanation": "All answers must come directly from the passage. Outside knowledge shouldn't influence your choice."
     },
     {
       "question": "Are geometric figures drawn to scale on the GRE?",
@@ -708,7 +729,8 @@
         "Only triangles",
         "Only circles"
       ],
-      "answer": "No, never assume they are"
+      "answer": 1,
+      "explanation": "GRE geometric figures are NOT drawn to scale. Always use given measurements and formulas, not visual estimates."
     },
     {
       "question": "What IS drawn to scale on the GRE?",
@@ -718,7 +740,8 @@
         "Coordinate graphs and data displays",
         "Nothing is to scale"
       ],
-      "answer": "Coordinate graphs and data displays"
+      "answer": 2,
+      "explanation": "Coordinate graphs, data displays, and number lines ARE accurately drawn to scale on the GRE."
     },
     {
       "question": "In Quantitative Comparison, when should you answer 'cannot be determined'?",
@@ -728,7 +751,8 @@
         "When both quantities look equal",
         "Never - always compute exactly"
       ],
-      "answer": "When the relationship changes with different test values"
+      "answer": 1,
+      "explanation": "If different test values produce different relationships, the answer is 'cannot be determined'."
     },
     {
       "question": "If something increases by 10% then decreases by 10%, does it return to the original value?",
@@ -738,7 +762,8 @@
         "No, it ends up more than original",
         "Yes, but only for whole numbers"
       ],
-      "answer": "No, it ends up less than original"
+      "answer": 1,
+      "explanation": "Starting at 100: +10% → 110, then -10% of 110 = -11 → 99. Different bases mean not equal."
     },
     {
       "question": "What is the volume of a cylinder with radius 3 and height 4?",
@@ -748,7 +773,8 @@
         "24π",
         "48π"
       ],
-      "answer": "36π"
+      "answer": 1,
+      "explanation": "Cylinder volume = πr²h. With r=3 and h=4: V = π(3)²(4) = π(9)(4) = 36π."
     },
     {
       "question": "What is the slope of a line passing through (2, 3) and (5, 11)?",
@@ -758,7 +784,8 @@
         "3",
         "8"
       ],
-      "answer": "8/3"
+      "answer": 1,
+      "explanation": "Slope = (y₂-y₁)/(x₂-x₁) = (11-3)/(5-2) = 8/3."
     },
     {
       "question": "Factor: x² - 9",
@@ -768,7 +795,8 @@
         "(x - 3)(x + 3)",
         "Cannot be factored"
       ],
-      "answer": "(x - 3)(x + 3)"
+      "answer": 2,
+      "explanation": "Using difference of squares: a² - b² = (a+b)(a-b). So x² - 9 = (x-3)(x+3)."
     },
     {
       "question": "What is 2⁻³?",
@@ -778,7 +806,8 @@
         "-6",
         "1/6"
       ],
-      "answer": "1/8"
+      "answer": 1,
+      "explanation": "Negative exponent: x^(-a) = 1/x^a. So 2⁻³ = 1/2³ = 1/8."
     },
     {
       "question": "What does 'exacerbate' mean?",
@@ -788,7 +817,8 @@
         "To determine",
         "To say"
       ],
-      "answer": "To make worse"
+      "answer": 1,
+      "explanation": "'exacerbate' means: To make worse."
     },
     {
       "question": "The root 'anthrop-' means:",
@@ -798,7 +828,8 @@
         "Say",
         "Bad"
       ],
-      "answer": "Human"
+      "answer": 1,
+      "explanation": "The root 'anthrop-' means 'human' (anthropology, misanthrope, philanthropist)."
     },
     {
       "question": "What signal word indicates CONTRAST in a sentence?",
@@ -808,7 +839,8 @@
         "Although",
         "Additionally"
       ],
-      "answer": "Although"
+      "answer": 2,
+      "explanation": "'Although' signals a contrast or opposite relationship between clauses."
     },
     {
       "question": "In a 45-45-90 triangle, if each leg is 5, what is the hypotenuse?",
@@ -818,7 +850,8 @@
         "10",
         "25"
       ],
-      "answer": "5√2"
+      "answer": 1,
+      "explanation": "In a 45-45-90 triangle, sides are x : x : x√2. If each leg = 5, hypotenuse = 5√2."
     },
     {
       "question": "What is the area of a triangle with base 10 and height 6?",
@@ -828,7 +861,8 @@
         "16",
         "20"
       ],
-      "answer": "30"
+      "answer": 1,
+      "explanation": "Triangle area = ½ × base × height = ½ × 10 × 6 = 30."
     },
     {
       "question": "How many degrees in a quadrilateral?",
@@ -838,7 +872,8 @@
         "360°",
         "540°"
       ],
-      "answer": "360°"
+      "answer": 2,
+      "explanation": "The sum of interior angles in any quadrilateral is always 360°."
     },
     {
       "question": "If the mean of 5 numbers is 20, what is their sum?",
@@ -848,7 +883,8 @@
         "100",
         "Cannot determine"
       ],
-      "answer": "100"
+      "answer": 2,
+      "explanation": "Mean = Sum/Count, so Sum = Mean × Count = 20 × 5 = 100."
     },
     {
       "question": "A bag has 3 red balls and 7 blue balls. What is the probability of randomly selecting a red ball?",
@@ -858,7 +894,8 @@
         "7/10",
         "1/3"
       ],
-      "answer": "3/10"
+      "answer": 1,
+      "explanation": "P(red) = number of red balls / total balls = 3/10."
     },
     {
       "question": "When rounding on GRE numeric entry questions, when should you round?",
@@ -868,7 +905,8 @@
         "Never round",
         "Round to nearest integer always"
       ],
-      "answer": "Only the final answer"
+      "answer": 1,
+      "explanation": "Rounding at each step accumulates errors. Do all calculations exactly, then round the final answer only."
     },
     {
       "question": "What does 'pragmatic' mean?",
@@ -878,7 +916,8 @@
         "Talkative",
         "Quiet"
       ],
-      "answer": "Practical and realistic"
+      "answer": 1,
+      "explanation": "'pragmatic' means: Practical and realistic."
     },
     {
       "question": "What does 'taciturn' mean?",
@@ -888,7 +927,8 @@
         "Scholarly",
         "Practical"
       ],
-      "answer": "Reserved in speech"
+      "answer": 1,
+      "explanation": "'taciturn' means: Reserved in speech."
     },
     {
       "question": "What is the perimeter of a rectangle with length 8 and width 3?",
@@ -898,7 +938,8 @@
         "24",
         "48"
       ],
-      "answer": "22"
+      "answer": 1,
+      "explanation": "Perimeter = 2(length + width) = 2(8 + 3) = 2(11) = 22."
     },
     {
       "question": "Which of the following is a prime number?",
@@ -908,7 +949,8 @@
         "23",
         "27"
       ],
-      "answer": "23"
+      "answer": 2,
+      "explanation": "23 is prime because it's only divisible by 1 and 23. (15=3×5, 21=3×7, 27=3×9)"
     },
     {
       "question": "Expand: (x + 3)(x + 5)",
@@ -918,7 +960,8 @@
         "x² + 8x + 8",
         "x² + 15"
       ],
-      "answer": "x² + 8x + 15"
+      "answer": 0,
+      "explanation": "Using FOIL: (x+3)(x+5) = x² + 5x + 3x + 15 = x² + 8x + 15."
     },
     {
       "question": "What is the circumference of a circle with diameter 10?",
@@ -928,7 +971,8 @@
         "25π",
         "100π"
       ],
-      "answer": "10π"
+      "answer": 0,
+      "explanation": "Circumference = πd = π(10) = 10π."
     },
     {
       "question": "If a die is rolled, what is the probability of getting a number greater than 4?",
@@ -938,7 +982,8 @@
         "1/2",
         "2/3"
       ],
-      "answer": "1/3"
+      "answer": 1,
+      "explanation": "Numbers greater than 4 on a die: {5, 6}. P(>4) = 2/6 = 1/3."
     },
     {
       "question": "What does 'aberrant' mean?",
@@ -948,7 +993,8 @@
         "Beginning to develop",
         "Very old"
       ],
-      "answer": "Deviant from the usual"
+      "answer": 1,
+      "explanation": "'aberrant' means: Deviant from the usual."
     },
     {
       "question": "What does 'nascent' mean?",
@@ -958,7 +1004,8 @@
         "Fully mature",
         "Dying out"
       ],
-      "answer": "Just beginning to develop"
+      "answer": 1,
+      "explanation": "'nascent' means: Just beginning to develop."
     },
     {
       "question": "The root 'ben-' means:",
@@ -968,7 +1015,8 @@
         "Say",
         "Human"
       ],
-      "answer": "Good"
+      "answer": 1,
+      "explanation": "The root 'ben-' means 'good' (beneficial, benevolent, benediction)."
     },
     {
       "question": "In an Issue essay, what strengthens your argument?",
@@ -978,7 +1026,8 @@
         "Addressing counterarguments",
         "Avoiding examples"
       ],
-      "answer": "Addressing counterarguments"
+      "answer": 2,
+      "explanation": "The correct answer is 'Addressing counterarguments'."
     },
     {
       "question": "What is the range of the data set {5, 12, 3, 8, 20}?",
@@ -988,7 +1037,8 @@
         "17",
         "20"
       ],
-      "answer": "17"
+      "answer": 2,
+      "explanation": "Range = Maximum - Minimum = 20 - 3 = 17."
     },
     {
       "question": "If P(A) = 0.3 and P(B) = 0.4, and A and B are independent, what is P(A and B)?",
@@ -998,7 +1048,8 @@
         "0.1",
         "0.24"
       ],
-      "answer": "0.12"
+      "answer": 1,
+      "explanation": "For independent events: P(A and B) = P(A) × P(B) = 0.3 × 0.4 = 0.12."
     },
     {
       "question": "What is 3/4 ÷ 2/3?",
@@ -1008,7 +1059,8 @@
         "6/12",
         "2"
       ],
-      "answer": "9/8"
+      "answer": 1,
+      "explanation": "To divide fractions, multiply by the reciprocal: 3/4 × 3/2 = 9/8."
     },
     {
       "question": "Distance formula between two points (x₁,y₁) and (x₂,y₂):",
@@ -1018,7 +1070,8 @@
         "(x₂-x₁)² + (y₂-y₁)²",
         "(x₂-x₁) + (y₂-y₁)"
       ],
-      "answer": "√[(x₂-x₁)² + (y₂-y₁)²]"
+      "answer": 1,
+      "explanation": "The distance between two points is d = √[(x₂-x₁)² + (y₂-y₁)²]."
     },
     {
       "question": "What does 'erudite' mean?",
@@ -1028,7 +1081,8 @@
         "Talkative",
         "Brief"
       ],
-      "answer": "Scholarly and learned"
+      "answer": 1,
+      "explanation": "'erudite' means: Scholarly and learned."
     },
     {
       "question": "What does 'laconic' mean?",
@@ -1038,7 +1092,8 @@
         "Scholarly",
         "Contradictory"
       ],
-      "answer": "Using very few words"
+      "answer": 1,
+      "explanation": "'laconic' means: Using very few words."
     },
     {
       "question": "What is the volume of a cube with side length 4?",
@@ -1048,7 +1103,8 @@
         "64",
         "256"
       ],
-      "answer": "64"
+      "answer": 2,
+      "explanation": "Cube volume = s³ = 4³ = 64."
     },
     {
       "question": "In slope-intercept form y = mx + b, what does b represent?",
@@ -1058,7 +1114,8 @@
         "y-intercept",
         "Origin"
       ],
-      "answer": "y-intercept"
+      "answer": 2,
+      "explanation": "In y = mx + b, b represents the y-intercept (where the line crosses the y-axis)."
     },
     {
       "question": "What does 'verbose' mean?",
@@ -1068,7 +1125,8 @@
         "Scholarly",
         "Quiet"
       ],
-      "answer": "Using more words than necessary"
+      "answer": 1,
+      "explanation": "'verbose' means: Using more words than necessary."
     },
     {
       "question": "What does 'archaic' mean?",
@@ -1078,7 +1136,8 @@
         "Just beginning",
         "Normal"
       ],
-      "answer": "Very old or old-fashioned"
+      "answer": 1,
+      "explanation": "'archaic' means: Very old or old-fashioned."
     },
     {
       "question": "Surface area of a sphere with radius r:",
@@ -1088,7 +1147,8 @@
         "4πr²",
         "(4/3)πr³"
       ],
-      "answer": "4πr²"
+      "answer": 2,
+      "explanation": "Sphere surface area = 4πr². This formula gives the total surface area."
     },
     {
       "question": "What is the mode of {2, 5, 5, 7, 9, 5, 3}?",
@@ -1098,7 +1158,8 @@
         "7",
         "5.14"
       ],
-      "answer": "5"
+      "answer": 1,
+      "explanation": "The mode is the most frequently occurring value. Here, 5 appears 3 times, more than any other."
     },
     {
       "question": "Combinations vs Permutations: Which one does order matter?",
@@ -1108,7 +1169,8 @@
         "Both",
         "Neither"
       ],
-      "answer": "Permutations"
+      "answer": 1,
+      "explanation": "In permutations, order matters (ABC ≠ BAC). In combinations, order doesn't matter (ABC = BAC)."
     },
     {
       "question": "What does 'belie' mean?",
@@ -1118,7 +1180,8 @@
         "To believe",
         "To say"
       ],
-      "answer": "To contradict or give false impression"
+      "answer": 1,
+      "explanation": "'belie' means: To contradict or give false impression."
     },
     {
       "question": "What does 'ameliorate' mean?",
@@ -1128,7 +1191,8 @@
         "To determine",
         "To contradict"
       ],
-      "answer": "To make better"
+      "answer": 1,
+      "explanation": "'ameliorate' means: To make better."
     },
     {
       "question": "In Data Interpretation, what should you check for in the labels?",
@@ -1138,7 +1202,8 @@
         "Just the colors",
         "Nothing specific"
       ],
-      "answer": "Units like thousands or millions"
+      "answer": 1,
+      "explanation": "Always check if values are in thousands, millions, or percentages to avoid calculation errors."
     },
     {
       "question": "What strategy works for Quantitative Comparison with variables?",
@@ -1148,7 +1213,8 @@
         "Never use fractions",
         "Always pick Choice A"
       ],
-      "answer": "Plug in multiple different values to test"
+      "answer": 1,
+      "explanation": "Test multiple values (positive, negative, zero, fractions) to see if the relationship stays consistent."
     },
     {
       "question": "What is Even × Even?",
@@ -1158,7 +1224,8 @@
         "Could be either",
         "Always prime"
       ],
-      "answer": "Even"
+      "answer": 0,
+      "explanation": "Even × Even always equals Even. Example: 4 × 6 = 24 (even)."
     },
     {
       "question": "What does the prefix 'e-' or 'ex-' mean?",
@@ -1168,7 +1235,8 @@
         "Above",
         "Below"
       ],
-      "answer": "Out"
+      "answer": 1,
+      "explanation": "'e-' means: Out."
     },
     {
       "question": "In Reading Comprehension, how should you eliminate wrong answers?",
@@ -1178,7 +1246,8 @@
         "Pick answers with big words",
         "Never eliminate, always guess randomly"
       ],
-      "answer": "Eliminate only partially true or out-of-scope choices"
+      "answer": 1,
+      "explanation": "Wrong answers often contain partial truths or go beyond what the passage actually states."
     },
     {
       "question": "What does 'fastidious' mean?",
@@ -1188,7 +1257,8 @@
         "Quick",
         "Lazy"
       ],
-      "answer": "Very attentive to detail"
+      "answer": 1,
+      "explanation": "'fastidious' means: Very attentive to detail."
     },
     {
       "question": "What does 'prolific' mean?",
@@ -1198,7 +1268,8 @@
         "Slow",
         "Quiet"
       ],
-      "answer": "Extremely productive"
+      "answer": 1,
+      "explanation": "'prolific' means: Extremely productive."
     },
     {
       "question": "If 20% of a number is 40, what is the number?",
@@ -1208,7 +1279,8 @@
         "200",
         "800"
       ],
-      "answer": "200"
+      "answer": 2,
+      "explanation": "Let x be the number. 0.20x = 40, so x = 40/0.20 = 200."
     },
     {
       "question": "What does 'capricious' mean?",
@@ -1218,7 +1290,8 @@
         "Scholarly",
         "Talkative"
       ],
-      "answer": "Unpredictable and changing suddenly"
+      "answer": 1,
+      "explanation": "'capricious' means: Unpredictable and changing suddenly."
     },
     {
       "question": "What does 'equivocal' mean?",
@@ -1228,7 +1301,8 @@
         "Equal",
         "Loud"
       ],
-      "answer": "Ambiguous and open to interpretation"
+      "answer": 1,
+      "explanation": "'equivocal' means: Ambiguous and open to interpretation."
     }
   ]
 }
