@@ -1,0 +1,961 @@
+{
+  "title": "Quiz 7 Review – Heaps & Hashing",
+  "notes": [
+    [
+      "Heap (general): A tree-based structure that is nearly complete and satisfies the heap-order property.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Binary heap: A heap where each node has at most two children and maintains heap-order.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Max-heap property: Every node’s key is ≥ the keys of its children; the maximum is at the root.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Min-heap property: Every node’s key is ≤ the keys of its children; the minimum is at the root.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Nearly complete tree: All levels are full except possibly the last, which is filled from left to right.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Heap height: For n items, the height is ⌊log₂ n⌋.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Array representation (0-index): Store nodes level-order in an array: parent(i)=⌊(i−1)/2⌋, left(i)=2i+1, right(i)=2i+2.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Array representation (1-index): Store nodes level-order in an array: parent(i)=⌊i/2⌋, left(i)=2i, right(i)=2i+1.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Sift-down (heapify-down): Restore heap by swapping a node with its best child until the property holds.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Sift-up (heapify-up): Restore heap by bubbling a node toward the root until the property holds.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Build-heap (Floyd’s method): Convert an array to a heap in O(n) by sifting down from ⌊n/2⌋ to 0.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Insert (heap): Place new item at end and sift-up; runs in O(log n).",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Extract-root (heap): Remove root, move last element to root, then sift-down; O(log n).",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Peek (heap): Read the root (min or max) in O(1) time.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Heapsort (idea): Build a heap then repeatedly extract the root to sort; in-place O(n log n), not stable.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Priority queue ADT: Abstract data type supporting insert, find-min/max, extract-min/max, and key updates.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Decrease-key / Increase-key: Adjust a key then sift-up (decrease in min-heap) or sift-down (increase in min-heap).",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Array-to-heap idea: Interpret array as level-order tree and apply bottom-up build-heap.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Heap-to-array idea: A heap stored in an array already represents level-order; reading array gives level-order traversal.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "d-ary heap: A heap where each node has d children, reducing height to O(log_d n).",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Meld support (binary heap): Binary heaps do not support fast meld; binomial/Fibonacci heaps do.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Cache friendliness (heap): Array layout is contiguous, aiding cache locality.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Hash table (definition): Maps keys to buckets using a hash function for fast average-time operations.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Hash function: Computes an integer hash value in [0, m−1] for table size m.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Bucket / Slot: A location indexed by the hash; may hold one or multiple keys depending on method.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Load factor (α): n/m where n is number of keys and m is number of buckets.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Collision: When two different keys hash to the same bucket.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Separate chaining: Resolve collisions by storing per-bucket lists/arrays of keys.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Open addressing: Resolve collisions by probing alternative buckets, storing all keys in the table array.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Probe sequence: Deterministic order of buckets tried in open addressing.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Linear probing: Probe i, i+1, i+2,…; simple but causes primary clustering.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Quadratic probing: Probe i + c1·k + c2·k²; reduces primary but may have secondary clustering.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Double hashing: Next probe uses a second hash h2 so index = h1 + k·h2 mod m.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Tombstone (hashing): Marker for a deleted slot so searches can continue along probe sequences.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Rehashing: Resize the table and reinsert all keys when α exceeds a threshold.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Modulo hashing: h(k)=k mod m; choose m carefully (often prime) to avoid patterns.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Multiplicative hashing: Use fractional part of k·A (0<A<1) scaled by m to spread keys.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Universal hashing: Pick a function at random from a family to limit expected collisions.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Perfect hashing: Two-level scheme for static sets giving O(1) worst-case lookups.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Cuckoo hashing: Use two locations; collisions evict existing keys, possibly triggering reinsertions.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Bloom filter: Probabilistic set with multiple hashes allowing false positives but no false negatives.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Expected search time: With controlled α and uniform hashing, expected O(1) for search/insert/delete.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ],
+    [
+      "Birthday paradox (intuition): Collisions become likely once n is on the order of √m.",
+      1,
+      "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "Define: Heap (general)",
+      "back": "A tree-based structure that is nearly complete and satisfies the heap-order property."
+    },
+    {
+      "front": "Define: Binary heap",
+      "back": "A heap where each node has at most two children and maintains heap-order."
+    },
+    {
+      "front": "Define: Max-heap property",
+      "back": "Every node’s key is ≥ the keys of its children; the maximum is at the root."
+    },
+    {
+      "front": "Define: Min-heap property",
+      "back": "Every node’s key is ≤ the keys of its children; the minimum is at the root."
+    },
+    {
+      "front": "Define: Nearly complete tree",
+      "back": "All levels are full except possibly the last, which is filled from left to right."
+    },
+    {
+      "front": "Define: Heap height",
+      "back": "For n items, the height is ⌊log₂ n⌋."
+    },
+    {
+      "front": "Define: Array representation (0-index)",
+      "back": "Store nodes level-order in an array: parent(i)=⌊(i−1)/2⌋, left(i)=2i+1, right(i)=2i+2."
+    },
+    {
+      "front": "Define: Array representation (1-index)",
+      "back": "Store nodes level-order in an array: parent(i)=⌊i/2⌋, left(i)=2i, right(i)=2i+1."
+    },
+    {
+      "front": "Define: Sift-down (heapify-down)",
+      "back": "Restore heap by swapping a node with its best child until the property holds."
+    },
+    {
+      "front": "Define: Sift-up (heapify-up)",
+      "back": "Restore heap by bubbling a node toward the root until the property holds."
+    },
+    {
+      "front": "Define: Build-heap (Floyd’s method)",
+      "back": "Convert an array to a heap in O(n) by sifting down from ⌊n/2⌋ to 0."
+    },
+    {
+      "front": "Define: Insert (heap)",
+      "back": "Place new item at end and sift-up; runs in O(log n)."
+    },
+    {
+      "front": "Define: Extract-root (heap)",
+      "back": "Remove root, move last element to root, then sift-down; O(log n)."
+    },
+    {
+      "front": "Define: Peek (heap)",
+      "back": "Read the root (min or max) in O(1) time."
+    },
+    {
+      "front": "Define: Heapsort (idea)",
+      "back": "Build a heap then repeatedly extract the root to sort; in-place O(n log n), not stable."
+    },
+    {
+      "front": "Define: Priority queue ADT",
+      "back": "Abstract data type supporting insert, find-min/max, extract-min/max, and key updates."
+    },
+    {
+      "front": "Define: Decrease-key / Increase-key",
+      "back": "Adjust a key then sift-up (decrease in min-heap) or sift-down (increase in min-heap)."
+    },
+    {
+      "front": "Define: Array-to-heap idea",
+      "back": "Interpret array as level-order tree and apply bottom-up build-heap."
+    },
+    {
+      "front": "Define: Heap-to-array idea",
+      "back": "A heap stored in an array already represents level-order; reading array gives level-order traversal."
+    },
+    {
+      "front": "Define: d-ary heap",
+      "back": "A heap where each node has d children, reducing height to O(log_d n)."
+    },
+    {
+      "front": "Define: Meld support (binary heap)",
+      "back": "Binary heaps do not support fast meld; binomial/Fibonacci heaps do."
+    },
+    {
+      "front": "Define: Cache friendliness (heap)",
+      "back": "Array layout is contiguous, aiding cache locality."
+    },
+    {
+      "front": "Define: Hash table (definition)",
+      "back": "Maps keys to buckets using a hash function for fast average-time operations."
+    },
+    {
+      "front": "Define: Hash function",
+      "back": "Computes an integer hash value in [0, m−1] for table size m."
+    },
+    {
+      "front": "Define: Bucket / Slot",
+      "back": "A location indexed by the hash; may hold one or multiple keys depending on method."
+    },
+    {
+      "front": "Define: Load factor (α)",
+      "back": "n/m where n is number of keys and m is number of buckets."
+    },
+    {
+      "front": "Define: Collision",
+      "back": "When two different keys hash to the same bucket."
+    },
+    {
+      "front": "Define: Separate chaining",
+      "back": "Resolve collisions by storing per-bucket lists/arrays of keys."
+    },
+    {
+      "front": "Define: Open addressing",
+      "back": "Resolve collisions by probing alternative buckets, storing all keys in the table array."
+    },
+    {
+      "front": "Define: Probe sequence",
+      "back": "Deterministic order of buckets tried in open addressing."
+    },
+    {
+      "front": "Define: Linear probing",
+      "back": "Probe i, i+1, i+2,…; simple but causes primary clustering."
+    },
+    {
+      "front": "Define: Quadratic probing",
+      "back": "Probe i + c1·k + c2·k²; reduces primary but may have secondary clustering."
+    },
+    {
+      "front": "Define: Double hashing",
+      "back": "Next probe uses a second hash h2 so index = h1 + k·h2 mod m."
+    },
+    {
+      "front": "Define: Tombstone (hashing)",
+      "back": "Marker for a deleted slot so searches can continue along probe sequences."
+    },
+    {
+      "front": "Define: Rehashing",
+      "back": "Resize the table and reinsert all keys when α exceeds a threshold."
+    },
+    {
+      "front": "Define: Modulo hashing",
+      "back": "h(k)=k mod m; choose m carefully (often prime) to avoid patterns."
+    },
+    {
+      "front": "Define: Multiplicative hashing",
+      "back": "Use fractional part of k·A (0<A<1) scaled by m to spread keys."
+    },
+    {
+      "front": "Define: Universal hashing",
+      "back": "Pick a function at random from a family to limit expected collisions."
+    },
+    {
+      "front": "Define: Perfect hashing",
+      "back": "Two-level scheme for static sets giving O(1) worst-case lookups."
+    },
+    {
+      "front": "Define: Cuckoo hashing",
+      "back": "Use two locations; collisions evict existing keys, possibly triggering reinsertions."
+    },
+    {
+      "front": "Define: Bloom filter",
+      "back": "Probabilistic set with multiple hashes allowing false positives but no false negatives."
+    },
+    {
+      "front": "Define: Expected search time",
+      "back": "With controlled α and uniform hashing, expected O(1) for search/insert/delete."
+    },
+    {
+      "front": "Define: Birthday paradox (intuition)",
+      "back": "Collisions become likely once n is on the order of √m."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which option best defines 'Heap (general)'?",
+      "options": [
+        "Abstract data type supporting insert, find-min/max, extract-min/max, and key updates.",
+        "Computes an integer hash value in [0, m−1] for table size m.",
+        "A tree-based structure that is nearly complete and satisfies the heap-order property.",
+        "Store nodes level-order in an array: parent(i)=⌊(i−1)/2⌋, left(i)=2i+1, right(i)=2i+2."
+      ],
+      "answer": 2,
+      "explanation": "'Heap (general)' is defined as: A tree-based structure that is nearly complete and satisfies the heap-order property."
+    },
+    {
+      "question": "Which option best defines 'Binary heap'?",
+      "options": [
+        "A heap where each node has at most two children and maintains heap-order.",
+        "For n items, the height is ⌊log₂ n⌋.",
+        "With controlled α and uniform hashing, expected O(1) for search/insert/delete.",
+        "A heap stored in an array already represents level-order; reading array gives level-order traversal."
+      ],
+      "answer": 0,
+      "explanation": "'Binary heap' is defined as: A heap where each node has at most two children and maintains heap-order."
+    },
+    {
+      "question": "Which option best defines 'Max-heap property'?",
+      "options": [
+        "A location indexed by the hash; may hold one or multiple keys depending on method.",
+        "Build a heap then repeatedly extract the root to sort; in-place O(n log n), not stable.",
+        "Use two locations; collisions evict existing keys, possibly triggering reinsertions.",
+        "Every node’s key is ≥ the keys of its children; the maximum is at the root."
+      ],
+      "answer": 3,
+      "explanation": "'Max-heap property' is defined as: Every node’s key is ≥ the keys of its children; the maximum is at the root."
+    },
+    {
+      "question": "Which option best defines 'Min-heap property'?",
+      "options": [
+        "Every node’s key is ≥ the keys of its children; the maximum is at the root.",
+        "Store nodes level-order in an array: parent(i)=⌊(i−1)/2⌋, left(i)=2i+1, right(i)=2i+2.",
+        "When two different keys hash to the same bucket.",
+        "Every node’s key is ≤ the keys of its children; the minimum is at the root."
+      ],
+      "answer": 3,
+      "explanation": "'Min-heap property' is defined as: Every node’s key is ≤ the keys of its children; the minimum is at the root."
+    },
+    {
+      "question": "Which option best defines 'Nearly complete tree'?",
+      "options": [
+        "A heap where each node has d children, reducing height to O(log_d n).",
+        "Read the root (min or max) in O(1) time.",
+        "All levels are full except possibly the last, which is filled from left to right.",
+        "Use two locations; collisions evict existing keys, possibly triggering reinsertions."
+      ],
+      "answer": 2,
+      "explanation": "'Nearly complete tree' is defined as: All levels are full except possibly the last, which is filled from left to right."
+    },
+    {
+      "question": "Which option best defines 'Heap height'?",
+      "options": [
+        "Convert an array to a heap in O(n) by sifting down from ⌊n/2⌋ to 0.",
+        "Resolve collisions by probing alternative buckets, storing all keys in the table array.",
+        "Build a heap then repeatedly extract the root to sort; in-place O(n log n), not stable.",
+        "For n items, the height is ⌊log₂ n⌋."
+      ],
+      "answer": 3,
+      "explanation": "'Heap height' is defined as: For n items, the height is ⌊log₂ n⌋."
+    },
+    {
+      "question": "Which option best defines 'Array representation (0-index)'?",
+      "options": [
+        "Restore heap by swapping a node with its best child until the property holds.",
+        "Store nodes level-order in an array: parent(i)=⌊(i−1)/2⌋, left(i)=2i+1, right(i)=2i+2.",
+        "Collisions become likely once n is on the order of √m.",
+        "Store nodes level-order in an array: parent(i)=⌊i/2⌋, left(i)=2i, right(i)=2i+1."
+      ],
+      "answer": 1,
+      "explanation": "'Array representation (0-index)' is defined as: Store nodes level-order in an array: parent(i)=⌊(i−1)/2⌋, left(i)=2i+1, right(i)=2i+2."
+    },
+    {
+      "question": "Which option best defines 'Array representation (1-index)'?",
+      "options": [
+        "When two different keys hash to the same bucket.",
+        "A heap where each node has d children, reducing height to O(log_d n).",
+        "Resolve collisions by probing alternative buckets, storing all keys in the table array.",
+        "Store nodes level-order in an array: parent(i)=⌊i/2⌋, left(i)=2i, right(i)=2i+1."
+      ],
+      "answer": 3,
+      "explanation": "'Array representation (1-index)' is defined as: Store nodes level-order in an array: parent(i)=⌊i/2⌋, left(i)=2i, right(i)=2i+1."
+    },
+    {
+      "question": "Which option best defines 'Sift-down (heapify-down)'?",
+      "options": [
+        "A tree-based structure that is nearly complete and satisfies the heap-order property.",
+        "Restore heap by swapping a node with its best child until the property holds.",
+        "Remove root, move last element to root, then sift-down; O(log n).",
+        "When two different keys hash to the same bucket."
+      ],
+      "answer": 1,
+      "explanation": "'Sift-down (heapify-down)' is defined as: Restore heap by swapping a node with its best child until the property holds."
+    },
+    {
+      "question": "Which option best defines 'Sift-up (heapify-up)'?",
+      "options": [
+        "Restore heap by swapping a node with its best child until the property holds.",
+        "Store nodes level-order in an array: parent(i)=⌊i/2⌋, left(i)=2i, right(i)=2i+1.",
+        "Restore heap by bubbling a node toward the root until the property holds.",
+        "Build a heap then repeatedly extract the root to sort; in-place O(n log n), not stable."
+      ],
+      "answer": 2,
+      "explanation": "'Sift-up (heapify-up)' is defined as: Restore heap by bubbling a node toward the root until the property holds."
+    },
+    {
+      "question": "Which option best defines 'Build-heap (Floyd’s method)'?",
+      "options": [
+        "Store nodes level-order in an array: parent(i)=⌊(i−1)/2⌋, left(i)=2i+1, right(i)=2i+2.",
+        "Convert an array to a heap in O(n) by sifting down from ⌊n/2⌋ to 0.",
+        "Marker for a deleted slot so searches can continue along probe sequences.",
+        "Two-level scheme for static sets giving O(1) worst-case lookups."
+      ],
+      "answer": 1,
+      "explanation": "'Build-heap (Floyd’s method)' is defined as: Convert an array to a heap in O(n) by sifting down from ⌊n/2⌋ to 0."
+    },
+    {
+      "question": "Which option best defines 'Insert (heap)'?",
+      "options": [
+        "Place new item at end and sift-up; runs in O(log n).",
+        "Remove root, move last element to root, then sift-down; O(log n).",
+        "A heap where each node has d children, reducing height to O(log_d n).",
+        "Restore heap by swapping a node with its best child until the property holds."
+      ],
+      "answer": 0,
+      "explanation": "'Insert (heap)' is defined as: Place new item at end and sift-up; runs in O(log n)."
+    },
+    {
+      "question": "Which option best defines 'Extract-root (heap)'?",
+      "options": [
+        "Resolve collisions by probing alternative buckets, storing all keys in the table array.",
+        "Abstract data type supporting insert, find-min/max, extract-min/max, and key updates.",
+        "Remove root, move last element to root, then sift-down; O(log n).",
+        "Binary heaps do not support fast meld; binomial/Fibonacci heaps do."
+      ],
+      "answer": 2,
+      "explanation": "'Extract-root (heap)' is defined as: Remove root, move last element to root, then sift-down; O(log n)."
+    },
+    {
+      "question": "Which option best defines 'Peek (heap)'?",
+      "options": [
+        "Computes an integer hash value in [0, m−1] for table size m.",
+        "Abstract data type supporting insert, find-min/max, extract-min/max, and key updates.",
+        "Read the root (min or max) in O(1) time.",
+        "Place new item at end and sift-up; runs in O(log n)."
+      ],
+      "answer": 2,
+      "explanation": "'Peek (heap)' is defined as: Read the root (min or max) in O(1) time."
+    },
+    {
+      "question": "Which option best defines 'Heapsort (idea)'?",
+      "options": [
+        "Build a heap then repeatedly extract the root to sort; in-place O(n log n), not stable.",
+        "Marker for a deleted slot so searches can continue along probe sequences.",
+        "For n items, the height is ⌊log₂ n⌋.",
+        "A location indexed by the hash; may hold one or multiple keys depending on method."
+      ],
+      "answer": 0,
+      "explanation": "'Heapsort (idea)' is defined as: Build a heap then repeatedly extract the root to sort; in-place O(n log n), not stable."
+    },
+    {
+      "question": "Which option best defines 'Priority queue ADT'?",
+      "options": [
+        "Next probe uses a second hash h2 so index = h1 + k·h2 mod m.",
+        "Read the root (min or max) in O(1) time.",
+        "Array layout is contiguous, aiding cache locality.",
+        "Abstract data type supporting insert, find-min/max, extract-min/max, and key updates."
+      ],
+      "answer": 3,
+      "explanation": "'Priority queue ADT' is defined as: Abstract data type supporting insert, find-min/max, extract-min/max, and key updates."
+    },
+    {
+      "question": "Which option best defines 'Decrease-key / Increase-key'?",
+      "options": [
+        "Adjust a key then sift-up (decrease in min-heap) or sift-down (increase in min-heap).",
+        "Probe i + c1·k + c2·k²; reduces primary but may have secondary clustering.",
+        "Deterministic order of buckets tried in open addressing.",
+        "h(k)=k mod m; choose m carefully (often prime) to avoid patterns."
+      ],
+      "answer": 0,
+      "explanation": "'Decrease-key / Increase-key' is defined as: Adjust a key then sift-up (decrease in min-heap) or sift-down (increase in min-heap)."
+    },
+    {
+      "question": "Which option best defines 'Array-to-heap idea'?",
+      "options": [
+        "Every node’s key is ≥ the keys of its children; the maximum is at the root.",
+        "With controlled α and uniform hashing, expected O(1) for search/insert/delete.",
+        "Next probe uses a second hash h2 so index = h1 + k·h2 mod m.",
+        "Interpret array as level-order tree and apply bottom-up build-heap."
+      ],
+      "answer": 3,
+      "explanation": "'Array-to-heap idea' is defined as: Interpret array as level-order tree and apply bottom-up build-heap."
+    },
+    {
+      "question": "Which option best defines 'Heap-to-array idea'?",
+      "options": [
+        "A heap stored in an array already represents level-order; reading array gives level-order traversal.",
+        "Every node’s key is ≤ the keys of its children; the minimum is at the root.",
+        "When two different keys hash to the same bucket.",
+        "Pick a function at random from a family to limit expected collisions."
+      ],
+      "answer": 0,
+      "explanation": "'Heap-to-array idea' is defined as: A heap stored in an array already represents level-order; reading array gives level-order traversal."
+    },
+    {
+      "question": "Which option best defines 'd-ary heap'?",
+      "options": [
+        "Convert an array to a heap in O(n) by sifting down from ⌊n/2⌋ to 0.",
+        "Abstract data type supporting insert, find-min/max, extract-min/max, and key updates.",
+        "Store nodes level-order in an array: parent(i)=⌊(i−1)/2⌋, left(i)=2i+1, right(i)=2i+2.",
+        "A heap where each node has d children, reducing height to O(log_d n)."
+      ],
+      "answer": 3,
+      "explanation": "'d-ary heap' is defined as: A heap where each node has d children, reducing height to O(log_d n)."
+    },
+    {
+      "question": "Which option best defines 'Meld support (binary heap)'?",
+      "options": [
+        "Binary heaps do not support fast meld; binomial/Fibonacci heaps do.",
+        "For n items, the height is ⌊log₂ n⌋.",
+        "A heap stored in an array already represents level-order; reading array gives level-order traversal.",
+        "Pick a function at random from a family to limit expected collisions."
+      ],
+      "answer": 0,
+      "explanation": "'Meld support (binary heap)' is defined as: Binary heaps do not support fast meld; binomial/Fibonacci heaps do."
+    },
+    {
+      "question": "Which option best defines 'Cache friendliness (heap)'?",
+      "options": [
+        "Binary heaps do not support fast meld; binomial/Fibonacci heaps do.",
+        "Place new item at end and sift-up; runs in O(log n).",
+        "Adjust a key then sift-up (decrease in min-heap) or sift-down (increase in min-heap).",
+        "Array layout is contiguous, aiding cache locality."
+      ],
+      "answer": 3,
+      "explanation": "'Cache friendliness (heap)' is defined as: Array layout is contiguous, aiding cache locality."
+    },
+    {
+      "question": "Which option best defines 'Hash table (definition)'?",
+      "options": [
+        "Maps keys to buckets using a hash function for fast average-time operations.",
+        "Probabilistic set with multiple hashes allowing false positives but no false negatives.",
+        "Abstract data type supporting insert, find-min/max, extract-min/max, and key updates.",
+        "All levels are full except possibly the last, which is filled from left to right."
+      ],
+      "answer": 0,
+      "explanation": "'Hash table (definition)' is defined as: Maps keys to buckets using a hash function for fast average-time operations."
+    },
+    {
+      "question": "Which option best defines 'Hash function'?",
+      "options": [
+        "Computes an integer hash value in [0, m−1] for table size m.",
+        "When two different keys hash to the same bucket.",
+        "Binary heaps do not support fast meld; binomial/Fibonacci heaps do.",
+        "For n items, the height is ⌊log₂ n⌋."
+      ],
+      "answer": 0,
+      "explanation": "'Hash function' is defined as: Computes an integer hash value in [0, m−1] for table size m."
+    },
+    {
+      "question": "Which option best defines 'Bucket / Slot'?",
+      "options": [
+        "A location indexed by the hash; may hold one or multiple keys depending on method.",
+        "Use fractional part of k·A (0<A<1) scaled by m to spread keys.",
+        "Probe i + c1·k + c2·k²; reduces primary but may have secondary clustering.",
+        "Restore heap by bubbling a node toward the root until the property holds."
+      ],
+      "answer": 0,
+      "explanation": "'Bucket / Slot' is defined as: A location indexed by the hash; may hold one or multiple keys depending on method."
+    },
+    {
+      "question": "Which option best defines 'Load factor (α)'?",
+      "options": [
+        "n/m where n is number of keys and m is number of buckets.",
+        "Use fractional part of k·A (0<A<1) scaled by m to spread keys.",
+        "Resolve collisions by storing per-bucket lists/arrays of keys.",
+        "When two different keys hash to the same bucket."
+      ],
+      "answer": 0,
+      "explanation": "'Load factor (α)' is defined as: n/m where n is number of keys and m is number of buckets."
+    },
+    {
+      "question": "Which option best defines 'Collision'?",
+      "options": [
+        "When two different keys hash to the same bucket.",
+        "Resolve collisions by storing per-bucket lists/arrays of keys.",
+        "Every node’s key is ≤ the keys of its children; the minimum is at the root.",
+        "Interpret array as level-order tree and apply bottom-up build-heap."
+      ],
+      "answer": 0,
+      "explanation": "'Collision' is defined as: When two different keys hash to the same bucket."
+    },
+    {
+      "question": "Which option best defines 'Separate chaining'?",
+      "options": [
+        "Probe i + c1·k + c2·k²; reduces primary but may have secondary clustering.",
+        "Resolve collisions by storing per-bucket lists/arrays of keys.",
+        "Convert an array to a heap in O(n) by sifting down from ⌊n/2⌋ to 0.",
+        "With controlled α and uniform hashing, expected O(1) for search/insert/delete."
+      ],
+      "answer": 1,
+      "explanation": "'Separate chaining' is defined as: Resolve collisions by storing per-bucket lists/arrays of keys."
+    },
+    {
+      "question": "Which option best defines 'Open addressing'?",
+      "options": [
+        "Convert an array to a heap in O(n) by sifting down from ⌊n/2⌋ to 0.",
+        "Read the root (min or max) in O(1) time.",
+        "Resolve collisions by probing alternative buckets, storing all keys in the table array.",
+        "Build a heap then repeatedly extract the root to sort; in-place O(n log n), not stable."
+      ],
+      "answer": 2,
+      "explanation": "'Open addressing' is defined as: Resolve collisions by probing alternative buckets, storing all keys in the table array."
+    },
+    {
+      "question": "Which option best defines 'Probe sequence'?",
+      "options": [
+        "All levels are full except possibly the last, which is filled from left to right.",
+        "Interpret array as level-order tree and apply bottom-up build-heap.",
+        "Read the root (min or max) in O(1) time.",
+        "Deterministic order of buckets tried in open addressing."
+      ],
+      "answer": 3,
+      "explanation": "'Probe sequence' is defined as: Deterministic order of buckets tried in open addressing."
+    },
+    {
+      "question": "Which option best defines 'Linear probing'?",
+      "options": [
+        "Probe i + c1·k + c2·k²; reduces primary but may have secondary clustering.",
+        "Probe i, i+1, i+2,…; simple but causes primary clustering.",
+        "Two-level scheme for static sets giving O(1) worst-case lookups.",
+        "Read the root (min or max) in O(1) time."
+      ],
+      "answer": 1,
+      "explanation": "'Linear probing' is defined as: Probe i, i+1, i+2,…; simple but causes primary clustering."
+    },
+    {
+      "question": "Which option best defines 'Quadratic probing'?",
+      "options": [
+        "Probe i + c1·k + c2·k²; reduces primary but may have secondary clustering.",
+        "h(k)=k mod m; choose m carefully (often prime) to avoid patterns.",
+        "Binary heaps do not support fast meld; binomial/Fibonacci heaps do.",
+        "Use two locations; collisions evict existing keys, possibly triggering reinsertions."
+      ],
+      "answer": 0,
+      "explanation": "'Quadratic probing' is defined as: Probe i + c1·k + c2·k²; reduces primary but may have secondary clustering."
+    },
+    {
+      "question": "Which option best defines 'Double hashing'?",
+      "options": [
+        "Array layout is contiguous, aiding cache locality.",
+        "Probe i, i+1, i+2,…; simple but causes primary clustering.",
+        "Computes an integer hash value in [0, m−1] for table size m.",
+        "Next probe uses a second hash h2 so index = h1 + k·h2 mod m."
+      ],
+      "answer": 3,
+      "explanation": "'Double hashing' is defined as: Next probe uses a second hash h2 so index = h1 + k·h2 mod m."
+    },
+    {
+      "question": "Which option best defines 'Tombstone (hashing)'?",
+      "options": [
+        "Probabilistic set with multiple hashes allowing false positives but no false negatives.",
+        "Adjust a key then sift-up (decrease in min-heap) or sift-down (increase in min-heap).",
+        "Marker for a deleted slot so searches can continue along probe sequences.",
+        "Build a heap then repeatedly extract the root to sort; in-place O(n log n), not stable."
+      ],
+      "answer": 2,
+      "explanation": "'Tombstone (hashing)' is defined as: Marker for a deleted slot so searches can continue along probe sequences."
+    },
+    {
+      "question": "Which option best defines 'Rehashing'?",
+      "options": [
+        "Deterministic order of buckets tried in open addressing.",
+        "Resize the table and reinsert all keys when α exceeds a threshold.",
+        "Maps keys to buckets using a hash function for fast average-time operations.",
+        "Use fractional part of k·A (0<A<1) scaled by m to spread keys."
+      ],
+      "answer": 1,
+      "explanation": "'Rehashing' is defined as: Resize the table and reinsert all keys when α exceeds a threshold."
+    },
+    {
+      "question": "Which option best defines 'Modulo hashing'?",
+      "options": [
+        "Marker for a deleted slot so searches can continue along probe sequences.",
+        "Store nodes level-order in an array: parent(i)=⌊i/2⌋, left(i)=2i, right(i)=2i+1.",
+        "Abstract data type supporting insert, find-min/max, extract-min/max, and key updates.",
+        "h(k)=k mod m; choose m carefully (often prime) to avoid patterns."
+      ],
+      "answer": 3,
+      "explanation": "'Modulo hashing' is defined as: h(k)=k mod m; choose m carefully (often prime) to avoid patterns."
+    },
+    {
+      "question": "Which option best defines 'Multiplicative hashing'?",
+      "options": [
+        "Interpret array as level-order tree and apply bottom-up build-heap.",
+        "Marker for a deleted slot so searches can continue along probe sequences.",
+        "Computes an integer hash value in [0, m−1] for table size m.",
+        "Use fractional part of k·A (0<A<1) scaled by m to spread keys."
+      ],
+      "answer": 3,
+      "explanation": "'Multiplicative hashing' is defined as: Use fractional part of k·A (0<A<1) scaled by m to spread keys."
+    },
+    {
+      "question": "Which option best defines 'Universal hashing'?",
+      "options": [
+        "Resolve collisions by probing alternative buckets, storing all keys in the table array.",
+        "Pick a function at random from a family to limit expected collisions.",
+        "Restore heap by swapping a node with its best child until the property holds.",
+        "All levels are full except possibly the last, which is filled from left to right."
+      ],
+      "answer": 1,
+      "explanation": "'Universal hashing' is defined as: Pick a function at random from a family to limit expected collisions."
+    },
+    {
+      "question": "Which option best defines 'Perfect hashing'?",
+      "options": [
+        "Probe i + c1·k + c2·k²; reduces primary but may have secondary clustering.",
+        "Two-level scheme for static sets giving O(1) worst-case lookups.",
+        "A tree-based structure that is nearly complete and satisfies the heap-order property.",
+        "Resolve collisions by storing per-bucket lists/arrays of keys."
+      ],
+      "answer": 1,
+      "explanation": "'Perfect hashing' is defined as: Two-level scheme for static sets giving O(1) worst-case lookups."
+    },
+    {
+      "question": "Which option best defines 'Cuckoo hashing'?",
+      "options": [
+        "Every node’s key is ≥ the keys of its children; the maximum is at the root.",
+        "Maps keys to buckets using a hash function for fast average-time operations.",
+        "Array layout is contiguous, aiding cache locality.",
+        "Use two locations; collisions evict existing keys, possibly triggering reinsertions."
+      ],
+      "answer": 3,
+      "explanation": "'Cuckoo hashing' is defined as: Use two locations; collisions evict existing keys, possibly triggering reinsertions."
+    },
+    {
+      "question": "Which option best defines 'Bloom filter'?",
+      "options": [
+        "Probe i + c1·k + c2·k²; reduces primary but may have secondary clustering.",
+        "Maps keys to buckets using a hash function for fast average-time operations.",
+        "Restore heap by bubbling a node toward the root until the property holds.",
+        "Probabilistic set with multiple hashes allowing false positives but no false negatives."
+      ],
+      "answer": 3,
+      "explanation": "'Bloom filter' is defined as: Probabilistic set with multiple hashes allowing false positives but no false negatives."
+    },
+    {
+      "question": "Which option best defines 'Expected search time'?",
+      "options": [
+        "With controlled α and uniform hashing, expected O(1) for search/insert/delete.",
+        "For n items, the height is ⌊log₂ n⌋.",
+        "Abstract data type supporting insert, find-min/max, extract-min/max, and key updates.",
+        "All levels are full except possibly the last, which is filled from left to right."
+      ],
+      "answer": 0,
+      "explanation": "'Expected search time' is defined as: With controlled α and uniform hashing, expected O(1) for search/insert/delete."
+    },
+    {
+      "question": "Which option best defines 'Birthday paradox (intuition)'?",
+      "options": [
+        "Use fractional part of k·A (0<A<1) scaled by m to spread keys.",
+        "Pick a function at random from a family to limit expected collisions.",
+        "Every node’s key is ≤ the keys of its children; the minimum is at the root.",
+        "Collisions become likely once n is on the order of √m."
+      ],
+      "answer": 3,
+      "explanation": "'Birthday paradox (intuition)' is defined as: Collisions become likely once n is on the order of √m."
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "prompt": "Match each term to its correct definition.",
+      "pairs": [
+        [
+          "Heap (general)",
+          "A tree-based structure that is nearly complete and satisfies the heap-order property."
+        ],
+        [
+          "Binary heap",
+          "A heap where each node has at most two children and maintains heap-order."
+        ],
+        [
+          "Max-heap property",
+          "Every node’s key is ≥ the keys of its children; the maximum is at the root."
+        ],
+        [
+          "Min-heap property",
+          "Every node’s key is ≤ the keys of its children; the minimum is at the root."
+        ],
+        [
+          "Nearly complete tree",
+          "All levels are full except possibly the last, which is filled from left to right."
+        ],
+        [
+          "Heap height",
+          "For n items, the height is ⌊log₂ n⌋."
+        ],
+        [
+          "Array representation (0-index)",
+          "Store nodes level-order in an array: parent(i)=⌊(i−1)/2⌋, left(i)=2i+1, right(i)=2i+2."
+        ],
+        [
+          "Array representation (1-index)",
+          "Store nodes level-order in an array: parent(i)=⌊i/2⌋, left(i)=2i, right(i)=2i+1."
+        ],
+        [
+          "Sift-down (heapify-down)",
+          "Restore heap by swapping a node with its best child until the property holds."
+        ],
+        [
+          "Sift-up (heapify-up)",
+          "Restore heap by bubbling a node toward the root until the property holds."
+        ],
+        [
+          "Build-heap (Floyd’s method)",
+          "Convert an array to a heap in O(n) by sifting down from ⌊n/2⌋ to 0."
+        ],
+        [
+          "Insert (heap)",
+          "Place new item at end and sift-up; runs in O(log n)."
+        ],
+        [
+          "Extract-root (heap)",
+          "Remove root, move last element to root, then sift-down; O(log n)."
+        ],
+        [
+          "Peek (heap)",
+          "Read the root (min or max) in O(1) time."
+        ],
+        [
+          "Heapsort (idea)",
+          "Build a heap then repeatedly extract the root to sort; in-place O(n log n), not stable."
+        ]
+      ]
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order the steps of bottom-up BUILD-HEAP (Floyd’s method).",
+      "items": [
+        "Interpret the array as a level-order tree",
+        "Set i = ⌊n/2⌋ (last internal node)",
+        "For i down to 0, perform sift-down at i",
+        "All nodes satisfy the heap property"
+      ]
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order the high-level steps of HEAPSORT.",
+      "items": [
+        "Build a heap from the array",
+        "Repeat: swap root with last element",
+        "Reduce heap size by one",
+        "Sift-down the new root",
+        "Array ends up sorted"
+      ]
+    }
+  ],
+  "sources": [
+    "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
+  ]
+}
