@@ -182,7 +182,7 @@
       "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
     ],
     [
-      "Multiplicative hashing: Use fractional part of k·A (0<A<1) scaled by m to spread keys.",
+      "Multiplicative hashing: Use fractional part of k·A (0&lt;A&lt;1) scaled by m to spread keys.",
       1,
       "Week 7 - Transform and Conquer; Space and Time Trade-offs.pdf"
     ],
@@ -364,7 +364,7 @@
     },
     {
       "front": "Define: Multiplicative hashing",
-      "back": "Use fractional part of k·A (0<A<1) scaled by m to spread keys."
+      "back": "Use fractional part of k·A (0&lt;A&lt;1) scaled by m to spread keys."
     },
     {
       "front": "Define: Universal hashing",
@@ -660,7 +660,7 @@
       "question": "Which option best defines 'Bucket / Slot'?",
       "options": [
         "A location indexed by the hash; may hold one or multiple keys depending on method.",
-        "Use fractional part of k·A (0<A<1) scaled by m to spread keys.",
+  "Use fractional part of k·A (0&lt;A&lt;1) scaled by m to spread keys.",
         "Probe i + c1·k + c2·k²; reduces primary but may have secondary clustering.",
         "Restore heap by bubbling a node toward the root until the property holds."
       ],
@@ -671,7 +671,7 @@
       "question": "Which option best defines 'Load factor (α)'?",
       "options": [
         "n/m where n is number of keys and m is number of buckets.",
-        "Use fractional part of k·A (0<A<1) scaled by m to spread keys.",
+        "Use fractional part of k·A (0&lt;A&lt;1) scaled by m to spread keys.",
         "Resolve collisions by storing per-bucket lists/arrays of keys.",
         "When two different keys hash to the same bucket."
       ],
@@ -772,7 +772,7 @@
         "Deterministic order of buckets tried in open addressing.",
         "Resize the table and reinsert all keys when α exceeds a threshold.",
         "Maps keys to buckets using a hash function for fast average-time operations.",
-        "Use fractional part of k·A (0<A<1) scaled by m to spread keys."
+        "Use fractional part of k·A (0&lt;A&lt;1) scaled by m to spread keys."
       ],
       "answer": 1,
       "explanation": "'Rehashing' is defined as: Resize the table and reinsert all keys when α exceeds a threshold."
@@ -794,10 +794,10 @@
         "Interpret array as level-order tree and apply bottom-up build-heap.",
         "Marker for a deleted slot so searches can continue along probe sequences.",
         "Computes an integer hash value in [0, m−1] for table size m.",
-        "Use fractional part of k·A (0<A<1) scaled by m to spread keys."
+        "Use fractional part of k·A (0&lt;A&lt;1) scaled by m to spread keys."
       ],
       "answer": 3,
-      "explanation": "'Multiplicative hashing' is defined as: Use fractional part of k·A (0<A<1) scaled by m to spread keys."
+  "explanation": "'Multiplicative hashing' is defined as: Use fractional part of k·A (0&lt;A&lt;1) scaled by m to spread keys."
     },
     {
       "question": "Which option best defines 'Universal hashing'?",
@@ -857,7 +857,7 @@
     {
       "question": "Which option best defines 'Birthday paradox (intuition)'?",
       "options": [
-        "Use fractional part of k·A (0<A<1) scaled by m to spread keys.",
+        "Use fractional part of k·A (0&lt;A&lt;1) scaled by m to spread keys.",
         "Pick a function at random from a family to limit expected collisions.",
         "Every node’s key is ≤ the keys of its children; the minimum is at the root.",
         "Collisions become likely once n is on the order of √m."
