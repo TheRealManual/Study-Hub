@@ -1,0 +1,735 @@
+{
+  "title": "Quiz 9 Review - Memory Functions & Optimal Binary Search Trees",
+  "notes": [
+    [
+      "Dynamic programming solves problems with recurrence relations; naïve recursion is top-down and repeats subproblems.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Bottom-up tabulation computes all subproblems iteratively, even those not needed for a particular instance.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "A memory function (memoization) combines top-down recursion with a table to avoid recomputation.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Memoization solves only the subproblems actually needed for the given input and caches each result once.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "In memoization, uncomputed entries are marked (e.g., NIL) and filled on first visit.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Time complexity under memoization equals the number of distinct subproblems times the cost to solve each once.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Space complexity of memoization equals the table size plus recursion stack overhead.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Memoization and tabulation are equivalent in asymptotic complexity when they visit the same set of subproblems.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Overlapping subproblems and optimal substructure are prerequisites for dynamic programming/memoization.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Top-down with memoization is often simpler to implement given a natural recursive recurrence.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Bottom-up may be preferable when an evaluation order avoids recursion overhead and stack limits.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Optimal Binary Search Tree (OBST) minimizes expected search cost given access probabilities.",
+      20,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "OBST model uses successful-search probabilities p1..pn for keys K1..Kn and unsuccessful probabilities q0..qn for gaps.",
+      21,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Expected cost equals weighted path length: sum over nodes of probability × (depth + 1) for keys and gaps.",
+      21,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Dynamic programming recurrences compute e[i,j] = min over r of e[i,r-1] + e[r+1,j] + w[i,j].",
+      21,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Auxiliary w[i,j] = w[i,j-1] + p_j + q_j accumulates probabilities to avoid recomputing sums.",
+      21,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Root table root[i,j] stores index of the key chosen as root for optimal subtree [i..j].",
+      21,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Base cases: e[i,i-1] = q_{i-1} (empty subtree); w[i,i-1] = q_{i-1}.",
+      21,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Optimal structure: an optimal tree on [i..j] contains optimal subtrees on [i..r-1] and [r+1..j].",
+      20,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Static optimality: tree fixed after construction; dynamic optimality: tree may change via rotations.",
+      20,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Knuth’s optimization can reduce OBST from O(n^3) to O(n^2) using quadrangle inequality (when applicable).",
+      22,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Construction algorithm: fill w and e by increasing subtree length ℓ, track roots to reconstruct tree.",
+      21,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Prefix sums of p and q can compute w[i,j] in O(1) time if not using the incremental rule.",
+      22,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "The OBST DP assumes keys are sorted and BST property is maintained.",
+      20,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "OBST differs from greedy frequency-based BSTs; DP guarantees global optimality.",
+      20,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "In implementations, indices often run 1..n for keys and 0..n for gaps.",
+      21,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Memoization can implement OBST by caching e(i,j) results instead of iterative loops.",
+      21,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Depth in expected cost counts number of comparisons; unsuccessful searches end at gaps.",
+      21,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Tie-breaking among equal-cost roots can use smallest index to ensure deterministic root table.",
+      22,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Space for OBST DP is typically O(n^2) for e, w, and root tables.",
+      21,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Time for standard OBST DP is O(n^3) due to the root-choice loop for each (i,j).",
+      21,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Monotonicity of roots: optimal root indices are non-decreasing with interval (Knuth observation).",
+      22,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Example workflow: with n=3 keys, fill base cases then evaluate length ℓ=1..3 choosing min-cost roots.",
+      21,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Applications: optimal indexing, compiler keyword recognition, and search dictionary layout.",
+      20,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Limitations: OBST assumes independent access probabilities and a static distribution.",
+      20,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "If p’s and q’s are uniform, a balanced BST is optimal; skewed probabilities bias the tree toward frequent items.",
+      20,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "In practice, access probabilities come from profiling or historical logs.",
+      20,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Memory functions avoid exponential blow-up in naive recursive solutions by reusing cached results.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Memo tables can be dictionaries keyed by subproblem tuple or arrays indexed by parameters.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Top-down memoization order is demand-driven; bottom-up order is length/size driven.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Sentinels like None/∞ can indicate uninitialized/invalid states in memo tables.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ],
+    [
+      "Careful base cases and termination conditions are essential to correct memoized recursion.",
+      17,
+      "Week 9 - Dynamic Programming.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "What does this mean: Dynamic programming solves problems with recurrence relations; naïve recursion is top-down and repeats subproblems.?",
+      "back": "Dynamic programming solves problems with recurrence relations; naïve recursion is top-down and repeats subproblems."
+    },
+    {
+      "front": "What does this mean: Bottom-up tabulation computes all subproblems iteratively, even those not needed for a particular instance.?",
+      "back": "Bottom-up tabulation computes all subproblems iteratively, even those not needed for a particular instance."
+    },
+    {
+      "front": "Memoization: What does this mean: A memory function (memoization) combines top-down recursion with a table to avoid recomputation.?",
+      "back": "A memory function (memoization) combines top-down recursion with a table to avoid recomputation."
+    },
+    {
+      "front": "Memoization: What does this mean: Memoization solves only the subproblems actually needed for the given input and caches each result once.?",
+      "back": "Memoization solves only the subproblems actually needed for the given input and caches each result once."
+    },
+    {
+      "front": "Memoization: What does this mean: In memoization, uncomputed entries are marked (e.g., NIL) and filled on first visit.?",
+      "back": "In memoization, uncomputed entries are marked (e.g., NIL) and filled on first visit."
+    },
+    {
+      "front": "Memoization: What does this mean: Time complexity under memoization equals the number of distinct subproblems times the cost to solve each once.?",
+      "back": "Time complexity under memoization equals the number of distinct subproblems times the cost to solve each once."
+    },
+    {
+      "front": "Memoization: What does this mean: Space complexity of memoization equals the table size plus recursion stack overhead.?",
+      "back": "Space complexity of memoization equals the table size plus recursion stack overhead."
+    },
+    {
+      "front": "Memoization: What does this mean: Memoization and tabulation are equivalent in asymptotic complexity when they visit the same set of subproblems.?",
+      "back": "Memoization and tabulation are equivalent in asymptotic complexity when they visit the same set of subproblems."
+    },
+    {
+      "front": "Memoization: What does this mean: Overlapping subproblems and optimal substructure are prerequisites for dynamic programming/memoization.?",
+      "back": "Overlapping subproblems and optimal substructure are prerequisites for dynamic programming/memoization."
+    },
+    {
+      "front": "Memoization: What does this mean: Top-down with memoization is often simpler to implement given a natural recursive recurrence.?",
+      "back": "Top-down with memoization is often simpler to implement given a natural recursive recurrence."
+    },
+    {
+      "front": "What does this mean: Bottom-up may be preferable when an evaluation order avoids recursion overhead and stack limits.?",
+      "back": "Bottom-up may be preferable when an evaluation order avoids recursion overhead and stack limits."
+    },
+    {
+      "front": "OBST: What does this mean: Optimal Binary Search Tree (OBST) minimizes expected search cost given access probabilities.?",
+      "back": "Optimal Binary Search Tree (OBST) minimizes expected search cost given access probabilities."
+    },
+    {
+      "front": "OBST: What does this mean: OBST model uses successful-search probabilities p1..pn for keys K1..Kn and unsuccessful probabilities q0..qn for gaps.?",
+      "back": "OBST model uses successful-search probabilities p1..pn for keys K1..Kn and unsuccessful probabilities q0..qn for gaps."
+    },
+    {
+      "front": "What does this mean: Expected cost equals weighted path length?",
+      "back": "Expected cost equals weighted path length: sum over nodes of probability × (depth + 1) for keys and gaps."
+    },
+    {
+      "front": "What does this mean: Dynamic programming recurrences compute e[i,j] = min over r of e[i,r-1] + e[r+1,j] + w[i,j].?",
+      "back": "Dynamic programming recurrences compute e[i,j] = min over r of e[i,r-1] + e[r+1,j] + w[i,j]."
+    },
+    {
+      "front": "What does this mean: Auxiliary w[i,j] = w[i,j-1] + p_j + q_j accumulates probabilities to avoid recomputing sums.?",
+      "back": "Auxiliary w[i,j] = w[i,j-1] + p_j + q_j accumulates probabilities to avoid recomputing sums."
+    },
+    {
+      "front": "What does this mean: Root table root[i,j] stores index of the key chosen as root for optimal subtree [i..j].?",
+      "back": "Root table root[i,j] stores index of the key chosen as root for optimal subtree [i..j]."
+    },
+    {
+      "front": "What does this mean: Base cases?",
+      "back": "Base cases: e[i,i-1] = q_{i-1} (empty subtree); w[i,i-1] = q_{i-1}."
+    },
+    {
+      "front": "What does this mean: Optimal structure?",
+      "back": "Optimal structure: an optimal tree on [i..j] contains optimal subtrees on [i..r-1] and [r+1..j]."
+    },
+    {
+      "front": "What does this mean: Static optimality?",
+      "back": "Static optimality: tree fixed after construction; dynamic optimality: tree may change via rotations."
+    },
+    {
+      "front": "OBST: What does this mean: Knuth’s optimization can reduce OBST from O(n^3) to O(n^2) using quadrangle inequality (when applicable).?",
+      "back": "Knuth’s optimization can reduce OBST from O(n^3) to O(n^2) using quadrangle inequality (when applicable)."
+    },
+    {
+      "front": "What does this mean: Construction algorithm?",
+      "back": "Construction algorithm: fill w and e by increasing subtree length ℓ, track roots to reconstruct tree."
+    },
+    {
+      "front": "What does this mean: Prefix sums of p and q can compute w[i,j] in O(1) time if not using the incremental rule.?",
+      "back": "Prefix sums of p and q can compute w[i,j] in O(1) time if not using the incremental rule."
+    },
+    {
+      "front": "OBST: What does this mean: The OBST DP assumes keys are sorted and BST property is maintained.?",
+      "back": "The OBST DP assumes keys are sorted and BST property is maintained."
+    },
+    {
+      "front": "OBST: What does this mean: OBST differs from greedy frequency-based BSTs; DP guarantees global optimality.?",
+      "back": "OBST differs from greedy frequency-based BSTs; DP guarantees global optimality."
+    },
+    {
+      "front": "What does this mean: In implementations, indices often run 1..n for keys and 0..n for gaps.?",
+      "back": "In implementations, indices often run 1..n for keys and 0..n for gaps."
+    },
+    {
+      "front": "OBST: What does this mean: Memoization can implement OBST by caching e(i,j) results instead of iterative loops.?",
+      "back": "Memoization can implement OBST by caching e(i,j) results instead of iterative loops."
+    },
+    {
+      "front": "What does this mean: Depth in expected cost counts number of comparisons; unsuccessful searches end at gaps.?",
+      "back": "Depth in expected cost counts number of comparisons; unsuccessful searches end at gaps."
+    },
+    {
+      "front": "What does this mean: Tie-breaking among equal-cost roots can use smallest index to ensure deterministic root table.?",
+      "back": "Tie-breaking among equal-cost roots can use smallest index to ensure deterministic root table."
+    },
+    {
+      "front": "OBST: What does this mean: Space for OBST DP is typically O(n^2) for e, w, and root tables.?",
+      "back": "Space for OBST DP is typically O(n^2) for e, w, and root tables."
+    },
+    {
+      "front": "OBST: What does this mean: Time for standard OBST DP is O(n^3) due to the root-choice loop for each (i,j).?",
+      "back": "Time for standard OBST DP is O(n^3) due to the root-choice loop for each (i,j)."
+    },
+    {
+      "front": "What does this mean: Monotonicity of roots?",
+      "back": "Monotonicity of roots: optimal root indices are non-decreasing with interval (Knuth observation)."
+    },
+    {
+      "front": "What does this mean: Example workflow?",
+      "back": "Example workflow: with n=3 keys, fill base cases then evaluate length ℓ=1..3 choosing min-cost roots."
+    },
+    {
+      "front": "What does this mean: Applications?",
+      "back": "Applications: optimal indexing, compiler keyword recognition, and search dictionary layout."
+    },
+    {
+      "front": "OBST: What does this mean: Limitations?",
+      "back": "Limitations: OBST assumes independent access probabilities and a static distribution."
+    },
+    {
+      "front": "What does this mean: If p’s and q’s are uniform, a balanced BST is optimal; skewed probabilities bias the tree toward frequent items.?",
+      "back": "If p’s and q’s are uniform, a balanced BST is optimal; skewed probabilities bias the tree toward frequent items."
+    },
+    {
+      "front": "What does this mean: In practice, access probabilities come from profiling or historical logs.?",
+      "back": "In practice, access probabilities come from profiling or historical logs."
+    },
+    {
+      "front": "Memoization: What does this mean: Memory functions avoid exponential blow-up in naive recursive solutions by reusing cached results.?",
+      "back": "Memory functions avoid exponential blow-up in naive recursive solutions by reusing cached results."
+    },
+    {
+      "front": "Memoization: What does this mean: Memo tables can be dictionaries keyed by subproblem tuple or arrays indexed by parameters.?",
+      "back": "Memo tables can be dictionaries keyed by subproblem tuple or arrays indexed by parameters."
+    },
+    {
+      "front": "Memoization: What does this mean: Top-down memoization order is demand-driven; bottom-up order is length/size driven.?",
+      "back": "Top-down memoization order is demand-driven; bottom-up order is length/size driven."
+    },
+    {
+      "front": "Memoization: What does this mean: Sentinels like None/∞ can indicate uninitialized/invalid states in memo tables.?",
+      "back": "Sentinels like None/∞ can indicate uninitialized/invalid states in memo tables."
+    },
+    {
+      "front": "Memoization: What does this mean: Careful base cases and termination conditions are essential to correct memoized recursion.?",
+      "back": "Careful base cases and termination conditions are essential to correct memoized recursion."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which statement best describes memoization (memory functions) in dynamic programming?",
+      "options": [
+        "Randomized recursion to avoid worst-case paths.",
+        "Greedy selection of locally optimal subproblems without caching.",
+        "Top-down recursion with a cache that solves only needed subproblems once.",
+        "Bottom-up approach that computes all subproblems regardless of need."
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Top-down recursion with a cache that solves only needed subproblems once."
+    },
+    {
+      "question": "In the OBST formulation, what do p1..pn represent?",
+      "options": [
+        "Unsuccessful search probabilities for gaps.",
+        "Heights of nodes in the optimal tree.",
+        "Cumulative probabilities for intervals.",
+        "Successful-search probabilities for keys K1..Kn."
+      ],
+      "answer": 3,
+      "explanation": "Correct because: Successful-search probabilities for keys K1..Kn."
+    },
+    {
+      "question": "In the OBST formulation, what do q0..qn represent?",
+      "options": [
+        "Root choices for each interval.",
+        "Unsuccessful-search probabilities for gaps between and around keys.",
+        "Successful-search probabilities for keys.",
+        "Weights used only for balanced trees."
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Unsuccessful-search probabilities for gaps between and around keys."
+    },
+    {
+      "question": "Which recurrence defines e[i,j] in the standard OBST dynamic program?",
+      "options": [
+        "e[i,j] = min_r ( e[i,r] + e[r,j] )",
+        "e[i,j] = min_r ( e[i,r-1] + e[r+1,j] + w[i,j] )",
+        "e[i,j] = e[i+1,j] + e[i,j-1]",
+        "e[i,j] = w[i,j] + w[i,j-1]"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: e[i,j] = min_r ( e[i,r-1] + e[r+1,j] + w[i,j] )"
+    },
+    {
+      "question": "What does w[i,j] store in the OBST algorithm?",
+      "options": [
+        "The index of the optimal root.",
+        "The total probability mass (p’s and q’s) for the interval [i..j].",
+        "The number of keys in [i..j].",
+        "The height of the optimal subtree [i..j]."
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The total probability mass (p’s and q’s) for the interval [i..j]."
+    },
+    {
+      "question": "What is stored in root[i,j] in OBST?",
+      "options": [
+        "The height of the subtree.",
+        "The probability of the root.",
+        "The index r of the key chosen as the root for optimal subtree [i..j].",
+        "The expected cost e[i,j]."
+      ],
+      "answer": 2,
+      "explanation": "Correct because: The index r of the key chosen as the root for optimal subtree [i..j]."
+    },
+    {
+      "question": "What are the OBST base cases for empty subtrees?",
+      "options": [
+        "e[i,i-1] = 1 and w[i,i-1] = 1.",
+        "e[i,i-1] = p_{i-1} and w[i,i-1] = p_{i-1}.",
+        "e[i,i-1] = 0 and w[i,i-1] = 0.",
+        "e[i,i-1] = q_{i-1} and w[i,i-1] = q_{i-1}."
+      ],
+      "answer": 3,
+      "explanation": "Correct because: e[i,i-1] = q_{i-1} and w[i,i-1] = q_{i-1}."
+    },
+    {
+      "question": "What property justifies optimal substructure in OBST?",
+      "options": [
+        "Root is always the median key.",
+        "An optimal tree on [i..j] consists of optimal subtrees on [i..r-1] and [r+1..j].",
+        "Heuristic choices lead to global optimality.",
+        "Every subtree must be balanced."
+      ],
+      "answer": 1,
+      "explanation": "Correct because: An optimal tree on [i..j] consists of optimal subtrees on [i..r-1] and [r+1..j]."
+    },
+    {
+      "question": "Which statement about static vs dynamic optimality is correct?",
+      "options": [
+        "Static optimality fixes the tree after construction; dynamic allows rotations over time.",
+        "Static optimality allows rotations after each search.",
+        "Static and dynamic are the same.",
+        "Dynamic optimality assumes uniform access."
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Static optimality fixes the tree after construction; dynamic allows rotations over time."
+    },
+    {
+      "question": "Standard time and space complexity for the classic OBST DP are:",
+      "options": [
+        "Time O(n^3), space O(n^2).",
+        "Time O(n log n), space O(n^2).",
+        "Time O(n^2), space O(n).",
+        "Time O(n^4), space O(n^2)."
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Time O(n^3), space O(n^2)."
+    },
+    {
+      "question": "What improvement does Knuth’s optimization bring (when applicable) to OBST?",
+      "options": [
+        "Makes the algorithm greedy.",
+        "Eliminates the need for probability weights.",
+        "Reduces time to O(n^2) using monotone root ranges/quadrangle inequality.",
+        "Reduces space to O(n)."
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Reduces time to O(n^2) using monotone root ranges/quadrangle inequality."
+    },
+    {
+      "question": "Which statement about memoization vs tabulation is true?",
+      "options": [
+        "Tabulation cannot solve all subproblems.",
+        "They have equivalent asymptotic complexity if they visit the same subproblems.",
+        "Memoization is always asymptotically slower.",
+        "Memoization requires balanced trees."
+      ],
+      "answer": 1,
+      "explanation": "Correct because: They have equivalent asymptotic complexity if they visit the same subproblems."
+    },
+    {
+      "question": "Why can bottom-up tabulation be preferable in practice?",
+      "options": [
+        "It avoids recursion overhead and is easy to control for memory usage.",
+        "It requires randomized root selection.",
+        "It always computes fewer subproblems.",
+        "It eliminates the need for base cases."
+      ],
+      "answer": 0,
+      "explanation": "Correct because: It avoids recursion overhead and is easy to control for memory usage."
+    },
+    {
+      "question": "What does the 'depth' term represent in the expected cost of an OBST?",
+      "options": [
+        "The height of the full tree only.",
+        "The number of comparisons along the search path to a key or gap.",
+        "The index of the root.",
+        "The number of keys in the subtree."
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The number of comparisons along the search path to a key or gap."
+    },
+    {
+      "question": "What assumption about keys is required by OBST?",
+      "options": [
+        "Duplicate keys are required.",
+        "Keys must be inserted by frequency order.",
+        "Keys are sorted and the BST property is maintained.",
+        "Keys may be in any order."
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Keys are sorted and the BST property is maintained."
+    },
+    {
+      "question": "What practical sources provide p and q probabilities for OBST?",
+      "options": [
+        "Profiling data or historical access logs.",
+        "Random number generators.",
+        "Cache line size tables.",
+        "AVL rotations only."
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Profiling data or historical access logs."
+    },
+    {
+      "question": "When p and q are uniform, which tree is optimal?",
+      "options": [
+        "A skewed left-leaning tree.",
+        "Any tree; they are all equal.",
+        "A balanced BST.",
+        "A skewed right-leaning tree."
+      ],
+      "answer": 2,
+      "explanation": "Correct because: A balanced BST."
+    },
+    {
+      "question": "What is a key advantage of memoization in top-down solutions?",
+      "options": [
+        "Avoids exponential blow-up by caching results of overlapping subproblems.",
+        "Always uses less memory than tabulation.",
+        "Guarantees linear time for all problems.",
+        "Eliminates the need for recursion."
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Avoids exponential blow-up by caching results of overlapping subproblems."
+    },
+    {
+      "question": "How are uninitialized entries typically represented in memo tables?",
+      "options": [
+        "With sentinels like NIL/None or special values (e.g., ∞).",
+        "With the value zero only.",
+        "With random numbers.",
+        "With negative depths exclusively."
+      ],
+      "answer": 0,
+      "explanation": "Correct because: With sentinels like NIL/None or special values (e.g., ∞)."
+    },
+    {
+      "question": "Which indexing convention is common in OBST implementations?",
+      "options": [
+        "Keys 1..n and gaps 0..n.",
+        "Any indexing; it doesn't matter.",
+        "Both keys and gaps 1..n.",
+        "Keys 0..n and gaps 1..n."
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Keys 1..n and gaps 0..n."
+    },
+    {
+      "question": "Top-down with memoization is best used when:",
+      "options": [
+        "Greedy choice property holds.",
+        "There are no overlapping subproblems.",
+        "All subproblems must be solved anyway.",
+        "A clear recursive recurrence exists and only a subset of subproblems are needed."
+      ],
+      "answer": 3,
+      "explanation": "Correct because: A clear recursive recurrence exists and only a subset of subproblems are needed."
+    },
+    {
+      "question": "Bottom-up evaluation order is typically based on:",
+      "options": [
+        "Depth-first recursion.",
+        "Random choice of subproblems.",
+        "Increasing subproblem size or length.",
+        "Greedy selection of largest subproblems first."
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Increasing subproblem size or length."
+    },
+    {
+      "question": "Space overhead unique to top-down memoization includes:",
+      "options": [
+        "Recursion stack frames in addition to the memo table.",
+        "Heap allocation for every node visited.",
+        "Extra arrays for prefixes only.",
+        "Multiple copies of input data."
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Recursion stack frames in addition to the memo table."
+    },
+    {
+      "question": "Using prefix sums for OBST helps to:",
+      "options": [
+        "Reduce space to O(n).",
+        "Eliminate the need for q values.",
+        "Compute w[i,j] in O(1) time.",
+        "Choose roots without DP."
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Compute w[i,j] in O(1) time."
+    },
+    {
+      "question": "Deterministic reconstruction of an optimal OBST can be ensured by:",
+      "options": [
+        "Always choosing the median.",
+        "Breaking ties randomly.",
+        "Choosing the largest-index root arbitrarily.",
+        "Applying a tie-break like choosing the smallest-index root among equals."
+      ],
+      "answer": 3,
+      "explanation": "Correct because: Applying a tie-break like choosing the smallest-index root among equals."
+    }
+  ],
+  "games": [
+    {
+      "type": "matching",
+      "prompt": "Match each OBST term to its definition.",
+      "pairs": [
+        [
+          "p_i",
+          "Probability of successful search for key K_i"
+        ],
+        [
+          "q_i",
+          "Probability of unsuccessful search in gap i"
+        ],
+        [
+          "e[i,j]",
+          "Expected cost of optimal subtree spanning keys i..j"
+        ],
+        [
+          "w[i,j]",
+          "Total probability in interval i..j (p’s and q’s)"
+        ],
+        [
+          "root[i,j]",
+          "Index of key chosen as root for i..j"
+        ],
+        [
+          "Static optimality",
+          "Tree shape fixed after construction"
+        ],
+        [
+          "Dynamic optimality",
+          "Tree can change over time via rotations"
+        ],
+        [
+          "Optimal substructure",
+          "Optimal tree contains optimal subtrees"
+        ],
+        [
+          "Memoization",
+          "Top-down recursion with caching of subproblems"
+        ],
+        [
+          "Tabulation",
+          "Bottom-up DP filling a table by size"
+        ]
+      ]
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order the steps to compute an OBST using dynamic programming.",
+      "items": [
+        "Initialize base cases e[i,i-1] = q_{i-1} and w[i,i-1] = q_{i-1}",
+        "For length ℓ = 1..n, consider all i..j with j = i+ℓ-1",
+        "For each interval i..j, try all roots r in [i..j]",
+        "Compute cost e[i,r-1] + e[r+1,j] + w[i,j] and pick minimum",
+        "Store chosen r in root[i,j] and e[i,j] as the minimum cost"
+      ]
+    },
+    {
+      "type": "ordering",
+      "prompt": "Order the steps to convert a recursive solution into a memoized one (memory function).",
+      "items": [
+        "Identify the recursive subproblem parameters and base cases",
+        "Allocate a memo table and mark all entries as uncomputed (e.g., NIL)",
+        "On each call, return the memoized value if already computed",
+        "Otherwise compute the result recursively, storing it in the table",
+        "Return the stored result"
+      ]
+    }
+  ],
+  "sources": [
+    "Week 9 - Dynamic Programming.pdf"
+  ]
+}
