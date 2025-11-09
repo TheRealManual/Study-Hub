@@ -3,18 +3,16 @@
 Static Study Hub website that allows inserted JSON files to be turned into a study platform with PDF interaction, Flashcards, Quizzes, and Games.
 
 ## Currently Hosted
-CollegeStudyHub.com
+[CollegeStudyHub.com](CollegeStudyHub.com)
 
-## Pure Frontend - No Backend Required!
-```
+## Frontend - No Backend Required
 ✅ Static HTML/CSS/JavaScript only
 ✅ Dynamic content discovery  
 ✅ Deploy anywhere (AWS Amplify, GitHub Pages, Netlify)
 ✅ No server, no dependencies, no setup
-```
 
 ## Main Files
-- **`index.html`** ⭐ - Your complete study application
+- **`index.html`** - Your complete study application
 - **`classes/`** - **Put your study materials here!**
 - **`amplify.yml`** - Ready for AWS Amplify deployment
 
