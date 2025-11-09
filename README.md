@@ -1,11 +1,11 @@
-# 📚 Study Hub - Pure Frontend Edition
+# Study Hub
 
-Welcome to your **Study Hub** - a completely static, dynamic study platform! 🎉
+Static Study Hub website that allows inserted JSON files to be turned into a study platform with PDF interaction, Flashcards, Quizzes, and Games.
 
-## 🚀 Quick Start
-**Just open `index.html` in your browser or deploy to any static hosting!**
+## Currently Hosted
+CollegeStudyHub.com
 
-## 📍 Pure Frontend - No Backend Required!
+## Pure Frontend - No Backend Required!
 ```
 ✅ Static HTML/CSS/JavaScript only
 ✅ Dynamic content discovery  
@@ -13,19 +13,19 @@ Welcome to your **Study Hub** - a completely static, dynamic study platform! �
 ✅ No server, no dependencies, no setup
 ```
 
-## 🎯 Main Files
+## Main Files
 - **`index.html`** ⭐ - Your complete study application
 - **`classes/`** - **Put your study materials here!**
 - **`amplify.yml`** - Ready for AWS Amplify deployment
 
-## 📚 Adding Study Content - Super Dynamic!
+## Adding Study Content
 
-### Just Drop and Go! 
+### Just Drop and Go 
 1. Create class folder in `classes/` (e.g., `classes/machine-learning/`)
 2. Create Topics folder: `classes/machine-learning/Topics/`
 3. Create topic folder: `classes/machine-learning/Topics/quiz-1/`
 4. Add `study-material.json` file with your content
-5. **That's it!** The app will automatically discover it!
+5. **That's it!** The app will automatically discover it
 
 ### Example Structure
 ```
@@ -54,25 +54,25 @@ And these PDF names:
 - `Lecture 1.pdf`, `Chapter 1.pdf`
 - `Notes 1.pdf`, `Assignment 1.pdf`...
 
-## 🎮 Features
-- **📝 Notes**: Organized study points
-- **🃏 Flashcards**: Interactive flip cards  
-- **📋 Quizzes**: Multiple choice with explanations
-- **🎮 Games**: Sorting and matching activities
-- **� PDFs**: Integrated PDF viewer
+## Features
+- **Notes**: Organized study points
+- **Flashcards**: Interactive flip cards  
+- **Quizzes**: Multiple choice with explanations
+- **Games**: Sorting and matching activities
+- **PDFs**: Integrated PDF viewer
 
-## 🚀 Deployment Ready
+## Deployment Ready
 - **AWS Amplify**: Just connect your repo
 - **GitHub Pages**: Enable in repo settings
 - **Netlify**: Drag and drop deployment
 - **Vercel**: One-click deployment
 
-## � File Structure
+## File Structure
 ```
 Study-Hub/
-├── 🌐 index.html               ← Your complete study app
-├── ⚙️ amplify.yml              ← AWS Amplify config
-└── 📁 classes/                 ← YOUR CONTENT HERE
+├── index.html               ← Your complete study app
+├── amplify.yml              ← AWS Amplify config
+└── classes/                 ← YOUR CONTENT HERE
     └── design-&-analysis-of-algorithms/
         ├── Topics/
         │   ├── quiz-1/
@@ -88,27 +88,11 @@ Study-Hub/
         └── quiz-1/
 ```
 
-## 🎯 Benefits of OneDrive Desktop Location
-✅ Visible directly on your Desktop  
-✅ **Automatically backed up to cloud!** ☁️  
-✅ **Syncs across all your devices** 📱💻  
-✅ Easy to find and access  
-✅ Can share with friends easily  
-✅ Visible reminder to study!  
-
-## 🚀 Daily Usage
+## Local Daily Usage
 1. Look for "Study-Hub" folder on your Desktop
 2. Double-click `QUICK_START.bat`
 3. Browser opens to your study site
 4. Select class → topic → study mode
-5. Study away! 📚
-
-## 💡 OneDrive Benefits
-Since your Study Hub is in OneDrive, you can:
-- Access it from any device signed into your Microsoft account
-- Share it with classmates via OneDrive sharing
-- Never lose your study materials (cloud backup!)
-- Work on it from school computers (if they have OneDrive)
+5. Study away!
 
 ---
-**Happy studying from your synced OneDrive Desktop! 🎉☁️**
