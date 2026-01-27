@@ -1,0 +1,334 @@
+{
+  "title": "Quiz 1 Review - Internet Overview, Protocols, Switching, Performance, Layers, Encapsulation",
+  "notes": [
+    ["Chapter 1 provides an overview of the Internet’s structure, protocols, switching methods, performance metrics, and the layered protocol stack.", 2, "Data Communication and Networking - Chapter 1.pdf"],
+    ["From a network engineer view, the Internet connects billions of hosts (end systems) running network applications at the network edge.", 3, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Packet switches forward packets, which are chunks of data, and common packet switches include routers and link-layer switches.", 3, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Communication links can be fiber, copper, radio, or satellite, and the link transmission rate is commonly called bandwidth.", 3, "Data Communication and Networking - Chapter 1.pdf"],
+    ["The Internet is a “network of networks” made of many smaller networks managed by different organizations.", 4, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Protocols govern all communication activity by defining message formats, message order, and actions taken on send and receive events.", 6, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Protocols are everywhere in the Internet, including HTTP, TCP, IP, WiFi, 4G/5G, and Ethernet.", 4, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Standardization bodies and artifacts include RFCs, the IETF, and the IEEE, which help keep Internet technologies interoperable.", 4, "Data Communication and Networking - Chapter 1.pdf"],
+    ["From a software engineer view, the Internet is infrastructure providing services to applications like web, streaming, email, games, and social media.", 5, "Data Communication and Networking - Chapter 1.pdf"],
+    ["The Internet provides a programming interface for distributed applications using hooks for sending and receiving messages, such as socket programming.", 5, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Internet structure includes the network core (routers and networks), network edge (hosts), and access networks connecting end systems.", 8, "Data Communication and Networking - Chapter 1.pdf"],
+    ["The network core is a mesh of interconnected routers and networks that forwards packets between edge networks.", 8, "Data Communication and Networking - Chapter 1.pdf"],
+    ["The network edge includes hosts that act as clients and servers, and servers are often located in data centers.", 8, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Access networks provide the last-mile connectivity using wired or wireless links such as WiFi, 4G/5G, and DSL.", 8, "Data Communication and Networking - Chapter 1.pdf"],
+    ["An ISP (Internet Service Provider) is an entity or organization that manages a given network.", 8, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Circuit switching reserves resources for a call between source and destination and uses a predefined route to provide guaranteed performance.", 11, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Traditional telephone systems reserved an exclusive link by physically interconnecting source and destination through a telephone exchange.", 12, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Frequency Division Multiplexing divides frequencies into narrow bands and allocates each call or user its own band.", 13, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Time Division Multiplexing divides time into slots and allocates each call or user periodic time slots.", 13, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Packet switching uses store-and-forward where hosts break messages into packets and routers forward packets one at a time.", 14, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Packet switching does not reserve resources and does not require a predefined route, so it provides no performance guarantees.", 14, "Data Communication and Networking - Chapter 1.pdf"],
+    ["In a circuit switching example with a 1 Gbps link and 100 Mbps per active user, the link supports 10 simultaneous users.", 15, "Data Communication and Networking - Chapter 1.pdf"],
+    ["In packet switching with 35 users, the probability of more than 10 users being active at the same time is less than 0.004.", 16, "Data Communication and Networking - Chapter 1.pdf"],
+    ["The Internet uses packet switching because it is great for bursty data, enables resource sharing, and avoids call setup.", 17, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Packet switching can suffer excessive congestion and provides no performance guarantees, especially when many senders are active together.", 17, "Data Communication and Networking - Chapter 1.pdf"],
+    ["If arrival rate to a link exceeds its transmission rate for some time, packets queue waiting for transmission over the output link.", 18, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Packets can be dropped when router buffer memory fills up, which is a common source of packet loss during congestion.", 18, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Total nodal delay is the sum of transmission, propagation, processing, and queueing delays at a node in the network path.", 19, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Transmission delay is the time to push L bits onto the link at rate R, computed as d_trans = L/R.", 19, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Propagation delay is travel time over a physical link of length d at propagation speed s, computed as d_prop = d/s.", 20, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Processing delay includes time to process headers and check corruption, and it depends on the node’s available CPU power.", 21, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Queueing delay depends on arrival and service rates and is difficult to estimate exactly under varying traffic conditions.", 22, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Traffic intensity is La/R where a is packet arrival rate, L is packet length, and R is link rate, predicting queueing behavior.", 22, "Data Communication and Networking - Chapter 1.pdf"],
+    ["When La/R is much less than 1, average queueing delay is small, but when La/R approaches 1, delay becomes very large.", 22, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Traceroute sends three probes toward a destination so each router i returns a reply, allowing the sender to measure round-trip times.", 23, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Traceroute output may include * symbols indicating no response, which can happen if a probe is lost or a router does not reply.", 24, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Throughput is the average rate in bits per time unit at which bits are successfully delivered from sender to receiver.", 25, "Data Communication and Networking - Chapter 1.pdf"],
+    ["End-to-end throughput is limited by the bottleneck link, which is the link on the path that constrains the overall rate.", 26, "Data Communication and Networking - Chapter 1.pdf"],
+    ["With ten connections sharing a backbone bottleneck of rate R, each connection’s throughput is approximately min(Rc, Rs, R/10).", 27, "Data Communication and Networking - Chapter 1.pdf"],
+    ["The Internet protocol stack includes application, transport, network, link, and physical layers, each providing services to the layer above.", 28, "Data Communication and Networking - Chapter 1.pdf"],
+    ["The application layer supports network applications and includes protocols such as HTTP, IMAP, SMTP, and DNS.", 28, "Data Communication and Networking - Chapter 1.pdf"],
+    ["The transport layer provides process-to-process data transfer using protocols such as TCP and UDP.", 28, "Data Communication and Networking - Chapter 1.pdf"],
+    ["The network layer routes datagrams from source to destination and includes IP and routing protocols.", 28, "Data Communication and Networking - Chapter 1.pdf"],
+    ["The link layer transfers data between neighboring network elements using technologies such as Ethernet, 802.11 WiFi, and PPP.", 28, "Data Communication and Networking - Chapter 1.pdf"],
+    ["The physical layer concerns bits on the wire and the physical signaling used to move bits across a link.", 28, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Layering provides a modular structure that clarifies relationships among system pieces and simplifies maintenance and updating.", 29, "Data Communication and Networking - Chapter 1.pdf"],
+    ["Encapsulation adds headers at each layer, turning a message into a segment, datagram, and frame like nested Matryoshka dolls.", 30, "Data Communication and Networking - Chapter 1.pdf"],
+    ["The transport layer encapsulates an application message M with transport header Ht to create a transport-layer segment.", 31, "Data Communication and Networking - Chapter 1.pdf"],
+    ["The network layer encapsulates the transport segment with network header Hn to create a network-layer datagram.", 32, "Data Communication and Networking - Chapter 1.pdf"],
+    ["The link layer encapsulates the network datagram with link header Hl to create a link-layer frame for transmission to a neighbor.", 33, "Data Communication and Networking - Chapter 1.pdf"]
+  ],
+  "flashcards": [
+    {"front": "What does this mean: Packet switches forward packets (chunks of data) and include routers and switches?", "back": "Packet switches forward packets (chunks of data) and include routers and switches that move packets through the network."},
+    {"front": "What does this mean: Bandwidth refers to the transmission rate of a communication link?", "back": "Bandwidth is the link transmission rate, describing how many bits per second can be sent on the link."},
+    {"front": "What does this mean: The Internet is a 'network of networks'?", "back": "The Internet is a network of networks, made of many networks managed by different organizations that interconnect together."},
+    {"front": "What does this mean: Protocols define the format, order, and actions for messages sent and received?", "back": "Protocols define message formats, message order, and actions taken on message transmission and receipt events."},
+    {"front": "What does this mean: Standardization bodies include RFC, IETF, and IEEE?", "back": "RFCs and organizations like the IETF and IEEE help standardize protocols so different systems can interoperate."},
+    {"front": "What does this mean: The Internet provides a programming interface using sockets?", "back": "The Internet provides hooks like socket programming so applications can send and receive messages across the network."},
+    {"front": "What does this mean: Internet structure includes core, edge, and access networks?", "back": "Internet structure includes the network core (routers), network edge (hosts), and access networks connecting end systems."},
+    {"front": "What does this mean: An ISP is an organization that manages a network?", "back": "An ISP is an entity or organization that manages a given network and helps provide connectivity."},
+    {"front": "What does this mean: Circuit switching reserves resources for a call?", "back": "Circuit switching reserves resources on a predefined route between source and destination, giving guaranteed performance."},
+    {"front": "What does this mean: FDM assigns each user a frequency band?", "back": "Frequency Division Multiplexing divides frequencies into bands, giving each call or user its own band."},
+    {"front": "What does this mean: TDM assigns each user periodic time slots?", "back": "Time Division Multiplexing divides time into slots, giving each call or user periodic slots on the link."},
+    {"front": "What does this mean: Packet switching uses store-and-forward?", "back": "Packet switching uses store-and-forward, where packets are stored at routers and forwarded one at a time."},
+    {"front": "What does this mean: Packet switching has no resource reservation and no performance guarantees?", "back": "Packet switching does not reserve resources, has no fixed route requirement, and provides no guaranteed performance."},
+    {"front": "What does this mean: Packet switching is great for bursty data?", "back": "Packet switching is great for bursty data because it shares resources efficiently when users send intermittently."},
+    {"front": "What does this mean: Congestion can cause queueing and loss in packet-switched networks?", "back": "When arrival rate exceeds link rate, packets queue and may be dropped if router buffers fill, causing loss."},
+    {"front": "What does this mean: Nodal delay equals transmission + propagation + processing + queueing?", "back": "Total nodal delay is the sum of transmission, propagation, processing, and queueing delays at a node."},
+    {"front": "What does this mean: Transmission delay is d_trans = L/R?", "back": "Transmission delay is the time to push L bits onto a link at rate R, computed as d_trans = L/R."},
+    {"front": "What does this mean: Propagation delay is d_prop = d/s?", "back": "Propagation delay is travel time over distance d at propagation speed s, computed as d_prop = d/s."},
+    {"front": "What does this mean: Processing delay depends on CPU power and header processing?", "back": "Processing delay includes header processing and corruption checks, and it depends on the node’s CPU capability."},
+    {"front": "What does this mean: Traffic intensity is La/R?", "back": "Traffic intensity La/R compares arrival load to service capacity; as it approaches 1, queueing delay grows large."},
+    {"front": "What does this mean: Traceroute measures delays by probing routers along a path?", "back": "Traceroute sends probes to routers along the path and measures the time between probe transmission and router replies."},
+    {"front": "What does this mean: Throughput is the average delivered rate from sender to receiver?", "back": "Throughput is the average rate (bits per time unit) at which bits are successfully delivered end-to-end."},
+    {"front": "What does this mean: The bottleneck link constrains end-to-end throughput?", "back": "The bottleneck link is the slowest constraining link on a path, limiting overall end-to-end throughput."},
+    {"front": "What does this mean: The Internet has five layers: application, transport, network, link, physical?", "back": "The layered stack includes application, transport, network, link, and physical layers, each providing services upward."},
+    {"front": "What does this mean: The transport layer provides process-to-process data transfer?", "back": "The transport layer provides process-to-process data transfer using protocols like TCP and UDP."},
+    {"front": "What does this mean: The network layer routes datagrams from source to destination?", "back": "The network layer routes datagrams end-to-end and includes IP and routing protocols."},
+    {"front": "What does this mean: The link layer transfers data between neighboring elements?", "back": "The link layer transfers data between neighboring network elements using Ethernet, WiFi, or PPP."},
+    {"front": "What does this mean: Layering simplifies maintenance and updating?", "back": "Layering gives a modular structure that clarifies relationships and simplifies maintenance and updating of the system."},
+    {"front": "What does this mean: Encapsulation turns a message into segment, datagram, and frame?", "back": "Encapsulation adds headers at each layer, converting a message into a segment, datagram, and finally a frame."},
+    {"front": "What does this mean: The transport layer adds header Ht to message M to form a segment?", "back": "The transport layer encapsulates message M with header Ht to create a transport-layer segment."},
+    {"front": "What does this mean: The network layer adds header Hn to form a datagram?", "back": "The network layer encapsulates the transport segment with header Hn to create a network-layer datagram."},
+    {"front": "What does this mean: The link layer adds header Hl to form a frame?", "back": "The link layer encapsulates the network datagram with header Hl to create a link-layer frame for neighbor delivery."}
+  ],
+  "quiz": [
+    {
+      "question": "In the Chapter 1 overview, what are hosts also called?",
+      "options": ["Packet switches", "End systems", "ISPs", "Bottleneck links"],
+      "answer": 1,
+      "explanation": "Correct because: The slides define hosts as end systems that run network applications at the Internet’s edge."
+    },
+    {
+      "question": "Which devices are identified as packet switches?",
+      "options": ["Routers and switches", "Servers and clients", "DNS and HTTP", "Satellites and copper"],
+      "answer": 0,
+      "explanation": "Correct because: The slides state packet switches forward packets and include routers and switches."
+    },
+    {
+      "question": "Bandwidth is best described as:",
+      "options": ["Propagation speed of a link", "Transmission rate of a link", "Queue size in a router", "Packet size in bytes"],
+      "answer": 1,
+      "explanation": "Correct because: The slides define bandwidth as the transmission rate of a communication link."
+    },
+    {
+      "question": "A protocol defines:",
+      "options": [
+        "Only the physical wiring of a network",
+        "The format, order of messages, and actions on send/receive",
+        "Only the best route through routers",
+        "Only encryption for secure communication"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The slides define protocols by message format, message order, and actions taken on events."
+    },
+    {
+      "question": "Which is listed as a standardization body or artifact in the slides?",
+      "options": ["IETF", "GPU", "BIOS", "RAID"],
+      "answer": 0,
+      "explanation": "Correct because: The slides list RFC, IETF, and IEEE as key standardization bodies/artifacts."
+    },
+    {
+      "question": "Which best describes the Internet from a software engineer view?",
+      "options": [
+        "A single network managed by one organization",
+        "Infrastructure providing services to applications and an interface for sending/receiving messages",
+        "Only a set of routers in the network core",
+        "A system that reserves resources for each application"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The slides describe Internet infrastructure services and programming hooks like sockets."
+    },
+    {
+      "question": "Which is part of the network core?",
+      "options": ["A mesh of interconnected routers and networks", "Only WiFi access points", "Only servers in data centers", "Only client hosts"],
+      "answer": 0,
+      "explanation": "Correct because: The slides define the network core as a mesh of interconnected routers and networks."
+    },
+    {
+      "question": "Which is part of the network edge?",
+      "options": ["Hosts acting as clients and servers", "Only backbone routers", "Only copper links", "Only ISPs"],
+      "answer": 0,
+      "explanation": "Correct because: The slides state the network edge includes hosts, including clients and servers."
+    },
+    {
+      "question": "Access networks are commonly described as:",
+      "options": ["The network core routers", "Last-mile wired/wireless links like WiFi and 4G/5G", "Only data center networks", "Only undersea fiber cables"],
+      "answer": 1,
+      "explanation": "Correct because: The slides describe access networks as last-mile wired and wireless links."
+    },
+    {
+      "question": "Circuit switching is characterized by:",
+      "options": [
+        "No reserved resources and no guarantees",
+        "Resources reserved on a predefined route with guaranteed performance",
+        "Packets stored and forwarded one at a time",
+        "No need for multiplexing"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The slides state circuit switching reserves resources, uses a predefined route, and provides guarantees."
+    },
+    {
+      "question": "Which multiplexing method divides frequencies into narrow bands per user?",
+      "options": ["TDM", "FDM", "Packet switching", "Queueing"],
+      "answer": 1,
+      "explanation": "Correct because: The slides define FDM as dividing frequencies into bands and allocating one band per call/user."
+    },
+    {
+      "question": "Which multiplexing method allocates periodic time slots per user?",
+      "options": ["TDM", "FDM", "IP", "TCP"],
+      "answer": 0,
+      "explanation": "Correct because: The slides define TDM as dividing time into slots and allocating periodic slots to each user."
+    },
+    {
+      "question": "Packet switching is described as:",
+      "options": [
+        "Store-and-forward with no reserved resources",
+        "Exclusive end-to-end links with fixed performance",
+        "A method that guarantees no packet loss",
+        "A system that requires a call setup phase"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: The slides define packet switching as store-and-forward without resource reservation."
+    },
+    {
+      "question": "Why is packet switching considered good for bursty data?",
+      "options": [
+        "Because it reserves bandwidth even when idle",
+        "Because it allows resource sharing when users send intermittently",
+        "Because it requires predefined routes",
+        "Because it eliminates congestion"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The slides list resource sharing and suitability for bursty data as packet switching advantages."
+    },
+    {
+      "question": "What happens if packets arrive faster than a link can transmit for some time?",
+      "options": ["Packets are always delivered with no delay", "Packets queue and may be dropped if buffers fill", "Propagation delay becomes zero", "Transmission rate increases automatically"],
+      "answer": 1,
+      "explanation": "Correct because: The slides state packets queue and can be dropped when router buffer memory fills."
+    },
+    {
+      "question": "Which delay component is computed as L/R?",
+      "options": ["Propagation delay", "Transmission delay", "Processing delay", "Queueing delay"],
+      "answer": 1,
+      "explanation": "Correct because: The slides define transmission delay as d_trans = L/R."
+    },
+    {
+      "question": "Which delay component is computed as d/s?",
+      "options": ["Propagation delay", "Transmission delay", "Processing delay", "Queueing delay"],
+      "answer": 0,
+      "explanation": "Correct because: The slides define propagation delay as d_prop = d/s."
+    },
+    {
+      "question": "Processing delay includes:",
+      "options": ["Time to transmit bits onto a link", "Time to travel across the physical link", "Time to process headers and check corruption", "Time to reserve resources for a call"],
+      "answer": 2,
+      "explanation": "Correct because: The slides define processing delay as header processing and corruption checking work."
+    },
+    {
+      "question": "Traffic intensity is defined as:",
+      "options": ["R/L", "La/R", "d/s", "L/R"],
+      "answer": 1,
+      "explanation": "Correct because: The slides define traffic intensity as La/R using arrival rate a, length L, and link rate R."
+    },
+    {
+      "question": "As La/R approaches 1, average queueing delay generally becomes:",
+      "options": ["Very small", "Very large", "Exactly equal to propagation delay", "Exactly equal to processing delay"],
+      "answer": 1,
+      "explanation": "Correct because: The slides state queueing delay grows high as La/R approaches 1."
+    },
+    {
+      "question": "Traceroute measures delay by:",
+      "options": ["Reserving a circuit and timing the reservation", "Sending probes and measuring time between transmission and router replies", "Only measuring propagation speed in fiber", "Only measuring throughput at the receiver"],
+      "answer": 1,
+      "explanation": "Correct because: The slides explain traceroute sends probes to routers and measures time intervals for replies."
+    },
+    {
+      "question": "Throughput is:",
+      "options": ["The time it takes a packet to propagate", "The average delivery rate in bits/time from sender to receiver", "The number of routers on a path", "The size of a packet in bits"],
+      "answer": 1,
+      "explanation": "Correct because: The slides define throughput as the average rate at which bits are sent from sender to receiver."
+    },
+    {
+      "question": "End-to-end throughput is constrained by:",
+      "options": ["The fastest link on the path", "The bottleneck link on the path", "Only the sender’s CPU speed", "Only the receiver’s disk speed"],
+      "answer": 1,
+      "explanation": "Correct because: The slides state the bottleneck link constrains end-to-end throughput."
+    },
+    {
+      "question": "In the scenario with 10 connections sharing bottleneck rate R, per-connection throughput is approximately:",
+      "options": ["max(Rc, Rs, R/10)", "min(Rc, Rs, R/10)", "Rc + Rs + R/10", "Rc − Rs − R/10"],
+      "answer": 1,
+      "explanation": "Correct because: The slides give per-connection throughput as min(Rc, Rs, R/10)."
+    },
+    {
+      "question": "Which layer supports HTTP, IMAP, SMTP, and DNS?",
+      "options": ["Physical", "Link", "Network", "Application"],
+      "answer": 3,
+      "explanation": "Correct because: The slides list HTTP, IMAP, SMTP, and DNS as application-layer protocols."
+    },
+    {
+      "question": "Which layer provides process-to-process data transfer?",
+      "options": ["Transport", "Network", "Link", "Physical"],
+      "answer": 0,
+      "explanation": "Correct because: The slides define the transport layer as providing process-to-process data transfer (TCP/UDP)."
+    },
+    {
+      "question": "Which layer is responsible for routing datagrams from source to destination?",
+      "options": ["Application", "Transport", "Network", "Physical"],
+      "answer": 2,
+      "explanation": "Correct because: The slides define the network layer as routing datagrams end-to-end."
+    },
+    {
+      "question": "Which layer transfers data between neighboring network elements?",
+      "options": ["Transport", "Network", "Link", "Application"],
+      "answer": 2,
+      "explanation": "Correct because: The slides state the link layer transfers data between neighboring network elements."
+    },
+    {
+      "question": "Which is the correct encapsulation order shown in the slides?",
+      "options": [
+        "Frame → Datagram → Segment → Message",
+        "Message → Segment → Datagram → Frame",
+        "Segment → Message → Frame → Datagram",
+        "Datagram → Segment → Frame → Message"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The slides show encapsulation as message, then segment, then datagram, then frame."
+    },
+    {
+      "question": "What does the transport layer add during encapsulation?",
+      "options": ["Network header Hn", "Link header Hl", "Transport header Ht", "A new physical cable"],
+      "answer": 2,
+      "explanation": "Correct because: The slides show the transport layer encapsulates message M with header Ht to create a segment."
+    },
+    {
+      "question": "What does the network layer add during encapsulation?",
+      "options": ["Transport header Ht", "Network header Hn", "Link header Hl", "Application header Ha"],
+      "answer": 1,
+      "explanation": "Correct because: The slides show the network layer adds header Hn to create a datagram."
+    },
+    {
+      "question": "What does the link layer add during encapsulation?",
+      "options": ["Link header Hl", "Network header Hn", "Transport header Ht", "Routing protocol header Hr"],
+      "answer": 0,
+      "explanation": "Correct because: The slides show the link layer adds link header Hl to create a frame."
+    },
+    {
+      "question": "Why is layering used in network design?",
+      "options": [
+        "To guarantee no congestion occurs",
+        "To create an explicit modular structure that eases maintenance and updating",
+        "To eliminate the need for protocols",
+        "To ensure all links have identical bandwidth"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The slides state layering gives modular structure and simplifies maintenance and updating."
+    },
+    {
+      "question": "Which is listed as a con of packet switching in the slides?",
+      "options": ["Guaranteed performance", "No call setup needed", "Excessive congestion possible", "Exclusive reserved links"],
+      "answer": 2,
+      "explanation": "Correct because: The slides list excessive congestion possible and no performance guarantees as packet switching cons."
+    }
+  ],
+  "games": [],
+  "sources": [
+    "Data Communication and Networking - Chapter 1.pdf"
+  ]
+}
