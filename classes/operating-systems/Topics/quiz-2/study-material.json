@@ -1,0 +1,441 @@
+{
+  "title": "Quiz 2 Review - Processes, Threads, IPC, Race Conditions, Semaphores, Mutexes",
+  "notes": [
+    ["A process is an abstraction of a running program, including the program counter, registers, and variables needed to resume execution.", 1, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Multiprogramming rapidly switches the CPU among processes, creating pseudoparallelism even though only one process runs at an instant.", 2, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Each process conceptually has its own virtual CPU, but the physical CPU loads and saves each process’s program counter during switches.", 2, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Processes must not assume fixed timing because CPU scheduling and interrupts can change how long a process runs before being preempted.", 3, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["A program is passive code stored on disk, while a process is an active execution with state, input, output, and progress.", 4, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Running the same program twice counts as two separate processes, even if the operating system shares the read-only program text in memory.", 4, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Processes can be created during system initialization, by process-creation system calls, by user requests, or by initiating batch jobs.", 4, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["In UNIX, fork creates a child that is a clone of the parent, and execve is typically used afterward to run a different program.", 6, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["UNIX uses fork then execve so the child can adjust file descriptors for redirection before replacing its memory image.", 6, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["In Windows, CreateProcess creates a new process and loads the target program in one call with many configuration parameters.", 6, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Processes terminate by normal exit, voluntary error exit, fatal error, or being killed by another authorized process.", 6, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["UNIX can form process hierarchies where init is the root of a system-wide process tree created at boot time.", 8, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Windows does not enforce a permanent process hierarchy, and process handles can be passed to other processes.", 8, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["A process can be running, ready, or blocked; blocked means it cannot run even if the CPU is idle.", 9, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Transitions between running and ready are controlled by the scheduler, while blocked to ready occurs when the awaited event happens.", 9, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["The OS maintains a process table with one entry per process, storing state like program counter, stack pointer, and open file status.", 10, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Interrupt hardware saves key state and jumps via the interrupt vector, and software then saves registers and invokes scheduling logic.", 11, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Interrupt handling often begins in assembly because saving registers and switching stacks cannot be expressed reliably in high-level languages.", 11, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["CPU utilization under multiprogramming can be modeled as 1 − p^n where p is I/O-wait fraction and n is degree of multiprogramming.", 12, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["In traditional systems, a process has one address space and one thread of control, but multithreading allows multiple control flows per process.", 13, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Threads are useful because multiple activities can block independently while still sharing the same address space and data.", 14, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Threads are lighter weight than processes and can be created 10–100 times faster in many systems, enabling dynamic concurrency.", 14, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Threads improve performance when computation overlaps with I/O, but provide no speedup if all threads are purely CPU bound.", 14, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["In the classical thread model, processes group resources like address space and files, while threads are scheduled entities with PC and stack.", 19, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Threads in the same process share global variables and can even corrupt each other’s stacks, so correctness requires cooperation and synchronization.", 20, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Interprocess communication requires both communication and coordination because shared resources can cause conflicts and dependencies.", 5, "Operating Systems - Week 2 Lesson 1.pdf"],
+    ["A race condition occurs when multiple processes access shared data and the final result depends on the exact interleaving of execution.", 37, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["In the spooler example, two processes can both read the same next-free-slot value and overwrite each other’s output file entry.", 37, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["A critical region is the part of a program where shared memory is accessed, and mutual exclusion requires no two processes enter simultaneously.", 9, "Operating Systems - Week 2 Lesson 1.pdf"],
+    ["Strict alternation avoids races but can violate progress because a process may be forced to wait even when the other is outside its critical region.", 41, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Peterson’s algorithm uses a turn variable and interested flags to ensure mutual exclusion without strict alternation for two processes.", 41, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Busy waiting wastes CPU time and can cause priority inversion when a high-priority process spins and prevents a low-priority lock holder from running.", 44, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Sleep and wakeup block a process until another wakes it, but naïve use in producer-consumer can still create race conditions.", 44, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Test-and-set style hardware instructions (such as XCHG) can implement spin locks by atomically checking and setting a lock variable.", 44, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Semaphores are integers whose down and up operations must be atomic to avoid races and correctly block or wake waiting processes.", 47, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["The down operation blocks when the semaphore is zero, and the up operation increments and wakes one sleeping process if any are waiting.", 47, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Binary semaphores are initialized to one and used to enforce mutual exclusion by down before entering and up after leaving the critical region.", 48, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["The bounded-buffer solution uses semaphores empty, full, and mutex to coordinate producer and consumer without lost wakeups.", 47, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["If semaphore downs are ordered incorrectly in producer-consumer, both processes can block forever, creating a deadlock.", 53, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["A mutex is a mutual exclusion lock with locked/unlocked states that guards a critical region by blocking threads that cannot acquire it.", 52, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Pthreads mutex calls include init, destroy, lock, trylock, and unlock, where unlock releases exactly one waiting thread.", 52, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Condition variables let threads sleep until a condition is met; pthread_cond_wait atomically releases the mutex while waiting.", 53, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Condition variables have no memory, so signaling when no thread is waiting loses the signal and can create subtle bugs.", 53, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Reader-writer synchronization can use a semaphore for database access and a reader count, but writers may starve if readers arrive continuously.", 9, "Operating Systems - Week 2 Lesson 2.pdf"],
+    ["A monitor is a higher-level synchronization construct that groups data and procedures and ensures only one process is active inside at a time.", 16, "Operating Systems - Week 2 Lesson 2.pdf"],
+    ["Message passing uses system calls send and receive; receivers may block until a message arrives or return an error immediately.", 61, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Distributed message passing must handle lost messages using acknowledgments and duplicates using sequence numbers.", 61, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
+    ["Message systems also require unambiguous process naming and authentication to prevent communicating with imposters instead of real servers.", 61, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"]
+  ],
+  "flashcards": [
+    { "front": "What does this mean: A process is an abstraction of a running program, including the program counter, registers, and variables needed to resume execution.", "back": "A process is an abstraction of a running program, including the program counter, registers, and variables needed to resume execution." },
+    { "front": "What does this mean: Multiprogramming rapidly switches the CPU among processes, creating pseudoparallelism even though only one process runs at an instant.", "back": "Multiprogramming rapidly switches the CPU among processes, creating pseudoparallelism even though only one process runs at an instant." },
+    { "front": "What does this mean: A program is passive code stored on disk, while a process is an active execution with state, input, output, and progress.", "back": "A program is passive code stored on disk, while a process is an active execution with state, input, output, and progress." },
+    { "front": "What does this mean: Processes can be created during system initialization, by process-creation system calls, by user requests, or by initiating batch jobs.", "back": "Processes can be created during system initialization, by process-creation system calls, by user requests, or by initiating batch jobs." },
+    { "front": "What does this mean: In UNIX, fork creates a child that is a clone of the parent, and execve is typically used afterward to run a different program.", "back": "In UNIX, fork creates a child that is a clone of the parent, and execve is typically used afterward to run a different program." },
+    { "front": "What does this mean: A process can be running, ready, or blocked; blocked means it cannot run even if the CPU is idle.", "back": "A process can be running, ready, or blocked; blocked means it cannot run even if the CPU is idle." },
+    { "front": "What does this mean: The OS maintains a process table with one entry per process, storing state like program counter, stack pointer, and open file status.", "back": "The OS maintains a process table with one entry per process, storing state like program counter, stack pointer, and open file status." },
+    { "front": "What does this mean: Interrupt handling often begins in assembly because saving registers and switching stacks cannot be expressed reliably in high-level languages.", "back": "Interrupt handling often begins in assembly because saving registers and switching stacks cannot be expressed reliably in high-level languages." },
+    { "front": "What does this mean: In the classical thread model, processes group resources like address space and files, while threads are scheduled entities with PC and stack.", "back": "In the classical thread model, processes group resources like address space and files, while threads are scheduled entities with PC and stack." },
+    { "front": "What does this mean: Threads are lighter weight than processes and can be created 10–100 times faster in many systems, enabling dynamic concurrency.", "back": "Threads are lighter weight than processes and can be created 10–100 times faster in many systems, enabling dynamic concurrency." },
+    { "front": "What does this mean: Threads improve performance when computation overlaps with I/O, but provide no speedup if all threads are purely CPU bound.", "back": "Threads improve performance when computation overlaps with I/O, but provide no speedup if all threads are purely CPU bound." },
+    { "front": "What does this mean: Interprocess communication requires both communication and coordination because shared resources can cause conflicts and dependencies.", "back": "Interprocess communication requires both communication and coordination because shared resources can cause conflicts and dependencies." },
+    { "front": "What does this mean: A race condition occurs when multiple processes access shared data and the final result depends on the exact interleaving of execution.", "back": "A race condition occurs when multiple processes access shared data and the final result depends on the exact interleaving of execution." },
+    { "front": "What does this mean: A critical region is the part of a program where shared memory is accessed, and mutual exclusion requires no two processes enter simultaneously.", "back": "A critical region is the part of a program where shared memory is accessed, and mutual exclusion requires no two processes enter simultaneously." },
+    { "front": "What does this mean: Peterson’s algorithm uses a turn variable and interested flags to ensure mutual exclusion without strict alternation for two processes.", "back": "Peterson’s algorithm uses a turn variable and interested flags to ensure mutual exclusion without strict alternation for two processes." },
+    { "front": "What does this mean: Busy waiting wastes CPU time and can cause priority inversion when a high-priority process spins and prevents a low-priority lock holder from running.", "back": "Busy waiting wastes CPU time and can cause priority inversion when a high-priority process spins and prevents a low-priority lock holder from running." },
+    { "front": "What does this mean: Sleep and wakeup block a process until another wakes it, but naïve use in producer-consumer can still create race conditions.", "back": "Sleep and wakeup block a process until another wakes it, but naïve use in producer-consumer can still create race conditions." },
+    { "front": "What does this mean: Semaphores are integers whose down and up operations must be atomic to avoid races and correctly block or wake waiting processes.", "back": "Semaphores are integers whose down and up operations must be atomic to avoid races and correctly block or wake waiting processes." },
+    { "front": "What does this mean: Binary semaphores are initialized to one and used to enforce mutual exclusion by down before entering and up after leaving the critical region.", "back": "Binary semaphores are initialized to one and used to enforce mutual exclusion by down before entering and up after leaving the critical region." },
+    { "front": "What does this mean: The bounded-buffer solution uses semaphores empty, full, and mutex to coordinate producer and consumer without lost wakeups.", "back": "The bounded-buffer solution uses semaphores empty, full, and mutex to coordinate producer and consumer without lost wakeups." },
+    { "front": "What does this mean: If semaphore downs are ordered incorrectly in producer-consumer, both processes can block forever, creating a deadlock.", "back": "If semaphore downs are ordered incorrectly in producer-consumer, both processes can block forever, creating a deadlock." },
+    { "front": "What does this mean: A mutex is a mutual exclusion lock with locked/unlocked states that guards a critical region by blocking threads that cannot acquire it.", "back": "A mutex is a mutual exclusion lock with locked/unlocked states that guards a critical region by blocking threads that cannot acquire it." },
+    { "front": "What does this mean: Pthreads mutex calls include init, destroy, lock, trylock, and unlock, where unlock releases exactly one waiting thread.", "back": "Pthreads mutex calls include init, destroy, lock, trylock, and unlock, where unlock releases exactly one waiting thread." },
+    { "front": "What does this mean: Condition variables let threads sleep until a condition is met; pthread_cond_wait atomically releases the mutex while waiting.", "back": "Condition variables let threads sleep until a condition is met; pthread_cond_wait atomically releases the mutex while waiting." },
+    { "front": "What does this mean: Condition variables have no memory, so signaling when no thread is waiting loses the signal and can create subtle bugs.", "back": "Condition variables have no memory, so signaling when no thread is waiting loses the signal and can create subtle bugs." },
+    { "front": "What does this mean: Reader-writer synchronization can use a semaphore for database access and a reader count, but writers may starve if readers arrive continuously.", "back": "Reader-writer synchronization can use a semaphore for database access and a reader count, but writers may starve if readers arrive continuously." },
+    { "front": "What does this mean: A monitor is a higher-level synchronization construct that groups data and procedures and ensures only one process is active inside at a time.", "back": "A monitor is a higher-level synchronization construct that groups data and procedures and ensures only one process is active inside at a time." },
+    { "front": "What does this mean: Message passing uses system calls send and receive; receivers may block until a message arrives or return an error immediately.", "back": "Message passing uses system calls send and receive; receivers may block until a message arrives or return an error immediately." },
+    { "front": "What does this mean: Distributed message passing must handle lost messages using acknowledgments and duplicates using sequence numbers.", "back": "Distributed message passing must handle lost messages using acknowledgments and duplicates using sequence numbers." },
+    { "front": "What does this mean: Message systems also require unambiguous process naming and authentication to prevent communicating with imposters instead of real servers.", "back": "Message systems also require unambiguous process naming and authentication to prevent communicating with imposters instead of real servers." },
+    { "front": "What does this mean: CPU utilization under multiprogramming can be modeled as 1 − p^n where p is I/O-wait fraction and n is degree of multiprogramming.", "back": "CPU utilization under multiprogramming can be modeled as 1 − p^n where p is I/O-wait fraction and n is degree of multiprogramming." },
+    { "front": "What does this mean: Test-and-set style hardware instructions (such as XCHG) can implement spin locks by atomically checking and setting a lock variable.", "back": "Test-and-set style hardware instructions (such as XCHG) can implement spin locks by atomically checking and setting a lock variable." },
+    { "front": "What does this mean: Interrupt hardware saves key state and jumps via the interrupt vector, and software then saves registers and invokes scheduling logic.", "back": "Interrupt hardware saves key state and jumps via the interrupt vector, and software then saves registers and invokes scheduling logic." },
+    { "front": "What does this mean: UNIX uses fork then execve so the child can adjust file descriptors for redirection before replacing its memory image.", "back": "UNIX uses fork then execve so the child can adjust file descriptors for redirection before replacing its memory image." },
+    { "front": "What does this mean: Processes terminate by normal exit, voluntary error exit, fatal error, or being killed by another authorized process.", "back": "Processes terminate by normal exit, voluntary error exit, fatal error, or being killed by another authorized process." },
+    { "front": "What does this mean: Windows does not enforce a permanent process hierarchy, and process handles can be passed to other processes.", "back": "Windows does not enforce a permanent process hierarchy, and process handles can be passed to other processes." },
+    { "front": "What does this mean: Strict alternation avoids races but can violate progress because a process may be forced to wait even when the other is outside its critical region.", "back": "Strict alternation avoids races but can violate progress because a process may be forced to wait even when the other is outside its critical region." }
+  ],
+  "quiz": [
+    {
+      "question": "Which best defines a process in Tanenbaum’s model?",
+      "options": [
+        "A passive program stored on disk",
+        "An executing program instance including PC, registers, and variables",
+        "A device driver running in kernel space",
+        "A shared memory buffer between applications"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: A process is defined as an instance of an executing program with execution state such as PC and registers."
+    },
+    {
+      "question": "Why does multiprogramming create the illusion of parallelism on a single CPU?",
+      "options": [
+        "Because the CPU runs multiple instructions simultaneously",
+        "Because the OS rapidly switches the CPU among processes",
+        "Because each process has its own physical core",
+        "Because interrupts prevent context switching"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Rapid context switching lets several processes make progress over time even though only one runs at an instant."
+    },
+    {
+      "question": "Which statement correctly contrasts a program and a process?",
+      "options": [
+        "A program has state; a process is only code",
+        "A program is code; a process is the executing activity with state",
+        "A program always runs in kernel mode; a process always runs in user mode",
+        "A program is scheduled; a process is never scheduled"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: A program is passive code, while a process is active execution with state and progress."
+    },
+    {
+      "question": "Which is NOT listed as a principal event that causes process creation?",
+      "options": [
+        "System initialization",
+        "User request to create a new process",
+        "Initiation of a batch job",
+        "Cache miss in the CPU"
+      ],
+      "answer": 3,
+      "explanation": "Correct because: A cache miss is a hardware performance event, not a process creation event."
+    },
+    {
+      "question": "In UNIX, why is process creation typically a two-step fork() then execve()?",
+      "options": [
+        "So the parent can always share writable memory with the child",
+        "So the child can adjust file descriptors for I/O redirection before execve()",
+        "So execve() can run in user mode without kernel involvement",
+        "So fork() can avoid creating a new process table entry"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Fork then execve lets the child manipulate file descriptors before replacing its program image."
+    },
+    {
+      "question": "Which is NOT a standard cause of process termination listed in Chapter 2?",
+      "options": [
+        "Normal exit",
+        "Fatal error",
+        "Killed by another process",
+        "Disk fragmentation"
+      ],
+      "answer": 3,
+      "explanation": "Correct because: Disk fragmentation is not a termination cause; termination includes exit, errors, or being killed."
+    },
+    {
+      "question": "Which process state means the process cannot run until an external event occurs?",
+      "options": [
+        "Running",
+        "Ready",
+        "Blocked",
+        "Initialized"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Blocked means the process is waiting for an event and cannot run even if the CPU is idle."
+    },
+    {
+      "question": "What is the main purpose of the process table?",
+      "options": [
+        "Store only file system directory entries",
+        "Store per-process state so processes can be stopped and restarted correctly",
+        "Store cache lines and replacement policy data",
+        "Store network routing tables for message passing"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The process table stores process state (PC, SP, registers, resources) needed for context switching."
+    },
+    {
+      "question": "Why are parts of interrupt handlers often written in assembly language?",
+      "options": [
+        "Because assembly is required to render GUI graphics",
+        "Because saving registers and switching stacks is not reliably expressible in high-level code",
+        "Because semaphores only work in assembly",
+        "Because message passing requires assembly"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Low-level operations like saving CPU state and switching stacks are commonly handled in assembly."
+    },
+    {
+      "question": "Which statement best describes threads compared to processes?",
+      "options": [
+        "Threads always have separate address spaces",
+        "Threads share the process address space but have their own stacks and execution state",
+        "Threads cannot block on I/O",
+        "Threads eliminate the need for synchronization"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Threads share address space and data but each thread has its own PC, registers, and stack."
+    },
+    {
+      "question": "When do threads provide the biggest performance benefit?",
+      "options": [
+        "When all threads are purely CPU bound",
+        "When computation can overlap with I/O so one thread can run while another blocks",
+        "When the system has no scheduler",
+        "When all memory is read-only"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Threads help most when substantial computing and I/O overlap, allowing better utilization."
+    },
+    {
+      "question": "What is a race condition?",
+      "options": [
+        "A deadlock where processes wait forever",
+        "A situation where results depend on exact interleaving of concurrent access to shared data",
+        "A guaranteed ordering of semaphore operations",
+        "A CPU scheduling algorithm for fairness"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Race conditions occur when timing/interleaving of shared-data access changes the final outcome."
+    },
+    {
+      "question": "In the spooler directory example, what is the core problem?",
+      "options": [
+        "The printer daemon cannot read from disk",
+        "Two processes can compute the same next_free_slot and overwrite each other’s entry",
+        "The buffer is always empty so nothing prints",
+        "The OS prohibits shared memory entirely"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Both processes can read the same next slot, then one overwrites the other’s queued filename."
+    },
+    {
+      "question": "What is a critical region?",
+      "options": [
+        "The section of code that must run in kernel mode",
+        "The part of a program where shared memory is accessed and must be protected",
+        "A file system directory used for spooling",
+        "A CPU cache line containing shared data"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: A critical region is where shared data is accessed, requiring mutual exclusion to prevent races."
+    },
+    {
+      "question": "Why is strict alternation usually not considered a good general solution?",
+      "options": [
+        "It can violate progress by forcing alternation even when one process is not interested",
+        "It requires a hypervisor",
+        "It eliminates mutual exclusion",
+        "It makes processes share writable memory"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Strict alternation can block a process even when the other is outside its critical region."
+    },
+    {
+      "question": "What is the main drawback of busy waiting solutions like spin locks?",
+      "options": [
+        "They always cause deadlock immediately",
+        "They waste CPU time and can cause priority inversion",
+        "They require message passing to work",
+        "They only work on single-core systems"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Busy waiting consumes CPU and can prevent a lower-priority lock holder from running."
+    },
+    {
+      "question": "What do semaphores require to work correctly for synchronization?",
+      "options": [
+        "Non-atomic up/down operations for flexibility",
+        "Atomic, indivisible up/down operations so state updates cannot interleave incorrectly",
+        "A GUI event loop",
+        "Per-thread private address spaces"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Semaphore operations must be atomic to prevent race conditions in synchronization."
+    },
+    {
+      "question": "What does down() do when the semaphore value is 0?",
+      "options": [
+        "Increments the semaphore",
+        "Returns immediately with success",
+        "Blocks the calling process/thread until it can proceed",
+        "Deletes the semaphore"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: When the semaphore is 0, down blocks until an up makes it possible to proceed."
+    },
+    {
+      "question": "What does up() do if processes are sleeping on that semaphore?",
+      "options": [
+        "Wakes exactly one sleeping process and keeps the action atomic",
+        "Wakes all sleeping processes unconditionally",
+        "Blocks until the semaphore becomes negative",
+        "Resets the semaphore to 1 and exits"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: up increments and wakes one sleeper if any are waiting, all as an indivisible action."
+    },
+    {
+      "question": "In the producer-consumer semaphore solution, what is mutex used for?",
+      "options": [
+        "Counting empty slots in the buffer",
+        "Counting full slots in the buffer",
+        "Ensuring only one process accesses the buffer (critical region) at a time",
+        "Sending messages over the network"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: mutex is the mutual exclusion semaphore guarding buffer access in the critical region."
+    },
+    {
+      "question": "What is a binary semaphore?",
+      "options": [
+        "A semaphore initialized to 1 and used to enforce mutual exclusion",
+        "A semaphore that can only be used by two processes total",
+        "A semaphore implemented only in user space without kernel support",
+        "A semaphore that stores strings instead of integers"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: A binary semaphore starts at 1 and is used to ensure only one process enters a critical region."
+    },
+    {
+      "question": "What happens if the producer reverses down(&empty) and down(&mutex) in the semaphore solution when the buffer is full?",
+      "options": [
+        "Nothing changes because semaphore order never matters",
+        "The system guarantees it still works due to fairness scheduling",
+        "A deadlock can occur because the producer blocks holding mutex and the consumer then blocks on mutex too",
+        "It becomes a message-passing solution instead"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Reversing downs can make the producer block while holding mutex, preventing the consumer from accessing the buffer."
+    },
+    {
+      "question": "Which statement best describes a mutex?",
+      "options": [
+        "A counting semaphore used to track buffer slots",
+        "A lock with locked/unlocked states that enforces mutual exclusion for a critical region",
+        "A network acknowledgment message",
+        "A scheduler policy to prevent starvation"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: A mutex is a mutual exclusion lock used to guard critical sections from concurrent entry."
+    },
+    {
+      "question": "Which Pthreads call attempts to lock a mutex but returns an error instead of blocking if it is locked?",
+      "options": [
+        "pthread_mutex_init",
+        "pthread_mutex_trylock",
+        "pthread_mutex_unlock",
+        "pthread_cond_wait"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: pthread_mutex_trylock attempts to acquire the lock and fails immediately rather than blocking."
+    },
+    {
+      "question": "What is the main purpose of a condition variable?",
+      "options": [
+        "Provide mutual exclusion by itself without any mutex",
+        "Allow threads to block until a condition becomes true, typically used with a mutex",
+        "Count resources like a semaphore does",
+        "Prevent context switches by disabling interrupts"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Condition variables enable waiting for conditions and are almost always used together with mutexes."
+    },
+    {
+      "question": "Why are condition variables said to have 'no memory'?",
+      "options": [
+        "They cannot be stored in RAM",
+        "They do not preserve a signal if no thread is waiting at the time of the signal",
+        "They always wake all threads",
+        "They automatically log every wakeup event"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: If a signal occurs when no thread is waiting, it is lost, so programmers must avoid missed signals."
+    },
+    {
+      "question": "What is a monitor?",
+      "options": [
+        "A CPU instruction for atomic swap",
+        "A higher-level synchronization construct that ensures only one active process inside at a time",
+        "A file locking mode for shared libraries",
+        "A tool for compiling threaded programs"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Monitors group data and procedures with automatic mutual exclusion so only one execution is inside at once."
+    },
+    {
+      "question": "Which primitives define message passing in Chapter 2?",
+      "options": [
+        "lock and unlock",
+        "sleep and wakeup",
+        "send and receive",
+        "fork and execve"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Message passing uses the system calls send(destination, &message) and receive(source, &message)."
+    },
+    {
+      "question": "Why do message-passing systems often use acknowledgments and sequence numbers?",
+      "options": [
+        "To enforce CPU scheduling fairness",
+        "To handle lost messages and detect duplicate retransmissions",
+        "To prevent cache misses",
+        "To guarantee mutual exclusion without locks"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Acknowledgments address loss, and sequence numbers let receivers distinguish duplicates from new messages."
+    },
+    {
+      "question": "In the readers-writers discussion, what risk is highlighted if readers continuously arrive?",
+      "options": [
+        "Readers will starve forever",
+        "Writers may be delayed indefinitely (writer starvation)",
+        "The database becomes read-only permanently",
+        "Semaphores stop being atomic"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: A steady stream of readers can prevent writers from acquiring exclusive access, causing writer starvation."
+    },
+    {
+      "question": "Which best connects processes/threads to hardware memory resources?",
+      "options": [
+        "Threads always have separate address spaces so they cannot share memory",
+        "Processes require saving/restoring CPU and memory state so execution can resume after interrupts and scheduling",
+        "Memory access never affects concurrency correctness",
+        "Only message passing uses memory resources"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Process/thread execution relies on saving/restoring CPU state and managing memory/address-space state during switches."
+    }
+  ],
+  "games": [],
+  "sources": [
+    "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf",
+    "Operating Systems - Week 2 Lesson 1.pdf",
+    "Operating Systems - Week 2 Lesson 2.pdf"
+  ]
+}
