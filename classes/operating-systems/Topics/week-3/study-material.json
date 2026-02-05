@@ -1,0 +1,691 @@
+{
+  "title": "Week 3 Material",
+  "notes": [
+    [
+      "Message passing is an interprocess communication approach implemented with system calls, and its core primitives are send and receive operations between processes.",
+      5,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "Message-passing systems must address lost messages, acknowledgments, retransmission sequencing, and process naming/authentication, especially in distributed environments.",
+      5,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "A semaphore behaves like an integer-based synchronization object; when down is called at zero, the process sleeps and waits in a queue.",
+      6,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "IPC design must balance communication, collision avoidance, and inter-process dependencies that often arise because processes share memory resources.",
+      7,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "In multiprogrammed systems, the scheduler is the OS component that selects which process or thread executes next.",
+      8,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "A scheduling algorithm defines the criteria the scheduler uses to choose among runnable processes or threads.",
+      8,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "Scheduling decisions must handle CPU resource contention, maximize efficiency, and preserve fairness across competing processes.",
+      8,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "Process switching is expensive because context switches require transitioning between user and kernel mode and restoring execution context.",
+      9,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "Excessive context switches can significantly reduce throughput by spending too much CPU time on overhead instead of useful work.",
+      9,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "Compute-bound processes usually have long CPU bursts with infrequent I/O waits, while I/O-bound processes show short bursts and frequent waiting.",
+      10,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "Because CPU performance has improved faster than I/O speed, scheduling I/O-bound tasks effectively is increasingly important for responsiveness.",
+      10,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "Key scheduling events include process creation, process exit, blocking on I/O or semaphores, and I/O completion interrupts.",
+      11,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "If no ready process exists after a process exits, the operating system runs the idle process.",
+      11,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "Preemptive scheduling relies on periodic clock interrupts to force decisions and prevent a single process from monopolizing the CPU.",
+      12,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "In nonpreemptive scheduling, a process typically keeps the CPU until it blocks or voluntarily yields control.",
+      12,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "Batch workloads can tolerate nonpreemptive or long-quantum policies, while interactive workloads require preemption for acceptable responsiveness.",
+      13,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "Real-time settings may not always require heavy preemption because tasks can run briefly and then block predictably.",
+      13,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "First-Come, First-Served uses a single ready queue where new jobs are appended, and running jobs are not interrupted.",
+      14,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "FCFS is simple to implement but can let CPU-bound jobs delay I/O-bound jobs, hurting overall user-perceived performance.",
+      14,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "Round Robin assigns each runnable process a fixed quantum, commonly about 10–100 ms, then preempts unfinished work.",
+      16,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "Round Robin runs the front process until completion, blocking, or quantum expiry; unfinished tasks are moved to the back.",
+      16,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "Priority scheduling runs the highest-priority process first and can use static or dynamic priorities to reflect system goals.",
+      17,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "In dynamic priority schemes, the scheduler may lower the running process priority at clock ticks to improve fairness.",
+      17,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "With user-level threads, the kernel is unaware of individual threads and gives CPU quantum to the process.",
+      18,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "With kernel-level threads, the kernel schedules threads directly and can switch threads across different processes.",
+      18,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "Xinu scheduler lists are doubly linked, store process IDs and keys, and use sentinel head/tail nodes for uniform operations.",
+      19,
+      "Operating Systems - Week 3 Lesson 1.pdf"
+    ],
+    [
+      "In Xinu, a ready process is not running; marking it ready inserts it into readylist based on priority.",
+      7,
+      "Operating Systems - Week 3 Lesson 2.pdf"
+    ],
+    [
+      "Rescheduling compares the current process against the highest-priority ready process and may move the current one back to READY.",
+      9,
+      "Operating Systems - Week 3 Lesson 2.pdf"
+    ],
+    [
+      "Context switch code saves the old stack pointer and loads the next process stack pointer to resume execution correctly.",
+      10,
+      "Operating Systems - Week 3 Lesson 2.pdf"
+    ],
+    [
+      "User/kernel separation and protection rings implement privilege layers, where kernel mode is most privileged and user applications are least privileged.",
+      11,
+      "Operating Systems - Week 3 Lesson 2.pdf"
+    ],
+    [
+      "Exposing raw physical memory is unsafe because user programs can accidentally or intentionally corrupt operating system memory.",
+      6,
+      "Chapter 3 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"
+    ],
+    [
+      "Address spaces solve protection and relocation problems by giving each process an independent memory view.",
+      6,
+      "Chapter 3 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"
+    ],
+    [
+      "Base and limit registers provide dynamic relocation by adding a base to each reference and faulting invalid accesses.",
+      7,
+      "Chapter 3 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"
+    ],
+    [
+      "In protected designs, only the operating system can modify base/limit registers, supporting process isolation and least privilege.",
+      7,
+      "Chapter 3 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"
+    ],
+    [
+      "Page fault handling traps to kernel mode, validates access, loads or replaces pages, updates tables, and restarts the instruction.",
+      55,
+      "Chapter 3 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "What does this mean: Message passing is an interprocess communication approach implemented with system calls, and its core primitives are send and receive operations between processes.",
+      "back": "Message passing is an interprocess communication approach implemented with system calls, and its core primitives are send and receive operations between processes."
+    },
+    {
+      "front": "What does this mean: Message-passing systems must address lost messages, acknowledgments, retransmission sequencing, and process naming/authentication, especially in distributed environments.",
+      "back": "Message-passing systems must address lost messages, acknowledgments, retransmission sequencing, and process naming/authentication, especially in distributed environments."
+    },
+    {
+      "front": "What does this mean: A semaphore behaves like an integer-based synchronization object; when down is called at zero, the process sleeps and waits in a queue.",
+      "back": "A semaphore behaves like an integer-based synchronization object; when down is called at zero, the process sleeps and waits in a queue."
+    },
+    {
+      "front": "What does this mean: IPC design must balance communication, collision avoidance, and inter-process dependencies that often arise because processes share memory resources.",
+      "back": "IPC design must balance communication, collision avoidance, and inter-process dependencies that often arise because processes share memory resources."
+    },
+    {
+      "front": "What does this mean: In multiprogrammed systems, the scheduler is the OS component that selects which process or thread executes next.",
+      "back": "In multiprogrammed systems, the scheduler is the OS component that selects which process or thread executes next."
+    },
+    {
+      "front": "What does this mean: A scheduling algorithm defines the criteria the scheduler uses to choose among runnable processes or threads.",
+      "back": "A scheduling algorithm defines the criteria the scheduler uses to choose among runnable processes or threads."
+    },
+    {
+      "front": "What does this mean: Scheduling decisions must handle CPU resource contention, maximize efficiency, and preserve fairness across competing processes.",
+      "back": "Scheduling decisions must handle CPU resource contention, maximize efficiency, and preserve fairness across competing processes."
+    },
+    {
+      "front": "What does this mean: Process switching is expensive because context switches require transitioning between user and kernel mode and restoring execution context.",
+      "back": "Process switching is expensive because context switches require transitioning between user and kernel mode and restoring execution context."
+    },
+    {
+      "front": "What does this mean: Excessive context switches can significantly reduce throughput by spending too much CPU time on overhead instead of useful work.",
+      "back": "Excessive context switches can significantly reduce throughput by spending too much CPU time on overhead instead of useful work."
+    },
+    {
+      "front": "What does this mean: Compute-bound processes usually have long CPU bursts with infrequent I/O waits, while I/O-bound processes show short bursts and frequent waiting.",
+      "back": "Compute-bound processes usually have long CPU bursts with infrequent I/O waits, while I/O-bound processes show short bursts and frequent waiting."
+    },
+    {
+      "front": "What does this mean: Because CPU performance has improved faster than I/O speed, scheduling I/O-bound tasks effectively is increasingly important for responsiveness.",
+      "back": "Because CPU performance has improved faster than I/O speed, scheduling I/O-bound tasks effectively is increasingly important for responsiveness."
+    },
+    {
+      "front": "What does this mean: Key scheduling events include process creation, process exit, blocking on I/O or semaphores, and I/O completion interrupts.",
+      "back": "Key scheduling events include process creation, process exit, blocking on I/O or semaphores, and I/O completion interrupts."
+    },
+    {
+      "front": "What does this mean: If no ready process exists after a process exits, the operating system runs the idle process.",
+      "back": "If no ready process exists after a process exits, the operating system runs the idle process."
+    },
+    {
+      "front": "What does this mean: Preemptive scheduling relies on periodic clock interrupts to force decisions and prevent a single process from monopolizing the CPU.",
+      "back": "Preemptive scheduling relies on periodic clock interrupts to force decisions and prevent a single process from monopolizing the CPU."
+    },
+    {
+      "front": "What does this mean: In nonpreemptive scheduling, a process typically keeps the CPU until it blocks or voluntarily yields control.",
+      "back": "In nonpreemptive scheduling, a process typically keeps the CPU until it blocks or voluntarily yields control."
+    },
+    {
+      "front": "What does this mean: Batch workloads can tolerate nonpreemptive or long-quantum policies, while interactive workloads require preemption for acceptable responsiveness.",
+      "back": "Batch workloads can tolerate nonpreemptive or long-quantum policies, while interactive workloads require preemption for acceptable responsiveness."
+    },
+    {
+      "front": "What does this mean: Real-time settings may not always require heavy preemption because tasks can run briefly and then block predictably.",
+      "back": "Real-time settings may not always require heavy preemption because tasks can run briefly and then block predictably."
+    },
+    {
+      "front": "What does this mean: First-Come, First-Served uses a single ready queue where new jobs are appended, and running jobs are not interrupted.",
+      "back": "First-Come, First-Served uses a single ready queue where new jobs are appended, and running jobs are not interrupted."
+    },
+    {
+      "front": "What does this mean: FCFS is simple to implement but can let CPU-bound jobs delay I/O-bound jobs, hurting overall user-perceived performance.",
+      "back": "FCFS is simple to implement but can let CPU-bound jobs delay I/O-bound jobs, hurting overall user-perceived performance."
+    },
+    {
+      "front": "What does this mean: Round Robin assigns each runnable process a fixed quantum, commonly about 10–100 ms, then preempts unfinished work.",
+      "back": "Round Robin assigns each runnable process a fixed quantum, commonly about 10–100 ms, then preempts unfinished work."
+    },
+    {
+      "front": "What does this mean: Round Robin runs the front process until completion, blocking, or quantum expiry; unfinished tasks are moved to the back.",
+      "back": "Round Robin runs the front process until completion, blocking, or quantum expiry; unfinished tasks are moved to the back."
+    },
+    {
+      "front": "What does this mean: Priority scheduling runs the highest-priority process first and can use static or dynamic priorities to reflect system goals.",
+      "back": "Priority scheduling runs the highest-priority process first and can use static or dynamic priorities to reflect system goals."
+    },
+    {
+      "front": "What does this mean: In dynamic priority schemes, the scheduler may lower the running process priority at clock ticks to improve fairness.",
+      "back": "In dynamic priority schemes, the scheduler may lower the running process priority at clock ticks to improve fairness."
+    },
+    {
+      "front": "What does this mean: With user-level threads, the kernel is unaware of individual threads and gives CPU quantum to the process.",
+      "back": "With user-level threads, the kernel is unaware of individual threads and gives CPU quantum to the process."
+    },
+    {
+      "front": "What does this mean: With kernel-level threads, the kernel schedules threads directly and can switch threads across different processes.",
+      "back": "With kernel-level threads, the kernel schedules threads directly and can switch threads across different processes."
+    },
+    {
+      "front": "What does this mean: Xinu scheduler lists are doubly linked, store process IDs and keys, and use sentinel head/tail nodes for uniform operations.",
+      "back": "Xinu scheduler lists are doubly linked, store process IDs and keys, and use sentinel head/tail nodes for uniform operations."
+    },
+    {
+      "front": "What does this mean: In Xinu, a ready process is not running; marking it ready inserts it into readylist based on priority.",
+      "back": "In Xinu, a ready process is not running; marking it ready inserts it into readylist based on priority."
+    },
+    {
+      "front": "What does this mean: Rescheduling compares the current process against the highest-priority ready process and may move the current one back to READY.",
+      "back": "Rescheduling compares the current process against the highest-priority ready process and may move the current one back to READY."
+    },
+    {
+      "front": "What does this mean: Context switch code saves the old stack pointer and loads the next process stack pointer to resume execution correctly.",
+      "back": "Context switch code saves the old stack pointer and loads the next process stack pointer to resume execution correctly."
+    },
+    {
+      "front": "What does this mean: User/kernel separation and protection rings implement privilege layers, where kernel mode is most privileged and user applications are least privileged.",
+      "back": "User/kernel separation and protection rings implement privilege layers, where kernel mode is most privileged and user applications are least privileged."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "What is the scheduler's core role in an operating system?",
+      "options": [
+        "Select the next process or thread to run",
+        "Encrypt user files before execution",
+        "Translate source code to machine code",
+        "Allocate only disk space to processes"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: The scheduler is responsible for choosing which runnable process or thread executes next."
+    },
+    {
+      "question": "What does a scheduling algorithm specify?",
+      "options": [
+        "The criteria used to choose among runnable tasks",
+        "The physical CPU clock frequency",
+        "The file system block size",
+        "The syntax of system calls"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: A scheduling algorithm defines how the OS decides which process or thread should run next."
+    },
+    {
+      "question": "Which issue occurs when multiple processes compete for CPU time?",
+      "options": [
+        "Resource contention",
+        "Cache coherence",
+        "Demand paging",
+        "Dead code elimination"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Resource contention refers to competing demand for the same resource, such as CPU time."
+    },
+    {
+      "question": "Why can frequent context switching hurt performance?",
+      "options": [
+        "It adds overhead for saving/restoring execution state",
+        "It permanently increases process priority",
+        "It removes the need for scheduling",
+        "It disables interrupts system-wide"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Each switch consumes CPU cycles to save and reload context rather than doing useful work."
+    },
+    {
+      "question": "Which best describes a compute-bound process?",
+      "options": [
+        "Long CPU bursts and infrequent I/O waits",
+        "Short CPU bursts and frequent I/O waits",
+        "Always blocked on semaphores",
+        "Never uses memory"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Compute-bound workloads spend most of their time on CPU computation with less I/O waiting."
+    },
+    {
+      "question": "Which best describes an I/O-bound process?",
+      "options": [
+        "Short CPU bursts with frequent I/O waits",
+        "Long uninterrupted CPU bursts",
+        "Runs only in kernel mode",
+        "Never blocks"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: I/O-bound processes frequently wait for input/output and therefore use short CPU bursts."
+    },
+    {
+      "question": "If no process is ready to run, what does the OS schedule?",
+      "options": [
+        "The idle process",
+        "The highest blocked process",
+        "The last exited process",
+        "A random thread"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: When no ready task exists, systems run an idle task until work becomes available."
+    },
+    {
+      "question": "Preemptive scheduling depends primarily on what mechanism?",
+      "options": [
+        "Periodic clock interrupts",
+        "Manual process yield only",
+        "Static linking",
+        "Disk interrupts only"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Clock interrupts return control to the scheduler so it can preempt and rotate tasks."
+    },
+    {
+      "question": "In nonpreemptive scheduling, a running process usually keeps CPU control until it...",
+      "options": [
+        "Blocks or voluntarily yields",
+        "Uses one quantum",
+        "Receives a network packet",
+        "Changes priority"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Nonpreemptive policies generally do not force a running task off CPU at timer ticks."
+    },
+    {
+      "question": "Why is preemption essential in interactive environments?",
+      "options": [
+        "It prevents one process from hogging CPU and improves responsiveness",
+        "It eliminates the need for context switches",
+        "It guarantees zero waiting time",
+        "It disables priority policies"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Interactive users need quick response, which requires reclaiming CPU from long-running tasks."
+    },
+    {
+      "question": "Which policy class is often acceptable for batch systems?",
+      "options": [
+        "Nonpreemptive or long-quantum preemptive policies",
+        "Only shortest remaining time policies",
+        "Only real-time deadline scheduling",
+        "No scheduling at all"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Batch workloads are less latency-sensitive and can tolerate longer uninterrupted runs."
+    },
+    {
+      "question": "What is a major weakness of FCFS scheduling?",
+      "options": [
+        "CPU-bound jobs can delay I/O-bound jobs",
+        "It is too complex to implement",
+        "It requires no queue",
+        "It ignores arrival order"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: FCFS can cause convoy effects where short I/O-heavy tasks wait behind long CPU-heavy tasks."
+    },
+    {
+      "question": "What happens in Round Robin if a process does not finish within its quantum?",
+      "options": [
+        "It is preempted and rotated",
+        "It is terminated immediately",
+        "It gains highest priority permanently",
+        "It blocks on I/O automatically"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Round Robin time-slices CPU and moves unfinished tasks out after their quantum expires."
+    },
+    {
+      "question": "What quantum range was highlighted for Round Robin in the lesson?",
+      "options": [
+        "10-100 milliseconds",
+        "1-2 seconds",
+        "500-1000 milliseconds",
+        "1-5 microseconds"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: The slides note a typical Round Robin quantum of about 10 to 100 ms."
+    },
+    {
+      "question": "In priority scheduling, which process runs first?",
+      "options": [
+        "The highest-priority runnable process",
+        "The oldest process",
+        "The largest memory process",
+        "The process with most I/O"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Priority scheduling selects runnable tasks by priority order, highest first."
+    },
+    {
+      "question": "What is dynamic priority adjustment?",
+      "options": [
+        "Changing priorities during runtime based on behavior or policy",
+        "Assigning priorities only at process creation",
+        "Sorting only by process ID",
+        "Disabling priority queues"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Dynamic schemes revise priorities as the system runs to improve fairness or policy goals."
+    },
+    {
+      "question": "Which statement about user-level threads is correct?",
+      "options": [
+        "The kernel schedules the process, while a user-space runtime schedules threads",
+        "The kernel directly schedules each user thread",
+        "User-level threads cannot block",
+        "Each user thread gets a separate hardware timer"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: In user-level threading, thread management is done in user space within the process quantum."
+    },
+    {
+      "question": "Which statement about kernel-level threads is correct?",
+      "options": [
+        "The kernel is aware of and schedules threads directly",
+        "Threads are invisible to the kernel",
+        "Thread switches can never cross processes",
+        "Kernel threads do not use quanta"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Kernel-level threading allows OS-controlled thread scheduling and switching decisions."
+    },
+    {
+      "question": "What are the two basic message-passing primitives noted in class?",
+      "options": [
+        "send and receive",
+        "open and close",
+        "lock and unlock",
+        "fork and exec"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: The IPC message-passing model is built around send and receive operations."
+    },
+    {
+      "question": "What occurs when down is called on a semaphore with value 0?",
+      "options": [
+        "The calling process sleeps and waits",
+        "The semaphore becomes negative and process continues",
+        "The process is killed",
+        "The OS ignores the call"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: A zero semaphore indicates no available resource, so the caller is blocked."
+    },
+    {
+      "question": "In Xinu, what does READY state indicate?",
+      "options": [
+        "The process is eligible to run but not currently running",
+        "The process has exited",
+        "The process is in kernel panic",
+        "The process is waiting for disk swap-out"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: READY means runnable, not currently executing on the CPU."
+    },
+    {
+      "question": "How is a process inserted into Xinu's ready list?",
+      "options": [
+        "By priority key position",
+        "By process creation time only",
+        "By memory size only",
+        "Randomly to avoid starvation"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: The ready list insertion uses priority ordering (qkey/priority)."
+    },
+    {
+      "question": "During reschedule, what comparison is made before keeping current process running?",
+      "options": [
+        "Current priority versus highest ready priority (firstkey)",
+        "Current PID versus parent PID",
+        "Current stack size versus heap size",
+        "Current runtime versus wall clock"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: The scheduler checks if the current process outranks the best ready candidate."
+    },
+    {
+      "question": "Which pair best describes core context-switch work in the lesson?",
+      "options": [
+        "Save old stack pointer and load next stack pointer",
+        "Clear disk cache and reboot process",
+        "Recompile process binary and reload",
+        "Encrypt memory and unlock files"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: The context switch routine preserves current state and restores the next task’s state."
+    },
+    {
+      "question": "What does user space versus kernel space separation provide?",
+      "options": [
+        "Privilege separation and controlled hardware access",
+        "Automatic faster CPU frequency",
+        "No need for system calls",
+        "Unlimited direct device access for apps"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Applications run with limited privileges while kernel mediates hardware/resource access."
+    },
+    {
+      "question": "In protection rings, which ring is typically most privileged?",
+      "options": [
+        "Ring 0",
+        "Ring 1",
+        "Ring 2",
+        "Ring 3"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Ring 0 is the most privileged level, commonly used by the kernel."
+    },
+    {
+      "question": "What is an address space?",
+      "options": [
+        "The set of memory addresses a process can use",
+        "The physical RAM chips installed",
+        "The list of all files on disk",
+        "The CPU instruction cache lines"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Address space is an abstraction defining the valid address range visible to a process."
+    },
+    {
+      "question": "According to Chapter 3, enabling multiple applications safely in memory requires solving which two problems?",
+      "options": [
+        "Protection and relocation",
+        "Encryption and compression",
+        "Compilation and linking",
+        "Paging and segmentation only"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: The text explicitly identifies protection and relocation as the key challenges."
+    },
+    {
+      "question": "How do base and limit registers enforce process isolation?",
+      "options": [
+        "They relocate addresses and fault out-of-range accesses",
+        "They disable multitasking",
+        "They bypass the MMU",
+        "They remove need for page tables"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Hardware adds base for relocation and checks limits to prevent invalid memory references."
+    },
+    {
+      "question": "What is the first major action in page fault handling?",
+      "options": [
+        "Hardware traps to kernel and saves execution state",
+        "OS writes all pages to disk",
+        "Scheduler permanently lowers priority",
+        "Process immediately terminates"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Page fault handling begins with a trap to kernel mode and state preservation."
+    }
+  ],
+  "games": [
+    {
+      "name": "Scheduler Race",
+      "type": "timed_sort",
+      "prompt": "Given process arrivals, bursts, and priorities, choose the next process under FCFS, RR, and Priority scheduling."
+    },
+    {
+      "name": "Mode Switch Match",
+      "type": "matching",
+      "prompt": "Match actions to user mode, kernel mode, or both (e.g., system call, direct device I/O, context save/restore)."
+    },
+    {
+      "name": "Isolation Builder",
+      "type": "scenario",
+      "prompt": "For each scenario, choose which concept is applied: domain separation, process isolation, resource encapsulation, or least privilege."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Operating Systems - Week 3 Lesson 1.pdf",
+      "pages": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "file": "Operating Systems - Week 3 Lesson 2.pdf",
+      "pages": [
+        7,
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "file": "Chapter 3 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf",
+      "pages": [
+        6,
+        7,
+        55
+      ]
+    }
+  ]
+}

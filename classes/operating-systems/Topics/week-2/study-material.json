@@ -1,5 +1,5 @@
 {
-  "title": "Quiz 2 Review - Processes, Threads, IPC, Race Conditions, Semaphores, Mutexes",
+  "title": "Week 2 Material",
   "notes": [
     ["A process is an abstraction of a running program, including the program counter, registers, and variables needed to resume execution.", 1, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],
     ["Multiprogramming rapidly switches the CPU among processes, creating pseudoparallelism even though only one process runs at an instant.", 2, "Chapter 2 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"],

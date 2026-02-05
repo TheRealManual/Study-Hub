@@ -1,0 +1,825 @@
+{
+  "title": "Week 1 Material",
+  "notes": [
+    [
+      "A modern computer includes CPUs, main memory, storage, I/O devices, and network interfaces, forming a complex system that needs coordinated control.",
+      1,
+      "Chapter 1 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"
+    ],
+    [
+      "An operating system is a software layer that provides a simpler model of the computer and manages hardware resources for programs.",
+      1,
+      "Chapter 1 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"
+    ],
+    [
+      "Most systems support kernel mode and user mode; the operating system runs in kernel mode with complete hardware access.",
+      2,
+      "Chapter 1 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"
+    ],
+    [
+      "User-mode programs are restricted from executing privileged instructions, especially those that control the machine or perform direct I/O.",
+      2,
+      "Chapter 1 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"
+    ],
+    [
+      "A shell or GUI is usually a user-mode program that starts other programs and relies on the operating system for services.",
+      2,
+      "Chapter 1 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"
+    ],
+    [
+      "Operating systems perform two core functions: providing clean abstractions and managing hardware resources among competing programs and users.",
+      3,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "Good abstractions require defining and implementing the abstraction, then using it to solve problems without dealing with messy hardware details.",
+      4,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "The file abstraction hides disk hardware complexity and presents a simple interface for storing information.",
+      4,
+      "Chapter 1 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"
+    ],
+    [
+      "The operating system’s real customers are application programs, while end users interact through shells or graphical user interfaces.",
+      4,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "As a resource manager, the OS allocates CPU, memory, and I/O devices and mediates conflicts when multiple programs compete for them.",
+      5,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "The OS can prevent printer chaos by buffering output and printing each job in an orderly sequence rather than interleaving lines.",
+      5,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "Time multiplexing shares a resource by letting programs take turns, such as scheduling CPU time among multiple runnable processes.",
+      6,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "Space multiplexing shares a resource by partitioning it, such as dividing main memory so multiple programs remain resident.",
+      6,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "A CPU fetches instructions from memory, decodes them, and executes them, using registers to store temporary values and control state.",
+      8,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "The program counter holds the memory address of the next instruction, allowing execution to proceed sequentially or via branches.",
+      8,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "The stack pointer tracks the top of the current stack in memory, supporting procedure calls, local variables, and return addresses.",
+      8,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "The program status word stores condition codes and control bits, including priority and mode information used by the CPU.",
+      8,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "During context switches, the OS must save and restore registers so each program can resume correctly after being time-multiplexed.",
+      8,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "CPU multithreading allows fast switching between thread states on a nanosecond timescale, reducing switching cost but not true parallelism.",
+      9,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "Multicore chips include multiple independent CPU cores, enabling true parallel execution when the OS schedules work across cores.",
+      9,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "Memory is organized as a hierarchy: registers, cache, main memory (RAM), and nonvolatile storage, balancing speed, cost, and capacity.",
+      10,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "Cache is divided into cache lines; frequently used lines are kept close to the CPU to reduce average memory access time.",
+      10,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "Main memory is the workhorse RAM that bridges fast cache and slower nonvolatile storage, holding active programs and data.",
+      10,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "I/O devices have a controller plus the device; controllers differ, so the OS uses device drivers to control each controller type.",
+      12,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "Device drivers typically run in kernel mode so they can access device registers and perform privileged I/O operations safely.",
+      12,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "Devices signal completion or events using interrupts; the OS runs an interrupt handler selected via the interrupt vector table.",
+      12,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "Buses connect components; a large x86 system may include PCIe, USB, SATA, memory buses, and others with different speeds.",
+      13,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "PCIe uses dedicated point-to-point serial connections rather than a shared bus, improving throughput and reducing contention.",
+      13,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ],
+    [
+      "A system call transitions from user space to kernel space using a trap instruction, switching modes so the kernel can run.",
+      3,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "System call parameters are prepared and passed to a library procedure, which places a system-call number and triggers the trap.",
+      3,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "System calls report errors by returning a failure code and setting the global variable errno with error information.",
+      3,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "The fork() system call creates a duplicate process; after fork, parent and child execute separately and may use copy-on-write memory.",
+      5,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "The waitpid() system call lets a parent wait for a specific child or any child to terminate and retrieve the exit status.",
+      5,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "The execve() system call replaces a process’s core image with a new program, commonly used by shells to run user commands.",
+      5,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "A process is an executing program instance with its own program counter, registers, and variables managed by the OS.",
+      7,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "Multiprogramming rapidly switches the CPU among processes to provide pseudo-parallel execution even on a single CPU.",
+      7,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "A process table is an array of entries storing per-process state such as registers, stack pointer, memory allocation, and file status.",
+      11,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "The lowest layer of a process-structured OS handles interrupts and scheduling, selecting which process runs next.",
+      10,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "Threads allow multiple execution paths within one process, sharing the same address space and data for efficient communication.",
+      13,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "Threads are lighter than processes and can be created or destroyed much faster, which helps highly dynamic servers.",
+      13,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "Threads improve performance when computation overlaps with I/O, but provide little benefit if all threads are purely CPU-bound.",
+      14,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "Processes group resources like address space and open files, while threads are the entities scheduled for execution by the CPU.",
+      15,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "Each thread has its own stack for local variables and return addresses, creating synchronization and shared-resource design challenges.",
+      17,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "User-level threads use a per-process thread table in user space and avoid kernel traps, making thread operations fast.",
+      20,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "User-level threads can block the entire process if one thread page faults, and lack clock interrupts can allow runaway threads.",
+      20,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "Kernel threads are tracked in a kernel thread table; creating or destroying them uses system calls and has higher overhead.",
+      21,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "Kernel threads handle page faults efficiently by scheduling another runnable thread, but multithreaded forking and signals are harder.",
+      21,
+      "Operating Systems - Week 1 Lesson 2.pdf"
+    ],
+    [
+      "Type 1 hypervisors run on bare hardware and provide multiple virtual machines, while type 2 hypervisors rely on a host OS.",
+      71,
+      "Chapter 1 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf"
+    ],
+    [
+      "Containers package apps with their libraries while sharing the host operating system, unlike VMs that include full guest operating systems.",
+      22,
+      "Operating Systems - Week 1 Lesson 1.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "What does this mean: Operating systems perform two core functions: providing clean abstractions and managing hardware resources among competing programs and users.",
+      "back": "Operating systems perform two core functions: providing clean abstractions and managing hardware resources among competing programs and users."
+    },
+    {
+      "front": "What does this mean: Kernel mode gives the operating system complete access to hardware and privileged instructions.",
+      "back": "Kernel mode gives the operating system complete access to hardware and privileged instructions."
+    },
+    {
+      "front": "What does this mean: User mode restricts programs from executing privileged instructions and direct I/O operations.",
+      "back": "User mode restricts programs from executing privileged instructions and direct I/O operations."
+    },
+    {
+      "front": "What does this mean: A shell or GUI is a user-mode program that uses OS services to start and manage applications.",
+      "back": "A shell or GUI is a user-mode program that uses OS services to start and manage applications."
+    },
+    {
+      "front": "What does this mean: The file abstraction hides disk hardware complexity and presents a simple interface for storing information.",
+      "back": "The file abstraction hides disk hardware complexity and presents a simple interface for storing information."
+    },
+    {
+      "front": "What does this mean: Time multiplexing shares the CPU by giving processes turns to execute.",
+      "back": "Time multiplexing shares the CPU by giving processes turns to execute."
+    },
+    {
+      "front": "What does this mean: Space multiplexing divides a resource like memory so multiple programs can use different portions simultaneously.",
+      "back": "Space multiplexing divides a resource like memory so multiple programs can use different portions simultaneously."
+    },
+    {
+      "front": "What does this mean: The program counter stores the address of the next instruction to execute.",
+      "back": "The program counter stores the address of the next instruction to execute."
+    },
+    {
+      "front": "What does this mean: The stack pointer points to the top of the current stack used for calls, returns, and local variables.",
+      "back": "The stack pointer points to the top of the current stack used for calls, returns, and local variables."
+    },
+    {
+      "front": "What does this mean: The program status word contains condition codes and control bits, including mode and priority.",
+      "back": "The program status word contains condition codes and control bits, including mode and priority."
+    },
+    {
+      "front": "What does this mean: During a context switch, the OS saves and restores CPU registers so processes can resume correctly.",
+      "back": "During a context switch, the OS saves and restores CPU registers so processes can resume correctly."
+    },
+    {
+      "front": "What does this mean: CPU multithreading switches between thread states quickly but does not create true parallel execution.",
+      "back": "CPU multithreading switches between thread states quickly but does not create true parallel execution."
+    },
+    {
+      "front": "What does this mean: Multicore CPUs provide true parallelism by running threads on multiple independent cores.",
+      "back": "Multicore CPUs provide true parallelism by running threads on multiple independent cores."
+    },
+    {
+      "front": "What does this mean: Memory hierarchy uses registers, cache, RAM, and storage to trade off speed, capacity, and cost.",
+      "back": "Memory hierarchy uses registers, cache, RAM, and storage to trade off speed, capacity, and cost."
+    },
+    {
+      "front": "What does this mean: Cache lines store blocks of memory; caching blocks exploits locality to reduce average access time.",
+      "back": "Cache lines store blocks of memory; caching blocks exploits locality to reduce average access time."
+    },
+    {
+      "front": "What does this mean: I/O devices consist of a controller and the device itself, and controllers require specific control logic.",
+      "back": "I/O devices consist of a controller and the device itself, and controllers require specific control logic."
+    },
+    {
+      "front": "What does this mean: Device drivers are specialized kernel-mode software that controls hardware controllers.",
+      "back": "Device drivers are specialized kernel-mode software that controls hardware controllers."
+    },
+    {
+      "front": "What does this mean: Interrupts notify the CPU of events; the interrupt vector table maps interrupt numbers to handlers.",
+      "back": "Interrupts notify the CPU of events; the interrupt vector table maps interrupt numbers to handlers."
+    },
+    {
+      "front": "What does this mean: PCIe is a point-to-point serial interconnect rather than a shared bus.",
+      "back": "PCIe is a point-to-point serial interconnect rather than a shared bus."
+    },
+    {
+      "front": "What does this mean: A system call uses a trap instruction to transition from user space to kernel space.",
+      "back": "A system call uses a trap instruction to transition from user space to kernel space."
+    },
+    {
+      "front": "What does this mean: System call parameters are passed to a library procedure that triggers the trap and identifies the requested service.",
+      "back": "System call parameters are passed to a library procedure that triggers the trap and identifies the requested service."
+    },
+    {
+      "front": "What does this mean: System call errors are reported through return values and the global errno variable.",
+      "back": "System call errors are reported through return values and the global errno variable."
+    },
+    {
+      "front": "What does this mean: fork() creates a child process that is initially a duplicate of the parent.",
+      "back": "fork() creates a child process that is initially a duplicate of the parent."
+    },
+    {
+      "front": "What does this mean: waitpid() blocks a parent until a child terminates and returns the child’s exit status information.",
+      "back": "waitpid() blocks a parent until a child terminates and returns the child’s exit status information."
+    },
+    {
+      "front": "What does this mean: execve() replaces a process’s core image with a new program file.",
+      "back": "execve() replaces a process’s core image with a new program file."
+    },
+    {
+      "front": "What does this mean: A process is an instance of an executing program with registers, program counter, and variables.",
+      "back": "A process is an instance of an executing program with registers, program counter, and variables."
+    },
+    {
+      "front": "What does this mean: Multiprogramming rapidly switches the CPU among processes to create pseudo-parallelism on one CPU.",
+      "back": "Multiprogramming rapidly switches the CPU among processes to create pseudo-parallelism on one CPU."
+    },
+    {
+      "front": "What does this mean: A process table stores per-process state such as registers, stack pointer, memory usage, and file status.",
+      "back": "A process table stores per-process state such as registers, stack pointer, memory usage, and file status."
+    },
+    {
+      "front": "What does this mean: The scheduler decides which process runs next and helps coordinate interrupts and CPU allocation.",
+      "back": "The scheduler decides which process runs next and helps coordinate interrupts and CPU allocation."
+    },
+    {
+      "front": "What does this mean: Threads allow multiple scheduled execution paths inside one process while sharing the same address space.",
+      "back": "Threads allow multiple scheduled execution paths inside one process while sharing the same address space."
+    },
+    {
+      "front": "What does this mean: Threads are lighter weight than processes and are much faster to create and destroy.",
+      "back": "Threads are lighter weight than processes and are much faster to create and destroy."
+    },
+    {
+      "front": "What does this mean: Threads help when computation and I/O overlap, but do not help when all work is CPU-bound.",
+      "back": "Threads help when computation and I/O overlap, but do not help when all work is CPU-bound."
+    },
+    {
+      "front": "What does this mean: Processes group resources, while threads are the entities that are scheduled to run on the CPU.",
+      "back": "Processes group resources, while threads are the entities that are scheduled to run on the CPU."
+    },
+    {
+      "front": "What does this mean: Each thread has its own stack holding local variables and return addresses.",
+      "back": "Each thread has its own stack holding local variables and return addresses."
+    },
+    {
+      "front": "What does this mean: User-level threads keep a private thread table in user space and avoid trapping into the kernel for switching.",
+      "back": "User-level threads keep a private thread table in user space and avoid trapping into the kernel for switching."
+    },
+    {
+      "front": "What does this mean: User-level threads can block the entire process on a page fault and lack clock interrupts for preemption.",
+      "back": "User-level threads can block the entire process on a page fault and lack clock interrupts for preemption."
+    },
+    {
+      "front": "What does this mean: Kernel threads are tracked by the OS in a kernel thread table and are created or destroyed via system calls.",
+      "back": "Kernel threads are tracked by the OS in a kernel thread table and are created or destroyed via system calls."
+    },
+    {
+      "front": "What does this mean: Kernel threads handle page faults better by running other threads, but forking and signal delivery are more complex.",
+      "back": "Kernel threads handle page faults better by running other threads, but forking and signal delivery are more complex."
+    },
+    {
+      "front": "What does this mean: Type 1 hypervisors run on bare hardware and provide virtual machines directly above the hardware layer.",
+      "back": "Type 1 hypervisors run on bare hardware and provide virtual machines directly above the hardware layer."
+    },
+    {
+      "front": "What does this mean: Type 2 hypervisors rely on a host operating system and often store virtual disks as host files.",
+      "back": "Type 2 hypervisors rely on a host operating system and often store virtual disks as host files."
+    },
+    {
+      "front": "What does this mean: Virtual machines run full guest operating systems, making them heavier than containers.",
+      "back": "Virtual machines run full guest operating systems, making them heavier than containers."
+    },
+    {
+      "front": "What does this mean: Containers package applications and libraries while sharing the host operating system through a container engine.",
+      "back": "Containers package applications and libraries while sharing the host operating system through a container engine."
+    },
+    {
+      "front": "What does this mean: Abstractions turn complex hardware interfaces into clean, consistent resources for application developers.",
+      "back": "Abstractions turn complex hardware interfaces into clean, consistent resources for application developers."
+    },
+    {
+      "front": "What does this mean: Resource management prevents conflicts when multiple programs simultaneously request the same hardware device.",
+      "back": "Resource management prevents conflicts when multiple programs simultaneously request the same hardware device."
+    },
+    {
+      "front": "What does this mean: An interrupt-driven I/O approach lets the CPU do other work while waiting for a device to complete.",
+      "back": "An interrupt-driven I/O approach lets the CPU do other work while waiting for a device to complete."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which two essential functions are emphasized for an operating system in Week 1 materials?",
+      "options": [
+        "Providing clean abstractions and managing hardware resources",
+        "Compiling source code and optimizing machine instructions",
+        "Encrypting files and providing internet routing",
+        "Building hardware drivers and manufacturing devices"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: The materials define the OS as both an abstraction provider and a resource manager."
+    },
+    {
+      "question": "What is the key difference between kernel mode and user mode?",
+      "options": [
+        "Kernel mode runs only application code, while user mode runs only device drivers",
+        "Kernel mode has full hardware access, while user mode has restricted privileges",
+        "Kernel mode cannot access memory, while user mode can",
+        "Kernel mode is slower than user mode because it uses cache"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Kernel mode permits privileged instructions and direct hardware access, unlike user mode."
+    },
+    {
+      "question": "Which statement best describes the shell or GUI in Tanenbaum’s description?",
+      "options": [
+        "It is always part of the kernel and runs in kernel mode",
+        "It is the lowest level of user-mode software that starts other programs",
+        "It replaces the operating system when running applications",
+        "It is a device driver responsible for I/O interrupts"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The shell/GUI is user-mode software that uses OS services to launch and manage programs."
+    },
+    {
+      "question": "A major reason operating systems provide abstractions like files is to:",
+      "options": [
+        "Eliminate the need for any hardware drivers",
+        "Hide complex and awkward hardware interfaces from applications",
+        "Prevent programs from using memory",
+        "Guarantee every program runs in parallel"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Files and other abstractions simplify programming by hiding device-level complexity."
+    },
+    {
+      "question": "Time multiplexing primarily refers to:",
+      "options": [
+        "Dividing memory into partitions for multiple programs",
+        "Sharing a resource by letting programs take turns using it",
+        "Storing identical copies of data in cache and RAM",
+        "Assigning different buses to different devices permanently"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Time multiplexing means turn-taking on a resource such as the CPU."
+    },
+    {
+      "question": "Which is an example of space multiplexing?",
+      "options": [
+        "Round-robin CPU scheduling among processes",
+        "Spooling printer output to disk",
+        "Dividing main memory among multiple resident programs",
+        "Using interrupts to signal I/O completion"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Space multiplexing allocates different parts of a resource like memory to different programs."
+    },
+    {
+      "question": "Which CPU register holds the address of the next instruction to execute?",
+      "options": [
+        "Stack pointer",
+        "Program counter",
+        "Program status word",
+        "Cache line register"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The program counter stores the memory address of the next instruction."
+    },
+    {
+      "question": "Which CPU register points to the top of the current call stack in memory?",
+      "options": [
+        "Stack pointer",
+        "Program counter",
+        "PSW",
+        "I/O port register"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: The stack pointer tracks the top of the current stack used for calls and returns."
+    },
+    {
+      "question": "What does the Program Status Word (PSW) contain, according to the Week 1 hardware review?",
+      "options": [
+        "Only the next instruction address",
+        "Condition codes and control bits such as priority and mode",
+        "Only open file descriptors",
+        "Only cache line tags"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The PSW includes condition code bits plus control information like CPU mode and priority."
+    },
+    {
+      "question": "Why must the operating system save and restore registers during time multiplexing?",
+      "options": [
+        "To prevent cache lines from being overwritten",
+        "To preserve each process’s CPU state across context switches",
+        "To increase disk storage capacity",
+        "To avoid using interrupts"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Saving/restoring registers preserves execution state so a process can resume correctly."
+    },
+    {
+      "question": "CPU multithreading, as presented in the slides, primarily:",
+      "options": [
+        "Creates true parallelism on a single core",
+        "Reduces thread-switching time by keeping multiple thread states available",
+        "Eliminates the need for an operating system scheduler",
+        "Prevents any context switching"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Multithreading reduces switching overhead but does not provide true parallelism on one core."
+    },
+    {
+      "question": "Which hardware feature enables true parallel execution of threads without time slicing on one core?",
+      "options": [
+        "Multithreading",
+        "Multicore processors",
+        "Program counter",
+        "Interrupt vector table"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Multiple cores are independent CPUs that can execute in parallel."
+    },
+    {
+      "question": "In the memory hierarchy, which component is typically fastest?",
+      "options": [
+        "Magnetic disk/SSD",
+        "Main memory (RAM)",
+        "Cache",
+        "CPU registers"
+      ],
+      "answer": 3,
+      "explanation": "Correct because: Registers are inside the CPU and operate at CPU speed, making them the fastest layer."
+    },
+    {
+      "question": "Why do caches use cache lines (blocks) rather than caching single bytes only?",
+      "options": [
+        "Because disks require 64-byte reads",
+        "Because programs exhibit locality, so nearby bytes are likely to be used soon",
+        "Because user mode forbids single-byte caching",
+        "Because interrupts only work with cache lines"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Caching blocks exploits spatial locality by fetching nearby data likely needed soon."
+    },
+    {
+      "question": "Which statement best describes an I/O device in the slides?",
+      "options": [
+        "An I/O device is only the physical peripheral and has no controller",
+        "An I/O device consists of a controller plus the device itself",
+        "An I/O device is the same as main memory",
+        "I/O devices are controlled directly by user programs"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The slides describe I/O devices as having a controller and the device hardware."
+    },
+    {
+      "question": "Why are device drivers typically placed in the operating system and run in kernel mode?",
+      "options": [
+        "Drivers need privileged access to device registers and I/O instructions",
+        "Drivers must be written in Java to run safely",
+        "Drivers only manage user interfaces like shells",
+        "Drivers cannot interact with interrupts"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Kernel mode allows drivers to perform privileged hardware operations safely."
+    },
+    {
+      "question": "What is the purpose of the interrupt vector table?",
+      "options": [
+        "Store every file name on disk",
+        "Map interrupt numbers to interrupt service routine addresses",
+        "Assign IP addresses to devices",
+        "Record cache line contents"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The interrupt vector table maps interrupts to the correct handler code in memory."
+    },
+    {
+      "question": "Which bus characteristic is highlighted for PCIe in the Week 1 slides?",
+      "options": [
+        "Shared parallel bus with one device at a time",
+        "Dedicated point-to-point serial connections",
+        "Only usable for keyboards",
+        "Used exclusively for CPU registers"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: PCIe is described as a dedicated point-to-point serial interconnect."
+    },
+    {
+      "question": "What triggers the user-to-kernel transition for a system call?",
+      "options": [
+        "A cache miss",
+        "A trap instruction",
+        "A printer spool file",
+        "A disk seek"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: System calls use a trap instruction to switch into kernel mode."
+    },
+    {
+      "question": "In the system call workflow described in Week 1 Lesson 2, which happens first?",
+      "options": [
+        "Kernel dispatches to the system-call handler",
+        "Trap instruction executes and switches modes",
+        "Parameters are prepared and a library procedure is called",
+        "Control returns to the user program"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Parameters are prepared and passed to a library procedure before the trap instruction."
+    },
+    {
+      "question": "How is error information commonly exposed to user programs after a system call fails (as in the slides)?",
+      "options": [
+        "The OS prints a message to the screen automatically",
+        "The failing system call sets a global variable named errno",
+        "The system reboots to prevent corruption",
+        "The CPU disables user mode permanently"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The slides state errors are indicated and detailed in the global variable errno."
+    },
+    {
+      "question": "What does fork() do in POSIX-style process management?",
+      "options": [
+        "Replaces the current process image with a new program",
+        "Creates a child process identical to the parent at the moment of creation",
+        "Waits for a child process to terminate",
+        "Terminates the process immediately"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: fork duplicates the calling process, creating a parent and child that then execute separately."
+    },
+    {
+      "question": "What is the primary purpose of waitpid()?",
+      "options": [
+        "Create a new process",
+        "Wait for a child process to terminate and collect its status",
+        "Replace the program being executed",
+        "Switch a user thread without kernel involvement"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: waitpid blocks until a child exits and returns exit status details."
+    },
+    {
+      "question": "What does execve() do in the shell example?",
+      "options": [
+        "Duplicates the parent process",
+        "Replaces the process core image with the program specified",
+        "Blocks until all children terminate",
+        "Moves the file pointer within a file"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: execve replaces the current process image with a new program to run the command."
+    },
+    {
+      "question": "Which best matches the process model described in Week 1 Lesson 2?",
+      "options": [
+        "Runnable software is organized into sequential processes, each an executing program instance",
+        "All programs share one set of registers and one program counter",
+        "Only kernel threads exist; processes are obsolete",
+        "Processes are files stored on disk"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: The slides describe processes as sequential executing instances with their own state."
+    },
+    {
+      "question": "Why do processes appear to have their own “virtual CPU”?",
+      "options": [
+        "Because each process has its own physical core",
+        "Because the OS rapidly switches the real CPU among processes",
+        "Because the program counter is shared across processes",
+        "Because interrupts disable the scheduler"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Fast context switching creates the illusion that each process has its own CPU."
+    },
+    {
+      "question": "What is the process table used for?",
+      "options": [
+        "To store only file system metadata",
+        "To store per-process information like registers, stack pointer, and resource usage",
+        "To map cache lines to memory addresses",
+        "To store only user interface commands"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The slides describe a process table entry containing vital per-process state and resources."
+    },
+    {
+      "question": "Which statement best describes threads, based on Week 1 Lesson 2?",
+      "options": [
+        "Threads are separate processes with separate address spaces",
+        "Threads are execution entities scheduled by the CPU that share a process address space",
+        "Threads can only run in kernel mode",
+        "Threads eliminate the need for synchronization"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Threads share an address space inside a process and are scheduled execution units."
+    },
+    {
+      "question": "When do threads typically provide the biggest performance benefit?",
+      "options": [
+        "When all work is purely CPU-bound",
+        "When the workload mixes substantial computation with I/O so activities can overlap",
+        "When the OS forbids interrupts",
+        "When there is only one process in memory"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The slides explain threads help most when computation and I/O overlap."
+    },
+    {
+      "question": "Which is a key per-thread resource mentioned in the slides?",
+      "options": [
+        "Separate global variables",
+        "Separate stack for local variables and return addresses",
+        "Separate address space",
+        "Separate file system per thread"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Each thread has its own stack even though threads share the process address space."
+    },
+    {
+      "question": "What is an advantage of user-level threads compared to kernel threads?",
+      "options": [
+        "Thread switching can avoid trapping into the kernel, making it fast",
+        "Page faults in one thread never affect other threads",
+        "Signals are always delivered to specific threads automatically",
+        "Forking multithreaded processes becomes simpler"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: User-level thread management avoids kernel traps and can be faster."
+    },
+    {
+      "question": "What is a major drawback of user-level threads listed in Week 1 Lesson 2?",
+      "options": [
+        "A page fault in one thread can block the whole process",
+        "Thread switching always requires a system call",
+        "User-level threads cannot share memory",
+        "User-level threads are slower than kernel threads"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: The slides state a page fault on one user-level thread can block the entire process."
+    },
+    {
+      "question": "Which statement is true about kernel threads in Week 1 Lesson 2?",
+      "options": [
+        "Kernel threads are tracked only in user space",
+        "Kernel thread creation and destruction are implemented as system calls",
+        "Kernel threads have no scheduling overhead",
+        "Kernel threads cannot handle page faults"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Kernel threads are managed by the OS and created/destroyed via system calls."
+    },
+    {
+      "question": "In the materials, what best distinguishes a type 1 hypervisor from a type 2 hypervisor?",
+      "options": [
+        "Type 1 relies on a host OS; type 2 runs on bare hardware",
+        "Type 1 runs on bare hardware; type 2 uses a host OS for services like files and processes",
+        "Type 1 can only run Linux; type 2 can only run Windows",
+        "Type 1 is a container engine; type 2 is a process scheduler"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Type 1 is on bare metal, while type 2 leverages a host operating system for support."
+    },
+    {
+      "question": "How do containers differ from virtual machines in the Week 1 concept slide?",
+      "options": [
+        "Containers always include a full guest OS per application",
+        "Containers share the host operating system and package apps with libraries",
+        "Containers require a type 1 hypervisor to run",
+        "Containers are slower because they emulate hardware"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Containers share the host OS and bundle app + dependencies, unlike VMs with full guest OSs."
+    }
+  ],
+  "games": [],
+  "sources": [
+    "Chapter 1 - Andrew-S.-Tanenbaum-Modern-Operating-Systems.pdf",
+    "Operating Systems - Week 1 Lesson 1.pdf",
+    "Operating Systems - Week 1 Lesson 2.pdf"
+  ]
+}
