@@ -1,0 +1,652 @@
+{
+  "title": "Week 5–6 Quiz Material (Paging + Virtual Memory + Xinu Memory Manager)",
+  "notes": [
+    [
+      "A virtual **page** is a logical block of a process’s virtual memory (virtual address space), while a **page frame** (frame) is a fixed-size unit of physical RAM that can hold one page.",
+      8,
+      "Operating Systems - Week 5 Lesson 1.pdf"
+    ],
+    [
+      "If a program references an **unmapped** virtual page, the MMU detects it and triggers a **page fault** (a trap to the operating system).",
+      8,
+      "Operating Systems - Week 5 Lesson 1.pdf"
+    ],
+    [
+      "A **page fault** occurs when the MMU sees an unmapped page and causes the CPU to trap to the OS so the OS can bring the page into memory and update the mapping.",
+      9,
+      "Operating Systems - Week 5 Lesson 1.pdf"
+    ],
+    [
+      "Core page fault handling sequence: (1) pick a page frame + write victim to disk if needed, (2) fetch the referenced page into that frame + update the map, (3) restart the trapped instruction.",
+      9,
+      "Operating Systems - Week 5 Lesson 1.pdf"
+    ],
+    [
+      "The OS cannot implement truly **Optimal** replacement at runtime because it does not know the future (when each page will be referenced next), so Optimal is a benchmark not implementable.",
+      10,
+      "Operating Systems - Week 5 Lesson 1.pdf"
+    ],
+    [
+      "Common replacement algorithms include Optimal, NRU, FIFO, Second Chance, Clock, LRU, NFU, Aging, Working Set, and WSClock; they trade accuracy vs overhead.",
+      10,
+      "Operating Systems - Week 5 Lesson 1.pdf"
+    ],
+    [
+      "A page table entry includes **R (Referenced)** and **M (Modified/Dirty)** bits: R indicates whether it has been referenced; M indicates whether it has been modified and would need write-back on eviction.",
+      11,
+      "Operating Systems - Week 5 Lesson 1.pdf"
+    ],
+    [
+      "Second-Chance replacement is FIFO plus a 'get out of jail' check: a page with its reference bit set gets a second chance instead of immediate eviction.",
+      12,
+      "Operating Systems - Week 5 Lesson 1.pdf"
+    ],
+    [
+      "Clock replacement uses a circular list with a 'hand': on page fault inspect the pointed page; if R=0 evict; if R=1 clear R and advance the hand.",
+      13,
+      "Operating Systems - Week 5 Lesson 1.pdf"
+    ],
+    [
+      "LRU (Least Recently Used) evicts the page that has not been referenced for the longest time; it is excellent conceptually but difficult to implement exactly without hardware/overhead.",
+      14,
+      "Operating Systems - Week 5 Lesson 1.pdf"
+    ],
+    [
+      "Demand paging means pages are loaded only when demanded (referenced). Locality of reference explains why this works: a process tends to use a relatively small set of pages repeatedly.",
+      15,
+      "Operating Systems - Week 5 Lesson 1.pdf"
+    ],
+    [
+      "A process’s **working set** is the set of pages it is currently using; if the working set is loaded, the process should generate few page faults.",
+      15,
+      "Operating Systems - Week 5 Lesson 1.pdf"
+    ],
+    [
+      "Prepaging is loading pages before letting the process run, attempting to reduce page faults by anticipating near-future references.",
+      15,
+      "Operating Systems - Week 5 Lesson 1.pdf"
+    ],
+
+    [
+      "The page table’s **R and M bits** are explicitly highlighted as the key per-page hardware-assisted state for replacement decisions and write-back behavior.",
+      3,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "Page faults: MMU sees unmapped page → CPU traps to OS → OS picks a frame and may write it back to disk → OS loads the referenced page → OS updates mapping → trapped instruction restarts.",
+      4,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "Local vs Global replacement: local policy evicts a page belonging to the faulting process; global policy may evict any process’s page (system-wide competition).",
+      6,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "Local vs Global framing decisions affect fairness and performance; core goals are to avoid **thrashing** and avoid **wasted memory**.",
+      6,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "PFF (Page Fault Frequency) algorithm: monitor page faults per process; if above upper threshold A faults/sec the process needs more frames; if below lower threshold B faults/sec it needs fewer frames.",
+      7,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "If all processes are at/above the high PFF threshold, the system is likely in **thrashing**: not enough physical memory for working sets overall.",
+      7,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "Load control techniques when memory demand exceeds physical memory include: OOM killer, swapping an entire process to storage, and cleanup methods (compaction, compression, deduplication).",
+      8,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "Copy-on-write: processes can share pages while reading; when a process modifies a shared page, it triggers copying so each process gets its own writable version.",
+      8,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "Cleaning policy: a paging daemon can run mostly asleep, waking to free frames by writing dirty pages back to disk and clearing memory, improving performance by keeping clean frames available.",
+      9,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "Page size design tradeoffs: smaller pages reduce internal fragmentation but increase page table size and TLB pressure; larger pages reduce page table size but may increase internal fragmentation.",
+      10,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "Storage reads/writes typically happen one page at a time; page size influences I/O granularity and overhead.",
+      10,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "Separate instruction and data spaces can use separate page tables (I-space and D-space), affecting how processes map and share code vs data.",
+      11,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "Shared pages: processes can share instruction space; the process table may include pointers to I-space and D-space, enabling sharing and reducing memory duplication.",
+      12,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "Shared libraries: multiple processes can use the same libraries without copying them multiple times; linking/loading strategies allow reuse in memory.",
+      13,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "Implementation issues occur at: process creation (allocate memory, init page table), execution (reset MMU/clear TLB, update registers), page fault time (locate/load/evict), termination (release memory and swap usage).",
+      14,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "Backing store (swap space) is disk space used for paging: it may be a partition without a traditional filesystem, optimized for paging traffic; pages/processes can swap in and out of memory.",
+      15,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+    [
+      "Page fault handling details: trap to kernel, save PC/critical registers, ISR saves registers and invokes handler; OS identifies needed virtual page; then validates address/protection before resolving the fault.",
+      17,
+      "Operating Systems - Week 5 Lesson 2.pdf"
+    ],
+
+    [
+      "Shared pages: many users run the same program; processes may share instruction space; removing a program that others share can cause page faults on later context switches if not handled correctly.",
+      3,
+      "Operating Systems - Week 6 Lesson 1.pdf"
+    ],
+    [
+      "Shared data is possible via copy-on-write: allow shared read-only mappings until a write forces a private copy.",
+      3,
+      "Operating Systems - Week 6 Lesson 1.pdf"
+    ],
+    [
+      "Backing store (swap space) can be managed as free chunks and supports swapping processes/pages in and out to extend effective memory beyond RAM.",
+      5,
+      "Operating Systems - Week 6 Lesson 1.pdf"
+    ],
+    [
+      "Segmentation: a 1D address space divided into segments that can grow/shrink independently; if one segment grows too large it can collide with others; unused allocated space impacts utilization.",
+      7,
+      "Operating Systems - Week 6 Lesson 1.pdf"
+    ],
+    [
+      "Heavyweight process: separate virtual address space and dynamically loaded code from disk; lightweight process (thread): shares address space within a process.",
+      11,
+      "Operating Systems - Week 6 Lesson 1.pdf"
+    ],
+    [
+      "Program memory regions: Text segment contains compiled code; Data segment contains initialized globals; BSS contains uninitialized globals (zero-initialized); Free space follows for heap/stack growth (simplified view).",
+      12,
+      "Operating Systems - Week 6 Lesson 1.pdf"
+    ],
+    [
+      "Stack: holds activation records for function calls (locals, return addresses). Heap: dynamically allocated objects that persist across calls until explicitly freed; failing to free leaks memory.",
+      13,
+      "Operating Systems - Week 6 Lesson 1.pdf"
+    ],
+    [
+      "Xinu memory allocation approach: probe memory, build table of available address blocks, pass the table to the OS being booted; the table itself is stored in memory.",
+      14,
+      "Operating Systems - Week 6 Lesson 1.pdf"
+    ],
+    [
+      "Low-level memory implementation in Xinu: all free blocks are kept on a linked list ordered by increasing address (enables coalescing/merging adjacent free blocks).",
+      15,
+      "Operating Systems - Week 6 Lesson 1.pdf"
+    ],
+    [
+      "Xinu memory management uses memblk and memlist structures plus global pointers tracking where the heap starts/ends and other segment boundaries in the address space.",
+      16,
+      "Operating Systems - Week 6 Lesson 1.pdf"
+    ],
+    [
+      "Key Xinu memory functions: getstk (allocate stack on create), freestk (release stack on terminate), getmem (allocate heap storage), freemem (release heap storage), meminit (initialize free list at startup).",
+      17,
+      "Operating Systems - Week 6 Lesson 1.pdf"
+    ],
+    [
+      "meminit initializes an empty free list then scans memory to build memlist entries representing free memory blocks; this establishes the OS’s initial view of free heap memory.",
+      18,
+      "Operating Systems - Week 6 Lesson 1.pdf"
+    ],
+    [
+      "Memory initialization also tracks OS address space segments (data, stack segments) and uses global variables to record addresses/limits used for memory management.",
+      19,
+      "Operating Systems - Week 6 Lesson 1.pdf"
+    ],
+
+    [
+      "Week 6 also covered file systems as the OS abstraction for persistent long-term storage because RAM is limited during execution and information would be lost on process termination without persistent storage.",
+      3,
+      "Operating Systems - Week 6 Lesson 2.pdf"
+    ],
+    [
+      "Files are OS-managed logical units supporting operations like read, write, create, delete, open, close, seek, rename, and attribute retrieval/modification.",
+      9,
+      "Operating Systems - Week 6 Lesson 2.pdf"
+    ],
+    [
+      "File attributes/metadata include protection, flags (read-only/hidden/etc.), time fields, and size fields; these influence OS behavior and access control.",
+      8,
+      "Operating Systems - Week 6 Lesson 2.pdf"
+    ],
+    [
+      "Directories provide naming/organization; path names can be absolute (/...) or relative; special entries include . and .. and ~ for home.",
+      11,
+      "Operating Systems - Week 6 Lesson 2.pdf"
+    ]
+  ],
+
+  "flashcards": [
+    {
+      "front": "Define **Page** vs **Frame**.",
+      "back": "Page = logical block of virtual memory (virtual address space). Frame = fixed-size unit of physical RAM that holds a page."
+    },
+    {
+      "front": "What triggers a **page fault**?",
+      "back": "The MMU detects a referenced virtual page that is unmapped/not present and traps to the OS."
+    },
+    {
+      "front": "Write the **3-step** page fault handling outline used in class.",
+      "back": "1) Pick a frame (evict/write-back if needed). 2) Fetch referenced page into frame + update mapping. 3) Restart trapped instruction."
+    },
+    {
+      "front": "What is the **R bit** in a page table entry?",
+      "back": "Referenced bit: indicates whether the page has been accessed recently; used for replacement approximations (Clock/Aging)."
+    },
+    {
+      "front": "What is the **M bit** (dirty bit) and why does it matter?",
+      "back": "Modified bit: indicates page was written. If M=1, eviction usually requires writing the page back to disk first."
+    },
+    {
+      "front": "Why is **Optimal** replacement not implementable?",
+      "back": "The OS cannot know future page references at runtime; Optimal requires future knowledge."
+    },
+    {
+      "front": "How does **Clock** decide eviction?",
+      "back": "Inspect page at hand: if R=0 evict; if R=1 clear R and advance hand (second chance)."
+    },
+    {
+      "front": "What is **LRU**?",
+      "back": "Least Recently Used: evict the page that has not been referenced for the longest time."
+    },
+    {
+      "front": "Why is true **LRU** hard to implement?",
+      "back": "Requires precise ordering/timestamps on every memory reference (high overhead) unless supported by hardware."
+    },
+    {
+      "front": "What is **Demand Paging**?",
+      "back": "Pages are brought into memory only when referenced (on demand), not preloaded all at once."
+    },
+    {
+      "front": "Define **Locality of Reference**.",
+      "back": "A process tends to reference a relatively small set of pages repeatedly in short time windows (not uniformly random)."
+    },
+    {
+      "front": "Define **Working Set**.",
+      "back": "The set of pages a process is actively using; if loaded, the process should generate few faults."
+    },
+    {
+      "front": "What is **Prepaging**?",
+      "back": "Loading pages before running the process to reduce initial page faults by anticipating references."
+    },
+    {
+      "front": "Local vs Global replacement (1 sentence each).",
+      "back": "Local: evict a page from the faulting process. Global: evict any process’s page system-wide."
+    },
+    {
+      "front": "What is **PFF** (Page Fault Frequency)?",
+      "back": "A per-process control policy that monitors page faults/sec and adjusts frames allocated to each process using thresholds."
+    },
+    {
+      "front": "PFF thresholds A and B mean what?",
+      "back": "Above A faults/sec: needs more frames. Below B faults/sec: can give up frames."
+    },
+    {
+      "front": "What is **Thrashing**?",
+      "back": "When processes generate excessive page faults and the system spends most time paging instead of executing."
+    },
+    {
+      "front": "What does the **paging daemon / cleaning policy** do?",
+      "back": "Runs in background to free frames by writing dirty pages to disk and keeping clean frames ready for quick allocation."
+    },
+    {
+      "front": "Page size tradeoff: smaller pages vs larger pages.",
+      "back": "Smaller: less internal fragmentation but larger page tables and more TLB pressure. Larger: smaller page tables but more internal fragmentation."
+    },
+    {
+      "front": "What is **Backing Store** (swap space)?",
+      "back": "Disk space used to hold pages/process images when not in RAM; used for paging/swapping."
+    },
+    {
+      "front": "Instruction space vs Data space separation implies what?",
+      "back": "Separate page tables (I-space and D-space) can map code and data separately and enable sharing of code pages."
+    },
+    {
+      "front": "What are **Shared Pages** in the slides?",
+      "back": "Processes can share instruction space pages; process table may track I-space and D-space pointers; enables memory savings."
+    },
+    {
+      "front": "What are **Shared Libraries** and why useful?",
+      "back": "Multiple processes use the same library code in memory without duplicating it; linked/loaded for reuse."
+    },
+    {
+      "front": "Heavyweight process vs Thread (lightweight process).",
+      "back": "Heavyweight: separate virtual address space. Thread: shares address space with other threads in same process."
+    },
+    {
+      "front": "Name the core program memory segments (as taught).",
+      "back": "Text, Data, BSS, Heap, Stack (plus free space conceptually in the simplified layout)."
+    },
+    {
+      "front": "What is Xinu’s **memlist** conceptually?",
+      "back": "A linked list of free memory blocks, typically ordered by increasing address, used for allocating/freeing memory."
+    },
+    {
+      "front": "Why order free blocks by increasing address?",
+      "back": "It makes coalescing adjacent free blocks easier when freeing memory (reduce external fragmentation)."
+    },
+    {
+      "front": "What is **meminit** in Xinu?",
+      "back": "Initializes the free list at startup by scanning memory and building memlist entries for free blocks."
+    },
+    {
+      "front": "List the key Xinu memory functions and what each does (1 line).",
+      "back": "getstk alloc stack on create; freestk frees stack on terminate; getmem alloc heap; freemem frees heap; meminit initializes free list."
+    },
+    {
+      "front": "File systems exist because of what 3 challenges (as taught)?",
+      "back": "RAM is limited during execution; information is lost on termination; multiple processes need concurrent access to persistent data."
+    }
+  ],
+
+  "quiz": [
+    {
+      "question": "What is the best definition of a **page frame**?",
+      "options": [
+        "A logical block of virtual memory",
+        "A unit of physical memory (RAM) that holds a page",
+        "A disk sector used for swap",
+        "A CPU register storing a virtual address"
+      ],
+      "answer": 1,
+      "explanation": "A page frame is a fixed-size unit of physical RAM that stores a virtual page."
+    },
+    {
+      "question": "A **page fault** happens when:",
+      "options": [
+        "The CPU cannot decode an instruction",
+        "The MMU detects an unmapped/not-present page reference and traps to the OS",
+        "The OS runs out of threads",
+        "A process calls open() on a file"
+      ],
+      "answer": 1,
+      "explanation": "Page faults are raised by the MMU on invalid/not-present page references, causing a trap to the OS."
+    },
+    {
+      "question": "Which sequence matches the class slide’s page fault handling outline?",
+      "options": [
+        "Restart instruction → pick victim → load page",
+        "Pick a frame & write-back if needed → fetch referenced page & update map → restart trapped instruction",
+        "Kill process → clear RAM → reboot",
+        "Allocate new disk partition → copy file → resume"
+      ],
+      "answer": 1,
+      "explanation": "The slide emphasizes: pick/evict, fetch/update mapping, restart instruction."
+    },
+    {
+      "question": "The **R bit** in a page table entry indicates:",
+      "options": [
+        "Whether the page was referenced recently",
+        "Whether the page is readable by user-mode",
+        "Whether the page is in swap space",
+        "Whether the page contains code"
+      ],
+      "answer": 0,
+      "explanation": "R = Referenced; it helps approximate recency for replacement."
+    },
+    {
+      "question": "The **M (dirty) bit** matters because:",
+      "options": [
+        "If set, eviction often requires writing the page back to disk",
+        "If set, the page is always evicted first",
+        "If set, the page cannot be referenced",
+        "If set, the page table must be deleted"
+      ],
+      "answer": 0,
+      "explanation": "Dirty pages must be saved to backing store before eviction to avoid losing modifications."
+    },
+    {
+      "question": "Why is **Optimal** page replacement not implementable in a real OS at runtime?",
+      "options": [
+        "It requires knowing future references",
+        "It cannot use page tables",
+        "It never causes page faults",
+        "It requires disabling the MMU"
+      ],
+      "answer": 0,
+      "explanation": "Optimal needs perfect knowledge of the future, which the OS does not have."
+    },
+    {
+      "question": "Clock replacement chooses a victim when:",
+      "options": [
+        "R=1 so it evicts immediately",
+        "R=0 at the hand position",
+        "M=1 at the hand position",
+        "The page is the newest loaded"
+      ],
+      "answer": 1,
+      "explanation": "Clock evicts when it finds R=0; if R=1 it clears it and advances."
+    },
+    {
+      "question": "LRU means evict the page that:",
+      "options": [
+        "Was loaded most recently",
+        "Has not been referenced for the longest time",
+        "Has the largest size",
+        "Has M=1"
+      ],
+      "answer": 1,
+      "explanation": "Least Recently Used = oldest last-access time."
+    },
+    {
+      "question": "Which is a correct statement about **Demand Paging**?",
+      "options": [
+        "All pages are loaded into RAM before execution begins",
+        "Pages are loaded only when referenced",
+        "It prevents page faults",
+        "It requires contiguous allocation on disk"
+      ],
+      "answer": 1,
+      "explanation": "Demand paging loads pages on first use (fault-driven)."
+    },
+    {
+      "question": "Locality of reference supports demand paging because:",
+      "options": [
+        "Processes tend to use a small set of pages repeatedly",
+        "Processes reference pages uniformly at random",
+        "Disk is always faster than RAM",
+        "The OS knows the future"
+      ],
+      "answer": 0,
+      "explanation": "Locality implies a working set that can fit in a manageable number of frames."
+    },
+    {
+      "question": "Local replacement policy means:",
+      "options": [
+        "Evict only pages from the faulting process",
+        "Evict any process’s pages",
+        "Evict only dirty pages",
+        "Evict only code pages"
+      ],
+      "answer": 0,
+      "explanation": "Local replacement confines eviction to the faulting process’s allocation."
+    },
+    {
+      "question": "Global replacement policy means:",
+      "options": [
+        "Evict only pages from the faulting process",
+        "Evict pages from any process system-wide",
+        "Evict only clean pages",
+        "Evict only the largest page"
+      ],
+      "answer": 1,
+      "explanation": "Global replacement allows competition for frames across processes."
+    },
+    {
+      "question": "PFF (Page Fault Frequency) primarily controls:",
+      "options": [
+        "Which page to evict within a process (victim choice)",
+        "How many frames each process should have (allocation across processes)",
+        "How to name files",
+        "How to schedule CPU quanta"
+      ],
+      "answer": 1,
+      "explanation": "PFF adjusts per-process frame allocations based on fault rate thresholds."
+    },
+    {
+      "question": "Under PFF, if a process is above threshold A faults/sec, the OS should:",
+      "options": [
+        "Give it more frames",
+        "Take frames away",
+        "Kill the process immediately",
+        "Disable paging"
+      ],
+      "answer": 0,
+      "explanation": "A high fault rate suggests insufficient frames for the working set."
+    },
+    {
+      "question": "Thrashing is best described as:",
+      "options": [
+        "A CPU scheduling bug",
+        "Excessive paging activity due to insufficient frames for working sets",
+        "A file system corruption event",
+        "A TLB that never caches"
+      ],
+      "answer": 1,
+      "explanation": "Thrashing occurs when the system is dominated by page fault handling/paging I/O."
+    },
+    {
+      "question": "A cleaning policy / paging daemon improves performance by:",
+      "options": [
+        "Keeping clean free frames available to allocate quickly",
+        "Turning off page tables",
+        "Preventing context switches",
+        "Making pages larger automatically"
+      ],
+      "answer": 0,
+      "explanation": "Pre-cleaned frames reduce stall time when faults require a frame immediately."
+    },
+    {
+      "question": "Smaller pages tend to:",
+      "options": [
+        "Increase page table size",
+        "Decrease page table size",
+        "Eliminate internal fragmentation",
+        "Prevent page faults entirely"
+      ],
+      "answer": 0,
+      "explanation": "More pages are needed to cover the same address space, so the page table grows."
+    },
+    {
+      "question": "Larger pages tend to:",
+      "options": [
+        "Reduce internal fragmentation",
+        "Increase internal fragmentation",
+        "Increase page table size",
+        "Disable demand paging"
+      ],
+      "answer": 1,
+      "explanation": "The last page of a region may waste more space if the page is larger."
+    },
+    {
+      "question": "Backing store (swap space) is:",
+      "options": [
+        "A CPU cache",
+        "Disk space used to hold pages/processes when not in RAM",
+        "A kernel thread scheduler queue",
+        "A directory tree"
+      ],
+      "answer": 1,
+      "explanation": "Swap/backing store holds evicted pages for later retrieval."
+    },
+    {
+      "question": "Xinu’s free memory management described in class keeps free blocks:",
+      "options": [
+        "In a linked list ordered by increasing address",
+        "In a random array",
+        "Only in the page table",
+        "Only as a bitmap with no list"
+      ],
+      "answer": 0,
+      "explanation": "Ordered free lists help coalesce adjacent free blocks."
+    },
+    {
+      "question": "Which Xinu function initializes the free list at startup?",
+      "options": [
+        "getmem",
+        "freemem",
+        "meminit",
+        "getstk"
+      ],
+      "answer": 2,
+      "explanation": "meminit initializes the free list and builds the memory list at boot."
+    },
+    {
+      "question": "Which pair correctly matches the Xinu functions to their role?",
+      "options": [
+        "getstk=free heap, freemem=alloc stack",
+        "getmem=alloc heap, freemem=free heap",
+        "meminit=alloc stack, getstk=init free list",
+        "freestk=alloc heap, getmem=free stack"
+      ],
+      "answer": 1,
+      "explanation": "getmem allocates heap storage; freemem releases heap storage."
+    },
+    {
+      "question": "A heavyweight process differs from a thread (lightweight process) because:",
+      "options": [
+        "It always runs in kernel mode",
+        "It has its own virtual address space, while threads share one",
+        "It cannot be preempted",
+        "It has no stack"
+      ],
+      "answer": 1,
+      "explanation": "Processes have separate address spaces; threads share within a process."
+    },
+    {
+      "question": "Which list is the correct program memory region set taught in the slides?",
+      "options": [
+        "Text, Data, BSS, Heap, Stack",
+        "CPU, RAM, Disk, Network, GPU",
+        "Root, Home, Users, Bin, Etc",
+        "Queue, Semaphore, Mutex, Monitor"
+      ],
+      "answer": 0,
+      "explanation": "Those are the canonical regions emphasized in the program layout slide."
+    }
+  ],
+
+  "sources": [
+    {
+      "file": "Operating Systems - Week 5 Lesson 1.pdf",
+      "pages": [8, 9, 10, 11, 12, 13, 14, 15]
+    },
+    {
+      "file": "Operating Systems - Week 5 Lesson 2.pdf",
+      "pages": [3, 4, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 17]
+    },
+    {
+      "file": "Operating Systems - Week 6 Lesson 1.pdf",
+      "pages": [3, 5, 7, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+    },
+    {
+      "file": "Operating Systems - Week 6 Lesson 2.pdf",
+      "pages": [3, 8, 9, 11]
+    }
+  ]
+}
