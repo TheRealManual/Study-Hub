@@ -1,0 +1,1239 @@
+{
+  "title": "Midterm Ch.1 & Ch.2",
+  "notes": [
+    [
+      "The Internet is a \"network of networks\" where protocols control sending/receiving of messages and standards are produced by bodies like IETF (RFCs) and IEEE.",
+      4,
+      "1- Overview.pptx"
+    ],
+    [
+      "Internet structure separates the network edge (hosts/clients/servers), network core (mesh of routers), and access networks (last-mile wired/wireless).",
+      8,
+      "1- Overview.pptx"
+    ],
+    [
+      "Circuit switching reserves resources for a call, uses a pre-defined route, and can provide guaranteed performance.",
+      12,
+      "1- Overview.pptx"
+    ],
+    [
+      "Modern circuit switching can reserve resources via Frequency Division Multiplexing (FDM) or Time Division Multiplexing (TDM).",
+      13,
+      "1- Overview.pptx"
+    ],
+    [
+      "Packet switching is store-and-forward: hosts break messages into packets that are forwarded independently with no resource reservation and no performance guarantees.",
+      14,
+      "1- Overview.pptx"
+    ],
+    [
+      "For store-and-forward through a single packet switch, end-to-end transmission delay is L/R1 + L/R2 for packet length L and link rates R1, R2.",
+      2,
+      "HW1 - Reference Answers.pdf"
+    ],
+    [
+      "If a router's arrival rate exceeds the outgoing transmission rate, packets queue and may be dropped if the buffer fills.",
+      18,
+      "1- Overview.pptx"
+    ],
+    [
+      "Nodal delay includes processing, queueing, transmission, and propagation components; queueing delay is typically the most variable.",
+      19,
+      "1- Overview.pptx"
+    ],
+    [
+      "Transmission delay is L/R where L is packet length (bits) and R is link transmission rate (bps).",
+      19,
+      "1- Overview.pptx"
+    ],
+    [
+      "Propagation delay is d/s where d is link length and s is propagation speed (about 2\u00d710^8 m/s in many media).",
+      20,
+      "1- Overview.pptx"
+    ],
+    [
+      "Throughput over a multi-link path is limited by the bottleneck link rate (often modeled as the minimum link capacity).",
+      1,
+      "Quiz 1 Answer Key.pdf"
+    ],
+    [
+      "Packet switching is efficient for bursty data and enables resource sharing, but can experience congestion and offers no guarantees.",
+      17,
+      "1- Overview.pptx"
+    ],
+    [
+      "Traffic intensity aL/R near 1 leads to large average queueing delay; when it is much smaller than 1, queueing delay is small.",
+      22,
+      "1- Overview.pptx"
+    ],
+    [
+      "Traceroute measures per-hop round-trip times by sending probes that elicit replies from routers along the path.",
+      23,
+      "1- Overview.pptx"
+    ],
+    [
+      "In client-server architecture, the server is an always-on host with a permanent IP address; clients may be intermittently connected and use dynamic IPs.",
+      6,
+      "2- Chapter 2 - Part 1 - Principles and Socket Programming.pdf"
+    ],
+    [
+      "In peer-to-peer architecture there is no always-on server; peers directly communicate and self-scalability arises as new peers add capacity and demand.",
+      7,
+      "2- Chapter 2 - Part 1 - Principles and Socket Programming.pdf"
+    ],
+    [
+      "A process is a program running within a host; the client process initiates communication and the server process waits to be contacted.",
+      9,
+      "2- Chapter 2 - Part 1 - Principles and Socket Programming.pdf"
+    ],
+    [
+      "A process communicates with the network via a socket, which is analogous to a mailbox/portal to the transport layer.",
+      10,
+      "2- Chapter 2 - Part 1 - Principles and Socket Programming.pdf"
+    ],
+    [
+      "Process addressing uses (IP address, port number); examples of well-known ports include HTTP 80, SSH 22, mail 25, and DNS 53.",
+      12,
+      "2- Chapter 2 - Part 1 - Principles and Socket Programming.pdf"
+    ],
+    [
+      "TCP provides reliable transport, flow control, congestion control, and is connection-oriented (requires setup).",
+      14,
+      "2- Chapter 2 - Part 1 - Principles and Socket Programming.pdf"
+    ],
+    [
+      "UDP is connectionless and best-effort: it provides no delivery/order guarantees and omits flow and congestion control, making it simpler and often faster.",
+      14,
+      "2- Chapter 2 - Part 1 - Principles and Socket Programming.pdf"
+    ],
+    [
+      "In UDP socket programming, the client uses sendto() and recvfrom(), and the server binds to a port and replies to the client's (IP, port).",
+      16,
+      "2- Chapter 2 - Part 1 - Principles and Socket Programming.pdf"
+    ],
+    [
+      "In TCP socket programming, the server listens on a welcoming socket and accept() creates a new per-client connection socket.",
+      21,
+      "2- Chapter 2 - Part 1 - Principles and Socket Programming.pdf"
+    ],
+    [
+      "HTTP uses TCP: the client opens a TCP connection to the server (often port 80) and exchanges request/response messages; HTTP is stateless.",
+      5,
+      "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf"
+    ],
+    [
+      "Cookies allow a website to maintain user/server state across HTTP transactions via Set-Cookie/ Cookie headers and a browser-managed cookie file.",
+      7,
+      "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf"
+    ],
+    [
+      "Non-persistent HTTP uses a new TCP connection per object, while persistent HTTP can send multiple objects over one TCP connection.",
+      16,
+      "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf"
+    ],
+    [
+      "For non-persistent HTTP, response time per object is 2 RTT + object transmission time (one RTT to set up TCP, one RTT for request/first response bytes).",
+      18,
+      "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf"
+    ],
+    [
+      "Persistent HTTP (HTTP/1.1) keeps the TCP connection open, reducing extra RTT overhead when downloading multiple objects from the same server.",
+      20,
+      "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf"
+    ],
+    [
+      "An HTTP request message has a request line (method, URL, version) plus header lines, ending with CRLF; a blank line ends the headers.",
+      21,
+      "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf"
+    ],
+    [
+      "Conditional GET uses If-Modified-Since; if cached copy is current, the server replies with 304 Not Modified and sends no object body.",
+      33,
+      "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf"
+    ],
+    [
+      "In HTTP/1.1, pipelined GETs are served in-order (FCFS), which can cause head-of-line (HOL) blocking where small objects wait behind a large object.",
+      34,
+      "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf"
+    ],
+    [
+      "HTTP/2 mitigates HOL blocking by dividing objects into frames and interleaving frame transmission; servers may also use client-specified priorities and server push.",
+      36,
+      "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf"
+    ],
+    [
+      "DNS queries are sent to a local DNS server, which may answer from cache or forward into the DNS hierarchy; cached entries expire via TTL and can be out of date.",
+      53,
+      "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf"
+    ],
+    [
+      "DNS name resolution can be iterative (servers refer you to another server) or recursive (contacted server resolves on your behalf).",
+      54,
+      "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf"
+    ],
+    [
+      "DNS resource records include NS (authoritative name server), A (hostname to IP), CNAME (alias to canonical name), and MX (mail server for a domain).",
+      57,
+      "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf"
+    ],
+    [
+      "E-mail uses user agents and mail servers; SMTP transfers messages between mail servers, which maintain user mailboxes and outgoing message queues.",
+      40,
+      "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf"
+    ],
+    [
+      "SMTP uses TCP port 25 and proceeds through handshaking (greeting), transfer of message, and closure via command/response exchanges.",
+      41,
+      "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf"
+    ],
+    [
+      "Mail access protocols like IMAP support retrieval and mailbox management on the server; webmail uses HTTP interfaces on top of SMTP/IMAP (or POP).",
+      44,
+      "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf"
+    ],
+    [
+      "To load a webpage when the IP is unknown, the browser performs DNS lookup, then opens a TCP connection, performs TLS for HTTPS, sends HTTP request, and renders the response.",
+      1,
+      "Quiz 2 Answer Key.pdf"
+    ],
+    [
+      "HOL blocking in HTTP/1.1 occurs when a large object blocks smaller ones behind it on a bottleneck; HTTP/2 uses frames and interleaving to reduce this effect.",
+      2,
+      "HW 2 - solutions.pdf"
+    ],
+    [
+      "A web cache can reduce backbone link utilization by serving repeated (common) pages locally, lowering queueing delay when utilization was near 1.",
+      1,
+      "HW 2 - solutions.pdf"
+    ],
+    [
+      "Midterm has four problems: webpage retrieval steps, reliable transport mechanisms, TCP Reno cwnd/ ssthresh interpretation, and a bottleneck/caching ISP scenario.",
+      1,
+      "Midterm - Fall 25.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "What is meant by the Internet being a \"network of networks\"?",
+      "back": "It is formed by many interconnected networks (ISPs, enterprise, home, mobile, datacenter networks) that communicate using common protocols."
+    },
+    {
+      "front": "In Internet structure, what are the network edge, core, and access network?",
+      "back": "Edge: hosts (clients/servers). Core: mesh of routers. Access network: last-mile wired/wireless links connecting hosts to the first router."
+    },
+    {
+      "front": "What is circuit switching in one sentence?",
+      "back": "A communication model where resources are reserved end-to-end for the duration of a call using a pre-defined path."
+    },
+    {
+      "front": "What is packet switching (store-and-forward) in one sentence?",
+      "back": "Hosts break messages into packets that routers store and forward independently without reserving resources ahead of time."
+    },
+    {
+      "front": "What do FDM and TDM do in circuit switching?",
+      "back": "FDM reserves distinct frequency bands per user; TDM reserves recurring time slots per user on the link."
+    },
+    {
+      "front": "What does it mean for queueing delay to be \"variable\"?",
+      "back": "It changes with current traffic load because packets may wait longer or shorter in router buffers depending on arrival rate vs service rate."
+    },
+    {
+      "front": "Give the four main nodal delay components.",
+      "back": "Processing delay, queueing delay, transmission delay, and propagation delay."
+    },
+    {
+      "front": "Transmission delay formula and meaning.",
+      "back": "L/R seconds: time to push L bits onto a link of rate R bps."
+    },
+    {
+      "front": "Propagation delay formula and meaning.",
+      "back": "d/s seconds: time for a signal to propagate across a link of length d at speed s."
+    },
+    {
+      "front": "What is the bottleneck link idea for throughput?",
+      "back": "End-to-end throughput is constrained by the slowest (minimum-capacity) link along the path."
+    },
+    {
+      "front": "What happens in a router if packets arrive faster than they can be transmitted?",
+      "back": "Packets queue in memory; if the buffer fills, packets are dropped (loss)."
+    },
+    {
+      "front": "What is traffic intensity aL/R used for?",
+      "back": "To predict queueing behavior: when near 1, queueing delay grows large; when much smaller than 1, queueing delay is small."
+    },
+    {
+      "front": "What does traceroute measure?",
+      "back": "Per-hop round-trip times along a path by sending probes that elicit responses from routers."
+    },
+    {
+      "front": "What is a process in networking terms?",
+      "back": "A program running within a host; network apps communicate between processes."
+    },
+    {
+      "front": "Client vs server process definitions.",
+      "back": "Client initiates communication; server waits to be contacted."
+    },
+    {
+      "front": "Client-server architecture: 2 server traits + 2 client traits.",
+      "back": "Server: always-on, permanent IP. Clients: intermittently connected, may have dynamic IPs."
+    },
+    {
+      "front": "Peer-to-peer architecture: 2 core traits.",
+      "back": "No always-on server; peers directly communicate and both request/provide service."
+    },
+    {
+      "front": "What is a socket (analogy)?",
+      "back": "An application\u2019s interface to the transport layer, analogous to a mailbox/doorway for sending and receiving messages."
+    },
+    {
+      "front": "What identifies a destination process on the Internet?",
+      "back": "A process identifier that includes an IP address plus a port number."
+    },
+    {
+      "front": "Name four well-known ports from the slides.",
+      "back": "HTTP 80, SSH 22, mail (SMTP) 25, DNS 53."
+    },
+    {
+      "front": "TCP service: list the four key features from class.",
+      "back": "Reliable transport, flow control, congestion control, and connection-oriented setup."
+    },
+    {
+      "front": "UDP service: list the three key features from class.",
+      "back": "Best-effort delivery, connectionless, and no flow/congestion control (low overhead)."
+    },
+    {
+      "front": "UDP socket programming: what does recvfrom() return besides data?",
+      "back": "The client address (IP, port) so the server knows where to send the reply."
+    },
+    {
+      "front": "TCP socket programming: what does accept() do?",
+      "back": "It returns a new per-connection socket used for the specific client, while the welcoming socket keeps listening."
+    },
+    {
+      "front": "Why is HTTP called stateless?",
+      "back": "The server keeps no memory of previous client requests; each request/response is handled independently."
+    },
+    {
+      "front": "Non-persistent HTTP vs persistent HTTP (one-liner).",
+      "back": "Non-persistent: one object per TCP connection. Persistent: multiple objects over one TCP connection."
+    },
+    {
+      "front": "Non-persistent HTTP per-object response time (ignoring small request time).",
+      "back": "2RTT + transmission time of the object."
+    },
+    {
+      "front": "What is the purpose of cookies in HTTP?",
+      "back": "To maintain user/server state across transactions using cookie headers and a browser-stored cookie file."
+    },
+    {
+      "front": "What does an HTTP request message contain at a high level?",
+      "back": "A request line (method, URL, version) plus headers, ending with a blank line; optional entity body for some methods."
+    },
+    {
+      "front": "What is Conditional GET used for?",
+      "back": "To avoid sending an object if the client\u2019s cached copy is up-to-date, using If-Modified-Since and receiving 304 Not Modified."
+    },
+    {
+      "front": "What is HOL blocking in HTTP/1.1 (in plain language)?",
+      "back": "Small objects can be forced to wait behind a large object because responses are sent in request order over one TCP connection."
+    },
+    {
+      "front": "How does HTTP/2 mitigate HOL blocking at the HTTP layer?",
+      "back": "It divides objects into frames and interleaves frame transmission so small objects can finish earlier."
+    },
+    {
+      "front": "What is the role of the local DNS server?",
+      "back": "It receives the host\u2019s query, may answer from cache, or forwards queries into the DNS hierarchy for resolution."
+    },
+    {
+      "front": "Why can DNS caching be \"wrong\" temporarily?",
+      "back": "Because cached name-to-address mappings may be out of date until TTLs expire after an IP change."
+    },
+    {
+      "front": "Iterative vs recursive DNS resolution difference.",
+      "back": "Iterative: each server points you to the next. Recursive: the contacted server resolves the full name on your behalf."
+    },
+    {
+      "front": "DNS RR types NS, A, CNAME, MX (short meaning).",
+      "back": "NS: authoritative server name; A: hostname\u2192IP; CNAME: alias\u2192canonical name; MX: mail server for domain."
+    },
+    {
+      "front": "What does TTL mean in DNS?",
+      "back": "Time To Live: how long a cached DNS entry can be kept before it expires."
+    },
+    {
+      "front": "Three major components of e-mail systems.",
+      "back": "User agents, mail servers, and SMTP."
+    },
+    {
+      "front": "What do mail servers store for users?",
+      "back": "Incoming messages in mailboxes and outgoing messages in a message queue."
+    },
+    {
+      "front": "What transport does SMTP use and what is the well-known port?",
+      "back": "TCP, port 25."
+    },
+    {
+      "front": "SMTP has three phases\u2014name them.",
+      "back": "Handshaking (greeting), transfer of messages, and closure."
+    },
+    {
+      "front": "What does IMAP provide compared to SMTP?",
+      "back": "IMAP retrieves/manages stored messages on a mail server; SMTP is for sending between servers/UA to server."
+    },
+    {
+      "front": "Outline the high-level steps to load a webpage when the IP is unknown.",
+      "back": "DNS lookup \u2192 get IP \u2192 TCP connection setup \u2192 TLS handshake (HTTPS) \u2192 HTTP request/response \u2192 parse HTML and fetch referenced objects \u2192 render."
+    },
+    {
+      "front": "In TCP Reno, what phase shows exponential cwnd growth?",
+      "back": "Slow start."
+    },
+    {
+      "front": "In TCP Reno, what phase shows linear cwnd growth?",
+      "back": "Congestion avoidance."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "Which description best matches the Internet in the course materials?",
+      "options": [
+        "A network of networks built on packet switching",
+        "A single centralized network run by the WWW organization",
+        "A set of servers connected only by HTTP links",
+        "A network of networks built on circuit switching"
+      ],
+      "answer": 0,
+      "explanation": "The Internet is described as a network of networks that uses packet switching."
+    },
+    {
+      "question": "For Host1\u2014C1\u2014Router\u2014C2\u2014Host2, what is the maximum achievable average throughput (ignoring other traffic)?",
+      "options": [
+        "The minimum of C1 and C2",
+        "The maximum of C1 and C2",
+        "The sum of C1 and C2",
+        "The product of C1 and C2"
+      ],
+      "answer": 0,
+      "explanation": "End-to-end throughput is limited by the bottleneck link, modeled as min{C1, C2}."
+    },
+    {
+      "question": "Which pair of delay components is typically most constant/deterministic on a fixed path?",
+      "options": [
+        "Propagation delay and transmission delay",
+        "Queueing delay and processing delay",
+        "Queueing delay and propagation delay",
+        "Processing delay and queueing delay"
+      ],
+      "answer": 0,
+      "explanation": "Propagation and transmission are largely determined by link length/rate; queueing varies with traffic."
+    },
+    {
+      "question": "A router is receiving packets faster than it can forward them on its outgoing link. Which delay is most directly affected first?",
+      "options": [
+        "Queueing delay",
+        "Propagation delay",
+        "Signal attenuation delay",
+        "Carrier sensing delay"
+      ],
+      "answer": 0,
+      "explanation": "Excess arrivals build a buffer, increasing queueing delay; other delays are not primarily driven by congestion."
+    },
+    {
+      "question": "Which statement best characterizes circuit switching in the slides?",
+      "options": [
+        "Resources are reserved and a pre-defined route can provide guarantees",
+        "Packets are routed independently with no reservation and no guarantees",
+        "A new route is computed per packet with strict guarantees",
+        "Resources are shared opportunistically with no setup delay"
+      ],
+      "answer": 0,
+      "explanation": "Circuit switching reserves resources and uses a fixed path, enabling performance guarantees."
+    },
+    {
+      "question": "Which mechanism reserves link resources by dividing frequency into bands per user/call?",
+      "options": [
+        "Frequency Division Multiplexing (FDM)",
+        "Time Division Multiplexing (TDM)",
+        "Store-and-forward multiplexing (SFM)",
+        "Random Access Multiplexing (RAM)"
+      ],
+      "answer": 0,
+      "explanation": "FDM allocates each user a frequency band; TDM allocates time slots."
+    },
+    {
+      "question": "Which expression matches transmission delay for a packet of length L bits on a link of rate R bps?",
+      "options": [
+        "L / R",
+        "R / L",
+        "d / s",
+        "aL / R"
+      ],
+      "answer": 0,
+      "explanation": "Transmission delay is the time to push L bits onto the link: L/R."
+    },
+    {
+      "question": "Which expression matches propagation delay for link length d and propagation speed s?",
+      "options": [
+        "d / s",
+        "s / d",
+        "L / R",
+        "R / L"
+      ],
+      "answer": 0,
+      "explanation": "Propagation delay is the travel time of the signal: d/s."
+    },
+    {
+      "question": "Traffic intensity aL/R approaches 1 on a link. Which outcome best matches the slides?",
+      "options": [
+        "Average queueing delay becomes very large",
+        "Propagation delay becomes very large",
+        "Transmission delay becomes random",
+        "Processing delay becomes negative"
+      ],
+      "answer": 0,
+      "explanation": "When aL/R is near 1, the queue tends to grow and waiting time increases sharply."
+    },
+    {
+      "question": "In a client-server architecture, which statement is correct?",
+      "options": [
+        "Clients typically initiate communication toward an always-on server",
+        "Clients must communicate directly with other clients to reach servers",
+        "All hosts are simultaneously clients and servers by default",
+        "Servers never communicate with any other server"
+      ],
+      "answer": 0,
+      "explanation": "Client processes initiate communication; server processes wait to be contacted."
+    },
+    {
+      "question": "Which is a defining feature of peer-to-peer (P2P) architecture in the slides?",
+      "options": [
+        "No always-on server and peers directly communicate",
+        "A permanent IP address is required for every peer",
+        "Only servers can upload content to clients",
+        "All communication must pass through a central relay"
+      ],
+      "answer": 0,
+      "explanation": "P2P removes the always-on server and uses direct peer communication."
+    },
+    {
+      "question": "A destination process identifier includes which two fields?",
+      "options": [
+        "IP address and port number",
+        "MAC address and cable length",
+        "TTL and sequence number",
+        "SSID and channel number"
+      ],
+      "answer": 0,
+      "explanation": "Process addressing uses (IP address, port number)."
+    },
+    {
+      "question": "Which mapping of protocol to well-known port matches the slides?",
+      "options": [
+        "DNS \u2192 53",
+        "DNS \u2192 80",
+        "DNS \u2192 25",
+        "DNS \u2192 22"
+      ],
+      "answer": 0,
+      "explanation": "DNS is associated with port 53 in the examples of well-known ports."
+    },
+    {
+      "question": "Which set of features matches TCP service in the slides?",
+      "options": [
+        "Reliable transport, flow control, congestion control, setup required",
+        "Best-effort delivery, no setup, no flow control, no congestion control",
+        "Reliable transport, no setup, no flow control, no congestion control",
+        "Best-effort delivery, flow control, congestion control, setup required"
+      ],
+      "answer": 0,
+      "explanation": "TCP is reliable and uses connection setup, plus flow and congestion control."
+    },
+    {
+      "question": "Which statement best matches UDP service in the slides?",
+      "options": [
+        "Best-effort delivery with no setup and minimal overhead",
+        "Guaranteed in-order delivery with connection setup",
+        "Reliable delivery with congestion control and flow control",
+        "Encrypted delivery with mandatory authentication"
+      ],
+      "answer": 0,
+      "explanation": "UDP is connectionless and best-effort, with small overhead."
+    },
+    {
+      "question": "In UDP socket programming, which call sends a datagram to a specific (IP, port)?",
+      "options": [
+        "sendto()",
+        "accept()",
+        "listen()",
+        "connect()"
+      ],
+      "answer": 0,
+      "explanation": "UDP uses sendto(destination) and recvfrom() for connectionless messaging."
+    },
+    {
+      "question": "In TCP socket programming, what does accept() return to the server?",
+      "options": [
+        "A new per-client connection socket",
+        "A DNS cache entry for the client host",
+        "A UDP port binding for the client",
+        "A TLS certificate for the client"
+      ],
+      "answer": 0,
+      "explanation": "The server keeps a welcoming socket, and accept() creates a new socket for that client connection."
+    },
+    {
+      "question": "Which statement about sockets is correct?",
+      "options": [
+        "A socket is the application\u2019s interface to the transport layer",
+        "A socket is the same thing as a router forwarding table",
+        "A socket is a DNS resource record stored at a root server",
+        "A socket is a physical layer modulation scheme"
+      ],
+      "answer": 0,
+      "explanation": "The slides treat sockets as the app-level interface to transport."
+    },
+    {
+      "question": "Which statement about HTTP is correct in the slides?",
+      "options": [
+        "HTTP uses TCP and is stateless by default",
+        "HTTP uses UDP and is stateful by default",
+        "HTTP uses ICMP and is connectionless by default",
+        "HTTP uses ARP and provides congestion control"
+      ],
+      "answer": 0,
+      "explanation": "HTTP uses TCP and is described as stateless."
+    },
+    {
+      "question": "Which choice best distinguishes non-persistent from persistent HTTP?",
+      "options": [
+        "Non-persistent uses one TCP connection per object; persistent can reuse one connection for many objects",
+        "Non-persistent requires TLS; persistent forbids TLS",
+        "Non-persistent uses UDP; persistent uses ICMP",
+        "Non-persistent caches DNS; persistent does not cache DNS"
+      ],
+      "answer": 0,
+      "explanation": "Non-persistent: one object per connection; persistent: multiple objects over one connection."
+    },
+    {
+      "question": "Ignoring small request time, what is the non-persistent HTTP response time per object in the slides?",
+      "options": [
+        "2RTT plus the object transmission time",
+        "1RTT plus the object transmission time",
+        "RTT squared plus propagation time",
+        "Transmission time only, since RTT cancels out"
+      ],
+      "answer": 0,
+      "explanation": "The slide states non-persistent response time is 2RTT + file/object transmission time."
+    },
+    {
+      "question": "Which best describes the purpose of cookies in the HTTP slides?",
+      "options": [
+        "Maintain user/server state across transactions using identifiers",
+        "Guarantee in-order delivery of packets across the Internet",
+        "Replace DNS by mapping names directly to content",
+        "Eliminate TCP connection setup delay for all objects"
+      ],
+      "answer": 0,
+      "explanation": "Cookies are presented as a state workaround for an otherwise stateless protocol."
+    },
+    {
+      "question": "Which response code is used in Conditional GET when the cached object is up-to-date?",
+      "options": [
+        "304 Not Modified",
+        "200 OK",
+        "404 Not Found",
+        "500 Server Error"
+      ],
+      "answer": 0,
+      "explanation": "The slide shows 304 Not Modified for Conditional GET when no new object is needed."
+    },
+    {
+      "question": "Which header is central to Conditional GET in the slides?",
+      "options": [
+        "If-Modified-Since",
+        "User-Agent",
+        "Content-Encoding",
+        "Accept-Language"
+      ],
+      "answer": 0,
+      "explanation": "Conditional GET uses If-Modified-Since with the cache date."
+    },
+    {
+      "question": "In HTTP/1.1 pipelining, what is the HOL blocking issue described in the slides?",
+      "options": [
+        "Small objects can be delayed behind a large object due to in-order response scheduling",
+        "DNS entries expire immediately after use, forcing repeated lookups",
+        "UDP packets are always delivered out of order by design",
+        "TCP checksums always fail under heavy load"
+      ],
+      "answer": 0,
+      "explanation": "The slides describe FCFS/in-order response as causing small objects to wait behind large ones."
+    },
+    {
+      "question": "How does HTTP/2 attempt to mitigate HOL blocking at the HTTP layer?",
+      "options": [
+        "Divide objects into frames and interleave frame transmission",
+        "Disable TCP retransmissions for multimedia objects",
+        "Use a separate IP address per web object",
+        "Require all objects to be the same size"
+      ],
+      "answer": 0,
+      "explanation": "HTTP/2 frames + interleaving allow smaller objects to complete sooner."
+    },
+    {
+      "question": "When a host makes a DNS query, where is it sent first according to the slides?",
+      "options": [
+        "Its local DNS server",
+        "A root DNS server",
+        "A random authoritative server",
+        "An SMTP mail server"
+      ],
+      "answer": 0,
+      "explanation": "The slides emphasize the local DNS server as the first hop for name resolution."
+    },
+    {
+      "question": "Which statement about DNS caching is correct in the slides?",
+      "options": [
+        "Caching improves response time but cached mappings can be out of date until TTL expires",
+        "Caching is disabled in all local DNS servers by default",
+        "TTL forces immediate eviction after a single query",
+        "Caching guarantees name-to-address mappings are always current"
+      ],
+      "answer": 0,
+      "explanation": "Slides mention TTL-based timeout and the possibility of stale entries."
+    },
+    {
+      "question": "Iterative DNS resolution is best described as:",
+      "options": [
+        "Each contacted server replies with the next server to ask",
+        "The contacted server resolves the full name on your behalf",
+        "The client broadcasts to all servers simultaneously",
+        "The authoritative server always contacts the root server"
+      ],
+      "answer": 0,
+      "explanation": "Iterative: referral style; recursive: server does the work for you."
+    },
+    {
+      "question": "Which DNS resource record type maps a hostname to an IP address?",
+      "options": [
+        "A record",
+        "MX record",
+        "NS record",
+        "CNAME record"
+      ],
+      "answer": 0,
+      "explanation": "A records map names to IP addresses; MX is for mail servers; NS for authoritative servers; CNAME for aliases."
+    },
+    {
+      "question": "Which DNS record type indicates the mail server for a domain?",
+      "options": [
+        "MX record",
+        "A record",
+        "CNAME record",
+        "NS record"
+      ],
+      "answer": 0,
+      "explanation": "MX records specify the domain\u2019s mail exchange server."
+    },
+    {
+      "question": "Which set lists the three major components of e-mail systems in the slides?",
+      "options": [
+        "User agents, mail servers, SMTP",
+        "Browsers, routers, ARP",
+        "Caches, cookies, QUIC",
+        "Ports, sockets, segments"
+      ],
+      "answer": 0,
+      "explanation": "The e-mail section names user agents, mail servers, and SMTP."
+    },
+    {
+      "question": "SMTP transfers e-mail messages between mail servers using which transport and port?",
+      "options": [
+        "TCP on port 25",
+        "UDP on port 25",
+        "TCP on port 53",
+        "UDP on port 80"
+      ],
+      "answer": 0,
+      "explanation": "Slides describe SMTP using TCP, port 25."
+    },
+    {
+      "question": "Which protocol is used for retrieving and managing stored messages on the server (folders, deletion) in the slides?",
+      "options": [
+        "IMAP",
+        "SMTP",
+        "DNS",
+        "ARP"
+      ],
+      "answer": 0,
+      "explanation": "IMAP is described as supporting retrieval and folders/deletion on the server."
+    },
+    {
+      "question": "A user enters a URL and the server IP is not stored locally. Which set best matches the major protocols used (per quiz/midterm style)?",
+      "options": [
+        "DNS over UDP, then HTTP over TCP (plus TLS for HTTPS)",
+        "HTTP over UDP, then DNS over TCP (plus ARP for TLS)",
+        "DNS over ICMP, then HTTP over ARP (plus IP for TLS)",
+        "FTP over TCP, then DNS over HTTP (plus UDP for HTTPS)"
+      ],
+      "answer": 0,
+      "explanation": "The course answer keys emphasize DNS first (commonly over UDP), then TCP for HTTP, with TLS for HTTPS."
+    },
+    {
+      "question": "In the midterm Figure 2 scenario, users generate ~1000 requests/sec and each page is ~10 Mbits. What is the offered load toward the data center (Gbps)?",
+      "options": [
+        "About 10 Gbps",
+        "About 1 Gbps",
+        "About 100 Gbps",
+        "About 0.1 Gbps"
+      ],
+      "answer": 0,
+      "explanation": "1000 \u00d7 10 Mbits/sec = 10,000 Mbits/sec = 10 Gbits/sec offered load."
+    },
+    {
+      "question": "In the same scenario, the Internet-to-data-center link is 10 Gbps. With ~10 Gbps offered load, which effect is most likely?",
+      "options": [
+        "High utilization near 1 causing large queueing delays and potential loss",
+        "Low utilization near 0 causing mostly propagation delay",
+        "Guaranteed delay bounds due to reservation",
+        "No queueing because TCP prevents any buffering"
+      ],
+      "answer": 0,
+      "explanation": "When utilization approaches 1 on the bottleneck, queueing delay increases sharply."
+    },
+    {
+      "question": "If ~30% of requests are for common pages and can be served by a cache near the users, what is the new offered load on the 10 Gbps bottleneck (Gbps)?",
+      "options": [
+        "About 7 Gbps",
+        "About 3 Gbps",
+        "About 13 Gbps",
+        "About 30 Gbps"
+      ],
+      "answer": 0,
+      "explanation": "Caching 30% reduces traffic by factor 0.7: 0.7 \u00d7 10 Gbps = 7 Gbps."
+    },
+    {
+      "question": "Using the previous result, what is the approximate utilization of the 10 Gbps bottleneck after caching 30% of requests?",
+      "options": [
+        "About 0.7",
+        "About 0.3",
+        "About 1.7",
+        "About 0.07"
+      ],
+      "answer": 0,
+      "explanation": "Utilization \u2248 7/10 = 0.7 after caching."
+    },
+    {
+      "question": "In HW2, the ISP handles 1956 requests/sec with 5 Mbit pages over a 10 Gbps link. What is the computed utilization u (rounded to 3 decimals)?",
+      "options": [
+        "0.978",
+        "0.789",
+        "0.684",
+        "0.097"
+      ],
+      "answer": 0,
+      "explanation": "HW2 computes u = (1956\u00d75\u00d710^6)/(10\u00d710^9) = 0.978."
+    },
+    {
+      "question": "In HW2, if 30% of requests are common and served by a cache (factor 0.7), what is the new utilization u (rounded to 4 decimals)?",
+      "options": [
+        "0.6846",
+        "0.7468",
+        "0.8978",
+        "0.6148"
+      ],
+      "answer": 0,
+      "explanation": "HW2 computes the new utilization as 0.6846 after multiplying traffic by 0.7."
+    },
+    {
+      "question": "A web page has text and three images. Under typical HTTP behavior, which statement is correct?",
+      "options": [
+        "The browser makes a base HTML request and then additional requests for each referenced image",
+        "The browser sends one request and receives a single combined response for all objects always",
+        "The browser must open a new DNS connection for each image even with caching",
+        "The browser can only fetch the images after closing the TCP connection to the server"
+      ],
+      "answer": 0,
+      "explanation": "Browsers request the base HTML, parse it, and then request referenced objects (e.g., images)."
+    },
+    {
+      "question": "In the TCP Reno cwnd plot (rounds 1\u20136), cwnd grows approximately as 1,2,4,8,16,32. Which phase is this?",
+      "options": [
+        "Slow start (exponential growth)",
+        "Congestion avoidance (linear growth)",
+        "Fast recovery (cwnd held constant)",
+        "Application-limited (cwnd forced to 1)"
+      ],
+      "answer": 0,
+      "explanation": "Exponential doubling of cwnd indicates slow start."
+    },
+    {
+      "question": "In the cwnd plot, rounds 7\u201316 show cwnd increasing by about +1 segment per round. Which phase is this?",
+      "options": [
+        "Congestion avoidance (linear increase)",
+        "Slow start (exponential increase)",
+        "Timeout backoff (reset to 1)",
+        "Connection teardown (FIN wait)"
+      ],
+      "answer": 0,
+      "explanation": "Linear increase per RTT indicates congestion avoidance."
+    },
+    {
+      "question": "In the cwnd plot, cwnd drops from about 42 at round 16 to about 24 at round 17, then continues increasing linearly. Which event best matches this pattern in Reno?",
+      "options": [
+        "Triple-duplicate ACK with fast retransmit/fast recovery (multiplicative decrease)",
+        "Timeout with cwnd reset to 1 and restart slow start",
+        "Successful handshake completing and setting cwnd to MSS",
+        "DNS cache miss causing application stall"
+      ],
+      "answer": 0,
+      "explanation": "A partial drop (not to 1) followed by linear growth matches loss inferred via duplicate ACKs in Reno."
+    },
+    {
+      "question": "Later in the plot, cwnd drops from about 29 at round 22 to about 1 at round 23. Which event best matches this pattern?",
+      "options": [
+        "Timeout causing cwnd reset and slow start restart",
+        "Fast recovery leaving cwnd near half",
+        "Receiver flow-control window shrinking to zero permanently",
+        "Switch from TCP to UDP mid-connection"
+      ],
+      "answer": 0,
+      "explanation": "A drop to 1 and restarting growth indicates a timeout in Reno-style congestion control."
+    },
+    {
+      "question": "Based on the plot, what is cwnd at transmission round 6?",
+      "options": [
+        "32 segments",
+        "16 segments",
+        "24 segments",
+        "48 segments"
+      ],
+      "answer": 0,
+      "explanation": "The plotted value at round 6 is approximately 32."
+    },
+    {
+      "question": "Based on the plot, what is cwnd at transmission round 17 (immediately after the first drop)?",
+      "options": [
+        "24 segments",
+        "12 segments",
+        "32 segments",
+        "42 segments"
+      ],
+      "answer": 0,
+      "explanation": "The plotted value at round 17 is approximately 24."
+    },
+    {
+      "question": "Based on the plot, what is cwnd at transmission round 26 (end of plot)?",
+      "options": [
+        "8 segments",
+        "4 segments",
+        "16 segments",
+        "2 segments"
+      ],
+      "answer": 0,
+      "explanation": "The plotted value at round 26 is approximately 8."
+    },
+    {
+      "question": "Which set best matches three core mechanisms used in reliable transport protocols?",
+      "options": [
+        "Sequence numbers, acknowledgments, and retransmissions driven by timeouts/duplicate ACKs",
+        "DNS records, HTTP cookies, and SMTP handshakes",
+        "MAC addresses, ARP requests, and Wi-Fi channels",
+        "Frequency slots, time slots, and optical wavelengths"
+      ],
+      "answer": 0,
+      "explanation": "Reliable transport typically combines sequencing, feedback (ACKs), and retransmission on loss."
+    },
+    {
+      "question": "Why are sequence numbers important in reliable transport?",
+      "options": [
+        "They let the receiver detect loss/duplicates and restore correct ordering",
+        "They encrypt application data to prevent eavesdropping",
+        "They choose the physical route a packet takes through the Internet",
+        "They replace the need for port numbers in process addressing"
+      ],
+      "answer": 0,
+      "explanation": "Sequence numbers support ordering and duplicate/loss detection."
+    },
+    {
+      "question": "Why are acknowledgments important in reliable transport?",
+      "options": [
+        "They provide feedback about what data has been received so the sender can advance or retransmit",
+        "They compress payloads to reduce transmission delay",
+        "They assign IP addresses dynamically to hosts",
+        "They prevent DNS caching from becoming stale"
+      ],
+      "answer": 0,
+      "explanation": "ACKs provide reception feedback needed for reliability control loops."
+    },
+    {
+      "question": "Why are retransmission timers/timeout mechanisms important in reliable transport?",
+      "options": [
+        "They allow recovery when packets or ACKs are lost by triggering retransmission",
+        "They guarantee that queueing delay is always constant on the path",
+        "They remove the need for congestion control in the network core",
+        "They avoid the need for any connection setup in TCP"
+      ],
+      "answer": 0,
+      "explanation": "Timeout-driven retransmission enables recovery from loss."
+    },
+    {
+      "question": "Which transport protocol is most commonly used by DNS queries in the course quizzes?",
+      "options": [
+        "UDP",
+        "TCP",
+        "QUIC",
+        "SCTP"
+      ],
+      "answer": 0,
+      "explanation": "Quiz 2 indicates DNS queries most commonly use UDP."
+    },
+    {
+      "question": "Which transport protocol is most commonly used by HTTP according to the quizzes?",
+      "options": [
+        "TCP",
+        "UDP",
+        "ICMP",
+        "ARP"
+      ],
+      "answer": 0,
+      "explanation": "Quiz 2 indicates HTTP most commonly uses TCP."
+    },
+    {
+      "question": "Which statement about TCP sockets in the quiz answer key is correct?",
+      "options": [
+        "A new socket is created for every client-server process pair",
+        "A single socket is always shared by all clients forever",
+        "TCP uses no sockets because it is connectionless",
+        "TCP uses sockets only on the client, not on the server"
+      ],
+      "answer": 0,
+      "explanation": "Quiz 2 indicates per client-server pair sockets (connection sockets) are created for TCP."
+    },
+    {
+      "question": "Which choice best describes why persistent HTTP can reduce delay for multi-object pages?",
+      "options": [
+        "It avoids repeated TCP connection setups across objects to the same server",
+        "It avoids DNS lookups by embedding IPs inside the HTML body",
+        "It avoids propagation delay by shortening the physical link distance",
+        "It avoids packet loss by disabling TCP retransmissions"
+      ],
+      "answer": 0,
+      "explanation": "Persistent connections reduce repeated setup RTTs compared to non-persistent per-object connections."
+    },
+    {
+      "question": "Which DNS record type is primarily used to indicate an authoritative server for a domain?",
+      "options": [
+        "NS record",
+        "A record",
+        "CNAME record",
+        "MX record"
+      ],
+      "answer": 0,
+      "explanation": "NS records give the authoritative name server hostnames for a domain."
+    },
+    {
+      "question": "Which statement best matches the difference between SMTP commands and e-mail message headers in the slides?",
+      "options": [
+        "SMTP MAIL FROM/RCPT TO are protocol commands, while To/From/Subject are message header fields",
+        "To/From/Subject are transport-layer commands, while MAIL FROM/RCPT TO are HTML tags",
+        "MAIL FROM/RCPT TO are DNS records, while To/From/Subject are IP options",
+        "SMTP commands are encrypted by default, while headers are always removed"
+      ],
+      "answer": 0,
+      "explanation": "Slides note protocol commands differ from the e-mail message header format."
+    }
+  ],
+  "games": [
+    {
+      "name": "Protocol Ladder",
+      "type": "ordered_steps",
+      "prompt": "Put these steps in order for loading a webpage when the server IP is unknown: DNS query to local DNS \u2192 (iterative/recursive resolution) \u2192 receive IP \u2192 TCP connection setup \u2192 TLS handshake (HTTPS) \u2192 HTTP GET base HTML \u2192 parse HTML \u2192 fetch referenced objects \u2192 render page."
+    },
+    {
+      "name": "Delay Component Matcher",
+      "type": "matching",
+      "prompt": "Match each description to the delay component: (A) time to push bits onto the link (L/R), (B) travel time across physical medium (d/s), (C) time to process headers/check corruption, (D) waiting time in a router buffer that grows under load."
+    },
+    {
+      "name": "DNS RR Quick-Draw",
+      "type": "matching",
+      "prompt": "Match RR type to purpose: NS (authoritative server for domain), A (hostname\u2192IP), CNAME (alias\u2192canonical), MX (mail server for domain)."
+    },
+    {
+      "name": "Socket API Snap",
+      "type": "scenario",
+      "prompt": "For each scenario, choose the most appropriate call: UDP client send to server (sendto), UDP server read and learn client address (recvfrom), TCP server wait for connection (accept), TCP server start listening (listen), TCP client establish connection (connect)."
+    },
+    {
+      "name": "TCP Reno Phase Tagger",
+      "type": "graph_tagging",
+      "prompt": "Using the midterm cwnd plot: tag rounds 1\u20136 as slow start (1,2,4,8,16,32), rounds 7\u201316 as congestion avoidance (\u2248+1 per round), the drop at 17 as loss via duplicate ACKs (multiplicative decrease), and the drop at 23 as timeout (cwnd reset) followed by slow start again."
+    },
+    {
+      "name": "Midterm Practice Exam (New)",
+      "type": "free_response",
+      "prompt": "Write full, midterm-style answers (bullet points OK) for these NEW prompts:\n\n1) A user enters www.example.edu in a browser. The IP is not stored locally. Describe the sequence of major protocols/steps to retrieve the homepage and then fetch 5 referenced images. Include where DNS caching can short-circuit work and where RTT costs appear.\n\n2) Describe three core mechanisms used by reliable transport protocols and explain what breaks if each one is removed.\n\n3) A TCP Reno connection has cwnd values by round: 1,2,4,8,16,32,33,34,35,36,37,38,39,40,41,42, then drops to 24, grows linearly to 29, then drops to 1 and grows 2,4,8. Identify phases and infer likely loss events.\n\n4) An ISP has users with 100 Mbps access links, an ISP-to-Internet link of 100 Gbps, and an Internet-to-data-center bottleneck of 10 Gbps. During peak, demand is 1200 requests/sec, 8 Mbits each, with 25% common pages. Explain the likely cause of delay, compute offered load and bottleneck utilization before/after caching, and propose a fix with evidence."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Midterm - Fall 25.pdf",
+      "pages": [
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "file": "1- Overview.pptx",
+      "pages": [
+        2,
+        4,
+        8,
+        12,
+        13,
+        14,
+        15,
+        19,
+        20,
+        21,
+        23
+      ]
+    },
+    {
+      "file": "2- Chapter 2 - Part 1 - Principles and Socket Programming.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23
+      ]
+    },
+    {
+      "file": "3- Chapter 2 - Part 2 - Web, E-mail, DNS.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61
+      ]
+    },
+    {
+      "file": "HW1 - Reference Answers.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "file": "HW 2 - solutions.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "file": "Quiz 1 Answer Key.pdf",
+      "pages": [
+        1,
+        2
+      ]
+    },
+    {
+      "file": "Quiz 2 Answer Key.pdf",
+      "pages": [
+        1
+      ]
+    }
+  ]
+}
