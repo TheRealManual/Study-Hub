@@ -1,0 +1,1221 @@
+{
+  "title": "Operating Systems - Quizzes & Midterms (Compiled)",
+  "notes": [],
+  "flashcards": [],
+  "quiz": [
+    {
+      "question": "What is the primary role of an operating system?",
+      "options": [
+        "Execute application programs directly",
+        "Manage hardware resources and provide abstractions for application programmers",
+        "Compile user code into machine language",
+        "Replace the need for a CPU"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Manage hardware resources and provide abstractions for application programmers."
+    },
+    {
+      "question": "What is the primary difference between a process and a thread?",
+      "options": [
+        "Threads have their own address space, while processes share one",
+        "Processes have their own address space, while threads share one",
+        "Threads execute only in kernel mode",
+        "Processes do not require memory allocation, but threads do"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Processes have their own address space, while threads share one."
+    },
+    {
+      "question": "What is an example of time multiplexing in an operating system?",
+      "options": [
+        "A process using a shared memory segment for communication",
+        "The CPU switching between different processes at rapid intervals",
+        "Allocating separate memory blocks to each running application",
+        "Assigning different I/O devices to different users"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The CPU switching between different processes at rapid intervals."
+    },
+    {
+      "question": "Which of the following statements about kernel mode and user mode is true?",
+      "options": [
+        "Kernel mode restricts access to CPU resources, while user mode allows full access",
+        "User mode is where the OS executes all of its critical functions",
+        "In kernel mode, the OS has full access to hardware and system resources",
+        "Switching from kernel mode to user mode does not require a context switch"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: In kernel mode, the OS has full access to hardware and system resources."
+    },
+    {
+      "question": "Which type of memory is used by the CPU for immediate processing and is the fastest?",
+      "options": [
+        "Hard Disk",
+        "RAM",
+        "Cache",
+        "SSD"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Cache."
+    },
+    {
+      "question": "What are the key components of hardware that make up a modern computer system? Answer with a list of components as well a short description of the component.",
+      "options": [
+        "Only CPU, RAM, and a hard drive matter; motherboard, PSU, and I/O are not core components.",
+        "Focuses on software components (compiler, OS, apps) rather than physical hardware parts.",
+        "CPU, RAM, storage, motherboard, GPU, PSU, I/O, and network/buses with brief roles.",
+        "Mostly just CPU speed, monitor resolution, and internet provider; other parts are optional."
+      ],
+      "answer": 2,
+      "explanation": "Hardware components (with short descriptions):\n- CPU (processor): Executes instructions and performs computations.\n- RAM (main memory): Temporarily stores program data/instructions in use (volatile).\n- Storage (SSD/HDD): Long-term persistent storage for OS, programs, and files.\n- Motherboard/chipset: Main circuit board that connects components and provides buses/controllers.\n- GPU: Accelerates graphics/parallel computation (integrated or discrete).\n- Power supply (PSU): Converts AC to DC and supplies stable power to components.\n- I/O devices: Input/output peripherals (keyboard, mouse, display, printer, etc.).\n- Network interface (NIC/Wi‑Fi): Provides network connectivity.\n- Buses/interconnects (PCIe, memory bus): Data pathways between CPU, memory, and devices."
+    },
+    {
+      "question": "What are the core concepts that make up an operating system? Answer with a list of concepts as well as a short description",
+      "options": [
+        "Mostly UI concepts (windows, icons, settings) rather than kernel-level mechanisms.",
+        "Mainly compilers, databases, and web servers; the OS just launches applications.",
+        "Processes/threads, system calls, scheduling, memory, files, I/O, IPC/sync, and protection/security.",
+        "Only scheduling and file systems; memory and I/O are handled entirely by hardware."
+      ],
+      "answer": 2,
+      "explanation": "Core operating system concepts (with short descriptions):\n- Processes/threads: Units of execution; threads share a process address space.\n- System calls: Controlled interface for user programs to request kernel services.\n- Scheduling: Decides which process/thread runs next on the CPU.\n- Memory management: Allocation, protection, and virtual memory (paging/segmentation).\n- File systems: Persistent storage organization, naming, permissions, and metadata.\n- I/O & device management: Drivers, interrupts, buffering, DMA for peripherals.\n- Interprocess communication (IPC) & synchronization: Pipes, messages, shared memory, locks/semaphores.\n- Protection & security: Isolation, privilege levels, access control.\n- Networking (often): Protocol stack and socket interface for communication."
+    },
+    {
+      "question": "Which scheduling algorithm assigns each process a fixed time slice (quantum) and cycles through them?",
+      "options": [
+        "First Come, First Serve (FCFS)",
+        "Shortest Job Next (SJN)",
+        "Round Robin",
+        "Priority Scheduling"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Round Robin."
+    },
+    {
+      "question": "What information is saved during a context switch?",
+      "options": [
+        "The process's CPU registers and program counter",
+        "The entire contents of RAM",
+        "Only the process ID",
+        "The process's priority level"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: The process's CPU registers and program counter."
+    },
+    {
+      "question": "Which of the following best describes readylistin the Xinu operating system?",
+      "options": [
+        "A queue that holds terminated processes",
+        "A priority queue that stores processes waiting for CPU execution",
+        "A list of blocked I/O operations",
+        "A shared memory buffer for interprocess communication"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: A priority queue that stores processes waiting for CPU execution."
+    },
+    {
+      "question": "A race condition occurs when:",
+      "options": [
+        "A process runs in user mode instead of kernel mode",
+        "Multiple processes access shared resources without synchronization",
+        "The scheduler runs a high-priority process before a low-priority one",
+        "A thread exceeds it's time quantum"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Multiple processes access shared resources without synchronization."
+    },
+    {
+      "question": "Which of the following is a drawback of First-Come, First-Serves (FCFS) scheduling?",
+      "options": [
+        "It requires complex hardware support",
+        "It can lead to convoy effect, where short processes wait behind long ones",
+        "It does not use CPU time efficiently",
+        "It always executes processes in the shortest time possible"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: It can lead to convoy effect, where short processes wait behind long ones."
+    },
+    {
+      "question": "What happens when the resched function in Xinu is called? Discuss specifically how the prprio and prstatevariables on the procentstructure (part of proctab[]) are used.",
+      "options": [
+        "Compares prprio vs readylist, updates prstate (PRCURR↔PRREADY), and ctxsw saves/restores CPU context.",
+        "Only changes the process ID; it does not touch prstate/prprio or perform a context switch.",
+        "Resets all processes and rebuilds proctab[] from scratch each time it runs.",
+        "Always switches to the oldest process (FIFO) regardless of priority or readylist contents."
+      ],
+      "answer": 0,
+      "explanation": "In Xinu, resched() performs a context switch decision and (if needed) switches the CPU to another process:\n- It considers the currently running process (currpid) and the highest‑priority READY process in readylist.\n- prprio (priority) is used to compare processes; typically the highest prprio READY process should run.\n- If the current process should continue, resched returns without switching.\n- If switching:\n  - The current process's prstate is changed from PRCURR to PRREADY (or appropriate state) and it may be reinserted into readylist with its priority.\n  - The next process is removed from readylist (highest priority), and its prstate is set to PRCURR.\n  - A low-level context switch (e.g., ctxsw) saves the old process CPU context (registers/stack pointer/PC) into its process table entry and restores the new process context from its entry."
+    },
+    {
+      "question": "After profiling the performance of the Xinu scheduler, you find that high priority processes are starving low priority processes. This is leading to a very high turnaround time and unfairness. How can the scheduler algorithm be changed to improve turnaround time and fairness?",
+      "options": [
+        "Disable preemption so each process runs until it finishes, guaranteeing fairness.",
+        "Add aging and/or RR/MLFQ so waiting processes gain priority and get CPU time, reducing starvation.",
+        "Randomly pick the next process regardless of priority to make scheduling unpredictable.",
+        "Increase high-priority quanta even more so low-priority processes run less often."
+      ],
+      "answer": 1,
+      "explanation": "To reduce starvation and improve fairness/turnaround time, change the scheduler to prevent high-priority tasks from monopolizing the CPU, e.g.:\n- Add aging: gradually increase the effective priority of processes the longer they wait in the readylist.\n- Use time slicing (Round Robin) within each priority level so every READY process gets CPU time.\n- Use a Multi‑Level Feedback Queue (MLFQ): demote CPU‑bound tasks and promote interactive/I/O‑bound tasks, with periodic priority boosts.\n- Optionally cap maximum continuous CPU time for any one process (dynamic quantum + bounds) to limit starvation."
+    },
+    {
+      "question": "What is a page fault?",
+      "options": [
+        "When a process accesses a page that is not currently in physical memory",
+        "When the CPU crashes due to memory corruption",
+        "When a program exceeds its allocated memory space or access an invalid address",
+        "When the OS swaps an entire process to disk"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: When a process accesses a page that is not currently in physical memory."
+    },
+    {
+      "question": "What is the primary function of a page table?",
+      "options": [
+        "To store all files in the system",
+        "To map virtual addresses to physical addresses",
+        "To track user permissions for accessing memory address space",
+        "To manage process scheduling"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: To map virtual addresses to physical addresses."
+    },
+    {
+      "question": "Why can bitmaps be inefficient in some memory allocation scenarios?",
+      "options": [
+        "They use excessive pointer storage",
+        "They cannot track small blocks",
+        "Scanning for free space can be slow",
+        "They always fragment memory"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Scanning for free space can be slow."
+    },
+    {
+      "question": "What is the purpose of the Translation Lookaside Buffer (TLB)?",
+      "options": [
+        "To translate virtual addresses to physical addresses more efficiently",
+        "To store program instructions in the memory management unit (MMU)",
+        "To handle segmentation faults for faster recovery",
+        "To track free memory pages in a cache on the CPU"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: To translate virtual addresses to physical addresses more efficiently."
+    },
+    {
+      "question": "What is one key benefit of virtual memory in a modern operating system?",
+      "options": [
+        "It lets multiple processes share the same physical memory safely",
+        "It ensures all pages remain resident in main memory",
+        "It removes the need for page tables",
+        "It allows the CPU to bypass the MMU during address translation"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: It lets multiple processes share the same physical memory safely."
+    },
+    {
+      "question": "The Least Recently Used algorithm requires adding a buffer for each page table entry in the page table as well as a bitmap. Explain the role the (1) buffers and (2) bitmap play in the LRU demand paging system.",
+      "options": [
+        "Buffers store entire page contents; bitmap stores full page tables for fast lookup.",
+        "Buffers track last-use/recency per page; bitmap marks which frames are free vs allocated/resident.",
+        "Buffers track CPU scheduling history; bitmap tracks process priorities in readylist.",
+        "Buffers are only for disk I/O; bitmap chooses the newest page to evict (MRU)."
+      ],
+      "answer": 1,
+      "explanation": "(1) Buffers (per page-table entry): store recency/usage metadata for LRU (e.g., last-access timestamp, counter, or stack position). They are updated on each page reference so the OS can identify the least recently used resident page as the victim on replacement.\n(2) Bitmap: tracks which physical page frames are free/allocated (and sometimes which pages are resident). It helps the OS quickly find a free frame (bit=0) before evicting anything, and constrains LRU victim selection to frames/pages that are actually in use."
+    },
+    {
+      "question": "Discuss the changes required to an operating system's (1) global variables, (2) process table entries, and (3) page fault handler to implement Page Fault Frequency prepaging system.",
+      "options": [
+        "Add PFF thresholds + counters; track per-process fault rate/resident set; fault handler grows/shrinks and preprefetches pages.",
+        "Remove page tables and rely on segmentation; PFF is handled entirely in hardware.",
+        "Always prefetch the entire address space on any fault; never reclaim frames.",
+        "Only change disk scheduling; page faults are unrelated to resident set size."
+      ],
+      "answer": 0,
+      "explanation": "To implement Page Fault Frequency (PFF) with prepaging:\n\n(1) Global variables:\n- Upper/lower PFF thresholds (high/low fault rate), sampling window size, and/or time tick counter.\n- Free-frame pool tracking (so the OS can allocate/reclaim frames).\n- Possibly global lists/queues for replacement and for pages to prefetch.\n\n(2) Process table entries (per-process state):\n- Counters: page faults in current window, last fault time, references/window length.\n- Resident set size (number of frames currently assigned).\n- Working-set / page list metadata (what pages are resident, recent references).\n\n(3) Page fault handler logic:\n- On each fault, update the process’s fault counters and compute its PFF.\n- If PFF is too high: increase the process’s resident set by allocating additional frames; prepage (prefetch) a small set of likely-needed pages (e.g., adjacent pages, working-set candidates).\n- If PFF is too low: reclaim frames from the process (shrink resident set) and return them to the free pool.\n- Maintain replacement structures consistently (update page tables, TLB invalidations as needed)."
+    },
+    {
+      "question": "Which component of the Xinu operating system tracks process metadata?",
+      "options": [
+        "The process table",
+        "The readylist",
+        "The proc file",
+        "The interrupt vector"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: The process table."
+    },
+    {
+      "question": "What is the fundamental role of an operating system?",
+      "options": [
+        "To allow direct hardware access by applications",
+        "To compile and run user programs",
+        "To manage hardware resources and provide services to applications",
+        "To perform data backup operations automatically"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: To manage hardware resources and provide services to applications."
+    },
+    {
+      "question": "Which of the following best describes a lightweight process?",
+      "options": [
+        "A process that consumes minimal CPU time",
+        "A thread that shares its address space with other threads",
+        "A process that runs in the background with low priority",
+        "A process that runs without needing memory allocation"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: A thread that shares its address space with other threads."
+    },
+    {
+      "question": "In the Producer-Consumer problem, what happens if the producer tries to add to a full buffer?",
+      "options": [
+        "The producer overwrites existing data",
+        "The producer goes to sleep until there is space",
+        "The producer starts consuming items instead",
+        "The producer terminates"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The producer goes to sleep until there is space."
+    },
+    {
+      "question": "A scheduling algorithm is being tested for an interactive system where users frequently input commands that should be processed quickly. The system administrator finds that some short tasks are experiencing excessive waiting times due to longer-running background processes. What scheduling algorithm would best address this issue, and why?",
+      "options": [
+        "Round Robin, because it enforces time-sharing by giving each process a fair slice of CPU time",
+        "First-Come, First-Served (FCFS), because it ensures fairness by executing jobs in the order they arrive",
+        "Shortest Job Next (SJN), because it prioritizes jobs that require the least CPU time",
+        "Priority Scheduling, because it assigns lower priority to short tasks"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Round Robin, because it enforces time-sharing by giving each process a fair slice of CPU time."
+    },
+    {
+      "question": "Which of these is a primary cause of internal fragmentation?",
+      "options": [
+        "Fixed-size memory allocation",
+        "Variable-size memory allocation",
+        "Paging",
+        "Memory swapping"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Fixed-size memory allocation."
+    },
+    {
+      "question": "What type of memory is used by the CPU for immediate processing and is the fastest?",
+      "options": [
+        "Flash",
+        "Cache",
+        "RAM",
+        "SSD"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Cache."
+    },
+    {
+      "question": "What is an example of spatial multiplexing in an operating system?",
+      "options": [
+        "A process using a shared memory segment for communication",
+        "Many virtual pages share a small number of physical page frames",
+        "The CPU switching between different processes at rapid intervals",
+        "A single process running continuously without interruption"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Many virtual pages share a small number of physical page frames."
+    },
+    {
+      "question": "In a modern operating system, processes are typically isolated from each other using virtual memory. However, some system designs allow processes to share memory for efficiency. What mechanism allows two or more processes to share a section of their address space while maintaining separate execution states?",
+      "options": [
+        "Interprocess Communication (IPC) using pipes",
+        "Shared Memory Segments managed by the operating system",
+        "Copy-on-write memory allocation",
+        "Process forking with independent memory spaces"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Shared Memory Segments managed by the operating system."
+    },
+    {
+      "question": "Which of the following is an example of a race condition?",
+      "options": [
+        "Two processes executing without sharing resources",
+        "Two threads accessing a shared variable without synchronization",
+        "A single-threaded program running on a single CPU",
+        "A process waiting for another process to terminate"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Two threads accessing a shared variable without synchronization."
+    },
+    {
+      "question": "What happens when a program accesses a page that is not in memory?",
+      "options": [
+        "The OS kills the process immediately",
+        "A segmentation fault occurs",
+        "A page fault is triggered",
+        "The program continues executing normally"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: A page fault is triggered."
+    },
+    {
+      "question": "A process control block (PCB) is a data structure used by the operating system to store information about a process. Which of the following is not typically stored in a PCB?",
+      "options": [
+        "Process ID and scheduling information",
+        "CPU register values and program counter",
+        "System-wide file permission table",
+        "Memory management information"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: System-wide file permission table."
+    },
+    {
+      "question": "What is the primary function of Direct Memory Access (DMA) in an operating system?",
+      "options": [
+        "To manage virtual memory allocation",
+        "To transfer data between peripherals and memory without CPU intervention",
+        "To optimize file system performance",
+        "To allow applications to access hardware directly"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: To transfer data between peripherals and memory without CPU intervention."
+    },
+    {
+      "question": "How does the Xinu readylist structure differ from a traditional scheduling queue?",
+      "options": [
+        "It is a FIFO queue",
+        "It is a priority queue that dynamically reorders based on process priority",
+        "It stores terminated processes",
+        "It holds only I/O-bound processes"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: It is a priority queue that dynamically reorders based on process priority."
+    },
+    {
+      "question": "OS Kernel System calls allow user applications to request privileged operations from the OS kernel. Describe the steps involved in handling a system call from a user process. Consider user application reading or writing to a file as an example system call, for example.",
+      "options": [
+        "Lists trap→kernel mode→validate args→perform service→return to user mode steps for a system call.",
+        "Says system calls run entirely in user mode with no privilege change.",
+        "Claims a system call always creates a new process and restarts the CPU.",
+        "Describes only compiling a program, not a system call path."
+      ],
+      "answer": 0,
+      "explanation": "Describe the steps involved in handling a system call from a user process: ● The process executes a system call instruction (trap). ● The CPU switches to kernel mode and invokes the corresponding handler. ● The kernel verifies the system call parameters. ● The requested service (e.g., file read/write) is executed. ● The kernel returns the results to the user process. ● The CPU switches back to user mode and resumes execution."
+    },
+    {
+      "question": "Process Model What is the purpose of each of the following fields in the Process Table Entry structure in Xinu? 1. prstate 2. prprio 3. prstkptr 4. prstkbase 5. prstklen 6. prhasmsg 7. prmsg",
+      "options": [
+        "Explains only prstate and prprio; ignores stack and message fields.",
+        "Defines what each Xinu process-table field means (state, priority, stack info, message flags).",
+        "Maps fields to file-system metadata and disk block allocation.",
+        "Claims prmsg is a CPU register snapshot and prstkptr is a page-table pointer."
+      ],
+      "answer": 1,
+      "explanation": "Purpose of Process Table Entry Fields in Xinu: 1. prstate – Current state of the process (e.g., ready, running, sleeping). 2. prprio – Priority of the process for scheduling. 3. prstkptr – Stack pointer (location of the process's stack top). 4. prstkbase – Base address of the process's stack. 5. prstklen – Length of the stack. 6. prhasmsg – Flag indicating if a message is waiting. 7. prmsg – Message received by the process."
+    },
+    {
+      "question": "Scheduler You have been tasked with implementing a dynamic quantum in Xinu’s scheduling algorithm. Higher priority processes will be given more CPU time to run before being interrupted. a) Explain how the current Xinu scheduler can experience a convoy effect. b) What impact will this change have on the number of context switches and throughput?",
+      "options": [
+        "Explains convoy effect and how dynamic quantum affects context switches and throughput.",
+        "Says dynamic quantum increases context switches for high priority tasks.",
+        "States convoy effect is caused by page faults, not scheduling.",
+        "Claims throughput always decreases regardless of priority and quantum."
+      ],
+      "answer": 0,
+      "explanation": "Convoy Effect in Xinu Scheduler & Impact of Dynamic Quantum: ● Convoy Effect: If a long process enters the CPU first, shorter processes must wait, reducing system responsiveness. ● Impact of Dynamic Quantum: ○ Reduces context switches for high-priority processes. ○ Improves overall system throughput by balancing CPU allocation."
+    },
+    {
+      "question": "Virtual Addresses The Translation Lookaside Buffer (TLB) was added into the CPU’s memory management unit by CPU manufacturers. a) What is stored in the TLB? b) Why was the TLB added at the hardware level?",
+      "options": [
+        "TLB stores whole processes; hardware TLB prevents context switching.",
+        "TLB caches recent virtual→physical mappings; hardware TLB speeds address translation by avoiding page-table lookups.",
+        "TLB is a scheduler queue; hardware TLB enforces priority scheduling.",
+        "TLB holds disk blocks; hardware TLB improves file I/O throughput only."
+      ],
+      "answer": 1,
+      "explanation": "Translation Lookaside Buffer (TLB) in the CPU Memory Management Unit: ● Stored in TLB: Recently used page table entries (mappings between virtual and physical addresses). ● Why added at the hardware level? ○ Speeds up address translation. ○ Reduces page table lookup overhead."
+    },
+    {
+      "question": "Page Replacement Algorithm A system uses a Least Recently Used (LRU) page replacement algorithm and has 4 available page frames. Consider the following sequence of page references for (b): 1, 3, 0, 3, 5, 6, 3, 0, 1, 4, 3, 0, 6 (a) Explain how the Least Recently Used (LRU) algorithm works. (b) Simulate the page replacement process and determine the total number of page faults from the sequence above.",
+      "options": [
+        "Describes LRU but claims zero page faults after the first miss.",
+        "Simulates with 2 frames and gives a different total fault count.",
+        "Explains LRU and simulates the reference string with 4 frames (total faults = 8).",
+        "Explains FIFO and reports page faults based only on first four references."
+      ],
+      "answer": 2,
+      "explanation": "Explanation of Least Recently Used (LRU) Algorithm: ● Keeps track of pages based on recent use. ● When a page frame needs to be replaced, the least recently used page is evicted. Simulating LRU Page Replacement Algorithm for: Page reference sequence: 1, 3, 0, 3, 5, 6, 3, 0, 1, 4, 3, 0, 6 (4 frames available) Step-by-step tracking: 1. 1 → Page fault (Load into Frame 1) 2. 3 → Page fault (Load into Frame 2) 3. 0 → Page fault (Load into Frame 3) 4. 3 → No fault (Already in memory) 5. 5 → Page fault (Load into Frame 4) 6. 6 → Page fault (Replace 1, least recently used) 7. 3 → No fault 8. 0 → No fault 9. 1 → Page fault (Replace 5) 10. 4 → Page fault (Replace 6) 11. 3 → No fault 12. 0 → No fault 13. 6 → Page fault (Replace 1) Total Page Faults: 8"
+    },
+    {
+      "question": "Which component of the Xinu operating system tracks processes that are ready to run?",
+      "options": [
+        "The process table",
+        "The readylist",
+        "The I/O buffer",
+        "The CPU scheduler"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The readylist."
+    },
+    {
+      "question": "In a paging system, what happens when a page fault occurs?",
+      "options": [
+        "The process is terminated",
+        "The OS loads the required page from disk into memory",
+        "The page table is flushed",
+        "The CPU resets the program counter"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The OS loads the required page from disk into memory."
+    },
+    {
+      "question": "How does the Least Recently Used (LRU) page replacement algorithm differ from FIFO?",
+      "options": [
+        "LRU replaces the oldest page in memory",
+        "LRU replaces the page that has not been used for the longest time",
+        "LRU is faster but uses more memory than FIFO",
+        "LRU does not cause page faults"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: LRU replaces the page that has not been used for the longest time."
+    },
+    {
+      "question": "Which of the following is a primary advantage of using shared pages in a virtual memory system?",
+      "options": [
+        "It increases the total physical memory available",
+        "It reduces memory overhead by allowing multiple processes to share common data",
+        "It prevents all memory leaks in a system",
+        "It enables faster context switching between processes"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: It reduces memory overhead by allowing multiple processes to share common data."
+    },
+    {
+      "question": "In the producer-consumer model, what issue arises when the producer adds data to a full buffer?",
+      "options": [
+        "Buffer underflow",
+        "Buffer overflow",
+        "Deadlock",
+        "Synchronization"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Buffer overflow."
+    },
+    {
+      "question": "What happens during a context switch in the Xinu operating system?",
+      "options": [
+        "The CPU halts all processes",
+        "The state of the current process is saved and the next process is loaded",
+        "The memory is reallocated between processes",
+        "The scheduler is reset"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: The state of the current process is saved and the next process is loaded."
+    },
+    {
+      "question": "Which method helps prevent starvation in priority scheduling algorithms?",
+      "options": [
+        "First-Come, First-Serve scheduling",
+        "Round Robin scheduling",
+        "Aging mechanism",
+        "Shortest Job First scheduling"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Aging mechanism."
+    },
+    {
+      "question": "What role does a Translation Lookaside Buffer (TLB) play in virtual memory?",
+      "options": [
+        "It stores the entire page table",
+        "It speeds up the translation of virtual addresses to physical addresses",
+        "It handles page faults",
+        "It prevents memory fragmentation"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: It speeds up the translation of virtual addresses to physical addresses."
+    },
+    {
+      "question": "Which of the following is true about memory-mapped I/O?",
+      "options": [
+        "It reduces overhead by allowing I/O devices to be accessed as if they were memory locations",
+        "It separates the I/O and memory spaces entirely",
+        "It prevents direct access to I/O devices by the CPU",
+        "It ensures that each I/O operation is handled synchronously"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: It reduces overhead by allowing I/O devices to be accessed as if they were memory locations."
+    },
+    {
+      "question": "How does the Xinu operating system keep track of free memory?",
+      "options": [
+        "It uses a bitmap to represent free and allocated memory blocks",
+        "It maintains a free list that links together blocks of free memory",
+        "It stores free memory addresses in a table sorted by size",
+        "It uses paging to manage memory allocation and free space"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: It maintains a free list that links together blocks of free memory."
+    },
+    {
+      "question": "How does the operating system resolve a page fault?",
+      "options": [
+        "By terminating the process that caused the page fault",
+        "By loading the required page from swap space into physical memory",
+        "By increasing the size of the TLB",
+        "By resetting the page table"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: By loading the required page from swap space into physical memory."
+    },
+    {
+      "question": "What is the primary challenge of managing free memory using a linked list in Xinu?",
+      "options": [
+        "It causes internal fragmentation when blocks are split",
+        "The free list can become unsorted, making memory allocation inefficient",
+        "It results in external fragmentation as free memory gets split into smaller blocks",
+        "It requires large amounts of memory to store the free list"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: It results in external fragmentation as free memory gets split into smaller blocks."
+    },
+    {
+      "question": "What is the primary advantage of using semaphores in the producer-consumer model?",
+      "options": [
+        "They prevent data corruption by synchronizing access to shared buffers",
+        "They increase the speed of buffer operations",
+        "They remove the need for memory management in shared systems",
+        "They allow the consumer to produce data as well"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: They prevent data corruption by synchronizing access to shared buffers."
+    },
+    {
+      "question": "What type of memory allocation strategy does Xinu primarily use to allocate free memory?",
+      "options": [
+        "Best Fit",
+        "Worst Fit",
+        "First Fit",
+        "Next Fit"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: First Fit."
+    },
+    {
+      "question": "OS Kernel 1. What is the purpose of system calls in the context of modern operating systems? 2. Why does kernel space exist?",
+      "options": [
+        "System calls are the safe interface to privileged OS services; kernel space exists for protection and privilege separation.",
+        "System calls compile user programs; kernel space exists to avoid using virtual memory.",
+        "System calls are optional; kernel space exists only to run the GUI.",
+        "System calls are mainly for speeding up apps; kernel space exists to store user files more quickly."
+      ],
+      "answer": 0,
+      "explanation": "1) Purpose of system calls:\n- Provide a controlled interface for user programs to request OS services that require privileges (e.g., file I/O, process creation, networking).\n- Enforce protection: user code cannot directly execute privileged instructions; it must go through the kernel’s validated entry points.\n\n2) Why kernel space exists:\n- Isolation and safety: kernel code/data must be protected from buggy or malicious user programs.\n- Enables privilege separation (user mode vs kernel mode), so only the kernel can access hardware directly, manage memory mappings, and enforce access control."
+    },
+    {
+      "question": "Process Model 1. Explain the role of the process table in managing processes in Xinu. 2. Describe how the scheduling algorithm in Xinu interacts with the process table and the ready queue to manage process execution. 3. In your answer, discuss the data structures used for the process table and ready queue, and how context switching is implemented.",
+      "options": [
+        "Claims Xinu schedules by sorting disk blocks; process table is rebuilt every timer tick.",
+        "Explains proctab[] PCB fields, readylist selection, and how ctx switch saves/restores CPU context (plus isolation).",
+        "Describes only priorities and ignores process states, ready queue structure, and context saving.",
+        "Says the process table stores only filenames; the ready queue stores memory addresses; context switching just clears RAM."
+      ],
+      "answer": 1,
+      "explanation": "1) Process table role in Xinu:\n- A kernel data structure (often an array like proctab[]) holding a process table entry (PCB) per PID.\n- Stores each process’s state (prstate), priority (prprio), stack pointers/bounds, CPU context, and IPC/message fields.\n\n2) How scheduling uses the process table + ready queue:\n- READY processes are placed in readylist (typically a priority queue).\n- The scheduler selects the highest-priority READY process, updates its proctab entry to PRCURR, and updates the old running process to PRREADY (or another state) as appropriate.\n\n3) Data structures + context switching:\n- Process table: fixed-size array indexed by PID, each entry contains process metadata and saved context.\n- Ready queue: priority-ordered list/queue of PIDs.\n- Context switch: saves CPU registers/PC/stack pointer of the outgoing process into its process table entry and restores the incoming process’s saved context; also changes memory mapping/ASID if the OS supports separate address spaces."
+    },
+    {
+      "question": "Scheduler Your operating system uses a Round Robin scheduler with a time quantum of 100 ms. What happens if a process's I/O wait is shorter than the quantum? How can this behavior be optimized to reduce context switches?",
+      "options": [
+        "Blocking for I/O ends the time slice early; optimize with adaptive/dynamic quanta or feedback queues to reduce preemption churn.",
+        "The process keeps the CPU idle until its quantum ends, even while waiting for I/O.",
+        "I/O completion forces the OS to restart the process from the beginning each time.",
+        "Shorter quanta always reduce context switches because processes finish faster."
+      ],
+      "answer": 0,
+      "explanation": "If a process blocks for I/O before its 100 ms quantum expires:\n- The process yields the CPU early, transitions to a waiting/blocked state, and the scheduler runs another READY process.\n- When the I/O completes, an interrupt wakes the process and it re-enters the ready queue.\n\nOptimization to reduce context switches:\n- Use a larger or adaptive quantum for CPU‑bound workloads, and/or a dynamic quantum that matches typical burst lengths.\n- Avoid unnecessary switches by running the next READY process until it blocks or its quantum ends (standard), and consider MLFQ/priority boosting so interactive/I/O‑bound tasks get quick service without frequent preemption.\n- If the same process becomes READY immediately after a very short I/O wait, coalescing/wakeup batching can reduce rapid ping‑pong switching."
+    },
+    {
+      "question": "Virtual Addresses What happens during a context switch between processes in the Xinu operating system, and how does the system maintain process isolation?",
+      "options": [
+        "Saves/restores CPU context and (with VM) switches address-space mappings; isolation comes from MMU/page tables + privilege modes.",
+        "A context switch only changes the PID variable; isolation is maintained by file permissions.",
+        "Isolation is achieved by disabling interrupts during execution, not by memory mapping.",
+        "The OS copies the entire RAM of one process into another to isolate them."
+      ],
+      "answer": 0,
+      "explanation": "During a context switch in Xinu:\n- Save the outgoing process’s CPU context (registers, program counter, stack pointer) into its process table entry and update its prstate (e.g., PRCURR→PRREADY/PRWAIT).\n- Select the next READY process from the readylist, set its prstate to PRCURR, and restore its saved CPU context so it resumes execution.\n- If the system uses virtual memory, the OS also switches the active address space context (e.g., page-table base / ASID) and flushes or tags TLB entries as needed.\n\nProcess isolation is maintained by:\n- Separate virtual address spaces enforced by the MMU/page tables (one process cannot access another’s memory unless explicitly shared).\n- Running user code in user mode, with privileged operations only through system calls/traps."
+    },
+    {
+      "question": "Page Replacement Algorithm Scenario: You are a systems engineer working on an embedded system that currently uses the First-In-First-Out (FIFO) page replacement algorithm. The system has 1 GB of memory and handles small, predictable workloads. You are tasked with switching the system to the Least Recently Used (LRU) algorithm to handle new, unpredictable workloads. Question: Explain how the transition from FIFO to LRU will increase the memory overhead of the OS. What additional data structures (such as counters, linked lists, or stacks) does LRU require compared to FIFO? Discuss how these structures impact both memory usage and system performance.",
+      "options": [
+        "LRU only changes disk scheduling; page replacement metadata stays identical to FIFO.",
+        "LRU needs per-page recency tracking (timestamps/counters + list/stack), which increases metadata and update overhead vs FIFO’s simple queue.",
+        "LRU uses less memory than FIFO because it needs no extra metadata and never updates structures.",
+        "LRU replaces the newest page, so it can reuse FIFO’s queue without any extra tracking."
+      ],
+      "answer": 1,
+      "explanation": "Switching from FIFO to LRU increases OS memory overhead because LRU must track *recency of use*:\n\nCompared to FIFO (needs only a simple queue pointer/order of arrival), LRU typically requires:\n- Per-page metadata such as timestamps/counters of last access, or reference history.\n- A data structure to order pages by recency (e.g., a stack, doubly linked list, or ordered list of frames).\n- Hardware support bits (e.g., “accessed/reference” bit) or software-maintained counters updated on memory references/interrupts.\n\nImpact:\n- More memory: extra fields per page/frame + pointers in lists/stacks.\n- More CPU overhead: updating recency data on each access (or periodically), and maintaining/adjusting the ordering structure.\n- Benefit: usually fewer page faults on workloads with temporal locality, improving performance despite overhead."
+    },
+    {
+      "question": "What is the primary function of a system call in an operating system? (Slide: System Calls)",
+      "options": [
+        "To allow users to install new applications",
+        "To enable direct hardware access for user programs",
+        "To provide an interface between user programs and the operating system",
+        "To increase CPU clock speed"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: To provide an interface between user programs and the operating system."
+    },
+    {
+      "question": "Which system call is used to create a child process in UNIX-based operating systems? (Slide: fork() System Call)",
+      "options": [
+        "exec()",
+        "clone()",
+        "fork()",
+        "create_process()"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: fork()."
+    },
+    {
+      "question": "What is the key advantage of using threads over processes? (Slide: Thread Model)",
+      "options": [
+        "Threads can run on different operating systems simultaneously",
+        "Threads require less overhead and can be created/destroyed faster than processes",
+        "Threads do not require synchronization",
+        "Threads have separate memory spaces"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Threads require less overhead and can be created/destroyed faster than processes."
+    },
+    {
+      "question": "Which component of an operating system is responsible for managing processes? (Slide: Process Model)",
+      "options": [
+        "File system",
+        "Kernel",
+        "Memory manager",
+        "Scheduler"
+      ],
+      "answer": 3,
+      "explanation": "Correct because: Scheduler."
+    },
+    {
+      "question": "What does the execve() system call do? (Slide: System Calls for Process Management)",
+      "options": [
+        "Creates a new process",
+        "Terminates a process",
+        "Replaces the current process image with a new program",
+        "Waits for a child process to terminate"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Replaces the current process image with a new program."
+    },
+    {
+      "question": "What is a race condition in the context of interprocess communication? (Slide: Race Conditions)",
+      "options": [
+        "A condition where processes run in parallel without synchronization",
+        "A situation where multiple processes access shared data simultaneously, leading to unpredictable results",
+        "A scheduling algorithm that prioritizes faster processes",
+        "A security flaw allowing unauthorized access to memory"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: A situation where multiple processes access shared data simultaneously, leading to unpredictable results."
+    },
+    {
+      "question": "What synchronization mechanism prevents multiple processes from entering a critical section simultaneously? (Slide: Semaphores)",
+      "options": [
+        "Virtual Memory",
+        "Mutex",
+        "Semaphore",
+        "Deadlock"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Semaphore."
+    },
+    {
+      "question": "Which of the following is true about mutual exclusion? (Slide: Critical Region)",
+      "options": [
+        "Multiple processes can access shared data at the same time",
+        "Only one process can be in the critical section at a time",
+        "Processes never need synchronization",
+        "Critical regions can be accessed by all threads without restriction"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Only one process can be in the critical section at a time."
+    },
+    {
+      "question": "Which process synchronization method allows one process to wait for a specific condition before continuing? (Slide: Conditional Variables)",
+      "options": [
+        "Deadlock prevention",
+        "Condition variables",
+        "Spinlock",
+        "Shared memory"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Condition variables."
+    },
+    {
+      "question": "What is the purpose of Peterson’s Algorithm? (Slide: Peterson’s Algorithm)",
+      "options": [
+        "Process scheduling",
+        "Implementing page replacement",
+        "Achieving mutual exclusion in concurrent processes",
+        "Memory allocation"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Achieving mutual exclusion in concurrent processes."
+    },
+    {
+      "question": "Which scheduling algorithm assigns each process a fixed time quantum? (Slide: Round Robin Scheduler)",
+      "options": [
+        "First Come, First Serve",
+        "Shortest Job First",
+        "Round Robin",
+        "Priority Scheduling"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Round Robin."
+    },
+    {
+      "question": "Which scheduler is responsible for determining which process to run next? (Slide: Scheduling Processes)",
+      "options": [
+        "Long-term scheduler",
+        "Short-term scheduler",
+        "Medium-term scheduler",
+        "Process manager"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Short-term scheduler."
+    },
+    {
+      "question": "What does the Xinu 'readylist' store? (Slide: Process Table - Readylist)",
+      "options": [
+        "Currently running processes",
+        "Processes waiting for I/O",
+        "Processes ready to execute but not currently running",
+        "Completed processes awaiting termination"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Processes ready to execute but not currently running."
+    },
+    {
+      "question": "What is the main disadvantage of First Come, First Serve (FCFS) scheduling? (Slide: First Come First Serve)",
+      "options": [
+        "It requires complex hardware support",
+        "Shorter processes can get stuck waiting for longer processes",
+        "It does not work for batch systems",
+        "It is not preemptive"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Shorter processes can get stuck waiting for longer processes."
+    },
+    {
+      "question": "Which scheduling algorithm gives priority to the process with the shortest execution time? (Slide: Shortest Job First)",
+      "options": [
+        "Round Robin",
+        "First Come, First Serve",
+        "Shortest Job First",
+        "Multilevel Queue"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Shortest Job First."
+    },
+    {
+      "question": "What is the purpose of the base and limit registers in memory management? (Slide: Address Space - Base and Limit Registers)",
+      "options": [
+        "To store the entire process's data",
+        "To determine the maximum number of processes that can run",
+        "To define the memory boundaries for a process",
+        "To keep track of free memory pages"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: To define the memory boundaries for a process."
+    },
+    {
+      "question": "Which memory allocation strategy is the fastest but may cause fragmentation? (Slide: Memory Allocation Algorithms)",
+      "options": [
+        "Best Fit",
+        "Worst Fit",
+        "First Fit",
+        "Next Fit"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: First Fit."
+    },
+    {
+      "question": "What happens when a process tries to access a memory page that is not currently in RAM? (Slide: Page Fault Handling)",
+      "options": [
+        "The OS loads the required page from disk into memory",
+        "The process is terminated immediately",
+        "The memory is compacted to make room for the page",
+        "The CPU restarts the entire system"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: The OS loads the required page from disk into memory."
+    },
+    {
+      "question": "What is the main advantage of using paging over contiguous memory allocation? (Slide: Paging)",
+      "options": [
+        "Paging eliminates internal fragmentation completely",
+        "Paging avoids external fragmentation by allocating memory in fixed-size blocks",
+        "Paging allows processes to share memory dynamically",
+        "Paging is faster than contiguous memory allocation"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Paging avoids external fragmentation by allocating memory in fixed-size blocks."
+    },
+    {
+      "question": "Which hardware component speeds up the translation of virtual addresses to physical addresses? (Slide: Translation Lookaside Buffer - TLB)",
+      "options": [
+        "Memory buffer register",
+        "Cache memory",
+        "Translation Lookaside Buffer (TLB)",
+        "Page table"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Translation Lookaside Buffer (TLB)."
+    },
+    {
+      "question": "What is the main goal of the Least Recently Used (LRU) page replacement algorithm? (Slide: Least Recently Used Algorithm)",
+      "options": [
+        "To replace the oldest page in memory",
+        "To replace the page that has not been used for the longest time",
+        "To randomly replace a page from memory",
+        "To keep frequently used pages in disk storage"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: To replace the page that has not been used for the longest time."
+    },
+    {
+      "question": "What is a \"page fault\"? (Slide: Page Fault)",
+      "options": [
+        "A type of memory corruption",
+        "When a process accesses a page that is not in physical memory",
+        "When the CPU fails to allocate enough memory",
+        "When two processes share the same page"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: When a process accesses a page that is not in physical memory."
+    },
+    {
+      "question": "Which technique reduces the number of page faults by keeping frequently used pages in memory? (Slide: Working Set Model)",
+      "options": [
+        "Demand Paging",
+        "Prepaging",
+        "Thrashing",
+        "Working Set Model"
+      ],
+      "answer": 3,
+      "explanation": "Correct because: Working Set Model."
+    },
+    {
+      "question": "What happens if a system has too many page faults? (Slide: Page Fault Frequency - PFF Algorithm)",
+      "options": [
+        "It enters a thrashing state",
+        "It improves performance",
+        "The OS increases the time quantum",
+        "The system automatically clears cache memory"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: It enters a thrashing state."
+    },
+    {
+      "question": "What is the purpose of the \"dirty bit\" in a page table entry? (Slide: Page Table - R and M Bits)",
+      "options": [
+        "It marks pages that need to be reloaded",
+        "It tracks whether a page has been modified and needs to be written to disk",
+        "It prevents pages from being swapped out",
+        "It indicates a page is no longer in use"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: It tracks whether a page has been modified and needs to be written to disk."
+    },
+    {
+      "question": "Which data structure is used to track file metadata, including ownership and disk location? (Slide: I-Nodes)",
+      "options": [
+        "Page Table",
+        "File Allocation Table (FAT)",
+        "Inode",
+        "Linked List"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Inode."
+    },
+    {
+      "question": "Which file allocation strategy links blocks together, allowing files to grow dynamically? (Slide: Linked-List Allocation)",
+      "options": [
+        "Contiguous Allocation",
+        "Indexed Allocation",
+        "Linked-List Allocation",
+        "Direct Allocation"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Linked-List Allocation."
+    },
+    {
+      "question": "What is the primary purpose of a file system? (Slide: OS File Abstraction)",
+      "options": [
+        "To manage hardware",
+        "To structure disk storage and provide access to data",
+        "To optimize CPU scheduling",
+        "To allocate memory"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: To structure disk storage and provide access to data."
+    },
+    {
+      "question": "Which file organization method minimizes fragmentation and provides efficient random access? (Slide: File System Implementations - Indexed Allocation)",
+      "options": [
+        "Contiguous allocation",
+        "Linked-list allocation",
+        "Indexed allocation",
+        "FAT allocation"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: Indexed allocation."
+    },
+    {
+      "question": "What is a journaling file system? (Slide: Journaling File System)",
+      "options": [
+        "A file system that reduces disk fragmentation",
+        "A system that logs changes before applying them to prevent corruption",
+        "A real-time file compression system",
+        "A system that automatically encrypts file data"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: A system that logs changes before applying them to prevent corruption."
+    },
+    {
+      "question": "What is the main advantage of memory-mapped I/O? (Slide: Memory-Mapped I/O)",
+      "options": [
+        "It eliminates the need for RAM",
+        "It reduces CPU overhead by allowing direct access to I/O devices",
+        "It speeds up disk fragmentation",
+        "It prevents page faults"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: It reduces CPU overhead by allowing direct access to I/O devices."
+    },
+    {
+      "question": "What is the role of Direct Memory Access (DMA) in I/O operations? (Slide: Direct Memory Access - DMA)",
+      "options": [
+        "It allows devices to communicate without CPU intervention",
+        "It prevents page faults",
+        "It synchronizes file writes",
+        "It increases cache size"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: It allows devices to communicate without CPU intervention."
+    },
+    {
+      "question": "Which file system optimization technique improves read performance by caching disk blocks in memory? (Slide: Buffer Cache)",
+      "options": [
+        "Defragmentation",
+        "Buffer Cache",
+        "Journaling",
+        "Quick Fit"
+      ],
+      "answer": 1,
+      "explanation": "Correct because: Buffer Cache."
+    },
+    {
+      "question": "How does the operating system keep track of free disk space efficiently? (Slide: Keeping Track of Free Blocks - Bitmap vs. Linked List)",
+      "options": [
+        "Using a bitmap or a free block linked list",
+        "By scanning the disk for empty spaces",
+        "By writing metadata to each block",
+        "By defragmenting the disk periodically"
+      ],
+      "answer": 0,
+      "explanation": "Correct because: Using a bitmap or a free block linked list."
+    },
+    {
+      "question": "Which scheduling algorithm is commonly used for disk I/O operations to minimize seek time? (Slide: Disk Scheduling Algorithms - SCAN Algorithm)",
+      "options": [
+        "Round Robin",
+        "First Come, First Serve",
+        "SCAN (Elevator Algorithm)",
+        "FIFO"
+      ],
+      "answer": 2,
+      "explanation": "Correct because: SCAN (Elevator Algorithm)."
+    },
+    {
+      "question": "System Calls & Process Management Explain the role of system calls in an operating system. Describe how the fork() system call works and what happens when it is executed in a UNIX-based OS. Include an example scenario where fork() is useful.",
+      "options": [
+        "Explains system calls as kernel interface; fork duplicates a process (child PID, COW) and both continue; shell example.",
+        "Says fork only creates a new thread inside the same process; system calls run purely in user mode.",
+        "Describes exec() but not fork(), and says system calls are used to overclock the CPU.",
+        "Claims fork replaces the parent process and returns only once; system calls are optional library calls."
+      ],
+      "answer": 0,
+      "explanation": "- System calls are the controlled entry points into the kernel that let user programs request privileged services (file I/O, process creation, memory management, networking) while enforcing protection and validation.\n- fork() creates a new child process by duplicating the calling process (parent). The child gets a new PID and a copy of the parent’s address space (often implemented with copy-on-write so pages are shared until modified). Both processes continue from the instruction after fork(); fork() returns the child PID to the parent and 0 to the child.\n- Example: a shell uses fork() to create a child, then the child exec()’s the requested program while the parent waits or continues accepting commands."
+    },
+    {
+      "question": "Interprocess Communication & Synchronization Describe the concept of a race condition and explain how it can occur in a shared-memory system. What mechanisms, such as semaphores or mutexes, can be used to prevent race conditions? Provide an example.",
+      "options": [
+        "Says semaphores are used for disk scheduling, not synchronization.",
+        "Defines race condition as slow CPU speed; suggests adding more RAM as the fix.",
+        "Defines race condition + timing dependence; shows shared counter example; uses mutex/semaphore/atomic ops to prevent.",
+        "Claims races only occur with message passing and cannot happen with shared memory."
+      ],
+      "answer": 2,
+      "explanation": "- A race condition occurs when multiple threads/processes access shared state concurrently and the outcome depends on the timing/interleaving of their operations.\n- In shared memory, races happen if reads/writes to shared variables are not properly synchronized (e.g., two threads increment the same counter without atomicity).\n- Prevention mechanisms: mutex/lock for mutual exclusion; semaphores for signaling + controlled access; monitors/condition variables; atomic operations.\n- Example: if two threads do `x = x + 1` at the same time, both can read the same old x and write back the same incremented value, losing one update; a mutex around the increment fixes it."
+    },
+    {
+      "question": "Scheduling Algorithms Compare and contrast Round Robin (RR) and Shortest Job First (SJF) scheduling algorithms. Which situations are best suited for each, and what are the advantages and disadvantages of both?",
+      "options": [
+        "Claims SJF guarantees fairness for long jobs and never needs burst estimates.",
+        "Compares RR time-slicing vs SJF shortest-burst; RR for interactive fairness, SJF for batch minimal waiting; notes overhead/starvation.",
+        "Says both are identical except for the name; neither can cause starvation.",
+        "States RR is non-preemptive and always runs jobs to completion; SJF is purely random."
+      ],
+      "answer": 1,
+      "explanation": "- Round Robin (RR): preemptive; each READY process gets a fixed time quantum in cyclic order. Good for interactive/time-sharing; fair response but context-switch overhead if quantum is too small.\n- Shortest Job First (SJF): chooses the process with the smallest predicted CPU burst (non-preemptive) or shortest remaining time (preemptive variant). Minimizes average waiting time when burst estimates are accurate, but can starve long jobs and needs burst prediction.\n- Best suited: RR for multi-user interactive systems; SJF for batch workloads where job lengths are known/estimated reliably.\n- Tradeoffs: RR fairness/response vs overhead; SJF efficiency vs starvation/estimation."
+    },
+    {
+      "question": "Memory Management What is paging, and how does it differ from segmentation? Discuss the benefits of paging and explain how the Translation Lookaside Buffer (TLB) helps improve performance in a paging system.",
+      "options": [
+        "Says TLB is a software scheduler queue unrelated to memory translation.",
+        "Paging = fixed pages/frames + page tables; segmentation = variable segments; paging benefits; TLB caches translations for speed.",
+        "Paging uses variable-size segments; segmentation uses fixed-size pages; TLB stores files.",
+        "Claims paging eliminates all fragmentation including internal; TLB prevents page faults."
+      ],
+      "answer": 1,
+      "explanation": "- Paging divides virtual memory into fixed-size pages and physical memory into frames; addresses translate via page tables. It avoids external fragmentation and simplifies allocation.\n- Segmentation divides memory into variable-size logical segments (code, heap, stack) with base/limit; it matches program structure but can suffer external fragmentation.\n- Benefits of paging: easy allocation/swapping, protection per page, sharing pages, no external fragmentation (though internal fragmentation can occur).\n- TLB: a small hardware cache of recent page-table translations (virtual page → physical frame). A TLB hit avoids a page-table memory lookup, significantly speeding address translation."
+    },
+    {
+      "question": "Page Replacement Policies A computer system is running Least Recently Used (LRU) and First In, First Out (FIFO) page replacement algorithms. Explain how both algorithms decide which page to replace and analyze their effectiveness in different workloads.",
+      "options": [
+        "LRU has zero overhead and always fewer faults in every workload, even sequential scans.",
+        "FIFO evicts oldest-loaded; LRU evicts least recently referenced; LRU better with locality but needs tracking overhead.",
+        "FIFO requires timestamps per page; LRU needs only a simple queue.",
+        "FIFO and LRU both evict the newest page; differences are only in disk speed."
+      ],
+      "answer": 1,
+      "explanation": "- FIFO evicts the page that has been in memory the longest (oldest arrival). Simple, low overhead, but can evict frequently-used pages and can show anomalies (Belady’s).\n- LRU evicts the page that has not been used for the longest time. Typically better with temporal locality, but higher overhead (needs recency tracking via timestamps/stack/reference bits).\n- Effectiveness: LRU usually reduces faults on workloads with locality; FIFO can be acceptable for simple/predictable access patterns but is often worse under varied workloads."
+    },
+    {
+      "question": "File Systems & Storage Explain how inodes are used in a file system to track file metadata. What information is stored in an inode, and how does it help in managing files efficiently?",
+      "options": [
+        "Inodes store the entire file contents; directories store only timestamps and permissions.",
+        "Inodes contain network addresses and routing tables for file transfers.",
+        "Inodes are only used for CPU scheduling; filenames map directly to disk sectors.",
+        "Inodes store file metadata + block pointers; directories map name→inode; inode pointers locate data blocks (direct/indirect)."
+      ],
+      "answer": 3,
+      "explanation": "- An inode is a per-file metadata structure (common in Unix-like file systems).\n- It stores metadata such as: file type, permissions/mode, owner/group IDs, file size, timestamps (atime/mtime/ctime), link count, and pointers to the file’s data blocks (direct/indirect pointers).\n- File data blocks are located by following the inode’s block pointers; directory entries map filenames to inode numbers.\n- Benefit: separates names (directories) from metadata/data location (inode), enabling hard links and efficient metadata access."
+    },
+    {
+      "question": "Virtual Memory & Thrashing Define thrashing in the context of virtual memory. What causes thrashing, and what strategies can the operating system use to prevent it?",
+      "options": [
+        "Thrashing is when the CPU overheats; fix by underclocking the processor.",
+        "Thrashing happens only in file systems, not virtual memory.",
+        "Thrashing is caused by too many free frames; fix by allocating fewer pages.",
+        "Thrashing = excessive paging/page faults due to too little RAM for working sets; fix via working-set/PFF, fewer processes, more RAM."
+      ],
+      "answer": 3,
+      "explanation": "- Thrashing is a state where the system spends most of its time servicing page faults (swapping pages) rather than executing useful work.\n- Causes: too many processes for available RAM, resident sets too small, workload with poor locality, and aggressive multiprogramming.\n- Mitigations: reduce degree of multiprogramming, use working-set or PFF control to adjust resident set sizes, add RAM, improve page replacement policy, or tune scheduling to avoid overcommit."
+    },
+    {
+      "question": "I/O Systems & Direct Memory Access (DMA) What is Direct Memory Access (DMA), and how does it improve system performance? Describe the steps involved in a DMA transfer and compare it with Programmed I/O (PIO).",
+      "options": [
+        "DMA requires the CPU to copy every byte manually, so it is slower than programmed I/O.",
+        "DMA = device/controller moves data memory↔device after CPU setup; interrupts on completion; reduces CPU overhead and improves throughput.",
+        "DMA is a memory allocation algorithm used to prevent fragmentation.",
+        "DMA is the same as a page fault handler for virtual memory."
+      ],
+      "answer": 1,
+      "explanation": "- DMA allows a device controller to transfer blocks of data directly between an I/O device and main memory without the CPU copying each byte/word.\n- The CPU sets up the DMA transfer (buffer address, length, direction), then the DMA controller performs the transfer and interrupts the CPU on completion.\n- Benefits: frees CPU to do other work, reduces interrupt overhead vs programmed I/O, and improves throughput for high-speed devices."
+    },
+    {
+      "question": "Disk Scheduling Algorithms Describe how the SCAN (Elevator) scheduling algorithm works for disk I/O operations. Compare it to FCFS (First-Come, First-Serve) and LOOK scheduling in terms of performance and seek time efficiency.",
+      "options": [
+        "SCAN and LOOK are paging algorithms, not disk scheduling.",
+        "SCAN sweeps servicing requests in one direction then reverses; better than FCFS; LOOK reverses at last request (not disk end) for efficiency.",
+        "FCFS usually minimizes seek time better than SCAN; SCAN is only for SSDs.",
+        "SCAN services requests randomly; LOOK always goes to the disk end before reversing."
+      ],
+      "answer": 1,
+      "explanation": "- SCAN (elevator) moves the disk head in one direction servicing requests in order of cylinder, then reverses at the end—like an elevator.\n- Compared to FCFS: SCAN reduces average seek time and variance by avoiding long back-and-forth jumps.\n- LOOK is like SCAN but reverses direction at the last request in that direction (doesn’t go to the physical end), often improving efficiency over SCAN.\n- Overall: FCFS is simplest but can be inefficient; SCAN/LOOK generally provide better throughput and more predictable waits."
+    },
+    {
+      "question": "File System Consistency & Journaling What is a journaling file system, and how does it help maintain file system consistency after a crash? Explain the process of journaling and why it is preferred over traditional file system recovery techniques.",
+      "options": [
+        "Journaling stores every file twice permanently, doubling capacity but preventing all crashes.",
+        "Journaling logs transactions before applying; crash recovery replays committed entries and discards incomplete ones, ensuring fast consistency.",
+        "Traditional fsck is always faster than journaling because it never reads logs.",
+        "Journaling only speeds up CPU scheduling and has no effect on file consistency."
+      ],
+      "answer": 1,
+      "explanation": "- A journaling file system logs (journals) intended metadata updates (and sometimes data) before committing them to the main file system structures.\n- On update: write a journal record describing the change, flush it to disk, then apply the change to the file system; mark the journal transaction complete.\n- After a crash: the system replays (redo) committed transactions and discards incomplete ones, restoring consistency quickly without a full scan.\n- Preferred because recovery is fast and reliable compared to traditional fsck-style scans, reducing downtime and corruption risk."
+    }
+  ],
+  "games": [],
+  "sources": [
+    {
+      "file": "Quiz 1 - Week 1 Slides.pdf",
+      "pages": [
+        1
+      ]
+    },
+    {
+      "file": "Quiz 2 - Answer Key.pdf",
+      "pages": [
+        1
+      ]
+    },
+    {
+      "file": "Quiz 3 - Answer Key.pdf",
+      "pages": [
+        1
+      ]
+    },
+    {
+      "file": "Midterm Review Questions.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "file": "Fall 2024 Midterm Exam (3).pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "file": "Spring 2025 Midterm Exam (2).pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ]
+    },
+    {
+      "file": "Answer Key_ Spring 2025 Midterm Exam.pdf",
+      "pages": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}
