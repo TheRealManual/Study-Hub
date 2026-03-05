@@ -1,0 +1,2071 @@
+{
+  "title": "Midterm",
+  "notes": [
+    [
+      "Readability: programs should be easy to read.",
+      1,
+      "class1_eval_criteria.pdf"
+    ],
+    [
+      "Writability: programs should be easy to write; programmer time is valuable.",
+      1,
+      "class1_eval_criteria.pdf"
+    ],
+    [
+      "Reliability: programs should behave as intended; language should make accidental bugs harder to introduce.",
+      1,
+      "class1_eval_criteria.pdf"
+    ],
+    [
+      "Reliability is affected by type compatibility checks, array bounds checks, and exception handling.",
+      1,
+      "class1_eval_criteria.pdf"
+    ],
+    [
+      "Efficiency considers run time speed and the behind-the-scenes work required by the language implementation.",
+      1,
+      "class1_eval_criteria.pdf"
+    ],
+    [
+      "Postponing actions from compile time to run time costs speed and often trades efficiency for reliability.",
+      1,
+      "class1_eval_criteria.pdf"
+    ],
+    [
+      "Simplicity: fewer features can be easier to learn but may limit what is easy to express.",
+      1,
+      "class1_eval_criteria.pdf"
+    ],
+    [
+      "Complexity: more features can make tasks easier but increases learning burden and can lead to partial-language use.",
+      1,
+      "class1_eval_criteria.pdf"
+    ],
+    [
+      "Ease of learning is an evaluation criterion distinct from simplicity.",
+      1,
+      "class1_eval_criteria.pdf"
+    ],
+    [
+      "Suitability for a particular task is an evaluation criterion (choose the right language for the job).",
+      1,
+      "class1_eval_criteria.pdf"
+    ],
+    [
+      "Imperative paradigm: program is a sequence of commands that update variables over time.",
+      1,
+      "classparadigms.pdf"
+    ],
+    [
+      "Functional paradigm: program is built from functions and composition rather than variable updates.",
+      1,
+      "classparadigms.pdf"
+    ],
+    [
+      "Logic paradigm: program is facts/rules and execution finds solutions that satisfy constraints.",
+      2,
+      "classparadigms.pdf"
+    ],
+    [
+      "Object-oriented paradigm: classes/objects, inheritance, and information hiding.",
+      2,
+      "classparadigms.pdf"
+    ],
+    [
+      "Scripting languages are typically dynamically typed and often used to glue tools (including web apps).",
+      3,
+      "classparadigms.pdf"
+    ],
+    [
+      "Concurrent languages emphasize safe shared-resource access and inter-process communication.",
+      3,
+      "classparadigms.pdf"
+    ],
+    [
+      "TPK algorithm is used to compare language features across languages (types, arrays, loops, functions, I/O, comments).",
+      2,
+      "pl_class_history_2020.pdf"
+    ],
+    [
+      "FORTRAN: created for mathematical/scientific computation (John Backus, IBM).",
+      1,
+      "history_summary.pdf"
+    ],
+    [
+      "COBOL: created for business data processing with English-like phrases.",
+      3,
+      "history_summary.pdf"
+    ],
+    [
+      "C: created for Unix and system programming (Dennis Ritchie, Bell Labs).",
+      2,
+      "history_summary.pdf"
+    ],
+    [
+      "C++: adds classes to C while preserving backward compatibility with C.",
+      1,
+      "history_summary.pdf"
+    ],
+    [
+      "Java: object-oriented C-like language that breaks backward compatibility with C.",
+      2,
+      "history_summary.pdf"
+    ],
+    [
+      "Pascal: created primarily as a teaching language (Niklaus Wirth).",
+      2,
+      "history_summary.pdf"
+    ],
+    [
+      "Smalltalk: one of the earliest major object-oriented languages (Alan Kay and others).",
+      4,
+      "history_summary.pdf"
+    ],
+    [
+      "LISP: historically associated with artificial intelligence and symbolic processing.",
+      1,
+      "history_summary.pdf"
+    ],
+    [
+      "Prolog: example of a logic programming language (facts + inference).",
+      2,
+      "classparadigms.pdf"
+    ],
+    [
+      "Scheme uses prefix notation: (operator operand1 operand2 ...).",
+      3,
+      "class_sch.pdf"
+    ],
+    [
+      "Nesting expressions models function composition, e.g., (sin (+ x y)).",
+      3,
+      "class_sch.pdf"
+    ],
+    [
+      "quote (or ') prevents evaluation and returns literal data.",
+      9,
+      "class_sch.pdf"
+    ],
+    [
+      "car returns the first element of a list; cdr returns the rest of the list.",
+      7,
+      "class_sch.pdf"
+    ],
+    [
+      "cons constructs a list from a head element and a tail list.",
+      16,
+      "class_sch.pdf"
+    ],
+    [
+      "Common recursion pattern: base case (null? L), recursive step uses (cdr L).",
+      24,
+      "class_sch.pdf"
+    ],
+    [
+      "cond selects the first true branch; else/#T is used as a default branch.",
+      18,
+      "class_sch.pdf"
+    ],
+    [
+      "Relational operators like >, <, <= return #T or #F.",
+      8,
+      "class_sch.pdf"
+    ],
+    [
+      "Equality predicates differ: = is numeric equality; eq? and equal? compare other kinds of values.",
+      24,
+      "class_sch.pdf"
+    ],
+    [
+      "BNF grammars describe syntax (form); semantics is meaning.",
+      1,
+      "pl_class_grammar.pdf"
+    ],
+    [
+      "BNF grammar components: terminals, nonterminals, a start symbol, and productions (rules).",
+      2,
+      "pl_class_grammar.pdf"
+    ],
+    [
+      "A derivation starts at the start symbol and applies productions until only terminals remain.",
+      3,
+      "pl_class_grammar.pdf"
+    ],
+    [
+      "Syntax diagrams are an alternative to BNF for representing syntax (graph-based).",
+      1,
+      "pl_class_grammar.pdf"
+    ],
+    [
+      "In syntax diagrams used here, rectangle nodes label another graph (like a nonterminal reference).",
+      1,
+      "Quiz 5 Answer Key.pdf"
+    ],
+    [
+      "In syntax diagrams used here, circle nodes represent literal terminals in the string.",
+      4,
+      "Quiz 5 Answer Key.pdf"
+    ],
+    [
+      "EBNF extensions: {...} repetition, [...] optional, and | alternation.",
+      1,
+      "Quiz 5 Answer Key.pdf"
+    ]
+  ],
+  "flashcards": [
+    {
+      "front": "What does this mean: Readability: programs should be easy to read.",
+      "back": "Readability: programs should be easy to read."
+    },
+    {
+      "front": "What does this mean: Writability: programs should be easy to write; programmer time is valuable.",
+      "back": "Writability: programs should be easy to write; programmer time is valuable."
+    },
+    {
+      "front": "What does this mean: Reliability: programs should behave as intended; language should make accidental bugs harder to introduce.",
+      "back": "Reliability: programs should behave as intended; language should make accidental bugs harder to introduce."
+    },
+    {
+      "front": "What does this mean: Reliability is affected by type compatibility checks, array bounds checks, and exception handling.",
+      "back": "Reliability is affected by type compatibility checks, array bounds checks, and exception handling."
+    },
+    {
+      "front": "What does this mean: Efficiency considers run time speed and the behind-the-scenes work required by the language implementation.",
+      "back": "Efficiency considers run time speed and the behind-the-scenes work required by the language implementation."
+    },
+    {
+      "front": "What does this mean: Postponing actions from compile time to run time costs speed and often trades efficiency for reliability.",
+      "back": "Postponing actions from compile time to run time costs speed and often trades efficiency for reliability."
+    },
+    {
+      "front": "What does this mean: Simplicity: fewer features can be easier to learn but may limit what is easy to express.",
+      "back": "Simplicity: fewer features can be easier to learn but may limit what is easy to express."
+    },
+    {
+      "front": "What does this mean: Complexity: more features can make tasks easier but increases learning burden and can lead to partial-language use.",
+      "back": "Complexity: more features can make tasks easier but increases learning burden and can lead to partial-language use."
+    },
+    {
+      "front": "What does this mean: Ease of learning is an evaluation criterion distinct from simplicity.",
+      "back": "Ease of learning is an evaluation criterion distinct from simplicity."
+    },
+    {
+      "front": "What does this mean: Suitability for a particular task is an evaluation criterion (choose the right language for the job).",
+      "back": "Suitability for a particular task is an evaluation criterion (choose the right language for the job)."
+    },
+    {
+      "front": "What does this mean: Imperative paradigm: program is a sequence of commands that update variables over time.",
+      "back": "Imperative paradigm: program is a sequence of commands that update variables over time."
+    },
+    {
+      "front": "What does this mean: Functional paradigm: program is built from functions and composition rather than variable updates.",
+      "back": "Functional paradigm: program is built from functions and composition rather than variable updates."
+    },
+    {
+      "front": "What does this mean: Logic paradigm: program is facts/rules and execution finds solutions that satisfy constraints.",
+      "back": "Logic paradigm: program is facts/rules and execution finds solutions that satisfy constraints."
+    },
+    {
+      "front": "What does this mean: Object-oriented paradigm: classes/objects, inheritance, and information hiding.",
+      "back": "Object-oriented paradigm: classes/objects, inheritance, and information hiding."
+    },
+    {
+      "front": "What does this mean: Scripting languages are typically dynamically typed and often used to glue tools (including web apps).",
+      "back": "Scripting languages are typically dynamically typed and often used to glue tools (including web apps)."
+    },
+    {
+      "front": "What does this mean: Concurrent languages emphasize safe shared-resource access and inter-process communication.",
+      "back": "Concurrent languages emphasize safe shared-resource access and inter-process communication."
+    },
+    {
+      "front": "What does this mean: TPK algorithm is used to compare language features across languages (types, arrays, loops, functions, I/O, comments).",
+      "back": "TPK algorithm is used to compare language features across languages (types, arrays, loops, functions, I/O, comments)."
+    },
+    {
+      "front": "What does this mean: FORTRAN: created for mathematical/scientific computation (John Backus, IBM).",
+      "back": "FORTRAN: created for mathematical/scientific computation (John Backus, IBM)."
+    },
+    {
+      "front": "What does this mean: COBOL: created for business data processing with English-like phrases.",
+      "back": "COBOL: created for business data processing with English-like phrases."
+    },
+    {
+      "front": "What does this mean: C: created for Unix and system programming (Dennis Ritchie, Bell Labs).",
+      "back": "C: created for Unix and system programming (Dennis Ritchie, Bell Labs)."
+    },
+    {
+      "front": "What does this mean: C++: adds classes to C while preserving backward compatibility with C.",
+      "back": "C++: adds classes to C while preserving backward compatibility with C."
+    },
+    {
+      "front": "What does this mean: Java: object-oriented C-like language that breaks backward compatibility with C.",
+      "back": "Java: object-oriented C-like language that breaks backward compatibility with C."
+    },
+    {
+      "front": "What does this mean: Pascal: created primarily as a teaching language (Niklaus Wirth).",
+      "back": "Pascal: created primarily as a teaching language (Niklaus Wirth)."
+    },
+    {
+      "front": "What does this mean: Smalltalk: one of the earliest major object-oriented languages (Alan Kay and others).",
+      "back": "Smalltalk: one of the earliest major object-oriented languages (Alan Kay and others)."
+    },
+    {
+      "front": "What does this mean: LISP: historically associated with artificial intelligence and symbolic processing.",
+      "back": "LISP: historically associated with artificial intelligence and symbolic processing."
+    },
+    {
+      "front": "What does this mean: Prolog: example of a logic programming language (facts + inference).",
+      "back": "Prolog: example of a logic programming language (facts + inference)."
+    },
+    {
+      "front": "What does this mean: Scheme uses prefix notation: (operator operand1 operand2 ...).",
+      "back": "Scheme uses prefix notation: (operator operand1 operand2 ...)."
+    },
+    {
+      "front": "What does this mean: Nesting expressions models function composition, e.g., (sin (+ x y)).",
+      "back": "Nesting expressions models function composition, e.g., (sin (+ x y))."
+    },
+    {
+      "front": "What does this mean: quote (or ') prevents evaluation and returns literal data.",
+      "back": "quote (or ') prevents evaluation and returns literal data."
+    },
+    {
+      "front": "What does this mean: car returns the first element of a list; cdr returns the rest of the list.",
+      "back": "car returns the first element of a list; cdr returns the rest of the list."
+    },
+    {
+      "front": "What does this mean: cons constructs a list from a head element and a tail list.",
+      "back": "cons constructs a list from a head element and a tail list."
+    },
+    {
+      "front": "What does this mean: Common recursion pattern: base case (null? L), recursive step uses (cdr L).",
+      "back": "Common recursion pattern: base case (null? L), recursive step uses (cdr L)."
+    },
+    {
+      "front": "What does this mean: cond selects the first true branch; else/#T is used as a default branch.",
+      "back": "cond selects the first true branch; else/#T is used as a default branch."
+    },
+    {
+      "front": "What does this mean: Relational operators like >, <, <= return #T or #F.",
+      "back": "Relational operators like >, <, <= return #T or #F."
+    },
+    {
+      "front": "What does this mean: Equality predicates differ: = is numeric equality; eq? and equal? compare other kinds of values.",
+      "back": "Equality predicates differ: = is numeric equality; eq? and equal? compare other kinds of values."
+    },
+    {
+      "front": "What does this mean: BNF grammars describe syntax (form); semantics is meaning.",
+      "back": "BNF grammars describe syntax (form); semantics is meaning."
+    },
+    {
+      "front": "What does this mean: BNF grammar components: terminals, nonterminals, a start symbol, and productions (rules).",
+      "back": "BNF grammar components: terminals, nonterminals, a start symbol, and productions (rules)."
+    },
+    {
+      "front": "What does this mean: A derivation starts at the start symbol and applies productions until only terminals remain.",
+      "back": "A derivation starts at the start symbol and applies productions until only terminals remain."
+    },
+    {
+      "front": "What does this mean: Syntax diagrams are an alternative to BNF for representing syntax (graph-based).",
+      "back": "Syntax diagrams are an alternative to BNF for representing syntax (graph-based)."
+    },
+    {
+      "front": "What does this mean: In syntax diagrams used here, rectangle nodes label another graph (like a nonterminal reference).",
+      "back": "In syntax diagrams used here, rectangle nodes label another graph (like a nonterminal reference)."
+    },
+    {
+      "front": "What does this mean: In syntax diagrams used here, circle nodes represent literal terminals in the string.",
+      "back": "In syntax diagrams used here, circle nodes represent literal terminals in the string."
+    },
+    {
+      "front": "What does this mean: EBNF extensions: {...} repetition, [...] optional, and | alternation.",
+      "back": "EBNF extensions: {...} repetition, [...] optional, and | alternation."
+    },
+    {
+      "front": "What does this mean: car",
+      "back": "car returns the first element of a list."
+    },
+    {
+      "front": "What does this mean: cdr",
+      "back": "cdr returns the list after removing the first element."
+    },
+    {
+      "front": "What does this mean: cadr / caddr",
+      "back": "cadr = second element; caddr = third element (combinations of car/cdr)."
+    },
+    {
+      "front": "What does this mean: (quote X) / 'X",
+      "back": "Returns X without evaluating it."
+    },
+    {
+      "front": "What does this mean: (null? L)",
+      "back": "Checks whether L is the empty list ()."
+    },
+    {
+      "front": "What does this mean: base case in recursion",
+      "back": "A condition (often (null? L)) that stops recursion and returns a final value."
+    },
+    {
+      "front": "What does this mean: cons cell diagram",
+      "back": "A box-and-pointer representation of lists built from pairs; cons links a head to a tail."
+    },
+    {
+      "front": "What does this mean: terminal",
+      "back": "A literal symbol that appears in strings of the language (cannot be expanded by rules)."
+    },
+    {
+      "front": "What does this mean: nonterminal",
+      "back": "A grammar variable that can be expanded using productions (written like <Expr>)."
+    },
+    {
+      "front": "What does this mean: production",
+      "back": "A rule that rewrites a nonterminal into terminals/nonterminals."
+    },
+    {
+      "front": "What does this mean: derivation",
+      "back": "A sequence of rule applications from the start symbol to a terminal string."
+    },
+    {
+      "front": "What does this mean: parse tree",
+      "back": "A tree that shows how a string was derived using the grammar\u2019s productions."
+    },
+    {
+      "front": "What does this mean: grammar ambiguity",
+      "back": "At least one string has two different parse trees under the grammar."
+    },
+    {
+      "front": "What does this mean: EBNF { X }",
+      "back": "{ X } means repeat X zero or more times."
+    },
+    {
+      "front": "What does this mean: EBNF [ X ]",
+      "back": "[ X ] means X is optional (zero or one time)."
+    },
+    {
+      "front": "What does this mean: alternation (|)",
+      "back": "In grammar rules, | means choose one of the alternatives."
+    },
+    {
+      "front": "What does this mean: backward compatibility (C++ vs C)",
+      "back": "C++ kept C compatibility so many C programs can compile as C++; Java did not."
+    },
+    {
+      "front": "What does this mean: teaching language",
+      "back": "A language designed to help novices learn programming concepts (e.g., BASIC, Pascal)."
+    },
+    {
+      "front": "What does this mean: systems language",
+      "back": "A language designed for low-level/system software (e.g., C for Unix/OS)."
+    },
+    {
+      "front": "What does this mean: business language",
+      "back": "A language designed for business data processing (e.g., COBOL, FLOW-MATIC)."
+    }
+  ],
+  "quiz": [
+    {
+      "question": "The command emacs -nw Buildings",
+      "options": [
+        "Starts up a text editor to edit the fileBuildings.",
+        "Removes a file calledBuildings.",
+        "Prints a file calledBuildingson the local printer.",
+        "Creates a file calledBuildings.",
+        "Removes a directory calledBuildings."
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 1. emacs starts the Emacs text editor; -nw runs it in the terminal on the file named in the command."
+    },
+    {
+      "question": "The command rmdir Stars",
+      "options": [
+        "Removes a directory calledStars.",
+        "Removes a file calledStars.",
+        "Prints a file calledStarson the local printer.",
+        "Creates a file calledStars.",
+        "Creates a directory calledStars."
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 1. rmdir removes an existing directory (it fails if the directory is not empty)."
+    },
+    {
+      "question": "To change the name of a file fromSnowtoIce, I would type",
+      "options": [
+        "mv Snow Ice",
+        "mkdir Snow Ice",
+        "ls Snow Ice",
+        "grep Snow Ice",
+        "vi Snow Ice"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 1. This question tests basic Unix command vocabulary."
+    },
+    {
+      "question": "To display the names of all the files in directoryRivers, I would type",
+      "options": [
+        "ls Rivers",
+        "mkdir Rivers",
+        "vi Rivers",
+        "cp Rivers",
+        "grep Rivers"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 1. This question tests basic Unix command vocabulary."
+    },
+    {
+      "question": "The command ls Stars",
+      "options": [
+        "Displays the names of the files in directoryStars.",
+        "Removes a directory calledStars.",
+        "Creates a file calledStars.",
+        "Prints a file calledStarson the local printer.",
+        "Removes a file calledStars."
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 1. ls lists directory contents; with a directory name it lists the files inside that directory."
+    },
+    {
+      "question": "The command cat Oceans",
+      "options": [
+        "Displays the contents of the fileOceans.",
+        "Removes a directory calledOceans.",
+        "Lists the names of the files in directoryOceans.",
+        "Creates a file calledOceans.",
+        "Creates a directory calledOceans."
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 1. cat outputs (displays) the contents of a file to the terminal."
+    },
+    {
+      "question": "The command vi Students",
+      "options": [
+        "Starts up a text editor to edit the fileStudents.",
+        "Creates a directory calledStudents.",
+        "Displays the names of the files in directoryStudents.",
+        "Prints a file calledStudentson the local printer.",
+        "Removes a directory calledStudents."
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 1. vi starts the vi text editor to edit the named file (creating it if it does not exist)."
+    },
+    {
+      "question": "The command vi Books",
+      "options": [
+        "Starts up a text editor to edit the fileBooks.",
+        "Displays the names of the files in directoryBooks.",
+        "Creates a file calledBooks.",
+        "Creates a directory calledBooks.",
+        "Removes a directory calledBooks."
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 1. vi starts the vi text editor to edit the named file (creating it if it does not exist)."
+    },
+    {
+      "question": "The command mv Stars Planets",
+      "options": [
+        "Renames the fileStarsso that it has the namePlanets.",
+        "Makes a copy of the fileStars, calledPlanets.",
+        "Deletes the filesStarsandPlanets.",
+        "Prints the fileStarson a printer calledPlanets.",
+        "Creates two directories, calledStarsandPlanets."
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 1. mv moves/renames files; with two names it renames the first to the second."
+    },
+    {
+      "question": "The command ls Books",
+      "options": [
+        "Displays the names of the files in directoryBooks.",
+        "Removes a directory calledBooks.",
+        "Removes a file calledBooks.",
+        "Starts up a text editor to edit the fileBooks.",
+        "Creates a directory calledBooks."
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 1. ls lists directory contents; with a directory name it lists the files inside that directory."
+    },
+    {
+      "question": "A language that was developed by adding object-oriented features to the language C was",
+      "options": [
+        "C++",
+        "COBOL",
+        "ALGOL",
+        "LISP",
+        "Pascal"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 2. C++ is the correct choice based on the language\u2019s historical purpose, paradigm, or influence chain (as covered in the history materials and quizzes)."
+    },
+    {
+      "question": "One example of a logic programming language is",
+      "options": [
+        "Prolog",
+        "Ada",
+        "COBOL",
+        "Scheme"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 2. Prolog is the correct choice based on the language\u2019s historical purpose, paradigm, or influence chain (as covered in the history materials and quizzes)."
+    },
+    {
+      "question": "High level languages were an important advance over assembly languages because",
+      "options": [
+        "High-level language programs produce more efficient executable code than",
+        "assembly language programs do.",
+        "Only high-level languages exist for the Intel family of computers; there is no",
+        "assembly language for these machines."
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 2. High-level language programs produce more efficient executable code than is the correct choice based on the language\u2019s historical purpose, paradigm, or influence chain (as covered in the history materials and quizzes)."
+    },
+    {
+      "question": "One pure object-oriented scripting language is",
+      "options": [
+        "Ruby",
+        "ALGOL",
+        "COBOL",
+        "C"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 2. Ruby is the correct choice based on the language\u2019s historical purpose, paradigm, or influence chain (as covered in the history materials and quizzes)."
+    },
+    {
+      "question": "One language that was designed primarily for mathematical and scientific programming was",
+      "options": [
+        "FORTRAN",
+        "FLOW-MATIC",
+        "BASIC",
+        "Pascal",
+        "COBOL"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 2. FORTRAN is the correct choice based on the language\u2019s historical purpose, paradigm, or influence chain (as covered in the history materials and quizzes)."
+    },
+    {
+      "question": "Array bounds-checking was deliberately included in the Java programming language. This",
+      "options": [
+        "Reliability",
+        "gives Java greater",
+        "Readability",
+        "Efficiency"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 2. Reliability is the correct choice based on the language\u2019s historical purpose, paradigm, or influence chain (as covered in the history materials and quizzes)."
+    },
+    {
+      "question": "One language that was designed primarily for implementing an operating system was",
+      "options": [
+        "C",
+        "FORTRAN",
+        "COBOL",
+        "BASIC",
+        "Pascal"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 2. C is the correct choice based on the language\u2019s historical purpose, paradigm, or influence chain (as covered in the history materials and quizzes)."
+    },
+    {
+      "question": "One scripting language that was designed for use in Web applications was",
+      "options": [
+        "PHP",
+        "BASIC",
+        "LISP",
+        "C",
+        "COBOL"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 2. PHP is the correct choice based on the language\u2019s historical purpose, paradigm, or influence chain (as covered in the history materials and quizzes)."
+    },
+    {
+      "question": "One language that was designed primarily for teaching novice programmers was",
+      "options": [
+        "Pascal",
+        "C++",
+        "FORTRAN",
+        "COBOL",
+        "C"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 2. Pascal is the correct choice based on the language\u2019s historical purpose, paradigm, or influence chain (as covered in the history materials and quizzes)."
+    },
+    {
+      "question": "One of the earliest object-oriented languages was",
+      "options": [
+        "Smalltalk",
+        "ALGOL",
+        "Java",
+        "Python",
+        "COBOL"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 2. Smalltalk is the correct choice based on the language\u2019s historical purpose, paradigm, or influence chain (as covered in the history materials and quizzes)."
+    },
+    {
+      "question": "Simula had a strong influence on the concepts embodied in the",
+      "options": [
+        "Object-oriented languages",
+        "Scripting languages",
+        "Logic programming languages",
+        "Functional languages"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 2. Object-oriented languages is the correct choice based on the language\u2019s historical purpose, paradigm, or influence chain (as covered in the history materials and quizzes)."
+    },
+    {
+      "question": "One language that was designed primarily for teaching novice programmers was",
+      "options": [
+        "BASIC",
+        "Java",
+        "LISP",
+        "Ada"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 2. BASIC is the correct choice based on the language\u2019s historical purpose, paradigm, or influence chain (as covered in the history materials and quizzes)."
+    },
+    {
+      "question": "One language that was designed primarily for use in artificial intelligence was",
+      "options": [
+        "LISP",
+        "FORTRAN",
+        "Ada",
+        "COBOL",
+        "C"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 2. LISP is the correct choice based on the language\u2019s historical purpose, paradigm, or influence chain (as covered in the history materials and quizzes)."
+    },
+    {
+      "question": "One example of an imperative programming language is",
+      "options": [
+        "FORTRAN",
+        "Prolog",
+        "Scheme",
+        "ML"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 2. FORTRAN is the correct choice based on the language\u2019s historical purpose, paradigm, or influence chain (as covered in the history materials and quizzes)."
+    },
+    {
+      "question": "One example of a functional programming language is",
+      "options": [
+        "Scheme",
+        "Ada",
+        "ALGOL",
+        "Prolog"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 2. Scheme is the correct choice based on the language\u2019s historical purpose, paradigm, or influence chain (as covered in the history materials and quizzes)."
+    },
+    {
+      "question": "Evaluate (cdr '(oak maple poplar elm))",
+      "options": [
+        "(maple poplar elm)",
+        "(maple)",
+        "maple poplar elm",
+        "oak",
+        "((maple poplar elm))"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cdr (car '((lions tigers bears) (oh my))))",
+      "options": [
+        "(tigers bears)",
+        "((tigers bears))",
+        "((lions tigers bears))",
+        "(bears)",
+        "bears"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (quote (-10 1))",
+      "options": [
+        "(-10 1)",
+        "9",
+        "11",
+        "10",
+        "(1 10)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (car '(+ 3 4))",
+      "options": [
+        "+",
+        "7",
+        "(+)",
+        "(7)",
+        "(+ 3 4)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cdr '(one two three))",
+      "options": [
+        "(two three)",
+        "(three)",
+        "(two)",
+        "(one)",
+        "one"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cons 'pooh (cons 'piglet (cons 'eeyore '(tigger))))",
+      "options": [
+        "(pooh piglet eeyore tigger)",
+        "pooh piglet eeyore tigger",
+        "((pooh piglet eeyore tigger))",
+        "(pooh tigger)",
+        "pooh"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cons '(pooh) (cons 'piglet (cons 'eeyore '(tigger))))",
+      "options": [
+        "((pooh) piglet eeyore tigger)",
+        "((pooh piglet eeyore tigger))",
+        "(pooh piglet eeyore tigger)",
+        "(pooh tigger)",
+        "(pooh)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (car (cdr '(one two three)))",
+      "options": [
+        "two",
+        "one",
+        "(three)",
+        "(two)",
+        "three"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (car '(one two three))",
+      "options": [
+        "one",
+        "two",
+        "(three)",
+        "(two)",
+        "three"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (* 2 (* 2 (* 2 2)))",
+      "options": [
+        "16",
+        "(8)",
+        "0",
+        "8",
+        "(2 2 2 2)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cdr '(+ 10 15))",
+      "options": [
+        "(10 15)",
+        "(25)",
+        "25",
+        "15",
+        "+"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (car '(a (b) c))",
+      "options": [
+        "a",
+        "b",
+        "(b)",
+        "c",
+        "((b) c)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (car (cdr (cdr '(one two three))))",
+      "options": [
+        "three",
+        "(three)",
+        "(one)",
+        "one",
+        "(two three)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (car (cdr (cdr '(salamander frog toad newt))))",
+      "options": [
+        "toad",
+        "frog",
+        "salamander",
+        "(toad)",
+        "(toad newt)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cdr (cdr '(frog newt)))",
+      "options": [
+        "()",
+        "((frog newt))",
+        "(frog)",
+        "newt",
+        "(newt)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cons (car '(pooh piglet)) (cdr '(eeyore tigger)))",
+      "options": [
+        "(pooh tigger)",
+        "((pooh) (piglet (eeyore (tigger))))",
+        "(pooh piglet eeyore tigger)",
+        "pooh",
+        "((pooh piglet eeyore tigger))"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cdr '(oak maple))",
+      "options": [
+        "(maple)",
+        "oak",
+        "()",
+        "maple",
+        "((maple))"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (-2 5)",
+      "options": [
+        "-3",
+        "2",
+        "7",
+        "(-3)",
+        "5"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (quote (car (quote (a b c))))",
+      "options": [
+        "(car (quote (a b c)))",
+        "car",
+        "quote",
+        "(b c)",
+        "a"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cdr '((red) (blue green)))",
+      "options": [
+        "((blue green))",
+        "(blue)",
+        "(((blue green)))",
+        "blue",
+        "(red)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 3. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cadr (cadr '((orwell 1984) (shakespeare hamlet) (homer iliad))))",
+      "options": [
+        "hamlet",
+        "(orwell 1984)",
+        "(1984)",
+        "orwell",
+        "shakespeare"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (car (cadr '((orwell 1984) (shakespeare hamlet) (homer iliad))))",
+      "options": [
+        "shakespeare",
+        "(hamlet)",
+        "(homer iliad)",
+        "hamlet",
+        "(shakespeare hamlet)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cons (> 34 56) '(100))",
+      "options": [
+        "(#F 100)",
+        "(34 56 100)",
+        "#F",
+        "(> 100)",
+        "(> 34 56 100)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cons (cadr '(cup glass mug)) (cddr '(plate saucer)))",
+      "options": [
+        "(glass)",
+        "((glass mug) saucer)",
+        "(mug saucer)",
+        "(mug)",
+        "(glass saucer)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cons (car '(cup glass mug)) (cdr '(plate saucer)))",
+      "options": [
+        "(cup saucer)",
+        "This expression would produce an error message when evaluated",
+        "(cup (saucer))",
+        "((cup) saucer)",
+        "((cup glass mug) saucer)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "(> 5 8)",
+      "options": [
+        "#F",
+        "1",
+        "This expression would produce an error message when evaluated",
+        "5",
+        "#T"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Relational operators return #T/#F; and/or combine booleans with short-circuit evaluation."
+    },
+    {
+      "question": "(eq? 22 22)",
+      "options": [
+        "#T",
+        "#F",
+        "1",
+        "This expression would produce an error message when evaluated",
+        "0"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Use the correct equality predicate: eq? for identity/symbols, equal? for structural equality, and = for numbers."
+    },
+    {
+      "question": "(equal? 'glassboro '(glassboro))",
+      "options": [
+        "#F",
+        "1",
+        "0",
+        "This expression would produce an error message when evaluated",
+        "#T"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Use the correct equality predicate: eq? for identity/symbols, equal? for structural equality, and = for numbers."
+    },
+    {
+      "question": "Evaluate (cdr (car '(arizona colorado nevada)))",
+      "options": [
+        "This expression would produce an error message when evaluated",
+        "arizona",
+        "( )",
+        "(colorado nevada)",
+        "(arizona)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (and (> 5 3) (< 6 8))",
+      "options": [
+        "#T",
+        "#F",
+        "This expression would produce an error message when evaluated",
+        "0",
+        "1"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cons '(crab) (cons '(oyster) '(lobster)))",
+      "options": [
+        "((crab) (oyster) lobster)",
+        "This expression would produce an error message when evaluated",
+        "((crab) (oyster) (lobster))",
+        "(crab oyster lobster)",
+        "(crab (oyster (lobster)))"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cadr (car '((orwell 1984) (shakespeare hamlet) (homer iliad))))",
+      "options": [
+        "1984",
+        "(homer iliad)",
+        "(orwell 1984)",
+        "iliad",
+        "(hamlet)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "(eq? 'apple 'apple)",
+      "options": [
+        "#T",
+        "1",
+        "#F",
+        "0",
+        "This expression would produce an error message when evaluated"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Use the correct equality predicate: eq? for identity/symbols, equal? for structural equality, and = for numbers."
+    },
+    {
+      "question": "Evaluate (caddr '(poodle beagle collie shepherd))",
+      "options": [
+        "collie",
+        "(collie shepherd)",
+        "(beagle)",
+        "poodle",
+        "(collie)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "(= 'glassboro 'glassboro)",
+      "options": [
+        "This expression would produce an error message when evaluated",
+        "0",
+        "#F",
+        "#T",
+        "1"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Use the correct equality predicate: eq? for identity/symbols, equal? for structural equality, and = for numbers."
+    },
+    {
+      "question": "Evaluate (cdr '((alaska idaho montana)))",
+      "options": [
+        "( )",
+        "(alaska)",
+        "This expression would produce an error message when evaluated",
+        "(idaho montana)",
+        "alaska"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "(<= 22 33)",
+      "options": [
+        "#T",
+        "11",
+        "55",
+        "22",
+        "#F"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Use the correct equality predicate: eq? for identity/symbols, equal? for structural equality, and = for numbers."
+    },
+    {
+      "question": "(< 54 10)",
+      "options": [
+        "#F",
+        "This expression would produce an error message when evaluated",
+        "#T",
+        "0",
+        "64"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Relational operators return #T/#F; and/or combine booleans with short-circuit evaluation."
+    },
+    {
+      "question": "Evaluate (car '((alaska idaho montana)))",
+      "options": [
+        "(alaska idaho montana)",
+        "alaska",
+        "(alaska)",
+        "( )",
+        "This expression would produce an error message when evaluated"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "Evaluate (cdadr '((beagle collie) (terrier poodle) (retriever)))",
+      "options": [
+        "(poodle)",
+        "((terrier poodle))",
+        "terrier",
+        "retriever",
+        "This expression would produce an error message when evaluated"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 4. Evaluate from the inside out. Remember: car = first element, cdr = rest of list, cons = builds a new list from a head element and a tail list."
+    },
+    {
+      "question": "The BNF grammar ruleA -> { B | C }means",
+      "options": [
+        "A can be replaced by zero or more items, each of which may be B or C",
+        "A can be replaced by one B, followed by one C",
+        "A can be replaced by zero or more BC pairs",
+        "A can be replaced by zero or more Bs, followed by zero or more Cs",
+        "A can be replaced by one or more Bs, followed by one or more Cs"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 5. In EBNF, {...} means repetition (zero or more); | is alternation (choose one)."
+    },
+    {
+      "question": "In a syntax diagram, a rectangle-shaped node indicates",
+      "options": [
+        "grammar)",
+        "An error state",
+        "An accepting state",
+        "\u2192 grammar)",
+        "A literal symbol in the string being parsed (like a terminal in a grammar)"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 5. In syntax diagrams, different node shapes represent terminals vs nonterminals/graph references."
+    },
+    {
+      "question": "Two of the strings in the language of this grammar",
+      "options": [
+        "acca, acac",
+        "S -> A A",
+        "A -> a c",
+        "A -> c a",
+        "are",
+        "aacc, ccaa",
+        "a, c",
+        "ac, ca",
+        "ac, acacac"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 5. This question tests BNF/EBNF notation, syntax diagrams, and membership in a grammar\u2019s language."
+    },
+    {
+      "question": "The BNF grammar ruleA -> B { C }means",
+      "options": [
+        "A can be replaced by one B, followed by zero or more Cs",
+        "A can be replaced by one B, followed by one C",
+        "A can be replaced by one or more Bs, followed by one or more Cs",
+        "A can be replaced by either one B or one C",
+        "A can be replaced by one B, optionally followed by one C"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 5. In EBNF, {...} means repetition (zero or more); | is alternation (choose one)."
+    },
+    {
+      "question": "The BNF grammar ruleA -> { B C }means",
+      "options": [
+        "A can be replaced by zero or more BC pairs",
+        "A can be replaced by either one B or one C",
+        "A can be replaced by one B, followed by one C",
+        "A can be replaced by one or more Bs, followed by one or more Cs",
+        "A can be replaced by zero or more Bs, followed by zero or more Cs"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 5. In EBNF, {...} means repetition (zero or more); | is alternation (choose one)."
+    },
+    {
+      "question": "BNF grammars and syntax diagrams are used to describe",
+      "options": [
+        "the syntax of programming languages",
+        "the internal operation of the run-time stack during program execution",
+        "the machine architecture used to implement programming languages",
+        "the semantics of programming languages"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 5. In syntax diagrams, different node shapes represent terminals vs nonterminals/graph references."
+    },
+    {
+      "question": "Two of the strings in the language of this grammar",
+      "options": [
+        "ccccdcccc, d",
+        "S -> A S A",
+        "A -> c c",
+        "S -> d",
+        "are",
+        "ccccd, ccd",
+        "ccdccd, ccd",
+        "ccdddcc, cdc",
+        "cc, dd"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 5. This question tests BNF/EBNF notation, syntax diagrams, and membership in a grammar\u2019s language."
+    },
+    {
+      "question": "Two of the strings in the language of this grammar",
+      "options": [
+        "aacc, cccc",
+        "S -> A A",
+        "A -> a a",
+        "A -> c c",
+        "are",
+        "acac, acacac",
+        "a, c",
+        "aa, cc",
+        "acca, acac"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 5. This question tests BNF/EBNF notation, syntax diagrams, and membership in a grammar\u2019s language."
+    },
+    {
+      "question": "A grammar isambiguousif",
+      "options": [
+        "parse trees",
+        "there are two or more rules with the same right-hand side",
+        "\u2192 parse trees",
+        "there are two strings generated by the grammar with the same parse tree",
+        "there are two or more grammars that can generate the same language",
+        "there is a rule missing from the grammar"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 5. A grammar is ambiguous if some string has two distinct parse trees under the grammar."
+    },
+    {
+      "question": "The BNF grammar ruleA -> B Cmeans",
+      "options": [
+        "A can be replaced by one B, followed by one C",
+        "A can be replaced by one B, followed by zero or more Cs",
+        "A can be replaced by one or more Bs, followed by one or more Cs",
+        "A can be replaced by either one B or one C",
+        "A can be replaced by one B, optionally followed by one C"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 5. This question tests BNF/EBNF notation, syntax diagrams, and membership in a grammar\u2019s language."
+    },
+    {
+      "question": "Two of the strings in the language of this grammar",
+      "options": [
+        "aab, aac",
+        "S -> A B",
+        "A -> a a",
+        "B -> b | c",
+        "are",
+        "aa, bc",
+        "b, c",
+        "ab, ac",
+        "aabc, abc"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 5. This question tests BNF/EBNF notation, syntax diagrams, and membership in a grammar\u2019s language."
+    },
+    {
+      "question": "The start symbol of a grammar is one of the",
+      "options": [
+        "Nonterminals",
+        "Terminals",
+        "Productions",
+        "Parse trees"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 5. The start symbol is the designated nonterminal you begin derivations from."
+    },
+    {
+      "question": "Two of the strings in the language of this grammar",
+      "options": [
+        "ccdddcc, ccdcc",
+        "S -> A B A",
+        "A -> c c",
+        "B -> d B",
+        "B -> d",
+        "are",
+        "cc, dd",
+        "ccdd, ddcc",
+        "cccc, cdc",
+        "ccd, dcc"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 5. This question tests BNF/EBNF notation, syntax diagrams, and membership in a grammar\u2019s language."
+    },
+    {
+      "question": "The BNF grammar ruleA -> B | Cmeans",
+      "options": [
+        "A can be replaced by either one B or one C",
+        "A can be replaced by one or more Bs, followed by one or more Cs",
+        "A can be replaced by one B, followed by one C",
+        "A can be replaced by one B, optionally followed by one C",
+        "A can be replaced by one B, followed by zero or more Cs"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 5. This question tests BNF/EBNF notation, syntax diagrams, and membership in a grammar\u2019s language."
+    },
+    {
+      "question": "In a syntax diagram, a circle-shaped node indicates",
+      "options": [
+        "An error state",
+        "A label of another graph in the syntax diagram (like a nonterminal in a",
+        "grammar)",
+        "An accepting state"
+      ],
+      "answer": 0,
+      "explanation": "Source: Quiz 5. In syntax diagrams, different node shapes represent terminals vs nonterminals/graph references."
+    },
+    {
+      "question": "Which evaluation criterion focuses on how easy a program is to read and understand?",
+      "options": [
+        "Readability",
+        "Writability",
+        "Reliability",
+        "Efficiency"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Readability measures how easily programmers can read and understand code."
+    },
+    {
+      "question": "Which criterion is most directly described by: \u201cthe programmer\u2019s time is valuable; the language should be easy to code in\u201d?",
+      "options": [
+        "Writability",
+        "Readability",
+        "Efficiency",
+        "Reliability"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Writability is about how easy it is to write programs in the language."
+    },
+    {
+      "question": "Including run-time array bounds checking most directly improves which evaluation criterion?",
+      "options": [
+        "Reliability",
+        "Efficiency",
+        "Simplicity",
+        "Writability"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Bounds checking helps prevent accidental out-of-bounds bugs, improving reliability."
+    },
+    {
+      "question": "Postponing work from compile time to run time generally affects performance in what way?",
+      "options": [
+        "It usually reduces speed",
+        "It usually increases speed",
+        "It always has no effect",
+        "It always prevents bugs"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). More work at run time adds overhead, typically slowing execution."
+    },
+    {
+      "question": "A language that has many different control constructs and many specialized features is usually considered more ____.",
+      "options": [
+        "Complex",
+        "Simple",
+        "Reliable",
+        "Efficient"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). More features generally increase complexity and learning burden."
+    },
+    {
+      "question": "Which choice best describes a typical tradeoff discussed in class?",
+      "options": [
+        "Run-time safety checks improve reliability but can reduce efficiency",
+        "More features always improve simplicity and efficiency",
+        "Higher efficiency always increases readability",
+        "Simplicity always guarantees reliability"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Safety checks add overhead but help catch errors."
+    },
+    {
+      "question": "The C/C++ pattern `if (x = 4) ...` is an example of language features that can invite mistakes, reducing ____.",
+      "options": [
+        "Reliability",
+        "Writability",
+        "Efficiency",
+        "Portability"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Accidental assignment in a condition can create subtle bugs (reliability concern)."
+    },
+    {
+      "question": "Which criterion asks whether programs in the language run fast and avoid unnecessary overhead?",
+      "options": [
+        "Efficiency",
+        "Reliability",
+        "Writability",
+        "Ease of learning"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Efficiency focuses on run time speed and resource overhead."
+    },
+    {
+      "question": "Choosing a language because it is ideal for a specific domain (e.g., business vs scientific) is primarily about ____.",
+      "options": [
+        "Suitability for a particular task",
+        "Simplicity",
+        "Efficiency",
+        "Readability"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Suitability considers how well a language fits the job."
+    },
+    {
+      "question": "If a language is easier for beginners to learn quickly, that is mainly the criterion of ____.",
+      "options": [
+        "Ease of learning",
+        "Efficiency",
+        "Reliability",
+        "Simplicity"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Ease of learning is about how quickly someone can become productive."
+    },
+    {
+      "question": "FORTRAN was originally designed primarily for which purpose?",
+      "options": [
+        "Mathematical and scientific processing",
+        "Business data processing",
+        "Web applications",
+        "Artificial intelligence research"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). FORTRAN was created for scientific/mathematical programming."
+    },
+    {
+      "question": "COBOL was designed primarily for which purpose?",
+      "options": [
+        "Business data processing",
+        "Operating system implementation",
+        "Artificial intelligence research",
+        "Computer graphics"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). COBOL was created for business data processing and used English-like phrases."
+    },
+    {
+      "question": "Which language is closely associated with building the Unix operating system?",
+      "options": [
+        "C",
+        "Pascal",
+        "COBOL",
+        "Smalltalk"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). C was developed at Bell Labs and used heavily for Unix."
+    },
+    {
+      "question": "Which language is widely known as being designed for artificial intelligence and symbolic processing?",
+      "options": [
+        "LISP",
+        "FORTRAN",
+        "C",
+        "BASIC"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). LISP is historically associated with AI and symbolic computation."
+    },
+    {
+      "question": "Which language was developed by adding classes to C while trying to preserve backward compatibility with C?",
+      "options": [
+        "C++",
+        "Java",
+        "Pascal",
+        "ALGOL"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). C++ extended C with classes and kept backward compatibility."
+    },
+    {
+      "question": "Which language is described as an object-oriented C-like language that breaks backward compatibility with C?",
+      "options": [
+        "Java",
+        "C++",
+        "COBOL",
+        "BASIC"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Java is C-like but intentionally not backward compatible with C."
+    },
+    {
+      "question": "Which early language is often credited as one of the earliest object-oriented languages and influenced OO concepts?",
+      "options": [
+        "Simula",
+        "FORTRAN",
+        "COBOL",
+        "Prolog"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Simula introduced key OO ideas that influenced later OO languages."
+    },
+    {
+      "question": "Which language was created as a teaching language by Niklaus Wirth?",
+      "options": [
+        "Pascal",
+        "C",
+        "Ruby",
+        "PHP"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Pascal was designed largely for teaching programming."
+    },
+    {
+      "question": "FLOW-MATIC and COBOL are notable for using what kind of syntax style?",
+      "options": [
+        "English-like phrases",
+        "Pure prefix notation",
+        "Only mathematical symbols",
+        "Only logical rules"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). They emphasized English-like keywords and phrasing for business use."
+    },
+    {
+      "question": "Ruby is most accurately described as which of the following (in the course materials)?",
+      "options": [
+        "A pure object-oriented scripting language",
+        "A purely logic programming language",
+        "A purely imperative systems language",
+        "A purely assembly language"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Ruby is commonly presented as a pure OO scripting language in the class material."
+    },
+    {
+      "question": "Evaluate: (car (cdr '(red yellow blue green)))",
+      "options": [
+        "yellow",
+        "red",
+        "(yellow blue green)",
+        "blue"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). cdr drops the first element (red), then car takes the first of the remainder (yellow)."
+    },
+    {
+      "question": "Evaluate: (caddr '(lime kelly forest mint))",
+      "options": [
+        "forest",
+        "lime",
+        "kelly",
+        "mint"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). caddr = car of cdr of cdr, i.e., the 3rd element of the list."
+    },
+    {
+      "question": "Evaluate: (cons (car '(purple violet)) (cdr '(orange tangerine)))",
+      "options": [
+        "(purple tangerine)",
+        "(purple orange tangerine)",
+        "(orange purple tangerine)",
+        "((purple) tangerine)"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). car gives purple; cdr gives (tangerine); cons builds (purple tangerine)."
+    },
+    {
+      "question": "Given (define (f L) (cond ((null? L) 'troll) ((null? (cdr L)) 'elf) ((> (car L) (* (cadr L) 2)) 'hobbit) (else (f (cdr L)))))  Evaluate: (f '(1 5 9))",
+      "options": [
+        "elf",
+        "hobbit",
+        "troll",
+        "1"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). It skips until L becomes a 1-element list, then returns 'elf."
+    },
+    {
+      "question": "Using the same f as above, evaluate: (f '(4 13 2 3))",
+      "options": [
+        "hobbit",
+        "elf",
+        "troll",
+        "13"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). From (4 13 2 3), it recurses to (13 2 3). Since 13 > (2*2)=4, the third cond branch triggers and returns 'hobbit."
+    },
+    {
+      "question": "Which expression returns the empty list in Scheme?",
+      "options": [
+        "(cdr '(frog newt))",
+        "(car '(frog newt))",
+        "(cdr '(frog))",
+        "(car '())"
+      ],
+      "answer": 2,
+      "explanation": "Source: New (Midterm Coverage). The cdr of a 1-element list is the empty list ()."
+    },
+    {
+      "question": "Which of the following prevents evaluation and returns the literal data?",
+      "options": [
+        "quote",
+        "car",
+        "cond",
+        "cons"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). quote returns the expression/list without evaluating it."
+    },
+    {
+      "question": "Which predicate checks structural equality of lists (not just symbols/identity)?",
+      "options": [
+        "equal?",
+        "eq?",
+        "=",
+        "<="
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). equal? compares list structure/content."
+    },
+    {
+      "question": "What does (and (> 5 3) (< 6 8)) evaluate to?",
+      "options": [
+        "#T",
+        "#F",
+        "1",
+        "0"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Both comparisons are true, so and returns #T."
+    },
+    {
+      "question": "A correct recursive structure for scanning a list L is usually:",
+      "options": [
+        "Check (null? L) then recurse on (cdr L)",
+        "Check (car L) then stop immediately",
+        "Always call (car (cdr L)) first",
+        "Use only (cons L '())"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Most list recursion uses a base case for empty list and recurses on (cdr L)."
+    },
+    {
+      "question": "In EBNF, what does [ X ] mean?",
+      "options": [
+        "X is optional (0 or 1 times)",
+        "X repeats (0 or more times)",
+        "X repeats (1 or more times)",
+        "X must appear exactly twice"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). [X] denotes an optional part."
+    },
+    {
+      "question": "In EBNF, what does { X } mean?",
+      "options": [
+        "X repeats (0 or more times)",
+        "X is optional (0 or 1 times)",
+        "X repeats (exactly 2 times)",
+        "X repeats (1 or more times)"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). {X} denotes repetition (possibly zero)."
+    },
+    {
+      "question": "A grammar is ambiguous when ____.",
+      "options": [
+        "some string has two different parse trees",
+        "two rules share the same left-hand side",
+        "a terminal appears on the left side",
+        "the grammar has more than 5 rules"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Ambiguity is defined by multiple parse trees for at least one string."
+    },
+    {
+      "question": "In BNF, the start symbol is a ____.",
+      "options": [
+        "nonterminal",
+        "terminal",
+        "digit",
+        "parse tree"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). The start symbol is the designated nonterminal you begin derivations with."
+    },
+    {
+      "question": "Which is a correct EBNF rule for an Ada simple loop: loop <statement>; ... end loop; with at least one statement?",
+      "options": [
+        "<Loop> -> loop <statement> ; { <statement> ; } end loop",
+        "<Loop> -> loop { <statement> ; } end loop",
+        "<Loop> -> loop [ <statement> ; ] end loop",
+        "<Loop> -> loop <statement> end loop"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). One required statement plus zero-or-more additional statements is captured by <statement>; {<statement>;}"
+    },
+    {
+      "question": "Consider: <Num> -> <Digit><Digit>. Which string is in <Num>?",
+      "options": [
+        "03",
+        "3",
+        "003",
+        "3:"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). <Num> requires exactly two digits."
+    },
+    {
+      "question": "Using the Practice Exam Duration grammar, which string is derivable?",
+      "options": [
+        "03:30-10:45AM",
+        "9:45AM-10:15AM",
+        "10PM-11PM",
+        "11:30"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). The grammar requires <Num>:<Num> with two-digit numbers; 03:30-10:45AM matches."
+    },
+    {
+      "question": "In syntax diagrams used in this course, a rectangle-shaped node typically indicates ____.",
+      "options": [
+        "a graph label/nonterminal reference",
+        "a literal terminal symbol",
+        "an accepting state",
+        "an error state"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Rectangles label other graphs (like nonterminals)."
+    },
+    {
+      "question": "In syntax diagrams used in this course, a circle-shaped node typically indicates ____.",
+      "options": [
+        "a literal terminal symbol",
+        "a graph label/nonterminal reference",
+        "an error state",
+        "a stack frame"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Circles correspond to literal terminals to be matched in the input string."
+    },
+    {
+      "question": "If a grammar has productions like A -> a c and A -> c a, then which string is in the language of S -> A A?",
+      "options": [
+        "acca",
+        "aaaa",
+        "cccc",
+        "ac"
+      ],
+      "answer": 0,
+      "explanation": "Source: New (Midterm Coverage). Choose A->ac then A->ca to get acca."
+    }
+  ],
+  "games": [
+    {
+      "name": "Paradigm Sort",
+      "type": "timed_sort",
+      "prompt": "Sort each language into the best-fit paradigm bucket: imperative, functional, logic, object-oriented, scripting (some are hybrids\u2014choose the primary one discussed in class)."
+    },
+    {
+      "name": "Unix Command Match",
+      "type": "matching",
+      "prompt": "Match each Unix command (emacs/vi, ls, cat, mv, mkdir, rmdir, cp, pwd) to the correct description of what it does."
+    },
+    {
+      "name": "Scheme Eval Sprint",
+      "type": "scenario",
+      "prompt": "Given a Scheme expression using car/cdr/cons/quote, pick the correct final value by evaluating inside-out and applying list rules."
+    },
+    {
+      "name": "Grammar Builder",
+      "type": "scenario",
+      "prompt": "Given an English description of a construct (like 'one or more statements separated by semicolons'), choose the correct BNF/EBNF rule or identify which strings are in the grammar\u2019s language."
+    }
+  ],
+  "sources": [
+    {
+      "file": "Quiz 1 Answer Key.pdf",
+      "pages": [
+        1,
+        2
+      ]
+    },
+    {
+      "file": "Quiz 2 Answer Key.pdf",
+      "pages": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "file": "Quiz 3 Answer Key.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "file": "Quiz 4 Answer Key.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "file": "Quiz 5 Answer Key.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "file": "Practice Exam 1.pdf",
+      "pages": [
+        1,
+        2
+      ]
+    },
+    {
+      "file": "class1_eval_criteria.pdf",
+      "pages": [
+        1
+      ]
+    },
+    {
+      "file": "history_summary.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "file": "pl_class_history_2020.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ]
+    },
+    {
+      "file": "pl_class_script_history.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "file": "classparadigms.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "file": "class_sch.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31
+      ]
+    },
+    {
+      "file": "pl_class_grammar.pdf",
+      "pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "file": "pl_class_syntax_diagrams.pdf",
+      "pages": [
+        1,
+        2
+      ]
+    }
+  ]
+}
